@@ -1,0 +1,24 @@
+{% include header.html %}
+<div class="banner">
+  <div class="container main-content shadow">
+    <div class="row-fluid">
+      <div class="span3">
+        <ul class="toc">
+{% capture toc %}
+{% for p in site.pages %}
+  {% if p.path contains "docs/" %}
+  <li><a data-toc-index="{{ p.toc-index }}" href="{{ p.url }}" {% if p.path == page.path %}class="active"{% endif %}><i class="icon icon-caret-right"></i> {{ p.title }}</a></li>
+  {% endif  %}
+{% endfor %}
+{% endcapture%}
+{% render_toc toc %}
+        </ul>
+      </div>
+      <div class="span9">
+        <h3 class="pagetitle">{{ page.title }}</h3>
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% include footer.html %}
