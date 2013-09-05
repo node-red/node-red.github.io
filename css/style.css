@@ -75,9 +75,14 @@ li.active {
     margin-bottom: 0;
 }
 .footer {
+    color: #eee;
     text-align: center;
     margin-top: 40px;
     font-size: 0.8em;
+}
+.footer a {
+    color: #eee;
+    text-decoration: none;
 }
 
 .alert {
