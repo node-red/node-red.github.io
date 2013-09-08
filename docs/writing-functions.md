@@ -1,5 +1,4 @@
 ---
-toc-index: 3
 layout: default
 title: Writing Functions
 ---

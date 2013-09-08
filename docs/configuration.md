@@ -1,5 +1,4 @@
 ---
-toc-index: 2
 layout: default
 title: Configuration
 ---

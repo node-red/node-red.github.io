@@ -97,14 +97,14 @@ ul.toc {
     padding: 0;
     border: 1px solid #ccc;
 }
-ul.toc li {
+ul.toc > li {
     border-bottom: 1px solid #ccc;
     background: #eee;
 }
-ul.toc li:last-child {
+ul.toc > li:last-child {
     border-bottom: none;
 }
-ul.toc li a {
+ul.toc li  a {
     padding: 8px 10px;
     display: block;
     width: 100%;
@@ -115,17 +115,26 @@ ul.toc li a:hover {
     text-decoration:none;
     background:#ddd;
 }
-ul.toc li a.active {
+ul.toc > li > ul {
+    margin: 0;
+    padding:0;
+    list-style-type: none;    
+}
+    
+ul.toc > li > ul > li {
+    border-top: 1px solid #dadada;
+}
+ul.toc > li > ul > li a {
+    padding: 6px 6px 6px 30px;
+}
+
+
+ul.toc > li  a.active {
     color: #fff;
     background: #a8a8a8; /* Old browsers */
-    background: -moz-linear-gradient(top,  #a8a8a8 0%, #676767 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a8a8a8), color-stop(100%,#676767)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #a8a8a8 0%,#676767 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #a8a8a8 0%,#676767 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #a8a8a8 0%,#676767 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #a8a8a8 0%,#676767 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8a8a8', endColorstr='#676767',GradientType=0 ); /* IE6-9 */
 }
+
+
 h3.pagetitle {
     padding-bottom: 5px;
     padding-right: 10px;

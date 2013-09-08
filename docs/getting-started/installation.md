@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting Started
+title: Installation
 ---   
 
 *Eventually, Node-RED will be installable using npm. Until then, the following
@@ -28,20 +28,6 @@ From the top-level directory of Node-RED, run:
     $ npm install
 
 This will install the core pre-requisite modules.
-
-### Run Node-RED
-
-From the top-level directory, run:
-
-    $ node red.js
-
-You can then access Node-RED at <http://localhost:1880>.
-
-By default, Node-RED uses a file called `flows_<hostname>.json` to save the
-deployed configuration. You can point to a different flow file at start-up:
-
-    $ node red.js my_flows.json
-
 
 ### Installing individual node dependencies
 
