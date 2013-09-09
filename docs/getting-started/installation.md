@@ -17,7 +17,7 @@ Or, you may want to use a version from your operating system's package manager:
 
 Clone the repository from GitHub:
 
-    $ git clone git@github.com:node-red/node-red.git
+    $ git clone https://github.com/node-red/node-red.git
 
 *TODO: once we have a release, point at the zip as well*
 
