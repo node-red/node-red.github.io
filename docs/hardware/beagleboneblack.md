@@ -17,7 +17,7 @@ the everything is up to date.
 Whilst logged in, you may also want to install `screen` - a convenient way to
 run Node-RED in the console when not logged in.
 
-    $ opks install screen
+    $ opkg install screen
     
 #### Configuring Node-RED
 
