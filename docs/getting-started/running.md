@@ -22,8 +22,8 @@ You should now have a screen almost like this.
 
 The key areas are
 
-  - The Pallette on the left - Nodes can be dragged from here to the main canvas.
-  - The Canvas or workarea - this is where you compose your flows.
-  - The Information and Debug window - this can be accessed via the Option button top right, or by the shortcut ctrl-space.
-  - The Deploy button - top right. This saves your flow and starts it running.
-  - The Options button - top right. This gives access to other functions such as import/export and the debug window.
+ 1. The Pallette on the left - Nodes can be dragged from here to the main canvas.
+ 2. The Canvas or workarea - this is where you compose your flows.
+ 3. The Information and Debug window - this can be accessed via the Option button top right, or by the shortcut ctrl-space.
+ 4. The Deploy button - top right. This saves your flow and starts it running.
+ 5. The Options button - top right. This gives access to other functions such as import/export and the debug window.
