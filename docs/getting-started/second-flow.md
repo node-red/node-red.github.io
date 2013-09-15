@@ -10,7 +10,7 @@ This flow is slightly more complex and starts to bring in data from outside to d
  - It will go out to an external web site
  - grab some information
  - read and convert that into a useful form
- - output that in two formats, one for further use and one to switch things on and off
+ - output that in two formats, one as a JSON object for further use, and one as a boolean to switch things on and off
 
 #### 1. Add an Inject node
 
@@ -20,20 +20,21 @@ the button on the node, or setting a time interval between injects.
 Drag one onto the workspace from the palette.
 
 Double click the node - the Edit properties dialog will open up.
-Select Repeat - Interval. and set a sensible figure like 
+Select Repeat - Interval, and set a sensible figure like 
 
         every 5 minutes on every day.
         
-Hit OK to save those properties
+Hit OK to save those properties.
 
 #### 2. Add an HttpGet node
 
 You'll find that near the bottom of the palette under advanced.
-Double click to Edit properties and in the BaseURL box enter or paste :
+Double click to Edit properties, and in the BaseURL box enter or paste :
 
         http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx
 
 Add a friendly name if you want to. (optional)
+
 Hit OK
 
 #### 3. Add a function node
@@ -60,7 +61,8 @@ Double click to Edit the function. You may want to cut and paste the next bit in
         }
         return null;
 
-Select two for the number of outputs.
+Select <b>2</b> for the number of outputs.
+
 Add a friendly name for the function if you want to. (optional)
 
 Hit OK to save
@@ -69,20 +71,20 @@ Hit OK to save
 
 The Debug node causes any message to be displayed in the Debug sidebar. By
 default, it just displays the payload of the message, but it is possible to
-display the entire message object.
+display the entire message object. To see the Debug Sidebar use the shortcut ctr-space.
 
 #### 5. Wire them all together
 
   - Wire the Inject node output to the HttpGet node input. 
   - Wire the HttpGet node output to the Function node input.
-  - Wire the Function node output to the Debug node input.
+  - Wire both the Function node outputs to the Debug node input.
 
 #### 6. Deploy
 
 At this point, the nodes only exist in the editor and must be deployed to the
 server.
 
-Click the Deploy button. Simple as that.
+Click the Deploy button. Simple as that. The flow should now be running.
 
 With the Debug sidebar tab selected, click the Inject button. You should see
 an entry with some contents that look like
@@ -97,11 +99,11 @@ or maybe false...
 
 #### 7. Summary
 
-Congratulations ! You now have a flow that goes to the internet - gets the live UK total electricity
-consumption. Converts it into a JSON oject with the demand in MW, and frequency in Hertz.
+<b>Congratulations !</b>  You now have a flow that goes to the internet - gets the live UK total electricity
+consumption - and converts it into a JSON object with the demand in MW, and frequency in Hertz.
 
 The frequency is an indication of overall stress - so when the frequency is under 50 HZ there may
-be excess load on the overall system. Now would be a good time to turn off some appliances if you can.
+be excess load on the overall National Grid. Now would be a good time to turn off some appliances if you can.
 
 The true/false output could be used to do this. It's true (1) when it's OK to turn on...
 and false (0) when you should turn off.
