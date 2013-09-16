@@ -3,8 +3,6 @@ layout: default
 title: Creating your second flow
 ---
 
-### Get the current UK Electricity Demand
-
 This example is slightly more complex and starts to bring in data from external sources to do something useful locally.
 
  - It will go out to an external web site
