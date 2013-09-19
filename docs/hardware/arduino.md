@@ -20,17 +20,17 @@ to communicate with it.
 ### Firmata
 
 [Firmata](http://firmata.org/) is a protocol for communicating between an
-Arduino (as well as other microcontrollers) and the host computer, providing
+Arduino (as well as other microcontrollers) and the host computer, providing 
 direct access to the IO pins.
 
 #### Installation
 
 First you need to load the default Firmata sketch onto the Arduino using the
-standard Arduino software download tools. This is usually found under
+standard Arduino software download tools. This is usually found under 
 *Files - Examples - Firmata - Standard Firmata*.
 
 To ensure you have the Arduino nodes in the Node-RED palette, install the
-firmata npm module and restart Node-RED
+firmata npm module and restart Node-RED 
 
     $ cd node-red
     $ npm install firmata
@@ -42,9 +42,7 @@ To run a "blink" flow that uses LED 13, copy the following flow and paste it
 into the Import Nodes dialog (*Import From - Clipboard* in the dropdown menu, or
 Ctrl-I). After clicking okay, click in the workspace to place the new nodes.
 
-````json
-[{"id":"d7663aaf.47194","type":"arduino-board","repeat":"25","device":"/dev/ttyUSB0"},{"id":"8c09ca6c.a975d","type":"arduino out","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":509.16667556762695,"y":162.16666984558105,"wires":[]},{"id":"e37b6a97.610968","type":"inject","name":"tick","topic":"","payload":"","repeat":"0.5","once":false,"x":116.16668319702148,"y":62.16666507720947,"wires":[["60b4aeaa.800d58"]]},{"id":"60b4aeaa.800d58","type":"function","name":"Toggle output on input","func":"\n// initialise level as a context variable if currently undefined \n// (context variables persist between calls to the function)\ncontext.level = context.level || false;\n\n// if it's a 0 make it a 1 else make it a 0...\ncontext.level = !context.level;\n\n// set the payload to the level and return\nmsg.payload = context.level;\nreturn msg;","outputs":1,"x":298.1666793823242,"y":113.16665458679199,"wires":[["8c09ca6c.a975d"]]}]
-````
+    [{"id":"d7663aaf.47194","type":"arduino-board","repeat":"25","device":"/dev/ttyUSB0"},{"id":"8c09ca6c.a975d","type":"arduino out","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":509.16667556762695,"y":162.16666984558105,"wires":[]},{"id":"e37b6a97.610968","type":"inject","name":"tick","topic":"","payload":"","repeat":"0.5","once":false,"x":116.16668319702148,"y":62.16666507720947,"wires":[["60b4aeaa.800d58"]]},{"id":"60b4aeaa.800d58","type":"function","name":"Toggle output on input","func":"\n// initialise level as a context variable if currently undefined \n// (context variables persist between calls to the function)\ncontext.level = context.level || false;\n\n// if it's a 0 make it a 1 else make it a 0...\ncontext.level = !context.level;\n\n// set the payload to the level and return\nmsg.payload = context.level;\nreturn msg;","outputs":1,"x":298.1666793823242,"y":113.16665458679199,"wires":[["8c09ca6c.a975d"]]}]
 
 This flow is set to use `/dev/ttyUSB0`. If you need to change that, double click
 the node labelled `Pin 13` - the Arduino node. Click the pencil icon and change
