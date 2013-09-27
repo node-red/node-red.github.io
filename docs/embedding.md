@@ -3,7 +3,7 @@ layout: default
 title: Embedding into an existing app
 ---   
 
-*This is new and subject to tweeking as we play with it more*
+*This is new and subject to tweaking as we play with it more*
 
 It is possible to embed Node-RED into a larger application. A typical scenario
 would be where you use Node-RED to generate flows of data that you want to
@@ -20,18 +20,22 @@ application.
     var express = require("express");
     var RED = require("node-red");
     
+    // Create an Express app
     var app = express();
+    
+    // Add a simple route for static content served from 'public'
     app.use("/",express.static("public"));
     
+    // Create a server
     var server = http.createServer(app);
     
+    // Create the settings object
     var settings = {};
     
-    // initialise the runtime with a server
-    // and settings
+    // Initialise the runtime with a server and settings
     RED.init(server,settings);
     
-    // serve the editor UI from /red
+    // Serve the editor UI from /red
     app.use("/red",RED.app);
 
     server.listen(8000);
