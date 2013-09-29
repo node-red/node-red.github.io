@@ -25,7 +25,7 @@ Or you can download the latest zip file from:
 
     https://github.com/node-red/node-red/archive/master.zip
     
-Advanced users may also wish to read about [embedding Node-RED inside an existing node.js express app](../embedding.md).
+Advanced users may also wish to read about [embedding Node-RED inside an existing node.js express app](../embedding.html).
 
 ### Install the pre-requisite modules
 
