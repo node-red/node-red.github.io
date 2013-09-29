@@ -98,11 +98,11 @@ The context object is *not* persisted across restarts of Node-RED.
 #### Global Context ####
 
 There is also a global context available that is shared by, and accessible to
-all functions:
+all functions. For example to make the variable foo available globally across the canvas:
 
     context.global.foo = "bar";   // this is now available to other function blocks.
 
-The global context can be pre-populated with objects when Node-RED starts. This
+The global context can also be pre-populated with objects when Node-RED starts. This
 is defined in the main *settings.js* file under the *functionGlobalContext*
 property.
 
