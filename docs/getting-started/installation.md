@@ -17,12 +17,15 @@ There are several ways to install Node-RED. The simplest is to use npm.
     npm install node-red
     npm start
 
-
 Or you can clone the repository from GitHub:
 
     $ git clone https://github.com/node-red/node-red.git
 
-*TODO: once we have a release, point at the zip as well*
+Or you can download the latest zip file from:
+
+    https://github.com/node-red/node-red/archive/master.zip
+    
+Advanced users may also wish to read about [embedding Node-RED inside an existing node.js express app](../embedding.md).
 
 ### Install the pre-requisite modules
 
