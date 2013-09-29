@@ -3,9 +3,6 @@ layout: default
 title: Installation
 ---   
 
-*Eventually, Node-RED will be installable using npm. Until then, the following
-guide will help you get started.*
-
 ### Install node.js
 
 You can get the latest version from <http://nodejs.org/download/>.
@@ -15,7 +12,13 @@ Or, you may want to use a version from your operating system's package manager:
 
 ### Get Node-RED
 
-Clone the repository from GitHub:
+There are several ways to install Node-RED. The simplest is to use npm.
+
+    npm install node-red
+    npm start
+
+
+Or you can clone the repository from GitHub:
 
     $ git clone https://github.com/node-red/node-red.git
 
