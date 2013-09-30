@@ -15,7 +15,7 @@ Or, you may want to use a version from your operating system's package manager:
 There are several ways to install Node-RED. The simplest is to use npm.
 
     npm install node-red
-    cd node_module/node-red
+    cd node_modules/node-red
     npm start
 
 Or you can clone the repository from GitHub:
