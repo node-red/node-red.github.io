@@ -14,7 +14,8 @@ deployed configuration. You can point to a different flow file at start-up:
 
     $ node red.js my_flows.json
 
-You should now have a screen almost like this.
+
+### Editor UI
 
 ![ScreenShot][1]
 
@@ -22,8 +23,8 @@ You should now have a screen almost like this.
 
 The key areas are
 
- 1. The Pallette on the left - Nodes can be dragged from here to the main canvas.
- 2. The Canvas or workarea - this is where you compose your flows.
- 3. The Information and Debug window - this can be accessed via the Option button top right, or by the shortcut ctrl-space.
- 4. The Deploy button - top right. This saves your flow and starts it running.
- 5. The Options button - top right. This gives access to other functions such as import/export and the debug window.
+ 1. The node palette - nodes can be dragged from here on to the main canvas.
+ 2. The canvas or workarea - this is where you compose your flows.
+ 3. The sidebar, including information and debug tabs - this can be accessed via the Options button top right, or pressing Ctrl-Space.
+ 4. The Deploy button - this saves your flow and starts it running. It turns red when there are undeployed changes.
+ 5. The Options menu - this gives access to other functions such as import/export and the sidebar.
