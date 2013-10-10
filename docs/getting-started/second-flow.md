@@ -21,11 +21,11 @@ Double click the node to bring up the edit dialog. Set the repeat interval to `e
         
 Click Ok to close the dialog.
 
-#### 2. Add an HttpGet node
+#### 2. Add an HttpRequest node
 
-The HttpGet node can be used to retrieve a web-page when triggered.
+The HttpRequest node can be used to retrieve a web-page when triggered.
 
-After adding one to the workspace, edit it to set the `BaseURL` property to:
+After adding one to the workspace, edit it to set the `URL` property to:
 
         http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx
 
@@ -63,8 +63,8 @@ Add two Debug nodes.
 
 #### 5. Wire them all together
 
-  - Wire the Inject node output to the HttpGet node input. 
-  - Wire the HttpGet node output to the Function node input.
+  - Wire the Inject node output to the HttpRequest node input. 
+  - Wire the HttpRequest node output to the Function node input.
   - Wire each of the Function node outputs to a different Debug node input.
 
 #### 6. Deploy
@@ -104,5 +104,5 @@ imported straight into the editor by pasting the json into the Import dialog
 (Ctrl-I or via the dropdown menu).
 
 
-    [{"id":"9667c21d.69984","type":"function","name":"UK Power Demand","func":"// does a simple text extract parse of the http output to provide an\n// object containing the uk power demand, frequency and time\n\nif (~msg.payload.indexOf('<BR')) {\nvar words = msg.payload.split(\"div\")[1].split(\"<BR\");\nif (words.length >= 3) {\nmsg.payload = {};\nmsg.payload.demand = parseInt(words[0].split(\":\")[1]);\nmsg.payload.frequency = parseFloat(words[2].split(\":\")[1]);\nmsg.payload.time = words[1].split(\">\")[1];\nmsg2 ={};\nmsg2.payload = (msg.payload.frequency >= 50) ? true : false;\n\nreturn [msg,msg2];\n}\n}\nreturn null;","outputs":"2","x":405,"y":130,"wires":[["29565919.d6a9a6"],["37641836.c89be8"]]},{"id":"27b6ea1d.d84916","type":"httpget","name":"UK Power","baseurl":"http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx","append":"","x":228,"y":119,"wires":[["9667c21d.69984"]]},{"id":"2eb79d84.d14862","type":"inject","name":"Tick","topic":"","payload":" ","repeat":"","crontab":"*/5 * * * *","once":false,"x":85,"y":109,"wires":[["27b6ea1d.d84916"]]},{"id":"29565919.d6a9a6","type":"debug","name":"","active":true,"complete":false,"x":601,"y":94,"wires":[]},{"id":"37641836.c89be8","type":"debug","name":"","active":true,"complete":false,"x":602,"y":165,"wires":[]}]
+    [{"id":"aad4ccd8.552b3","type":"function","name":"UK Power Demand","func":"// does a simple text extract parse of the http output to provide an\n// object containing the uk power demand, frequency and time\n\nif (~msg.payload.indexOf('<BR')) {\nvar words = msg.payload.split(\"div\")[1].split(\"<BR\");\nif (words.length >= 3) {\nmsg.payload = {};\nmsg.payload.demand = parseInt(words[0].split(\":\")[1]);\nmsg.payload.frequency = parseFloat(words[2].split(\":\")[1]);\nmsg.payload.time = words[1].split(\">\")[1];\nmsg2 ={};\nmsg2.payload = (msg.payload.frequency >= 50) ? true : false;\n\nreturn [msg,msg2];\n}\n}\nreturn null;","outputs":"2","x":777,"y":160,"wires":[["42e49f8e.bd1b6"],["7f25942e.80da6c"]]},{"id":"59564535.a6a9bc","type":"inject","name":"Tick","topic":"","payload":"","repeat":"","crontab":"*/5 * * * *","once":false,"x":460,"y":160,"wires":[["1efbf8aa.e10407"]]},{"id":"42e49f8e.bd1b6","type":"debug","name":"","active":true,"complete":false,"x":977,"y":130,"wires":[]},{"id":"7f25942e.80da6c","type":"debug","name":"","active":true,"complete":false,"x":978,"y":201,"wires":[]},{"id":"1efbf8aa.e10407","type":"http request","name":"UK Power","method":"GET","url":"http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx","x":600,"y":160,"wires":[["aad4ccd8.552b3"]]}]
 
