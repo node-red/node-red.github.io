@@ -5,7 +5,7 @@ body {
     display: block;
 }
 .shadow {
-    box-shadow: 0px 0px 20px #676767;
+    box-shadow: 0px 2px 3px #676767;
 }
 .brand,h1,h2,h3,h4,h5 {
     font-family: 'Roboto Slab', serif;
@@ -41,7 +41,9 @@ body {
 }
 .main-content {
     background: #fff;
-    border-radius: 3px;
+    border-radius: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 .main-content a {
     color: #aa6767;
@@ -53,7 +55,7 @@ li.active {
 }
 
 .banner {
-    padding: 20px 15px;
+    padding: 0px 15px 0px 15px;
     background: #eee;
     margin: 50px 0 20px 0;
 }    
@@ -90,16 +92,20 @@ li.active {
 }
 
 ul.toc {
-    border-radius: 5px;
+    /* border-radius: 5px; */
     overflow: hidden;
     list-style-type: none;
-    margin: 15px 0 0 0;
+    margin: 0 0 20px 0;
     padding: 0;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
+    border-right: 1px solid #ddd;
+}
+ul.toc > li:first-child {
+    border-bottom: 1px solid #ddd;
 }
 ul.toc > li {
-    border-bottom: 1px solid #ccc;
-    background: #eee;
+    /*border-bottom: 1px solid #ccc;*/
+    background: /*#eee;*/ #fff;
 }
 ul.toc > li:last-child {
     border-bottom: none;
@@ -109,11 +115,11 @@ ul.toc li  a {
     display: block;
     width: 100%;
     height: 100%;
-    color: #272b30;
+    color: /*#272b30;*/ #999;
 }
 ul.toc li a:hover {
     text-decoration:none;
-    background:#ddd;
+    background: /*#ddd;*/ #eee;
 }
 ul.toc > li > ul {
     margin: 0;
@@ -122,7 +128,7 @@ ul.toc > li > ul {
 }
     
 ul.toc > li > ul > li {
-    border-top: 1px solid #dadada;
+    /*border-top: 1px solid #dadada;*/
 }
 ul.toc > li > ul > li a {
     padding: 6px 6px 6px 30px;
@@ -130,12 +136,13 @@ ul.toc > li > ul > li a {
 
 
 ul.toc > li  a.active {
-    color: #fff;
-    background: #a8a8a8; /* Old browsers */
+    color: /*#fff;*/ #333;
+    background: /*#a8a8a8;*/ #ddd;
 }
 
 
 h3.pagetitle {
+    margin-top: 0px;
     padding-bottom: 5px;
     padding-right: 10px;
     border-bottom: 1px solid #676767;
