@@ -54,7 +54,9 @@ body {
 .navbar ul li.current {
     border-bottom: 2px solid #eee;
 }
-
+.navbar ul li.current a {
+    color: #fff;
+}
 .main-content {
     background: #fff;
     border-radius: 0px;
