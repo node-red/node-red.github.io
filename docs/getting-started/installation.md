@@ -12,32 +12,38 @@ Or, you may want to use a version from your operating system's package manager:
 
 ### Install Node-RED
 
-There are two ways to get Node-RED; either via npm, or directly from GitHub:
+There are **three** ways to get Node-RED:
 
-#### Using npm
+#### Download a release
+
+Download the latest release from the link on <http://nodered.org>. The zip
+contains a top-level folder called `node-red-X.Y.Z` where `X.Y.Z` is the version
+number. Once extracted, from within that top-level folder, run the following
+command:
+
+    $ npm install
+
+#### Use npm
+
+Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html).
+
+Run the following commands to install from the npm repository:
 
     $ mkdir node-red
     $ cd node-red
     $ npm install node-red
 
-This installs Node-RED, and its core dependencies into the `node_modules`
+This installs the latest release, and its core dependencies, into the `node-red/node_modules`
 directory.
-
-Installing via npm also allows you to [embed Node-RED into an existing application](../embedding.html).
-
-The version installed by npm is a point-in-time snapshot. To get the latest code run:
-
-    $ npm install node-red/node-red
 
 #### From GitHub
 
-Either clone the repository:
+If you want to run the very latest code, you can clone the source repository
+directly from GitHub:
 
     $ git clone https://github.com/node-red/node-red.git
 
-Or download the latest zip file from <https://github.com/node-red/node-red/archive/master.zip>.
-
-Once downloaded, the core pre-requisite modules must be installed. From the top-level
+Once cloned, the core pre-requisite modules must be installed. From the top-level
 directory of Node-RED, run:
 
     $ npm install

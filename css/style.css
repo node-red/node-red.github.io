@@ -26,6 +26,15 @@ body {
 .main-content-content {
     line-height: 24px;
 }
+
+.main-content-content h4 {
+    margin-top: 18px;
+}
+.
+
+.main-content li {
+    line-height: 2em;
+}
 .navbar-inverse .navbar-inner {
     background: #272b30;
     border:none;
@@ -38,7 +47,14 @@ body {
 .navbar ul li a {
     height: 48px;
     line-height: 2em;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
 }
+
+.navbar ul li.current {
+    border-bottom: 2px solid #eee;
+}
+
 .main-content {
     background: #fff;
     border-radius: 0px;
@@ -86,9 +102,51 @@ li.active {
     color: #eee;
     text-decoration: none;
 }
-
+.btn-download {
+    background: #aa6767;
+    border:none;
+    text-shadow: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px; 
+}
+.btn-download .download-link {
+    letter-spacing: 1px;
+    font-family: 'Roboto Slab', serif;
+}
+.btn-download .download-version {
+    font-size: 14px;
+    color:  #eee;
+    margin-top: 5px;
+}
+.btn-download:hover {
+    background: #7F4545;
+    border:none;
+    text-shadow: none;
+}
+.download-help {
+    padding-top: 20px;
+    text-align: center;
+    color: #9a9a9a;
+}
+.download-help a {
+    color:  #aa6767;
+}
 .alert {
     text-shadow: none;
+}
+
+div.features h3 {
+    color: #fff;
+}
+div.features p {
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+div.news {
+    border-left:1px #eee solid;
+    padding-left: 20px;
 }
 
 ul.toc {
@@ -156,9 +214,47 @@ dd {
     margin: 2px 30px 18px;
 }
 
+ul.news {
+    margin:0 0 40px 0;
+    padding:0;
+    list-style-type: none;
+}
+ul.news li {
+    padding: 5px 15px;
+}
+ul.news li span.post-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+}
+ul.news li span.post-date {
+    font-size: 14px;
+    color: #aa6767;
+}
+ul.news li a {
+    color: #d8d8d8;
+    line-height: 30px;
+}
+ul.news li a:hover {
+    color: #fff;
+}
 @media (max-width: 979px) {
     .banner {
         margin: 10px -20px;
+    }
+    
+    .navbar ul li a {
+        height: 32px;
+        line-height: 1em;
+    }
+    
+    .navbar ul li.current {
+        border-right: 2px solid #eee;
+        border-bottom: none;
+    }
+    
+    div.news {
+        border-left:none;
+        padding-left: none;
     }
 }
 

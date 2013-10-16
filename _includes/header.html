@@ -17,23 +17,20 @@
   <div class="navbar navbar-inverse navbar-fixed-top shadow">
     <div class="navbar-inner">
       <div class="container">
-      <!--
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        -->
         <a class="brand" href="/"><img src="/node-red.png"> Node-RED</a>
-        <!--
         <div class="nav-collapse collapse pull-right">
           <ul class="nav">
-            <li><a href="getting-started.html">getting started</a></li>
-            <li><a href="#contact">download</a></li>
-            <li><a href="#contact">documentation</a></li>
+            <li{% if page.url == "http://nodered.org" %} class="current"{% endif %}><a href="http://nodered.org">home</a></li>
+            <li{% if page.url contains "blog.nodered.org" %} class="current"{% endif %}><a href="http://blog.nodered.org">blog</a></li>
+            <li{% if page.url contains "/docs/" %} class="current"{% endif %}><a href="http://nodered.org/docs/">documentation</a></li>
+            <li><a href="http://github.com/node-red/node-red">github</a></li>
           </ul>
         </div>
-        -->
       </div>
     </div>
   </div>

@@ -10,44 +10,32 @@ layout: barebones
             <h1>Node-RED</h1>
             <p class="lead">A visual tool for wiring the Internet of Things</p>
             <div class="row-fluid">
-                <div class="offset2 span4">
-                    <a href="http://github.com/node-red/node-red" class="btn btn-default btn-block">Download</a>
+                <div class="offset3 span6">
+                    <a href="https://github.com/node-red/node-red/archive/v0.2.0.zip" class="btn btn-download btn-block"><span class="download-link">Download</span><br/><span class="download-version">v0.2.0</span></a>
                 </div>
-                <div class="span4">
-                    <a href="/docs" class="btn btn-default btn-block">Docs</a>
+                <div class="span12 download-help">
+                    <p>Need help? Try the <a href="/docs/getting-started/">Getting Starting guide</a>.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    
+
 <div class="container">
   <div class="row-fluid">
-      <div class="span4">
-          <h2>Node.js based</h2>
-          <p>Built on top of Node.js, taking full advantage of its event-driven, non-blocking IO model.</p>
-      </div>
-      <div class="span4">
-          <h2>Visual Editor</h2>
-          <p>A lightweight, browser-based editor that makes it easy to wire together flows and deploy in a single click.</p>
-      </div>
-      <div class="span4">
-          <h2>Plugin Nodes</h2>
-          <p>A simple API that allows new node types to be created in a few lines of JavaScript/HTML and dropped into the runtime.</p>
-      </div>
+    <div class="span4 features">
+      <h3>Node.js based</h3><p>Built on top of Node.js, taking full advantage of its event-driven, non-blocking IO model.</p>
+      <h3>Visual Editor</h3><p>A lightweight, browser-based editor that makes it easy to wire together flows and deploy in a single click.</p>
+      <h3>Plugin Nodes</h3><p>A simple API that allows new node types to be created in a few lines of JavaScript/HTML and dropped into the runtime.</p>
     </div>
-  <div class="row-fluid">
-      <div class="span4">
-         <h2>Social Development</h2>
-         <p>Any part of a flow can be imported or exported using JSON for easy sharing and collaborative development.</p>
-      </div>
-       <div class="span4">
-          <h2>Built-in Library</h2>
-          <p>Save useful functions, templates or flows to the built-in library for later re-use.</p>
-       </div>
-       <div class="span4">
-         <h2>Edge-of-Network</h2>
-         <p>Easy to use on the Raspberry Pi &amp; BeagleBone with nodes that expose their hardware capabilities.</p>
-       </div>
+    <div class="span4 features">
+      <h3>Social Development</h3><p>Any part of a flow can be imported or exported using JSON for easy sharing and collaborative development.</p>
+      <h3>Built-in Library</h3><p>Save useful functions, templates or flows to the built-in library for later re-use.</p>
+      <h3>Edge-of-Network</h3><p>Easy to use on the Raspberry Pi &amp; BeagleBone with nodes that expose their hardware capabilities.</p>
     </div>
+    <div class="span4 news">
+        <h3><a href="http://blog.nodered.org">Updates</a></h3>
+        {% include updates.html %}
+    </div>
+  </div>
 </div>
