@@ -48,6 +48,23 @@ directory of Node-RED, run:
 
     $ npm install
 
+### Installing additional nodes
+
+The Node-RED release comes with a core set of useful nodes, but there are a growing
+number of additional nodes available for install from other sources.
+
+The project maintains its own [repository of nodes](http://github.com/node-red/node-red-nodes)
+that don't belong in the core set, or that have been contributed by members of
+the community. To install these nodes, either:
+
+ - download the latest release from the
+  link on <http://nodered.org> and extract it under the `nodes/` directory of
+  the Node-RED install directory.
+
+ - or, clone the repository directly from GitHub into the `nodes/` directory:
+
+       $ git clone https://github.com/node-red/node-red-nodes.git
+
 ### Installing individual node dependencies
 
 *Eventually, nodes will be npm-installable themselves. This will take care of
@@ -59,19 +76,17 @@ the node is available in the palette.
 
 To help identify the dependencies, Node-RED logs any modules it fails to find
 for a particular node. You only need to install these dependencies if you want
-to use that node. For example, you probably don't want to install the `pi-gpio`
-module unless you are running on a Raspberry Pi.
+to use that node. For example, you probably don't want to install the `firmata`
+module unless you are running with an Arduino attached.
 
 Alternatively, a node's `.js` file can be examined to identify the modules it
-explicitly requires. For example, the Twitter node is defined in
-`nodes/social/27-twitter.js` and contains:
+explicitly requires. For example, the MongoDB node is defined in
+`nodes/storage/66-mongodb.js` and contains:
 
-	var RED = require("../../red/red");
-	var ntwitter = require('ntwitter');
-	var OAuth= require('oauth').OAuth;
+    var RED = require("../../red/red");
+    var mongo = require('mongodb');
 
-Of these, `ntwitter` and `oauth` are neither built-in modules nor ones provided
-by Node-RED itself. They can subsequently be installed by running:
+The missing module, `mongodb` can subsequently be installed by running:
 
-    $ npm install ntwitter oauth
+    $ npm install mongodb
 
