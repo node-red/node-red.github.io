@@ -21,7 +21,7 @@ contains a top-level folder called `node-red-X.Y.Z` where `X.Y.Z` is the version
 number. Once extracted, from within that top-level folder, run the following
 command:
 
-    $ npm install
+    $ npm install --production
 
 #### Use npm
 
@@ -46,7 +46,7 @@ directly from GitHub:
 Once cloned, the core pre-requisite modules must be installed. From the top-level
 directory of Node-RED, run:
 
-    $ npm install
+    $ npm install --production
 
 ### Installing additional nodes
 
