@@ -57,9 +57,8 @@ The project maintains its own [repository of nodes](http://github.com/node-red/n
 that don't belong in the core set, or that have been contributed by members of
 the community. To install these nodes, either:
 
- - download the latest release from the
-  link on <http://nodered.org> and extract it under the `nodes/` directory of
-  the Node-RED install directory.
+ - download the latest release from [GitHub](https://github.com/node-red/node-red-nodes/releases)
+  and extract it under the `nodes/` directory of the Node-RED install directory.
 
  - or, clone the repository directly from GitHub into the `nodes/` directory:
 
