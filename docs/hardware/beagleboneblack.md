@@ -19,6 +19,13 @@ run Node-RED in the console when not logged in.
 
     $ opkg install screen
     
+#### Environment
+
+Some modules, for example serialport, require native compilation, usually using node-gyp.
+To make sure this works you MUST install some python build tools.
+
+    $ opkg install python-compiler python-distutils python-multiprocessing python-misc openssl-misc
+    
 #### Configuring Node-RED
 
 There are not any specific nodes for the BBB. Instead, the `bonescript` module
