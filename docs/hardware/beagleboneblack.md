@@ -6,6 +6,19 @@ title: BeagleBone Black
 The BeagleBoneBlack already has node.js baked into it's default Angstrom OS, so 
 some of these tips are optional.
 
+#### Environment
+
+Some modules, for example serialport, require native compilation, usually using node-gyp.
+To make sure this works you MUST install some python build tools.
+
+    $ opkg update
+    $ opkg install python-compiler python-distutils python-multiprocessing python-misc openssl-misc
+    
+NOTE: Don't be tempted to run - opkg upgrade - it will generally fail and mess up the BeagleBoneBlack.
+To get the latest complete firmware build reflash the entire board - see 
+<http://circuitco.com/support/index.php?title=Updating_The_Software> for details, and then upgrade
+individual packages as you require.
+
 #### Update node.js and bonescript (optional)
 
 Log onto the BBB as root and at the prompt, run the following commands to ensure
@@ -18,13 +31,6 @@ Whilst logged in, you may also want to install `screen` - a convenient way to
 run Node-RED in the console when not logged in.
 
     $ opkg install screen
-    
-#### Environment
-
-Some modules, for example serialport, require native compilation, usually using node-gyp.
-To make sure this works you MUST install some python build tools.
-
-    $ opkg install python-compiler python-distutils python-multiprocessing python-misc openssl-misc
     
 #### Configuring Node-RED
 
