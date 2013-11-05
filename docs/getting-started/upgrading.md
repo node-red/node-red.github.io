@@ -19,6 +19,7 @@ Once these are backed up they can be moved to other types of install.
 ### How to Upgrade
 How you upgrade depends on which method you used to install Node-RED initially.
 
+
 #### Upgrading a release
 
 Download the latest release from the link on <http://nodered.org>. The zip
@@ -27,6 +28,11 @@ number. Once extracted, from within that top-level folder, run the following
 command:
 
     $ npm install --production
+
+As this will (by default) create a new install directory you should copy over your existing **flows_{hostname}.json** and other files
+that you backed up previously in stage 1. Obviously you will now need to start Node-RED from within this new directory and
+update any auto-start scripts to point to this new directroy instead.
+
 
 #### Upgrading from npm
 
