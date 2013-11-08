@@ -3,8 +3,6 @@ layout: default
 title: Embedding into an existing app
 ---   
 
-*This is new and subject to tweaking as we play with it more*
-
 It is possible to embed Node-RED into a larger application. A typical scenario
 would be where you use Node-RED to generate flows of data that you want to
 display on a web dashboard - all from the same application.

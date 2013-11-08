@@ -25,16 +25,7 @@ command:
 
 #### Use npm
 
-Currently it is advisable only to do this if you want to [embed Node-RED into an existing application](../embedding.html).
-
-Run the following commands to install from the npm repository:
-
-    $ mkdir node-red
-    $ cd node-red
-    $ npm install node-red
-
-This installs the latest release, and its core dependencies, into the `node-red/node_modules` 
-directory.
+Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html).
 
 #### From GitHub
 
@@ -48,14 +39,6 @@ directory of Node-RED, run:
 
     $ npm install --production
     
-Alternatively you can download the master zip file from https://github.com/node-red/node-red/archive/master.zip .
-This will unzip into node-red-master/ . You can then 
-
-    $ cd node-red-master
-    $ npm install
-    $ node red
-    
-
 ### Installing additional nodes
 
 The Node-RED release comes with a core set of useful nodes, but there are a growing
@@ -69,12 +52,9 @@ the community. To install these nodes, either:
   and extract it under the `nodes/` directory of the Node-RED install directory.
 
  - or, clone the repository directly from GitHub into the `nodes/` directory:
- 
-For example
 
-
-    $ cd nodes/
-    $ git clone https://github.com/node-red/node-red-nodes.git
+       $ cd nodes/
+       $ git clone https://github.com/node-red/node-red-nodes.git
 
 ### Installing individual node dependencies
 
