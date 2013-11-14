@@ -16,6 +16,22 @@ the embedding application to implement.
 flowFile
 : the file used to store the flows. Default: `flows_<hostname>.json`
 
+userDir
+: the directory to store all user data, such as flow and credential files and all
+  library data. Default: the Node-RED install directory
+
+nodesDir
+: a directory to search for additional installed nodes. Node-RED searches the `nodes`
+  directory under install directory. This property allows an additional directory
+  to be searched, so that nodes can be installed outside of the Node-RED install
+  structure.
+
+uiHost
+: the interface to listen for connections on. Default: 0.0.0.0 - 
+  *all IPv4 interfaces*.
+
+  *Standalone only*.
+
 uiPort
 : the port used to serve the editor UI. Default: 1880.
   
@@ -23,8 +39,6 @@ uiPort
 
 httpRoot
 : the root url for the editor UI. Default: '/'.
-  
-  *Standalone only*.
 
 httpAuth
 : enables HTTP Basic Authentication, with the specified username/password:
@@ -41,6 +55,14 @@ httpAuth
 https
 : enables https, with the specified options object, as defined 
   [here](http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
+
+  *Standalone only*.
+
+httpStatic
+: a local directory from which to serve static web content from. This content is
+  served from the top level url, '/'. When this property is used, `httpRoot` must
+  also be used to make editor UI available at a path other than '/'.
+  The content served by `httpStatic` is not subject to the `httpAuth` setting.
 
   *Standalone only*.
 
@@ -67,5 +89,10 @@ mqttReconnectTime
   before attempting to reconnect. Default: 5000
 
 serialReconnectTime
-: Serial Nodes - how long to wait, in milliseconds before attempting to reopen
+: Serial Nodes - how long to wait, in milliseconds, before attempting to reopen
   a serial port. Default: 5000
+
+socketReconnectTime
+: TCP Nodes - how long to wait, in milliseconds, before attempting to reconnect.
+  Default: 10000
+

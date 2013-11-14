@@ -28,13 +28,13 @@ application.
     var server = http.createServer(app);
     
     // Create the settings object
-    var settings = {};
+    var settings = {httpRoot:"/red", userDir:"/home/nol/.nodered/"};
     
     // Initialise the runtime with a server and settings
     RED.init(server,settings);
     
     // Serve the editor UI from /red
-    app.use("/red",RED.app);
+    app.use(settings.httpRoot,RED.app);
 
     server.listen(8000);
     
@@ -47,9 +47,10 @@ used. Instead, the settings are passed to the `RED.init` call as shown above.
 Furthermore, the following settings are ignored as they are left to you to
 configure the Express instance as you want it:
 
+ - `uiHost`
  - `uiPort`
  - `httpAuth`
- - `httpRoot`
+ - `httpStatic`
  - `https`
 
 
