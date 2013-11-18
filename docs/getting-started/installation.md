@@ -22,10 +22,12 @@ number. Once extracted, from within that top-level folder, run the following
 command:
 
     $ npm install --production
+    
+This is the simplest way for most people to install Node-RED.
 
 #### Use npm
 
-Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html).
+Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html). Only do this if you know what you are doing.
 
 #### From GitHub
 
