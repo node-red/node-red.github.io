@@ -19,6 +19,12 @@ To get the latest complete firmware build reflash the entire board - see
 <http://circuitco.com/support/index.php?title=Updating_The_Software> for details, and then upgrade
 individual packages as you require.
 
+If you intend to use git to install Node-RED then do the following (to prevent the old version of git
+on beaglebone stopping you download)
+
+    $ git config --global http.sslverify false
+    $ git clone https://github.com/node-red/node-red.git
+
 #### Update node.js and bonescript (optional)
 
 Log onto the BBB as root and at the prompt, run the following commands to ensure
