@@ -12,7 +12,8 @@ Or, you may want to use a version from your operating system's package manager:
 
 ### Install Node-RED
 
-There are **three** ways to get Node-RED:
+The main way to install Node-RED is to download the latest stable release. If you
+are just getting started, this is the right option to choose.
 
 #### Download a release
 
@@ -27,12 +28,13 @@ This is the simplest way for most people to install Node-RED.
 
 #### Use npm
 
-Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html). Only do this if you know what you are doing.
+Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html).
+This assumes you are comfortable with creating node.js applications.
 
 #### From GitHub
 
-If you want to run the very latest code, you can clone the source repository
-directly from GitHub:
+If you want to run the very latest development code, you can clone the source
+repository directly from GitHub:
 
     $ git clone https://github.com/node-red/node-red.git
 
@@ -40,6 +42,9 @@ Once cloned, the core pre-requisite modules must be installed. From the top-leve
 directory of Node-RED, run:
 
     $ npm install --production
+    
+Whilst we alway try to ensure the repository is bug-free, it may contain features
+still under development.
     
 ### Installing additional nodes
 

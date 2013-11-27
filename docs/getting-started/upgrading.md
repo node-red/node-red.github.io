@@ -44,4 +44,10 @@ If you used git clone to install then the usual git commands apply:
 
     $ git pull
 
+You should also use npm to update any node modules:
+
+    $ npm update
+
+
+
 
