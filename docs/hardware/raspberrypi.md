@@ -3,15 +3,39 @@ layout: default
 title: Raspberry Pi
 ---
 
+#### Installation
+
+The simplest way to install node.js on Pi is
+
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+    sudo dpkg -i node_latest_armhf.deb
+    
+<b>HOWEVER - </b>
+Currently the most stable version of node.js for Pi we have found is v0.8.22 - this doesn't seem to have the memory leaks of v0.10.x and so for long running apps is a better bet. Also it seems to play slightly nicer with the serialport drivers. (YMMV). The download is [here](http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz).
+
+    wget http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz
+    sudo tar -C /opt/node --strip=1 -zxvf node-v0.8.22-linux-arm-pi.tar.gz
+    sudo ln -s -f /opt/node/bin/node /usr/bin/node
+    sudo ln -s -f /opt/node/bin/npm /usr/bin/npm
+
+After [installing](../getting-started/installation.html) Node-RED, follow these 
+[instructions](http://wiringpi.com/download-and-install/) to get WiringPi installed.
+Ensure that the test commands work.
+
+Once you restart Node-RED you should now see two rpi-gpio nodes in the advanced section of the pallette.
+One to read from pins, and one to control pins. If they are not there then check the gpio command installed
+correctly to /usr/local/bin/gpio and is executable by the user that you are running as.
+
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
 
 **gpio command**
 : this provides nodes in the palette for monitoring and controlling the GPIO
-  pins
+  pins. This is the simplest and recommended way.
 
 **wiring-pi module**
 : this provides complete access to the GPIO pins, and other devices, within
-  Function nodes.
+  Function nodes. This gives more control and access to other features not in the nodes
+  but you have to program it yourself.
 
 ***
   
@@ -22,16 +46,6 @@ The gpio command is part of @drogon WiringPi suite of tools.
 This provides a way of controlling the GPIO pins via a simple command. It also supports
 accessories such as the PiFace and others and so provides a good platform for these integrations.
 For full details see the [WiringPi website](http://wiringpi.com/).
-
-#### Installation
-
-After [installing](../getting-started/installation.html) Node-RED, follow these 
-[instructions](http://wiringpi.com/download-and-install/) to get WiringPi installed.
-Ensure that the test commands work.
-
-Once you restart Node-RED you should now see two rpi-gpio nodes in the advanced section of the pallette.
-One to read from pins, and one to control pins. If they are not there then check the gpio command installed
-correctly to /usr/local/bin/gpio and is executable by the user you are running.
 
 #### Blink
 
