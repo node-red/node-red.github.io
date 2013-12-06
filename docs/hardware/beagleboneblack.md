@@ -14,7 +14,7 @@ To make sure this works you MUST install some python build tools.
     $ opkg update
     $ opkg install python-compiler python-distutils python-multiprocessing python-misc openssl-misc
     
-NOTE: Don't be tempted to run - opkg upgrade - it will generally fail and mess up the BeagleBoneBlack.
+NOTE: Don't be tempted to run `opkg upgrade` it will generally fail and mess up the BeagleBoneBlack.
 To get the latest complete firmware build reflash the entire board - see 
 <http://circuitco.com/support/index.php?title=Updating_The_Software> for details, and then upgrade
 individual packages as you require.
