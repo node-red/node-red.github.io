@@ -20,10 +20,12 @@ To get the latest complete firmware build reflash the entire board - see
 individual packages as you require.
 
 If you intend to use git to install Node-RED then do the following (to prevent the old version of git
-on beaglebone stopping you download)
+on beaglebone stopping you download). 
 
     $ git config --global http.sslverify false
     $ git clone https://github.com/node-red/node-red.git
+    $ cd node-red
+    $ npm install --production
 
 #### Update node.js and bonescript (optional)
 
