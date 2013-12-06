@@ -38,6 +38,12 @@ run Node-RED in the console when not logged in.
 
     $ opkg install screen
     
+#### Installing Node-RED
+
+Now proceed to install Node-RED as per the normal [installation instructions](../getting-started/installation.html).
+
+After doing so return here.
+
 #### Configuring Node-RED
 
 There are not any specific nodes for the BBB. Instead, the `bonescript` module
@@ -46,9 +52,8 @@ can be made available for use in Function nodes.
 To do this, update `settings.js` to add the `bonescript` module to the
 Function global context:
 
-    functionGlobalContext: { 
-        bonescript: require('bonescript')
-    }
+    //functionGlobalContext: { }  
+    functionGlobalContext: { bonescript:require('bonescript') }
 
 The module is then available to any functions you write as `context.global.bonescript`.
 
