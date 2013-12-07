@@ -34,17 +34,17 @@ run Node-RED in the console when not logged in.
     
 #### Installing Node-RED
 
-If you intend to use git to install Node-RED then do the following (to prevent the old version of git
-on beaglebone stopping you download). 
+Follow the normal [installation instructions](../getting-started/installation.html) to install Node-RED, 
+and after doing so return here.
+
+<b>Note:</b> If you intend to use git to install Node-RED then do the following 
+(to prevent the old version of git on beaglebone stopping you download). 
 
     $ git config --global http.sslverify false
     $ git clone https://github.com/node-red/node-red.git
     $ cd node-red
     $ npm install --production
     
-If you don't want to use git you can proceed to install Node-RED as per the normal [installation instructions](../getting-started/installation.html).
-
-After doing so return here.
 
 #### Configuring Node-RED
 
