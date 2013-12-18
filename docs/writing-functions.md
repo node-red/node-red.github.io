@@ -74,7 +74,7 @@ returns a message for each of the words.
     var outputMsgs = [];
     var words = msg.payload.split(" ");
     for (var w in words) {
-        outputMsgs.push({payload:w});
+        outputMsgs.push({payload:words[w]});
     }
     return [ outputMsgs ];
 {% endhighlight %}
