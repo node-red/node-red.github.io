@@ -14,6 +14,7 @@ The simplest way to install node.js on Pi is
 Currently the most stable version of node.js for Pi we have found is v0.8.22 - this doesn't seem to have the memory leaks of v0.10.x and so for long running apps is a better bet. Also it seems to play slightly nicer with the serialport drivers. (YMMV). The download is [here](http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz).
 
     wget http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz
+    sudo mkdir -p /opt/node 
     sudo tar -C /opt/node --strip=1 -zxvf node-v0.8.22-linux-arm-pi.tar.gz
     sudo ln -s -f /opt/node/bin/node /usr/bin/node
     sudo ln -s -f /opt/node/bin/npm /usr/bin/npm
