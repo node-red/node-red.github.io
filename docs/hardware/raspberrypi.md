@@ -81,10 +81,10 @@ installed.
 
 Firstly the npm module needs to be installed into the node-red directory.
 
-    cd /node-red
+    cd ~/node-red-x.y.z    (changing x.y.z to match the version you have installed)
     npm install wiring-pi
 
-This does not any specific nodes to Node-RED. Instead the Wiring-Pi module can be made
+This does not add any specific nodes to Node-RED. Instead the Wiring-Pi module can be made
 available for use in Function nodes.
 
 To do this, update `settings.js` to add the `wiring-pi` module to the Function
@@ -122,11 +122,11 @@ To install screen, if it is not already there, run:
 
     $ sudo apt-get install screen
 
-Then edit the `/etc/rc.local` file to include the lines:
+Then edit the `/etc/rc.local` file to include the line:
 
-    cd /home/pi/node-red-master
-    screen -dmS red node red.js
+    su -l pi -c 'cd node-red-x.y.z; screen -dmS red node red.js'
 
+making sure you change x.y.z to match the version of node-red you have installed.
 This assumes that you have installed Node-RED to the default (pi) user's home
 directory.
 
