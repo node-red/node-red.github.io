@@ -123,6 +123,8 @@ To install screen, if it is not already there, run:
 
     $ sudo apt-get install screen
 
+#### 1) Either using rc.local
+
 Then edit the `/etc/rc.local` file to include the line:
 
     su -l pi -c 'cd node-red-x.y.z; screen -dmS red node red.js'
@@ -137,5 +139,12 @@ running:
     $ screen -r red
     
 To detach from the session, type Ctrl-A-D.
+
+#### 2) Or using init.d
+
+The more linux way is to make it an init.d service - thanks to our contributors for pointing this out.
+
+see [Node-RED init script](https://gist.github.com/juzam/9002204)
+
 
 
