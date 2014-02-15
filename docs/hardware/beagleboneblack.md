@@ -13,11 +13,17 @@ To make sure this works you MUST install some python build tools.
 
     $ opkg update
     $ opkg install python-compiler python-distutils python-multiprocessing python-misc openssl-misc
-    
-NOTE: Don't be tempted to run `opkg upgrade` it will generally fail and mess up the BeagleBoneBlack.
-To get the latest complete firmware build reflash the entire board - see 
-<http://circuitco.com/support/index.php?title=Updating_The_Software> for details, and then upgrade
-individual packages as you require.
+
+If you want to run <b>opkg upgrade</b>. (optional)
+
+    From the command line run: 
+    1. udhcpc -i <interface>" (Interface = eth0, wlan0 etc).
+    2. Then and ONLY then run "opkg upgrade"
+
+This will populate /etc/resolve.conf with the appropriate settings. Once it has finished, opkg upgrade should run no problem. If you run "opkg upgrade" prior to doing this (or manually setting a DNS server), it will fail and horrible things will happen to your BBB, likely requiring you to reflash. This can be added to a startup script so you don't have to worry about it.
+
+To get the latest complete firmware build in order to reflash the entire board - see 
+<http://circuitco.com/support/index.php?title=Updating_The_Software> for details.
 
 #### Update node.js and bonescript (optional)
 
@@ -38,7 +44,7 @@ Follow the normal [installation instructions](../getting-started/installation.ht
 and after doing so return here.
 
 <b>Note:</b> If you intend to use git to install Node-RED then do the following 
-(to prevent the old version of git on beaglebone stopping you download). 
+(in order to prevent the old version of git on beaglebone stopping you from downloading). 
 
     $ git config --global http.sslverify false
     $ git clone https://github.com/node-red/node-red.git
@@ -98,6 +104,8 @@ files.
 ##### /home/root/go.sh : 
 
     #!/bin/bash -
+    ## change line below to match your network port eth0, wlan0, etc
+    udhcpc -i eth0
     ntpdate pool.ntp.org
     export NODE_PATH=/usr/lib/node_modules
     cd /home/root/node-red/
@@ -105,6 +113,7 @@ files.
 
 Run the following commands:
 
+    $ chmod +x /home/root/go.sh
     $ systemctl enable node-red.service
     $ systemctl start node-red.service
 
