@@ -18,9 +18,9 @@ If you want to run <b>opkg upgrade</b>. (optional)
 
     From the command line run: 
     1. udhcpc -i <interface>" (Interface = eth0, wlan0 etc).
-    2. Then and ONLY then run "opkg upgrade"
+    2. Then and ONLY then run "opkg --tmp-dir ~ upgrade"
 
-This will populate /etc/resolve.conf with the appropriate settings. Once it has finished, opkg upgrade should run no problem. If you run "opkg upgrade" prior to doing this (or manually setting a DNS server), it will fail and horrible things will happen to your BBB, likely requiring you to reflash. This can be added to a startup script so you don't have to worry about it.
+This will populate /etc/resolve.conf with the appropriate settings. Once it has finished, opkg --tmp-dir ~ upgrade should run no problem. If you run "opkg --tmp-dir ~ upgrade" prior to doing this (or manually setting a DNS server), it will fail and horrible things will happen to your BBB, likely requiring you to reflash. This can be added to a startup script so you don't have to worry about it.
 
 To get the latest complete firmware build in order to reflash the entire board - see 
 <http://circuitco.com/support/index.php?title=Updating_The_Software> for details.
