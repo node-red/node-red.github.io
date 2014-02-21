@@ -37,13 +37,13 @@ uiPort
   
   *Standalone only*.
 
-httpRoot
-: the root url for the editor UI. Default: '/'.
+httpAdminRoot
+: the root url for the editor UI. Default: '/'
 
-httpAuth
-: enables HTTP Basic Authentication, with the specified username/password:
+httpAdminAuth
+: enables HTTP Basic Authentication on the editor UI:
 
-      httpAuth: {user:"nol", pass:"5f4dcc3b5aa765d61d8327deb882cf99"}
+      httpAdminAuth: {user:"nol", pass:"5f4dcc3b5aa765d61d8327deb882cf99"}
   
   The `pass` property is the md5 hash of the actual password. The following
   command can be used to generate the hash:
@@ -51,7 +51,14 @@ httpAuth
       $ node -e "console.log(require('crypto').createHash('md5').update('YOUR PASSWORD HERE','utf8').digest('hex'))"
   
   *Standalone only*.
-      
+
+httpNodeRoot
+: the root url for nodes that provide HTTP endpoints. Default: '/'
+
+httpNodeAuth
+: enables HTTP Basic Authentication. See `httpAdminAuth` for format.
+
+
 https
 : enables https, with the specified options object, as defined 
   [here](http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
@@ -60,11 +67,17 @@ https
 
 httpStatic
 : a local directory from which to serve static web content from. This content is
-  served from the top level url, '/'. When this property is used, `httpRoot` must
+  served from the top level url, '/'. When this property is used, `httpAdminRoot` must
   also be used to make editor UI available at a path other than '/'.
-  The content served by `httpStatic` is not subject to the `httpAuth` setting.
 
   *Standalone only*.
+
+httpStaticAuth
+: enabled HTTP Basic Authentication on the static content. See `httpAdminAuth` for format.
+
+httpNodeCors
+: enables cross-origin resource sharing for the nodes that provide HTTP endpoints,
+  as defined [here](https://github.com/troygoode/node-cors#configuration-options)
 
 ### Node Configuration
 
@@ -95,4 +108,8 @@ serialReconnectTime
 socketReconnectTime
 : TCP Nodes - how long to wait, in milliseconds, before attempting to reconnect.
   Default: 10000
+
+socketTimeout
+: TCP Nodes - how long to wait, in milliseconds, before timing out a socket.
+  Default: 120000
 

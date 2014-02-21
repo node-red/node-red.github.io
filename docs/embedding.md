@@ -28,14 +28,21 @@ application.
     var server = http.createServer(app);
     
     // Create the settings object
-    var settings = {httpRoot:"/red", userDir:"/home/nol/.nodered/"};
+    var settings = {
+        httpAdminRoot:"/red",
+        httpNodeRoot: "/api",
+        userDir:"/home/nol/.nodered/"
+    };
     
     // Initialise the runtime with a server and settings
     RED.init(server,settings);
     
     // Serve the editor UI from /red
-    app.use(settings.httpRoot,RED.app);
-
+    app.use(settings.httpAdminRoot,RED.httpAdmin);
+    
+    // Serve the http nodes UI from /api
+    app.use(settings.httpNodeRoot,RED.httpNode);
+    
     server.listen(8000);
     
     // Start the runtime
@@ -49,8 +56,10 @@ configure the Express instance as you want it:
 
  - `uiHost`
  - `uiPort`
- - `httpAuth`
+ - `httpAdminAuth`
+ - `httpNodeAuth`
  - `httpStatic`
+ - `httpStaticAuth`
  - `https`
 
 
