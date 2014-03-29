@@ -146,5 +146,9 @@ The more linux way is to make it an init.d service - thanks to our contributors 
 
 see [Node-RED init script](https://gist.github.com/juzam/9002204)
 
+If you do this and then need Node-RED to autostart on boot then use this command
+
+    $ sudo update-rc.d node_red defaults
+
 
 
