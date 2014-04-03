@@ -9,23 +9,24 @@ The simplest way to install node.js on Pi is
 
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb
     sudo dpkg -i node_latest_armhf.deb
-    
-<b>HOWEVER - </b>
-Currently the most stable version of node.js for Pi we have found is v0.8.22 - this doesn't seem to have the memory leaks of v0.10.x and so for long running apps is a better bet. Also it seems to play slightly nicer with the serialport drivers. (YMMV). The download is [here](http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz).
-
-    wget http://nodejs.org/dist/v0.8.22/node-v0.8.22-linux-arm-pi.tar.gz
-    sudo mkdir -p /opt/node 
-    sudo tar -C /opt/node --strip=1 -zxvf node-v0.8.22-linux-arm-pi.tar.gz
-    sudo ln -s -f /opt/node/bin/node /usr/bin/node
-    sudo ln -s -f /opt/node/bin/npm /usr/bin/npm
 
 After [installing](../getting-started/installation.html) Node-RED, follow these 
 [instructions](http://wiringpi.com/download-and-install/) to get WiringPi installed.
 Ensure that the test commands work.
 
+<b>NOTE - </b>
+The new Garbage Collector (GC) algorythm in node.js v0.10.x behaves differently than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit larger than the 512MB in the Pi - this can cause the Pi to crash if left running for a long time, so we recommend starting Node-RED like this
+
+    $ cd node-red
+    $ node --max-old-space-size=128 red.js
+    
+This extra parameter limits the space it can use to 128MB before cleaning up. If you are running nothing else on your Pi feel free to up that to 192 or 256...  the command `free -h` will give you some clues if you wish to tweak.
+
 Once you restart Node-RED you should now see two rpi-gpio nodes in the advanced section of the pallette.
 One to read from pins, and one to control pins. If they are not there then check the gpio command installed
 correctly to /usr/local/bin/gpio and is executable by the user that you are running as.
+
+There are also some extra hardware specific nodes (for the Pibrella, PiFace and LEDBorg plug on modules) available in the Node-red-nodes project on Github. 
 
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
 
@@ -37,6 +38,7 @@ There are (at least) two ways for interacting with a Raspberry Pi using Node-RED
 : this provides complete access to the GPIO pins, and other devices, within
   Function nodes. This gives more control and access to other features not in the nodes
   but you have to program it yourself.
+
 
 ***
   
@@ -117,38 +119,29 @@ toggling on and off once a second.
 ### Making Node-RED autostart on boot (optional)
 
 The easiest way to autostart Node-RED is to use `screen` so you can get to the
-console at any time.
-
-To install screen, if it is not already there, run:
+console at any time. To install screen, if it is not already there, run:
 
     $ sudo apt-get install screen
 
-#### 1) Either using rc.local
+Then make Node-RED into a service but using init.d - thanks to our contributors for pointing this out.
 
-Then edit the `/etc/rc.local` file to include the line:
+see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
 
-    su -l pi -c 'cd node-red-x.y.z; screen -dmS red node red.js'
+If you copy the init script into /etc/init.d/node-red and make it executable you can then stop, start and restart Node-RED by
 
-making sure you change x.y.z to match the version of node-red you have installed.
-This assumes that you have installed Node-RED to the default (pi) user's home
-directory.
+    $ sudo service node-red stop
+    $ sudo service node-red start
+    $ sudo service node-red restart
 
-Once you reboot you should then be able to attach to the screen session by
-running:
+If you need Node-RED to autostart on boot then use this command
 
-    $ screen -r red
+    $ sudo update-rc.d node-red defaults
     
-To detach from the session, type Ctrl-A-D.
+Once running you should then be able to attach to the screen session to see the console by running:
 
-#### 2) Or using init.d
-
-The more linux way is to make it an init.d service - thanks to our contributors for pointing this out.
-
-see [Node-RED init script](https://gist.github.com/juzam/9002204)
-
-If you do this and then need Node-RED to autostart on boot then use this command
-
-    $ sudo update-rc.d node_red defaults
+    $ sudo screen -r red
+    
+To detach from the session and leave it running, type Ctrl-A-D.
 
 
 
