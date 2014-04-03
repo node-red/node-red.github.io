@@ -5,7 +5,7 @@ title: BeagleBone Black
 
 The BeagleBoneBlack already has node.js baked into it's OS, so some of these tips are optional.
 
-* NEWS - Beaglebone Black latest firmware image is now Debian based. It is so much easier to get things like Wifi working... see http://beagleboard.org/latest-images
+* NEWS - Beaglebone Black latest firmware image is now Debian based. It is so much easier to get things like Wifi working... see [http://beagleboard.org/latest-images](http://beagleboard.org/latest-images)
 
 ***
 
@@ -27,7 +27,7 @@ Once Node-RED is started, assuming you haven't changed the hostname, browse to
 
 #### BBB specific nodes
 
-There are some great BBB specific nodes now available in our Node-red-nodes project on Github - https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB - kudos to Max.
+There are some great BBB specific nodes now available in our Node-red-nodes project on Github - [node-red-nodes](https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB) - kudos to Max.
 These give you direct access to the I/O pins in the simplest possible manner.
 
 Also for experts, the `bonescript` module can be made available for use in Function nodes.
