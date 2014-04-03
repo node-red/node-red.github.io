@@ -22,11 +22,11 @@ The new Garbage Collector (GC) algorythm in node.js v0.10.x behaves differently 
     
 This extra parameter limits the space it can use to 128MB before cleaning up. If you are running nothing else on your Pi feel free to up that to 192 or 256...  the command `free -h` will give you some clues if you wish to tweak.
 
-Once you restart Node-RED you should now see two rpi-gpio nodes in the advanced section of the pallette.
+Once you restart Node-RED and then browse to <b>http://{your-pi-address}:1880</b> you should now see two rpi-gpio nodes in the advanced section of the pallette.
 One to read from pins, and one to control pins. If they are not there then check the gpio command installed
-correctly to /usr/local/bin/gpio and is executable by the user that you are running as.
+correctly to `/usr/local/bin/gpio` and is executable by the user that you are running as.
 
-There are also some extra hardware specific nodes (for the Pibrella, PiFace and LEDBorg plug on modules) available in the Node-red-nodes project on Github. 
+There are also some extra hardware specific nodes (for the Pibrella, PiFace and LEDBorg plug on modules) available in the [node-red-nodes project](https://github.com/node-red/node-red-nodes/tree/master/hardware/Pi) on Github. 
 
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
 
