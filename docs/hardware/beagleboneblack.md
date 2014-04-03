@@ -3,8 +3,73 @@ layout: default
 title: BeagleBone Black
 ---
 
-The BeagleBoneBlack already has node.js baked into it's default Angstrom OS, so 
-some of these tips are optional.
+The BeagleBoneBlack already has node.js baked into it's OS, so some of these tips are optional.
+
+* NEWS - Beaglebone Black latest firmware image is now Debian based. It is so much easier to get things like Wifi working... see http://beagleboard.org/latest-images
+
+***
+
+## Debian
+
+Follow the normal [installation instructions](../getting-started/installation.html) to install Node-RED, 
+and after doing so return here.
+
+<b>NOTE - </b>
+The new Garbage Collector (GC) algorythm in node.js v0.10.x behaves differently than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit larger than the 512MB in the BBB - this can cause the BBB to crash if left running for a long time, so we recommend starting Node-RED like this
+
+    $ cd node-red
+    $ node --max-old-space-size=128 red.js
+    
+This extra parameter limits the space it can use to 128MB before cleaning up. If you are running nothing else on your BBB feel free to up that to 192 or 256...  the command `free -h` will give you some clues if you wish to tweak.
+
+Once Node-RED is started, assuming you haven't changed the hostname, browse to
+<http://beaglebone.local:1880>.
+
+#### BBB specific nodes
+
+There are some great BBB specific nodes now available in our Node-red-nodes project on Github - https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB - kudos to Max.
+These give you direct access to the I/O pins in the simplest possible manner.
+
+Also for experts, the `bonescript` module can be made available for use in Function nodes.
+
+To do this, update `settings.js` to add the `bonescript` module to the
+Function global context:
+
+    //functionGlobalContext: { }  
+    functionGlobalContext: { bonescript:require('bonescript') }
+
+The module is then available to any functions you write as `context.global.bonescript`.
+
+#### Making Node-RED autostart on boot (optional)
+
+The easiest way to autostart Node-RED is to use `screen` so you can get to the
+console at any time. To install screen, if it is not already there, run:
+
+    $ sudo apt-get install screen
+
+Then make Node-RED into a service but using init.d - thanks to our contributors for pointing this out.
+
+see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
+
+If you copy the init script into /etc/init.d/node-red and make it executable you can then stop, start and restart Node-RED by
+
+    $ sudo service node-red stop
+    $ sudo service node-red start
+    $ sudo service node-red restart
+
+If you need Node-RED to autostart on boot then use this command
+
+    $ sudo update-rc.d node-red defaults
+    
+Once running you should then be able to attach to the screen session to see the console by running:
+
+    $ sudo screen -r red
+    
+To detach from the session and leave it running, type Ctrl-A-D.
+
+
+***
+## Angstrom 
 
 #### Environment
 
@@ -54,8 +119,11 @@ and after doing so return here.
 
 #### Configuring Node-RED
 
-There are not any specific nodes for the BBB. Instead, the `bonescript` module
-can be made available for use in Function nodes.
+#### BBB specific nodes
+
+There are some great BBB specific nodes now available in our Node-red-nodes project on Github - https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB - kudos to Max.
+
+Also for experts, the `bonescript` module can be made available for use in Function nodes.
 
 To do this, update `settings.js` to add the `bonescript` module to the
 Function global context:
