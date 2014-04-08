@@ -51,7 +51,7 @@ Then make Node-RED into a service but using init.d - thanks to our contributors 
 
 see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
 
-If you copy the init script into /etc/init.d/node-red and make it executable you can then stop, start and restart Node-RED by
+Copy the init script into /etc/init.d/node-red and make it executable. You will also need to edit line 22 `cd /home/pi/node-red` to point to wherever you have installed Node-RED. You can then stop, start and restart Node-RED by
 
     $ sudo service node-red stop
     $ sudo service node-red start
