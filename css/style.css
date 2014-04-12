@@ -1,262 +1,162 @@
 body {
-    background: #272b30;
-}
-.collapse {
-    display: block;
-}
-.shadow {
-    box-shadow: 0px 2px 3px #676767;
-}
-.brand,h1,h2,h3,h4,h5 {
-    font-family: 'Roboto Slab', serif;
-    text-shadow: none;
-}
-
-.brand {
-    font-weight: 400 !important;
-}
-.brand img {
-    height: 20px;
-    margin-top: -4px;
-    margin-right: 5px;
-}
-.main-content {
-    color: #676767;
-}
-.main-content-content {
-    line-height: 24px;
-}
-
-.main-content-content h4 {
-    margin-top: 18px;
-}
-.
-
-.main-content li {
-    line-height: 2em;
-}
-.navbar-inverse .navbar-inner {
-    background: #272b30;
-    border:none;
-}
-.navbar {
-    background: #272b30;
-    border:none;
-}
-
-.navbar ul li a {
-    height: 48px;
-    line-height: 2em;
-    font-size: 16px;
-    font-family: 'Roboto Slab', serif;
-}
-
-.navbar ul li.current {
-    border-bottom: 2px solid #eee;
-}
-.navbar ul li.current a {
-    color: #fff;
-}
-.main-content {
-    background: #fff;
-    border-radius: 0px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-.main-content a {
-    color: #aa6767;
-}
-li.active {
-    border-color: #676767 !important;
-    border-left: 1px solid;
-    border-right: 1px solid;
-}
-
-.banner {
-    padding: 0px 15px 0px 15px;
+    color: #555;
     background: #eee;
-    margin: 50px 0 20px 0;
-}    
-.bottom-banner {
-    margin-bottom: 0;
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 1.6em;
 }
-.banner h1 {
-    color: #676767;
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a.button {
+    box-shadow: #999 5px 5px 20px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 60px;
+    border-radius: 5px;
+    background: #aa6767;
+    color: #eee;
+}
+a.button:hover {
+    background: #7F4545;
+}
+h1,h2,h3,h4,h5 {
+    font-family: "Roboto Slab";
+    font-weight: normal;
+}
+h1 {
+    font-size: 36px;
     font-weight: bold;
 }
-.lead {
-    color: #9a9a9a;
+h2 {
+    font-size: 30px;
 }
-.screenshot {
-    box-shadow: 15px 15px 50px #676767; 
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
 }
 
-.navbar-fixed-top {
-    margin-bottom: 0;
+/**** HEADER ****/
+.header {
+    font-family: "Roboto Slab";
+    font-size: 20px;
+    line-height: 50px;
+    color: #999;
+    padding: 0px 10px;
+    min-height: 50px;
+    background: #333;
 }
-.footer {
+.header-content {
+    width: 100%;
+	max-width: 1155px;
+	min-width: 755px;
+	margin: 0 auto;
+    background: #333;
+    border-bottom: 5px solid #333;
+}
+.header-content .brand {
+    display: inline-block;
+    width: 160px;
+    color: #f6f6f6;
+    float: left;
+    margin-top: 5px;
+}
+.header-content .logo {
+    vertical-align: middle;
+    height: 20px;
+}
+.header-content a {
+    color: #999;
+}
+.header-content ul {
+    margin-left: 170px;
+    text-align: right;
+    list-style-type: none;
+    margin: -0;
+    padding: 0;
+}
+.header-content li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.header-content li a {
+    display: block;
+    font-size: 16px;
+    padding: 0 15px 0 15px;
+}
+.header-content li.current a {
+    color: #fff;
+    border-bottom: 5px solid #fff;
+}
+.header a:hover {
+    text-decoration: none;
     color: #eee;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.8em;
+}
+.header ul a:hover {
+    border-bottom: 5px solid #eee;
+}
+/**** END HEADER ****/
+
+.footer {
+    background: #333;
+}
+
+.footer .grid {
+    color: #eee;
+    padding: 20px 0;
+    font-family: Arial;
 }
 .footer a {
     color: #eee;
-    text-decoration: none;
 }
-.btn-download {
-    background: #aa6767;
-    border:none;
-    text-shadow: none;
-    font-size: 16px;
-    color: #fff;
-    padding: 15px; 
+
+.footer .content {
+    height: auto;
+    min-height: 0;
+    margin: 20px auto;
 }
-.btn-download .download-link {
-    letter-spacing: 1px;
-    font-family: 'Roboto Slab', serif;
+
+.footer .headline {
+    margin: 80px auto 20px auto;
 }
-.btn-download .download-version {
-    font-size: 14px;
-    color:  #eee;
-    margin-top: 5px;
-}
-.btn-download:hover {
-    background: #7F4545;
-    border:none;
-    text-shadow: none;
-}
-.download-help {
-    padding-top: 20px;
+.footer {
     text-align: center;
-    color: #9a9a9a;
-}
-.download-help a {
-    color:  #aa6767;
-}
-.alert {
-    text-shadow: none;
 }
 
-div.features h3 {
-    color: #fff;
-}
-div.features p {
-    padding-left: 10px;
-    font-size: 16px;
-}
-
-div.news {
-    border-left:1px #eee solid;
-    padding-left: 20px;
-}
-
-ul.toc {
-    /* border-radius: 5px; */
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0 0 20px 0;
-    padding: 0;
-    /*border: 1px solid #ccc;*/
-    border-right: 1px solid #ddd;
-}
-ul.toc > li:first-child {
-    border-bottom: 1px solid #ddd;
-}
-ul.toc > li {
-    /*border-bottom: 1px solid #ccc;*/
-    background: /*#eee;*/ #fff;
-}
-ul.toc > li:last-child {
-    border-bottom: none;
-}
-ul.toc li  a {
-    padding: 8px 10px;
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: /*#272b30;*/ #999;
-}
-ul.toc li a:hover {
-    text-decoration:none;
-    background: /*#ddd;*/ #eee;
-}
-ul.toc > li > ul {
-    margin: 0;
-    padding:0;
-    list-style-type: none;    
-}
+.ets-link {
+    margin: 10px 0px;
     
-ul.toc > li > ul > li {
-    /*border-top: 1px solid #dadada;*/
 }
-ul.toc > li > ul > li a {
-    padding: 6px 6px 6px 30px;
-}
-
-
-ul.toc > li  a.active {
-    color: /*#fff;*/ #333;
-    background: /*#a8a8a8;*/ #ddd;
+.ets-globe {
+    width: 60px;
+    vertical-align: middle;
 }
 
-
-h3.pagetitle {
-    margin-top: 0px;
-    padding-bottom: 5px;
-    padding-right: 10px;
-    border-bottom: 1px solid #676767;
-}
-
-dt {
-    font-family:monospace;
-    text-shadow: none;
-}
-dd {
-    margin: 2px 30px 18px;
-}
-
-ul.news {
-    margin:0 0 40px 0;
-    padding:0;
-    list-style-type: none;
-}
-ul.news li {
-    padding: 5px 15px;
-}
-ul.news li span.post-title {
-    font-family: 'Roboto Slab', serif;
-    font-size: 18px;
-}
-ul.news li span.post-date {
-    font-size: 14px;
-    color: #aa6767;
-}
-ul.news li a {
-    color: #d8d8d8;
-    line-height: 30px;
-}
-ul.news li a:hover {
-    color: #fff;
-}
-@media (max-width: 979px) {
-    .banner {
-        margin: 10px -20px;
+@media handheld, only screen and (max-width: 755px) {
+    .header-content .brand {
+        float: none;
     }
-    
-    .navbar ul li a {
-        height: 32px;
-        line-height: 1em;
+    .header-content ul {
+        margin: 0;
+        text-align: left;
     }
-    
-    .navbar ul li.current {
-        border-right: 2px solid #eee;
-        border-bottom: none;
+
+    .header-content li {
+        display: block;
+        line-height: 24px;
     }
-    
-    div.news {
-        border-left:none;
-        padding-left: none;
+    .header-content li.current a {
+        border: none;
+    }
+    .header ul a:hover {
+        border: none;
     }
 }
+
 

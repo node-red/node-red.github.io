@@ -1,0 +1,136 @@
+.title, .intro, .nodes {
+    background: #eee;
+}
+
+.features {
+    background: #fff;
+}
+
+.links {
+    background: #666;
+}
+
+.links .grid {
+    color: #eee;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-family: Arial;
+}
+
+.links a {
+    color: #eee;
+    
+}
+.links .content {
+    font-size: 20px;
+}
+.link-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+}
+.link-icon:hover {
+    text-decoration: none;
+}
+
+.links .content {
+    height: auto;
+    min-height: 0;
+    margin: 20px auto;
+}
+
+.links .col-1-2 .content {
+    width: 350px;
+}
+.links .headline {
+    margin: 0 auto 80px auto;
+}
+
+.content {
+    min-height: 250px;
+    margin: 80px 0;
+}
+
+.blurb p {
+    margin-top: 0;
+}
+.blurb h3, .nodes h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+.feature {
+    max-width: 485px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.feature img {
+    max-width: 445px;
+    width: 100%;
+}
+.title .content {
+    margin: 80px 0 0px 0;
+    height: 280px;
+    text-align: center;
+}
+.title h1 {
+    margin-bottom: 10px;
+    color: #676767;
+}    
+.title h2 {
+    margin-top: 0px;
+    font-size: 20px;
+    font-family: "Roboto Slab";
+    font-weight: normal;
+    color: #555;
+}
+.title img {
+    margin: auto;
+    max-width: 769px;
+    width: 100%;
+}
+
+.nodes .content {
+    height: auto;
+    min-height: 0;
+    margin: 40px auto;
+}
+.nodes .col-1-2 .content {
+    width: 290px;
+}
+
+.nodes .grid {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.node-image {
+    width: 100px;
+    vertical-align: top;
+    display: inline-block;
+}
+.node-block {
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.headline h3 {
+    text-align: center;
+}
+.nodes h4 {
+    font-family: "Arial";
+    font-weight: normal;
+    margin-top: 3px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.helplink {
+    text-align: center;
+    font-size: 14px;
+}
+.helplink a {
+    color: #aa6767;
+}
+

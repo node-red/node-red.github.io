@@ -1,0 +1,27 @@
+.post-header h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar a.icon {
+    margin: 0 10px;
+    font-size: 20px;
+}
+.sidebar h4 {
+    margin-bottom: 5px;
+}
+.sidebar p {
+    margin: 5px 0;
+}
+
+.pagination {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.page-number {
+    display: inline-block;
+    width: 200px;
+}
+.sidebar {
+    margin-top: 30px;
+}

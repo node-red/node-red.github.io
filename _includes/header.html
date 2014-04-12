@@ -4,34 +4,29 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Node-RED{% if page.title %} : {{ page.title }}{% endif %}</title>
+	
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="/bootstrap/css/bootstrap.slate.min.css" rel="stylesheet" media="screen">
-	<link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
+	<link href="/css/simplegrid.css" rel="stylesheet" media="screen">
 	<link href="/css/style.css" rel="stylesheet" media="screen">
+	<link href="/css/front.css" rel="stylesheet" media="screen">
+	<link href="/css/docs.css" rel="stylesheet" media="screen">
+	<link href="/css/blog.css" rel="stylesheet" media="screen">
 </head>
 <body>
-  <div class="navbar navbar-inverse navbar-fixed-top shadow">
-    <div class="navbar-inner">
-      <div class="container">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="/"><img src="/node-red.png"> Node-RED</a>
-        <div class="nav-collapse collapse pull-right">
-          <ul class="nav">
-            <li{% if page.url == "/index.html" %} class="current"{% endif %}><a href="http://nodered.org">home</a></li>
-            <li><a href="http://blog.nodered.org">blog</a></li>
-            <li{% if page.url contains "/docs/" %} class="current"{% endif %}><a href="http://nodered.org/docs/">documentation</a></li>
-            <li><a href="http://flows.nodered.org">flows</a></li>
+
+<div class="header">
+    <div class="header-content">
+        <div class="brand"><a href="/"><img class="logo" src="/node-red.png" /> Node-RED</a></div>
+        <ul class="navigation">
+            <li {% if page.url == "/index.html" %}class="current"{% endif %}><a href="/">home</a></li>
+            <li><a href="http://blog.nodered.org/">blog</a></li>
+            <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
+            <li><a href="http://flows.nodered.org/">flows</a></li>
             <li><a href="http://github.com/node-red/node-red">github</a></li>
-          </ul>
-        </div>
-      </div>
+        </ul>
     </div>
-  </div>
+</div>
+
