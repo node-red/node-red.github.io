@@ -15,7 +15,7 @@ After [installing](../getting-started/installation.html) Node-RED, follow these
 Ensure that the test commands work.
 
 <b>NOTE - </b>
-The new Garbage Collector (GC) algorythm in node.js v0.10.x behaves differently than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit larger than the 512MB in the Pi - this can cause the Pi to crash if left running for a long time, so we recommend starting Node-RED like this
+The new Garbage Collector (GC) algorithm in node.js v0.10.x behaves differently than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit larger than the 512MB in the Pi - this can cause the Pi to crash if left running for a long time, so we recommend starting Node-RED like this
 
     $ cd node-red
     $ node --max-old-space-size=128 red.js
