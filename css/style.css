@@ -12,7 +12,7 @@ a:hover {
     text-decoration: underline;
 }
 a.button {
-    box-shadow: #999 5px 5px 20px;
+    box-shadow: rgba(0,0,0,0.4) 5px 5px 20px;
     text-decoration: none;
     display: inline-block;
     padding: 20px 60px;
@@ -101,6 +101,19 @@ h4 {
 .header ul a:hover {
     border-bottom: 5px solid #eee;
 }
+
+.header .menu {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    display: none;
+    width: 55px;
+    height: 45px;
+    color: #999;
+    text-align: center;
+}
+    
+
 /**** END HEADER ****/
 
 .footer {
@@ -137,19 +150,31 @@ h4 {
     width: 60px;
     vertical-align: middle;
 }
-
+.hide {
+    display: none;
+}
 @media handheld, only screen and (max-width: 755px) {
+    
+    .header .menu {
+        display: inline-block;
+    }
+    
+    .header-content {
+        min-width: 0;
+    }
+    
     .header-content .brand {
         float: none;
     }
     .header-content ul {
+        display: none;
         margin: 0;
-        text-align: left;
+        text-align: right;
     }
 
     .header-content li {
         display: block;
-        line-height: 24px;
+        line-height: 26px;
     }
     .header-content li.current a {
         border: none;
