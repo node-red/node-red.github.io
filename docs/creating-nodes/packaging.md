@@ -3,6 +3,9 @@ layout: default
 title: Packaging
 ---
 
+*npm packaging is still being finalised... please wait until 0.8 is released before
+using*
+
 Nodes can be packaged as npm modules. This makes them easy to install along with
 any dependencies they may have.
 
