@@ -5,9 +5,10 @@ title: Creating Nodes
 
 The main way Node-RED can be extended is to add new nodes into its palette.
 
-Each node is defined in a pair of files; a JavaScript file that defines what the
-node does, and an html file that defines the node's properties, edit dialog and
-help text.
+This guide is still being written (which is why it doesn't appear in the table of
+contents yet).
+
+The following sections exist and are largely complete:
 
  - [Creating your first node](first-node.html)
  - [JavaScript File](node-js.html)
