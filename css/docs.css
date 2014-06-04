@@ -7,74 +7,78 @@
     padding: 0 30px;
     min-height: 730px;
 }
+
+h1.docs-title {
+    font-size: 30px;
+    border-bottom: 2px solid #B68181;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    font-weight: normal;
+
+}
 ul.toc {
-    /* border-radius: 5px; */
     overflow: hidden;
     list-style-type: none;
     margin: 18px 0 20px 0;
     padding: 0;
-    /*border: 1px solid #ccc;*/
-    border-right: 1px solid #ddd;
 }
-ul.toc > li:first-child {
-    border-bottom: 1px solid #ddd;
+ul.toc ul {
+    list-style-type: none;
+    padding: 0;
 }
-ul.toc > li {
-    /*border-bottom: 1px solid #ccc;*/
-    background: /*#eee;*/ #fff;
-}
-ul.toc > li:last-child {
-    border-bottom: none;
-}
-ul.toc li  a {
-    padding: 8px 10px;
+
+ul.toc li a, ul.toc li span {
+    padding: 6px 10px;
     display: block;
     width: 100%;
     height: 100%;
-    color: /*#272b30;*/ #999;
+    color: #666;
+    border-left: 8px solid #eee;
+    -border-right: 2px solid #B68181;
+    -margin-bottom: 3px;
+}
+ul.toc li.tocheader {
+    margin-top: 3px;
+}
+ul.toc li a.active {
+    border-left-color: #B68181;
+    -border-right-color: #eee;
+    background: #eee;
 }
 ul.toc li a:hover {
-    text-decoration:none;
-    background: /*#ddd;*/ #eee;
+    border-left-color: #B68181;
 }
-ul.toc > li > ul {
-    margin: 0;
-    padding:0;
-    list-style-type: none;    
+ul.toc li.tocheader span {
+    background: #B68181;
+    border-left-color: #B68181;
+    -border-right-color: #B68181;
+    color: #fff;
 }
-    
-ul.toc > li > ul > li {
-    /*border-top: 1px solid #dadada;*/
+ul.toc li li a {
+    padding-left: 40px;
 }
-ul.toc > li > ul > li a {
-    padding: 6px 6px 6px 30px;
-}
-
-
-ul.toc > li  a.active {
-    color: /*#fff;*/ #333;
-    background: /*#a8a8a8;*/ #ddd;
-}
-
 
 .docs-content a {
     color: #aa6767;
 }
-
 .docs-content img {
     max-width: 100%;
 }
 .docs-content pre {
     padding: 4px 10px;
-    background: #444;
-    color: #FFF7BB;
+    background: #F3E7E7;
+    color: #533;
     border-radius: 3px;
+    border: 1px solid #BE9A9A;
 }
 pre,code {
-    font-family: 'PT Mono', Monospace;
+    font-family: 'Ubuntu Mono', Monospace;
 }
 code {
-    font-size: 0.95em;
+    color: #533;
+    background: #F3E7E7;
+    padding: 2px 4px;
+    border-radius:2px;
 }
 
 pre {
@@ -84,3 +88,8 @@ pre {
     white-space: -o-pre-wrap;
     word-wrap: break-word;
 }
+
+pre>code {
+    padding: 0;
+}
+

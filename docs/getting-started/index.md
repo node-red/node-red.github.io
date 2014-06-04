@@ -3,8 +3,6 @@ layout: default
 title: Getting Started
 ---
 
-## Getting Started
-
 This guide will help you get Node-RED installed and running in just a few minutes.
 
 1. [Installation](installation.html)

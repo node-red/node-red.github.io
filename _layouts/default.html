@@ -2,12 +2,11 @@
 <div class="docs">
   <div class="grid">
     <div class="col-3-12">
-      <ul class="toc">
-        {% include docs-toc.html %}
-      </ul>
+    {% include docs-toc.html %}
     </div>
     <div class="col-9-12">
       <div class="docs-content">
+        <h1 class="docs-title">{{ page.title }}</h1>
         {{ content }}
       </div>
     </div>

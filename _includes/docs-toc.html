@@ -1,21 +1,55 @@
-<li><a href="/docs/index.html" {% if page.url == "/docs/index.html" %}class="active"{% endif %}>Documentation</a></li>
-<li><a href="/docs/getting-started/" {% if page.url == "/docs/getting-started/" %}class="active"{% endif %}>Getting Started</a>
-<ul>
-  <li><a href="/docs/getting-started/installation.html" {% if page.url == "/docs/getting-started/installation.html" %}class="active"{% endif %}>Installation</a>
-  <li><a href="/docs/getting-started/upgrading.html" {% if page.url == "/docs/getting-started/upgrading.html" %}class="active"{% endif %}>Upgrading</a>
-  <li><a href="/docs/getting-started/running.html" {% if page.url == "/docs/getting-started/running.html" %}class="active"{% endif %}>Running</a>
-  <li><a href="/docs/getting-started/first-flow.html" {% if page.url == "/docs/getting-started/first-flow.html" %}class="active"{% endif %}>Creating your first flow</a>
-  <li><a href="/docs/getting-started/second-flow.html" {% if page.url == "/docs/getting-started/second-flow.html" %}class="active"{% endif %}>Creating your second flow</a>
+<ul class="toc">
+    <li class="tocheader"><span>Documentation</span>
+        <ul>
+            <li><a href="/docs/index.html" {% if page.url == "/docs/index.html" %}class="active"{% endif %}>Overview</a>
+        </ul>
+    </li>
+    <li class="tocheader"><span>Getting Started</span>
+        <ul>
+            <li><a href="/docs/getting-started/installation.html" {% if page.url == "/docs/getting-started/installation.html" %}class="active"{% endif %}>Installation</a>
+            <li><a href="/docs/getting-started/upgrading.html" {% if page.url == "/docs/getting-started/upgrading.html" %}class="active"{% endif %}>Upgrading</a>
+            <li><a href="/docs/getting-started/running.html" {% if page.url == "/docs/getting-started/running.html" %}class="active"{% endif %}>Running</a>
+            <li><a href="/docs/getting-started/first-flow.html" {% if page.url == "/docs/getting-started/first-flow.html" %}class="active"{% endif %}>Creating your first flow</a>
+            <li><a href="/docs/getting-started/second-flow.html" {% if page.url == "/docs/getting-started/second-flow.html" %}class="active"{% endif %}>Creating your second flow</a>
+        </ul>
+    </li>
+    <li class="tocheader"><span>Using Node-RED</span>
+        <ul>
+            <li><a href="/docs/configuration.html" {% if page.url == "/docs/configuration.html" %}class="active"{% endif %}>Configuration</a></li>
+            <li><a href="/docs/writing-functions.html" {% if page.url == "/docs/writing-functions.html" %}class="active"{% endif %}>Writing Functions</a></li>
+            <li><a href="/docs/embedding.html" {% if page.url == "/docs/embedding.html" %}class="active"{% endif %}>Embedding into an existing app</a></li>
+        </ul>
+    </li>
+    <!--
+    <li class="tocheader"><span>Creating Nodes</span>
+        <ul>
+            <li><a href="/docs/creating-nodes/" {% if page.url == "/docs/creating-nodes/index.html" %}class="active"{% endif %}>Overview</a></li>
+            <li><a href="/docs/creating-nodes/first-node.html" {% if page.url == "/docs/creating-nodes/first-node.html" %}class="active"{% endif %}>Creating your first node</a></li>
+            <li><a href="/docs/creating-nodes/node-js.html" {% if page.url == "/docs/creating-nodes/node-js.html" %}class="active"{% endif %}>JavaScript File</a>
+            <li><a href="/docs/creating-nodes/node-html.html" {% if page.url == "/docs/creating-nodes/node-html.html" %}class="active"{% endif %}>HTML File</a>
+            <li><a href="/docs/creating-nodes/properties.html" {% if page.url == "/docs/creating-nodes/properties.html" %}class="active"{% endif %}>Node properties</a></li>
+            <li><a href="/docs/creating-nodes/appearance.html" {% if page.url == "/docs/creating-nodes/appearance.html" %}class="active"{% endif %}>Node appearance</a></li>
+            <li><a href="/docs/creating-nodes/status.html" {% if page.url == "/docs/creating-nodes/status.html" %}class="active"{% endif %}>Node status</a></li>
+            <li><a href="/docs/creating-nodes/config-nodes.html" {% if page.url == "/docs/creating-nodes/config-nodes.html" %}class="active"{% endif %}>Configuration nodes</a></li>
+            <li><a href="/docs/creating-nodes/packaging.html" {% if page.url == "/docs/creating-nodes/packaging.html" %}class="active"{% endif %}>Packaging</a></li>
+        </ul>
+    </li>
+    -->
+    <li class="tocheader"><span>Hardware</span>
+        <ul>
+            <li><a href="/docs/hardware/arduino.html" {% if page.url == "/docs/hardware/arduino.html" %}class="active"{% endif %}>Arduino</a>
+            <li><a href="/docs/hardware/raspberrypi.html" {% if page.url == "/docs/hardware/raspberrypi.html" %}class="active"{% endif %}>Raspberry Pi</a>
+            <li><a href="/docs/hardware/beagleboneblack.html" {% if page.url == "/docs/hardware/beagleboneblack.html" %}class="active"{% endif %}>BeagleBone Black</a>
+        </ul>
+    </li>
 </ul>
-</li>
-<li><a href="/docs/configuration.html" {% if page.url == "/docs/configuration.html" %}class="active"{% endif %}>Configuration</a></li>
-<li><a href="/docs/writing-functions.html" {% if page.url == "/docs/writing-functions.html" %}class="active"{% endif %}>Writing Functions</a></li>
-<li><a href="/docs/creating-nodes.html" {% if page.url == "/docs/creating-nodes.html" %}class="active"{% endif %}>Creating Nodes</a></li>
-<li><a href="/docs/embedding.html" {% if page.url == "/docs/embedding.html" %}class="active"{% endif %}>Embedding into an existing app</a></li>
-<li><a href="#">Hardware</a>
-<ul>
-  <li><a href="/docs/hardware/arduino.html" {% if page.url == "/docs/hardware/arduino.html" %}class="active"{% endif %}>Arduino</a>
-  <li><a href="/docs/hardware/raspberrypi.html" {% if page.url == "/docs/hardware/raspberrypi.html" %}class="active"{% endif %}>Raspberry Pi</a>
-  <li><a href="/docs/hardware/beagleboneblack.html" {% if page.url == "/docs/hardware/beagleboneblack.html" %}class="active"{% endif %}>BeagleBone Black</a>
-</ul>
-</li>
+
+<script>
+//$(function() {
+//    $("li.tocheader ul").hide();
+//    $("li.tocheader a.active").parent().parent().show();
+//    $("li.tocheader>span").click(function(e) {
+//        $(this).next().toggle("fast");
+//    });
+//});
+</script>
