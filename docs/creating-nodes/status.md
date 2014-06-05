@@ -18,6 +18,9 @@ image above:
         
         this.status({fill:"green",shape:"dot",text:"connected"});
 
+*By default, the node status information is not displayed in the editor. It can
+be enabled by selecting the Status option in the drop-down menu.*
+
 ### Status object
 
 A status object consists of three properties: `fill`, `shape` and `text`.

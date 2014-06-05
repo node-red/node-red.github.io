@@ -53,7 +53,7 @@ The entries in the `defaults` array can have the following attributes:
 - `validate` : (function) *optional* a function that can be used to validate the
   value of the property.
 - `type` : (string) *optional* if this property is a pointer to a
-  [configuration node](#),  this identifies the type of the node.
+  [configuration node](config-nodes.html),  this identifies the type of the node.
 
 ### Reserved property names
 

@@ -101,6 +101,9 @@ provide a meaningful description of what the node does. It should identify what
 properties it sets on outgoing messages and what properties can be set on incoming
 messages.
 
+The content of the first `<p>` tag is used as the tooltip when hovering over
+nodes in the palette.
+
     <script type="text/x-red" data-help-name="node-type">
        <p>Some useful help text about the node.</p>
        <p>Outputs an object called <b>msg</b> containing <b>msg.topic</b> and
