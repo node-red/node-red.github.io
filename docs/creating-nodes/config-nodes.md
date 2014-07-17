@@ -26,7 +26,7 @@ key differences:
                 port: {value:1234,required:true,validate:RED.validators.number()},
             },
             label: function() {
-                return this.broker+":"+this.port;
+                return this.host+":"+this.port;
             }
         });
     </script>
