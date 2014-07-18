@@ -3,7 +3,7 @@ layout: default
 title: Writing Functions
 ---
 
-The Function node allows arbitary code to be run against the messages that are
+The Function node allows arbitrary code to be run against the messages that are
 passed in, and then return zero or more messages to continue the flow. 
 
 The message is passed in as a JSON object called `msg`. By convention it will

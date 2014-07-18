@@ -10,7 +10,7 @@ You can get the latest version from <http://nodejs.org/download/>.
 Or, you may want to use a version from your operating system's package manager:
  <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>
  
-For Raspberry-Pi see the specific instrunctions [here](../hardware/raspberrypi.html).
+For Raspberry-Pi see the specific instructions [here](../hardware/raspberrypi.html).
 
 ### Install Node-RED
 
@@ -45,7 +45,7 @@ directory of Node-RED, run:
 
     $ npm install --production
     
-Whilst we alway try to ensure the repository is bug-free, it may contain features
+Whilst we always try to ensure the repository is bug-free, it may contain features
 still under development.
     
 ### Installing additional nodes

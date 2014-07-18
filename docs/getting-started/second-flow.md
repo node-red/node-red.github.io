@@ -86,7 +86,7 @@ and another with something like:
 
 #### 7. Summary
 
-You now have a flow that goes to the internet - gets the live UK total electricity
+You now have a flow that goes to the Internet - gets the live UK total electricity
 consumption - and converts it into a JavaScript object with demand in MW, and frequency in Hertz.
 
 The object is emitted out of the first output of the Function node.
