@@ -95,7 +95,7 @@ functionGlobalContext
 
 debugMaxLength
 : Debug Nodes - the maximum length, in characters, of any message sent to the
-  debug siderbar tab. Default: 1000
+  debug sidebar tab. Default: 1000
 
 mqttReconnectTime
 : MQTT Nodes - if the connection is lost, how long to wait, in milliseconds, 

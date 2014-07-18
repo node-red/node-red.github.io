@@ -3,7 +3,7 @@ layout: default
 title: Arduino
 ---
 
-There are two main ways for interacting with an Arduno using Node-RED. They
+There are two main ways for interacting with an Arduino using Node-RED. They
 both assume the Arduino is connected to the host computer via a USB connection.
 
 ***
