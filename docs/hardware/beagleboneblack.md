@@ -5,7 +5,7 @@ title: BeagleBone Black
 
 The BeagleBoneBlack already has node.js baked into it's OS, so some of these tips are optional.
 
-* NEWS - Beaglebone Black latest firmware image is now Debian based. It is so much easier to get things like Wifi working... see [http://beagleboard.org/latest-images](http://beagleboard.org/latest-images)
+* Note - Beaglebone Black latest firmware images are now Debian based. It is so much easier to get things like Wifi working... see [http://beagleboard.org/latest-images](http://beagleboard.org/latest-images)
 
 ***
 
@@ -51,7 +51,9 @@ Then make Node-RED into a service but using init.d - thanks to our contributors 
 
 see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
 
-Copy the init script into /etc/init.d/node-red and make it executable. You will also need to edit line 22 `cd /home/pi/node-red` to point to wherever you have installed Node-RED. You can then stop, start and restart Node-RED by
+Copy the init script into /etc/init.d/node-red and make it executable. You will also need to edit line 22 `cd /home/pi/node-red` to point to wherever you have installed Node-RED. The script above runs as a user called pi - so also edit both the start and stop lines cotaining pi to be the user that you wish to run as. 
+
+You can then stop, start and restart Node-RED by
 
     $ sudo service node-red stop
     $ sudo service node-red start
@@ -60,6 +62,11 @@ Copy the init script into /etc/init.d/node-red and make it executable. You will 
 If you need Node-RED to autostart on boot then use this command
 
     $ sudo update-rc.d node-red defaults
+    
+You also need to have access to the bonescript library at boot - the easiest way to do this is to install a copy locally to Node-RED
+
+    $ cd ~/node-red
+    $ npm install bonescript
     
 Once running you should then be able to attach to the screen session to see the console by running:
 
