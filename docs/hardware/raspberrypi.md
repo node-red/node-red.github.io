@@ -26,6 +26,10 @@ Once you restart Node-RED and then browse to <b>http://{your-pi-address}:1880</b
 One to read from pins, and one to control pins. If they are not there then check the gpio command installed
 correctly to `/usr/local/bin/gpio` and is executable by the user that you are running as.
 
+NOTE: the default Midori browser does not have adequate javascript support to use it with Node-RED. If you want to use a built in browser on the Pi please install the Chrome browser and use that pointed at http://localhost:1880. Chromium can be installed by
+
+    $ sudo apt-get install chromium
+
 There are also some extra hardware specific nodes (for the Pibrella, PiFace and LEDBorg plug on modules) available in the [node-red-nodes project](https://github.com/node-red/node-red-nodes/tree/master/hardware/Pi) on Github. 
 
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
