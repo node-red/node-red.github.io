@@ -122,16 +122,10 @@ toggling on and off once a second.
 
 ### Making Node-RED autostart on boot (optional)
 
-The easiest way to autostart Node-RED is to use `screen` so you can get to the
-console at any time. To install screen, if it is not already there, run:
+To make Node-RED into a service by using init.d - thanks to our contributors for this.
+[Init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94)
 
-    $ sudo apt-get install screen
-
-Then make Node-RED into a service but using init.d - thanks to our contributors for pointing this out.
-
-see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
-
-If you copy the init script into /etc/init.d/node-red and make it executable you can then stop, start and restart Node-RED by
+Copy the init.d script into /etc/init.d/node-red and make it executable. You can then stop, start and restart Node-RED by
 
     $ sudo service node-red stop
     $ sudo service node-red start
@@ -148,4 +142,10 @@ Once running you should then be able to attach to the screen session to see the 
 To detach from the session and leave it running, type Ctrl-A-D.
 
 
+And alternative is to use `screen` so you can get to the
+console at any time. To install screen, if it is not already there, run:
+
+    $ sudo apt-get install screen
+
+then use a script like this [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
 
