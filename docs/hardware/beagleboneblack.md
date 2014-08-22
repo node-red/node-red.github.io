@@ -42,14 +42,9 @@ The module is then available to any functions you write as `context.global.bones
 
 #### Making Node-RED autostart on boot (optional)
 
-The easiest way to autostart Node-RED is to use `screen` so you can get to the
-console at any time. To install screen, if it is not already there, run:
+The easiest way to autostart Node-RED is to make Node-RED into a service but using init.d - thanks to our contributors for pointing this out.
 
-    $ sudo apt-get install screen
-
-Then make Node-RED into a service but using init.d - thanks to our contributors for pointing this out.
-
-see [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
+see [Node-RED init script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94)
 
 Copy the init script into /etc/init.d/node-red and make it executable. You will also need to edit line 22 `cd /home/pi/node-red` to point to wherever you have installed Node-RED. The script above runs as a user called pi - so also edit both the start and stop lines cotaining pi to be the user that you wish to run as. 
 
