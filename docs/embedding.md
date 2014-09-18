@@ -27,11 +27,12 @@ application.
     // Create a server
     var server = http.createServer(app);
     
-    // Create the settings object
+    // Create the settings object - see default settings.js file for other options
     var settings = {
         httpAdminRoot:"/red",
         httpNodeRoot: "/api",
-        userDir:"/home/nol/.nodered/"
+        userDir:"/home/nol/.nodered/",
+        functionGlobalContext: { }    // enables global context
     };
     
     // Initialise the runtime with a server and settings
