@@ -51,7 +51,8 @@ editor. It is an object with the following properties:
 
 
 - `category`: (string) the palette category the node appears in
-- `defaults`: (array) the [editable properties](properties.html) for the node.
+- `defaults`: (object) the [editable properties](properties.html) for the node.
+- `credentials`: (object) the [credential properties](credentials.html) for the node.
 - `inputs`: (number) how many inputs the node has, either `0` or `1`.
 - `outputs`: (number) how many outputs the node has. Can be `0` or more.
 - `icon`: (string) the [icon](appearance.html#icon) to use.
@@ -61,7 +62,9 @@ editor. It is an object with the following properties:
 - `align`: (string) the [alignment](appearance.html#alignment) of the icon and label.
 - `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
-    
+- `onpaletteadd`: (function) called when the node type is added to the palette.
+- `onpaletteremove`: (function) called when the node type is removed from the palette.
+
 ### Edit dialog
 
 The edit template for a node describes the content of its edit dialog.

@@ -3,7 +3,7 @@ layout: default
 title: Node properties
 ---
 
-A node's properties are defined by the `defaults` array in its html definition.
+A node's properties are defined by the `defaults` object in its html definition.
 These are the properties that get passed to the node constructor function when
 an instance of the node is created in the runtime. 
 
@@ -11,12 +11,12 @@ In the example from the [creating you first node section](first-node.html), the
 node had a single property called `name`. In this section, we'll add a new
 property called `prefix` to the node:
 
-1. Add a new entry to the `defaults` array:
+1. Add a new entry to the `defaults` object:
 
-       defaults: {
-           name: {value:""},
-           prefix: {value:""}
-       },
+        defaults: {
+            name: {value:""},
+            prefix: {value:""}
+        },
    
    The entry includes the default `value` to be used when a new node of this type
    is dragged onto the workspace.
