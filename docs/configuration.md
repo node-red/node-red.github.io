@@ -27,18 +27,18 @@ nodesDir
   structure.
 
 uiHost
-: the interface to listen for connections on. Default: 0.0.0.0 - 
+: the interface to listen for connections on. Default: `0.0.0.0` - 
   *all IPv4 interfaces*.
 
   *Standalone only*.
 
 uiPort
-: the port used to serve the editor UI. Default: 1880.
+: the port used to serve the editor UI. Default: `1880`.
   
   *Standalone only*.
 
 httpAdminRoot
-: the root url for the editor UI. Default: '/'
+: the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
 
 httpAdminAuth
 : enables HTTP Basic Authentication on the editor UI:
@@ -53,11 +53,13 @@ httpAdminAuth
   *Standalone only*.
 
 httpNodeRoot
-: the root url for nodes that provide HTTP endpoints. Default: '/'
+: the root url for nodes that provide HTTP endpoints. If set to `false`, all node-based HTTP endpoints are disabled. Default: `/`
 
 httpNodeAuth
 : enables HTTP Basic Authentication. See `httpAdminAuth` for format.
 
+httpRoot
+: this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
 
 https
 : enables https, with the specified options object, as defined 
@@ -65,10 +67,13 @@ https
 
   *Standalone only*.
 
+disableEditor
+: if set to `true`, prevents the editor UI from being served by the runtime. The admin api endpoints remain active. Default: `false`.
+
 httpStatic
 : a local directory from which to serve static web content from. This content is
-  served from the top level url, '/'. When this property is used, `httpAdminRoot` must
-  also be used to make editor UI available at a path other than '/'.
+  served from the top level url, `/`. When this property is used, `httpAdminRoot` must
+  also be used to make editor UI available at a path other than `/`.
 
   *Standalone only*.
 
