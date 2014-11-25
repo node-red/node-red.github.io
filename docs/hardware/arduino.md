@@ -33,7 +33,7 @@ To ensure you have the Arduino nodes in the Node-RED palette, install the
 firmata npm module and restart Node-RED 
 
     $ cd node-red
-    $ npm install firmata
+    $ npm install arduino-firmata
     $ node red.js
 
 #### Blink
