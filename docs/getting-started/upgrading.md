@@ -10,7 +10,7 @@ title: Upgrading
 From the Node-RED install directory, copy the following files to another location:
 
 - `settings.js`, if you have customised it,
-- all files ending in `.json` in the top-level directory,
+- files ending in `.json` in the top-level directory, but not package.json,
 - the entire `lib/` directory,
 - any additional nodes installed in the `nodes/` directory.
 
@@ -27,6 +27,7 @@ From the Node-RED install directory, copy the following files to another locatio
 
 *Note*: if you have modified the default `settings.js` you should merge the
 changes into the version supplied with the new release rather than copy over it.
+*Note*: If you did backup `package.json` then do NOT allow it to copy over the new version.
 
 
 ### Upgrading via npm
