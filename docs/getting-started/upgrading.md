@@ -27,6 +27,7 @@ From the Node-RED install directory, copy the following files to another locatio
 
 *Note*: if you have modified the default `settings.js` you should merge the
 changes into the version supplied with the new release rather than copy over it.
+
 *Note*: If you did backup `package.json` then do NOT allow it to copy over the new version.
 
 
