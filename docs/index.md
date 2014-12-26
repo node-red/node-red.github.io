@@ -18,3 +18,7 @@ places you can do so:
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
  - Chat on `#nodered` on `irc.freenode.net`
 
+When reporting bugs or difficulties, please try to include the version number that
+you are running. It can be found as almost the first line of debug in the console window. For example :
+
+    01 Jan 12:00:00 - [red] Version: 0.9.1.git

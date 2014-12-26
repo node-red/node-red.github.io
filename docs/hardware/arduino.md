@@ -13,24 +13,29 @@ both assume the Arduino is connected to the host computer via a USB connection.
 As the Arduino appears as a Serial device, the Serial in/out nodes can be used
 to communicate with it.
 
-*TODO: add example of sketch for Serial*
+This is normally the case if you program the Arduino with the IDE, as you can
+then send and receive input over the serial port to interact with your creation.
+Just make sure you set the serial port speed (baud rate) to be the same at both
+ends.
 
 ***
 
 ### Firmata
 
 [Firmata](http://firmata.org/) is a protocol for communicating between an
-Arduino (as well as other microcontrollers) and the host computer, providing 
+Arduino (as well as other microcontrollers) and the host computer, providing
 direct access to the IO pins.
 
 #### Installation
 
 First you need to load the default Firmata sketch onto the Arduino using the
-standard Arduino software download tools. This is usually found under 
-*Files - Examples - Firmata - Standard Firmata*.
+standard Arduino software download tools. This is usually found in the Arduino
+IDE under the menu:
+
+    Files - Examples - Firmata - Standard Firmata
 
 To ensure you have the Arduino nodes in the Node-RED palette, install the
-firmata npm module and restart Node-RED 
+firmata npm module and restart Node-RED
 
     $ cd node-red
     $ npm install arduino-firmata
