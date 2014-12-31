@@ -8,6 +8,15 @@ Welcome to the Node-RED documentation. Inevitably, we're still getting all of
 the documentation into shape. Hopefully there is enough here to get you
 started with Node-RED.
 
+### More Nodes
+
+There are lots of nodes that are not in the main core of Node-RED, some from the
+project team and lots from contributors. We encourage contributors to publish them via
+NPM to make installation easy.
+
+  - [NPM simple search](https://www.npmjs.com/search?q=node-red-)
+  - [complete Node-RED project](https://github.com/node-red)
+
 ### Other places to get help
 
 If you have a question, suggestion or just want to say hello, there are various
