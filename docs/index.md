@@ -11,11 +11,10 @@ started with Node-RED.
 ### More Nodes
 
 There are lots of nodes that are not in the main core of Node-RED, some from the
-project team and lots from contributors. We encourage contributors to publish them via
-NPM to make installation easy.
+project team and lots from contributors. We encourage contributors to [publish them via
+NPM](creating-nodes/packaging.html) to make installation easy.
 
-  - [NPM simple search](https://www.npmjs.com/search?q=node-red-)
-  - [complete Node-RED project](https://github.com/node-red)
+You can search the NPM repository for the [`node-red` keyword](https://www.npmjs.com/browse/keyword/node-red). 
 
 ### Other places to get help
 
