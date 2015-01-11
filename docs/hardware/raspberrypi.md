@@ -17,7 +17,7 @@ install Node-RED, make sure the Python RPi.GPIO libraries are installed...
 
     $sudo apt-get install python-dev python-rpi.gpio
 
-**Change** Using RPI.GPIO is a change from using WiringPi - the main benefits
+**Change** Using RPi.GPIO is a change from using WiringPi - the main benefits
 are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
 
@@ -37,12 +37,11 @@ the command `free -h` will give you some clues if you wish to tweak.
 Once you restart Node-RED and then browse to <b>http://{your-pi-address}:1880</b>
 you should now see two rpi-gpio nodes in the advanced section of the pallette.
 One to read from pins, and one to control pins. If they are not there then check
-the nrgpio command installed correctly to `~/node-red/nodes/core/hardware/nrgpio`
-and is executable by the user that you are running as. To check:
+both the **nrgpio** and **nrgpio.py** commands installed correctly to the `~/node-red/nodes/core/hardware/` directory and are executable by the user that you are running as. To check:
 
     $ ~/node-red/nodes/core/hardware/nrgpio ver 0
 
-should return...  0.5.8    or greater - this is the version of the RPI.GPIO library.
+should return...  0.5.8    or greater - this is the version of the RPi.GPIO library.
 
 NOTE: the old Midori browser does not have adequate javascript support to
 use it with Node-RED. If you want to use a built in browser on the Pi please
