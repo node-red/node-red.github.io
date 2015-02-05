@@ -7,6 +7,10 @@ title: Raspberry Pi
 
 #### Installation
 
+**Note:** These instructions are for the Pi version 1. The Pi 2 has some known 
+issues due to the different processor architecture (ARMv7). We will update this document
+as soon as we have a working set of instructions.
+
 The simplest way to install node.js on Pi is
 
     wget http://node-arm.herokuapp.com/node_latest_armhf.deb
