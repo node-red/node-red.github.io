@@ -29,4 +29,4 @@ places you can do so:
 When reporting bugs or difficulties, please try to include the version number that
 you are running. It can be found as almost the first line of debug in the console window. For example :
 
-    01 Jan 12:00:00 - [red] Version: 0.9.1.git
+    01 Jan 12:00:00 - [info] Version: 0.9.1.git

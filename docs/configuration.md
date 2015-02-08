@@ -11,7 +11,7 @@ When [embedded](embedding.html), they are passed in the call to `RED.init()`.
 However, when run in this mode, certain properties are ignored and are left to
 the embedding application to implement.
 
-### Editor Configuration
+### Runtime Configuration
 
 flowFile
 : the file used to store the flows. Default: `flows_<hostname>.json`
@@ -41,7 +41,9 @@ httpAdminRoot
 : the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
 
 httpAdminAuth
-: enables HTTP Basic Authentication on the editor UI:
+: *Deprecated*: see `adminAuth`. 
+
+  enables HTTP Basic Authentication on the editor UI:
 
       httpAdminAuth: {user:"nol", pass:"5f4dcc3b5aa765d61d8327deb882cf99"}
   
@@ -83,6 +85,19 @@ httpStaticAuth
 httpNodeCors
 : enables cross-origin resource sharing for the nodes that provide HTTP endpoints,
   as defined [here](https://github.com/troygoode/node-cors#configuration-options)
+
+### Editor Configuration
+
+adminAuth
+: enables user-level security in the editor and admin API. See [security](security.html)
+  for more information.
+
+paletteCategories
+: defines the order of categories in the palette. If a node's category is not in
+  the list, the category will get added to the end of the palette. If not set,
+  the following default order is used:
+  
+      ['input', 'output', 'function', 'subflows', 'social', 'storage', 'analysis', 'advanced'],
 
 ### Node Configuration
 
