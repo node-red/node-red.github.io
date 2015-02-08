@@ -115,7 +115,7 @@ custom authentication code.
                return when.promise(function(resolve) {
                    // Resolve with the user object for the default user.
                    // If no default user exists, resolve with null.
-                   resolve({permissions:"read"});
+                   resolve({anonymous: true, permissions:"read"});
                });
            }
        }
