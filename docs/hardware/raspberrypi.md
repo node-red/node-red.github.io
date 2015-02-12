@@ -13,8 +13,8 @@ as soon as we have a working set of instructions.
 
 The simplest way to install node.js on Pi is
 
-    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-    sudo dpkg -i node_latest_armhf.deb
+    wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
+    sudo dpkg -i node_0.10.36_armhf.deb
 
 Then after [following the instructions](../getting-started/installation.html) to
 install Node-RED, make sure the Python RPi.GPIO libraries are installed...
