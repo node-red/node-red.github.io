@@ -124,7 +124,10 @@ A node definition can include two functions to customise the edit behaviour.
 
  - `oneditprepare` is called immediately before the dialog is displayed.
  - `oneditsave` is called when the edit dialog is okayed.
-
+ - `oneditcancel` is called when the edit dialog is cancelled.
+ - `oneditdelete` is called when the delete button in a configuration node's edit
+   dialog is pressed.
+ 
 For example, when the Inject node is configured to repeat, it stores the
 configuration as a cron-like string: `1,2 * * * *`. The node defines an
 `oneditprepare` function that can parse that string and present a more

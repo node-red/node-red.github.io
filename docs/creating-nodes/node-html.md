@@ -58,10 +58,13 @@ editor. It is an object with the following properties:
 - `icon`: (string) the [icon](appearance.html#icon) to use.
 - `color`: (string) the [background colour](appearance.html#background-colour) to use.
 - `label`: (string\|function) the [label](appearance.html#label) to use.
+- `paletteLabel`: (string\|function) the [label](appearance.html#label) to use in the palette.
 - `labelStyle`: (string\|function) the [style](appearance.html#label-style) to apply to the label.
 - `align`: (string) the [alignment](appearance.html#alignment) of the icon and label.
 - `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
+- `oneditcancel`: (function) called when the edit dialog is cancelled. See [custom edit behaviour](properties.html#custom-edit-behaviour).
+- `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `onpaletteadd`: (function) called when the node type is added to the palette.
 - `onpaletteremove`: (function) called when the node type is removed from the palette.
 

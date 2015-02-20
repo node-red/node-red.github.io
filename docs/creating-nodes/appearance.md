@@ -123,11 +123,14 @@ text-align: center;
 
 ### Label
 
-The label of a node can either be a static piece of text, or it can be set
-dynamically on a per-node basis according to the nodes properties.
+There are two label properties of a node; `label` and `paletteLabel`.
 
-The label is specified by the `label` property in the node definition. The value
-of the property can be either a string or a function.
+#### Node label
+
+The label of a node in the worksapce can either be a static piece of text, or it
+can be set dynamically on a per-node basis according to the nodes properties.
+
+The value of the property can be either a string or a function.
 
 If the value is a string, that is used as the label.
 
@@ -146,6 +149,14 @@ something sensible.
             },
             ...
 
+#### Palette label
+
+By default, the node's type is used as its label within the palette. The
+`paletteLabel` can be used to override this.
+
+As with `label`, this property can be either a string or a function. If it is a
+function, it is evaluated once when the node is added to the palette.
+            
 #### Label style
 The css style of the label can also be set dynamically, using the `labelStyle`
 property. Currently, this property must identify the css class to apply. If
