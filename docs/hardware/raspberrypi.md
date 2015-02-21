@@ -5,34 +5,73 @@ title: Raspberry Pi
 
 (the previous version of these instructions can be found [here](raspberrypi-old.html).)
 
-#### Installation
+### Install node.js
 
-**Note:** These instructions are for the Pi version 1. The Pi 2 has some known 
-issues due to the different processor architecture (ARMv7). We will update this document
-as soon as we have a working set of instructions.
+As the Pi 2 uses a different processor (Arm v7) compared with the original
+Pi (Arm v6) the method of installing node.js is slightly different.
 
-The simplest way to install node.js on Pi is
+## Pi 2
+
+To install node.js on Pi 2 - and some other Arm7 processor based boards.
+
+    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
+
+## Pi
+
+The simplest way to install node.js on Pi (version 1) is
 
     wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
     sudo dpkg -i node_0.10.36_armhf.deb
+    sudo apt-get install build-essential python-dev python-rpi.gpio
 
-Then after [following the instructions](../getting-started/installation.html) to
-install Node-RED, make sure the Python RPi.GPIO libraries are installed...
+## Install Node-RED
 
-    $sudo apt-get install python-dev python-rpi.gpio
+If you are upgrading from Pi to Pi 2 it is recommended to cleanup some hidden node directories first
 
-**Change** Using RPi.GPIO is a change from using WiringPi - the main benefits
+    rm -r ~/.npm/ ~/.node-gyp/
+
+before then [following the instructions](../getting-started/installation.html) to
+install Node-RED.
+
+Finally make sure the Python RPi.GPIO libraries are installed...
+
+    ./node-red/nodes/core/hardware/nrgpio ver 0
+
+should now return 0.5.11 (or newer). You must have at least 0.5.11 for the Pi2 and
+0.5.8 for the original Pi. If you do not then
+
+    sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
+
+**Change from Node-RED v0.9.1**. Using RPi.GPIO is a change from using WiringPi - the main benefits
 are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
 
-<b>NOTE - </b>
+### Security
+
+The RPi.GPIO library requires root access in order to configure and manage the GPIO pins.
+For us that means that the **nrgpio** command must be executable by the user that is running Node-RED.
+That user **must** have root access to run python in order to access the pins
+directly. The default user pi does have this access and is the recommended user
+with which to run Node-RED.
+
+If you want to run as a different user you will need either to add that user to
+the sudoers list - or maybe just access to python - for example by adding the following to sudoers using visudo.
+
+    NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
+
+We are currently looking at ways to reduce this exposure further.
+
+
+### Starting Node-RED
+
 The Garbage Collector (GC) algorithm in node.js v0.10.x behaves differently
 than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit
 larger than the 512MB in the Pi - this can cause the Pi to crash if left running
 for a long time, so we recommend starting Node-RED like this
 
-    $ cd node-red
-    $ node --max-old-space-size=128 red.js
+    cd node-red
+    node --max-old-space-size=128 red.js
 
 This extra parameter limits the space it can use to 128MB before cleaning up. If
 you are running nothing else on your Pi feel free to up that to 192 or 256...
@@ -41,21 +80,29 @@ the command `free -h` will give you some clues if you wish to tweak.
 Once you restart Node-RED and then browse to <b>http://{your-pi-address}:1880</b>
 you should now see two rpi-gpio nodes in the advanced section of the pallette.
 One to read from pins, and one to control pins. If they are not there then check
-both the **nrgpio** and **nrgpio.py** commands installed correctly to the `~/node-red/nodes/core/hardware/` directory and are executable by the user that you are running as. To check:
+both the **nrgpio** and **nrgpio.py** commands installed correctly to the
+`~/node-red/nodes/core/hardware/` directory and are executable by the user that
+you are running as. To check:
 
-    $ ~/node-red/nodes/core/hardware/nrgpio ver 0
+    ~/node-red/nodes/core/hardware/nrgpio ver 0
 
-should return...  0.5.8    or greater - this is the version of the RPi.GPIO library.
+should return :  0.5.11 : or greater - this is the version of the RPi.GPIO library.
 
-NOTE: the old Midori browser does not have adequate javascript support to
+### Notes
+
+ * **Midori Browser** - the old Midori browser does not have adequate javascript support to
 use it with Node-RED. If you want to use a built in browser on the Pi please
 install the Epiphany browser and use that pointed at http://localhost:1880.
 Epiphany is now the default Rasbian browser, or you can install it by
 
-    $ sudo apt-get install epiphany-browser
+    sudo apt-get install epiphany-browser
 
-There are also some extra hardware specific nodes (for the Pibrella, PiFace and
+ * **Extra Nodes** - There are also some extra hardware specific nodes (for the Pibrella, PiFace and
 LEDBorg plug on modules) available in the [node-red-nodes project](https://github.com/node-red/node-red-nodes/tree/master/hardware/) on Github.
+
+***
+
+## Interacting with the Pi hardware
 
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
 
@@ -69,26 +116,12 @@ There are (at least) two ways for interacting with a Raspberry Pi using Node-RED
   the nodes but you have to program it yourself.
 
 
-***
-
-### rpi-gpio nodes
+## rpi-gpio nodes
 
 These use a python **nrgpio** command as part of the core install and can be
 found in node-red/nodes/core/hardware
 
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
-
-The nrgpio command *MUST* be executable by the user that is running Node-RED.
-That user *MUST* have root access to run python in order to access the pins
-directly. The default user Pi does have this access and is the recommended user
-with which to run Node-RED.
-
-If you want to run as a different user you will need either to add that user to
-the sudoers list - or maybe just access to python - for example by adding the following to sudoers using visudo.
-
-    NodeREDusername ALL=(ALL) NOPASSWD: /user/bin/python
-
-
 
 
 #### Blink
@@ -168,18 +201,18 @@ To make Node-RED into a service by using init.d - thanks to our contributors for
 Copy the init.d script into /etc/init.d/node-red and make it executable. You can
 then stop, start and restart Node-RED by
 
-    $ sudo service node-red stop
-    $ sudo service node-red start
-    $ sudo service node-red restart
+    sudo service node-red stop
+    sudo service node-red start
+    sudo service node-red restart
 
 If you need Node-RED to autostart on boot then use this command
 
-    $ sudo update-rc.d node-red defaults
+    sudo update-rc.d node-red defaults
 
 Once running you should then be able to attach to the screen session to see the
 console by running:
 
-    $ sudo screen -r red
+    sudo screen -r red
 
 To detach from the session and leave it running, type Ctrl-A-D.
 
@@ -187,6 +220,6 @@ To detach from the session and leave it running, type Ctrl-A-D.
 And alternative is to use `screen` so you can get to the
 console at any time. To install screen, if it is not already there, run:
 
-    $ sudo apt-get install screen
+    sudo apt-get install screen
 
 then use a script like this [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
