@@ -29,14 +29,21 @@ The simplest way to install node.js on Pi (version 1) is
 
 If you are upgrading from Pi to Pi 2 it is recommended to cleanup some hidden node directories first
 
-    rm -r ~/.npm/ ~/.node-gyp/
+    npm cache clear
 
 before then [following the instructions](../getting-started/installation.html) to
-install Node-RED.
+install Node-RED. If you just want the latest (unstable) release you can do this instead,
+
+    git clone https://github.com/node-red/node-red.git
+    cd node-red
+    npm install --production
+
+The last step may take several minutes - even on a Pi 2 !
+
 
 Finally make sure the Python RPi.GPIO libraries are installed...
 
-    ./node-red/nodes/core/hardware/nrgpio ver 0
+    ~/node-red/nodes/core/hardware/nrgpio ver 0
 
 should now return 0.5.11 (or newer). You must have at least 0.5.11 for the Pi2 and
 0.5.8 for the original Pi. If you do not then
