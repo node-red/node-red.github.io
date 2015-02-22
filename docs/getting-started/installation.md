@@ -3,9 +3,12 @@ layout: default
 title: Installation
 ---   
 
-### Install node.js
+### Install Node.js
 
-You can get the latest version from <http://nodejs.org/download/>.
+Node-RED requires version <code>0.10.x</code> of Node.js. The most recent stable
+release of Node <code>0.12.x</code> is **not** supported.
+
+You can get the latest version <code>0.10.x</code> of Node from <http://nodejs.org/dist/v0.10.36/>.
 
 Or, you may want to use a version from your operating system's package manager:
  <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>
@@ -61,3 +64,6 @@ directory:
 
     $ npm install <npm-package-name>
 
+### Next steps
+
+Once installed, you are ready to [run Node-RED](running.html).

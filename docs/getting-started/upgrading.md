@@ -10,7 +10,8 @@ title: Upgrading
 From the Node-RED install directory, copy the following files to another location:
 
 - `settings.js`, if you have customised it,
-- files ending in `.json` in the top-level directory, but not `package.json`,
+- files ending in `.json` in the top-level directory, including the hidden files
+  `.config.json` and `.sessions.json`, if they exist. Do *not* backup `package.json`.
 - the entire `lib/` directory,
 - any additional nodes installed in the `nodes/` directory.
 
