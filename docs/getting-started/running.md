@@ -19,7 +19,7 @@ command:
     25 Feb 22:51:10 - [warn] Run with -v for details
     25 Feb 22:51:10 - [warn] ------------------------------------------
     25 Feb 22:51:10 - [info] User Directory : /home/nol/.node-red
-    25 Feb 22:51:10 - [info] Server now running at http://127.0.0.1:1881/
+    25 Feb 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
     25 Feb 22:51:10 - [info] Creating new flows file : flows_noltop.json
     25 Feb 22:51:10 - [info] Starting flows
     25 Feb 22:51:10 - [info] Started flows

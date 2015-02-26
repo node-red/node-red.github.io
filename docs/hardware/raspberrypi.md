@@ -33,8 +33,12 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
 ### Install Node-RED
 
-With Node.js installed, the [main installation instructions](installation.html#install-node-red)
-can be follow to get Node-RED installed.
+For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node's
+package manager, npm:
+
+    sudo npm install -g node-red
+
+_Note_: for alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
 Once installed, you should verify which version of the Python RPi.GPIO libraries
 have been installed.

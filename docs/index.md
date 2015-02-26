@@ -30,14 +30,6 @@ This guide covers how to configure and use Node-RED.
 
 [This guide](creating-nodes/) covers how to create your own nodes and get them added to the palette.
 
-### More Nodes
-
-There are lots of nodes that are not in the main core of Node-RED, some from the
-project team and lots from contributors. We encourage contributors to [publish them via
-NPM](creating-nodes/packaging.html) to make installation easy.
-
-You can search the NPM repository for the [`node-red` keyword](https://www.npmjs.com/browse/keyword/node-red). 
-
 ### Other places to get help
 
 If you have a question, suggestion or just want to say hello, there are various
@@ -53,5 +45,5 @@ Node-RED versions you are using. Both can be found it the console output when
 Node-RED is started:
 
     01 Jan 12:00:00 - [info] Node-RED version: v0.10.4
-    01 Jan 12:00:00 - [info] Node.js  version: v0.10.22
+    01 Jan 12:00:00 - [info] Node.js  version: v0.10.36
 
