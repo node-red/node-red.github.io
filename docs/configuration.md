@@ -5,7 +5,12 @@ title: Configuration
 The following properties can be used to configure Node-RED.
 
 When run as a standalone application, these properties are read from the `settings.js`
-file.
+file. The location of this file is determined in the order:
+
+ - set using the `--settings|-s` command-line argument
+ - in the user directory if it was specified by the `--userDir|-u` command-line argument
+ - in the default user directory: `$HOME/.node-red/settings.js`
+ - in the node-red install directory
 
 When [embedded](embedding.html), they are passed in the call to `RED.init()`.
 However, when run in this mode, certain properties are ignored and are left to
@@ -18,7 +23,7 @@ flowFile
 
 userDir
 : the directory to store all user data, such as flow and credential files and all
-  library data. Default: the Node-RED install directory
+  library data. Default: `$HOME/.node-red`
 
 nodesDir
 : a directory to search for additional installed nodes. Node-RED searches the `nodes`
@@ -99,8 +104,8 @@ paletteCategories
 
       ['subflows', 'input', 'output', 'function', 'social', 'storage', 'analysis', 'advanced'],
 
-Note - Until the user creates a subflow the subflow category will be empty and
-will not be visible in the palette.
+   _Note_: Until the user creates a subflow the subflow category will be empty and will
+   not be visible in the palette.
 
 ### Node Configuration
 

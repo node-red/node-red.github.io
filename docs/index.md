@@ -4,17 +4,31 @@ title: Documentation
 ---
 ## Overview
 
-Welcome to the Node-RED documentation. Inevitably, we're still getting all of
-the documentation into shape. Hopefully there is enough here to get you
-started with Node-RED.
+Welcome to the Node-RED documentation.
 
-### More Nodes
+### Getting Started
 
-There are lots of nodes that are not in the main core of Node-RED, some from the
-project team and lots from contributors. We encourage contributors to [publish them via
-NPM](creating-nodes/packaging.html) to make installation easy.
+This guide will help you get Node-RED installed and running in just a few minutes.
 
-You can search the NPM repository for the [`node-red` keyword](https://www.npmjs.com/browse/keyword/node-red). 
+- [Installation](getting-started/installation.html)
+- [Running](getting-started/running.html)
+- [Adding Nodes](getting-started/adding-nodes.html)
+- [Upgrading](getting-started/upgrading.html)
+- [Creating your first flow](getting-started/first-flow.html)
+- [Creating your second flow](getting-started/second-flow.html)
+
+### Using Node-RED
+
+This guide covers how to configure and use Node-RED.
+
+- [Configuration](configuration.html)
+- [Securing Node-RED](security.html)
+- [How to write Functions](writing-functions.html)
+- [How to embed Node-RED into an existing Node.js app](embedding.html)
+
+### Creating Nodes
+
+[This guide](creating-nodes/) covers how to create your own nodes and get them added to the palette.
 
 ### Other places to get help
 
@@ -26,7 +40,10 @@ places you can do so:
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
  - Chat on `#nodered` on `irc.freenode.net`
 
-When reporting bugs or difficulties, please try to include the version number that
-you are running. It can be found as almost the first line of debug in the console window. For example :
+When reporting bugs or difficulties, please try to include both the Node.js and
+Node-RED versions you are using. Both can be found it the console output when
+Node-RED is started:
 
-    01 Jan 12:00:00 - [info] Version: 0.9.1.git
+    01 Jan 12:00:00 - [info] Node-RED version: v0.10.4
+    01 Jan 12:00:00 - [info] Node.js  version: v0.10.36
+
