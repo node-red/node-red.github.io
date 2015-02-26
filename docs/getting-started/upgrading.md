@@ -34,5 +34,5 @@ directory.
    new version following the [install instructions](installation.html).
 
 5. If you had npm-installed any additional nodes, or manually copied in nodes
-   which have their own npm dependencies, you will need to [reinstall them](running.html#installing-additional-nodes).
+   which have their own npm dependencies, you will need to [reinstall them](adding-nodes.html).
 
