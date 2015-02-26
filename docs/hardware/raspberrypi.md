@@ -3,58 +3,84 @@ layout: default
 title: Raspberry Pi
 ---
 
-(the previous version of these instructions can be found [here](raspberrypi-old.html).)
-
-### Install node.js
+### Install Node.js
 
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
-## Pi 2
+#### Raspberry Pi 2
 
-To install node.js on Pi 2 - and some other Arm7 processor based boards.
+To install Node.js on Pi 2 - and some other Arm7 processor based boards, run
+the following commands:
 
     curl -sL https://deb.nodesource.com/setup | sudo bash -
     sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
 
-## Pi
+This also installs some additional dependencies.
 
-The simplest way to install node.js on Pi (version 1) is
+If you are upgrading a Raspberry Pi version 1 image for the Pi 2, it is recommended
+to clean up some hidden node directories before installing Node-RED:
+
+    npm cache clear
+
+#### Raspberry Pi
+
+The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
     wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
     sudo dpkg -i node_0.10.36_armhf.deb
     sudo apt-get install build-essential python-dev python-rpi.gpio
 
-## Install Node-RED
+### Install Node-RED
 
-If you are upgrading from Pi to Pi 2 it is recommended to cleanup some hidden node directories first
+With Node.js installed, the [main installation instructions](installation.html#install-node-red)
+can be follow to get Node-RED installed.
 
-    npm cache clear
+Once installed, you should verify which version of the Python RPi.GPIO libraries
+have been installed.
 
-before then [following the instructions](../getting-started/installation.html) to
-install Node-RED. If you just want the latest (unstable) release you can do this instead,
+Node-RED includes a Raspberry Pi specific script `nrgpio` for interacting with
+the hardware GPIO pins. This script can also be used to check what version of
+the underlying library is installed:
 
-    git clone https://github.com/node-red/node-red.git
-    cd node-red
-    npm install --production
+    <node-red-install-directory>/nodes/core/hardware/nrgpio ver 0
 
-The last step may take several minutes - even on a Pi 2 !
+_Note_: if you have installed as a global npm module, this script will be located at:
+`/usr/lib/node_modules/node-red/nodes/core/hardware/nrgpio`.
 
-
-Finally make sure the Python RPi.GPIO libraries are installed...
-
-    ~/node-red/nodes/core/hardware/nrgpio ver 0
-
-should now return 0.5.11 (or newer). You must have at least 0.5.11 for the Pi2 and
-0.5.8 for the original Pi. If you do not then
+This command should return 0.5.11 or newer. You must have at least 0.5.11 for the Pi2 and
+0.5.8 for the original Pi. If you do not then the following commands will grab
+the latest available:
 
     sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
 
-**Change from Node-RED v0.9.1**. Using RPi.GPIO is a change from using WiringPi - the main benefits
-are that we can get software PWM on all output pins, and easier access to
+**Change from Node-RED v0.9.1**. Using RPi.GPIO is a change from using WiringPi
+- the main benefits are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
 
-### Security
+### Starting Node-RED
+
+Due to the constrained memory available on the Raspberry Pi, it is necesary to
+run Node-RED with the `node-red-pi` command. This allows an additional argument
+to be provided that sets at what point Node.js will begin to free up unused memory.
+
+When starting with the `node-red-pi` script, the `max-old-space-size` option should
+be specified:
+
+    $ node-red-pi --max-old-space-size=128
+
+When running Node-RED using node directly, this option must appear between node
+and red.js.
+    
+    $ node --max-old-space-size=128 red.js
+
+
+This option limits the space it can use to 128MB before cleaning up. If you are
+running nothing else on your Pi you can afford to increase that figure to 256
+and possibley even higher. The command `free -h` will give you some clues as to
+how much memory is currently availabe.
+
+### Accessing GPIO pins
 
 The RPi.GPIO library requires root access in order to configure and manage the GPIO pins.
 For us that means that the **nrgpio** command must be executable by the user that is running Node-RED.
@@ -70,31 +96,6 @@ the sudoers list - or maybe just access to python - for example by adding the fo
 We are currently looking at ways to reduce this exposure further.
 
 
-### Starting Node-RED
-
-The Garbage Collector (GC) algorithm in node.js v0.10.x behaves differently
-than v0.8.x - in that it doesn't enforce a clean until it is near a memory limit
-larger than the 512MB in the Pi - this can cause the Pi to crash if left running
-for a long time, so we recommend starting Node-RED like this
-
-    cd node-red
-    node --max-old-space-size=128 red.js
-
-This extra parameter limits the space it can use to 128MB before cleaning up. If
-you are running nothing else on your Pi feel free to up that to 192 or 256...
-the command `free -h` will give you some clues if you wish to tweak.
-
-Once you restart Node-RED and then browse to <b>http://{your-pi-address}:1880</b>
-you should now see two rpi-gpio nodes in the advanced section of the pallette.
-One to read from pins, and one to control pins. If they are not there then check
-both the **nrgpio** and **nrgpio.py** commands installed correctly to the
-`~/node-red/nodes/core/hardware/` directory and are executable by the user that
-you are running as. To check:
-
-    ~/node-red/nodes/core/hardware/nrgpio ver 0
-
-should return :  0.5.11 : or greater - this is the version of the RPi.GPIO library.
-
 ### Notes
 
  * **Midori Browser** - the old Midori browser does not have adequate javascript support to
@@ -109,7 +110,7 @@ LEDBorg plug on modules) available in the [node-red-nodes project](https://githu
 
 ***
 
-## Interacting with the Pi hardware
+### Interacting with the Pi hardware
 
 There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
 
@@ -123,7 +124,7 @@ There are (at least) two ways for interacting with a Raspberry Pi using Node-RED
   the nodes but you have to program it yourself.
 
 
-## rpi-gpio nodes
+### rpi-gpio nodes
 
 These use a python **nrgpio** command as part of the core install and can be
 found in node-red/nodes/core/hardware
@@ -131,7 +132,7 @@ found in node-red/nodes/core/hardware
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
 
 
-#### Blink
+### Blink example
 
 To run a "blink" flow that toggles an LED on Pin 11 of the GPIO header, you will
 need to connect up an LED as described [here](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/).
@@ -160,15 +161,15 @@ function rather than dragging and wiring nodes.
 
 #### Installation
 
-After [installing](../getting-started/installation.html) Node-RED, follow these
-[instructions](http://wiringpi.com/download-and-install/) to get Wiring Pi
-installed.
+After installing Node-RED, follow these [instructions](http://wiringpi.com/download-and-install/)
+to get Wiring Pi installed.
 
 #### Configuring Node-RED
 
-Firstly the npm module needs to be installed into the node-red directory.
+Firstly the npm module needs to be installed into the same directory as your
+`settings.js` file.
 
-    cd ~/node-red-x.y.z    (changing x.y.z to match the version you have installed)
+    cd $HOME/.node-red
     npm install wiring-pi
 
 This does not add any specific nodes to Node-RED. Instead the Wiring-Pi module can be made

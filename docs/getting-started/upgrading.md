@@ -3,54 +3,36 @@ layout: default
 title: Upgrading
 ---   
 
-### Backup your flows and library files
+If you have installed Node-RED as a global npm package, you can upgrade to the
+latest version with the following command:
 
-**You must backup your flows and library files before upgrading.**
+    npm update -g node-red
 
-From the Node-RED install directory, copy the following files to another location:
+### Upgrading from before Node-RED 0.10.4 
 
-- `settings.js`, if you have customised it,
-- files ending in `.json` in the top-level directory, including the hidden files
-  `.config.json` and `.sessions.json`, if they exist. Do *not* backup `package.json`.
-- the entire `lib/` directory,
-- any additional nodes installed in the `nodes/` directory.
-
-
-### Upgrading a release
-
-1. Delete, or rename, the existing Node-RED install directory.
-2. Follow the normal [instructions](http://nodered.org/docs/getting-started/installation.html)
-   for installing a release.
-3. This will result in a new folder called `node-red-X.Y.Z` where `X.Y.Z` is the
-   version number. This can be renamed to the original install directory name if
-   needed.
-4. Copy your backed-up files into the new release.
-
-*Note*: if you have modified the default `settings.js` you should merge the
-changes into the version supplied with the new release rather than copy over it.
-
-*Note*: If you did backup `package.json` then do NOT allow it to copy over the new version.
-
-
-### Upgrading via npm
-
-If you have npm installed Node-RED as part of [embedding into an existing
-application](../embedding.html), the `npm update` command can be used to update
-to the latest version.
-
-Once updated, copy your backed-up files back into the `node_modules/node-red`
+In releases prior to 0.10.4, the default behaviour was to write user data into
+the Node-RED install directory. This made upgrading a painful experience. The
+following guide takes you through moving your existing data out of the install
 directory.
 
-### Upgrading from GitHub
+1. Choose where you want to store your data. By default, Node-RED 0.10.4 will
+   use `$HOME/.node-red`, but you can override that with the `--userDir` option.
 
-If you used git clone to install then the usual git commands apply:
+2. Take a back-up copy of the entire Node-RED install directory, just in case.
 
-    $ git pull
+3. Move the following files from the Node-RED install directory to your chosen
+   user data directory:
+   
+   - `settings.js` - if you have customised it
+   - all files beginning with `flows_`
+   - `.config.json`
+   - `.sessions.json` - if it exists
+   - the entire `lib/` directory
+   - any additional nodes you have manually installed under the `nodes/` directory
 
-You should also use npm to update any node modules:
+4. With your data moved, delete the Node-RED install directory and install the
+   new version following the [install instructions](installation.html).
 
-    $ npm update
-
-
-
+5. If you had npm-installed any additional nodes, or manually copied in nodes
+   which have their own npm dependencies, you will need to [reinstall them](running.html#installing-additional-nodes).
 

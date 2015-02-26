@@ -5,65 +5,67 @@ title: Installation
 
 ### Install Node.js
 
-Node-RED requires version <code>0.10.x</code> of Node.js. The most recent stable
-release of Node <code>0.12.x</code> is **not** supported.
+Node-RED requires version <code>0.10.x</code> of Node.js. _The most recent stable
+release of Node <code>0.12.x</code> is **not** currently supported._
 
-You can get the latest version <code>0.10.x</code> of Node from <http://nodejs.org/dist/v0.10.36/>.
+You can get the latest supported version of Node <code>0.10.x</code> from:
 
-Or, you may want to use a version from your operating system's package manager:
- <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>
+ - Linux Binaries: [32-bit](http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x86.tar.gz)
+                   or
+                   [64-bit](http://nodejs.org/dist/v0.10.36/node-v0.10.36-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](http://nodejs.org/dist/v0.10.36/node-v0.10.36.pkg)
+ - Windows Installer: [32-bit](http://nodejs.org/dist/v0.10.36/node-v0.10.36-x86.msi)
+                      or
+                      [64-bit](http://nodejs.org/dist/v0.10.36/x64/node-v0.10.36-x64.msi)
+
+Other download options are available [here](http://nodejs.org/dist/v0.10.36/).
+
+You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+If you chose this option, you must ensure to get a <code>0.10.x</code> version.
  
 For installing on the Raspberry Pi, see the specific instructions [here](../hardware/raspberrypi.html).
 
 ### Install Node-RED
 
-The main way to install Node-RED is to download the latest stable release. If you
-are just getting started, this is the right option to choose.
+For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node's
+package manager, npm. Installing it as a global module adds the command `node-red`
+to your system path:
+
+    sudo npm install -g node-red
+
+_Note_: `sudo` is required if running as a non-root user on Linux/OS X. If
+running on Windows, you will need to run in a command shell as Administrator,
+without the `sudo` command.
+
+### Alternative install methods
 
 #### Download a release
 
-Download the latest release from the link on <http://nodered.org>. The zip
-contains a top-level folder called `node-red-X.Y.Z` where `X.Y.Z` is the version
-number. Once extracted, from within that top-level folder, run the following
-command:
+You can download the latest release from [here](https://github.com/node-red/node-red/releases/latest).
+The zip contains a top-level folder called `node-red-X.Y.Z` where `X.Y.Z` is the
+version number. Once extracted, from within that top-level folder, run the
+following command:
 
-    $ npm install --production
+    npm install --production
     
-This is the simplest way for most people to install Node-RED.
-
-#### Use npm
-
-Installing via npm allows you to [embed Node-RED into an existing application](../embedding.html).
-This assumes you are comfortable with creating node.js applications.
-
 #### From GitHub
+    
+Running the code from GitHub is only intended for users who are happy to be using
+development code, or for developers wanting to contribute to the code.
 
-If you want to run the very latest development code, you can clone the source
-repository directly from GitHub:
+You can clone the source repository directly from GitHub:
 
-    $ git clone https://github.com/node-red/node-red.git
+    git clone https://github.com/node-red/node-red.git
 
 Once cloned, the core pre-requisite modules must be installed. From the top-level
 directory of Node-RED, run:
 
-    $ npm install --production
+    npm install
+
+_Note_: in anticipation of future changes, when running from a clone of the git
+repository, it is necessary to install all dependencies, not just the production
+level ones. This is why the `--production` option should not be used.
     
-Whilst we always try to ensure the repository is bug-free, it may contain features
-still under development.
-    
-### Installing additional nodes
-
-The Node-RED release comes with a core set of useful nodes, but there are a growing
-number of additional nodes available for install from other sources.
-
-You can search the NPM repository for the [`node-red` keyword](https://www.npmjs.com/browse/keyword/node-red)
-to find additional nodes.
-
-To install an npm-packaged node, run the following command in the node-red install
-directory:
-
-    $ npm install <npm-package-name>
-
 ### Next steps
 
 Once installed, you are ready to [run Node-RED](running.html).
