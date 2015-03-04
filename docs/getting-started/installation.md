@@ -5,8 +5,9 @@ title: Installation
 
 ### Install Node.js
 
-Node-RED requires version <code>0.10.x</code> of Node.js. _The most recent stable
-release of Node <code>0.12.x</code> is **not** currently supported._
+Node-RED requires version <code>0.10.x</code> of Node.js. 
+
+<div class="doc-callout"><em>Note</em>: The most recent stable release of Node <code>0.12.x</code> is <em>not</em> currently supported.</div>
 
 You can get the latest supported version of Node <code>0.10.x</code> from:
 
@@ -33,9 +34,11 @@ to your system path:
 
     sudo npm install -g node-red
 
-_Note_: `sudo` is required if running as a non-root user on Linux/OS X. If
+<div class="doc-callout">
+<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
 running on Windows, you will need to run in a command shell as Administrator,
-without the `sudo` command.
+without the <code>sudo</code> command.
+</div>
 
 ### Alternative install methods
 
@@ -62,9 +65,11 @@ directory of Node-RED, run:
 
     npm install
 
-_Note_: in anticipation of future changes, when running from a clone of the git
+<div class="doc-callout">
+<em>Note</em>: in anticipation of future changes, when running from a clone of the git
 repository, it is necessary to install all dependencies, not just the production
-level ones. This is why the `--production` option should not be used.
+level ones. This is why the <code>--production</code> option should not be used.
+</div>
     
 ### Next steps
 

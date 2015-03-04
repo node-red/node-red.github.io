@@ -26,8 +26,10 @@ command:
 
 You can then access the Node-RED editor at <http://localhost:1880>.
 
-For running on the Raspberry Pi, or similar constrained devices, see the specific
-instructions [here](../hardware/raspberrypi.html#starting-node-red).
+There are specific instructions available for certain hardware platforms:
+
+ - [Raspberry Pi](../hardware/raspberrypi.html#starting-node-red)
+ - [BeagleBone Black](../hardware/beagleboneblack.html)
 
 #### Running from a local install - Linux & Mac OS X
 
@@ -41,18 +43,18 @@ the directory you extracted the zip into.
 
 First make the `node-red` start script executable:
 
-     $ chmod +x <node-red-install-directory>/bin/node-red
+    chmod +x <node-red-install-directory>/bin/node-red
 
 Then you can start Node-RED with:
 
-    $ <node-red-install-directory>/bin/node-red
+    <node-red-install-directory>/bin/node-red
 
 #### Running from a local install - Windows
 
 On Windows, run the following command from the same directoy you ran `npm install`
 in, or that you extracted the release zip file:
 
-    $ node node_modules/node-red/red.js
+    node node_modules/node-red/red.js
 
 
 ### Command-line usage
@@ -77,8 +79,8 @@ To override what directory to use, the `--userDir` command-line option can be us
 #### Passing arguments to the underlying node.js process
 
 There are occassions when it is necessary to pass arguments to the underlying
-node.js process. For example, when running on devices like the Raspberry Pi that
-have a constrained amount of memory.
+node.js process. For example, when running on devices like the Raspberry Pi or 
+BeagleBone Black that have a constrained amount of memory.
 
 To do this, you must use the `node-red-pi` start script in place of `node-red`. 
 _Note_: this script is not available on Windows.
@@ -89,8 +91,8 @@ want passed to Node-RED itself.
 
 The following two commands show these two approaches:
 
-    $ node-red-pi --max-old-space-size=128 --userDir /var/node-red/data
-    $ node --max-old-space-size=128 red.js  --userDir /var/node-red/data
+    node-red-pi --max-old-space-size=128 --userDir  /home/user/node-red-data/
+    node --max-old-space-size=128 red.js  --userDir /home/user/node-red-data/
 
 
 ### Starting Node-RED on boot
@@ -109,9 +111,11 @@ it easy to run applications on boot and ensure they are restarted if necessary.
 
     sudo npm install -g pm2
 
-_Note_: `sudo` is required if running as a non-root user on Linux/OS X. If
+<div class="doc-callout">
+<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
 running on Windows, you will need to run in a command shell as Administrator,
-without the `sudo` command.
+without the <code>sudo</code> command.
+</div>
 
 <div class="doc-callout">
 If running on Windows, you should also ensure <code>tail.exe</code> is on your path, as
@@ -137,15 +141,15 @@ The `--` argument must appear before any arguments you want to pass to node-red.
     pm2 start /usr/bin/node-red -- -v
 
 <div class="doc-callout">
-<em>Note</em>: if you are running on a device like the Raspberry Pi that has a
-constrained amount of memory, you must pass an additional argument:
+<em>Note</em>: if you are running on a device like the Raspberry Pi or BeagleBone
+Black that have a constrained amount of memory, you must pass an additional argument:
 
 <pre>pm2 start /usr/bin/node-red --node-args="--max-old-space-size=128" -- -v</pre>
 </div>
 
 <div class="doc-callout">
 <em>Note</em>: if you want to run as the root user, you must use the `--userDir`
-option specify where Node-RED should store your data.
+option to specify where Node-RED should store your data.
 </div>
 
 This will start Node-RED in the background. You can view information about the
@@ -180,6 +184,7 @@ by members of the community.
  - [An init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94) by Belphemur (linux)
  - [A systemd script](https://gist.github.com/Belphemur/3f6d3bf211b0e8a18d93) by Belphemur (linux)
  - [A Launchd script](https://gist.github.com/natcl/4688162920f368707613) by natcl (OS X)
- - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill 
+ - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill
+ - [Running as a Windows service using NSSM](https://gist.github.com/dceejay/576b4847f0a17dc066db) by dceejay
 
 

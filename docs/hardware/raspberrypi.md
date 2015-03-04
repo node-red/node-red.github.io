@@ -49,8 +49,9 @@ the underlying library is installed:
 
     <node-red-install-directory>/nodes/core/hardware/nrgpio ver 0
 
-_Note_: if you have installed as a global npm module, this script will be located at:
-`/usr/lib/node_modules/node-red/nodes/core/hardware/nrgpio`.
+<div class="doc-callout">If you have installed as a global npm module, this script will be located at:
+<pre>/usr/local/lib/node_modules/node-red/nodes/core/hardware/nrgpio</pre>
+</div>
 
 This command should return 0.5.11 or newer. You must have at least 0.5.11 for the Pi2 and
 0.5.8 for the original Pi. If you do not then the following commands will grab
@@ -58,9 +59,11 @@ the latest available:
 
     sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
 
-**Change from Node-RED v0.9.1**. Using RPi.GPIO is a change from using WiringPi
+<div class="doc-callout">
+<em>Change from Node-RED v0.9.1</em>: Using RPi.GPIO is a change from using WiringPi
 - the main benefits are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
+</div>
 
 ### Starting Node-RED
 
@@ -71,12 +74,12 @@ to be provided that sets at what point Node.js will begin to free up unused memo
 When starting with the `node-red-pi` script, the `max-old-space-size` option should
 be specified:
 
-    $ node-red-pi --max-old-space-size=128
+    node-red-pi --max-old-space-size=128
 
 When running Node-RED using node directly, this option must appear between node
 and red.js.
     
-    $ node --max-old-space-size=128 red.js
+    node --max-old-space-size=128 red.js
 
 
 This option limits the space it can use to 128MB before cleaning up. If you are
