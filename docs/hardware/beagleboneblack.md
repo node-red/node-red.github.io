@@ -5,8 +5,10 @@ title: BeagleBone Black
 
 The BeagleBoneBlack already has Node.js baked into it's OS, so some of these tips are optional.
 
-**Note** - we are soon deprecating Node v0.8 support - these instructions only apply to the
-Debian versions of BeagleBoneBlack. [http://beagleboard.org/latest-images](http://beagleboard.org/latest-images)
+<div class="doc-callout">
+<em>Note:</em> we are soon deprecating Node v0.8 support - these instructions only apply to the
+Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
+</div>
 
 
 #### Upgrading Node.js (Optional)
@@ -36,13 +38,14 @@ _Note_: for alternative install options, see the [main installation instructions
 
 #### BBB specific nodes
 
-There are some great BBB specific nodes now available in our Node-red-nodes project on Github - [node-red-nodes](https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB) - kudos to Max.
+There are some BBB specific nodes now available in our [node-red-nodes project on Github](https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB).
+
 These give you direct access to the I/O pins in the simplest possible manner. The easiest way to install them is direct from npm
 
     cd ~/.node-red
     npm install node-red-node-beaglebone
 
-#### Running Node-RED
+#### Starting Node-RED
 
 Due to the constrained memory available on the BBB, it is necessary to
 run Node-RED with the `node-red-pi` command. For details and other options follow

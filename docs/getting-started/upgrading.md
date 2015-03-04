@@ -6,7 +6,7 @@ title: Upgrading
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
 
-    npm update -g node-red
+    sudo npm update -g node-red
 
 ### Upgrading from before Node-RED 0.10.4 
 

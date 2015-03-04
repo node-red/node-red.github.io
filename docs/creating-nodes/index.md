@@ -24,9 +24,8 @@ The following sections exist and are largely complete:
 
 To do:
 
-1. credentials
-2. library
-3. custom http endpoints
+1. library
+2. custom http endpoints
 
 
 ### General guidance
