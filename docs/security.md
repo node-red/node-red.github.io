@@ -7,9 +7,11 @@ By default, the Node-RED editor is not secured - anyone who can access the IP ad
 and port it is running on can access the editor and deploy changes. This is only
 suitable if you are running on a trusted network.
 
-*Note: in previous releases of Node-RED, the setting `httpAdminAuth` could be
+<div class="doc-callout">
+<em>Note</em>: in previous releases of Node-RED, the setting <code>httpAdminAuth</code> could be
 used to enable HTTP Basic Authentication on the editor. Whilst it can still be
-used, its use is deprecated and superceded by `adminAuth` described below.*
+used, its use is deprecated and superceded by <code>adminAuth</code> described below.
+</div>
 
 ### Enabling user authentication
 
