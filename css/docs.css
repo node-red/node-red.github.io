@@ -9,7 +9,6 @@
 }
 
 h1.docs-title {
-    font-size: 30px;
     border-bottom: 2px solid #B68181;
     padding-bottom: 10px;
     margin-bottom: 40px;
@@ -91,5 +90,34 @@ pre {
 
 pre>code {
     padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 1.5em 0 0.8em -0.3em;
+}
+h2 {
+    font-size: 1.953em;
+    margin: 1.5em 0 0.8em -0.3em;
+}
+h3 {
+    font-size: 1.563em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+h4 {
+    font-size: 1.25em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+h5 {
+    font-size: 1.15em;
+    margin: 1.5em 0 0.8em  -0.3em;
+}
+
+.doc-callout {
+    margin: 10px 30px;
+    background: #FFFFE0;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #BE9A9A;
 }
 

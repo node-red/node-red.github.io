@@ -203,35 +203,3 @@ okay, click in the workspace to place the new nodes.
 Click the `Deploy` button and the flow should start running. The LED should start
 toggling on and off once a second.
 
-***
-
-### Making Node-RED autostart on boot (optional)
-
-To make Node-RED into a service by using init.d - thanks to our contributors for this.
-[Init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94)
-
-Copy the init.d script into /etc/init.d/node-red and make it executable. You can
-then stop, start and restart Node-RED by
-
-    sudo service node-red stop
-    sudo service node-red start
-    sudo service node-red restart
-
-If you need Node-RED to autostart on boot then use this command
-
-    sudo update-rc.d node-red defaults
-
-Once running you should then be able to attach to the screen session to see the
-console by running:
-
-    sudo screen -r red
-
-To detach from the session and leave it running, type Ctrl-A-D.
-
-
-And alternative is to use `screen` so you can get to the
-console at any time. To install screen, if it is not already there, run:
-
-    sudo apt-get install screen
-
-then use a script like this [Node-RED init script](https://gist.github.com/bigmonkeyboy/9962293)
