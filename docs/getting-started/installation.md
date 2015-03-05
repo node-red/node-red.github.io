@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Installation
----   
+---
 
 ### Install Node.js
 
-Node-RED requires version <code>0.10.x</code> of Node.js. 
+Node-RED requires version <code>0.10.x</code> of Node.js.
 
 <div class="doc-callout"><em>Note</em>: The most recent stable release of Node <code>0.12.x</code> is <em>not</em> currently supported.</div>
 
@@ -23,7 +23,7 @@ Other download options are available [here](http://nodejs.org/dist/v0.10.36/).
 
 You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 If you chose this option, you must ensure to get a <code>0.10.x</code> version.
- 
+
 For installing on the Raspberry Pi, see the specific instructions [here](../hardware/raspberrypi.html).
 
 ### Install Node-RED
@@ -36,7 +36,7 @@ to your system path:
 
 <div class="doc-callout">
 <em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
-running on Windows, you will need to run in a command shell as Administrator,
+running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
 without the <code>sudo</code> command.
 </div>
 
@@ -50,9 +50,9 @@ version number. Once extracted, from within that top-level folder, run the
 following command:
 
     npm install --production
-    
+
 #### From GitHub
-    
+
 Running the code from GitHub is only intended for users who are happy to be using
 development code, or for developers wanting to contribute to the code.
 
@@ -70,7 +70,7 @@ directory of Node-RED, run:
 repository, it is necessary to install all dependencies, not just the production
 level ones. This is why the <code>--production</code> option should not be used.
 </div>
-    
+
 ### Next steps
 
 Once installed, you are ready to [run Node-RED](running.html).

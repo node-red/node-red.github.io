@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Running
----   
+---
 
 If you have installed Node-RED as a global npm package, you can use the `node-red`
 command:
 
     $ node-red
-    
+
     Welcome to Node-RED
     ===================
-    
+
     25 Feb 22:51:09 - [info] Node-RED version: v0.10.4
     25 Feb 22:51:09 - [info] Node.js  version: v0.10.36
     25 Feb 22:51:09 - [info] Loading palette nodes
@@ -51,7 +51,7 @@ Then you can start Node-RED with:
 
 #### Running from a local install - Windows
 
-On Windows, run the following command from the same directoy you ran `npm install`
+On Windows, run the following command from the same directory you ran `npm install`
 in, or that you extracted the release zip file:
 
     node node_modules/node-red/red.js
@@ -60,7 +60,7 @@ in, or that you extracted the release zip file:
 ### Command-line usage
 
     Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR] [flows.json]
-    
+
     Options:
       -s, --settings FILE  use specified settings file
       -u, --userDir  DIR   use specified user directory
@@ -78,11 +78,11 @@ To override what directory to use, the `--userDir` command-line option can be us
 
 #### Passing arguments to the underlying node.js process
 
-There are occassions when it is necessary to pass arguments to the underlying
-node.js process. For example, when running on devices like the Raspberry Pi or 
+There are occasions when it is necessary to pass arguments to the underlying
+node.js process. For example, when running on devices like the Raspberry Pi or
 BeagleBone Black that have a constrained amount of memory.
 
-To do this, you must use the `node-red-pi` start script in place of `node-red`. 
+To do this, you must use the `node-red-pi` start script in place of `node-red`.
 _Note_: this script is not available on Windows.
 
 Alternatively, if are running Node-RED using the `node` command, you must provide
@@ -91,15 +91,16 @@ want passed to Node-RED itself.
 
 The following two commands show these two approaches:
 
-    node-red-pi --max-old-space-size=128 --userDir  /home/user/node-red-data/
-    node --max-old-space-size=128 red.js  --userDir /home/user/node-red-data/
+    node-red-pi --max-old-space-size=128 --userDir /home/user/node-red-data/
+    node --max-old-space-size=128 red.js --userDir /home/user/node-red-data/
 
 
 ### Starting Node-RED on boot
-    
+
 There are many methods of starting, stopping and monitoring applications at boot
 time. The guide below sets out what we believe to be the most straight-forward for
-the majority of users.
+the majority of users. For Windows PM2 does not autorun as a service -
+you may prefer the [NSSM option](#alternative-options) below.
 
 #### Using PM2
 
@@ -108,12 +109,11 @@ it easy to run applications on boot and ensure they are restarted if necessary.
 
 ##### 1. Install PM2
 
-
     sudo npm install -g pm2
 
 <div class="doc-callout">
 <em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
-running on Windows, you will need to run in a command shell as Administrator,
+running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
 without the <code>sudo</code> command.
 </div>
 
@@ -169,7 +169,7 @@ it is being run on.
 Run this command and follow the instructions it provides:
 
     pm2 startup
-    
+
 ##### 5. Reboot
 
 Finally, reboot and check everything starts as expected.
@@ -184,7 +184,5 @@ by members of the community.
  - [An init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94) by Belphemur (linux)
  - [A systemd script](https://gist.github.com/Belphemur/3f6d3bf211b0e8a18d93) by Belphemur (linux)
  - [A Launchd script](https://gist.github.com/natcl/4688162920f368707613) by natcl (OS X)
- - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill
  - [Running as a Windows service using NSSM](https://gist.github.com/dceejay/576b4847f0a17dc066db) by dceejay
-
-
+ - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill

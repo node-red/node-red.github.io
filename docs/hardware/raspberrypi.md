@@ -67,7 +67,7 @@ interrupts on inputs meaning faster response times (rather than polling).
 
 ### Starting Node-RED
 
-Due to the constrained memory available on the Raspberry Pi, it is necesary to
+Due to the constrained memory available on the Raspberry Pi, it is necessary to
 run Node-RED with the `node-red-pi` command. This allows an additional argument
 to be provided that sets at what point Node.js will begin to free up unused memory.
 
@@ -76,16 +76,20 @@ be specified:
 
     node-red-pi --max-old-space-size=128
 
-When running Node-RED using node directly, this option must appear between node
+If you decide to run Node-RED using the node command directly, this option must appear between node
 and red.js.
-    
-    node --max-old-space-size=128 red.js
 
+    node --max-old-space-size=128 red.js
 
 This option limits the space it can use to 128MB before cleaning up. If you are
 running nothing else on your Pi you can afford to increase that figure to 256
-and possibley even higher. The command `free -h` will give you some clues as to
-how much memory is currently availabe.
+and possibly even higher. The command `free -h` will give you some clues as to
+how much memory is currently available.
+
+### Making Node-RED autostart on boot (optional)
+
+See [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot) for Linux.
+
 
 ### Accessing GPIO pins
 
@@ -102,30 +106,35 @@ the sudoers list - or maybe just access to python - for example by adding the fo
 
 We are currently looking at ways to reduce this exposure further.
 
+### Extra Nodes
 
-### Notes
+There are also some extra hardware specific nodes (for the Pibrella, PiFace and
+LEDBorg plug on modules) available via [npm](https://www.npmjs.com/search?q=node-red-node-+).
+For example the Pibrella node can be installed as follows
+
+        cd ~/.node-red
+        npm install node-red-node-pibrella
+
+### Note
 
  * **Midori Browser** - the old Midori browser does not have adequate javascript support to
 use it with Node-RED. If you want to use a built in browser on the Pi please
 install the Epiphany browser and use that pointed at http://localhost:1880.
-Epiphany is now the default Rasbian browser, or you can install it by
+Epiphany is now the default Raspbian browser, or you can install it by
 
-    sudo apt-get install epiphany-browser
-
- * **Extra Nodes** - There are also some extra hardware specific nodes (for the Pibrella, PiFace and
-LEDBorg plug on modules) available in the [node-red-nodes project](https://github.com/node-red/node-red-nodes/tree/master/hardware/) on Github.
+        sudo apt-get install epiphany-browser
 
 ***
 
 ### Interacting with the Pi hardware
 
-There are (at least) two ways for interacting with a Raspberry Pi using Node-RED.
+There are two main ways of interacting with a Raspberry Pi using Node-RED.
 
-**rpi-gpio nodes**
+**rpi-gpio nodes**  (default)
 : provided in the palette for monitoring and controlling the GPIO
   pins. This is the simplest and recommended way.
 
-**wiring-pi module**
+**wiring-pi module** (optional)
 : this provides complete access to the GPIO pins, and other devices, within
   Function nodes. This gives more control and access to other features not in
   the nodes but you have to program it yourself.
@@ -133,13 +142,13 @@ There are (at least) two ways for interacting with a Raspberry Pi using Node-RED
 
 ### rpi-gpio nodes
 
-These use a python **nrgpio** command as part of the core install and can be
-found in node-red/nodes/core/hardware
+These use a python **nrgpio** command as part of the core install that can be
+found in \<node-red-install-directory>/nodes/core/hardware
 
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
 
 
-### Blink example
+### Blink - gpio
 
 To run a "blink" flow that toggles an LED on Pin 11 of the GPIO header, you will
 need to connect up an LED as described [here](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/).
@@ -176,7 +185,7 @@ to get Wiring Pi installed.
 Firstly the npm module needs to be installed into the same directory as your
 `settings.js` file.
 
-    cd $HOME/.node-red
+    cd ~/.node-red
     npm install wiring-pi
 
 This does not add any specific nodes to Node-RED. Instead the Wiring-Pi module can be made
@@ -191,7 +200,7 @@ global context:
 
 The module is then available to any functions you write as `context.global.wpi`.
 
-#### Blink
+#### Blink - Wiring-Pi
 
 To run a "blink" flow that uses the WiringPi pin 0 - Pin 11 on the GPIO header,
 you will need to connect up an LED as described [here](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/).
@@ -205,4 +214,3 @@ okay, click in the workspace to place the new nodes.
 
 Click the `Deploy` button and the flow should start running. The LED should start
 toggling on and off once a second.
-
