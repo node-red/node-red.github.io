@@ -51,8 +51,10 @@ Due to the constrained memory available on the BBB, it is necessary to
 run Node-RED with the `node-red-pi` command. For details and other options follow
 the [Running Node-RED](../getting-started/running.html) instructions.
 
-Once Node-RED is started, assuming you haven't changed the hostname, browse to
-<http://beaglebone.local:1880>.
+#### Using the Editor
+
+Once Node-RED is started, assuming you haven't changed the hostname, point a
+browser to `http://beaglebone.local:1880`.
 
 #### First Flow - Hello World
 

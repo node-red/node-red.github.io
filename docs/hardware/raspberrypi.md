@@ -86,6 +86,15 @@ running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 
+### Using the Editor
+
+Once Node-RED is running - point a browser to the machine where Node-RED is running.
+One way to find the IP address of the Pi is to use
+
+    hostname -I
+
+Then browse to http://{the-ip-address-returned}:1880/
+
 ### Making Node-RED autostart on boot (optional)
 
 See [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot) for Linux.
@@ -148,7 +157,7 @@ found in \<node-red-install-directory>/nodes/core/hardware
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
 
 
-### Blink - gpio
+### First Flow - Blink - gpio
 
 To run a "blink" flow that toggles an LED on Pin 11 of the GPIO header, you will
 need to connect up an LED as described [here](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/).
@@ -159,7 +168,6 @@ okay, click in the workspace to place the new nodes.
 
 
         [{"id":"ae05f870.3bfc2","type":"function","name":"Toggle 0/1 on input","func":"\ncontext.state = context.state || 0;\n\n(context.state == 0) ? context.state = 1 : context.state = 0;\nmsg.payload = context.state;\n\nreturn msg;","outputs":1,"x":348.1666488647461,"y":146.16667652130127,"wires":[["1b0b73e9.14712c","b90e5005.a7c3b8"]]},{"id":"1b0b73e9.14712c","type":"debug","name":"","active":true,"x":587.1666488647461,"y":206.1666774749756,"wires":[]},{"id":"7aa75c69.fd5894","type":"inject","name":"tick every 1 sec","topic":"","payload":"","repeat":"1","crontab":"","once":false,"x":147.1666488647461,"y":146.1666774749756,"wires":[["ae05f870.3bfc2"]]},{"id":"b90e5005.a7c3b8","type":"rpi-gpio out","name":"","pin":"7","x":585.0000114440918,"y":146.00001049041748,"wires":[]}]
-
 
 
 Click the deploy button and the flow should start running. The LED should start
