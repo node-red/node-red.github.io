@@ -25,7 +25,7 @@ Then update the packages
 
     sudo apt-get update
     sudo apt-get upgrade
-    sudo apt-get install screen npm --reinstall
+    sudo apt-get install npm --reinstall
 
 #### Installing Node-RED
 
@@ -47,14 +47,14 @@ These give you direct access to the I/O pins in the simplest possible manner. Th
 
 #### Starting Node-RED
 
-Due to the constrained memory available on the BBB, it is necessary to
+Due to the constrained memory available on the BBB, it is advisable to
 run Node-RED with the `node-red-pi` command. For details and other options follow
 the [Running Node-RED](../getting-started/running.html) instructions.
 
 #### Using the Editor
 
 Once Node-RED is started, assuming you haven't changed the hostname, point a
-browser to `http://beaglebone.local:1880`.
+browser to [http://beaglebone.local:1880](http://beaglebone.local:1880).
 
 #### First Flow - Hello World
 

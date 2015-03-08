@@ -93,7 +93,7 @@ One way to find the IP address of the Pi is to use
 
     hostname -I
 
-Then browse to http://{the-ip-address-returned}:1880/
+Then browse to `http://{the-ip-address-returned}:1880/`
 
 ### Making Node-RED autostart on boot (optional)
 

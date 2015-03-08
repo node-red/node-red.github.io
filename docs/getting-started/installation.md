@@ -24,7 +24,10 @@ Other download options are available [here](http://nodejs.org/dist/v0.10.36/).
 You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 If you chose this option, you must ensure to get a <code>0.10.x</code> version.
 
-For installing on the Raspberry Pi, see the specific instructions [here](../hardware/raspberrypi.html).
+There are specific instructions available for certain hardware platforms:
+
+ - [Raspberry Pi](../hardware/raspberrypi.html)
+ - [BeagleBone Black](../hardware/beagleboneblack.html)
 
 ### Install Node-RED
 
