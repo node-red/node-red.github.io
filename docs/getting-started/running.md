@@ -166,8 +166,9 @@ More information about managing processes under PM2 is available [here](https://
 PM2 is able to generate and configure a startup script suitable for the platform
 it is being run on.
 
-Run this command and follow the instructions it provides:
+Run these commands and follow the instructions it provides:
 
+    pm2 save
     pm2 startup
 
 ##### 5. Reboot

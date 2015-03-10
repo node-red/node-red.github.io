@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Upgrading
----   
+---
 
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
 
     sudo npm update -g node-red
 
-### Upgrading from before Node-RED 0.10.4 
+### Upgrading from before Node-RED 0.10.4
 
 In releases prior to 0.10.4, the default behaviour was to write user data into
 the Node-RED install directory. This made upgrading a painful experience. The
@@ -22,7 +22,7 @@ directory.
 
 3. Move the following files from the Node-RED install directory to your chosen
    user data directory:
-   
+
    - `settings.js` - if you have customised it
    - all files beginning with `flows_`
    - `.config.json`
@@ -30,9 +30,11 @@ directory.
    - the entire `lib/` directory
    - any additional nodes you have manually installed under the `nodes/` directory
 
-4. With your data moved, delete the Node-RED install directory and install the
+4. With your data moved, ensure that the new directory and the files within it are
+owned by and writeable by the user that you use to run Node-RED.
+
+5. Delete the old Node-RED install directory and install the
    new version following the [install instructions](installation.html).
 
-5. If you had npm-installed any additional nodes, or manually copied in nodes
+6. If you had npm-installed any additional nodes, or manually copied in nodes
    which have their own npm dependencies, you will need to [reinstall them](adding-nodes.html).
-

@@ -60,8 +60,8 @@ the latest available:
     sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
 
 <div class="doc-callout">
-<em>Change from Node-RED v0.9.1</em>: Using RPi.GPIO is a change from using WiringPi
-- the main benefits are that we can get software PWM on all output pins, and easier access to
+Using RPi.GPIO is a change from our using WiringPi in v0.9.1 - the main benefits
+are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
 </div>
 
@@ -89,7 +89,7 @@ how much memory is currently available.
 ### Using the Editor
 
 Once Node-RED is running - point a browser to the machine where Node-RED is running.
-One way to find the IP address of the Pi is to use
+One way to find the IP address of the Pi is to use the command
 
     hostname -I
 

@@ -48,8 +48,8 @@ These give you direct access to the I/O pins in the simplest possible manner. Th
 #### Starting Node-RED
 
 Due to the constrained memory available on the BBB, it is advisable to
-run Node-RED with the `node-red-pi` command. For details and other options follow
-the [Running Node-RED](../getting-started/running.html) instructions.
+run Node-RED with the `node-red-pi` command. For details and other options such as auto-starting
+on boot, follow the [Running Node-RED](../getting-started/running.html) instructions.
 
 #### Using the Editor
 
