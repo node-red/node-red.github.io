@@ -3,8 +3,9 @@ layout: default
 title: Arduino
 ---
 
-There are two main ways for interacting with an Arduino using Node-RED. They
-both assume the Arduino is connected to the host computer via a USB connection.
+There are several ways to interact with an Arduino using Node-RED. They
+all assume the Arduino is connected to the host computer via a USB serial
+connection.
 
 ***
 
@@ -71,4 +72,47 @@ fairly stable, but analog readings often end up being at the full sample rate
 (default: 40 times a second...). This can be changed in the configuration of the
 serial port to reduce it to a more manageable rate.
 
-Details of the node.js firmata library can be found [here](https://github.com/jgautier/firmata).
+Details of the node.js arduino-firmata library can be found [here](https://www.npmjs.com/package/arduino-firmata).
+
+***
+
+### Using Johnny-Five
+
+You may also use the popular [Johnny-Five](https://www.npmjs.com/package/johnny-five) library.
+As it is so rich in function it is best used within functions.
+
+This can be achieved by editing the globalContextSettings sections of settings.js to be
+
+    functionGlobalContext: {
+        // os:require('os'),
+        // bonescript:require('bonescript'),
+       jfive:require("johnny-five"),                // this is the reference to the library
+       jboard:require("johnny-five").Board()        // this actually starts the board link...
+    },
+
+We start the board link here so that multiple functions within the workspace can
+use it, though you should be careful to only access each pin once.
+
+Finally install the npm from within your Node-RED home directory
+
+    cd ~/.node-red
+    npm install johnny-five
+
+and then you may access all the richness of Johnny-Five from within functions...
+
+    var five = context.global.jfive;
+    var led = new five.Led(13);
+    led.blink(500);
+
+
+#### Blink 2
+
+Here is a complete example that you can import into the workspace.
+Click the inject button to start the led 13 flashing every 500mS.
+
+    [{"id":"35f228b4.e1f3b8","type":"inject","name":"Click to start","topic":"","payload":"This will make it blink","payloadType":"string","repeat":"","crontab":"","once":false,"x":124,"y":291,"z":"6480e14.f9b7f2","wires":[["b2b5f432.a374e8"]]},{"id":"b2b5f432.a374e8","type":"function","name":"blink LED 13","func":"// rename the global context variable to something shorter\nvar five = context.global.jfive;\n\n// select Led function on pin 13\nvar led = new five.Led(13);\n\n// blink it every 500mS\nled.blink(500);\n\nreturn msg;","outputs":1,"valid":true,"x":276,"y":358,"z":"6480e14.f9b7f2","wires":[["ac67828.f53988"]]},{"id":"ac67828.f53988","type":"debug","name":"","active":true,"console":"false","complete":"false","x":435,"y":299,"z":"6480e14.f9b7f2","wires":[]}]
+
+<div class="doc-callout">If you do use Johnny-Five it also uses the
+console and will require you to hit Ctrl-C or Ctrl-break <b>twice</b> to stop the
+application.
+</div>
