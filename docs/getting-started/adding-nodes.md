@@ -3,11 +3,12 @@ layout: default
 title: Adding Nodes
 ---
 
-The Node-RED release comes with a core set of useful nodes, but there are a growing
-number of additional nodes available for install from other sources.
+Node-RED comes with a core set of useful nodes, but there are a growing number
+of additional nodes available for install from both the Node-RED project as well
+as the wider community.
 
-You can search the NPM repository for the [`node-red` keyword](https://www.npmjs.com/browse/keyword/node-red)
-to find additional nodes.
+You can search for available nodes in the [Node-RED library](http://flows.nodered.org)
+or on the [npm repository](https://www.npmjs.com/browse/keyword/node-red).
 
 ### Installing npm packaged nodes
 
