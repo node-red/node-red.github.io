@@ -18,7 +18,7 @@ For this example, the Inject node will be configured to trigger the flow at a re
 Drag an Inject node onto the workspace from the palette.
 
 Double click the node to bring up the edit dialog. Set the repeat interval to `every 5 minutes on every day`.
-        
+
 Click Ok to close the dialog.
 
 #### 2. Add an HttpRequest node
@@ -27,7 +27,7 @@ The HttpRequest node can be used to retrieve a web-page when triggered.
 
 After adding one to the workspace, edit it to set the `URL` property to:
 
-        http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx
+        http://realtimeweb-prod.nationalgrid.com/SystemData.aspx
 
 You can optionally add a friendly name.
 
@@ -37,21 +37,19 @@ Add a Function node with the following code:
 
         // does a simple text extract parse of the http output to provide an
         // object containing the uk power demand, frequency and time
-        
-        if (~msg.payload.indexOf('<BR')) {
-          var words = msg.payload.split("div")[1].split("<BR");
-          if (words.length >= 3) {
+
+        if (~msg.payload.indexOf('<span')) {
+            var dem = msg.payload.split('Demand:')[1].split("MW")[0];
+            var fre = msg.payload.split('Frequency:')[1].split("Hz")[0];
+
             msg.payload = {};
-            msg.payload.demand = parseInt(words[0].split(":")[1]);
-            msg.payload.frequency = parseFloat(words[2].split(":")[1]);
-            msg.payload.time = words[1].split(">")[1];
-            
-            // Create the true/false signal based on the frequency.
+            msg.payload.demand = parseInt(dem.split(">")[1].split("<")[0]);
+            msg.payload.frequency = parseFloat(fre.split(">")[1].split("<")[0]);
+
             msg2 = {};
             msg2.payload = (msg.payload.frequency >= 50) ? true : false;
-            
+
             return [msg,msg2];
-          }
         }
         return null;
 
@@ -63,7 +61,7 @@ Add two Debug nodes.
 
 #### 5. Wire them all together
 
-  - Wire the Inject node output to the HttpRequest node input. 
+  - Wire the Inject node output to the HttpRequest node input.
   - Wire the HttpRequest node output to the Function node input.
   - Wire each of the Function node outputs to a different Debug node input.
 
@@ -77,7 +75,7 @@ Click the Deploy button.
 With the Debug sidebar tab selected (Ctrl-Space, or via the dropdown menu, then click the Debug tab), click the
 Inject button. You should see an entry with some contents that looks like:
 
-        (Object) { "demand": 34819, "frequency": 50.04, "time": "17:30:00 GMT" }
+        (Object) { "demand": 34819, "frequency": 50.04 }
 
 and another with something like:
 
@@ -104,5 +102,4 @@ imported straight into the editor by pasting the json into the Import dialog
 (Ctrl-I or via the dropdown menu).
 
 
-    [{"id":"aad4ccd8.552b3","type":"function","name":"UK Power Demand","func":"// does a simple text extract parse of the http output to provide an\n// object containing the uk power demand, frequency and time\n\nif (~msg.payload.indexOf('<BR')) {\nvar words = msg.payload.split(\"div\")[1].split(\"<BR\");\nif (words.length >= 3) {\nmsg.payload = {};\nmsg.payload.demand = parseInt(words[0].split(\":\")[1]);\nmsg.payload.frequency = parseFloat(words[2].split(\":\")[1]);\nmsg.payload.time = words[1].split(\">\")[1];\nmsg2 ={};\nmsg2.payload = (msg.payload.frequency >= 50) ? true : false;\n\nreturn [msg,msg2];\n}\n}\nreturn null;","outputs":"2","x":777,"y":160,"wires":[["42e49f8e.bd1b6"],["7f25942e.80da6c"]]},{"id":"59564535.a6a9bc","type":"inject","name":"Tick","topic":"","payload":"","repeat":"","crontab":"*/5 * * * *","once":false,"x":460,"y":160,"wires":[["1efbf8aa.e10407"]]},{"id":"42e49f8e.bd1b6","type":"debug","name":"","active":true,"complete":false,"x":977,"y":130,"wires":[]},{"id":"7f25942e.80da6c","type":"debug","name":"","active":true,"complete":false,"x":978,"y":201,"wires":[]},{"id":"1efbf8aa.e10407","type":"http request","name":"UK Power","method":"GET","url":"http://www.nationalgrid.com/ngrealtime/realtime/systemdata.aspx","x":600,"y":160,"wires":[["aad4ccd8.552b3"]]}]
-
+    [{"id":"11b032a3.ee4fcd","type":"inject","name":"Tick","topic":"","payload":"","repeat":"","crontab":"*/5 * * * *","once":false,"x":161,"y":828,"z":"6480e14.f9b7f2","wires":[["a2b3542e.5d4ca8"]]},{"id":"a2b3542e.5d4ca8","type":"http request","name":"UK Power","method":"GET","url":"http://realtimeweb-prod.nationalgrid.com/SystemData.aspx","x":301,"y":828,"z":"6480e14.f9b7f2","wires":[["2631e2da.d9ce1e"]]},{"id":"2631e2da.d9ce1e","type":"function","name":"UK Power Demand","func":"// does a simple text extract parse of the http output to provide an\n// object containing the uk power demand, frequency and time\n\nif (~msg.payload.indexOf('<span')) {\n    var dem = msg.payload.split('Demand:')[1].split(\"MW\")[0];\n    var fre = msg.payload.split('Frequency:')[1].split(\"Hz\")[0];\n\n    msg.payload = {};\n    msg.payload.demand = parseInt(dem.split(\">\")[1].split(\"<\")[0]);\n    msg.payload.frequency = parseFloat(fre.split(\">\")[1].split(\"<\")[0]);\n    \n    msg2 = {};\n    msg2.payload = (msg.payload.frequency >= 50) ? true : false;\n\n    return [msg,msg2];\n}\n\nreturn null;","outputs":"2","valid":true,"x":478,"y":828,"z":"6480e14.f9b7f2","wires":[["8e56f4d3.71a908"],["cd84371b.327bc8"]]},{"id":"8e56f4d3.71a908","type":"debug","name":"","active":true,"complete":false,"x":678,"y":798,"z":"6480e14.f9b7f2","wires":[]},{"id":"cd84371b.327bc8","type":"debug","name":"","active":true,"complete":false,"x":679,"y":869,"z":"6480e14.f9b7f2","wires":[]}]
