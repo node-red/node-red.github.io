@@ -68,6 +68,20 @@ In the current release, users can have one of two permissions:
  - `*` - full access
  - `read` - read-only access
 
+#### Token expiration
+
+By default, access tokens expire after 7 days after they are created. We do not
+currently support refreshing the token to extend this period.
+
+The expiration time can be customised by setting the `sessionExpiryTime` property
+of the `adminAuth` setting. This defines, in seconds, how long a token is valid
+for. For example, to set the tokens to expire after 1 day:
+
+    adminAuth: {
+        sessionExpiryTime: 86400,
+        ...
+    }
+ 
 ### Custom user authentication
 
 Rather than hardcode users into the settings file, it is also possible to plug in

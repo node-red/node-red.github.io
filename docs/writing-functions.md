@@ -32,7 +32,14 @@ example:
 
     var newMsg = { payload: msg.payload.length };
     return newMsg;
-    
+
+<div class="doc-callout"><em>Note</em>: constructing a new message object will
+lose any message properties of the received message. This will break some flows,
+for example the HTTP In/Response flow requires the <code>msg.req</code> and
+<code>msg.res</code> properties to be preserved end-to-end.</div>
+
+
+
 #### Multiple Outputs ####
 
 The function edit dialog allows the number of outputs to be defined. If there
@@ -79,6 +86,40 @@ returns a message for each of the words.
     return [ outputMsgs ];
 {% endhighlight %}
 
+#### Sending messages asynchronously
+
+If the function needs to perform an asynchronous action before sending a message,
+it cannot return the message at the end of the function.
+
+Instead, it can make use of the `node.send()` function, passing in the message(s)
+to be sent. For example:
+
+{% highlight javascript %}
+    doSomeAsyncWork(msg, function(result) {
+        node.send({payload:result});
+    });
+    return;
+{% endhighlight %}
+
+
+#### Logging events
+
+If a node needs to log something to the console, it can use one of the follow functions:
+
+        node.log("Something happened");
+        node.warn("Something happened you should know about");
+        node.error("Oh no, something bad happened");
+
+The `warn` and `error` messages also get sent to the flow editor debug tab.
+
+#### Handling errors
+
+If the function encounters an error that should halt the current flow, it should
+return nothing. To trigger a Catch node on the same tab, the function should call
+`node.error` with the original message as a second argument:
+
+        node.error("hit an error", msg);
+
 #### Context ####
 
 Aside from the `msg` object, the function also has access to a `context` object.
@@ -119,7 +160,8 @@ at which point, the module can be referenced within a function as
 
 The Function node also makes the following object available:
 
-* `console` - useful for making calls to `console.log` whilst debugging
+* `console` - useful for making calls to `console.log` whilst debugging, although
+  `node.log` is the preferred method of logging
 * `util` - the Node.js `util` module
 * `Buffer` - the Node.js `Buffer` module
 

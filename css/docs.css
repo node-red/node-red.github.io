@@ -50,7 +50,6 @@ ul.toc li a:hover {
 ul.toc li.tocheader span {
     background: #B68181;
     border-left-color: #B68181;
-    -border-right-color: #B68181;
     color: #fff;
 }
 ul.toc li li a {
