@@ -14,9 +14,11 @@ To set its current status, a node uses the `status` function. For example, the
 following two calls are used by the MQTT node to set the statuses seen in the
 image above:
 
-        this.status({fill:"red",shape:"ring",text:"disconnected"});
-        
-        this.status({fill:"green",shape:"dot",text:"connected"});
+{% highlight javascript %}
+this.status({fill:"red",shape:"ring",text:"disconnected"});
+
+this.status({fill:"green",shape:"dot",text:"connected"});
+{% endhighlight %}
 
 *By default, the node status information is not displayed in the editor. It can
 be enabled by selecting the Status option in the drop-down menu.*

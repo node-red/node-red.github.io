@@ -50,11 +50,13 @@ To add credentials to a node, the following steps are taken:
 Within the runtime, a node can access its credentials using the `credential`
 property:
 
-        function MyNode(config) {
-            RED.nodes.createNode(this,config);
-            var username = this.credentials.username;
-            var password = this.credentials.password;
-        }
+{% highlight javascript %}
+function MyNode(config) {
+    RED.nodes.createNode(this,config);
+    var username = this.credentials.username;
+    var password = this.credentials.password;
+}
+{% endhighlight %}
 
 #### Credentials within the Editor
 
@@ -64,12 +66,14 @@ in the runtime. But credentials of type `password` are not available. Instead,
 a corresponding boolean property called `has_<property-name>` is present to
 indicate whether the credential has a non-blank value assigned to it.
 
-        oneditprepare: function() {
-            // this.credentials.username is set to the appropriate value
-            // this.credentials.password is not set
-            // this.credentials.has_password indicates if the property is present in the runtime
-            ...
-        },
+{% highlight javascript %}
+oneditprepare: function() {
+    // this.credentials.username is set to the appropriate value
+    // this.credentials.password is not set
+    // this.credentials.has_password indicates if the property is present in the runtime
+    ...
+}
+{% endhighlight %}
 
 ### Advanced credential use
 

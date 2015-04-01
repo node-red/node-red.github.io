@@ -29,21 +29,23 @@ information.
 
 ##### Credential based authentication
 
+{% highlight json %}
+{
+  "type": "credentials",
+  "prompts": [
     {
-      "type": "credentials",
-      "prompts": [
-        {
-          "id": "username",
-          "type": "text",
-          "label": "Username"
-        },
-        {
-          "id": "password",
-          "type": "password",
-          "label": "Password"
-        }
-      ]
+      "id": "username",
+      "type": "text",
+      "label": "Username"
+    },
+    {
+      "id": "password",
+      "type": "password",
+      "label": "Password"
     }
+  ]
+}
+{% endhighlight %}
 
 The API is secured by access token.
 
@@ -67,12 +69,13 @@ The following parameters must be provided:
 
 If successful, the response will contain the access token:
 
-    {
-      "access_token": "A_SECRET_TOKEN",
-      "expires_in":604800,
-      "token_type": "Bearer"
-    }
-
+{% highlight json %}
+{
+  "access_token": "A_SECRET_TOKEN",
+  "expires_in":604800,
+  "token_type": "Bearer"
+}
+{% endhighlight %}
 
 ### Step 2 - Using the access token
 

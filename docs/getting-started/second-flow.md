@@ -27,7 +27,7 @@ The HttpRequest node can be used to retrieve a web-page when triggered.
 
 After adding one to the workspace, edit it to set the `URL` property to:
 
-        http://realtimeweb-prod.nationalgrid.com/SystemData.aspx
+    http://realtimeweb-prod.nationalgrid.com/SystemData.aspx
 
 You can optionally add a friendly name.
 
@@ -35,23 +35,25 @@ You can optionally add a friendly name.
 
 Add a Function node with the following code:
 
-        // does a simple text extract parse of the http output to provide an
-        // object containing the uk power demand, frequency and time
+{% highlight javascript %}
+// does a simple text extract parse of the http output to provide an
+// object containing the uk power demand, frequency and time
 
-        if (~msg.payload.indexOf('<span')) {
-            var dem = msg.payload.split('Demand:')[1].split("MW")[0];
-            var fre = msg.payload.split('Frequency:')[1].split("Hz")[0];
+if (~msg.payload.indexOf('<span')) {
+    var dem = msg.payload.split('Demand:')[1].split("MW")[0];
+    var fre = msg.payload.split('Frequency:')[1].split("Hz")[0];
 
-            msg.payload = {};
-            msg.payload.demand = parseInt(dem.split(">")[1].split("<")[0]);
-            msg.payload.frequency = parseFloat(fre.split(">")[1].split("<")[0]);
+    msg.payload = {};
+    msg.payload.demand = parseInt(dem.split(">")[1].split("<")[0]);
+    msg.payload.frequency = parseFloat(fre.split(">")[1].split("<")[0]);
 
-            msg2 = {};
-            msg2.payload = (msg.payload.frequency >= 50) ? true : false;
+    msg2 = {};
+    msg2.payload = (msg.payload.frequency >= 50) ? true : false;
 
-            return [msg,msg2];
-        }
-        return null;
+    return [msg,msg2];
+}
+return null;
+{% endhighlight %}
 
 Set the number of outputs for the function node to <b>2</b>.
 
@@ -75,11 +77,11 @@ Click the Deploy button.
 With the Debug sidebar tab selected (Ctrl-Space, or via the dropdown menu, then click the Debug tab), click the
 Inject button. You should see an entry with some contents that looks like:
 
-        (Object) { "demand": 34819, "frequency": 50.04 }
+    (Object) { "demand": 34819, "frequency": 50.04 }
 
 and another with something like:
 
-        (boolean) true
+    (boolean) true
 
 
 #### 7. Summary

@@ -10,11 +10,13 @@ The following types can be returned by the API methods.
 A Node Module represents the collection of Node Sets provided by an npm package.
 
 
-    {
-      "name": "node-module-name",
-      "version": "0.0.6",
-      "nodes": [ ]
-    }
+{% highlight json %}
+{
+  "name": "node-module-name",
+  "version": "0.0.6",
+  "nodes": [ ]
+}
+{% endhighlight %}
 
 Field     | Description
 ----------|-----------------------
@@ -28,15 +30,16 @@ A Node Set represents the collection of types provided by a single file within
 a Node Module. They correspond to the entries in the [`node-red.nodes` property
 of the module's `package.json`](/docs/creating-nodes/packaging.html#packagejson).
 
-    {
-      "id": "node-module-name/node-set-name",
-      "name": "node-set-name",
-      "types": [ ],
-      "enabled": true,
-      "module": "node-module-name",
-      "version": "0.0.6"
-    }
-
+{% highlight json %}
+{
+  "id": "node-module-name/node-set-name",
+  "name": "node-set-name",
+  "types": [ ],
+  "enabled": true,
+  "module": "node-module-name",
+  "version": "0.0.6"
+}
+{% endhighlight %}
     
 Field    | Description
 ---------|-----------------------

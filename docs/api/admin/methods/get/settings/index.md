@@ -18,14 +18,16 @@ Status Code | Reason         | Response
 `200`       | Success        | See example response body
 `401`       | Not authorized | _none_
 
-    {
-      "httpNodeRoot": "/",
-      "version": "0.X.Y",
-      "user": {
-        "username": "admin",
-        "permissions": "*"
-      }
-    }
+{% highlight json %}
+{
+  "httpNodeRoot": "/",
+  "version": "0.X.Y",
+  "user": {
+    "username": "admin",
+    "permissions": "*"
+  }
+}
+{% endhighlight %}
 
 The response object contains the following fields:
 

@@ -48,12 +48,14 @@ delete the existing wire (select it and hit delete on the keyboard).
 Double-click on the Function node to bring up the edit dialog. Copy the follow
 code into the function field: 
 
-    // Create a Date object from the payload
-    var date = new Date(msg.payload);
-    // Change the payload to be a formatted Date string
-    msg.payload = date.toString();
-    // Return the message so it can be sent on
-    return msg;
+{% highlight javascript %}
+// Create a Date object from the payload
+var date = new Date(msg.payload);
+// Change the payload to be a formatted Date string
+msg.payload = date.toString();
+// Return the message so it can be sent on
+return msg;
+{% endhighlight %}
 
 Click Ok to close the edit dialog and then click the deploy button.
 

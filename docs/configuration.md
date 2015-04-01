@@ -55,7 +55,7 @@ httpAdminAuth
   The `pass` property is the md5 hash of the actual password. The following
   command can be used to generate the hash:
 
-      $ node -e "console.log(require('crypto').createHash('md5').update('YOUR PASSWORD HERE','utf8').digest('hex'))"
+      node -e "console.log(require('crypto').createHash('md5').update('YOUR PASSWORD HERE','utf8').digest('hex'))"
 
   *Standalone only*.
 

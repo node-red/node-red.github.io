@@ -21,10 +21,11 @@ Field    | Description
 ---------|-----------------------
 `module` | The name of the node module to install
 
-    {
-      "module": "node-red-node-suncalc"
-    }
-
+{% highlight json %}
+{
+  "module": "node-red-node-suncalc"
+}
+{% endhighlight %}
 
 ### Response
 
@@ -35,21 +36,22 @@ Status Code | Reason         | Response
 `401`       | Not authorized | _none_
 `404`       | Not found      | _none_
 
+{% highlight json %}
+{
+  "name": "node-red-node-suncalc",
+  "version": "0.0.6",
+  "nodes": [
     {
-      "name": "node-red-node-suncalc",
-      "version": "0.0.6",
-      "nodes": [
-        {
-          "id": "node-red-node-suncalc/suncalc",
-          "name": "suncalc",
-          "types": [
-            "sunrise"
-          ],
-          "enabled": true,
-          "loaded": true,
-          "module": "node-red-node-suncalc"
-        }
-      ]
+      "id": "node-red-node-suncalc/suncalc",
+      "name": "suncalc",
+      "types": [
+        "sunrise"
+      ],
+      "enabled": true,
+      "loaded": true,
+      "module": "node-red-node-suncalc"
     }
-
+  ]
+}
+{% endhighlight %}
 

@@ -26,9 +26,11 @@ Field     | Description
 ----------|------------------------
 `enabled` | `true` or `false` - whether to enable or disable the module
 
-    {
-      "enabled": true
-    }
+{% highlight json %}
+{
+  "enabled": true
+}
+{% endhighlight %}
 
 ### Response
 
@@ -40,14 +42,15 @@ Status Code | Reason         | Response
 `404`       | Not found      | _none_
 
 
-    {
-      "id": "node-red-node-suncalc/suncalc",
-      "name": "suncalc",
-      "types": [
-        "sunrise"
-      ],
-      "enabled": false,
-      "module": "node-red-node-suncalc"
-    }
-
+{% highlight json %}
+{
+  "id": "node-red-node-suncalc/suncalc",
+  "name": "suncalc",
+  "types": [
+    "sunrise"
+  ],
+  "enabled": false,
+  "module": "node-red-node-suncalc"
+}
+{% endhighlight %}
 

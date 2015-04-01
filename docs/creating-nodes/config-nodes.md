@@ -18,41 +18,44 @@ key differences:
 
 #### remote-server.html
 
-    <script type="text/javascript">
-        RED.nodes.registerType('remote-server',{
-            category: 'config',
-            defaults: {
-                host: {value:"localhost",required:true},
-                port: {value:1234,required:true,validate:RED.validators.number()},
-            },
-            label: function() {
-                return this.host+":"+this.port;
-            }
-        });
-    </script>
+{% highlight html %}
+<script type="text/javascript">
+    RED.nodes.registerType('remote-server',{
+        category: 'config',
+        defaults: {
+            host: {value:"localhost",required:true},
+            port: {value:1234,required:true,validate:RED.validators.number()},
+        },
+        label: function() {
+            return this.host+":"+this.port;
+        }
+    });
+</script>
 
-    <script type="text/x-red" data-template-name="remote-server">
-        <div class="form-row">
-            <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
-            <input type="text" id="node-config-input-host">
-        </div>
-        <div class="form-row">
-            <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
-            <input type="text" id="node-config-input-port">
-        </div>
-    </script>
-
+<script type="text/x-red" data-template-name="remote-server">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <input type="text" id="node-config-input-port">
+    </div>
+</script>
+{% endhighlight %}
 
 #### remote-server.js
-    
-    module.exports = function(RED) {
-        function RemoteServerNode(n) {
-            RED.nodes.createNode(this,n);
-            this.host = n.host;
-            this.port = n.port;
-        }
-        RED.nodes.registerType("remote-server",RemoteServerNode);
+
+{% highlight javascript %}
+module.exports = function(RED) {
+    function RemoteServerNode(n) {
+        RED.nodes.createNode(this,n);
+        this.host = n.host;
+        this.port = n.port;
     }
+    RED.nodes.registerType("remote-server",RemoteServerNode);
+}
+{% endhighlight %}
 
 In this example, the node acts as a simple container for the configuration - it
 has no actual runtime behaviour.
@@ -68,9 +71,11 @@ to disconnect when the node is stopped.
 Nodes register their use of config nodes by adding a property to the `defaults`
 array with the `type` attribute set to the type of the config node.
 
-       defaults: {
-           server: {value:"", type:"remote-server"},
-       },
+{% highlight javascript %}
+defaults: {
+   server: {value:"", type:"remote-server"},
+},
+{% endhighlight %}
 
 As with other properties, the editor looks for an `<input>` in the edit template
 with an id of `node-input-<propertyname>`. Unlike other properties, the editor
@@ -85,22 +90,23 @@ node edit dialog.
 
 The node can then use this property to access the config node within the runtime.
 
-    module.exports = function(RED) {
-        function MyNode(config) {
-            RED.nodes.createNode(this,config);
-            
-            // Retrieve the config node
-            this.server = RED.nodes.getNode(config.server);
-            
-            if (this.server) {
-                // Do something with:
-                //  this.server.host
-                //  this.server.post
-            } else {
-                // No config node configured
-            }
+{% highlight javascript %}
+module.exports = function(RED) {
+    function MyNode(config) {
+        RED.nodes.createNode(this,config);
+        
+        // Retrieve the config node
+        this.server = RED.nodes.getNode(config.server);
+        
+        if (this.server) {
+            // Do something with:
+            //  this.server.host
+            //  this.server.post
+        } else {
+            // No config node configured
         }
-        RED.nodes.registerType("my-node",MyNode);
     }
-
+    RED.nodes.registerType("my-node",MyNode);
+}
+{% endhighlight %}
 

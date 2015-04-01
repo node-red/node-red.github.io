@@ -25,7 +25,7 @@ Status Code | Reason         | Response
 Returns an array of [Node Set](/docs/api/admin/types.html#node-set) objects. For
 example:
 
-<pre>
+{% highlight json %}
 [
   {
     "id": "node-red/sentiment",
@@ -38,7 +38,7 @@ example:
     "version": "0.10.6"
   }
 ]
-</pre>
+{% endhighlight %}
 
 #### Accept: text/html
 

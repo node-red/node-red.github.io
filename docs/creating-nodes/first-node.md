@@ -23,17 +23,20 @@ all lower-case characters.
 
 
 #### lower-case.js
-    module.exports = function(RED) {
-        function LowerCaseNode(config) {
-            RED.nodes.createNode(this,config);
-            var node = this;
-            this.on('input', function(msg) {
-                msg.payload = msg.payload.toLowerCase();
-                node.send(msg);
-            });
-        }
-        RED.nodes.registerType("lower-case",LowerCaseNode);
+
+{% highlight javascript %}
+module.exports = function(RED) {
+    function LowerCaseNode(config) {
+        RED.nodes.createNode(this,config);
+        var node = this;
+        this.on('input', function(msg) {
+            msg.payload = msg.payload.toLowerCase();
+            node.send(msg);
+        });
     }
+    RED.nodes.registerType("lower-case",LowerCaseNode);
+}
+{% endhighlight %}
 
 The node is wrapped as a node module. The module exports a function that gets called
 when the runtime loads the node on start-up. The function is called with a single
@@ -56,33 +59,34 @@ name for the node, `lower-case`.
 
     
 #### lower-case.html
-    <script type="text/javascript">
-        RED.nodes.registerType('lower-case',{
-            category: 'function',
-            color: '#a6bbcf',
-            defaults: {
-                name: {value:""}
-            },
-            inputs:1,
-            outputs:1,
-            icon: "file.png",
-            label: function() {
-                return this.name||"lower-case";
-            }
-        });
-    </script>
-    
-    <script type="text/x-red" data-template-name="lower-case">
-        <div class="form-row">
-            <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-            <input type="text" id="node-input-name" placeholder="Name">
-        </div>
-    </script>
+{% highlight html %}
+<script type="text/javascript">
+    RED.nodes.registerType('lower-case',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"lower-case";
+        }
+    });
+</script>
 
-    <script type="text/x-red" data-help-name="lower-case">
-        <p>A simple node that converts the message payloads into all lower-case characters</p>
-    </script>
-    
+<script type="text/x-red" data-template-name="lower-case">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="lower-case">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+{% endhighlight %}    
 
 A node's HTML file provides the following things:
 

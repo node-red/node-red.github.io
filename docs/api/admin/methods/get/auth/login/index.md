@@ -18,21 +18,23 @@ In the current version, there are two possible responses:
 
 #### Credential based authentication
 
+{% highlight json %}
+{
+  "type": "credentials",
+  "prompts": [
     {
-      "type": "credentials",
-      "prompts": [
-        {
-          "id": "username",
-          "type": "text",
-          "label": "Username"
-        },
-        {
-          "id": "password",
-          "type": "password",
-          "label": "Password"
-        }
-      ]
+      "id": "username",
+      "type": "text",
+      "label": "Username"
+    },
+    {
+      "id": "password",
+      "type": "password",
+      "label": "Password"
     }
+  ]
+}
+{% endhighlight %}
 
 The `prompts` field indicates what properties are required to be provided in the
 [token exchange](../../../post/auth/token).

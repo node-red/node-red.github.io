@@ -17,14 +17,16 @@ used, its use is deprecated and superceded by <code>adminAuth</code> described b
 
 To enable user authentication, add the following to your `settings.js` file:
 
-    adminAuth: {
-        type: "credentials",
-        users: [{
-            username: "admin",
-            password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
-            permissions: "*"
-        }]
-    }
+{% highlight javascript %}
+adminAuth: {
+    type: "credentials",
+    users: [{
+        username: "admin",
+        password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+        permissions: "*"
+    }]
+}
+{% endhighlight %}
 
 The `users` property is an array of user objects. This allows you to define
 multiple users, each of whom can have different permissions.
@@ -38,8 +40,7 @@ the password is securely hashed using the bcrypt algorithm.
 To generate your password hash, you can run the following command from within the
 Node-RED install directory:
 
-    $ node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here
-    $2a$08$OsFqiovSc/oQiYCMiXauS.46Pb3Fcyt00b25.81sd7L8qXzgIwiPS
+    node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here
 
 You can then copy and paste the result of this command into the settings file.
 
@@ -53,13 +54,15 @@ Typically, this will be giving read-only access to the editor. To do this,
 the `default` property can be added to the `adminAuth` setting to define
 the default user:
 
-    adminAuth: {
-        type: "credentials",
-        users: [ /* list of users */ ],
-        default: {
-            permissions: "read"
-        }
+{% highlight javascript %}
+adminAuth: {
+    type: "credentials",
+    users: [ /* list of users */ ],
+    default: {
+        permissions: "read"
     }
+}
+{% endhighlight %}
 
 #### User permissions
 
@@ -77,11 +80,13 @@ The expiration time can be customised by setting the `sessionExpiryTime` propert
 of the `adminAuth` setting. This defines, in seconds, how long a token is valid
 for. For example, to set the tokens to expire after 1 day:
 
-    adminAuth: {
-        sessionExpiryTime: 86400,
-        ...
-    }
- 
+{% highlight javascript %}
+adminAuth: {
+    sessionExpiryTime: 86400,
+    ...
+}
+{% endhighlight %}
+
 ### Custom user authentication
 
 Rather than hardcode users into the settings file, it is also possible to plug in
@@ -93,51 +98,55 @@ custom authentication code.
 
 1. Save the following in a file called `<node-red>/user-authentication.js`
 
-       var when = require("when");
-       module.exports = {
-           type: "credentials",
-           users: function(username) {
-               return when.promise(function(resolve) {
-                   // Do whatever work is needed to check username is a valid
-                   // user.
-                   if (valid) {
-                       // Resolve with the user object. It must contain
-                       // properties 'username' and 'permissions'
-                       var user = { username: "admin", permissions: "*" };
-                       resolve(user);
-                   } else {
-                       // Resolve with null to indicate this user does not exist
-                       resolve(null);
-                   }
-               });
-           },
-           authenticate: function(username,password) {
-               return when.promise(function(resolve) {
-                   // Do whatever work is needed to validate the username/password
-                   // combination.
-                   if (valid) {
-                       // Resolve with the user object. Equivalent to having
-                       // called users(username);
-                       var user = { username: "admin", permissions: "*" };
-                       resolve(user);
-                   } else {
-                       // Resolve with null to indicate the username/password pair
-                       // were not valid.
-                       resolve(null);
-                   }
-               });
-           },
-           default: function() {
-               return when.promise(function(resolve) {
-                   // Resolve with the user object for the default user.
-                   // If no default user exists, resolve with null.
-                   resolve({anonymous: true, permissions:"read"});
-               });
+{% highlight javascript %}
+var when = require("when");
+module.exports = {
+   type: "credentials",
+   users: function(username) {
+       return when.promise(function(resolve) {
+           // Do whatever work is needed to check username is a valid
+           // user.
+           if (valid) {
+               // Resolve with the user object. It must contain
+               // properties 'username' and 'permissions'
+               var user = { username: "admin", permissions: "*" };
+               resolve(user);
+           } else {
+               // Resolve with null to indicate this user does not exist
+               resolve(null);
            }
-       }
-    
+       });
+   },
+   authenticate: function(username,password) {
+       return when.promise(function(resolve) {
+           // Do whatever work is needed to validate the username/password
+           // combination.
+           if (valid) {
+               // Resolve with the user object. Equivalent to having
+               // called users(username);
+               var user = { username: "admin", permissions: "*" };
+               resolve(user);
+           } else {
+               // Resolve with null to indicate the username/password pair
+               // were not valid.
+               resolve(null);
+           }
+       });
+   },
+   default: function() {
+       return when.promise(function(resolve) {
+           // Resolve with the user object for the default user.
+           // If no default user exists, resolve with null.
+           resolve({anonymous: true, permissions:"read"});
+       });
+   }
+}
+{% endhighlight %}
+
 2. Set the `adminAuth` property in settings.js to load this module:
 
-       adminAuth: require("./user-authentication");
+{% highlight javascript %}
+adminAuth: require("./user-authentication");
+{% endhighlight %}
 
 

@@ -43,19 +43,21 @@ To help make the nodes discoverable within the npm repository, the file should
 include `node-red` in its `keywords` property. This will ensure the package
 appears when [searching by keyword](https://www.npmjs.org/browse/keyword/node-red).
 
-    {
-        "name"         : "node-red-samplenode",
-        "version"      : "0.0.1",
-        "description"  : "A sample node for node-red",
-        "dependencies": {
-        },
-        "keywords": [ "node-red" ],
-        "node-red"     : {
-            "nodes": {
-                "sample": "sample/sample.js"
-            }
+{% highlight json %}
+{
+    "name"         : "node-red-samplenode",
+    "version"      : "0.0.1",
+    "description"  : "A sample node for node-red",
+    "dependencies": {
+    },
+    "keywords": [ "node-red" ],
+    "node-red"     : {
+        "nodes": {
+            "sample": "sample/sample.js"
         }
     }
+}
+{% endhighlight %}
 
 ### Publishing to npm
 

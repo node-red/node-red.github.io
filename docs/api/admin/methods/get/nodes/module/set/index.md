@@ -26,15 +26,16 @@ Status Code | Reason         | Response
 `401`       | Not authorized | _none_
 `404`       | Not found      | _none_
 
-    {
-      "id": "node-red-node-suncalc/suncalc",
-      "name": "suncalc",
-      "types": [
-        "sunrise"
-      ],
-      "enabled": true,
-      "module": "node-red-node-suncalc",
-      "version": "0.0.6"
-    }
-  
+{% highlight json %}
+{
+  "id": "node-red-node-suncalc/suncalc",
+  "name": "suncalc",
+  "types": [
+    "sunrise"
+  ],
+  "enabled": true,
+  "module": "node-red-node-suncalc",
+  "version": "0.0.6"
+}
+{% endhighlight %}  
 

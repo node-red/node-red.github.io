@@ -68,9 +68,11 @@ The icon should be white on a transparent background, 20 x 30 in size.
 The node background colour is one of the main ways to quickly distinguish different
 node types. It is specified by the `color` property in the node definition.
 
-                ...
-                color: "#a6bbcf",
-                ...
+{% highlight javascript %}
+...
+color: "#a6bbcf",
+...
+{% endhighlight %}
 
 We have used a muted palette of colours. New nodes should try to find a colour that
 fits with this palette.
@@ -143,11 +145,13 @@ As mentioned in a previous section, there is a convention for nodes to have a
 how the `label` can be set to pick up the value of this property or default to
 something sensible.
 
-            ...
-            label: function() {
-                return this.name||"lower-case";
-            },
-            ...
+{% highlight javascript %}
+...
+label: function() {
+    return this.name||"lower-case";
+},
+...
+{% endhighlight %}
 
 #### Palette label
 
@@ -170,11 +174,13 @@ predefined class is `node_label_italic`.
 The following example shows how `labelStyle` can be set to `node_label_italic`
 if the `name` property has been set:
 
-            ...
-            labelStyle: function() {
-                return this.name?"node_label_italic":"";
-            },
-            ...
+{% highlight javascript %}
+...
+labelStyle: function() {
+    return this.name?"node_label_italic":"";
+},
+...
+{% endhighlight %}
 
 ### Alignment
 
@@ -182,9 +188,11 @@ By default, the icon and label are left-aligned in the node. For nodes that sit
 at the end of a flow, the convention is to right-align the content. This is done
 by setting the `align` property in the node definition to `right`:
 
-            ...
-            align: 'right',
-            ...
+{% highlight javascript %}
+...
+align: 'right',
+...
+{% endhighlight %}
 
 <div style="text-align: center">
     <img title="node label alignment" src="images/node_alignment.png"/>

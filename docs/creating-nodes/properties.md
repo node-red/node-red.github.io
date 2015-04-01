@@ -89,11 +89,13 @@ There is a group of common validation functions provided.
 
 The following example shows how each of these validators can be applied.
 
-       defaults: {
-           minimumLength: { value:0, validate:RED.validators.number() },
-           lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
-           custom: { value:"", validate:function(v) { return v.length > this.minimumLength } }
-       },
+{% highlight javascript %}
+defaults: {
+   minimumLength: { value:0, validate:RED.validators.number() },
+   lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
+   custom: { value:"", validate:function(v) { return v.length > this.minimumLength } }
+},
+{% endhighlight %}
 
 Note how the `custom` property is only valid if its length is greater than the
 current value of the `minimumLength` property.

@@ -21,8 +21,9 @@ then run within a secure sandbox.
 
 The most simple function simply returns the message exactly as-is:
 
-    return msg;
-
+{% highlight javascript %}
+return msg;
+{% endhighlight %}
 
 If the function returns `null`, then no message is passed on and the flow ends.
 
@@ -30,8 +31,10 @@ The returned message object does not need to be same object as was passed in;
 the function can construct a completely new object before returning it. For
 example:
 
-    var newMsg = { payload: msg.payload.length };
-    return newMsg;
+{% highlight javascript %}
+var newMsg = { payload: msg.payload.length };
+return newMsg;
+{% endhighlight %}
 
 <div class="doc-callout"><em>Note</em>: constructing a new message object will
 lose any message properties of the received message. This will break some flows,
@@ -50,18 +53,23 @@ This makes it easy to write a function that sends the message to different
 outputs depending on some condition. For example, this function would send
 anything on topic `banana` to the second output rather than the first:
 
-    if (msg.topic == "banana") {
-       return [ null, msg ];
-    } else {
-       return [ msg, null ];
-    }
+{% highlight javascript %}
+if (msg.topic == "banana") {
+   return [ null, msg ];
+} else {
+   return [ msg, null ];
+}
+{% endhighlight %}
+
 
 Combining with the earlier example, the following example passes the original
 message as-is on the first output, and a message containing the payload length
 on the second output:
 
-    var newMsg = { payload: msg.payload.length };
-    return [msg, newMsg];
+{% highlight javascript %}
+var newMsg = { payload: msg.payload.length };
+return [msg, newMsg];
+{% endhighlight %}
 
 #### Multiple Messages ####
 
@@ -71,19 +79,20 @@ output, subsequent nodes will receive the messages one at a time, in the order
 they were returned. In the following example, `msg1`, `msg2`, `msg3` will be
 sent sequentially to the first output. `msg4` will be sent to the second output.
 
-    return [ [ msg1, msg2, msg3 ], msg4 ];
-
+{% highlight javascript %}
+return [ [ msg1, msg2, msg3 ], msg4 ];
+{% endhighlight %}
     
 The following example splits the received payload into individual words and
 returns a message for each of the words.
 
 {% highlight javascript %}
-    var outputMsgs = [];
-    var words = msg.payload.split(" ");
-    for (var w in words) {
-        outputMsgs.push({payload:words[w]});
-    }
-    return [ outputMsgs ];
+var outputMsgs = [];
+var words = msg.payload.split(" ");
+for (var w in words) {
+    outputMsgs.push({payload:words[w]});
+}
+return [ outputMsgs ];
 {% endhighlight %}
 
 #### Sending messages asynchronously
@@ -95,20 +104,21 @@ Instead, it can make use of the `node.send()` function, passing in the message(s
 to be sent. For example:
 
 {% highlight javascript %}
-    doSomeAsyncWork(msg, function(result) {
-        node.send({payload:result});
-    });
-    return;
+doSomeAsyncWork(msg, function(result) {
+    node.send({payload:result});
+});
+return;
 {% endhighlight %}
-
 
 #### Logging events
 
 If a node needs to log something to the console, it can use one of the follow functions:
 
-        node.log("Something happened");
-        node.warn("Something happened you should know about");
-        node.error("Oh no, something bad happened");
+{% highlight javascript %}
+node.log("Something happened");
+node.warn("Something happened you should know about");
+node.error("Oh no, something bad happened");
+{% endhighlight %}
 
 The `warn` and `error` messages also get sent to the flow editor debug tab.
 
@@ -118,7 +128,9 @@ If the function encounters an error that should halt the current flow, it should
 return nothing. To trigger a Catch node on the same tab, the function should call
 `node.error` with the original message as a second argument:
 
-        node.error("hit an error", msg);
+{% highlight javascript %}
+node.error("hit an error", msg);
+{% endhighlight %}
 
 #### Context ####
 
@@ -128,11 +140,13 @@ This can be used to hold data between invocations of the specific function.
 The following example maintains a count of how many times the function has been
 run:
 
-    // initialise the counter to 0 if it doesn't exist already
-    context.count = context.count || 0;    
-    context.count += 1;
-    // make it part of the outgoing msg object
-    msg.count = context.count;
+{% highlight javascript %}
+// initialise the counter to 0 if it doesn't exist already
+context.count = context.count || 0;    
+context.count += 1;
+// make it part of the outgoing msg object
+msg.count = context.count;
+{% endhighlight %}
 
 The context object is *not* persisted across restarts of Node-RED.
 
@@ -141,7 +155,9 @@ The context object is *not* persisted across restarts of Node-RED.
 There is also a global context available that is shared by, and accessible to
 all functions. For example to make the variable foo available globally across the canvas:
 
-    context.global.foo = "bar";   // this is now available to other function blocks.
+{% highlight javascript %}
+context.global.foo = "bar";   // this is now available to other function blocks.
+{% endhighlight %}
 
 The global context can also be pre-populated with objects when Node-RED starts. This
 is defined in the main *settings.js* file under the *functionGlobalContext*
@@ -149,9 +165,11 @@ property.
 
 For example, the built-in `os` module can be made available to, all functions:
 
-    functionGlobalContext: {
-        osModule:require('os')
-    }
+{% highlight javascript %}
+functionGlobalContext: {
+    osModule:require('os')
+}
+{% endhighlight %}
 
 at which point, the module can be referenced within a function as 
 `context.global.osModule`.

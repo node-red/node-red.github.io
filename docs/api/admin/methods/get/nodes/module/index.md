@@ -27,20 +27,21 @@ Status Code | Reason         | Response
 `404`       | Not found      | _none_
 
 
+{% highlight json %}
+{
+  "name": "node-red-node-suncalc",
+  "version": "0.0.6",
+  "nodes": [
     {
-      "name": "node-red-node-suncalc",
-      "version": "0.0.6",
-      "nodes": [
-        {
-          "id": "node-red-node-suncalc/suncalc",
-          "name": "suncalc",
-          "types": [
-            "sunrise"
-          ],
-          "enabled": true,
-          "module": "node-red-node-suncalc",
-          "version": "0.0.6"
-        }
-      ]
+      "id": "node-red-node-suncalc/suncalc",
+      "name": "suncalc",
+      "types": [
+        "sunrise"
+      ],
+      "enabled": true,
+      "module": "node-red-node-suncalc",
+      "version": "0.0.6"
     }
-
+  ]
+}
+{% endhighlight %}

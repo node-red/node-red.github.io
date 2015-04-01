@@ -32,8 +32,10 @@ Status Code | Reason         | Response
 `200`       | Success        | See example response body
 `401`       | Not authorized | _none_
 
-    {
-      "access_token": "A_SECRET_TOKEN",
-      "expires_in":604800,
-      "token_type": "Bearer"
-    }
+{% highlight json %}
+{
+  "access_token": "A_SECRET_TOKEN",
+  "expires_in":604800,
+  "token_type": "Bearer"
+}
+{% endhighlight %}
