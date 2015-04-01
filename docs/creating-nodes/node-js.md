@@ -89,6 +89,19 @@ If a node needs to log something to the console, it can use one of the follow fu
 
 The `warn` and `error` messages also get sent to the flow editor debug tab.  
 
+#### Handling errors
+
+If the node encounters an error that should halt the current flow, it should log
+the event with the `this.error` function.
+
+If the error is one that a user of the node may want to handle for themselves,
+the function should be called with the original message (or an empty message if
+this is an Input node) as the second argument:
+
+        node.error("hit an error", msg);
+
+This will trigger any Catch nodes present on the same tab.
+
 ### Setting status
 
 Whilst running, a node is able to share status information with the editor UI.
