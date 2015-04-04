@@ -30,4 +30,14 @@ td:first-child span {
     display: inline-block;
     margin-right: 10px;
 }
+td:first-child {
+    padding: 6px 15px 6px 5px;
+    width: 1px;
+    white-space: nowrap;   
+}
+th:first-child {
+    padding: 6px 15px 6px 5px;
+    width: 1px;
+    white-space: nowrap;   
+}
 
