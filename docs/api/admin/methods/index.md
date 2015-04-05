@@ -1,6 +1,6 @@
 ---
 layout: api
-title: Methods
+title: Admin API Methods
 ---
 
  Endpoint                                                   | Description 

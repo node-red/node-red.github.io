@@ -3,69 +3,66 @@ layout: api
 title: Storage API
 ---
 
- Function                                                      | Description 
----------------------------------------------------------------|-------------------------
-[Storage.init(settings)](#storageinitsettings)                 | initialise the storage system
-[Storage.getFlows()](#storagegetflows)                         | get the flow configuration
-[Storage.saveFlows(flows)](#storagesaveflowsflows)             | save the flow configuration
-[Storage.getCredentials()](#storagegetcredentials)             | get the flow credentials
-[Storage.saveCredentials(credentials)](#storagesavecredentialscredentials) | save the flow credentials
-[Storage.getSettings()](#storagegetsettings)                   | get the user settings
-[Storage.saveSettings(settings)](#storagesavesettingssettings) | save the user settings
-[Storage.getSessions()](#storagegetsessions)                   | get the user sessions
-[Storage.saveSessions(sessions)](#storagesavesessionssessions) | save the user sessions
-[Storage.getLibraryEntry(type,name)](#storagegetlibraryentrytypename) | get a type-specific library entry
-[Storage.saveLibraryEntry(type,name,meta,body)](#storagesavelibraryentrytypenamemetabody) | save a type-specific library entry
-_[Storage.getAllFlows()](#storagegetallflows)_                 | _deprecated: get all library flows_
-_[Storage.getFlow(name)](#storagegetflowname)_                 | _deprecated: get a library flow_
-_[Storage.saveFlow(name,flow)](#storagesaveflownameflow)_      | _deprecated: save a flow to the library_
+The Storage API provides a pluggable way to configure where Node-RED stores
+data.
+
+The information stored by the API includes:
+
+ - flow configuration
+ - flow credentials
+ - user settings
+ - user sessions
+ - node library content
+
+By default, Node-RED uses a local file-system implementation of this API.
+ 
+### Configuration
+
+The `storageModule` property in settings.js can be used to identify a custom module
+to use:
+
+{% highlight javascript %}
+storageModule: require("my-node-red-storage-plugin")
+{% endhighlight %}
 
 
+### Promises
 
-### Storage.init(settings)
+The API makes extensive use of [JavaScript promises](https://promisesaplus.com/).
 
-Initialise the storage system.
+A promise represents the eventual result of an asynchronous operation. It acts as
+a placeholder until the result is available.
 
-Argument | Description
----------|----------------------
-settings | the runtime settings
-
-Returns a promise that resolves when the storage system is initalised.
-
-### Storage.getFlows()
-
-Returns a promise that resolves when the storage system is initalised.
-
-### Storage.saveFlows(flows)
-
-Argument | Description
----------|-----------------
-flows    | the flow object
-
-### Storage.getCredentials()
-
-### Storage.saveCredentials(credentials)
-
-Argument    | Description
-------------|------------------------
-credentials | the credentials object
+Node-RED uses the [When.js](https://github.com/cujojs/when) library. The following
+example shows it in use. For a more complete example, the default file-system
+implementation is located in `red/storage/localfilesystem.js`.
 
 
-### Storage.getSettings()
+{% highlight javascript %}
+function getFlows() {
+    // create and return a promise
+    return when.promise(function(resolve,reject) {
+        // resolve - a function to be called with the successful result
+        // reject - a function to be called if an error occurs
+    
+        // do some asynchronous work, with a callback on completion
+        doAsyncWork(function(err,result) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+}
 
-### Storage.saveSettings(settings)
+getFlows()
+    .then(function(result) {
+        // Called when getFlows completes successfully
+    })
+    .otherwise(function(err) {
+        // Called when getFlows hits an error
+    });
+{% endhighlight %}
 
-### Storage.getSessions()
-
-### Storage.saveSessions(sessions)
-
-### Storage.getLibraryEntry(type,name)
-
-### Storage.saveLibraryEntry(type,name,meta,body)
-
-### _Storage.getAllFlows()_
-
-### _Storage.getFlow(name)_
-
-### _Storage.saveFlow(name,flow)_
 
