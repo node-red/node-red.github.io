@@ -3,8 +3,8 @@ layout: api
 title: Storage API
 ---
 
-The Storage API provides a pluggable way to configure where Node-RED stores
-data.
+The Storage API provides a pluggable way to configure where the Node-RED runtime
+stores data.
 
 The information stored by the API includes:
 
