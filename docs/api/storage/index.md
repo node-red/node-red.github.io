@@ -15,7 +15,9 @@ The information stored by the API includes:
  - node library content
 
 By default, Node-RED uses a local file-system implementation of this API.
- 
+
+The API functions are documented [here](methods/).
+
 ### Configuration
 
 The `storageModule` property in settings.js can be used to identify a custom module

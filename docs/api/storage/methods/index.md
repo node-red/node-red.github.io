@@ -3,6 +3,9 @@ layout: api
 title: Storage API
 ---
 
+A Storage plugin is a node.js module that exposes the following functions on its
+`module.exports`.
+
  Function                                                      | Description 
 ---------------------------------------------------------------|-------------------------
 [Storage.init(settings)](#storageinitsettings)                 | initialise the storage system
