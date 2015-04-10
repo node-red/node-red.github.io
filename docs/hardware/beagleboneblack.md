@@ -31,9 +31,15 @@ Then update the packages
 
 The easiest way to install Node-RED is to use node's package manager, npm:
 
-    sudo npm install -g node-red
+    sudo npm install -g --unsafe-perm  node-red
 
-_Note_: for alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
+_Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
+to recompile any native libraries it tries to do so as a "nobody" user and often
+fails to get access to certain directories. This causes alarming warnings that look
+like errors... but only sometimes are errors. Allowing node-gyp to run as root using
+this flag avoids this - or rather shows up any real errors instead.
+
+For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
 
 #### BBB specific nodes

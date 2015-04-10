@@ -21,7 +21,7 @@ This also installs some additional dependencies.
 If you are upgrading a Raspberry Pi version 1 image for the Pi 2, it is recommended
 to clean up some hidden node directories before installing Node-RED:
 
-    npm cache clear
+    sudo npm cache clean
 
 #### Raspberry Pi
 
@@ -36,9 +36,18 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
 For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node's
 package manager, npm:
 
-    sudo npm install -g node-red
+    sudo npm install -g --unsafe-perm  node-red
 
-_Note_: for alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
+If there are any npm errors (not warnings) during install, running
+ `sudo npm cache clean` and re-trying the install often helps.
+
+_Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
+to recompile any native libraries it tries to do so as a "nobody" user and often
+fails to get access to certain directories. This causes alarming warnings that look
+like errors... but sometimes are errors. Allowing node-gyp to run as root using
+this flag avoids this - or rather shows up any real errors instead.
+
+For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
 Once installed, you should verify which version of the Python RPi.GPIO libraries
 have been installed.
