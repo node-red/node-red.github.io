@@ -38,8 +38,8 @@ package manager, npm:
 
     sudo npm install -g --unsafe-perm  node-red
 
-If there are any npm errors (not warnings) during install, running
- `sudo npm cache clean` and re-trying the install often helps.
+If there are any npm errors (not warnings, not gyp errors) during install, try
+running `sudo npm cache clean` and re-trying the install.
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often

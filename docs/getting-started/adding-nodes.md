@@ -12,15 +12,15 @@ or on the [npm repository](https://www.npmjs.com/browse/keyword/node-red).
 
 ### Installing npm packaged nodes
 
-To install an npm-packaged node, you can either install it globally alongside
-Node-RED:
-
-    npm install -g <npm-package-name>
-
-or locally within your user data directory (by default, `$HOME/.node-red`):
+To install an npm-packaged node, you can either install it locally within your
+user data directory (by default, `$HOME/.node-red`):
 
     cd $HOME/.node-red
-    npm install <npm-package-name>    
+    npm install <npm-package-name>  #
+
+or globally alongside Node-RED:
+
+    sudo npm install -g <npm-package-name>
 
 You will need to restart Node-RED for it to pick-up the new nodes.
 
