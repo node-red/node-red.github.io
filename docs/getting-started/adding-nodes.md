@@ -16,7 +16,7 @@ To install an npm-packaged node, you can either install it locally within your
 user data directory (by default, `$HOME/.node-red`):
 
     cd $HOME/.node-red
-    npm install <npm-package-name>  #
+    npm install <npm-package-name>
 
 or globally alongside Node-RED:
 
