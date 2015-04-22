@@ -47,7 +47,7 @@ To add credentials to a node, the following steps are taken:
 
 #### Runtime use of credentials
 
-Within the runtime, a node can access its credentials using the `credential`
+Within the runtime, a node can access its credentials using the `credentials`
 property:
 
 {% highlight javascript %}
