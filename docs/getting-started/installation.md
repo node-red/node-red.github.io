@@ -43,6 +43,15 @@ running on Windows, you will need to run in a <a href="https://technet.microsoft
 without the <code>sudo</code> command.
 </div>
 
+<div class="doc-callout">
+<em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
+command. These are typically non-fatal errors and are related to optional dependencies
+that require a compiler in order to build them. Node-RED will work without these
+optional dependencies, but you may find additional node modules that require the
+ability to compile native code. You can find out how to install the `node-gyp`
+compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
+</div>
+
 ### Alternative install methods
 
 #### Download a release
