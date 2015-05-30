@@ -38,8 +38,18 @@ package manager, npm:
 
     sudo npm install -g --unsafe-perm  node-red
 
+<div class="doc-callout">
+<em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
+command. These are typically <em>non-fatal</em> errors and are related to optional dependencies
+that require a compiler in order to build them. <b>Node-RED will work without these
+optional dependencies</b>, but you may find additional node modules that require the
+ability to compile native code. You can find out how to install the <code>node-gyp</code>
+compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
+</div>
+
 If there are any npm errors (not warnings, not gyp errors) during install, try
-running `sudo npm cache clean` and re-trying the install.
+running `sudo npm cache clean` and re-trying the install. Npm should be version
+1.4.28 or better. Type `npm -v` to check.
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often

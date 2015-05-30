@@ -46,8 +46,8 @@ without the <code>sudo</code> command.
 <div class="doc-callout">
 <em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
 command. These are typically <em>non-fatal</em> errors and are related to optional dependencies
-that require a compiler in order to build them. Node-RED will work without these
-optional dependencies, but you may find additional node modules that require the
+that require a compiler in order to build them. <b>Node-RED will work without these
+optional dependencies</b>, but you may find additional node modules that require the
 ability to compile native code. You can find out how to install the <code>node-gyp</code>
 compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
 </div>
