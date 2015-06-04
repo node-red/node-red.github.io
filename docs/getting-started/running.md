@@ -152,18 +152,6 @@ Black that have a constrained amount of memory, you must pass an additional argu
 option to specify where Node-RED should store your data.
 </div>
 
-<div class="doc-callout">
-<em>Temporary Note:</em> There's an <a href="https://github.com/Unitech/PM2/issues/1321" target="_new">
-open issue</a> on pm2 on GitHub which highlights an issue that has been introduced recently.
-You need to manually edit the generated `/etc/init.d/pm2-init.sh` file and replace
-
-<pre>export PM2_HOME="/root/.pm2"</pre>
-
-to point at the correct directory, which would be like:
-
-<pre>export PM2_HOME="/home/{youruser}/.pm2"</pre>
-</div>
-
 This will start Node-RED in the background. You can view information about the
 process and access the log output using the commands:
 
@@ -183,11 +171,25 @@ Run these commands and follow the instructions it provides:
     pm2 save
     pm2 startup
 
+for newer Linux systems that use **systemd** use
+
+    pm2 startup systemd
+
+<div class="doc-callout">
+<em>Temporary Note:</em> There's an <a href="https://github.com/Unitech/PM2/issues/1321" target="_new">
+open issue</a> on PM2 on GitHub which highlights an issue that has been introduced recently.
+Linux users need to manually edit the generated `/etc/init.d/pm2-init.sh` file and replace
+
+<pre>export PM2_HOME="/root/.pm2"</pre>
+
+to point at the correct directory, which would be like:
+
+<pre>export PM2_HOME="/home/{youruser}/.pm2"</pre>
+</div>
 
 ##### 5. Reboot
 
 Finally, reboot and check everything starts as expected.
-
 
 #### Alternative options
 
