@@ -33,14 +33,19 @@ First you need to load the default Firmata sketch onto the Arduino using the
 standard Arduino software download tools. This is usually found in the Arduino
 IDE under the menu:
 
-    Files - Examples - Firmata - Standard Firmata
+        Files - Examples - Firmata - Standard Firmata
 
-To ensure you have the Arduino nodes in the Node-RED palette, install the
-firmata npm module and restart Node-RED
+You then need to install the Node-RED Arduino nodes into the palette.
 
-    $ cd node-red
-    $ npm install arduino-firmata
-    $ node red.js
+Change directory to your Node-RED user directory, this is normally `.node-red`
+
+        cd .node-red
+
+Then install the Arduino node
+
+        npm install node-red-node-arduino
+
+Finally restart Node-RED. There should now be two new Arduino nodes in the palette.
 
 #### Blink
 
@@ -48,9 +53,10 @@ To run a "blink" flow that uses LED 13, copy the following flow and paste it
 into the Import Nodes dialog (*Import From - Clipboard* in the dropdown menu, or
 Ctrl-I). After clicking okay, click in the workspace to place the new nodes.
 
-    [{"id":"d7663aaf.47194","type":"arduino-board","repeat":"25","device":"/dev/ttyUSB0"},{"id":"8c09ca6c.a975d","type":"arduino out","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":509.16667556762695,"y":162.16666984558105,"wires":[]},{"id":"e37b6a97.610968","type":"inject","name":"tick","topic":"","payload":"","repeat":"0.5","once":false,"x":116.16668319702148,"y":62.16666507720947,"wires":[["60b4aeaa.800d58"]]},{"id":"60b4aeaa.800d58","type":"function","name":"Toggle output on input","func":"\n// initialise level as a context variable if currently undefined \n// (context variables persist between calls to the function)\ncontext.level = context.level || false;\n\n// if it's a 0 make it a 1 else make it a 0...\ncontext.level = !context.level;\n\n// set the payload to the level and return\nmsg.payload = context.level;\nreturn msg;","outputs":1,"x":298.1666793823242,"y":113.16665458679199,"wires":[["8c09ca6c.a975d"]]}]
+    [{"id":"d7663aaf.47194","type":"arduino-board","device":""},{"id":"dae8234f.2517e","type":"inject","name":"0.5s tick","topic":"","payload":"","payloadType":"date","repeat":"0.5","crontab":"","once":false,"x":150,"y":100,"z":"359a4b52.ca65b4","wires":[["56a6f8f2.a95908"]]},{"id":"2db61802.d249e8","type":"arduino out","name":"","pin":"13","state":"OUTPUT","arduino":"d7663aaf.47194","x":570.5,"y":100,"z":"359a4b52.ca65b4","wires":[]},{"id":"56a6f8f2.a95908","type":"function","name":"Toggle output on input","func":"\n// If it does exist make it the inverse of what it was or else initialise it to false\n// (context variables persist between calls to the function)\ncontext.level = !context.level || false;\n\n// set the payload to the level and return\nmsg.payload = context.level;\nreturn msg;","outputs":1,"noerr":0,"x":358,"y":100,"z":"359a4b52.ca65b4","wires":[["2db61802.d249e8"]]}]
 
-This flow is set to use `/dev/ttyUSB0`. If you need to change that, double click
+This flow is set to automatically try to detect the board ona a serial port.
+If you need to change that, double click
 the node labelled `Pin 13` - the Arduino node. Click the pencil icon and change
 the port definition as needed.
 
@@ -76,7 +82,7 @@ Details of the node.js arduino-firmata library can be found [here](https://www.n
 
 ***
 
-### Using Johnny-Five
+### Johnny-Five
 
 You may also use the popular [Johnny-Five](https://www.npmjs.com/package/johnny-five)
 library as this adds capabilities like I2C.
@@ -94,7 +100,7 @@ This can be achieved by editing the globalContextSettings sections of settings.j
         // os:require('os'),
         // bonescript:require('bonescript'),
        jfive:require("johnny-five"),                        // this is the reference to the library
-       j5board:require("johnny-five").Board({repl:false})    // this actually starts the board link...
+       j5board:require("johnny-five").Board({repl:false})   // this actually starts the board link...
     },
 
 We start the board link here so that multiple functions within the workspace can
@@ -102,20 +108,24 @@ use it, though you should be careful to only access each pin once.
 
 Finally install the npm from within your Node-RED home directory
 
-    cd ~/.node-red
+    cd .node-red
     npm install johnny-five
 
 and then you may access all the [richness](https://github.com/rwaldron/johnny-five/wiki)
 of Johnny-Five from within functions...
 
-    var five = context.global.jfive;
-    var led = new five.Led(13);
-    led.blink(500);
+    var five = context.global.jfive;    // create a shorter alias
+    var led = new five.Led(13);         // instatiate the led
+    led.blink(500);                     // blink it every 500 ms
 
+*Note:* this is a simple, but poor example as the led pin is created each time the
+function is called... so only ok if you only call it once.
 
 #### Blink 2
 
-Here is a complete example that you can import into the workspace.
-Click the inject button to start the led 13 flashing every 500mS.
+The flow below shows a more advanced example that turns on and off a flashing led,
+and shows the use of context to hold the state and a single instance of the led pin.
 
-    [{"id":"35f228b4.e1f3b8","type":"inject","name":"Click to start","topic":"","payload":"This will make it blink","payloadType":"string","repeat":"","crontab":"","once":false,"x":124,"y":291,"z":"6480e14.f9b7f2","wires":[["b2b5f432.a374e8"]]},{"id":"b2b5f432.a374e8","type":"function","name":"blink LED 13","func":"// rename the global context variable to something shorter\nvar five = context.global.jfive;\n\n// select Led function on pin 13\nvar led = new five.Led(13);\n\n// blink it every 500mS\nled.blink(500);\n\nreturn msg;","outputs":1,"valid":true,"x":276,"y":358,"z":"6480e14.f9b7f2","wires":[["ac67828.f53988"]]},{"id":"ac67828.f53988","type":"debug","name":"","active":true,"console":"false","complete":"false","x":435,"y":299,"z":"6480e14.f9b7f2","wires":[]}]
+It can be imported to the workspace by using `ctrl-c (copy) / ctrl-i (import) / ctrl-v (paste)`.
+
+    [{"id":"62f58834.9d0a78","type":"inject","name":"","topic":"","payload":"1","payloadType":"string","repeat":"","crontab":"","once":false,"x":226,"y":326,"z":"359a4b52.ca65b4","wires":[["ae84ad08.517b5"]]},{"id":"ae84ad08.517b5","type":"function","name":"1 = start flash, 0 = stop","func":"var five = context.global.jfive;\ncontext.led = context.led || new five.Led(13);\ncontext.switch = context.switch || 0;\ncontext.switch = msg.payload;\nconsole.log(typeof(context.switch));\nif (context.switch == 1) {\n    context.led.blink(500);\n}\nif (context.switch == 0) {\n    context.led.stop().off();\n}\nreturn msg;","outputs":1,"noerr":0,"x":447,"y":349,"z":"359a4b52.ca65b4","wires":[["df638a80.209c78"]]},{"id":"df638a80.209c78","type":"debug","name":"","active":true,"console":"false","complete":"false","x":645,"y":349,"z":"359a4b52.ca65b4","wires":[]},{"id":"d79bc51d.286438","type":"inject","name":"","topic":"","payload":"0","payloadType":"string","repeat":"","crontab":"","once":false,"x":224.4000244140625,"y":364.60003662109375,"z":"359a4b52.ca65b4","wires":[["ae84ad08.517b5"]]}]
