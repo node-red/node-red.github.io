@@ -91,6 +91,17 @@ httpNodeCors
 : enables cross-origin resource sharing for the nodes that provide HTTP endpoints,
   as defined [here](https://github.com/troygoode/node-cors#configuration-options)
 
+httpNodeMiddleware
+: an HTTP middleware function that is added to all HTTP In nodes. This allows whatever custom processing, 
+  such as authentication, is needed for the nodes. The format of the middleware function is
+  documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
+  
+      httpNodeMiddleware: function(req,res,next) {
+          // Perform any processing on the request.
+          // Be sure to call next() if the request should be passed
+          // to the relevant HTTP In node.
+      }
+
 ### Editor Configuration
 
 adminAuth
