@@ -15,6 +15,9 @@ The value of the property can be either a string or a function.
 If the value is a string, that is used as the icon.
 
 If the value is a function, it will get evaluated when the node is first loaded, or after it has been edited. The function is expected to return the value to use as the icon.
+The function will be called both for nodes in the workspace, where `this` references a node instance, as well as
+for the node's entry in the palette. In this latter case, `this` will not refer to a particular node instance and
+the function *must* return a valid value.
 
                 ...
                 icon: "file.png",
