@@ -6,7 +6,7 @@ title: Upgrading
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
 
-    sudo npm update -g node-red
+    sudo npm update -g --unsafe-perm node-red
 
 ### Upgrading from before Node-RED 0.10.4
 
@@ -38,3 +38,9 @@ owned by and writeable by the user that you use to run Node-RED.
 
 6. If you had npm-installed any additional nodes, or manually copied in nodes
    which have their own npm dependencies, you will need to [reinstall them](adding-nodes.html).
+
+_Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
+to recompile any native libraries it tries to do so as a "nobody" user and then
+fails to get access to certain directories. This causes the nodes in question
+(eg serialport) not to be installed. Allowing it root access during install
+allows the nodes to be installed correctly during the upgrade.
