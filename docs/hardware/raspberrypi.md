@@ -13,7 +13,7 @@ Pi (Arm v6) the method of installing node.js is slightly different.
 To install Node.js on Pi 2 - and some other Arm7 processor based boards, run
 the following commands:
 
-    curl -sL https://deb.nodesource.com/setup | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_0.10 | sudo bash -
     sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
 
 This also installs some additional dependencies.
