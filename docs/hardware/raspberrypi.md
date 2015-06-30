@@ -8,6 +8,8 @@ title: Raspberry Pi
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
+<div class="doc-callout"><em>Note</em>: The most recent stable release of Node <code>0.12.x</code> is <em>not</em> currently supported.</div>
+
 #### Raspberry Pi 2
 
 To install Node.js on Pi 2 - and some other Arm7 processor based boards, run
