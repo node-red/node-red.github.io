@@ -63,7 +63,7 @@ following command:
 
     npm install --production
 
-#### From GitHub
+#### For Development - from GitHub
 
 Running the code from GitHub is only intended for users who are happy to be using
 development code, or for developers wanting to contribute to the code.
@@ -72,9 +72,9 @@ You can clone the source repository directly from GitHub:
 
     git clone https://github.com/node-red/node-red.git
 
-Once cloned, the core pre-requisite modules must be installed. From the top-level
-directory of Node-RED, run:
+Once cloned, the core pre-requisite modules must be installed :
 
+    cd node-red
     npm install
 
 <div class="doc-callout">
@@ -82,6 +82,16 @@ directory of Node-RED, run:
 repository, it is necessary to install all dependencies, not just the production
 level ones. This is why the <code>--production</code> option should not be used.
 </div>
+
+You will also need to install `grunt-cli` in order to build the application before
+you can use it. This must be done globally.
+
+    sudo npm install -g grunt-cli
+
+You can then build and run the application
+
+    grunt build
+    node red
 
 ### Next steps
 
