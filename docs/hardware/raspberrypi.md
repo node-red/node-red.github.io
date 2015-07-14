@@ -8,14 +8,14 @@ title: Raspberry Pi
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
-<div class="doc-callout"><em>Note</em>: The most recent stable release of Node <code>0.12.x</code> is <em>not</em> currently supported.</div>
+<div class="doc-callout"><em>Note</em>: Versions of io.js are <em>not</em> currently supported.</div>
 
 #### Raspberry Pi 2
 
-To install Node.js on Pi 2 - and some other Arm7 processor based boards, run
+To install Node.js on Pi 2 - and other Arm7 processor based boards, run
 the following commands:
 
-    curl -sL https://deb.nodesource.com/setup_0.10 | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
     sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
 
 This also installs some additional dependencies.
@@ -29,8 +29,8 @@ to clean up some hidden node directories before installing Node-RED:
 
 The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
-    wget http://node-arm.herokuapp.com/node_0.10.36_armhf.deb
-    sudo dpkg -i node_0.10.36_armhf.deb
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+    sudo dpkg -i node_latest_armhf.deb
     sudo apt-get install build-essential python-dev python-rpi.gpio
 
 ### Install Node-RED
