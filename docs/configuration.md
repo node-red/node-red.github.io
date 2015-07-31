@@ -12,6 +12,10 @@ file. The location of this file is determined in the order:
  - in the default user directory: `$HOME/.node-red/settings.js`
  - in the node-red install directory
 
+Node-RED includes a default `settings.js` file that will be used in absence of a
+user-provided settings file. It can also be used as a starting point for creating
+your own settings file. It can be seen on GitHub [here](https://github.com/node-red/node-red/blob/master/settings.js).
+
 When [embedded](embedding.html), they are passed in the call to `RED.init()`.
 However, when run in this mode, certain properties are ignored and are left to
 the embedding application to implement.
@@ -92,10 +96,10 @@ httpNodeCors
   as defined [here](https://github.com/troygoode/node-cors#configuration-options)
 
 httpNodeMiddleware
-: an HTTP middleware function that is added to all HTTP In nodes. This allows whatever custom processing, 
+: an HTTP middleware function that is added to all HTTP In nodes. This allows whatever custom processing,
   such as authentication, is needed for the nodes. The format of the middleware function is
   documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
-  
+
       httpNodeMiddleware: function(req,res,next) {
           // Perform any processing on the request.
           // Be sure to call next() if the request should be passed
