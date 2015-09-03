@@ -69,7 +69,7 @@ and paste it into the Import Nodes dialog (*Import From - Clipboard* in the
 dropdown menu, or Ctrl-I). After clicking okay, click in the workspace to place
 the new nodes.
 
-    [{"id":"b1fce44.9ce3c18","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":127.16666412353516,"y":109.16666412353516,"wires":[["b2a66e5e.6da6f"]]},{"id":"591aef4d.b55f38","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":127.16666412353516,"y":149.16666412353516,"wires":[["b2a66e5e.6da6f"]]},{"id":"36f2a960.164f76","type":"inject","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":127.16666412353516,"y":49.166664123535156,"wires":[["7ee460bc.df48e"]]},{"id":"55249ec9.21e61","type":"debug","name":"","active":true,"x":567.1666641235352,"y":89.16666412353516,"wires":[]},{"id":"7ee460bc.df48e","type":"function","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.bonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinMode(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"x":347.16666412353516,"y":69.16666412353516,"wires":[["55249ec9.21e61"]]},{"id":"b2a66e5e.6da6f","type":"function","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.bonescript;\n\nb.pinMode(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"x":347.16666412353516,"y":129.16666412353516,"wires":[["55249ec9.21e61"]]}]
+    [{"id":"184087e6.e7bf78","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":370,"y":188,"z":"345c8adc.cba376","wires":[["919e132f.6e61f"]]},{"id":"25e4d6c.fda1b2a","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":370,"y":228,"z":"345c8adc.cba376","wires":[["919e132f.6e61f"]]},{"id":"6be2c4b9.941d3c","type":"bbb-discrete-out","pin":"USR2","inverting":false,"toggle":false,"defaultState":"0","name":"","x":613,"y":136,"z":"345c8adc.cba376","wires":[[]]},{"id":"919e132f.6e61f","type":"bbb-discrete-out","pin":"USR3","inverting":false,"toggle":false,"defaultState":"0","name":"","x":619,"y":193,"z":"345c8adc.cba376","wires":[[]]},{"id":"1cf2bd40.e30d43","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":368,"y":102,"z":"345c8adc.cba376","wires":[["6be2c4b9.941d3c"]]},{"id":"3e4caa12.c1b356","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":368,"y":142,"z":"345c8adc.cba376","wires":[["6be2c4b9.941d3c"]]}]
 
 Click the deploy button and the flow should start running. The USR2 and USR3 LEDs
 can be manually set on or off using the Inject node buttons.
@@ -79,10 +79,24 @@ can be manually set on or off using the Inject node buttons.
 For experts, the `bonescript` module can be made available for use in Function nodes.
 
 To do this, update `settings.js` to add the `bonescript` module to the
-Function global context:
+Function global context - to do this :
+
+When you run node-red it will print the location of `settings.js` like
+
+    [info] Settings file  : /usr/local/lib/node_modules/node-red/settings.js
+
+Edit this `settings.js` file - you may need to be administrator or sudo to do this. And
+there we need to uncomment the bonescript library line.
 
     functionGlobalContext: {
-        bonescript:require('bonescript')
-    }
+        // os:require('os'),
+        bonescript:require('bonescript'),
+        // jfive:require("johnny-five"),
+        // j5board:require("johnny-five").Board({repl:false})
+    },
 
 The module is then available to any functions you write as `context.global.bonescript`.
+
+An example flow that demonstrates this is below :
+
+    [{"id":"3c3a39ec.c3c5c6","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":226,"y":498,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"f9ade3.ff06522","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":226,"y":538,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"919022c7.6e6fe","type":"inject","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":226,"y":438,"z":"345c8adc.cba376","wires":[["7783db44.887c24"]]},{"id":"ec2495b6.13db68","type":"debug","name":"","active":true,"x":666,"y":478,"z":"345c8adc.cba376","wires":[]},{"id":"7783db44.887c24","type":"function","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.bonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinMode(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"x":446,"y":458,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]},{"id":"6d418357.92be7c","type":"function","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.bonescript;\n\nb.pinMode(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"x":446,"y":518,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]}]
