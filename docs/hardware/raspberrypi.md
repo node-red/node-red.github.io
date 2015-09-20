@@ -29,8 +29,8 @@ to clean up some hidden node directories before installing Node-RED:
 
 The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
-    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-    sudo dpkg -i node_latest_armhf.deb
+    wget http://node-arm.herokuapp.com/node_archive_armhf.deb
+    sudo dpkg -i node_archive_armhf.deb
     sudo apt-get install build-essential python-dev python-rpi.gpio
 
 ### Install Node-RED
