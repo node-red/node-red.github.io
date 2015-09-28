@@ -8,7 +8,7 @@ title: Raspberry Pi
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
-<div class="doc-callout"><em>Note</em>: Versions of io.js are <em>not</em> currently supported.</div>
+<div class="doc-callout"><em>Note</em>: Version 4.x.x of node.js and versions of io.js are <em>not</em> currently supported.</div>
 
 #### Raspberry Pi 2
 
@@ -35,7 +35,7 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
 ### Install Node-RED
 
-For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node's
+The easiest way to install Node-RED is to use node's
 package manager, npm:
 
     sudo npm install -g --unsafe-perm  node-red

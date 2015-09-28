@@ -8,6 +8,14 @@ latest version with the following command:
 
     sudo npm update -g --unsafe-perm node-red
 
+### Upgrading node.js
+
+If you upgrade node.js, for example from v0.10.x to v0.12.x, it is better to
+re-install Node-RED as follows:
+
+    sudo npm cache clean
+    sudo npm install -g --unsafe-perm node-red
+
 ### Upgrading from before Node-RED 0.10.4
 
 In releases prior to 0.10.4, the default behaviour was to write user data into

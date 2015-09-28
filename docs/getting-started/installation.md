@@ -10,7 +10,7 @@ Node-RED supports Node.js <code>0.10.x</code> and <code>0.12.x</code>.
 <div class="doc-callout"><em>Note</em>: Support for Node <code>0.12.x</code> was added in Node-RED <code>0.11.0</code>.
 Whilst we have tested the core runtime and its nodes, 3rd party nodes may not yet fully support it.</div>
 
-<div class="doc-callout"><em>Note</em>: We do <em>not</em> currently support io.js.</div>
+<div class="doc-callout"><em>Note</em>: We do <em>not</em> currently support node.js v4.x.x or versions of io.js.</div>
 
 You can get the latest supported version of Node <code>0.12.x</code> from:
 
@@ -37,7 +37,7 @@ For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node
 package manager, npm. Installing it as a global module adds the command `node-red`
 to your system path:
 
-    sudo npm install -g node-red
+    sudo npm install -g --unsafe-perm node-red
 
 <div class="doc-callout">
 <em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
