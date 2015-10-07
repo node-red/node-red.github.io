@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Node-RED
 Comment=Flow based application composer for the Internet of Things
-Icon=/usr/local/lib/node_modules/node-red/public/red/images/node-red-icon.svg
+Icon=/usr/share/icons/gnome/scalable/apps/node-red-icon.svg
 Exec=node-red-start
 Type=Application
 Encoding=UTF-8
