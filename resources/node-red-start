@@ -1,5 +1,12 @@
 #!/bin/bash
 echo -e '\033]2;'NODE-Red console'\007'
+HOSTIP=`hostname -I | cut -d ' ' -f 1`
+if [ "$HOSTIP" = "" ]; then
+HOSTIP="localhost"
+fi
+echo " "
+echo "Once Node-RED has started, point a browser at http://$HOSTIP:1880"
+echo " "
 sudo /etc/init.d/nodered start
 sleep 2
 tail -f /var/log/node-red.log
