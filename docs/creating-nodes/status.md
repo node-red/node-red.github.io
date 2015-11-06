@@ -20,8 +20,8 @@ this.status({fill:"red",shape:"ring",text:"disconnected"});
 this.status({fill:"green",shape:"dot",text:"connected"});
 {% endhighlight %}
 
-*By default, the node status information is not displayed in the editor. It can
-be enabled by selecting the Status option in the drop-down menu.*
+*By default, the node status information is displayed in the editor. It can
+be disabled and re-enabled by selecting the* Display Node Status *option in the drop-down menu.*
 
 ### Status object
 
@@ -52,7 +52,11 @@ This allows for the following icons to be used:
     </svg>
 </div>
 
-Additional shapes and colours may get added in the future.
-
 If the status object is an empty object, `{}`, then the status entry is cleared from the
 node.
+
+### Note : Status Node
+
+From Node-RED v0.12.x the Status node can be used to catch any node status
+updates, for example connect and disconnect messages, in order to trigger other
+flows.

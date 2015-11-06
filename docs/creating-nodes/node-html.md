@@ -8,18 +8,18 @@ contains three distinct part, each wrapped in its own `<script>` tag:
 
 1. the main node definition that is registered with the editor. This defines
    things such as the palette category, the editable properties (`defaults`) and
-   what icon to use. It is within a regular javascript script tag 
-   
+   what icon to use. It is within a regular javascript script tag
+
 2. the edit template that defines the content of the edit dialog for the node.
    It is defined in a script of type `text/x-red` with `data-template-name` set
    to the [type of the node](#node-type).
-   
+
 3. the help text that gets displayed in the Info sidebar tab. It is defined in a
    script of type `text/x-red` with `data-help-name` set to the
    [type of the node](#node-type).
 
- 
- 
+
+
 ### Defining a node
 
 A node must be registered with the editor using the `RED.nodes.registerType`
@@ -74,7 +74,7 @@ The edit template for a node describes the content of its edit dialog.
 
     <script type="text/x-red" data-template-name="node-type">
         <div class="form-row">
-            <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+            <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
         </div>
     </script>
@@ -87,14 +87,14 @@ There are some simple conventions to follow:
  - a typical row will have a `<label>` that contains an icon and the name of the
    property followed by an `<input>`. The icon is created using an `<i>` element
    with a class taken from those available from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/).
-   
+
    Note: we previously used the icons provided by [Bootstrap](http://getbootstrap.com/2.3.2/base-css.html#icons).
    Their use is now deprecated within Node-RED in preference to Font Awesome.
  - if more interactivity is required, `oneditprepare` can be used to attach
    any event handlers on the dialog elements.
-      
 
-More information on how the edit template is used is available 
+
+More information on how the edit template is used is available
 [here](properties.html#property-edit-dialog).
 
 
@@ -115,5 +115,3 @@ nodes in the palette.
        <p>Outputs an object called <b>msg</b> containing <b>msg.topic</b> and
        <b>msg.payload</b>. msg.payload is a String.</p>
     </script>
-
-

@@ -27,6 +27,14 @@ Then update the packages
     sudo apt-get upgrade
     sudo apt-get install npm --reinstall
 
+#### Before you start
+
+Make sure the local time is set correctly. The Beaglebone Black does not have a
+battery backed real time clock so needs to be set on every boot in order for
+software certificates date checks to be valid.
+
+    ntpdate -b -s -u pool.ntp.org
+
 #### Installing Node-RED
 
 The easiest way to install Node-RED is to use node's package manager, npm:

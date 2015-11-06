@@ -4,7 +4,7 @@ title: Writing Functions
 ---
 
 The Function node allows arbitrary code to be run against the messages that are
-passed in, and then return zero or more messages to continue the flow. 
+passed in, and then return zero or more messages to continue the flow.
 
 The message is passed in as a JSON object called `msg`. By convention it will
 have a `msg.payload` property containing the body of the message. Some nodes
@@ -82,7 +82,7 @@ sent sequentially to the first output. `msg4` will be sent to the second output.
 {% highlight javascript %}
 return [ [ msg1, msg2, msg3 ], msg4 ];
 {% endhighlight %}
-    
+
 The following example splits the received payload into individual words and
 returns a message for each of the words.
 
@@ -142,7 +142,7 @@ run:
 
 {% highlight javascript %}
 // initialise the counter to 0 if it doesn't exist already
-context.count = context.count || 0;    
+context.count = context.count || 0;
 context.count += 1;
 // make it part of the outgoing msg object
 msg.count = context.count;
@@ -171,8 +171,32 @@ functionGlobalContext: {
 }
 {% endhighlight %}
 
-at which point, the module can be referenced within a function as 
+at which point, the module can be referenced within a function as
 `context.global.osModule`.
+
+#### Adding Status ####
+
+The function node can also provide it's own status decoration in the same way
+that other nodes can. To set the status, call the `node.status` function.
+For example
+
+{% highlight javascript %}
+node.status({fill:"red",shape:"ring",text:"disconnected"});
+
+node.status({fill:"green",shape:"dot",text:"connected"});
+
+node.status(text:"Just text status");
+
+node.status();   // to clear the status
+}
+{% endhighlight %}
+
+For details of the accepted parameters see the
+[Node Status documentation](creating-nodes/status.html)
+
+Any status updates can then also be caught by the Status node (available in
+Node-RED v0.12 + ).
+
 
 #### Other objects ####
 
@@ -182,5 +206,3 @@ The Function node also makes the following object available:
   `node.log` is the preferred method of logging
 * `util` - the Node.js `util` module
 * `Buffer` - the Node.js `Buffer` module
-
-
