@@ -11,6 +11,7 @@
 ### END INIT INFO
 # Can be downloaded and installed in one go by using this command
 # sudo wget -O /tmp/download https://gist.github.com/bigmonkeyboy/9962293/download && sudo tar -zxf /tmp/download --strip-components 1 -C /etc/init.d && sudo chmod 755 /etc/init.d/nodered && sudo update-rc.d nodered defaults
+. /lib/lsb/init-functions
 
 # This runs as the user called pi - please change as you require
 USER=pi
