@@ -185,7 +185,7 @@ node.status({fill:"red",shape:"ring",text:"disconnected"});
 
 node.status({fill:"green",shape:"dot",text:"connected"});
 
-node.status(text:"Just text status");
+node.status({text:"Just text status"});
 
 node.status();   // to clear the status
 }
