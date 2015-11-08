@@ -41,8 +41,6 @@ lose any message properties of the received message. This will break some flows,
 for example the HTTP In/Response flow requires the <code>msg.req</code> and
 <code>msg.res</code> properties to be preserved end-to-end.</div>
 
-
-
 #### Multiple Outputs ####
 
 The function edit dialog allows the number of outputs to be defined. If there
@@ -54,13 +52,12 @@ outputs depending on some condition. For example, this function would send
 anything on topic `banana` to the second output rather than the first:
 
 {% highlight javascript %}
-if (msg.topic == "banana") {
+if (msg.topic === "banana") {
    return [ null, msg ];
 } else {
    return [ msg, null ];
 }
 {% endhighlight %}
-
 
 Combining with the earlier example, the following example passes the original
 message as-is on the first output, and a message containing the payload length
@@ -80,6 +77,10 @@ they were returned. In the following example, `msg1`, `msg2`, `msg3` will be
 sent sequentially to the first output. `msg4` will be sent to the second output.
 
 {% highlight javascript %}
+var msg1 = { payload:"first out of output 1" };
+var msg2 = { payload:"second out of output 1" };
+var msg3 = { payload:"third out of output 1" };
+var msg4 = { payload:"only message from output 2" };
 return [ [ msg1, msg2, msg3 ], msg4 ];
 {% endhighlight %}
 
@@ -108,6 +109,16 @@ doSomeAsyncWork(msg, function(result) {
     node.send({payload:result});
 });
 return;
+{% endhighlight %}
+
+If you do use asynchronous callback code in your functions then you may need to
+tidy up any outstanding requests, or close any links,  whenever the flow gets
+re-deployed. You can do this by adding a `close` event handler.
+
+{% highlight javascript %}
+node.on('close', function() {
+    // tidy up any async code here - shutdown links and so on.
+});
 {% endhighlight %}
 
 #### Logging events
@@ -182,13 +193,9 @@ For example
 
 {% highlight javascript %}
 node.status({fill:"red",shape:"ring",text:"disconnected"});
-
 node.status({fill:"green",shape:"dot",text:"connected"});
-
 node.status({text:"Just text status"});
-
-node.status();   // to clear the status
-}
+node.status({});   // to clear the status
 {% endhighlight %}
 
 For details of the accepted parameters see the
@@ -197,12 +204,16 @@ For details of the accepted parameters see the
 Any status updates can then also be caught by the Status node (available in
 Node-RED v0.12 + ).
 
+#### Other objects and functions ####
 
-#### Other objects ####
-
-The Function node also makes the following object available:
+The Function node also makes the following available:
 
 * `console` - useful for making calls to `console.log` whilst debugging, although
   `node.log` is the preferred method of logging
 * `util` - the Node.js `util` module
 * `Buffer` - the Node.js `Buffer` module
+* `setTimout/clearTimeout` - the javascript timeout functions.
+* `setInterval/clearInterval` - the javascript interval functions.
+
+Note: the function node automatically clears any outstanding timeouts or
+interval timers whenever a flow is stopped or re-deployed.
