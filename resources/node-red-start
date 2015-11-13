@@ -2,7 +2,7 @@
 echo -e '\033]2;'NODE-Red console'\007'
 HOSTIP=`hostname -I | cut -d ' ' -f 1`
 if [ "$HOSTIP" = "" ]; then
-HOSTIP="localhost"
+HOSTIP="127.0.0.1"
 fi
 echo " "
 echo "Once Node-RED has started, point a browser at http://$HOSTIP:1880"
