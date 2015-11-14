@@ -25,6 +25,8 @@ Here is a typical directory structure for a node package:
        |-sample.js
        \-icons
           \-sample.png
+    - README.md
+    - LICENSE
 
 There are no strict requirements over the directory structure used within the
 package. If a package contains multiple nodes, they could all exist in the same
@@ -65,4 +67,3 @@ There are lots of guides to publishing a package to the npm repository.
 A basic overview is available [here](https://www.npmjs.org/doc/misc/npm-developers.html).
 
 Please be sure to publicise your node on the [project mailing list](https://groups.google.com/forum/#!forum/node-red).
-
