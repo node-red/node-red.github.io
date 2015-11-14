@@ -61,6 +61,22 @@ appears when [searching by keyword](https://www.npmjs.org/browse/keyword/node-re
 }
 {% endhighlight %}
 
+### README.md
+
+The README.md file should describe the capabilities of the node, and list any
+pre-requisites that are needed in order to make it function. It may also be
+useful to include any extra instuctions not included in the *info* tab part
+of the node's html file, and maybe even a small example flow demonstrating it's
+use.
+
+The file should be marked up using
+[GitHub flavoured markdown](https://help.github.com/articles/markdown-basics/).
+
+### LICENSE
+
+Please include a license file so that others may know what they can and cannot
+do with your code.
+
 ### Publishing to npm
 
 There are lots of guides to publishing a package to the npm repository.
