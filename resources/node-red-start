@@ -9,6 +9,10 @@ echo "Once Node-RED has started, point a browser at http://$HOSTIP:1880"
 echo " "
 echo "To stop Node-RED use the command   node-red-stop"
 echo " "
+echo "To find more nodes - go to http://flows.nodered.org"
+echo "You may also need to install npm"
+echo "      sudo apt-get install npm"
+echo " "
 sudo /etc/init.d/nodered start
 sleep 2
 tail -f /var/log/node-red.log
