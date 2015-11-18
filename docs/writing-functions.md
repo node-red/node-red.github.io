@@ -39,7 +39,9 @@ return newMsg;
 <div class="doc-callout"><em>Note</em>: constructing a new message object will
 lose any message properties of the received message. This will break some flows,
 for example the HTTP In/Response flow requires the <code>msg.req</code> and
-<code>msg.res</code> properties to be preserved end-to-end.</div>
+<code>msg.res</code> properties to be preserved end-to-end. In general, function
+nodes <em>should</em> return the message object they were passed having made any
+changes to its properties.</div>
 
 #### Multiple Outputs ####
 

@@ -3,7 +3,7 @@ layout: default
 title: JavaScript file
 ---
 
-The node `.js` file defines the runtime behaviour of the node. 
+The node `.js` file defines the runtime behaviour of the node.
 
 ### Node constructor
 
@@ -20,7 +20,7 @@ the features shared by all nodes. After that, the node-specific code lives.
 function SampleNode(config) {
     RED.nodes.createNode(this,config);
     // node-specific code goes here
-        
+
 }
 
 RED.nodes.registerType("sample",SampleNode);
@@ -47,6 +47,10 @@ this.send(msg);
 {% endhighlight %}
 
 If `msg` is null, no message is sent.
+
+If the node is sending a message in response to having received one, it should reuse
+the received message rather than create a new message object. This ensures existing
+properties on the message are preserved for the rest of the flow.
 
 #### Multiple outputs
 
@@ -126,5 +130,4 @@ This is done by calling the `status` function:
 this.status({fill:"red",shape:"ring",text:"disconnected"});
 {% endhighlight %}
 
-The details of the status api can be found [here](status.html). 
-
+The details of the status api can be found [here](status.html).
