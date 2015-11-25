@@ -3,14 +3,85 @@ layout: default
 title: Raspberry Pi
 ---
 
-### Install Node.js
+There are two ways to get started with Node-RED on a Raspberry Pi.
+
+  - use the version preinstalled in the November 2015 Raspbian Jessie image
+  - or install manually from the `npm` repository - see [here](#installing-via-npm).
+
+### Raspbian Jessie
+
+As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
+the SD card image that can be downloaded from [here](https://www.raspberrypi.org/downloads/raspbian/).
+
+If you already have an older version of Jessie, you can install Node-RED using the
+standard package manager:
+
+    sudo apt-get update
+    sudo apt-get install nodered
+
+#### Running Node-RED
+
+To start Node-RED, you can either:
+
+  - on the Desktop, select `Menu->Programming->Node-RED`.
+  - or run `node-red-start` in a new terminal window
+
+To stop Node-RED, run `node-red-stop`.
+
+To set Node-RED to run automatically on boot use the following command:
+
+    sudo update-rc.d nodered defaults
+
+#### Adding nodes
+
+To add additional nodes you must first install the `npm` tool, as it is not included
+in the default installation:
+
+    sudo apt-get install npm
+    cd ~/.node-red
+    npm install node-red-{example node name}
+
+#### Upgrading
+
+To update Node-RED, you can use the standard package manager:
+
+    sudo apt-get update
+    sudo apt-get install nodered
+
+This will grab the latest version that has been made available on the Raspbian
+repositories. *Note*: there may be a slight delay between a release being made
+to the `npm` repositories and it being available in Raspbian.
+
+#### Using newer versions of node.js
+
+This pre-install uses the default node.js within Debian Jessie, which is version
+0.10.29. You may wish to use more recent versions of Node.js such as v0.12.x or v4.2.x
+
+To do this you must uninstall the built-in version and re-install using the
+instructions below. To uninstall:
+
+    sudo apt-get remove nodered
+    sudo apt-get remove nodejs nodejs-legacy
+    sudo apt-get remove npm   # if you installed npm
+
+This will remove all the built in packages but leave your workspace - by default
+at `~/.node-red` . You may then proceed to re-install as per instructions below.
+
+
+### Installing via npm
+
+If you want to install directly from `npm` you *must* first uninstall the preinstalled
+version if you are running on Raspbian Jessie:
+
+    sudo apt-get remove nodered
+
+
+#### Install Node.js
 
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
-<div class="doc-callout"><em>Note</em>: Version 4.x.x of node.js and versions of io.js are <em>not</em> currently supported.</div>
-
-#### Raspberry Pi 2
+##### Raspberry Pi 2
 
 To install Node.js on Pi 2 - and other Arm7 processor based boards, run
 the following commands:
@@ -25,7 +96,7 @@ to clean up some hidden node directories before installing Node-RED:
 
     sudo npm cache clean
 
-#### Raspberry Pi
+##### Raspberry Pi
 
 The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
@@ -33,7 +104,7 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
     sudo dpkg -i node_archive_armhf.deb
     sudo apt-get install build-essential python-dev python-rpi.gpio
 
-### Install Node-RED
+#### Install Node-RED
 
 The easiest way to install Node-RED is to use node's
 package manager, npm:
@@ -50,7 +121,7 @@ compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installat
 </div>
 
 If there are any npm errors (not warnings, not gyp errors) during install, try
-running `sudo npm cache clean` and re-trying the install. Npm should be version
+running `sudo npm cache clean` and re-trying the install. `npm` should be version
 1.4.28 or better. Type `npm -v` to check.
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries

@@ -5,24 +5,21 @@ title: Installation
 
 ### Install Node.js
 
-Node-RED supports Node.js <code>0.10.x</code> and <code>0.12.x</code>.
+Node-RED supports Node.js <code>0.10.x</code> and later.
 
-<div class="doc-callout"><em>Note</em>: Support for Node <code>0.12.x</code> was added in Node-RED <code>0.11.0</code>.
-Whilst we have tested the core runtime and its nodes, 3rd party nodes may not yet fully support it.</div>
-
-<div class="doc-callout"><em>Note</em>: We do <em>not</em> currently support node.js v4.x.x or versions of io.js.</div>
+<div class="doc-callout"><em>Note</em>: 3rd party nodes may not yet fully support Node 4.x and later, especially if they contain a binary component. Check with the author of the node if you are not sure.</div>
 
 You can get the latest supported version of Node <code>0.12.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/v0.12.8/node-v0.12.8-linux-x86.tar.gz)
                    or
-                   [64-bit](http://nodejs.org/dist/v0.12.7/node-v0.12.7-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/v0.12.7/node-v0.12.7.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/v0.12.7/node-v0.12.7-x86.msi)
+                   [64-bit](http://nodejs.org/dist/v0.12.8/node-v0.12.8-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/v0.12.8/node-v0.12.8.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/v0.12.8/node-v0.12.8-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/v0.12.7/x64/node-v0.12.7-x64.msi)
+                      [64-bit](https://nodejs.org/dist/v0.12.8/x64/node-v0.12.8-x64.msi)
 
-Other download options are available [here](http://nodejs.org/dist/v0.12.7/).
+Other download options are available [here](http://nodejs.org/dist/v0.12.8/).
 
 You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 

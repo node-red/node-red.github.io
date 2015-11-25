@@ -3,6 +3,9 @@ layout: default
 title: Upgrading
 ---
 
+<div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
+on Raspian Jessie, please refer to <a href="../hardware/raspberrypi.html#upgrading">these instructions for upgrading</a>.</div>
+
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
 
