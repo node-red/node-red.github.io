@@ -19,7 +19,7 @@ The request body must be a JSON string with the following fields:
 
 Field    | Description
 ---------|-----------------------
-`module` | The name of the node module to install
+`module` | Either the name of the node module to install from the npm repository, or a full path to a directory containing the node module. _Note_: this api does not support the full range of module specifiers used by npm such as `.tgz` files or version qualifiers.
 
 {% highlight json %}
 {
@@ -54,4 +54,3 @@ Status Code | Reason         | Response
   ]
 }
 {% endhighlight %}
-
