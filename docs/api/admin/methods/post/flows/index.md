@@ -11,7 +11,7 @@ Header                     | Value
 ---------------------------|----------
 `Authorization`            | `Bearer [token]` - if authentication is enabled
 `Content-type`             | `application/json`
-`Node-RED-Deployment-Type` | `full`, `nodes` or `flows`
+`Node-RED-Deployment-Type` | `full`, `nodes`, `flows` or `reload`
 
 
 The `Node-RED-Deployment-Type` header is used to define what type of deployment
@@ -23,6 +23,7 @@ is performed.
    configuration is applied.
  - `flows` - only flows that contain modified nodes are stopped before the new
    configuration is applied.
+ - `reload` - the flows are reloaded from storage and all nodes are restarted (since Node-RED 0.12.2)
 
 ### Arguments
 
