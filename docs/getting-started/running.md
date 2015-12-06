@@ -107,6 +107,8 @@ you may prefer the [NSSM option](#alternative-options) below.
 [PM2](https://github.com/Unitech/pm2) is a process manager for Node.js. It makes
 it easy to run applications on boot and ensure they are restarted if necessary.
 
+<div class="doc-callout"><em>Note</em>: PM2 is released under GNU-AGPL-3.0 license - please check the terms of the license before deploying.</div>
+
 ##### 1. Install PM2
 
     sudo npm install -g pm2
