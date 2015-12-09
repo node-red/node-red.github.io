@@ -9,17 +9,17 @@ Node-RED supports Node.js <code>0.10.x</code> and later.
 
 <div class="doc-callout"><em>Note</em>: 3rd party nodes may not yet fully support Node 4.x and later, especially if they contain a binary component. Check with the author of the node if you are not sure.</div>
 
-You can get the latest supported version of Node <code>0.12.x</code> from:
+You can get the latest Long Term Support (LTS) version of Node <code>4.2.3</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/v0.12.8/node-v0.12.8-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-linux-x86.tar.gz)
                    or
-                   [64-bit](http://nodejs.org/dist/v0.12.8/node-v0.12.8-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/v0.12.8/node-v0.12.8.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/v0.12.8/node-v0.12.8-x86.msi)
+                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.2.3.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/v0.12.8/x64/node-v0.12.8-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-x64.msi)
 
-Other download options are available [here](http://nodejs.org/dist/v0.12.8/).
+Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
 
 You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
 
@@ -30,7 +30,7 @@ There are specific instructions available for certain hardware platforms:
 
 ### Install Node-RED
 
-For Node-RED 0.10.4 or later, the easiest way to install Node-RED is to use node's
+The easiest way to install Node-RED is to use node's
 package manager, npm. Installing it as a global module adds the command `node-red`
 to your system path:
 
@@ -91,6 +91,14 @@ You can then build and run the application
 
     grunt build
     node red
+
+### Serial port
+
+If you want to use a serial port on a device running Node.js v0.10.x or v0.12.x and you aren't using a Raspberry Pi with the pre-installed image then you will need to manually install an older version of the serial port node.
+To do this:
+
+    cd ~/.node-red
+    npm i node-red-node-serialport@0.0.5
 
 ### Next steps
 

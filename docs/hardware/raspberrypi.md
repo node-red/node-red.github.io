@@ -23,21 +23,21 @@ standard package manager:
 
 To start Node-RED, you can either:
 
-  - on the Desktop, select `Menu->Programming->Node-RED`.
+  - on the Desktop, select `Menu -> Programming -> Node-RED`.
   - or run `node-red-start` in a new terminal window
 
 To stop Node-RED, run `node-red-stop`.
 
-To set Node-RED to run automatically on boot use the following command:
-
-    sudo update-rc.d nodered defaults
+To set Node-RED to run automatically on boot see [here](#making-node-red-autostart-on-boot).
 
 #### Adding nodes
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default installation:
+in the default installation. The following commands installs `npm` and then upgrades
+it to the latest `2.x` version.
 
     sudo apt-get install npm
+    sudo npm install -g npm@2.x
     cd ~/.node-red
     npm install node-red-{example node name}
 
@@ -51,6 +51,19 @@ To update Node-RED, you can use the standard package manager:
 This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
+
+#### Autostart on boot
+
+If you want Node-RED to run when the Pi boots up you can use one of the following
+commands depending on the version you have installed.
+
+For version 0.12.1 of Node-RED version (the version that comes preinstalled on Jessie):
+
+    sudo update-rc.d nodered defaults
+
+If you have upgraded to version 0.12.2 or later, you should use the following command:
+
+    sudo systemctl enable nodered.service
 
 #### Using newer versions of node.js
 
@@ -86,7 +99,7 @@ Pi (Arm v6) the method of installing node.js is slightly different.
 To install Node.js on Pi 2 - and other Arm7 processor based boards, run
 the following commands:
 
-    curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
     sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
 
 This also installs some additional dependencies.
@@ -124,11 +137,13 @@ If there are any npm errors (not warnings, not gyp errors) during install, try
 running `sudo npm cache clean` and re-trying the install. `npm` should be version
 1.4.28 or better. Type `npm -v` to check.
 
-_Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
+
+<div class="doc-callout"><em>Note</em>: the reason for using the
+<code>--unsafe-perm</code> option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often
 fails to get access to certain directories. This causes alarming warnings that look
 like errors... but sometimes are errors. Allowing node-gyp to run as root using
-this flag avoids this - or rather shows up any real errors instead.
+this flag avoids this - or rather shows up any real errors instead.</div>
 
 For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
@@ -157,6 +172,15 @@ are that we can get software PWM on all output pins, and easier access to
 interrupts on inputs meaning faster response times (rather than polling).
 </div>
 
+#### Serial port on Raspbian Wheezy
+
+If you want to use the serial port node with Node.js v0.10.x or v0.12.x and
+have manually installed Node-RED on Raspbian Wheezy, you will need to manually
+install a specific version of the serial port node. To do this:
+
+    cd ~/.node-red
+    npm install node-red-node-serialport@0.0.5
+
 ### Starting Node-RED
 
 Due to the constrained memory available on the Raspberry Pi, it is necessary to
@@ -168,8 +192,8 @@ be specified:
 
     node-red-pi --max-old-space-size=128
 
-If you decide to run Node-RED using the node command directly, this option must appear between node
-and red.js.
+If you decide to run Node-RED using the node command directly, this option must
+appear between node and red.js.
 
     node --max-old-space-size=128 red.js
 
@@ -177,6 +201,11 @@ This option limits the space it can use to 128MB before cleaning up. If you are
 running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
+
+#### Autostart on boot
+
+See [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
+
 
 ### Using the Editor
 
@@ -187,10 +216,14 @@ One way to find the IP address of the Pi is to use the command
 
 Then browse to `http://{the-ip-address-returned}:1880/`
 
-### Making Node-RED autostart on boot (optional)
-
-See [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot) for Linux.
-
+<div class="doc-callout">
+ <em>Note:</em> the default browser included in Raspbian, Ephiphany,
+has some quirks that mean certain keyboard short-cuts do not work within the
+Node-RED editor. We recommend installing the Iceweasel browser instead:
+<pre>
+    sudo apt-get install iceweasel
+</pre>
+</div>
 
 ### Accessing GPIO pins
 
@@ -201,7 +234,8 @@ directly. The default user pi does have this access and is the recommended user
 with which to run Node-RED.
 
 If you want to run as a different user you will need either to add that user to
-the sudoers list - or maybe just access to python - for example by adding the following to sudoers using visudo.
+the sudoers list - or maybe just access to python - for example by adding the
+following to sudoers using visudo.
 
     NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
 
@@ -213,17 +247,8 @@ There are also some extra hardware specific nodes (for the Pibrella, PiFace and
 LEDBorg plug on modules) available via [npm](https://www.npmjs.com/search?q=node-red-node-+).
 For example the Pibrella node can be installed as follows
 
-        cd ~/.node-red
-        npm install node-red-node-pibrella
-
-### Note
-
- * **Midori Browser** - the old Midori browser does not have adequate javascript support to
-use it with Node-RED. If you want to use a built in browser on the Pi please
-install the Epiphany browser and use that pointed at http://localhost:1880.
-Epiphany is now the default Raspbian browser, or you can install it by
-
-        sudo apt-get install epiphany-browser
+    cd ~/.node-red
+    npm install node-red-node-pibrella
 
 ***
 
@@ -243,8 +268,8 @@ There are two main ways of interacting with a Raspberry Pi using Node-RED.
 
 ### rpi-gpio nodes
 
-These use a python **nrgpio** command as part of the core install that can be
-found in \<node-red-install-directory>/nodes/core/hardware
+These use a python `nrgpio` command as part of the core install that can be
+found in {node-red-install-directory}/nodes/core/hardware
 
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
 
