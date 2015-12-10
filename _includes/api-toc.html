@@ -6,7 +6,7 @@
         </ul>
     </li>
 
-    <li class="tocheader"><span>Admin API</span>
+    <li class="tocheader"><span>Admin HTTP API</span>
         <ul>
             <li><a href="/docs/api/admin/index.html" {% if page.url == "/docs/api/admin/index.html" %}class="active"{% endif %}>Overview</a>
             <li><a href="/docs/api/admin/oauth.html" {% if page.url == "/docs/api/admin/oauth.html" %}class="active"{% endif %}>Authentication</a>
@@ -15,7 +15,22 @@
             <li><a href="/docs/api/admin/methods" {% if page.url contains "/docs/api/admin/methods" %}class="active"{% endif %}>Methods</a>
         </ul>
     </li>
-    
+    <li class="tocheader"><span>Runtime API</span>
+        <ul>
+            <li><a href="/docs/api/runtime/index.html" {% if page.url == "/docs/api/runtime/index.html" %}class="active"{% endif %}>Overview</a>
+{% if page.url contains "/docs/api/runtime" %}
+<li><a href="/docs/api/runtime/red/index.html" {% if page.url == "/docs/api/runtime/red/index.html" %}class="active"{% endif %}>RED</a>
+<li><a href="/docs/api/runtime/red/auth/index.html" {% if page.url == "/docs/api/runtime/red/auth/index.html" %}class="active"{% endif %}>RED.auth</a>
+<li><a href="/docs/api/runtime/red/comms/index.html" {% if page.url == "/docs/api/runtime/red/comms/index.html" %}class="active"{% endif %}>RED.comms</a>
+<li><a href="/docs/api/runtime/red/library/index.html" {% if page.url == "/docs/api/runtime/red/library/index.html" %}class="active"{% endif %}>RED.library</a>
+<li><a href="/docs/api/runtime/red/log/index.html" {% if page.url == "/docs/api/runtime/red/log/index.html" %}class="active"{% endif %}>RED.log</a>
+<li><a href="/docs/api/runtime/red/nodes/index.html" {% if page.url == "/docs/api/runtime/red/nodes/index.html" %}class="active"{% endif %}>RED.nodes</a>
+<li><a href="/docs/api/runtime/red/settings/index.html" {% if page.url == "/docs/api/runtime/red/settings/index.html" %}class="active"{% endif %}>RED.settings</a>
+<li><a href="/docs/api/runtime/red/util/index.html" {% if page.url == "/docs/api/runtime/red/util/index.html" %}class="active"{% endif %}>RED.util</a>
+{% endif %}
+
+        </ul>
+    </li>
     <li class="tocheader"><span>Storage API</span>
         <ul>
             <li><a href="/docs/api/storage/index.html" {% if page.url == "/docs/api/storage/index.html" %}class="active"{% endif %}>Overview</a>
@@ -23,11 +38,6 @@
         </ul>
     </li>
 <!--
-    <li class="tocheader"><span>Runtime API</span>
-        <ul>
-            <li><a href="/docs/api/runtime/index.html" {% if page.url == "/docs/api/runtime/index.html" %}class="active"{% endif %}>Overview</a>
-        </ul>
-    </li>
     <li class="tocheader"><span>Editor API</span>
         <ul>
             <li><a href="/docs/api/editor/index.html" {% if page.url == "/docs/api/editor/index.html" %}class="active"{% endif %}>Overview</a>
