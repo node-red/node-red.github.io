@@ -94,11 +94,12 @@ You can then build and run the application
 
 ### Serial port
 
-If you want to use a serial port on a device running Node.js v0.10.x or v0.12.x and you aren't using a Raspberry Pi with the pre-installed image then you will need to manually install an older version of the serial port node.
+If you want to use the serial port node when using Node.js v0.10.x or v0.12.x
+you will need to manually install an older version of the serial port node.
 To do this:
 
-    cd ~/.node-red
-    npm i node-red-node-serialport@0.0.5
+    cd $HOME/.node-red
+    npm install node-red-node-serialport@0.0.5
 
 ### Next steps
 
