@@ -44,12 +44,19 @@ deprecated and should not be used.
 
 #### Generating the password hash
 
-To generate your password hash, you can run the following command from within the
-Node-RED install directory:
+To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin.html)
+command-line tool:
+
+    node-red-admin hash-pwd
+
+The tool will prompt you for the password you wish to use and then print out
+the hash that can be copied into the settings file.
+
+Alternative, you can run the following command from within the Node-RED install
+directory:
 
     node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here
 
-You can then copy and paste the result of this command into the settings file.
 
 #### Setting a default user
 

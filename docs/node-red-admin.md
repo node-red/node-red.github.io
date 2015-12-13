@@ -31,7 +31,7 @@ If [authentication](security.html) is enabled, you must then `login`:
 
     node-red-admin login
 
-These commands create a file called `~/.node-red/cli-config.json` that stores 
+These commands create a file called `~/.node-red/cli-config.json` that stores
 the target and access token information.
 
 ### Other commands
@@ -45,4 +45,4 @@ The tool provides the following commands:
  - `search` - Search NPM for Node-RED modules relating to the search-term given
  - `install` - Install a module from NPM
  - `remove` - Remove an NPM module
-
+ - `hash-pw` - Create a password hash that can be used with the `adminAuth` and `httpNodeAuth` settings
