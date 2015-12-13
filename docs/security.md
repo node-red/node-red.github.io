@@ -7,15 +7,16 @@ By default, the Node-RED editor is not secured - anyone who can access the IP ad
 and port it is running on can access the editor and deploy changes. This is only
 suitable if you are running on a trusted network.
 
-<div class="doc-callout">
-<em>Note</em>: in previous releases of Node-RED, the setting <code>httpAdminAuth</code> could be
-used to enable HTTP Basic Authentication on the editor. Whilst it can still be
-used, its use is deprecated and superceded by <code>adminAuth</code> described below.
-</div>
+This section describes how you can secure Node-RED. The security is split into
+two parts:
 
-### Enabling user authentication
+ - the [editor and admin API](#editor--admin-api-security)
+ - the [HTTP Nodes and static content](#http-node-security).
 
-To enable user authentication, add the following to your `settings.js` file:
+### Editor & Admin API security
+
+To enable user authentication on the Editor and Admin API, add the following to
+your `settings.js` file:
 
 {% highlight javascript %}
 adminAuth: {
@@ -30,10 +31,16 @@ adminAuth: {
 
 The `users` property is an array of user objects. This allows you to define
 multiple users, each of whom can have different permissions.
-    
+
 This example configuration defines a single user called `admin` who has permission
 to do everything within the editor and has a password of `password`. Note that
 the password is securely hashed using the bcrypt algorithm.
+
+<div class="doc-callout">
+<em>Note</em>: in previous releases of Node-RED, the setting <code>httpAdminAuth</code>
+could be used to enable HTTP Basic Authentication on the editor. This option is
+deprecated and should not be used.
+</div>
 
 #### Generating the password hash
 
@@ -87,7 +94,12 @@ adminAuth: {
 }
 {% endhighlight %}
 
-### Custom user authentication
+#### Accessing the Admin API
+
+With the `adminAuth` property set, the [Admin API documentation](api/admin/oauth.html)
+describes how to access the API.
+
+#### Custom user authentication
 
 Rather than hardcode users into the settings file, it is also possible to plug in
 custom code to authenticate users. This makes it possible to integrate with
@@ -96,7 +108,7 @@ existing authentication schemes.
 The following example shows how an external module can be used to provide the
 custom authentication code.
 
-1. Save the following in a file called `<node-red>/user-authentication.js`
+ - Save the following in a file called `<node-red>/user-authentication.js`
 
 {% highlight javascript %}
 var when = require("when");
@@ -143,10 +155,32 @@ module.exports = {
 }
 {% endhighlight %}
 
-2. Set the `adminAuth` property in settings.js to load this module:
+ -  Set the `adminAuth` property in settings.js to load this module:
 
 {% highlight javascript %}
 adminAuth: require("./user-authentication");
 {% endhighlight %}
 
 
+### HTTP Node security
+
+The routes exposed by the HTTP In nodes can be secured using basic authentication.
+
+The `httpNodeAuth` property in your `settings.js` file can be used to define a single
+username and password that will be allowed to access the routes.
+
+{% highlight javascript %}
+httpNodeAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
+{% endhighlight %}
+
+The `pass` property uses the same format as `adminAuth`. See [Generating the password hash](#generating-the-password-hash) for more information.
+
+Access to any static content defined by the `httpStatic` property can be secured
+using the `httpStaticAuth` property, which uses the same format.
+
+<div class="doc-callout">
+<em>Note</em>: in previous releases of Node-RED, the <code>pass</code> property
+was expected to be an MD5 hash. This is cryptographically insecure, so has been
+superseded with bcrypt, as used by <code>adminAuth</code>. For backwards compatibility, MD5
+hashes are still supported - but they are not recommended.
+</div>

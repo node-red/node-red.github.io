@@ -6,8 +6,8 @@ The Node-RED admin API is secured using the `adminAuth` property in your `settin
 file. The [security](/docs/security.html) section describes how that property
 should be configured.
 
-If that property is not set (nor the deprecated `httpAdminAuth` property), the
-Node-RED admin API is accessible to anyone with network access to Node-RED.
+If that property is not set the Node-RED admin API is accessible to anyone with
+network access to Node-RED.
 
 
 ### Step 0 - Check the authentication scheme
@@ -94,4 +94,3 @@ POST to `/auth/revoke`:
 <div class="doc-callout"><em>curl example</em>:
 <pre>curl --data 'token=A_SECRET_TOKEN' -H "Authorization: Bearer A_SECRET_TOKEN" http://localhost:1880/auth/revoke</pre>
 </div>
-
