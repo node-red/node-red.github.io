@@ -52,7 +52,7 @@ This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
 
-#### Autostart on boot
+#### Autostart on boot (preloaded version 0.12.1)
 
 If you want Node-RED to run when the Pi boots up you can use one of the following
 commands depending on the version you have installed.
@@ -61,9 +61,6 @@ For version 0.12.1 of Node-RED version (the version that comes preinstalled on J
 
     sudo update-rc.d nodered defaults
 
-If you have upgraded to version 0.12.2 or later, you should use the following command:
-
-    sudo systemctl enable nodered.service
 
 #### Using newer versions of node.js
 
@@ -202,9 +199,31 @@ running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 
-#### Autostart on boot
+#### Adding Autostart capability using SystemD
 
-See [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
+The preferred way to autostart Node-RED on Pi is to use the built in systemd
+capability.  The pre-installed version does this by using a `nodered.service`
+file and start and stop scripts. You may install these by running the following
+commands
+
+    sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/nodered.service -O /lib/systemd/system/nodered.service
+    sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-start -O /usr/bin/node-red-start
+    sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
+    sudo chmod +x /usr/bin/node-red-st*
+    sudo systemctl daemon-reload
+    sudo systemctl enable nodered.service
+
+**Note:** These commands are run as root (sudo) - It downloads the three required files to their correct locations, makes the two scripts executable, reloads the systemd daemon and then enables the service.
+
+It is configured to restart at boot time and upon crashes. It can be disabled by
+
+    sudo systemctl disable nodered.service
+
+Systemd uses the `/var/log/system.log` for logging.  To filter the log use
+
+    sudo journalctl -f -u nodered -o cat
+
+For further options see [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
 
 
 ### Using the Editor
