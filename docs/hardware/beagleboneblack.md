@@ -5,9 +5,11 @@ title: BeagleBone Black
 
 The BeagleBoneBlack already has Node.js baked into it's OS, so some of these tips are optional.
 
+**Note**: The latest Debian Jessie build for BeagleBoneBlack is not yet supported, as it breaks the
+nodes that allows access to the GPIO pins.
+
 <div class="doc-callout">
-<em>Note:</em> we are soon deprecating Node v0.8 support - these instructions only apply to the
-Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
+These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
 </div>
 
 
