@@ -37,7 +37,14 @@ IDE under the menu:
 
 You then need to install the Node-RED Arduino nodes into the palette.
 
-Change directory to your Node-RED user directory, this is normally `.node-red`
+<div class="doc-callout">Please check that `npm -v` is at least version 2.x
+- if not - update it using
+
+        sudo npm i -g npm@2.x
+        dash -r
+</div>
+
+Change directory to your Node-RED user directory, this is normally `~/.node-red`
 
         cd .node-red
 
