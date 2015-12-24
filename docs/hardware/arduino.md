@@ -41,7 +41,7 @@ You then need to install the Node-RED Arduino nodes into the palette.
 - if not - update it using
 
         sudo npm i -g npm@2.x
-        dash -r
+        hash -r
 </div>
 
 Change directory to your Node-RED user directory, this is normally `~/.node-red`

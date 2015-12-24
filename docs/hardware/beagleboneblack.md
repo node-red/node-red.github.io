@@ -3,31 +3,15 @@ layout: default
 title: BeagleBone Black
 ---
 
-The BeagleBoneBlack already has Node.js baked into it's OS, so some of these tips are optional.
+The BeagleBoneBlack already has Node.js baked into it's OS, so some of these
+tips are optional.
 
-**Note**: The latest Debian Jessie build for BeagleBoneBlack is not yet supported, as it breaks the
-nodes that allows access to the GPIO pins.
+**Note**: The latest Debian Jessie build for BeagleBoneBlack is not yet
+supported, as it breaks the nodes that allows access to the GPIO pins.
 
 <div class="doc-callout">
 These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
 </div>
-
-
-#### Upgrading Node.js (Optional)
-
-You need Node.js v0.10.x which should be installed by default on the BBB so this step is optional.
-To update Node.js on BBB - checkout the instructions halfway down this page [http://elinux.org/Beagleboard:BeagleBoneBlack_Debian](http://elinux.org/Beagleboard:BeagleBoneBlack_Debian)
-
-In particular the lines about adding an updated repo to /etc/apt/sources.list
-
-    sudo sh -c "echo 'deb [arch=armhf] http://repos.rcn-ee.net/debian wheezy main' >> /etc/apt/sources.list"
-    sudo sh -c "echo '#deb-src [arch=armhf] http://repos.rcn-ee.net/debian wheezy main' >> /etc/apt/sources.list"
-
-Then update the packages
-
-    sudo apt-get update
-    sudo apt-get upgrade
-    sudo apt-get install npm --reinstall
 
 #### Before you start
 
@@ -36,6 +20,14 @@ battery backed real time clock so needs to be set on every boot in order for
 software certificates date checks to be valid.
 
     ntpdate -b -s -u pool.ntp.org
+
+#### Updating npm
+
+We recommend using at least npm version 2.x as it supports extras like the
+serialport module more fully.
+
+    sudo npm i -g npm@2.x
+    hash -r
 
 #### Installing Node-RED
 
@@ -47,10 +39,9 @@ _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tr
 to recompile any native libraries it tries to do so as a "nobody" user and often
 fails to get access to certain directories. This causes alarming warnings that look
 like errors... but only sometimes are errors. Allowing node-gyp to run as root using
-this flag avoids this - or rather shows up any real errors instead.
+this flag avoids this - or rather, shows up any real errors instead.
 
 For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
-
 
 #### BBB specific nodes
 
@@ -58,6 +49,7 @@ There are some BBB specific nodes now available in our [node-red-nodes project o
 
 These give you direct access to the I/O pins in the simplest possible manner. The easiest way to install them is direct from npm
 
+    mkdir -p ~/.node-red
     cd ~/.node-red
     npm install node-red-node-beaglebone
 
