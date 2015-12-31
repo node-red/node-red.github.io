@@ -199,6 +199,11 @@ running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 
+**Note**: The pre-installed version of Node-RED on Raspbian that uses the `node-red-start`
+command also sets it to 128MB by default. If you do want to change that, the
+file you need to edit (as sudo) is `/lib/systemd/system/nodered.service`. See
+below for how to add this to a manually installed version.
+
 #### Adding Autostart capability using SystemD
 
 The preferred way to autostart Node-RED on Pi is to use the built in systemd
@@ -211,11 +216,19 @@ commands
     sudo wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/node-red-stop -O /usr/bin/node-red-stop
     sudo chmod +x /usr/bin/node-red-st*
     sudo systemctl daemon-reload
+
+**Info:** These commands are run as root (sudo) - It downloads the three required
+files to their correct locations, makes the two scripts executable and then
+reloads the systemd daemon.
+
+Node-RED can then be started and stopped by using the commands `node-red-start`
+and `node-red-stop`
+
+To then enable Node-RED to run automatically at every boot and upon crashes
+
     sudo systemctl enable nodered.service
 
-**Note:** These commands are run as root (sudo) - It downloads the three required files to their correct locations, makes the two scripts executable, reloads the systemd daemon and then enables the service.
-
-It is configured to restart at boot time and upon crashes. It can be disabled by
+It can be disabled by
 
     sudo systemctl disable nodered.service
 
@@ -223,7 +236,7 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
-For further options see [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
+For other options see [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
 
 
 ### Using the Editor
