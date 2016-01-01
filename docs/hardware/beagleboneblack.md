@@ -6,9 +6,6 @@ title: BeagleBone Black
 The BeagleBoneBlack already has Node.js baked into it's OS, so some of these
 tips are optional.
 
-**Note**: The latest Debian Jessie build for BeagleBoneBlack is not yet
-supported, as it breaks the nodes that allows access to the GPIO pins.
-
 <div class="doc-callout">
 These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
 </div>
@@ -47,11 +44,21 @@ For alternative install options, see the [main installation instructions](../get
 
 There are some BBB specific nodes now available in our [node-red-nodes project on Github](https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB).
 
-These give you direct access to the I/O pins in the simplest possible manner. The easiest way to install them is direct from npm
+These give you direct access to the I/O pins in the simplest possible manner.
+The easiest way to install them is direct from npm.
+
+For Debian Jessie based builds with kernel 4.x run the following commands in the root
+directory of your Node-RED install. This is usually `~/.node-red`
 
     mkdir -p ~/.node-red
     cd ~/.node-red
     npm install node-red-node-beaglebone
+
+For previous versions of Debian (eg Wheezy) - use the older version of this node.
+
+    mkdir -p ~/.node-red
+    cd ~/.node-red
+    npm install node-red-node-beaglebone@0.0.8
 
 #### Starting Node-RED
 
