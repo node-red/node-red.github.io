@@ -22,8 +22,7 @@ The request body must be a single flow configuration object.
   "id": "91ad451.f6e52b8",
   "label": "Sheet 1",
   "nodes": [ ],
-  "configs": [ ],
-  "subflows": [ ]
+  "configs": [ ]
 }
 {% endhighlight %}
 
@@ -32,6 +31,9 @@ The configuration object must, at a minimum, include the `nodes` property.
 The runtime will assign a new id for the flow. If the provided flow configuration
 object includes an `id` field it will be replaced and the `z` property of all
 nodes updated to match.
+
+All of the nodes in the flow must have unique `id` properties. The request will
+rejected if any of the `id`s are already in use.
 
 ### Response
 

@@ -1,4 +1,4 @@
----
+
 layout: api
 title: PUT /flow/:id
 ---
@@ -19,19 +19,29 @@ Header                     | Value
 
 Path Component | Description
 ---------------|------------
-`id`           | The id of the flow.
+`id`           | The id of the flow to update, or `global`
 
 The request body must be a single flow configuration object.
 
+For a normal flow:
 {% highlight json %}
 {
   "id": "91ad451.f6e52b8",
   "label": "Sheet 1",
   "nodes": [ ],
+  "configs": [ ]
+}
+{% endhighlight %}
+
+For the global flow:
+{% highlight json %}
+{
+  "id": "global",
   "configs": [ ],
   "subflows": [ ]
 }
 {% endhighlight %}
+
 
 
 ### Response

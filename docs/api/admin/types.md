@@ -5,6 +5,15 @@ title: Types
 
 The following types can be used with the API methods.
 
+Traditionally, a flow configuration has been represented as a flat array of
+node objects.
+
+From Node-RED 0.13, an api was added to allow flows (aka tabs) to be maintained
+individually. Those apis use a richer format for the flow configuration. We will
+be updating the main flow configuration to use this richer format in the future,
+but for now the two formats have to co-exist.
+
+
 ### Node
 
 A Node represents the configuration of a single node within a flow.
@@ -16,7 +25,7 @@ A Node represents the configuration of a single node within a flow.
   "x": 0,
   "y": 0,
   "z": "456",
-  "wires": []
+  "wires": [ ... ]
 }
 {% endhighlight %}
 
@@ -26,19 +35,45 @@ Field     | Description
 `type`    | The type of the node
 `x`,`y`   | The x/y co-ordinates of the node when the flow is drawn
 `z`       | The flow, or subflow, the node is a member of
-`wires`    | The wires this nodes outputs are connected to
+`wires`   | The wires the node's outputs are connected to
 *         | Other fields as defined by the particular `type`
 
+If the node is a config node, then it must not have the `x`, `y` or `wires`  properties.
 
-### Config Node
+### Subflow
 
-A Config node represents the configuration of a single config node. It is identical
-to a [Node](#node) configuration except it must not have the `x`, `y` or `wires` properties.
+A Subflow node represents the configuration of a subflow.
+
+{% highlight json %}
+{
+  "id": "6115be82.9eea4",
+  "type": "subflow",
+  "name": "Subflow 1",
+  "info": "",
+  "in": [{
+    "x": 60,
+    "y": 40,
+    "wires": [{
+      "id": "1830cc4e.e7cf34"
+    }]
+  }],
+  "out": [{
+    "x": 320,
+    "y": 40,
+    "wires": [{
+      "id": "1830cc4e.e7cf34",
+      "port": 0
+    }]
+  }],
+  "configs": [ ... ],
+  "nodes": [ ... ]
+}
+{% endhighlight %}
 
 ### Complete Flow configuration
 
 A Complete Flow configuration represents the entire set of flows active in the
-runtime. It is represented as an array of Node objects.
+runtime. It is represented as a flat array of Node objects. This is the main flow format used by the `/flows` api and imported/exported by the editor.
 
 {% highlight json %}
 [
@@ -62,9 +97,9 @@ A Single Flow configuration represents what gets presented in the editor as a ta
 {
   "id": "1234",
   "label": "Sheet1",
-  "nodes": [],
-  "configs": [],
-  "subflows": []
+  "nodes": [ ... ],
+  "configs": [ ... ],
+  "subflows": [ ... ]
 }
 {% endhighlight %}
 
@@ -74,7 +109,8 @@ Field      | Description
 `label`    | A label for the the flow
 `nodes`    | An array of the Nodes in the flow
 `configs`  | An array of the Configs in the flow
-`subflows` | An array of the Subflows in the flow
+`subflows` | An array of the Subflows in the flow - only used when representing the `global` flow configuration
+
 
 
 ### Node Module
@@ -85,7 +121,7 @@ A Node Module represents the collection of Node Sets provided by an npm package.
 {
   "name": "node-module-name",
   "version": "0.0.6",
-  "nodes": [ ]
+  "nodes": [ ... ]
 }
 {% endhighlight %}
 
@@ -105,7 +141,7 @@ of the module's `package.json`](/docs/creating-nodes/packaging.html#packagejson)
 {
   "id": "node-module-name/node-set-name",
   "name": "node-set-name",
-  "types": [ ],
+  "types": [ ... ],
   "enabled": true,
   "module": "node-module-name",
   "version": "0.0.6"
