@@ -27,7 +27,7 @@ is performed.
 
 ### Arguments
 
-The request body must be a new flow configuration JSON string.
+The request body must be a new full configuration JSON string.
 
 ### Response
 
@@ -35,5 +35,3 @@ Status Code | Reason         | Response
 ------------|----------------|--------------
 `204`       | Success        | _none_
 `401`       | Not authorized | _none_
-
-
