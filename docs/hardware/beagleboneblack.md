@@ -50,21 +50,25 @@ The easiest way to install them is direct from npm.
 For Debian Jessie based builds with kernel 4.x run the following commands in the root
 directory of your Node-RED install. This is usually `~/.node-red`
 
-    mkdir -p ~/.node-red
-    cd ~/.node-red
-    npm install node-red-node-beaglebone
+    sudo npm install -g --unsafe-perm node-red-node-beaglebone
 
 For previous versions of Debian (eg Wheezy) - use the older version of this node.
 
-    mkdir -p ~/.node-red
-    cd ~/.node-red
-    npm install node-red-node-beaglebone@0.0.8
+    sudo npm install -g --unsafe-perm node-red-node-beaglebone@0.0.8
 
 #### Starting Node-RED
 
 Due to the constrained memory available on the BBB, it is advisable to
-run Node-RED with the `node-red-pi` command. For details and other options such as auto-starting
-on boot, follow the [Running Node-RED](../getting-started/running.html) instructions.
+run Node-RED with the `node-red-pi` command. For details and other options such
+as auto-starting on boot, follow the [Running Node-RED](../getting-started/running.html)
+instructions.
+
+To access the GPIO pins it is currently necessary to run as root :
+
+    sudo node-red-pi
+
+There are ways to avoid this using udev rules and groups and so on - but that is
+beyond the scope of this readme. Google is your friend.
 
 #### Using the Editor
 
@@ -85,9 +89,14 @@ can be manually set on or off using the Inject node buttons.
 
 #### Advanced functions
 
-For experts, the `bonescript` module can be made available for use in Function nodes.
+For experts, the `octalbonescript` module can be made available for use inside
+Function nodes. This is NOT necessary for simple use with the built in nodes.
 
-To do this, update `settings.js` to add the `bonescript` module to the
+To do this, first install the `octalbonescript` library - see
+[the octalbonescript readme](https://github.com/theoctal/octalbonescript)
+for detailed install instructions depending on your kernal.
+
+Then update `settings.js` to add the `octalbonescript` module to the
 Function global context - to do this :
 
 When you run node-red it will print the location of `settings.js` like
@@ -95,17 +104,17 @@ When you run node-red it will print the location of `settings.js` like
     [info] Settings file  : /usr/local/lib/node_modules/node-red/settings.js
 
 Edit this `settings.js` file - you may need to be administrator or sudo to do this. And
-there we need to uncomment the bonescript library line.
+there we need to uncomment the octalbonescript library line.
 
     functionGlobalContext: {
         // os:require('os'),
-        bonescript:require('bonescript'),
+        octalbonescript:require('octalbonescript'),
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
     },
 
-The module is then available to any functions you write as `context.global.bonescript`.
+The module is then available to any functions you write as `context.global.octalbonescript`.
 
 An example flow that demonstrates this is below :
 
-    [{"id":"3c3a39ec.c3c5c6","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":226,"y":498,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"f9ade3.ff06522","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":226,"y":538,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"919022c7.6e6fe","type":"inject","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":226,"y":438,"z":"345c8adc.cba376","wires":[["7783db44.887c24"]]},{"id":"ec2495b6.13db68","type":"debug","name":"","active":true,"x":666,"y":478,"z":"345c8adc.cba376","wires":[]},{"id":"7783db44.887c24","type":"function","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.bonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinMode(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"x":446,"y":458,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]},{"id":"6d418357.92be7c","type":"function","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.bonescript;\n\nb.pinMode(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"x":446,"y":518,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]}]
+    [{"id":"3c3a39ec.c3c5c6","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":226,"y":498,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"f9ade3.ff06522","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":226,"y":538,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"919022c7.6e6fe","type":"inject","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":226,"y":438,"z":"345c8adc.cba376","wires":[["7783db44.887c24"]]},{"id":"ec2495b6.13db68","type":"debug","name":"","active":true,"x":666,"y":478,"z":"345c8adc.cba376","wires":[]},{"id":"7783db44.887c24","type":"function","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.octalbonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinMode(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"x":446,"y":458,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]},{"id":"6d418357.92be7c","type":"function","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.octalbonescript;\n\nb.pinMode(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"x":446,"y":518,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]}]
