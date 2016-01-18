@@ -65,6 +65,7 @@ editor. It is an object with the following properties:
 - `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `oneditcancel`: (function) called when the edit dialog is cancelled. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
+- `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties.html#custom-edit-behaviour).
 - `onpaletteadd`: (function) called when the node type is added to the palette.
 - `onpaletteremove`: (function) called when the node type is removed from the palette.
 
