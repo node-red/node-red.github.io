@@ -6,10 +6,14 @@ title: Documentation
 
 Welcome to the Node-RED API documentation.
 
-### [Runtime Admin API](admin/index.html)
+### [Admin HTTP API](admin/index.html)
 
-This API can be used to remotely administer the runtime. It is used by the Node-RED
-Editor and command-line tool.
+This HTTP-based API can be used to remotely administer the runtime. It is used
+by the Node-RED Editor and command-line admin tool.
+
+### [Runtime API](runtime/index.html)
+
+This API can be used when embedding Node-RED into another application.
 
 ### [Storage API](storage/index.html)
 
