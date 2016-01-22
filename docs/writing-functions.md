@@ -201,6 +201,12 @@ all nodes. For example to make the variable foo available globally across the ca
 global.set("foo","bar");  // this is now available to other nodes
 {% endhighlight %}
 
+And can then be read using .get
+
+{% highlight javascript %}
+var myfoo = global.get("foo");  // this should now be "bar"
+{% endhighlight %}
+
 The global context can also be pre-populated with objects when Node-RED starts. This
 is defined in the main *settings.js* file under the *functionGlobalContext*
 property.

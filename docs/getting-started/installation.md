@@ -7,17 +7,19 @@ title: Installation
 
 Node-RED supports Node.js <code>0.10.x</code> and later.
 
-<div class="doc-callout"><em>Note</em>: 3rd party nodes may not yet fully support Node 4.x and later, especially if they contain a binary component. Check with the author of the node if you are not sure.</div>
+<div class="doc-callout"><em>Note</em>: Node.js 5.x and npm 3.x are under active development and are not recommended 
+for a stable base. Many 3rd party node packages may not yet fully support Node 5.x and later, especially if they
+contain a binary component. Check with the author of the package if you are not sure.</div>
 
-You can get the latest Long Term Support (LTS) version of Node <code>4.2.3</code> from:
+You can get the latest Long Term Support (LTS) version of Node <code>4.2.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-linux-x86.tar.gz)
                    or
-                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.2.3.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-x86.msi)
+                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.2.6.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.3-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-x64.msi)
 
 Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
 
