@@ -33,13 +33,15 @@ To set Node-RED to run automatically on boot see [here](#making-node-red-autosta
 #### Adding nodes
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default installation. The following commands installs `npm` and then upgrades
+in the default installation. The following commands install `npm` and then upgrade
 it to the latest `2.x` version.
 
     sudo apt-get install npm
     sudo npm install -g npm@2.x
     cd ~/.node-red
     npm install node-red-{example node name}
+
+*Note:* npm version 3 is the latest version, but is currently *not* recommended for use.
 
 #### Upgrading
 
@@ -116,8 +118,7 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
 
 #### Install Node-RED
 
-The easiest way to install Node-RED is to use node's
-package manager, npm:
+Install Node-RED using node's package manager, npm:
 
     sudo npm install -g --unsafe-perm  node-red
 
@@ -132,7 +133,7 @@ compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installat
 
 If there are any npm errors (not warnings, not gyp errors) during install, try
 running `sudo npm cache clean` and re-trying the install. `npm` should be version
-1.4.28 or better. Type `npm -v` to check.
+2.x. Type `npm -v` to check.
 
 
 <div class="doc-callout"><em>Note</em>: the reason for using the
@@ -175,8 +176,7 @@ If you want to use the serial port node with Node.js v0.10.x or v0.12.x and
 have manually installed Node-RED on Raspbian Wheezy, you will need to manually
 install a specific version of the serial port node. To do this:
 
-    cd ~/.node-red
-    npm install node-red-node-serialport@0.0.5
+    sudo npm i -g --unsafe-perm node-red-node-serialport@0.0.5
 
 ### Starting Node-RED
 
@@ -249,7 +249,7 @@ One way to find the IP address of the Pi is to use the command
 Then browse to `http://{the-ip-address-returned}:1880/`
 
 <div class="doc-callout">
- <em>Note:</em> the default browser included in Raspbian, Ephiphany,
+ <em>Note:</em> the default browser included in Raspbian, Epiphany,
 has some quirks that mean certain keyboard short-cuts do not work within the
 Node-RED editor. We recommend installing the Iceweasel browser instead:
 <pre>
@@ -290,7 +290,7 @@ There are two main ways of interacting with a Raspberry Pi using Node-RED.
 
 **rpi-gpio nodes**  (default)
 : provided in the palette for monitoring and controlling the GPIO
-  pins. This is the simplest and recommended way.
+  pins. This is the simplest and recommended method.
 
 **wiring-pi module** (optional)
 : this provides complete access to the GPIO pins, and other devices, within
