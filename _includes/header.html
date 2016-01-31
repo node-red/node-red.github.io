@@ -18,10 +18,12 @@
 	{% if page.layout == 'blog' %}<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nodered" />
 	<meta name="twitter:title" content="{{ page.title | uri_escape }}" />
+	<meta name="twitter:description" content="{{ page.excerpt | uri_escape }}" />
 	<meta name="twitter:image" content="http://nodered.org/node-red-icon.png" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://flows.nodered.org/node/{{name}}" />
 	<meta property="og:title" content="{{ page.title | uri_escape }}" />
+	<meta property="og:description" content="{{ page.excerpt | uri_escape }}" />
 	<meta property="og:image" content="http://nodered.org/node-red-icon.png" />
 	{% endif %}
 </head>
