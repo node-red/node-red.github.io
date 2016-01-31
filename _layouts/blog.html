@@ -1,0 +1,36 @@
+{% include header.html %}
+<div class="docs">
+  <div class="grid docs-content">
+    <div class="col-2-12 sidebar">
+      <a href="/blog">&larr; back</a>
+    </div>
+    <div class="col-8-12">
+        <div class="post-header">
+          <h2 class="post-title">{{ page.title }}</h2>
+          <div class="post-meta">{{ page.date | date_to_long_string }} </div>
+        </div>
+        <div class="post-content">
+            {{ content }}
+        </div>
+        <div class="post-footer">
+            To comment or leave feedback on this post, get on contact on
+            <a href="https://twitter.com/NodeRED">Twitter</a>,
+            the <a href="https://groups.google.com/forum/#!forum/node-red">mailing list</a>
+            or join the conversation on <a href="/slack">Slack</a>.
+        </div>
+    </div>
+    <div class="col-2-12 docs-content sidebar">
+        <h4>Share this post</h4>
+        <a class="icon icon-twitter" href="http://twitter.com/share?text={{ page.title }}&url={{ page.url }}"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        </a>
+        <a class="icon icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url }}"
+            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        </a>
+        <a class="icon icon-google-plus" href="https://plus.google.com/share?url={{ page.url }}"
+           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        </a>
+    </div>
+  </div>
+</div>
+{% include footer.html %}

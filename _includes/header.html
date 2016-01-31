@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Node-RED{% if page.title %} : {{ page.title }}{% endif %}</title>
-	
+
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
@@ -25,7 +25,7 @@
         <div class="brand"><a href="/"><img class="logo" src="/node-red.png" /> Node-RED</a></div>
         <ul class="navigation">
             <li {% if page.url == "/index.html" %}class="current"{% endif %}><a href="/">home</a></li>
-            <li><a href="http://blog.nodered.org/">blog</a></li>
+            <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="http://blog.nodered.org/">blog</a></li>
             <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
             <li><a href="http://flows.nodered.org/">flows</a></li>
             <li><a href="http://github.com/node-red/node-red">github</a></li>

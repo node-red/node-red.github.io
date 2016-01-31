@@ -26,3 +26,13 @@
 .sidebar {
     margin-top: 30px;
 }
+
+.post-meta {
+    color: #999;
+}
+
+.post-footer {
+    margin: 30px auto;
+    border: 1px solid #999;
+    padding: 10px;
+}
