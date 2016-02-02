@@ -1,7 +1,5 @@
 name: Node-RED
 markdown: kramdown
-highlighter: pygments
-permalink: /blog/:year/:month/:day/:title/
 paginate: 8
 paginate_path: "/blog/page/:num/"
 url: http://nodered.org
