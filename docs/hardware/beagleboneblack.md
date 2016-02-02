@@ -94,23 +94,23 @@ Function nodes. This is NOT necessary for simple use with the built in nodes.
 
 To do this, first install the `octalbonescript` library - see
 [the octalbonescript readme](https://github.com/theoctal/octalbonescript)
-for detailed install instructions depending on your kernal.
+for detailed install instructions depending on your kernal, but for debian squeeze it will be
+
+    sudo npm i -g octalbonescript
 
 Then update `settings.js` to add the `octalbonescript` module to the
 Function global context - to do this :
 
 When you run node-red it will print the location of `settings.js` like
 
-    [info] Settings file  : /usr/local/lib/node_modules/node-red/settings.js
+    [info] Settings file  : /root/.node-red/settings.js
 
-Edit this `settings.js` file - you may need to be administrator or sudo to do this. And
+Edit this `settings.js` file - you may need to be root or sudo to do this. And
 there we need to uncomment the octalbonescript library line.
 
     functionGlobalContext: {
         // os:require('os'),
-        octalbonescript:require('octalbonescript'),
-        // jfive:require("johnny-five"),
-        // j5board:require("johnny-five").Board({repl:false})
+        octalbonescript:require('octalbonescript')
     },
 
 The module is then available to any functions you write as `context.global.octalbonescript`.
