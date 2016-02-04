@@ -236,8 +236,9 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
 For other options see [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
 
+----
 
-### Using the Editor
+## Using the Editor
 
 Once Node-RED is running - point a browser to the machine where Node-RED is running.
 One way to find the IP address of the Pi is to use the command
@@ -255,7 +256,7 @@ Node-RED editor. We recommend installing the Iceweasel browser instead:
 </pre>
 </div>
 
-### Accessing GPIO pins
+## Accessing GPIO pins
 
 The RPi.GPIO library requires root access in order to configure and manage the GPIO pins.
 For us that means that the **nrgpio** command must be executable by the user that is running Node-RED.
@@ -271,7 +272,7 @@ following to sudoers using visudo.
 
 We are currently looking at ways to reduce this exposure further.
 
-### Extra Nodes
+## Extra Nodes
 
 There are also some extra hardware specific nodes (for the Pibrella, PiFace and
 LEDBorg plug on modules) available via [npm](https://www.npmjs.com/search?q=node-red-node-+).
@@ -280,9 +281,9 @@ For example the Pibrella node can be installed as follows
     cd ~/.node-red
     npm install node-red-node-pibrella
 
-***
+----
 
-### Interacting with the Pi hardware
+## Interacting with the Pi hardware
 
 There are two main ways of interacting with a Raspberry Pi using Node-RED.
 
@@ -320,9 +321,11 @@ okay, click in the workspace to place the new nodes.
 Click the deploy button and the flow should start running. The LED should start
 toggling on and off once a second.
 
-***
 
 ### wiring-pi module
+
+This section is for advanced users only.
+In general most users will not need to do this.
 
 This version of working with the Raspberry Pi uses a node.js wrapper to the
 WiringPi libraries previously installed, and so
@@ -337,7 +340,7 @@ to get Wiring Pi installed.
 
 #### Configuring Node-RED
 
-Firstly the npm module needs to be installed into the same directory as your
+Firstly the wiring-pi npm module needs to be installed into the same directory as your
 `settings.js` file.
 
     cd ~/.node-red
