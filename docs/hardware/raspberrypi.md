@@ -5,10 +5,10 @@ title: Raspberry Pi
 
 There are two ways to get started with Node-RED on a Raspberry Pi.
 
-  - use the version preinstalled in the November 2015 Raspbian Jessie image
-  - or install manually from the `npm` repository - see [here](#installing-via-npm).
+  - use the version preinstalled in the November 2015 **Raspbian Jessie** image
+  - or **manual install** from the `npm` repository - see [here](#manual-install).
 
-### Raspbian Jessie
+## Raspbian Jessie (pre-install)
 
 As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
 the SD card image that can be downloaded from [here](https://www.raspberrypi.org/downloads/raspbian/).
@@ -26,9 +26,20 @@ To start Node-RED, you can either:
   - on the Desktop, select `Menu -> Programming -> Node-RED`.
   - or run `node-red-start` in a new terminal window
 
-To stop Node-RED, run `node-red-stop`.
+To stop Node-RED, run the command `node-red-stop`.
 
-To set Node-RED to run automatically on boot see [here](#making-node-red-autostart-on-boot).
+#### Autostart on boot (preloaded versions)
+
+If you want Node-RED to run when the Pi boots up you can use one of the following
+commands depending on the version you have installed.
+
+For version 0.12.1 of Node-RED - SD card Jessie Nov 2015:
+
+    sudo update-rc.d nodered defaults
+
+For version 0.12.5 of Node-RED and later:
+
+    sudo systemctl enable nodered.service
 
 #### Adding nodes
 
@@ -53,20 +64,16 @@ To update Node-RED, you can use the standard package manager:
 This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
-
-#### Autostart on boot (preloaded version 0.12.1)
-
-If you want Node-RED to run when the Pi boots up you can use one of the following
-commands depending on the version you have installed.
-
-For version 0.12.1 of Node-RED version (the version that comes preinstalled on Jessie):
-
-    sudo update-rc.d nodered defaults
+<br/><br/>
 
 
-#### Using newer versions of node.js
+----
 
-This pre-install uses the default node.js within Debian Jessie, which is version
+## Manual install
+
+### Using newer versions of node.js
+
+The pre-install uses the default node.js within Debian Jessie, which is version
 0.10.29. You may wish to use more recent versions of Node.js such as v0.12.x or v4.2.x
 
 To do this you must uninstall the built-in version and re-install using the
@@ -77,16 +84,7 @@ instructions below. To uninstall:
     sudo apt-get remove npm   # if you installed npm
 
 This will remove all the built in packages but leave your workspace - by default
-at `~/.node-red` . You may then proceed to re-install as per instructions below.
-
-
-### Installing via npm
-
-If you want to install directly from `npm` you *must* first uninstall the preinstalled
-version if you are running on Raspbian Jessie:
-
-    sudo apt-get remove nodered
-
+at `~/.node-red` . You may then proceed to re-install as per instructions below
 
 #### Install Node.js
 
