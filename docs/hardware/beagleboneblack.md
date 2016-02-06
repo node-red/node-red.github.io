@@ -96,7 +96,8 @@ To do this, first install the `octalbonescript` library - see
 [the octalbonescript readme](https://github.com/theoctal/octalbonescript)
 for detailed install instructions depending on your kernal, but for debian squeeze it will be
 
-    sudo npm i -g octalbonescript
+    cd ~/.node-red
+    npm i octalbonescript
 
 Then update `settings.js` to add the `octalbonescript` module to the
 Function global context - to do this :
@@ -105,11 +106,9 @@ When you run node-red it will print the location of `settings.js` like
 
     [info] Settings file  : /root/.node-red/settings.js
 
-Edit this `settings.js` file - you may need to be root or sudo to do this. And
-there we need to uncomment the octalbonescript library line.
+Edit this `settings.js` file. And there we need to uncomment the octalbonescript library line.
 
     functionGlobalContext: {
-        // os:require('os'),
         octalbonescript:require('octalbonescript')
     },
 
@@ -117,4 +116,4 @@ The module is then available to any functions you write as `context.global.octal
 
 An example flow that demonstrates this is below :
 
-    [{"id":"3c3a39ec.c3c5c6","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":226,"y":498,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"f9ade3.ff06522","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":226,"y":538,"z":"345c8adc.cba376","wires":[["6d418357.92be7c"]]},{"id":"919022c7.6e6fe","type":"inject","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":226,"y":438,"z":"345c8adc.cba376","wires":[["7783db44.887c24"]]},{"id":"ec2495b6.13db68","type":"debug","name":"","active":true,"x":666,"y":478,"z":"345c8adc.cba376","wires":[]},{"id":"7783db44.887c24","type":"function","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.octalbonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinMode(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"x":446,"y":458,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]},{"id":"6d418357.92be7c","type":"function","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.octalbonescript;\n\nb.pinMode(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"x":446,"y":518,"z":"345c8adc.cba376","wires":[["ec2495b6.13db68"]]}]
+    [{"id":"e370f54b.baa368","type":"inject","z":"e524537e.2ec11","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":150,"y":320,"wires":[["383a5612.0d587a"]]},{"id":"cba5ca3b.02b978","type":"inject","z":"e524537e.2ec11","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":150,"y":360,"wires":[["383a5612.0d587a"]]},{"id":"b545aca3.75e4e","type":"inject","z":"e524537e.2ec11","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":150,"y":260,"wires":[["ebbe2d86.c74b2"]]},{"id":"49b03095.64b31","type":"debug","z":"e524537e.2ec11","name":"","active":true,"x":630,"y":260,"wires":[]},{"id":"ebbe2d86.c74b2","type":"function","z":"e524537e.2ec11","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.octalbonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinModeSync(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"noerr":0,"x":380,"y":260,"wires":[["49b03095.64b31"]]},{"id":"383a5612.0d587a","type":"function","z":"e524537e.2ec11","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.octalbonescript;\n\nb.pinModeSync(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"noerr":0,"x":370,"y":320,"wires":[["49b03095.64b31"]]}]
