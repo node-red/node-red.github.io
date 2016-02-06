@@ -47,7 +47,7 @@ deprecated and should not be used.
 To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin.html)
 command-line tool:
 
-    node-red-admin hash-pwd
+    node-red-admin hash-pw
 
 The tool will prompt you for the password you wish to use and then print out
 the hash that can be copied into the settings file.
