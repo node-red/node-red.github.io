@@ -26,7 +26,7 @@ using the standard package manager:
 To start Node-RED, you can either:
 
   - on the Desktop, select `Menu -> Programming -> Node-RED`.
-  - or run `node-red-start` in a new terminal window
+  - or run `node-red-start` in a new terminal window.
 
 To stop Node-RED, run the command `node-red-stop`.
 
@@ -66,7 +66,6 @@ To update Node-RED, you can use the standard package manager:
 This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
-<br/><br/>
 
 #### Next
 
@@ -108,7 +107,7 @@ This also installs some additional dependencies.
 
 ##### Raspberry Pi
 
-The simplest way to install Node.js and other dependencies on Pi (version 1) is
+The simplest way to install Node.js and other dependencies on Pi (version 1), Pi Zero, Pi A+/B+ is
 
     wget http://node-arm.herokuapp.com/node_archive_armhf.deb
     sudo dpkg -i node_archive_armhf.deb
@@ -261,7 +260,7 @@ To install extra nodes make sure you are in your user-directory, by default this
      cd ~/.node-red
 
 There are some extra hardware specific nodes (e.g. for the Pibrella, PiFace and
-LEDBorg plug on modules, Neopixel leds, temperature sensors, etc) available via the [flows library](https://flows.nodered.org).
+LEDBorg plug on modules, Neopixel leds, temperature sensors, etc) available via the **[flows library](http://flows.nodered.org/)**.
 For example the Pibrella node can be installed as follows
 
     cd ~/.node-red
@@ -271,6 +270,8 @@ You then need to stop and restart Node-RED to load the new nodes, and then refre
 
     node-red-stop
     node-red-start
+
+There is a [command line admin](../node-red-admin.html) tool that may be useful if you need to do this a lot.
 
 ## Interacting with the Pi hardware
 

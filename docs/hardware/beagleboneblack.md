@@ -26,11 +26,11 @@ serialport module more fully.
     sudo npm i -g npm@2.x
     hash -r
 
-#### Installing Node-RED
+### Installing Node-RED
 
 The easiest way to install Node-RED is to use node's package manager, npm:
 
-    sudo npm install -g --unsafe-perm  node-red
+    sudo npm install -g --unsafe-perm node-red
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often
@@ -38,16 +38,14 @@ fails to get access to certain directories. This causes alarming warnings that l
 like errors... but only sometimes are errors. Allowing node-gyp to run as root using
 this flag avoids this - or rather, shows up any real errors instead.
 
-For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
+For other install options, e.g. to run in development mode from GitHub, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
 #### BBB specific nodes
 
-There are some BBB specific nodes now available in our [node-red-nodes project on Github](https://github.com/node-red/node-red-nodes/tree/master/hardware/BBB).
-
-These give you direct access to the I/O pins in the simplest possible manner.
+There are some BBB specific nodes that give you direct access to the I/O pins in the simplest possible manner.
 The easiest way to install them is direct from npm.
 
-For Debian Jessie based builds with kernel 4.x run the following commands in the root
+For Debian Jessie based builds with kernel 4.x run the following commands in the user
 directory of your Node-RED install. This is usually `~/.node-red`
 
     sudo npm install -g --unsafe-perm node-red-node-beaglebone
@@ -56,7 +54,10 @@ For previous versions of Debian (eg Wheezy) - use the older version of this node
 
     sudo npm install -g --unsafe-perm node-red-node-beaglebone@0.0.8
 
-#### Starting Node-RED
+An alternative option is to use the gpio nodes contributed by @monteslu that
+are available [here](https://github.com/monteslu/node-red-contrib-gpio). These give more options for interfacing like i2c and software serial, as well as simple digital and analogue IO.
+
+### Starting Node-RED
 
 Due to the constrained memory available on the BBB, it is advisable to
 run Node-RED with the `node-red-pi` command. For details and other options such
@@ -70,7 +71,41 @@ To access the GPIO pins it is currently necessary to run as root :
 There are ways to avoid this using udev rules and groups and so on - but that is
 beyond the scope of this readme. Google is your friend.
 
-#### Using the Editor
+#### Auto-starting
+
+The simplest way to auto-start Node-RED on boot is to use the built in systemd.
+To do this create a file `/lib/systemd/system/nodered.service` containing the following
+
+    # systemd service file to start Node-RED
+    [Unit]
+    Description=Node-RED graphical event wiring tool.
+    Wants=network.target
+    Documentation=http://nodered.org/docs/hardware/raspberrypi.html
+    [Service]
+    Type=simple
+    # Run as root user in order to have access to gpio pins
+    User=root
+    Group=root
+    Nice=5
+    Environment="NODE_OPTIONS=--max-old-space-size=128"
+    #Environment="NODE_RED_OPTIONS=-v"
+    ExecStart=/usr/bin/env node-red-pi $NODE_OPTIONS $NODE_RED_OPTIONS
+    KillSignal=SIGINT
+    Restart=on-failure
+    SyslogIdentifier=Node-RED
+    [Install]
+    WantedBy=multi-user.target
+
+Reload the systemd configuration, and enable the service
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable nodered.service
+
+Systemd uses the `/var/log/system.log` for logging.  To filter the log use
+
+    sudo journalctl -f -u nodered -o cat
+
+### Using the Editor
 
 Once Node-RED is started, assuming you haven't changed the hostname, point a
 browser to [http://beaglebone.local:1880](http://beaglebone.local:1880).
@@ -100,9 +135,7 @@ for detailed install instructions depending on your kernel, but for Debian Jessi
     npm i octalbonescript
 
 Then update `settings.js` to add the `octalbonescript` module to the
-Function global context - to do this :
-
-When you run node-red it will print the location of `settings.js` like
+Function global context - to find this run `node-red-pi`, and it will print the location of `settings.js` like
 
     [info] Settings file  : /root/.node-red/settings.js
 
