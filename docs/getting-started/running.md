@@ -11,11 +11,11 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Feb 22:51:09 - [info] Node-RED version: v0.10.4
-    25 Feb 22:51:09 - [info] Node.js  version: v0.10.36
+    25 Feb 22:51:09 - [info] Node-RED version: v0.13.1
+    25 Feb 22:51:09 - [info] Node.js  version: v4.2.6
     25 Feb 22:51:09 - [info] Loading palette nodes
     25 Feb 22:51:10 - [warn] ------------------------------------------
-    25 Feb 22:51:10 - [warn] Failed to register 5 node types
+    25 Feb 22:51:10 - [warn] Failed to register 1 node types
     25 Feb 22:51:10 - [warn] Run with -v for details
     25 Feb 22:51:10 - [warn] ------------------------------------------
     25 Feb 22:51:10 - [info] User Directory : /home/nol/.node-red
@@ -28,8 +28,14 @@ You can then access the Node-RED editor at <http://localhost:1880>.
 
 There are specific instructions available for certain hardware platforms:
 
- - [Raspberry Pi](../hardware/raspberrypi.html#starting-node-red)
+ - [Raspberry Pi](../hardware/raspberrypi.html)
  - [BeagleBone Black](../hardware/beagleboneblack.html)
+
+#### Next
+
+You can now create your [first flow](first-flow.html).
+
+----
 
 #### Running from a local install - Linux & Mac OS X
 
@@ -94,12 +100,13 @@ The following two commands show these two approaches:
     node-red-pi --max-old-space-size=128 --userDir /home/user/node-red-data/
     node --max-old-space-size=128 red.js --userDir /home/user/node-red-data/
 
-
 ### Starting Node-RED on boot
 
-There are many methods of starting, stopping and monitoring applications at boot
-time. The guide below sets out what we believe to be the most straight-forward for
-the majority of users. For Windows PM2 does not autorun as a service -
+There are many methods of starting, stopping and monitoring applications at boot time.
+Raspberry Pi users are *strongly* recommended to follow [these instructions](../hardware/raspberrypi.html).
+
+The guide below sets out what we believe to be the most straight-forward for
+the majority of users. For Windows, PM2 does not autorun as a service -
 you may prefer the [NSSM option](#alternative-options) below.
 
 #### Using PM2
@@ -162,7 +169,6 @@ process and access the log output using the commands:
 
 More information about managing processes under PM2 is available [here](https://github.com/Unitech/pm2#process-management).
 
-
 ##### 4. Tell PM2 to run on boot
 
 PM2 is able to generate and configure a startup script suitable for the platform
@@ -198,9 +204,10 @@ Finally, reboot and check everything starts as expected.
 There are many alternative approaches. The following are some of those created
 by members of the community.
 
+ - [A systemd script (used by the Pi pre-install)](https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/nodered.service) by @NodeRED (linux)
+ - [A systemd script](https://gist.github.com/Belphemur/3f6d3bf211b0e8a18d93) by Belphemur (linux)
  - [An init.d script](https://gist.github.com/bigmonkeyboy/9962293)  by dceejay (linux)
  - [An init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94) by Belphemur (linux)
- - [A systemd script](https://gist.github.com/Belphemur/3f6d3bf211b0e8a18d93) by Belphemur (linux)
  - [A Launchd script](https://gist.github.com/natcl/4688162920f368707613) by natcl (OS X)
  - [Running as a Windows service using NSSM](https://gist.github.com/dceejay/576b4847f0a17dc066db) by dceejay
  - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill

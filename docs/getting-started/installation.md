@@ -7,7 +7,7 @@ title: Installation
 
 Node-RED supports Node.js <code>0.10.x</code> and later.
 
-<div class="doc-callout"><em>Note</em>: Node.js 5.x and npm 3.x are under active development and are not recommended 
+<div class="doc-callout"><em>Note</em>: Node.js 5.x and npm 3.x are under active development and are not recommended
 for a stable base. Many 3rd party node packages may not yet fully support Node 5.x and later, especially if they
 contain a binary component. Check with the author of the package if you are not sure.</div>
 
@@ -21,14 +21,14 @@ You can get the latest Long Term Support (LTS) version of Node <code>4.2.x</code
                       or
                       [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-x64.msi)
 
-Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
-
-You may want to use a version from your operating system's [package manager](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+You may want to use a version from your operating system's [package manager](https://nodejs.org/en/download/package-manager/).
 
 There are specific instructions available for certain hardware platforms:
 
  - [Raspberry Pi](../hardware/raspberrypi.html)
  - [BeagleBone Black](../hardware/beagleboneblack.html)
+
+Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
 
 ### Install Node-RED
 
@@ -52,6 +52,12 @@ optional dependencies</b>, but you may find additional node modules that require
 ability to compile native code. You can find out how to install the <code>node-gyp</code>
 compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
 </div>
+
+#### Next 
+
+Once installed, you are ready to [run Node-RED](running.html).
+
+----
 
 ### Alternative install methods
 

@@ -3,6 +3,10 @@ layout: default
 title: Creating your first flow
 ---
 
+Once Node-RED is [running](running.html), point a local browser at  http://localhost:1880.
+You can always use a browser from another machine if you know the ip address or name of
+the Node-RED instance - http://{Node-RED-machine-ip-address}:1880
+
 #### 1. Add an Inject node
 
 The Inject node allows you to inject messages into a flow, either by clicking
@@ -42,11 +46,11 @@ useful with that.
 
 The Function node allows you to pass each message though a JavaScript function.
 
-Wire the Function node inbetween the Inject and Debug nodes. You'll need to
+Wire the Function node in between the Inject and Debug nodes. You may need to
 delete the existing wire (select it and hit delete on the keyboard).
 
 Double-click on the Function node to bring up the edit dialog. Copy the follow
-code into the function field: 
+code into the function field:
 
 {% highlight javascript %}
 // Create a Date object from the payload
@@ -72,4 +76,3 @@ imported straight into the editor by pasting the json into the Import dialog
 
 
     [{"id":"58ffae9d.a7005","type":"debug","name":"","active":true,"complete":false,"x":640,"y":200,"wires":[]},{"id":"17626462.e89d9c","type":"inject","name":"","topic":"","payload":"","repeat":"","once":false,"x":240,"y":200,"wires":[["2921667d.d6de9a"]]},{"id":"2921667d.d6de9a","type":"function","name":"Format timestamp","func":"// Create a Date object from the payload\nvar date = new Date(msg.payload);\n// Change the payload to be a formatted Date string\nmsg.payload = date.toString();\n// Return the message so it can be sent on\nreturn msg;","outputs":1,"x":440,"y":200,"wires":[["58ffae9d.a7005"]]}]
-    

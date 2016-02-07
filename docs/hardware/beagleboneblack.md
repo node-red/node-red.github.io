@@ -12,7 +12,7 @@ These instructions only apply to the Debian versions of BeagleBoneBlack. <a href
 
 #### Before you start
 
-Make sure the local time is set correctly. The Beaglebone Black does not have a
+Make sure the local time is set correctly. The BeagleboneBlack does not have a
 battery backed real time clock so needs to be set on every boot in order for
 software certificates date checks to be valid.
 
@@ -94,7 +94,7 @@ Function nodes. This is NOT necessary for simple use with the built in nodes.
 
 To do this, first install the `octalbonescript` library - see
 [the octalbonescript readme](https://github.com/theoctal/octalbonescript)
-for detailed install instructions depending on your kernal, but for debian squeeze it will be
+for detailed install instructions depending on your kernel, but for Debian Jessie it will be
 
     cd ~/.node-red
     npm i octalbonescript

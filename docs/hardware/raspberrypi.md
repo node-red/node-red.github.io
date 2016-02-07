@@ -6,15 +6,17 @@ title: Raspberry Pi
 There are two ways to get started with Node-RED on a Raspberry Pi.
 
   - use the version preinstalled in the November 2015 **Raspbian Jessie** image
-  - or **manual install** from the `npm` repository - see [here](#manual-install).
+  - or **manual install** from the `npm` repository - see [further below](#manual-install).
 
-## Raspbian Jessie (pre-install)
+You can then start [using the editor](#using-the-editor).
+
+## Raspbian Jessie
 
 As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
-the SD card image that can be downloaded from [here](https://www.raspberrypi.org/downloads/raspbian/).
+the SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
 
-If you already have an older version of Jessie, you can install Node-RED using the
-standard package manager:
+If you already have an older version of Jessie, you can install or upgrade Node-RED
+using the standard package manager:
 
     sudo apt-get update
     sudo apt-get install nodered
@@ -66,6 +68,9 @@ repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
 <br/><br/>
 
+#### Next
+
+You can now start [using the editor](#using-the-editor).
 
 ----
 
@@ -101,11 +106,6 @@ the following commands:
 
 This also installs some additional dependencies.
 
-If you are upgrading a Raspberry Pi version 1 image for the Pi 2, it is recommended
-to clean up some hidden node directories before installing Node-RED:
-
-    sudo npm cache clean
-
 ##### Raspberry Pi
 
 The simplest way to install Node.js and other dependencies on Pi (version 1) is
@@ -114,10 +114,11 @@ The simplest way to install Node.js and other dependencies on Pi (version 1) is
     sudo dpkg -i node_archive_armhf.deb
     sudo apt-get install build-essential python-dev python-rpi.gpio
 
-#### Install Node-RED
+### Install Node-RED
 
-Install Node-RED using node's package manager, npm:
+Install the latest stable version of Node-RED using node's package manager, npm:
 
+    sudo npm cache clean
     sudo npm install -g --unsafe-perm  node-red
 
 <div class="doc-callout">
@@ -133,7 +134,6 @@ If there are any npm errors (not warnings, not gyp errors) during install, try
 running `sudo npm cache clean` and re-trying the install. `npm` should be version
 2.x. Type `npm -v` to check.
 
-
 <div class="doc-callout"><em>Note</em>: the reason for using the
 <code>--unsafe-perm</code> option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often
@@ -143,30 +143,28 @@ this flag avoids this - or rather shows up any real errors instead.</div>
 
 For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
 
-Once installed, you should verify which version of the Python RPi.GPIO libraries
-have been installed.
+#### Accessing GPIO
+
+If you plan to access the GPIO pins with Node-RED, you should verify which version of the Python RPi.GPIO libraries are installed.
 
 Node-RED includes a Raspberry Pi specific script `nrgpio` for interacting with
-the hardware GPIO pins. This script can also be used to check what version of
-the underlying library is installed:
+the hardware GPIO pins. If you have installed as a global npm module, this script should be located at:
 
-    <node-red-install-directory>/nodes/core/hardware/nrgpio ver 0
+    /usr/lib/node_modules/node-red/nodes/core/hardware/nrgpio ver
+    or
+    /usr/local/lib/node_modules/node-red/nodes/core/hardware/nrgpio ver
 
-<div class="doc-callout">If you have installed as a global npm module, this script will be located at:
-<pre>/usr/local/lib/node_modules/node-red/nodes/core/hardware/nrgpio</pre>
-</div>
-
-This command should return 0.5.11 or newer. You must have at least 0.5.11 for the Pi2 and
-0.5.8 for the original Pi. If you do not then the following commands will grab
-the latest available:
+You must have at least 0.5.11 for the Pi2 or 0.5.8 for the original Pi.
+If you do not then the following commands will install the latest available:
 
     sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
 
-<div class="doc-callout">
-Using RPi.GPIO is a change from our using WiringPi in v0.9.1 - the main benefits
-are that we can get software PWM on all output pins, and easier access to
-interrupts on inputs meaning faster response times (rather than polling).
-</div>
+If you want to run as a user other than pi (or root), you will need either to add that user to
+the [sudoers list](https://www.raspberrypi.org/documentation/linux/usage/users.md) - or maybe just access to python - for example by adding the
+following to sudoers using visudo.
+
+    NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
+
 
 #### Serial port on Raspbian Wheezy
 
@@ -215,9 +213,9 @@ commands
     sudo chmod +x /usr/bin/node-red-st*
     sudo systemctl daemon-reload
 
-**Info:** These commands are run as root (sudo) - It downloads the three required
-files to their correct locations, makes the two scripts executable and then
-reloads the systemd daemon.
+**Info:** These commands are run as root (sudo) - They download the three required
+files to their correct locations, make the two scripts executable and then
+reload the systemd daemon.
 
 Node-RED can then be started and stopped by using the commands `node-red-start`
 and `node-red-stop`
@@ -234,8 +232,6 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
-For other options see [Starting Node-RED on boot](../getting-started/running.html#starting-node-red-on-boot).
-
 ----
 
 ## Using the Editor
@@ -250,62 +246,56 @@ Then browse to `http://{the-ip-address-returned}:1880/`
 <div class="doc-callout">
  <em>Note:</em> the default browser included in Raspbian, Epiphany,
 has some quirks that mean certain keyboard short-cuts do not work within the
-Node-RED editor. We recommend installing the Iceweasel browser instead:
+Node-RED editor. We <b>strongly</b> recommend installing the Iceweasel browser instead:
 <pre>
     sudo apt-get install iceweasel
 </pre>
 </div>
 
-## Accessing GPIO pins
-
-The RPi.GPIO library requires root access in order to configure and manage the GPIO pins.
-For us that means that the **nrgpio** command must be executable by the user that is running Node-RED.
-That user **must** have root access to run python in order to access the pins
-directly. The default user pi does have this access and is the recommended user
-with which to run Node-RED.
-
-If you want to run as a different user you will need either to add that user to
-the sudoers list - or maybe just access to python - for example by adding the
-following to sudoers using visudo.
-
-    NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
-
-We are currently looking at ways to reduce this exposure further.
+You can then start creating your [first flow](../getting-started/first-flow.html).
 
 ## Extra Nodes
 
-There are also some extra hardware specific nodes (for the Pibrella, PiFace and
-LEDBorg plug on modules) available via [npm](https://www.npmjs.com/search?q=node-red-node-+).
+To install extra nodes make sure you are in your user-directory, by default this is `~/.node-red`.
+
+     cd ~/.node-red
+
+There are some extra hardware specific nodes (e.g. for the Pibrella, PiFace and
+LEDBorg plug on modules, Neopixel leds, temperature sensors, etc) available via the [flows library](https://flows.nodered.org).
 For example the Pibrella node can be installed as follows
 
     cd ~/.node-red
     npm install node-red-node-pibrella
 
-----
+You then need to stop and restart Node-RED to load the new nodes, and then refresh the flow editor page in the browser.
+
+    node-red-stop
+    node-red-start
 
 ## Interacting with the Pi hardware
 
-There are two main ways of interacting with a Raspberry Pi using Node-RED.
+There are several ways of interacting with a Raspberry Pi using Node-RED.
 
 **rpi-gpio nodes**  (default)
 : provided in the palette for monitoring and controlling the GPIO
   pins. This is the simplest and recommended method.
 
-**wiring-pi module** (optional)
-: this provides complete access to the GPIO pins, and other devices, within
+**contrib-gpio nodes** (optional)
+: additional nodes from @monteslu that provide generic gpio support for Pi, BeagleBone, Arduino, Edison, etc. They can be installed from [here](https://github.com/monteslu/node-red-contrib-gpio).
+
+**wiring-pi module** (advanced)
+: this provides more complete access to the GPIO pins, and other devices, within
   Function nodes. This gives more control and access to other features not in
   the nodes but you have to program it yourself.
 
 
 ### rpi-gpio nodes
 
-These use a python `nrgpio` command as part of the core install that can be
-found in {node-red-install-directory}/nodes/core/hardware
-
+These use a python `nrgpio` command as part of the core install.
 This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
 
 
-### First Flow - Blink - gpio
+#### First Flow - Blink - gpio
 
 To run a "blink" flow that toggles an LED on Pin 11 of the GPIO header, you will
 need to connect up an LED as described [here](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/).
@@ -349,8 +339,8 @@ Firstly the wiring-pi npm module needs to be installed into the same directory a
 This does not add any specific nodes to Node-RED. Instead the Wiring-Pi module can be made
 available for use in Function nodes.
 
-To do this, update `settings.js` to add the `wiring-pi` module to the Function
-global context:
+To do this, edit your `settings.js` file to add the `wiring-pi` module to the Function
+global context section:
 
     functionGlobalContext: {
         wpi: require('wiring-pi')
