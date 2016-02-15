@@ -11,15 +11,15 @@ Node-RED supports Node.js <code>0.10.x</code> and later.
 for a stable base. Many 3rd party node packages may not yet fully support Node 5.x and later, especially if they
 contain a binary component. Check with the author of the package if you are not sure.</div>
 
-You can get the latest Long Term Support (LTS) version of Node <code>4.2.x</code> from:
+You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.0-linux-x86.tar.gz)
                    or
-                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.2.6.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-x86.msi)
+                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.0-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.3.0.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.0-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.2.6-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.0-x64.msi)
 
 You may want to use a version from your operating system's [package manager](https://nodejs.org/en/download/package-manager/).
 
@@ -53,7 +53,7 @@ ability to compile native code. You can find out how to install the <code>node-g
 compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
 </div>
 
-#### Next 
+#### Next
 
 Once installed, you are ready to [run Node-RED](running.html).
 
