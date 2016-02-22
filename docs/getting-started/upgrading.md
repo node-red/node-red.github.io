@@ -6,18 +6,27 @@ title: Upgrading
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
 on Raspian Jessie, please refer to <a href="../hardware/raspberrypi.html#upgrading">these instructions for upgrading</a>.</div>
 
-If you have installed Node-RED as a global npm package, you can upgrade to the
-latest version with the following command:
+Currently we recommend the use of npm version 2, please check which version you
+have installed by running the command `npm -v` before upgrading. If necessary run
 
+    sudo npm i -g npm@2.x
+    hash -r
+
+If you have installed Node-RED as a global npm package, you can upgrade to the
+latest version with the following commands:
+
+    sudo npm cache clean
     sudo npm update -g --unsafe-perm node-red
 
 ### Upgrading node.js
 
-If you upgrade node.js, for example from v0.10.x to v0.12.x, it is better to
+If you upgrade node.js, for example from v0.10.x to v4.3.x, it is better to
 re-install Node-RED as follows:
 
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
+
+----
 
 ### Upgrading from before Node-RED 0.10.4
 
