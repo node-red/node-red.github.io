@@ -250,7 +250,7 @@ Node-RED editor. We <b>strongly</b> recommend installing the Iceweasel browser i
 </pre>
 </div>
 
-You can then start creating your [first flow](../getting-started/first-flow.html).
+You can then start creating your [first flow](../getting-started/first-flow).
 
 ## Extra Nodes
 
@@ -270,7 +270,7 @@ You then need to stop and restart Node-RED to load the new nodes, and then refre
     node-red-stop
     node-red-start
 
-There is a [command line admin](../node-red-admin.html) tool that may be useful if you need to do this a lot.
+There is a [command line admin](../node-red-admin) tool that may be useful if you need to do this a lot.
 
 ## Interacting with the Pi hardware
 

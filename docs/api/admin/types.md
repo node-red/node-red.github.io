@@ -135,7 +135,7 @@ Field     | Description
 
 A Node Set represents the collection of types provided by a single file within
 a Node Module. They correspond to the entries in the [`node-red.nodes` property
-of the module's `package.json`](/docs/creating-nodes/packaging.html#packagejson).
+of the module's `package.json`](/docs/creating-nodes/packaging#packagejson).
 
 {% highlight json %}
 {

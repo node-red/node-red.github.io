@@ -3,7 +3,7 @@ layout: api
 title: Authentication
 ---
 The Node-RED admin API is secured using the `adminAuth` property in your `settings.js`
-file. The [security](/docs/security.html) section describes how that property
+file. The [security](/docs/security) section describes how that property
 should be configured.
 
 If that property is not set the Node-RED admin API is accessible to anyone with

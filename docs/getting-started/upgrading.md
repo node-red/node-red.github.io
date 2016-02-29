@@ -4,7 +4,7 @@ title: Upgrading
 ---
 
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
-on Raspian Jessie, please refer to <a href="/docs/hardware/raspberrypi.html#upgrading">these instructions for upgrading</a>.</div>
+on Raspian Jessie, please refer to <a href="/docs/hardware/raspberrypi#upgrading">these instructions for upgrading</a>.</div>
 
 Currently we recommend the use of npm version 2, please check which version you
 have installed by running the command `npm -v` before upgrading. If necessary run
@@ -54,10 +54,10 @@ directory.
 owned by and writeable by the user that you use to run Node-RED.
 
 5. Delete the old Node-RED install directory and install the
-   new version following the [install instructions](installation.html).
+   new version following the [install instructions](installation).
 
 6. If you had npm-installed any additional nodes, or manually copied in nodes
-   which have their own npm dependencies, you will need to [reinstall them](adding-nodes.html).
+   which have their own npm dependencies, you will need to [reinstall them](adding-nodes).
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and then

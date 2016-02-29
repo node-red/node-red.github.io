@@ -55,7 +55,7 @@ compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installat
 
 #### Next
 
-Once installed, you are ready to [run Node-RED](running.html).
+Once installed, you are ready to [run Node-RED](running).
 
 ----
 

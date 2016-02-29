@@ -17,7 +17,7 @@ This guide will help you get Node-RED installed and running in just a few minute
 - [Creating your first flow](getting-started/first-flow)
 - [Creating your second flow](getting-started/second-flow)
 
-Raspberry Pi users should head straight [here](hardware/raspberrypi.html).
+Raspberry Pi users should head straight [here](hardware/raspberrypi).
 
 ### Using Node-RED
 
