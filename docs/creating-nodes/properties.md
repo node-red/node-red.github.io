@@ -7,7 +7,7 @@ A node's properties are defined by the `defaults` object in its html definition.
 These are the properties that get passed to the node constructor function when
 an instance of the node is created in the runtime.
 
-In the example from the [creating you first node section](first-node.html), the
+In the example from the [creating you first node section](first-node), the
 node had a single property called `name`. In this section, we'll add a new
 property called `prefix` to the node:
 
@@ -53,7 +53,7 @@ The entries in the `defaults` array can have the following attributes:
 - `validate` : (function) *optional* a function that can be used to validate the
   value of the property.
 - `type` : (string) *optional* if this property is a pointer to a
-  [configuration node](config-nodes.html),  this identifies the type of the node.
+  [configuration node](config-nodes),  this identifies the type of the node.
 
 ### Reserved property names
 
@@ -130,7 +130,7 @@ A node definition can include two functions to customise the edit behaviour.
  - `oneditdelete` is called when the delete button in a configuration node's edit
    dialog is pressed.
  - `oneditresize` is called when the edit dialog is resized.
- 
+
 For example, when the Inject node is configured to repeat, it stores the
 configuration as a cron-like string: `1,2 * * * *`. The node defines an
 `oneditprepare` function that can parse that string and present a more

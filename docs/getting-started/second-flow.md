@@ -12,7 +12,7 @@ This example is slightly more complex and starts to bring in data from external 
 
 #### 1. Add an Inject node
 
-In the [previous example](first-flow.html), the Inject node was used to trigger the flow when its button was clicked.
+In the [previous example](first-flow), the Inject node was used to trigger the flow when its button was clicked.
 For this example, the Inject node will be configured to trigger the flow at a regular interval.
 
 Drag an Inject node onto the workspace from the palette.

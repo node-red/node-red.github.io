@@ -4,7 +4,7 @@ title: Upgrading
 ---
 
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
-on Raspian Jessie, please refer to <a href="../hardware/raspberrypi.html#upgrading">these instructions for upgrading</a>.</div>
+on Raspian Jessie, please refer to <a href="/docs/hardware/raspberrypi.html#upgrading">these instructions for upgrading</a>.</div>
 
 Currently we recommend the use of npm version 2, please check which version you
 have installed by running the command `npm -v` before upgrading. If necessary run

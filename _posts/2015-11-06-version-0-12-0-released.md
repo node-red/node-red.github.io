@@ -34,7 +34,7 @@ This means if you import a subflow that includes some config nodes, and then del
 
 The edit dialog for config nodes allows you to pick the scope of the node in the top right corner - and will warn you if changing the scope will make it unavailable to a node that currently uses it.
 
-{<1>}![](/blog/content/images/2015/11/config-node-select.gif)
+![](/blog/content/images/2015/11/config-node-select.gif)
 
 This configuration node sidebar tab (accessed via the drop-down menu) has been updated to show the config nodes on the current tab as well as the global ones. The deploy warning when you have unused config nodes has also been updated to help indicate where exactly the nodes are.
 
@@ -59,7 +59,7 @@ The TLS support is very much minimum viable solution at the moment - you can't s
 
 ### Node Updates
 
-As ever, lots of the other nodes have had various updates. 
+As ever, lots of the other nodes have had various updates.
 
 - JSON node can encode Array types
 - Switch node regular expression rule can now be set to be case-insensitive
@@ -69,4 +69,3 @@ As ever, lots of the other nodes have had various updates.
 - CSV node can now handle arrays
 - setInterval/clearInterval added to Function node
 - Function node automatically clears all timers (setInterval/setTimeout) when the node is stopped
-

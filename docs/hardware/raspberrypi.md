@@ -140,7 +140,7 @@ fails to get access to certain directories. This causes alarming warnings that l
 like errors... but sometimes are errors. Allowing node-gyp to run as root using
 this flag avoids this - or rather shows up any real errors instead.</div>
 
-For alternative install options, see the [main installation instructions](../getting-started/installation.html#install-node-red).
+For alternative install options, see the [main installation instructions](../getting-started/installation#install-node-red).
 
 #### Accessing GPIO
 
@@ -231,7 +231,6 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
-----
 
 ## Using the Editor
 

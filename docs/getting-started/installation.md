@@ -25,8 +25,8 @@ You may want to use a version from your operating system's [package manager](htt
 
 There are specific instructions available for certain hardware platforms:
 
- - [Raspberry Pi](../hardware/raspberrypi.html)
- - [BeagleBone Black](../hardware/beagleboneblack.html)
+ - [Raspberry Pi](../hardware/raspberrypi)
+ - [BeagleBone Black](../hardware/beagleboneblack)
 
 Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
 
@@ -111,4 +111,4 @@ To do this:
 
 ### Next steps
 
-Once installed, you are ready to [run Node-RED](running.html).
+Once installed, you are ready to [run Node-RED](running).

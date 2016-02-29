@@ -44,7 +44,7 @@ deprecated and should not be used.
 
 #### Generating the password hash
 
-To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin.html)
+To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin)
 command-line tool:
 
     node-red-admin hash-pw
@@ -103,7 +103,7 @@ adminAuth: {
 
 #### Accessing the Admin API
 
-With the `adminAuth` property set, the [Admin API documentation](api/admin/oauth.html)
+With the `adminAuth` property set, the [Admin API documentation](api/admin/oauth)
 describes how to access the API.
 
 #### Custom user authentication

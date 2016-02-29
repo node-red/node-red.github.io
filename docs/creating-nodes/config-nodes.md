@@ -63,7 +63,7 @@ has no actual runtime behaviour.
 A common use of config nodes is to represent a shared connection to a remote
 system. In that instance, the config node may also be responsible for creating
 the connection and making it available to the nodes that use the config node. In
-such cases, the config node should also handle the [`close` event](node-js.html#closing-the-node)
+such cases, the config node should also handle the [`close` event](node-js#closing-the-node)
 to disconnect when the node is stopped.
 
 ### Using a config node
@@ -94,10 +94,10 @@ The node can then use this property to access the config node within the runtime
 module.exports = function(RED) {
     function MyNode(config) {
         RED.nodes.createNode(this,config);
-        
+
         // Retrieve the config node
         this.server = RED.nodes.getNode(config.server);
-        
+
         if (this.server) {
             // Do something with:
             //  this.server.host
@@ -109,4 +109,3 @@ module.exports = function(RED) {
     RED.nodes.registerType("my-node",MyNode);
 }
 {% endhighlight %}
-

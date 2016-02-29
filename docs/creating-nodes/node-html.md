@@ -51,21 +51,21 @@ editor. It is an object with the following properties:
 
 
 - `category`: (string) the palette category the node appears in
-- `defaults`: (object) the [editable properties](properties.html) for the node.
-- `credentials`: (object) the [credential properties](credentials.html) for the node.
+- `defaults`: (object) the [editable properties](properties) for the node.
+- `credentials`: (object) the [credential properties](credentials) for the node.
 - `inputs`: (number) how many inputs the node has, either `0` or `1`.
 - `outputs`: (number) how many outputs the node has. Can be `0` or more.
-- `icon`: (string) the [icon](appearance.html#icon) to use.
-- `color`: (string) the [background colour](appearance.html#background-colour) to use.
-- `label`: (string\|function) the [label](appearance.html#label) to use.
-- `paletteLabel`: (string\|function) the [label](appearance.html#label) to use in the palette.
-- `labelStyle`: (string\|function) the [style](appearance.html#label-style) to apply to the label.
-- `align`: (string) the [alignment](appearance.html#alignment) of the icon and label.
-- `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties.html#custom-edit-behaviour).
-- `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
-- `oneditcancel`: (function) called when the edit dialog is cancelled. See [custom edit behaviour](properties.html#custom-edit-behaviour).
-- `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties.html#custom-edit-behaviour).
-- `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties.html#custom-edit-behaviour).
+- `icon`: (string) the [icon](appearance#icon) to use.
+- `color`: (string) the [background colour](appearance#background-colour) to use.
+- `label`: (string\|function) the [label](appearance#label) to use.
+- `paletteLabel`: (string\|function) the [label](appearance#label) to use in the palette.
+- `labelStyle`: (string\|function) the [style](appearance#label-style) to apply to the label.
+- `align`: (string) the [alignment](appearance#alignment) of the icon and label.
+- `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditcancel`: (function) called when the edit dialog is cancelled. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `onpaletteadd`: (function) called when the node type is added to the palette.
 - `onpaletteremove`: (function) called when the node type is removed from the palette.
 
@@ -89,14 +89,14 @@ There are some simple conventions to follow:
    property followed by an `<input>`. The icon is created using an `<i>` element
    with a class taken from those available from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/).
 
-   Note: we previously used the icons provided by [Bootstrap](http://getbootstrap.com/2.3.2/base-css.html#icons).
+   Note: we previously used the icons provided by [Bootstrap](http://getbootstrap.com/2.3.2/base-css#icons).
    Their use is now deprecated within Node-RED in preference to Font Awesome.
  - if more interactivity is required, `oneditprepare` can be used to attach
    any event handlers on the dialog elements.
 
 
 More information on how the edit template is used is available
-[here](properties.html#property-edit-dialog).
+[here](properties#property-edit-dialog).
 
 
 

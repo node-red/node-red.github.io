@@ -27,7 +27,7 @@ default, it assumes `http://localhost:1880`. To change that, use the `target` co
 
     node-red-admin target http://node-red.example.com/admin
 
-If [authentication](security.html) is enabled, you must then `login`:
+If [authentication](security) is enabled, you must then `login`:
 
     node-red-admin login
 

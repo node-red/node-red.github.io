@@ -130,4 +130,4 @@ This is done by calling the `status` function:
 this.status({fill:"red",shape:"ring",text:"disconnected"});
 {% endhighlight %}
 
-The details of the status api can be found [here](status.html).
+The details of the status api can be found [here](status).

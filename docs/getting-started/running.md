@@ -28,12 +28,12 @@ You can then access the Node-RED editor at <http://localhost:1880>.
 
 There are specific instructions available for certain hardware platforms:
 
- - [Raspberry Pi](../hardware/raspberrypi.html)
- - [BeagleBone Black](../hardware/beagleboneblack.html)
+ - [Raspberry Pi](../hardware/raspberrypi)
+ - [BeagleBone Black](../hardware/beagleboneblack)
 
 #### Next
 
-You can now create your [first flow](first-flow.html).
+You can now create your [first flow](first-flow).
 
 ----
 
@@ -77,7 +77,7 @@ in, or that you extracted the release zip file:
 
 By default, Node-RED stores your data in the directory `$HOME/.node-red`. For
 backwards compatibility reasons, if Node-RED detects user data in its install
-directory, it will use that instead. The [upgrading](upgrading.html) documentation
+directory, it will use that instead. The [upgrading](upgrading) documentation
 includes a section on migrating your data out of the Node-RED install directory.
 
 To override what directory to use, the `--userDir` command-line option can be used.
@@ -103,7 +103,7 @@ The following two commands show these two approaches:
 ### Starting Node-RED on boot
 
 There are many methods of starting, stopping and monitoring applications at boot time.
-Raspberry Pi users are *strongly* recommended to follow [these instructions](../hardware/raspberrypi.html).
+Raspberry Pi users are *strongly* recommended to follow [these instructions](../hardware/raspberrypi).
 
 The guide below sets out what we believe to be the most straight-forward for
 the majority of users. For Windows, PM2 does not autorun as a service -

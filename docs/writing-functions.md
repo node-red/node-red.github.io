@@ -244,7 +244,7 @@ node.status({});   // to clear the status
 {% endhighlight %}
 
 For details of the accepted parameters see the
-[Node Status documentation](creating-nodes/status.html)
+[Node Status documentation](creating-nodes/status)
 
 Any status updates can then also be caught by the Status node (available in
 Node-RED v0.12+).

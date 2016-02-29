@@ -16,7 +16,7 @@ Node-RED includes a default `settings.js` file that will be used in absence of a
 user-provided settings file. It can also be used as a starting point for creating
 your own settings file. It can be seen on GitHub [here](https://github.com/node-red/node-red/blob/master/settings.js).
 
-When [embedded](embedding.html), they are passed in the call to `RED.init()`.
+When [embedded](embedding), they are passed in the call to `RED.init()`.
 However, when run in this mode, certain properties are ignored and are left to
 the embedding application to implement.
 
@@ -109,7 +109,7 @@ httpNodeMiddleware
 ### Editor Configuration
 
 adminAuth
-: enables user-level security in the editor and admin API. See [security](security.html)
+: enables user-level security in the editor and admin API. See [security](security)
   for more information.
 
 paletteCategories

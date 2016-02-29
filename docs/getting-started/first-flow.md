@@ -3,7 +3,7 @@ layout: default
 title: Creating your first flow
 ---
 
-Once Node-RED is [running](running.html), point a local browser at  http://localhost:1880.
+Once Node-RED is [running](running), point a local browser at  http://localhost:1880.
 You can always use a browser from another machine if you know the ip address or name of
 the Node-RED instance - http://{Node-RED-machine-ip-address}:1880
 

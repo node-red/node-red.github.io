@@ -10,15 +10,15 @@ The main way Node-RED can be extended is to add new nodes into its palette.
 
 The following sections exist and are largely complete:
 
- - [Creating your first node](first-node.html)
- - [JavaScript File](node-js.html)
- - [HTML File](node-html.html)
- - [Node context](context.html)
- - [Node properties](properties.html)
- - [Node appearance](appearance.html)
- - [Node status](status.html)
- - [Configuration nodes](config-nodes.html)
- - [Packaging](packaging.html)
+ - [Creating your first node](first-node)
+ - [JavaScript File](node-js)
+ - [HTML File](node-html)
+ - [Node context](context)
+ - [Node properties](properties)
+ - [Node appearance](appearance)
+ - [Node status](status)
+ - [Configuration nodes](config-nodes)
+ - [Packaging](packaging)
 
 To do:
 

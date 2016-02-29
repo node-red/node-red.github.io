@@ -38,7 +38,7 @@ fails to get access to certain directories. This causes alarming warnings that l
 like errors... but only sometimes are errors. Allowing node-gyp to run as root using
 this flag avoids this - or rather, shows up any real errors instead.
 
-For other install options, e.g. to run in development mode from GitHub, see the [main installation instructions](../getting-started/installation.html#install-node-red).
+For other install options, e.g. to run in development mode from GitHub, see the [main installation instructions](../getting-started/installation#install-node-red).
 
 #### BBB specific nodes
 
@@ -61,7 +61,7 @@ are available [here](https://github.com/monteslu/node-red-contrib-gpio). These g
 
 Due to the constrained memory available on the BBB, it is advisable to
 run Node-RED with the `node-red-pi` command. For details and other options such
-as auto-starting on boot, follow the [Running Node-RED](../getting-started/running.html)
+as auto-starting on boot, follow the [Running Node-RED](../getting-started/running)
 instructions.
 
 To access the GPIO pins it is currently necessary to run as root :

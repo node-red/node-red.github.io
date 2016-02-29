@@ -38,5 +38,5 @@ globalContext.set("foo","bar");  // this is now available to other nodes
 ##### Accessing context in a Function node
 
 In the Function node, the `flow` and `global` context objects are made available
-a top-level objects. See [this section](/docs/writing-functions.html#storing-data)
+a top-level objects. See [this section](/docs/writing-functions#storing-data)
 for more information.
