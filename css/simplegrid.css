@@ -122,16 +122,16 @@ body {
 
 @media handheld, only screen and (max-width: 767px) {
 
-	
+
 	.grid {
 		width: 100%;
 		min-width: 0;
 		margin-left: 0px;
 		margin-right: 0px;
-		padding-left: 0px;
-		padding-right: 0px;
+		padding-left: 15px !important;
+		padding-right: 15px !important;
 	}
-	
+
 	[class*='col-'] {
 		width: auto;
 		float: none;
@@ -139,7 +139,7 @@ body {
 		margin-right: 0px;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		padding-left: 20px !important;
-		padding-right: 20px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
 	}
 }

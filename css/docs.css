@@ -131,7 +131,7 @@ ul.toc li.toc-expander {
     background: #B68181;
     text-align: center;
     line-height: 37px;
-    border-left: 3px solid #fff;
+    border-left: 1px solid #fff;
     color: #eee;
     z-index: 10;
 
