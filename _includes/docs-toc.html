@@ -1,26 +1,27 @@
 <ul class="toc">
+    <li class="toc-expander"><div>V</div></li>
     <li class="tocheader"><span>Documentation</span>
         <ul>
-            <li><a href="/docs/index" {% if page.url == "/docs/index" %}class="active"{% endif %}>Overview</a>
+            <li {% if page.url == "/docs/" %}class="active"{% endif %}><a href="/docs/">Overview</a>
         </ul>
     </li>
     <li class="tocheader"><span>Getting Started</span>
         <ul>
-            <li><a href="/docs/getting-started/installation" {% if page.url == "/docs/getting-started/installation" %}class="active"{% endif %}>Installation</a>
-            <li><a href="/docs/getting-started/running" {% if page.url == "/docs/getting-started/running" %}class="active"{% endif %}>Running</a>
-            <li><a href="/docs/getting-started/adding-nodes" {% if page.url == "/docs/getting-started/adding-nodes" %}class="active"{% endif %}>Adding Nodes</a>
-            <li><a href="/docs/getting-started/upgrading" {% if page.url == "/docs/getting-started/upgrading" %}class="active"{% endif %}>Upgrading</a>
-            <li><a href="/docs/getting-started/first-flow" {% if page.url == "/docs/getting-started/first-flow" %}class="active"{% endif %}>Creating your first flow</a>
-            <li><a href="/docs/getting-started/second-flow" {% if page.url == "/docs/getting-started/second-flow" %}class="active"{% endif %}>Creating your second flow</a>
+            <li {% if page.url == "/docs/getting-started/installation" %}class="active"{% endif %}><a href="/docs/getting-started/installation">Installation</a>
+            <li {% if page.url == "/docs/getting-started/running" %}class="active"{% endif %}><a href="/docs/getting-started/running">Running</a>
+            <li {% if page.url == "/docs/getting-started/adding-nodes" %}class="active"{% endif %}><a href="/docs/getting-started/adding-nodes">Adding Nodes</a>
+            <li {% if page.url == "/docs/getting-started/upgrading" %}class="active"{% endif %}><a href="/docs/getting-started/upgrading">Upgrading</a>
+            <li {% if page.url == "/docs/getting-started/first-flow" %}class="active"{% endif %}><a href="/docs/getting-started/first-flow">Creating your first flow</a>
+            <li {% if page.url == "/docs/getting-started/second-flow" %}class="active"{% endif %}><a href="/docs/getting-started/second-flow">Creating your second flow</a>
         </ul>
     </li>
     <li class="tocheader"><span>Using Node-RED</span>
         <ul>
-            <li><a href="/docs/configuration" {% if page.url == "/docs/configuration" %}class="active"{% endif %}>Configuration</a></li>
-            <li><a href="/docs/security" {% if page.url == "/docs/security" %}class="active"{% endif %}>Security</a></li>
-            <li><a href="/docs/node-red-admin" {% if page.url == "/docs/node-red-admin" %}class="active"{% endif %}>Command-line Admin</a></li>
-            <li><a href="/docs/writing-functions" {% if page.url == "/docs/writing-functions" %}class="active"{% endif %}>Writing Functions</a></li>
-            <li><a href="/docs/embedding" {% if page.url == "/docs/embedding" %}class="active"{% endif %}>Embedding into an existing app</a></li>
+            <li {% if page.url == "/docs/configuration" %}class="active"{% endif %}><a href="/docs/configuration">Configuration</a></li>
+            <li {% if page.url == "/docs/security" %}class="active"{% endif %}><a href="/docs/security">Security</a></li>
+            <li {% if page.url == "/docs/node-red-admin" %}class="active"{% endif %}><a href="/docs/node-red-admin">Command-line Admin</a></li>
+            <li {% if page.url == "/docs/writing-functions" %}class="active"{% endif %}><a href="/docs/writing-functions">Writing Functions</a></li>
+            <li {% if page.url == "/docs/embedding" %}class="active"{% endif %}><a href="/docs/embedding">Embedding into an existing app</a></li>
         </ul>
     </li>
     <li class="tocheader"><span>API</span>
@@ -30,30 +31,39 @@
     </li>
     <li class="tocheader"><span>Creating Nodes</span>
         <ul>
-            <li><a href="/docs/creating-nodes/" {% if page.url == "/docs/creating-nodes/index" %}class="active"{% endif %}>Overview</a></li>
-            <li><a href="/docs/creating-nodes/first-node" {% if page.url == "/docs/creating-nodes/first-node" %}class="active"{% endif %}>Creating your first node</a></li>
-            <li><a href="/docs/creating-nodes/node-js" {% if page.url == "/docs/creating-nodes/node-js" %}class="active"{% endif %}>JavaScript File</a>
-            <li><a href="/docs/creating-nodes/node-html" {% if page.url == "/docs/creating-nodes/node-html" %}class="active"{% endif %}>HTML File</a>
-            <li><a href="/docs/creating-nodes/context" {% if page.url == "/docs/creating-nodes/context" %}class="active"{% endif %}>Storing Context</a></li>
-            <li><a href="/docs/creating-nodes/properties" {% if page.url == "/docs/creating-nodes/properties" %}class="active"{% endif %}>Node properties</a></li>
-            <li><a href="/docs/creating-nodes/credentials" {% if page.url == "/docs/creating-nodes/credentials" %}class="active"{% endif %}>Node credentials</a></li>
-            <li><a href="/docs/creating-nodes/appearance" {% if page.url == "/docs/creating-nodes/appearance" %}class="active"{% endif %}>Node appearance</a></li>
-            <li><a href="/docs/creating-nodes/status" {% if page.url == "/docs/creating-nodes/status" %}class="active"{% endif %}>Node status</a></li>
-            <li><a href="/docs/creating-nodes/config-nodes" {% if page.url == "/docs/creating-nodes/config-nodes" %}class="active"{% endif %}>Configuration nodes</a></li>
-            <li><a href="/docs/creating-nodes/packaging" {% if page.url == "/docs/creating-nodes/packaging" %}class="active"{% endif %}>Packaging</a></li>
-            <li><a href="/docs/creating-nodes/i18n" {% if page.url == "/docs/creating-nodes/i18n" %}class="active"{% endif %}>Internationalisation</a></li>
+            <li {% if page.url == "/docs/creating-nodes/index" %}class="active"{% endif %}><a href="/docs/creating-nodes/">Overview</a></li>
+            <li {% if page.url == "/docs/creating-nodes/first-node" %}class="active"{% endif %}><a href="/docs/creating-nodes/first-node">Creating your first node</a></li>
+            <li {% if page.url == "/docs/creating-nodes/node-js" %}class="active"{% endif %}><a href="/docs/creating-nodes/node-js">JavaScript File</a>
+            <li {% if page.url == "/docs/creating-nodes/node-html" %}class="active"{% endif %}><a href="/docs/creating-nodes/node-html">HTML File</a>
+            <li {% if page.url == "/docs/creating-nodes/context" %}class="active"{% endif %}><a href="/docs/creating-nodes/context">Storing Context</a></li>
+            <li {% if page.url == "/docs/creating-nodes/properties" %}class="active"{% endif %}><a href="/docs/creating-nodes/properties">Node properties</a></li>
+            <li {% if page.url == "/docs/creating-nodes/credentials" %}class="active"{% endif %}><a href="/docs/creating-nodes/credentials">Node credentials</a></li>
+            <li {% if page.url == "/docs/creating-nodes/appearance" %}class="active"{% endif %}><a href="/docs/creating-nodes/appearance">Node appearance</a></li>
+            <li {% if page.url == "/docs/creating-nodes/status" %}class="active"{% endif %}><a href="/docs/creating-nodes/status">Node status</a></li>
+            <li {% if page.url == "/docs/creating-nodes/config-nodes" %}class="active"{% endif %}><a href="/docs/creating-nodes/config-nodes">Configuration nodes</a></li>
+            <li {% if page.url == "/docs/creating-nodes/packaging" %}class="active"{% endif %}><a href="/docs/creating-nodes/packaging">Packaging</a></li>
+            <li {% if page.url == "/docs/creating-nodes/i18n" %}class="active"{% endif %}><a href="/docs/creating-nodes/i18n">Internationalisation</a></li>
         </ul>
     </li>
     <li class="tocheader"><span>Hardware</span>
         <ul>
-            <li><a href="/docs/hardware/raspberrypi" {% if page.url == "/docs/hardware/raspberrypi" %}class="active"{% endif %}>Raspberry Pi</a>
-            <li><a href="/docs/hardware/beagleboneblack" {% if page.url == "/docs/hardware/beagleboneblack" %}class="active"{% endif %}>BeagleBone Black</a>
-            <li><a href="/docs/hardware/arduino" {% if page.url == "/docs/hardware/arduino" %}class="active"{% endif %}>Arduino</a>
+            <li {% if page.url == "/docs/hardware/raspberrypi" %}class="active"{% endif %}><a href="/docs/hardware/raspberrypi">Raspberry Pi</a>
+            <li {% if page.url == "/docs/hardware/beagleboneblack" %}class="active"{% endif %}><a href="/docs/hardware/beagleboneblack">BeagleBone Black</a>
+            <li {% if page.url == "/docs/hardware/arduino" %}class="active"{% endif %}><a href="/docs/hardware/arduino">Arduino</a>
         </ul>
     </li>
 </ul>
 
 <script>
+$(function() {
+    $(".toc-expander").click(function() {
+        if ($("ul.toc").hasClass('open')) {
+            $("ul.toc").removeClass('open');
+        } else {
+            $("ul.toc").addClass('open');
+        }
+    })
+});
 //$(function() {
 //    $("li.tocheader ul").hide();
 //    $("li.tocheader a.active").parent().parent().show();

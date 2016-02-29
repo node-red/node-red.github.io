@@ -16,6 +16,7 @@ h1.docs-title {
 
 }
 ul.toc {
+    position: relative;
     overflow: hidden;
     list-style-type: none;
     margin: 18px 0 20px 0;
@@ -39,7 +40,7 @@ ul.toc li a, ul.toc li span {
 ul.toc li.tocheader {
     margin-top: 3px;
 }
-ul.toc li a.active {
+ul.toc li.active a {
     border-left-color: #B68181;
     -border-right-color: #eee;
     background: #eee;
@@ -120,3 +121,36 @@ h5 {
     border: 1px solid #BE9A9A;
 }
 
+ul.toc li.toc-expander {
+    display: none;
+    position: absolute;
+    width: 35px;
+    right: 0;
+    top: 3px;
+    height: 37px;
+    background: #B68181;
+    text-align: center;
+    line-height: 37px;
+    border-left: 3px solid #fff;
+    color: #eee;
+    z-index: 10;
+
+}
+
+@media handheld, only screen and (max-width: 755px) {
+    ul.toc:not(.open) li.tocheader>span {
+        display: none;
+    }
+    ul.toc:not(.open) li.tocheader li:not(.active) {
+        display: none;
+    }
+    ul.toc:not(.open) li.tocheader li.active {
+        padding-right: 37px;
+    }
+    ul.toc li.toc-expander {
+        display: inline;
+    }
+    ul.toc.open li.toc-expander div {
+        transform: rotate(180deg);
+    }
+}

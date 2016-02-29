@@ -1,36 +1,56 @@
 <ul class="toc">
+    <li class="toc-expander">V</li>
     <li class="tocheader"><span>API</span>
         <ul>
-            <li><a href="/docs/api/" {% if page.url == "/docs/api/" %}class="active"{% endif %}>Overview</a>
+            <li {% if page.url == "/docs/api/" %}class="active"{% endif %}><a href="/docs/api/">Overview</a>
         </ul>
     </li>
 
     <li class="tocheader"><span>Admin HTTP API</span>
         <ul>
-            <li><a href="/docs/api/admin/" {% if page.url == "/docs/api/admin/" %}class="active"{% endif %}>Overview</a>
-            <li><a href="/docs/api/admin/oauth" {% if page.url == "/docs/api/admin/oauth" %}class="active"{% endif %}>Authentication</a>
-            <li><a href="/docs/api/admin/types" {% if page.url == "/docs/api/admin/types" %}class="active"{% endif %}>Types</a>
-            <li><a href="/docs/api/admin/errors" {% if page.url == "/docs/api/admin/errors" %}class="active"{% endif %}>Errors</a>
-            <li><a href="/docs/api/admin/methods" {% if page.url contains "/docs/api/admin/methods" %}class="active"{% endif %}>Methods</a>
+            <li {% if page.url == "/docs/api/admin/" %}class="active"{% endif %}><a href="/docs/api/admin/">Overview</a>
+            <li {% if page.url == "/docs/api/admin/oauth" %}class="active"{% endif %}><a href="/docs/api/admin/oauth">Authentication</a>
+            <li {% if page.url == "/docs/api/admin/types" %}class="active"{% endif %}><a href="/docs/api/admin/types">Types</a>
+            <li {% if page.url == "/docs/api/admin/errors" %}class="active"{% endif %}><a href="/docs/api/admin/errors">Errors</a>
+            <li {% if page.url contains "/docs/api/admin/methods" %}class="active"{% endif %}><a href="/docs/api/admin/methods">Methods</a>
         </ul>
     </li>
     <li class="tocheader"><span>Runtime API</span>
         <ul>
-            <li><a href="/docs/api/runtime/" {% if page.url == "/docs/api/runtime/" %}class="active"{% endif %}>Overview</a>
-            <li><a href="/docs/api/runtime/api" {% if page.url == "/docs/api/runtime/api" %}class="active"{% endif %}>API</a>
+            <li {% if page.url == "/docs/api/runtime/" %}class="active"{% endif %}><a href="/docs/api/runtime/">Overview</a>
+            <li {% if page.url == "/docs/api/runtime/api" %}class="active"{% endif %}><a href="/docs/api/runtime/api">API</a>
         </ul>
     </li>
     <li class="tocheader"><span>Storage API</span>
         <ul>
-            <li><a href="/docs/api/storage/" {% if page.url == "/docs/api/storage/" %}class="active"{% endif %}>Overview</a>
-            <li><a href="/docs/api/storage/methods" {% if page.url contains "/docs/api/storage/methods" %}class="active"{% endif %}>Methods</a>
+            <li {% if page.url == "/docs/api/storage/" %}class="active"{% endif %}><a href="/docs/api/storage/">Overview</a>
+            <li {% if page.url contains "/docs/api/storage/methods" %}class="active"{% endif %}><a href="/docs/api/storage/methods">Methods</a>
         </ul>
     </li>
 <!--
     <li class="tocheader"><span>Editor API</span>
         <ul>
-            <li><a href="/docs/api/editor" {% if page.url == "/docs/api/editor" %}class="active"{% endif %}>Overview</a>
+            <li {% if page.url == "/docs/api/editor" %}class="active"{% endif %}><a href="/docs/api/editor">Overview</a>
         </ul>
     </li>
 -->
 </ul>
+
+<script>
+$(function() {
+    $(".toc-expander").click(function() {
+        if ($("ul.toc").hasClass('open')) {
+            $("ul.toc").removeClass('open');
+        } else {
+            $("ul.toc").addClass('open');
+        }
+    })
+});
+//$(function() {
+//    $("li.tocheader ul").hide();
+//    $("li.tocheader a.active").parent().parent().show();
+//    $("li.tocheader>span").click(function(e) {
+//        $(this).next().toggle("fast");
+//    });
+//});
+</script>
