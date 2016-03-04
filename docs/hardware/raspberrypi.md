@@ -51,6 +51,7 @@ it to the latest `2.x` version.
 
     sudo apt-get install npm
     sudo npm install -g npm@2.x
+    hash -r
     cd ~/.node-red
     npm install node-red-{example node name}
 
