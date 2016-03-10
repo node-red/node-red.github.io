@@ -41,8 +41,7 @@ places you can do so:
    and the [blog](http://blog.nodered.org)
  - Join us on [Slack](http://nodered.org/slack/)
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
- - Join the conversation on [Slack](http://nodered.org/slack)
-
+ 
 When reporting bugs or difficulties, please try to include information about the
 operating system and both the Node.js and Node-RED versions you are using.
 These can be found in the console output when Node-RED is started:
