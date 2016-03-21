@@ -102,7 +102,7 @@ To install Node.js on Pi 2 - and other Arm7 processor based boards, run
 the following commands:
 
     curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
-    sudo apt-get install -y build-essential python-dev python-rpi.gpio nodejs
+    sudo apt-get install -y build-essential python-rpi.gpio nodejs
 
 This also installs some additional dependencies.
 
@@ -112,7 +112,7 @@ The simplest way to install Node.js and other dependencies on Pi (version 1), Pi
 
     wget http://node-arm.herokuapp.com/node_archive_armhf.deb
     sudo dpkg -i node_archive_armhf.deb
-    sudo apt-get install build-essential python-dev python-rpi.gpio
+    sudo apt-get install build-essential python-rpi.gpio
 
 ### Install Node-RED
 
@@ -157,7 +157,7 @@ the hardware GPIO pins. If you have installed as a global npm module, this scrip
 You must have at least 0.5.11 for the Pi2 or 0.5.8 for the original Pi.
 If you do not then the following commands will install the latest available:
 
-    sudo apt-get update && sudo apt-get install python-dev python-rpi.gpio
+    sudo apt-get update && sudo apt-get install python-rpi.gpio
 
 If you want to run as a user other than pi (or root), you will need either to add that user to
 the [sudoers list](https://www.raspberrypi.org/documentation/linux/usage/users.md) - or maybe just access to python - for example by adding the
