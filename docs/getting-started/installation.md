@@ -13,13 +13,13 @@ contain a binary component. Check with the author of the package if you are not 
 
 You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.1-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.4.2-linux-x86.tar.gz)
                    or
-                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.1-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.3.1.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.1-x86.msi)
+                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.4.2-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.4.2.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.4.2-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.3.1-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.4.2-x64.msi)
 
 You may want to use a version from your operating system's [package manager](https://nodejs.org/en/download/package-manager/).
 
