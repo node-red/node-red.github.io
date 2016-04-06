@@ -122,12 +122,17 @@ Install the latest stable version of Node-RED using node's package manager, npm:
     sudo npm install -g --unsafe-perm  node-red
 
 <div class="doc-callout">
-<em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
+<p><em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
 command. These are typically <em>non-fatal</em> errors and are related to optional dependencies
 that require a compiler in order to build them. <b>Node-RED will work without these
 optional dependencies</b>, but you may find additional node modules that require the
 ability to compile native code. You can find out how to install the <code>node-gyp</code>
 compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
+</p>
+<p><em>Note</em>: The <code>node-red-start</code> and <code>node-red-stop</code>
+commands included with the Jessie preinstall are <em>not</em> included with the
+main version of Node-RED. To restore them, see the section below on <a href="#adding-autostart-capability-using-systemd">Adding Autostart capability using SystemD</a>.
+</p>
 </div>
 
 If there are any npm errors (not warnings, not gyp errors) during install, try
