@@ -3,24 +3,28 @@ layout: default
 title: Creating your first node
 ---
 
-Nodes lead a simple life. They are created when a flow is deployed, they may
-send and receive some messages whilst the flow is running and they get deleted
-when the next flow is deployed.
+Nodes get created when a flow is deployed, they may send and receive some messages
+whilst the flow is running and they get deleted when the next flow is deployed.
 
 They consist of a pair of files; a JavaScript file that defines what the
 node does, and an html file that defines the node's properties, edit dialog and
 help text.
 
-These files can be located within either the `nodes` directory or one of the
-directories defined in the `nodesDir` setting. Alternatively, nodes can be installed
-using npm.
+When packaged as an npm module, they also include a `package.json` file that pulls
+it all together.
 
+To begin creating your own node, you can either create it as a simple 'local' node or
+go straight to [packaging it as a proper module](packaging/).
 
 ### Creating a simple node
 
+A local node just consists of the `.js` and `.html` files.
+
+These files can be located within either the `nodes` directory in your user directory,
+typically `~/.node-red/nodes`, or one of the directories defined in the `nodesDir` setting.
+
 The following example defines a simple node that converts a message payload into
 all lower-case characters.
-
 
 #### lower-case.js
 
@@ -57,7 +61,9 @@ on in the flow.
 Finally, the `LowerCaseNode` function is registered with the runtime using the
 name for the node, `lower-case`.
 
-    
+If the node has any external module dependencies, they must be npm installed
+alongside the node files.
+
 #### lower-case.html
 {% highlight html %}
 <script type="text/javascript">
@@ -97,4 +103,3 @@ A node's HTML file provides the following things:
 In this example, the node has a single editable property, `name`. Whilst not
 required, there is a widely used convention to this property to help distinguish
 between multiple instances of a node in a single flow.
-

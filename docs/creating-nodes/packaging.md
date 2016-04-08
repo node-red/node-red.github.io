@@ -3,17 +3,8 @@ layout: default
 title: Packaging
 ---
 
-Nodes can be packaged as npm modules. This makes them easy to install along with
-any dependencies they may have.
-
-### Naming
-
-Node packages that are maintained by the Node-RED project use the prefix
-`node-red-node-`. 3rd party nodes should chose a naming scheme that avoids that
-prefix.
-
-It is suggested they use `node-red-contrib-` as a prefix, although that is not
-a requirement.
+Nodes can be packaged as modules and published to the npm repository. This makes
+them easy to install along with any dependencies they may have.
 
 ### Directory structure
 
@@ -32,6 +23,19 @@ There are no strict requirements over the directory structure used within the
 package. If a package contains multiple nodes, they could all exist in the same
 directory, or they could each be placed in their own sub-directory.
 
+### Testing a node module locally
+
+To test a node module locally, the `npm link` command can be used. This allows you
+to develop the node in a local directory and have it linked into a local node-red
+install, as if it had been npm installed.
+
+1. in the directory containing the node's `package.json` file, run: `sudo npm link`.
+2. in your node-red user directory, typically `~/.node-red` run: `npm link <name of node module>`.
+
+This creates the appropriate symbolic links between the two directories so Node-RED
+will discover the node when it starts. Any changes to the node's file can be picked
+up by simply restarting Node-RED.
+
 ### package.json
 
 Along with the usual entries, the `package.json` file must contain a `node-red`
@@ -47,7 +51,7 @@ appears when [searching by keyword](https://www.npmjs.org/browse/keyword/node-re
 
 {% highlight json %}
 {
-    "name"         : "node-red-samplenode",
+    "name"         : "node-red-contrib-samplenode",
     "version"      : "0.0.1",
     "description"  : "A sample node for node-red",
     "dependencies": {
@@ -60,6 +64,12 @@ appears when [searching by keyword](https://www.npmjs.org/browse/keyword/node-re
     }
 }
 {% endhighlight %}
+
+### Naming
+
+Node modules should use `node-red-contrib-` as a prefix to their name to make it
+clear they are not maintained by the Node-RED project. Alternatively, any name
+that doesn't use `node-red` as a prefix can be used.
 
 ### README.md
 
