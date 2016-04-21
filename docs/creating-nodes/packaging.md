@@ -49,6 +49,10 @@ To help make the nodes discoverable within the npm repository, the file should
 include `node-red` in its `keywords` property. This will ensure the package
 appears when [searching by keyword](https://www.npmjs.org/browse/keyword/node-red).
 
+<div class="doc-callout"><em>Note</em>: Please do NOT add the `node-red` keyword until
+you are happy that the node is stable and working correctly, and documented sufficiently
+for others to be able to use it.</div>
+
 {% highlight json %}
 {
     "name"         : "node-red-contrib-samplenode",
