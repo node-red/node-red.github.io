@@ -14,7 +14,7 @@ When packaged as an npm module, they also include a `package.json` file that pul
 it all together.
 
 To begin creating your own node, you can either create it as a simple 'local' node or
-go straight to [packaging it as a proper module](packaging/).
+go straight to [packaging it as a proper module](packaging).
 
 ### Creating a simple node
 
