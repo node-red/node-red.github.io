@@ -6,6 +6,8 @@ title: POST /flow
 Add a flow to the active configuration. A flow is represented as a tab within the
 editor.
 
+Requires permission: <code>flows.write</code>
+
 ### Headers
 
 Header                     | Value

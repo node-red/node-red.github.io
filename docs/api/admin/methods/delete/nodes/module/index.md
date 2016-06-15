@@ -5,6 +5,8 @@ title: DELETE /nodes/:module
 
 Remove a node module
 
+Requires permission: <code>nodes.write</code>
+
 ### Headers
 
 Header          | Value

@@ -5,6 +5,8 @@ title: GET /nodes/:module/:set
 
 Get a node module set information
 
+Requires permission: <code>nodes.read</code>
+
 ### Headers
 
 Header          | Value

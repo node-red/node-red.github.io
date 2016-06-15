@@ -5,6 +5,8 @@ title: PUT /nodes/:module/:set
 
 Enable/Disable a node set
 
+Requires permission: <code>nodes.write</code>
+
 ### Headers
 
 Header          | Value

@@ -5,6 +5,8 @@ title: POST /nodes
 
 Install a new node module
 
+Requires permission: <code>nodes.write</code>
+
 ### Headers
 
 Header          | Value

@@ -5,6 +5,8 @@ title: GET /nodes/:module
 
 Get a node module's information.
 
+Requires permission: <code>nodes.read</code>
+
 ### Headers
 
 Header          | Value

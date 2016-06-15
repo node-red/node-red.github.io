@@ -5,6 +5,8 @@ title: GET /settings
 
 Get the runtime settings.
 
+Requires permission: <code>settings.read</code>
+
 ### Headers
 
 Header | Value

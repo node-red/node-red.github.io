@@ -8,6 +8,8 @@ editor.
 
 All nodes in the existing flow are stopped before the new flow configuration is started.
 
+Requires permission: <code>flows.write</code>
+
 ### Headers
 
 Header                     | Value

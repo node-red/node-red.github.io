@@ -5,6 +5,8 @@ title: DELETE /flow/:id
 
 Delete an individual flow configuration
 
+Requires permission: <code>flows.write</code>
+
 ### Headers
 
 Header          | Value
