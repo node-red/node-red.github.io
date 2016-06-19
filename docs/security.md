@@ -80,10 +80,20 @@ adminAuth: {
 
 #### User permissions
 
-In the current release, users can have one of two permissions:
+Prior to Node-RED 0.14, users could have one of two permissions:
 
  - `*` - full access
  - `read` - read-only access
+
+From Node-RED 0.14 the permissions can be much finer grained and to support that,
+the property can either be a single string as before, or an array containing multiple permissions.
+
+Each method of the [Admin API](api/admin) defines what permission level is needed to access it.
+The permission model is resource based. For example, to get the current flow configuration,
+a user will require the `flows.read` permission. But to update the flows they will require
+the `flows.write` permission.
+
+
 
 #### Token expiration
 

@@ -5,6 +5,8 @@ title: GET /flows
 
 Get the active flow configuration.
 
+Requires permission: <code>flows.read</code>
+
 ### Headers
 
 Header          | Value
@@ -27,4 +29,3 @@ Status Code | Reason         | Response
   }
 ]
 {% endhighlight %}
-

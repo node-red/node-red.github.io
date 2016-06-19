@@ -5,6 +5,8 @@ title: POST /flows
 
 Set the active flow configuration.
 
+Requires permission: <code>flows.write</code>
+
 ### Headers
 
 Header                     | Value

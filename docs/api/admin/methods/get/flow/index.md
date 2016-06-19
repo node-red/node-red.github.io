@@ -6,6 +6,8 @@ title: GET /flow/:id
 Get an individual flow configuration. A flow is represented as a tab within the
 editor.
 
+Requires permission: <code>flows.read</code>
+
 ### Headers
 
 Header          | Value

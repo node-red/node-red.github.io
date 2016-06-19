@@ -5,6 +5,8 @@ title: GET /nodes
 
 Get a list of the installed nodes
 
+Requires permission: <code>nodes.read</code>
+
 ### Headers
 
 Header          | Value
