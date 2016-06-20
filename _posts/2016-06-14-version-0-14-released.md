@@ -3,7 +3,7 @@ layout: blog
 title: Version 0.14 released
 ---
 
-Node-RED 0.14.0 is now available to [download](https://github.com/node-red/node-red/releases/download/0.43.0/node-red-0.14.0.zip) or [npm install](https://npmjs.org/package/node-red).
+Node-RED 0.14.1 is now available to [download](https://github.com/node-red/node-red/releases/download/0.14.1/node-red-0.14.1.zip) or [npm install](https://npmjs.org/package/node-red).
 
 If upgrading, please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).
 
