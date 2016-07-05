@@ -110,9 +110,13 @@ This also installs some additional dependencies.
 
 The simplest way to install Node.js and other dependencies on Pi (version 1), Pi Zero, Pi A+/B+ is
 
-    wget http://node-arm.herokuapp.com/node_archive_armhf.deb
-    sudo dpkg -i node_archive_armhf.deb
+    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
+    sudo dpkg -i node_latest_armhf.deb
     sudo apt-get install build-essential python-rpi.gpio
+    hash -r
+
+**Note**: Debian/Raspbian Wheezy is now "End of Life", and so documentation is now aimed at Jessie as a minimum.
+Wheezy users will need to upgrade GCC to v4.8 - see <a href="https://node-arm.herokuapp.com/" target="_new">here</a>.
 
 ### Install Node-RED
 
