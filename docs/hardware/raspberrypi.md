@@ -110,8 +110,8 @@ This also installs some additional dependencies.
 
 The simplest way to install Node.js and other dependencies on Pi (version 1), Pi Zero, Pi A+/B+ is
 
-    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-    sudo dpkg -i node_latest_armhf.deb
+    wget http://node-arm.herokuapp.com/node_archive_armhf.deb
+    sudo dpkg -i node_archive_armhf.deb
     sudo apt-get install build-essential python-rpi.gpio
     hash -r
 
