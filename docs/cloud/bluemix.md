@@ -1,0 +1,112 @@
+---
+layout: default
+title: IBM Bluemix
+---
+
+Node-RED is available on the IBM Bluemix platform as one of the [boilerplate applications](#boilerplate-application)
+in the catalog.
+
+We also provide a '[Deploy To Bluemix](#deploy-to-bluemix)' enabled repository.
+
+---
+
+### Boilerplate application
+
+1. Log in or sign-up for an account at [Bluemix.net](http://bluemix.net)
+
+2. Navigate to the catalog and [search for 'Node-RED'](https://new-console.ng.bluemix.net/catalog/starters?search=Node-RED)
+
+3. This will present you with two options:
+
+    1. **Node-RED Starter** - a vanilla Node-RED instance
+
+    2. **Internet of Things Platform Starter** - this gives you everything you need
+       to started quickly using Node-RED with the Watson IoT Platform, including
+       some default flows to show how things work
+
+   In both cases you will get:
+
+     - a Cloudant database instance to store your flow configuration    
+     - a collection of nodes that make it easy to access various Bluemix services, including
+       both the Watson IoT platform and the Watson Cognitive services
+
+4. Click the starter application you want to use, give it a name and click create.
+
+A couple of minutes later, you'll be able to access your instance of Node-RED at `https://<yourAppName>.mybluemix.net`
+
+
+#### Customising your Node-RED application
+
+##### Securing the editor
+
+To quickly set a username/password to control access to the editor, without having to
+edit the settings file:
+
+1. In the Bluemix dashboard, select the 'Environment Variables' page for your application
+2. Add the following user-defined variables:
+    - `NODE_RED_USERNAME` - the username to secure the editor with
+    - `NODE_RED_PASSWORD` - the password to secure the editor with
+3. Click Save.
+
+##### Adding nodes
+
+In order to add nodes you need to edit the application's `package.json` file and
+add the required node modules in the `dependencies` section. The format is:
+`"node-red-node-package-name":"x.x.x"` Where x.x.x is the desired version number.
+
+##### Changing the static web content
+
+The page you are reading now is served as static content from the application.
+This can be replaced with whatever content you want in the `public` directory.
+
+If you want to remove the static web content and serve the flow editor from the
+root path, delete the `httpStatic` and `httpAdminRoot` entries in the `bluemix-settings.js` file.
+
+
+##### Upgrading the version of Node-RED
+
+The boilerplate is configured to grab the latest stable release of Node-RED whenever the
+application is restaged into Bluemix. You can trigger a restage using the [`cf` command-line tool](https://console.ng.bluemix.net/docs/cli/reference/cfcommands/index.html).
+
+---
+
+### Deploy To Bluemix
+
+The [Deploy To Bluemix enabled repository](https://github.com/node-red/node-red-bluemix-starter)
+lets you create your own customised Node-RED application that can then
+be deployed to Bluemix with a couple clicks.
+
+You can try it out now by clicking here:
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/node-red/node-red-bluemix-starter.git)
+
+When you click the button, you are taken to Bluemix where you get a pick a name
+for your application at which point the platform takes over, grabs the code from
+this repository and deploys it.
+
+It will automatically create an instance of the Cloudant service, call it
+`sample-node-red-cloudantNoSQLDB` and bind it to you application. This is where your
+Node-RED instance will store its data. If you deploy multiple instances of
+Node-RED from this repository, they will share the one Cloudant instance.
+
+It includes a set of default flows that are automatically deployed the first time
+Node-RED runs.
+
+#### Customising your Node-RED repository
+
+The repository is there to be cloned, modified and re-used to allow anyone to create
+their own Node-RED based application that can be quickly deployed to Bluemix.
+
+The default flows are stored in the `defaults` directory in the file called `flow.json`.
+
+The web content you get when you go to the application's URL is stored under the
+`public` directory.
+
+Additional nodes can be added to the `package.json` file and all other Node-RED
+configuration settings can be set in `bluemix-settings.js`.
+
+If you do clone the repository, make sure you update the `README.md` file to point
+the `Deploy to Bluemix` button at your repository.
+
+If you want to change the name of the Cloudant instance that gets created, the memory
+allocated to the application or other deploy-time options, have a look in `manifest.yml`.
