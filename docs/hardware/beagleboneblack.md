@@ -18,12 +18,12 @@ software certificates date checks to be valid.
 
     ntpdate -b -s -u pool.ntp.org
 
-#### Updating npm
+#### Updating node.js
 
-We recommend using at least npm version 2.x as it supports extras like the
-serialport module more fully.
+We recommend using node.js LTS 4.x.
 
-    sudo npm i -g npm@2.x
+    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+    sudo apt-get install -y build-essential nodejs
     hash -r
 
 ### Installing Node-RED
