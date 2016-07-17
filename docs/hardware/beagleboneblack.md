@@ -1,6 +1,6 @@
 ---
 layout: default
-title: BeagleBone Black
+title: Running on BeagleBone Black
 ---
 
 The BeagleBoneBlack already has Node.js baked into it's OS, so some of these

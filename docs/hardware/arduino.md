@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Arduino
+title: Interacting with Arduino
 ---
 
 There are several ways to interact with an Arduino using Node-RED. They

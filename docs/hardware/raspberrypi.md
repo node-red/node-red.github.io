@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Raspberry Pi
+title: Running on Raspberry Pi
 ---
 
 There are two ways to get started with Node-RED on a Raspberry Pi.

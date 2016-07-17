@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Amazon Web Services
+title: Running on Amazon Web Services
 ---
 
 This guide takes you through the steps to get Node-RED running on an AWS EC2

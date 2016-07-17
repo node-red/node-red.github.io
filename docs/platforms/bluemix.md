@@ -1,6 +1,6 @@
 ---
 layout: default
-title: IBM Bluemix
+title: Running on IBM Bluemix
 ---
 
 Node-RED is available on the IBM Bluemix platform as one of the [boilerplate applications](#boilerplate-application)

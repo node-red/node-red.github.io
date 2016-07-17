@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Microsoft Azure
+title: Running on Microsoft Azure
 ---
 
 This guide takes you through the steps to get Node-RED running on an Azure
