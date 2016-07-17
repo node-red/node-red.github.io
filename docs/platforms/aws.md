@@ -50,7 +50,9 @@ can use pm2:
        sudo npm install -g pm2
        pm2 start `which node-red` -- -v
        pm2 save
-       sudo pm2 startup
+       pm2 startup
+
+*Note:* this final command will prompt you to run a further command - make sure you do as it says.
 
 #### Next steps
 
