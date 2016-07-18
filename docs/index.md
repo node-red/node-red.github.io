@@ -28,6 +28,19 @@ This guide covers how to configure and use Node-RED.
 - [How to write Functions](writing-functions)
 - [How to embed Node-RED into an existing Node.js app](embedding)
 
+### Platforms
+
+Node-RED can be run on a variety of platforms, from edge of network devices, to
+the cloud. Here are some quick start guides for a number of such platforms.
+
+- [Raspberry Pi](hardware/raspberrypi)
+- [BeagleBone Black](hardware/beagleboneblack)
+- [Docker](platforms/docker)
+- [IBM Bluemix](platforms/bluemix)
+- [Amazon Web Services](platforms/aws)
+- [Microsoft Azure](platforms/azure)
+
+
 ### Creating Nodes
 
 [This guide](creating-nodes/) covers how to create your own nodes and get them added to the palette.
@@ -41,7 +54,7 @@ places you can do so:
    and the [blog](http://blog.nodered.org)
  - Join us on [Slack](http://nodered.org/slack/)
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
- 
+
 When reporting bugs or difficulties, please try to include information about the
 operating system and both the Node.js and Node-RED versions you are using.
 These can be found in the console output when Node-RED is started:
