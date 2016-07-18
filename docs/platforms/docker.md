@@ -138,7 +138,7 @@ allows you to install extra nodes during the build process.
 
         docker build -t mynodered:<tag> .
 
-That will create a Node-RED image that includes the `wordpos` image.
+That will create a Node-RED image that includes the `wordpos` nodes.
 
 ### Updating
 
