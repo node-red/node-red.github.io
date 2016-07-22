@@ -74,7 +74,7 @@ a message containing the payload length is passed to the second output:
 
 {% highlight javascript %}
 var newMsg = { payload: msg.payload.length };
-return [[msg], [newMsg]];
+return [msg, newMsg];
 {% endhighlight %}
 
 #### Multiple Messages
