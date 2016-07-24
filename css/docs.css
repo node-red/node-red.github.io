@@ -53,6 +53,12 @@ ul.toc li.tocheader span {
     border-left-color: #B68181;
     color: #fff;
 }
+ul.toc li.tocsubheader span {
+    background: none;
+    border-left-color: #eee;
+    color: #666;
+    padding-left: 20px;
+}
 ul.toc li li a {
     padding-left: 40px;
 }
