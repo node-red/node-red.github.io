@@ -58,7 +58,11 @@ within the container. This can be customised by setting the <code>FLOWS</code>
 environment parameter:
 </p>
 <pre>docker run -it -p 1880:1880 -e FLOWS=my_flows.json nodered/node-red-docker</pre>
+<p>Node.js runtime arguments can be passed to the container using an environment parameter (<code>NODE_OPTIONS</code>). For example, to fix the heap size used by the Node.js garbage collector you would use the following command:
+</p>
+<pre>docker run -it -p 1880:1880 -e NODE_OPTIONS="--max_old_space_size=128" nodered/node-red-docker</pre>
 </div>
+
 
 ### Customising
 
