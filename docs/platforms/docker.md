@@ -16,13 +16,13 @@ It assumes you have some basic familiarity with Docker and the
 We publish three tagged versions of the container to [DockerHub](https://hub.docker.com/r/nodered/node-red-docker/):
 
 - `latest` - uses [official Node.JS v4 base image](https://hub.docker.com/_/node/).
-- `small` - uses [Alpine Linux base image](https://hub.docker.com/r/mhart/alpine-node/).
+- `slim` - uses [Alpine Linux base image](https://hub.docker.com/r/mhart/alpine-node/).
 - `rpi` - uses [RPi-compatible base image](https://hub.docker.com/r/hypriot/rpi-node/).
 
 Using Alpine Linux reduces the built image size (~100MB vs ~700MB) but removes
 standard dependencies that are required for native module compilation. If you
 want to add modules with native dependencies, use the standard image or extend
-the small image with the missing packages.
+the slim image with the missing packages.
 
 
 ### Quick start
@@ -111,17 +111,8 @@ To build your own version:
     git clone https://github.com/node-red/node-red-docker.git
     cd node-red-docker
 
-    # For the latest container:
-    git checkout master
-
-    # For the 'small' container:
-    git checkout small
-
-    # For the 'rpi' container:
-    git checkout rpi
-
     # Build it with the desired tag
-    docker build -t mynodered:<tag> .
+    docker build -f <version>/Dockerfile -t mynodered:<tag> .
 
 
 ### Building a custom image
