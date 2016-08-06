@@ -122,6 +122,50 @@ paletteCategories
    _Note_: Until the user creates a subflow the subflow category will be empty and will
    not be visible in the palette.
 
+### Editor Themes
+
+The theme of the editor can be changed by using the following settings object. All parts are optional.
+
+    editorTheme: {
+        page: {
+            title: "Node-RED",
+            favicon: "/absolute/path/to/theme/icon",
+            css: "/absolute/path/to/custom/css/file"
+        },
+        header: {
+            title: "Node-RED",
+            image: "/absolute/path/to/header/image", // or null to remove image
+            url: "http://nodered.org" // optional url to make the header text/image a link to this url
+        },
+        deployButton: {
+            type:"simple",
+            label:"Save",
+            icon: "/absolute/path/to/deploy/button/image" // or null to remove image
+        },
+        menu: { // Hide unwanted menu items by id. see editor/js/main.js:loadEditor for complete list
+            "menu-item-import-library": false,
+            "menu-item-export-library": false,
+            "menu-item-keyboard-shortcuts": false,
+            "menu-item-help": {
+                label: "Alternative Help Link Text",
+                url: "http://example.com"
+            }
+        },
+        userMenu: false, // Hide the user-menu even if adminAuth is enabled
+        login: {
+            image: "/absolute/path/to/login/page/big/image" // a 256x256 image
+        }
+    },
+
+
+### Dashboard
+
+ui
+: The home path for the Node-RED-Dashboard add-on nodes can specified. This is relative
+to any already defined **httpNodeRoot**
+
+    ui : { path: "mydashboard" },
+
 ### Node Configuration
 
 Any node type can define its own settings to be provided in the file.
