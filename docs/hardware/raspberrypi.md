@@ -81,6 +81,30 @@ You can now start [using the editor](#using-the-editor).
 The pre-install uses the default node.js within Debian Jessie, which is version
 0.10.29. You may wish to use more recent versions of Node.js such as v0.12.x or v4.2.x
 
+#### Upgrade script
+
+As of version 0.14.x there is a script in the pre-installed version of Node-RED that
+will do a full upgrade to the latest nodejs LTS and latest release version of Node-RED.
+
+**Note** - it runs as *sudo* and does delete existing nodejs and Node-RED directories.
+If you have installed any extra nodes or npm globally (ie anything NOT installed in the `~/.node-red` directory)
+then please ensure you back them up first.
+
+The script has only really been tested on clean installs of Node-RED, and is thus best
+used before you install lots of other nodes. caveat emptor. To upgrade run the command :
+
+    update-nodejs-and-nodered
+
+The script also tries to rebuild any nodes with native plugins that you have installed in
+the `.node-red` directory. This may fail, and you may need to manually re-install some
+of the nodes you previous had installed. To see the list of nodes you had installed
+
+    cd ~/.node-red
+    npm ls --depth=0
+
+
+#### Manual upgrade
+
 To do this you must uninstall the built-in version and re-install using the
 instructions below. To uninstall:
 
