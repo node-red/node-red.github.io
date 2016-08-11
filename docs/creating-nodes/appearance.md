@@ -162,6 +162,8 @@ label: function() {
 ...
 {% endhighlight %}
 
+Note that it is not possible to use [credential](credentials) properties in the label function.
+
 #### Palette label
 
 By default, the node's type is used as its label within the palette. The
