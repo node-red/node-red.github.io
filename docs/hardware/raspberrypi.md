@@ -278,9 +278,9 @@ Then browse to `http://{the-ip-address-returned}:1880/`
 <div class="doc-callout">
  <em>Note:</em> the default browser included in Raspbian, Epiphany,
 has some quirks that mean certain keyboard short-cuts do not work within the
-Node-RED editor. We <b>strongly</b> recommend installing the Iceweasel browser instead:
+Node-RED editor. We <b>strongly</b> recommend installing the Firefox-ESR browser instead:
 <pre>
-    sudo apt-get install iceweasel
+    sudo apt-get install firefox-esr
 </pre>
 </div>
 
