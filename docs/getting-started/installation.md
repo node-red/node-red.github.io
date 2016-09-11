@@ -21,9 +21,10 @@ You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> 
                       or
                       [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.5.0-x64.msi)
 
-You may want to use a version from your operating system's [package manager](https://nodejs.org/en/download/package-manager/).
+It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
+specifically for your operating system.
 
-There are specific instructions available for certain hardware platforms:
+We also have specific instructions available for certain hardware platforms:
 
  - [Raspberry Pi](../hardware/raspberrypi)
  - [BeagleBone Black](../hardware/beagleboneblack)
