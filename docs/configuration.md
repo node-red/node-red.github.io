@@ -31,9 +31,9 @@ userDir
 
 nodesDir
 : a directory to search for additional installed nodes. Node-RED searches the `nodes`
-  directory under install directory. This property allows an additional directory
+  directory under the *userDir* directory. This property allows an additional directory
   to be searched, so that nodes can be installed outside of the Node-RED install
-  structure.
+  structure. Default: `$HOME/.node-red/nodes`
 
 uiHost
 : the interface to listen for connections on. Default: `0.0.0.0` -
