@@ -3,7 +3,7 @@ layout: default
 title: Running on Android
 ---
 
-Using the <a href="https://termux.com">Termux</a> app in the android app store makes it easy to run Node-RED on android devices. You can get it from the <a href="https://play.google.com/store/apps/details?id=com.termux&amp;hl=en_GB">Play Store</a>.
+Using the <a href="https://termux.com">Termux</a> app in the app store makes it easy to run Node-RED on Android devices. You can get it from the <a href="https://play.google.com/store/apps/details?id=com.termux&amp;hl=en_GB">Play Store</a>.
 
 <div class="doc-callout"><em>Note</em>: the Node-RED team have no connection with the Termux application nor it's development. We cannot provide support for it in any way, other than to say that at this point in time it works rather well.</div>
 
@@ -17,11 +17,13 @@ Install it, and run it. Then at the prompt type
 
 Then you can point a browser to `localhost:1880`
 
+
 #### Notes
 
  - You can also npm install other node-red nodes such as `node-red-dashboard` in the standard way :
-<code><pre>cd ~/.node-red
-npm i node-red-dashboard</pre></code>
+
+    cd ~/.node-red
+    npm i node-red-dashboard
 
  - The `volume-down` key is the ctrl key - so `vol-down-c` can be used to "break" a running app.
  - The instructions above also install the `nano` editor, as I find it useful for editing files.
