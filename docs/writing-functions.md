@@ -222,6 +222,12 @@ functionGlobalContext: {
 at which point, the module can be referenced within a function as
 `global.get('osModule')`.
 
+If any external module is "required", it must be installed manually in the user
+directory via npm.  
+
+    cd ~/.node-red
+    npm i name_of_3rd_party_module_to_be_required
+
 <div class="doc-callout"><em>Note</em>: Prior to Node-RED v0.13, the documented
 way to use global context was to access it as a sub-property of <code>context</code>:
 <pre>context.global.foo = "bar";
@@ -256,7 +262,7 @@ The Function node also makes the following modules and functions available:
   * `Buffer` - the Node.js `Buffer` module
   * `console` - the Node.js `console` module (`node.log` is the preferred method of logging)
   * `util` - the Node.js `util` module
-  * `setTimout/clearTimeout` - the javascript timeout functions.
+  * `setTimeout/clearTimeout` - the javascript timeout functions.
   * `setInterval/clearInterval` - the javascript interval functions.
 
 Note: the function node automatically clears any outstanding timeouts or

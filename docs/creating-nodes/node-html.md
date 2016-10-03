@@ -55,11 +55,11 @@ editor. It is an object with the following properties:
 - `credentials`: (object) the [credential properties](credentials) for the node.
 - `inputs`: (number) how many inputs the node has, either `0` or `1`.
 - `outputs`: (number) how many outputs the node has. Can be `0` or more.
-- `icon`: (string) the [icon](appearance#icon) to use.
 - `color`: (string) the [background colour](appearance#background-colour) to use.
-- `label`: (string\|function) the [label](appearance#label) to use.
 - `paletteLabel`: (string\|function) the [label](appearance#label) to use in the palette.
+- `label`: (string\|function) the [label](appearance#label) to use in the workspace.
 - `labelStyle`: (string\|function) the [style](appearance#label-style) to apply to the label.
+- `icon`: (string) the [icon](appearance#icon) to use.
 - `align`: (string) the [alignment](appearance#alignment) of the icon and label.
 - `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties#custom-edit-behaviour).
@@ -78,6 +78,7 @@ The edit template for a node describes the content of its edit dialog.
             <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
         </div>
+        <div class="form-tips"><b>Tip:</b> This is here to help.</div>
     </script>
 
 
@@ -99,8 +100,6 @@ More information on how the edit template is used is available
 [here](properties#property-edit-dialog).
 
 
-
-
 ### Help text
 
 When a node is selected, its help text is displayed in the info tab. This should
@@ -112,7 +111,8 @@ The content of the first `<p>` tag is used as the tooltip when hovering over
 nodes in the palette.
 
     <script type="text/x-red" data-help-name="node-type">
-       <p>Some useful help text about the node.</p>
-       <p>Outputs an object called <b>msg</b> containing <b>msg.topic</b> and
-       <b>msg.payload</b>. msg.payload is a String.</p>
+       <p>Some useful help text to introduce the node.</p>
+       <p>Outputs an object called <code>msg</code> containing <code>msg.topic</code> and
+       <code>msg.payload</code>.</p>
+       <p><code>msg.payload</code> is a <i>String</i>.</p>
     </script>
