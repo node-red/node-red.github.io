@@ -6,7 +6,7 @@ title: Upgrading
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
 on Raspian Jessie, please refer to <a href="/docs/hardware/raspberrypi#upgrading">these instructions for upgrading</a>.</div>
 
-Currently we recommend the use of npm version 2, please check which version you
+Currently we recommend the use of npm version 2 or higher, please check which version you
 have installed by running the command `npm -v` before upgrading. If necessary run
 
     sudo npm i -g npm@2.x
@@ -18,17 +18,37 @@ latest version with the following commands:
     sudo npm cache clean
     sudo npm update -g --unsafe-perm node-red
 
-### Upgrading node.js
+To check for outdated nodes that are installed in the user directory you can:
 
-If you upgrade node.js, for example from v0.10.x to v4.3.x, it is better to
+    cd ~/.node-red
+    npm outdated
+
+This will print a list of nodes that can be updated. To update them you can then run:
+
+    npm update foo   // to update a node called foo
+    npm update       // to update all nodes
+
+You will then need to stop and restart Node-RED.
+
+## Upgrading node.js
+
+If you upgrade node.js, for example from v0.10.x to v4.6.x, it is better to
 re-install Node-RED as follows:
 
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
 
+You will also need to rebuild any nodes that have binary dependancies. If you
+installed them in the recommended `~/.node-red` directory, you can do this by:
+
+    cd ~/.node-red
+    npm rebuild
+
+You will then need to stop and restart Node-RED.
+
 ----
 
-### Upgrading from before Node-RED 0.10.4
+#### Upgrading from before Node-RED 0.10.4
 
 In releases prior to 0.10.4, the default behaviour was to write user data into
 the Node-RED install directory. This made upgrading a painful experience. The

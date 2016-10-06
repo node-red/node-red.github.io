@@ -5,7 +5,7 @@ title: Running on Raspberry Pi
 
 There are two ways to get started with Node-RED on a Raspberry Pi.
 
-  - use the version preinstalled in the November 2015 **Raspbian Jessie** image
+  - use the version preinstalled in **Raspbian Jessie** image since November 2015.
   - or **manual install** from the `npm` repository - see [further below](#manual-install).
 
 You can then start [using the editor](#using-the-editor).
@@ -28,6 +28,8 @@ To start Node-RED, you can either:
   - on the Desktop, select `Menu -> Programming -> Node-RED`.
   - or run `node-red-start` in a new terminal window.
 
+*Note:* closing the window (or ctrl-c) does not stop Node-RED running. It will continue running in the background.
+
 To stop Node-RED, run the command `node-red-stop`.
 
 #### Autostart on boot (preloaded versions)
@@ -35,13 +37,13 @@ To stop Node-RED, run the command `node-red-stop`.
 If you want Node-RED to run when the Pi boots up you can use one of the following
 commands depending on the version you have installed.
 
-For version 0.12.1 of Node-RED - SD card Jessie Nov 2015:
-
-    sudo update-rc.d nodered defaults
-
 For version 0.12.5 of Node-RED and later:
 
     sudo systemctl enable nodered.service
+
+For version 0.12.1 of Node-RED - SD card Jessie Nov 2015:
+
+    sudo update-rc.d nodered defaults
 
 #### Adding nodes
 
@@ -57,7 +59,7 @@ it to the latest `2.x` version.
 
 *Note:* npm version 3 is the latest version, but is currently *not* recommended for use.
 
-#### Upgrading
+### Upgrading Node-RED
 
 To update Node-RED, you can use the standard package manager:
 
@@ -68,18 +70,7 @@ This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
 
-#### Next
-
-You can now start [using the editor](#using-the-editor).
-
-----
-
-## Manual install
-
-### Using newer versions of node.js
-
-The pre-install uses the default node.js within Debian Jessie, which is version
-0.10.29. You may wish to use more recent versions of Node.js such as v0.12.x or v4.2.x
+### Upgrading node.js
 
 #### Upgrade script
 
@@ -90,20 +81,46 @@ will do a full upgrade to the latest nodejs LTS and latest release version of No
 If you have installed any extra nodes or npm globally (ie anything NOT installed in the `~/.node-red` directory)
 then please ensure you back them up first.
 
-The script has only really been tested on clean installs of Node-RED, and is thus best
-used before you install lots of other nodes. caveat emptor. To upgrade run the command :
+**Caveat emptor.** The script has only really been tested on clean installs of Node-RED, and is thus best
+used before you install lots of other nodes.  To upgrade, run the command:
 
     update-nodejs-and-nodered
 
 The script also tries to rebuild any nodes with native plugins that you have installed in
-the `.node-red` directory. This may fail, and you may need to manually re-install some
-of the nodes you previous had installed. To see the list of nodes you had installed
+the `~/.node-red` directory. This may fail, and you may need to manually rebuild or re-install some
+of the nodes you previous had installed. To rebuild:
+
+    cd ~/.node-red
+    npm rebuild
+
+To see the list of nodes you had installed:
 
     cd ~/.node-red
     npm ls --depth=0
 
+#### Next
 
-#### Manual upgrade
+You will then need to stop and restart Node-RED.
+You can then start [using the editor](#using-the-editor).
+
+----
+
+## Manual install
+
+#### Using newer versions of node.js
+
+The pre-install uses the default node.js within Debian Jessie, which is version
+0.10.29. If manually installing we recommend using a more recent versions of node.js such as v4.x
+
+As of Node-RED version 0.14.x there is a script in the pre-installed version of Node-RED that
+will do a full upgrade to the latest node.js LTS and latest release version of Node-RED. See *Upgrading node.js* above.
+
+If you upgrade node.js by hand then you will also need to rebuild any installed nodes that have binary dependancies.
+
+    cd ~/.node-red
+    npm rebuild
+
+#### Manual steps
 
 To do this you must uninstall the built-in version and re-install using the
 instructions below. To uninstall:
@@ -115,14 +132,16 @@ instructions below. To uninstall:
 This will remove all the built in packages but leave your workspace - by default
 at `~/.node-red` . You may then proceed to re-install as per instructions below
 
+
+
 #### Install Node.js
 
 As the Pi 2 uses a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
-##### Raspberry Pi 2
+##### Raspberry Pi 2 and 3
 
-To install Node.js on Pi 2 - and other Arm7 processor based boards, run
+To install Node.js on Pi 2 or 3 - and other Arm7 processor based boards, run
 the following commands:
 
     curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
