@@ -11,13 +11,13 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Feb 22:51:09 - [info] Node-RED version: v0.13.1
-    25 Feb 22:51:09 - [info] Node.js  version: v4.2.6
+    25 Feb 22:51:09 - [info] Node-RED version: v0.14.6
+    25 Feb 22:51:09 - [info] Node.js  version: v4.6.0
     25 Feb 22:51:09 - [info] Loading palette nodes
     25 Feb 22:51:10 - [warn] ------------------------------------------
-    25 Feb 22:51:10 - [warn] Failed to register 1 node types
-    25 Feb 22:51:10 - [warn] Run with -v for details
+    25 Feb 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
     25 Feb 22:51:10 - [warn] ------------------------------------------
+    25 Feb 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
     25 Feb 22:51:10 - [info] User Directory : /home/nol/.node-red
     25 Feb 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
     25 Feb 22:51:10 - [info] Creating new flows file : flows_noltop.json

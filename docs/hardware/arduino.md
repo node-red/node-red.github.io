@@ -7,6 +7,10 @@ There are several ways to interact with an Arduino using Node-RED. They
 all assume the Arduino is connected to the host computer via a USB serial
 connection.
 
+*Note:* you can't use both the Arduino IDE and the Arduino nodes at the same time
+as they will conflict. You will need to stop Node-RED running if you wish
+re-program the Arduino from the IDE.
+
 ***
 
 ### Serial
@@ -46,7 +50,7 @@ You then need to install the Node-RED Arduino nodes into the palette.
 
 Change directory to your Node-RED user directory, this is normally `~/.node-red`
 
-        cd .node-red
+        cd ~/.node-red
 
 Then install the Arduino nodes
 

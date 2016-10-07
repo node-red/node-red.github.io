@@ -21,6 +21,8 @@ using the standard package manager:
     sudo apt-get update
     sudo apt-get install nodered
 
+**Note:** If you have upgraded to **node.js 4.x** or above then you cannot use apt-get to upgrade Node-RED. Use the standard <a href="/docs/getting-started/upgrading">upgrading instructions</a> instead.
+
 #### Running Node-RED
 
 To start Node-RED, you can either:
@@ -70,6 +72,9 @@ This will grab the latest version that has been made available on the Raspbian
 repositories. *Note*: there may be a slight delay between a release being made
 to the `npm` repositories and it being available in Raspbian.
 
+<div class="doc-callout"><em>Note:</em> If you have upgraded to <em>node.js 4.x</em> or above then you can
+no longer use apt-get to upgrade Node-RED. Instead use the standard <a href="/docs/getting-started/upgrading">upgrading instructions</a>.</div>
+
 ### Upgrading node.js
 
 #### Upgrade script
@@ -100,7 +105,7 @@ To see the list of nodes you had installed:
 
 #### Next
 
-You will then need to stop and restart Node-RED.
+You will then need to restart Node-RED.
 You can then start [using the editor](#using-the-editor).
 
 ----
@@ -125,6 +130,7 @@ If you upgrade node.js by hand then you will also need to rebuild any installed 
 To do this you must uninstall the built-in version and re-install using the
 instructions below. To uninstall:
 
+    node-red-stop
     sudo apt-get remove nodered
     sudo apt-get remove nodejs nodejs-legacy
     sudo apt-get remove npm   # if you installed npm
@@ -133,10 +139,9 @@ This will remove all the built in packages but leave your workspace - by default
 at `~/.node-red` . You may then proceed to re-install as per instructions below
 
 
-
 #### Install Node.js
 
-As the Pi 2 uses a different processor (Arm v7) compared with the original
+As the Pi 2 and 3 use a different processor (Arm v7) compared with the original
 Pi (Arm v6) the method of installing node.js is slightly different.
 
 ##### Raspberry Pi 2 and 3
@@ -284,6 +289,20 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
+#### Changing the systemd environment - using a proxy
+
+If you need to use a proxy for http requests - you need to set the *HTTP_PROXY* environment variable.
+When using *systemd* this must be done within the service configuration. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and add another `Environment=` line, for example:
+
+    Nice=5
+    Environment="NODE_OPTIONS=--max-old-space-size=128"
+    Environment="HTTP_PROXY=my-proxy-server-address"
+
+Save the file, and then run:
+
+    sudo systemctl daemon-reload
+
+to reload the configuration. Stop and restart Node-RED.
 
 ## Using the Editor
 

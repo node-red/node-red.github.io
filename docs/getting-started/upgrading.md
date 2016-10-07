@@ -25,15 +25,15 @@ To check for outdated nodes that are installed in the user directory you can:
 
 This will print a list of nodes that can be updated. To update them you can then run:
 
-    npm update foo   // to update a node called foo
-    npm update       // to update all nodes
+    npm update              # to update all nodes, or
+    npm update foo          # to only update a node called foo
 
 You will then need to stop and restart Node-RED.
 
 ## Upgrading node.js
 
-If you upgrade node.js, for example from v0.10.x to v4.6.x, it is better to
-re-install Node-RED as follows:
+If you upgrade node.js, for example from v0.10.x to v4.6.x, it is better to stop
+Node-RED, and then re-install as follows:
 
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
@@ -44,7 +44,7 @@ installed them in the recommended `~/.node-red` directory, you can do this by:
     cd ~/.node-red
     npm rebuild
 
-You will then need to stop and restart Node-RED.
+You will then need to restart Node-RED.
 
 ----
 
