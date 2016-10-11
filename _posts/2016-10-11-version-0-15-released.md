@@ -24,7 +24,9 @@ restart Node-RED.
 
 Under the covers, this triggers an npm install of the node module into your user
 directory - by default, `$HOME/.node-red`. Note that if the node has any dependencies
-beyond standard npm dependencies, you'll need to resolve them manually.
+beyond the standard npm dependencies, you'll need to resolve them manually. It also
+requires you to have `npm` installed, which, if you're using the Raspberry Pi
+preinstall image, you may not have - check [the docs](http://nodered.org/docs/hardware/raspberrypi.html#adding-nodes) for how to get it.
 
 
 #### Scrollable tabs
