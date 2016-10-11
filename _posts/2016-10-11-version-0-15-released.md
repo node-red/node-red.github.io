@@ -148,10 +148,10 @@ will be the last one to support node 0.10 *and* 0.12.
 
 **The next milestone release, 0.16, will require Node 4.x.**
 
-This also means, for now, the Raspberry Pi preinstall will be fixed at 0.15.
+This means, for now, the Raspberry Pi preinstall will be fixed at 0.15.
 To make life easier, we already include a script on the preinstall image called
 `update-nodejs-and-nodered` that updates node.js to the latest LTS version using the
-NodeSource repositories, and then reinstalled node-red on top. See [the documentation](http://nodered.org/docs/hardware/raspberrypi.html#upgrading-nodejs) for more information - including instructions for doing that upgrade manually if you so
+NodeSource repositories and then reinstalls node-red on top. See [the documentation](http://nodered.org/docs/hardware/raspberrypi.html#upgrading-nodejs) for more information - including instructions for doing that upgrade manually if you so
 choose.
 
 #### Serial node
@@ -160,14 +160,14 @@ One of the more painful parts of the node.js world is handling binary dependenci
 It can be a real headache when upgrading between versions to make sure such dependencies
 continue to work as expected.
 
-We're serving notice that in the 0.16 release **we will be _removing_ `node-red-node-serialport` as a default
+We're serving notice that in the 0.16 release **we will be removing `node-red-node-serialport` as a default
 dependency**.
 
 That means we'll no longer include the Serial node as part of the core
 install.
 
-It will remove a lot of hardware/platform dependant code, speeds up the install
-time and shrink the runtime footprint for users who have no need of it.
+It will remove a lot of hardware/platform dependant code, speeding up the install
+time and shrinking the runtime footprint for users who have no need of the node.
 
 It will also make upgrading more reliable as the serial port code will no longer be buried within Node-RED and can be upgraded just like any other node.
 
