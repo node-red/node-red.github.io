@@ -12,6 +12,7 @@ Status Code | Reason
 `400`       | Bad request - see response format below
 `401`       | Not authorized - see [Authentication](oauth)
 `404`       | Not found - a resource wasn't found
+`409`       | Version mismatch - see [`POST /flows`](methods/post/flows)
 `500`       | Server Error - something went wrong on the server
 
 ### Error response
@@ -38,3 +39,4 @@ Code                    | Description
 `settings_unavailable`  | The storage system does not support changing settings
 `module_already_loaded` | The requested module is already loaded
 `type_in_use`           | The request is attempting to remove/disable a node type that is currently being used
+`invalid_api_version`       | The request specified an invalid api version in the `Node-RED-API-Version` header

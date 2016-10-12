@@ -88,6 +88,27 @@ runtime. It is represented as a flat array of Node objects. This is the main flo
 ]
 {% endhighlight %}
 
+*Since 0.15.0*, the `/flows` api supports a new format if the `Node-RED-API-Version`
+header is set to `v2`. This format provides the array of nodes as above, and includes
+an optional revision identifier for the flows:
+
+{% highlight json %}
+{
+    "rev": "abc-123",
+    "flows": [
+      {
+        "id": "1234",
+        "type": "inject"
+      },
+      {
+        "id": "5678",
+        "type": "debug"
+      }
+    ]
+}
+{% endhighlight %}
+
+
 ### Single Flow configuration
 
 A Single Flow configuration represents what gets presented in the editor as a tab.
