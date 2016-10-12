@@ -66,7 +66,7 @@ it will reveal it in the config node sidebar.
 #### Import/Export improvements
 
 The Import and Export dialogs have had a few small updates. When importing a flow,
-you can new choose to have it import into a new flow rather than the current one.
+you can now choose to have it import into a new flow rather than the current one.
 
 The export dialog gives you more options on what gets exported - whether the selected
 nodes, the current flow or all flows. You can also pick if the export should be
