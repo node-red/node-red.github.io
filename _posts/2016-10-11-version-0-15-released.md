@@ -76,6 +76,7 @@ prettified or minified.
  ![](/blog/content/images/2016/10/export-dialog.png)
 
 A couple of other new features on import:
+
  - we avoid duplicating subflows if you import one you already have in the palette
  - you can now include credentials in the flow json you import
 
