@@ -58,10 +58,10 @@ it further than we could have ever imagined.
 
 And that brings us to today's announcement.
 
-The JS Foundation, of which IBM is a founding member, has been created to drive
-widespread adoption and continued development of key JavaScript solutions and
-related technologies. With a formalised partnership with the Node.js Foundation, it
-is creating a centre of gravity for all things JavaScript.
+The [JS Foundation](https://js.foundation/), of which IBM is a founding member,
+has been created to drive widespread adoption and continued development of key
+JavaScript solutions and related technologies. With a formalised partnership with
+the Node.js Foundation, it is creating a centre of gravity for all things JavaScript.
 
 As part of the launch, we're excited to announce Node-RED is becoming a project
 within the foundation.
