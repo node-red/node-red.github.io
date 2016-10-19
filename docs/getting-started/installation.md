@@ -3,23 +3,23 @@ layout: default
 title: Installation
 ---
 
-### Install Node.js
+### Install node.js
 
-Node-RED supports Node.js <code>0.10.x</code> and later.
+Node-RED supports node.js <code>0.10.x</code> and later. We recommend the use of node.js LTS.
 
-<div class="doc-callout"><em>Note</em>: Node.js 5.x and npm 3.x are under active development and are not recommended
-for a stable base. Many 3rd party node packages may not yet fully support Node 5.x and later, especially if they
+<div class="doc-callout"><em>Note</em>: Node.js 7.x is under active development and is not recommended
+for a stable base. Many 3rd party node packages may not yet fully support Node 6.x and later, especially if they
 contain a binary component. Check with the author of the package if you are not sure.</div>
 
 You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.0-linux-x86.tar.gz)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.1-linux-x86.tar.gz)
                    or
-                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.0-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.6.0.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.0-x86.msi)
+                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.1-linux-x64.tar.gz)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.6.1.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.1-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.0-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.6.1-x64.msi)
 
 It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
 specifically for your operating system.
@@ -105,15 +105,6 @@ You can then build and run the application
 
     grunt build
     node red
-
-### Serial port
-
-If you want to use the serial port node when using Node.js v0.10.x or v0.12.x
-you will need to manually install an older version of the serial port node.
-To do this:
-
-    cd $HOME/.node-red
-    npm install node-red-node-serialport@0.0.5
 
 ### Next steps
 
