@@ -106,6 +106,18 @@ httpNodeMiddleware
           // to the relevant HTTP In node.
       }
 
+logging
+: currently only console logging is supported. Various levels of logging can be specified. Options are:
+
+ - **fatal** - only those errors which make the application unusable should be recorded
+ - **error** - record errors which are deemed fatal for a particular request + fatal errors
+ - **warn** - record problems which are non fatal + errors + fatal errors
+ - **info** - record information about the general running of the application + warn + error + fatal errors
+ - **debug** - record information which is more verbose than info + info + warn + error + fatal errors
+ - **trace** - record very detailed logging + debug + info + warn + error + fatal errors
+
+The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".        
+
 ### Editor Configuration
 
 adminAuth
