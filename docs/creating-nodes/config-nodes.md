@@ -5,7 +5,7 @@ title: Configuration nodes
 
 Some nodes need to share configuration. For example, the MQTT In and MQTT Out
 nodes share the configuration of the MQTT broker, allowing them to pool the
-connection.
+connection. Configuration nodes are scoped globally by default, this means the state will be shared between flows.
 
 
 ### Defining a config node
