@@ -190,7 +190,15 @@ functionGlobalContext
 
   can be accessed in a function node as:
 
-      context.global.os
+      global.get('osModule')
+
+<div class="doc-callout"><em>Note</em>: Prior to Node-RED v0.13, the documented
+way to use global context was to access it as a sub-property of <code>context</code>:
+<pre>context.global.foo = "bar";
+var osModule = context.global.osModule;</pre>
+This method is still supported, but deprecated in favour of the <code>global.get</code>/<code>global.set</code>
+functions. This is in anticipation of being able to persist the context data in a future release.
+</div>
 
 debugMaxLength
 : Debug Nodes - the maximum length, in characters, of any message sent to the
