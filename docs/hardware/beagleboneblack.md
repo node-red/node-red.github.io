@@ -1,16 +1,23 @@
 ---
 layout: default
-title: Running on BeagleBone Black
+title: Running on BeagleBone Boards
 ---
 
-The BeagleBoneBlack already has Node.js baked into it's OS, so some of these
-tips are optional.
+The latest 4GB images for BeagleBone boards already have Node-RED installed into it's OS so you can just start running with the `node-red` command. You can use the intructions below to upgrade to later versions if you wish.
+
+The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to install as per below.
 
 <div class="doc-callout">
 These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
 </div>
 
 #### Before you start
+
+If you are using the 2GB eMMC version of Debian it has been stripped right down so you may need to install some
+utility functions first
+
+    sudo apt-get update
+    sudo apt-get install -y curl locales ntpdate avahi-utils python build-essential
 
 Make sure the local time is set correctly. The BeagleboneBlack does not have a
 battery backed real time clock so needs to be set on every boot in order for
@@ -22,6 +29,7 @@ software certificates date checks to be valid.
 
 We recommend using node.js LTS 4.x.
 
+    sudo apt-get install curl
     curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
     sudo apt-get install -y build-essential nodejs
     hash -r
@@ -30,7 +38,7 @@ We recommend using node.js LTS 4.x.
 
 The easiest way to install Node-RED is to use node's package manager, npm:
 
-    sudo npm install -g --unsafe-perm node-red
+    sudo npm i -g --unsafe-perm node-red
 
 _Note_: the reason for using the `--unsafe-perm` option is that when node-gyp tries
 to recompile any native libraries it tries to do so as a "nobody" user and often
