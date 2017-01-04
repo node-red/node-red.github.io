@@ -13,13 +13,13 @@ contain a binary component. Check with the author of the package if you are not 
 
 You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
 
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.0-linux-x86.tar.gz)
-                   or
-                   [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.0-linux-x64.tar.gz)
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.7.0.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.0-x86.msi)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.7.1.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.1-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.0-x64.msi)
+                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.1-x64.msi)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.1-linux-x86.tar.gz)
+                    or
+                    [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.1-linux-x64.tar.gz)
 
 It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
 specifically for your operating system.
