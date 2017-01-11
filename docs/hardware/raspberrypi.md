@@ -5,8 +5,8 @@ title: Running on Raspberry Pi
 
 There are two ways to get started with Node-RED on a Raspberry Pi.
 
-  - use the version preinstalled in **Raspbian Jessie** image since November 2015.
-  - or **manual install** from the `npm` repository - see [further below](#manual-install).
+  - use the version preinstalled in **Raspbian Jessie** full image since November 2015.
+  - or **manual install** using an install script.
 
 You can then start [using the editor](#using-the-editor).
 
@@ -15,13 +15,40 @@ You can then start [using the editor](#using-the-editor).
 As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
 the SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
 
-If you already have an older version of Jessie, you can install or upgrade Node-RED
-using the standard package manager:
+If you already have the minimal version of Jessie, or other Debian based install, that doesn't have Node-RED already installed,
+you can install or upgrade using the Node-RED upgrade script
 
-    sudo apt-get update
-    sudo apt-get install nodered
+    wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered -O update-nodejs-and-nodered
+    update-nodejs-and-nodered
 
-**Note:** If you have upgraded to **node.js 4.x** or above then you cannot use apt-get to upgrade Node-RED. Use the standard <a href="/docs/getting-started/upgrading">upgrading instructions</a> instead.
+**Note:** If you have upgraded to **node.js 4.x** or more recent then you cannot use apt-get to upgrade the pre-installed version of Node-RED.
+
+#### Upgrading
+
+As of Node-RED version 0.14.x the upgrade script is pre-installed and will do a full upgrade to the latest nodejs LTS and latest release version of Node-RED.
+
+**Note** - it runs many commands as *sudo* and does delete existing nodejs and the core Node-RED directories.
+If you have installed any extra nodes or npm *globally* (ie anything NOT installed in the `~/.node-red` directory)
+then please ensure you back them up first - usually from `/usr/lib/node_modules`.
+
+To upgrade, run the following command as your normal user (typically `pi`):
+
+    update-nodejs-and-nodered
+
+**Caveat emptor.** The script has only been tested on installs with a small variety
+of the possible extra nodes. The script also tries to rebuild any nodes with native
+plugins that you have installed in the `~/.node-red` directory. This may fail, and
+you may need to manually rebuild or re-install some of the nodes you previous had
+installed. To rebuild:
+
+    cd ~/.node-red
+    npm rebuild
+
+To see the list of nodes you had installed:
+
+    cd ~/.node-red
+    npm ls --depth=0
+
 
 #### Running Node-RED
 
@@ -34,23 +61,20 @@ To start Node-RED, you can either:
 
 To stop Node-RED, run the command `node-red-stop`.
 
-#### Autostart on boot (preloaded versions)
 
-If you want Node-RED to run when the Pi boots up you can use one of the following
-commands depending on the version you have installed.
+#### Autostart on boot
 
-For version 0.12.5 of Node-RED and later:
+If you want Node-RED to run when the Pi boots up you can use
 
     sudo systemctl enable nodered.service
 
-For version 0.12.1 of Node-RED - SD card Jessie Nov 2015:
 
-    sudo update-rc.d nodered defaults
-
-#### Adding nodes
+#### Adding nodes to preloaded version
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default installation. The following commands install `npm` and then upgrade
+in the default installation. This is not necessary if you have upgraded to node.js 4.x or 6.x.
+
+The following commands install `npm` and then upgrade
 it to the latest `2.x` version.
 
     sudo apt-get install npm
@@ -59,49 +83,8 @@ it to the latest `2.x` version.
     cd ~/.node-red
     npm install node-red-{example node name}
 
-*Note:* npm version 3 is the latest version, but is currently *not* recommended for use.
+*Note:* npm version 4 is the latest version, but is currently *not* recommended for use.
 
-### Upgrading Node-RED
-
-To update Node-RED, you can use the standard package manager:
-
-    sudo apt-get update
-    sudo apt-get install nodered
-
-This will grab the latest version that has been made available on the Raspbian
-repositories. *Note*: there may be a slight delay between a release being made
-to the `npm` repositories and it being available in Raspbian.
-
-<div class="doc-callout"><em>Note:</em> If you have upgraded to <em>node.js 4.x</em> or above then you can
-no longer use apt-get to upgrade Node-RED. Instead use the standard <a href="/docs/getting-started/upgrading">upgrading instructions</a>.</div>
-
-### Upgrading node.js
-
-#### Upgrade script
-
-As of version 0.14.x there is a script in the pre-installed version of Node-RED that
-will do a full upgrade to the latest nodejs LTS and latest release version of Node-RED.
-
-**Note** - it runs as *sudo* and does delete existing nodejs and Node-RED directories.
-If you have installed any extra nodes or npm globally (ie anything NOT installed in the `~/.node-red` directory)
-then please ensure you back them up first.
-
-**Caveat emptor.** The script has only really been tested on clean installs of Node-RED, and is thus best
-used before you install lots of other nodes.  To upgrade, run the command:
-
-    update-nodejs-and-nodered
-
-The script also tries to rebuild any nodes with native plugins that you have installed in
-the `~/.node-red` directory. This may fail, and you may need to manually rebuild or re-install some
-of the nodes you previous had installed. To rebuild:
-
-    cd ~/.node-red
-    npm rebuild
-
-To see the list of nodes you had installed:
-
-    cd ~/.node-red
-    npm ls --depth=0
 
 #### Next
 
@@ -112,91 +95,16 @@ You can then start [using the editor](#using-the-editor).
 
 ## Manual install
 
-#### Using newer versions of node.js
-
 The pre-install uses the default node.js within Debian Jessie, which is version
 0.10.29. If manually installing we recommend using a more recent versions of node.js such as v4.x
 
-As of Node-RED version 0.14.x there is a script in the pre-installed version of Node-RED that
-will do a full upgrade to the latest node.js LTS and latest release version of Node-RED. See *Upgrading node.js* above.
+The simplest way to install Node.js and other dependencies is
 
-If you upgrade node.js by hand then you will also need to rebuild any installed nodes that have binary dependancies.
-
-    cd ~/.node-red
-    npm rebuild
-
-#### Manual steps
-
-To do this you must uninstall the built-in version and re-install using the
-instructions below. To uninstall:
-
-    node-red-stop
-    sudo apt-get remove nodered
-    sudo apt-get remove nodejs nodejs-legacy
-    sudo apt-get remove npm   # if you installed npm
-
-This will remove all the built in packages but leave your workspace - by default
-at `~/.node-red` . You may then proceed to re-install as per instructions below
-
-
-#### Install Node.js
-
-As the Pi 2 and 3 use a different processor (Arm v7) compared with the original
-Pi (Arm v6) the method of installing node.js is slightly different.
-
-##### Raspberry Pi 2 and 3
-
-To install Node.js on Pi 2 or 3 - and other Arm7 processor based boards, run
-the following commands:
-
-    curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
-    sudo apt-get install -y build-essential python-rpi.gpio nodejs
-
-This also installs some additional dependencies.
-
-##### Raspberry Pi
-
-The simplest way to install Node.js and other dependencies on Pi (version 1), Pi Zero, Pi A+/B+ is
-
-    wget http://node-arm.herokuapp.com/node_latest_armhf.deb
-    sudo dpkg -i node_latest_armhf.deb
     sudo apt-get install build-essential python-rpi.gpio
-    hash -r
+    wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered -O update-nodejs-and-nodered
+    update-nodejs-and-nodered
 
-**Note**: Debian/Raspbian Wheezy is now "End of Life", and so documentation is now aimed at Jessie as a minimum.
-Wheezy users will need to upgrade GCC to v4.8 - see <a href="https://node-arm.herokuapp.com/" target="_new">here</a>.
-
-### Install Node-RED
-
-Install the latest stable version of Node-RED using node's package manager, npm:
-
-    sudo npm cache clean
-    sudo npm install -g --unsafe-perm  node-red
-
-<div class="doc-callout">
-<p><em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
-command. These are typically <em>non-fatal</em> errors and are related to optional dependencies
-that require a compiler in order to build them. <b>Node-RED will work without these
-optional dependencies</b>, but you may find additional node modules that require the
-ability to compile native code. You can find out how to install the <code>node-gyp</code>
-compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
-</p>
-<p><em>Note</em>: The <code>node-red-start</code> and <code>node-red-stop</code>
-commands included with the Jessie preinstall are <em>not</em> included with the
-main version of Node-RED. To restore them, see the section below on <a href="#adding-autostart-capability-using-systemd">Adding Autostart capability using SystemD</a>.
-</p>
-</div>
-
-If there are any npm errors (not warnings, not gyp errors) during install, try
-running `sudo npm cache clean` and re-trying the install. `npm` should be version
-2.x. Type `npm -v` to check.
-
-<div class="doc-callout"><em>Note</em>: the reason for using the
-<code>--unsafe-perm</code> option is that when node-gyp tries
-to recompile any native libraries it tries to do so as a "nobody" user and often
-fails to get access to certain directories. This causes alarming warnings that look
-like errors... but sometimes are errors. Allowing node-gyp to run as root using
-this flag avoids this - or rather shows up any real errors instead.</div>
+**Note**: Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer support, and so documentation is now aimed at Jessie as a minimum.
 
 For alternative install options, see the [main installation instructions](../getting-started/installation#install-node-red).
 
@@ -223,14 +131,6 @@ following to sudoers using visudo.
     NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
 
 
-#### Serial port on Raspbian Wheezy
-
-If you want to use the serial port node with Node.js v0.10.x or v0.12.x and
-have manually installed Node-RED on Raspbian Wheezy, you will need to manually
-install a specific version of the serial port node. To do this:
-
-    sudo npm i -g --unsafe-perm node-red-node-serialport@0.0.5
-
 ### Starting Node-RED
 
 Due to the constrained memory available on the Raspberry Pi, it is necessary to
@@ -240,20 +140,20 @@ to be provided that sets at what point Node.js will begin to free up unused memo
 When starting with the `node-red-pi` script, the `max-old-space-size` option should
 be specified:
 
-    node-red-pi --max-old-space-size=128
+    node-red-pi --max-old-space-size=256
 
 If you decide to run Node-RED using the node command directly, this option must
 appear between node and red.js.
 
-    node --max-old-space-size=128 red.js
+    node --max-old-space-size=256 red.js
 
-This option limits the space it can use to 128MB before cleaning up. If you are
+This option limits the space it can use to 256MB before cleaning up. If you are
 running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 
 **Note**: The pre-installed version of Node-RED on Raspbian that uses the `node-red-start`
-command also sets it to 128MB by default. If you do want to change that, the
+command also sets it to 256MB by default. If you do want to change that, the
 file you need to edit (as sudo) is `/lib/systemd/system/nodered.service`. See
 below for how to add this to a manually installed version.
 
@@ -320,6 +220,7 @@ Node-RED editor. We <b>strongly</b> recommend installing the Firefox-ESR browser
 <pre>
     sudo apt-get install firefox-esr
 </pre>
+More recent build include Chromium - which also works fine but can be rather slow on a Pi1 or Zero.
 </div>
 
 You can then start creating your [first flow](../getting-started/first-flow).
@@ -342,7 +243,7 @@ You then need to stop and restart Node-RED to load the new nodes, and then refre
     node-red-stop
     node-red-start
 
-There is a [command line admin](../node-red-admin) tool that may be useful if you need to do this a lot.
+You can also install and remove extra nodes via the Editor UI,  Menu - Manage Palette.
 
 ## Interacting with the Pi hardware
 

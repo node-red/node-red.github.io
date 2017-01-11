@@ -5,10 +5,10 @@ title: Installation
 
 ### Install node.js
 
-Node-RED supports node.js <code>0.10.x</code> and later. We recommend the use of node.js LTS.
+We recommend the use of node.js LTS 4.x or 6.x . Node-RED no longer supports node.js 0.10.x.
 
 <div class="doc-callout"><em>Note</em>: Node.js 7.x is under active development and is not recommended
-for a stable base. Many 3rd party node packages may not yet fully support Node 6.x and later, especially if they
+for a stable base. Many 3rd party node packages may not yet fully support Node 7.x and later, especially if they
 contain a binary component. Check with the author of the package if you are not sure.</div>
 
 You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
