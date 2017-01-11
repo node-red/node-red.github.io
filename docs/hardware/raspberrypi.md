@@ -15,11 +15,12 @@ You can then start [using the editor](#using-the-editor).
 As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
 the SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
 
-If you already have the minimal version of Jessie, or other Debian based install, that doesn't have Node-RED already installed,
-you can install or upgrade using the Node-RED upgrade script
+If you have the minimal version of Jessie, or other Debian based install, that doesn't have Node-RED
+already installed, you can install or upgrade using the Node-RED upgrade script
 
     wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered -O update-nodejs-and-nodered
-    update-nodejs-and-nodered
+    bash update-nodejs-and-nodered
+
 
 **Note:** If you have upgraded to **node.js 4.x** or more recent then you cannot use apt-get to upgrade the pre-installed version of Node-RED.
 
@@ -102,7 +103,8 @@ The simplest way to install Node.js and other dependencies is
 
     sudo apt-get install build-essential python-rpi.gpio
     wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered -O update-nodejs-and-nodered
-    update-nodejs-and-nodered
+    bash update-nodejs-and-nodered
+    
 
 **Note**: Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer support, and so documentation is now aimed at Jessie as a minimum.
 
