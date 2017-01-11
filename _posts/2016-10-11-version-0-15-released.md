@@ -167,7 +167,7 @@ dependency**.
 That means we'll no longer include the Serial node as part of the core
 install.
 
-It will remove a lot of hardware/platform dependant code, speeding up the install
+It will remove a lot of hardware/platform dependent code, speeding up the install
 time and shrinking the runtime footprint for users who have no need of the node.
 
 It will also make upgrading more reliable as the serial port code will no longer be buried within Node-RED and can be upgraded just like any other node.
