@@ -27,13 +27,15 @@ already installed, you can install or upgrade using the Node-RED upgrade script
 
 As of Node-RED version 0.14.x the upgrade script is pre-installed and will do a full upgrade to the latest nodejs LTS and latest release version of Node-RED.
 
-**Note** - it runs many commands as *sudo* and does delete existing nodejs and the core Node-RED directories.
+The script runs many commands as *sudo* and does delete existing nodejs and the core Node-RED directories.
 If you have installed any extra nodes or npm *globally* (ie anything NOT installed in the `~/.node-red` directory)
 then please ensure you back them up first - usually from `/usr/lib/node_modules`.
 
 To upgrade, run the following command as your normal user (typically `pi`):
 
     update-nodejs-and-nodered
+
+**Note** - If the serialport nodes do not appear when you restart, please re-run the update command.
 
 **Caveat emptor.** The script has only been tested on installs with a small variety
 of the possible extra nodes. The script also tries to rebuild any nodes with native
