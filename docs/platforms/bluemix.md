@@ -71,10 +71,10 @@ using the [`cf` command-line tool](https://console.ng.bluemix.net/docs/cli/refer
 If you deployed your instance before then, you will need to take some additional
 steps:
 
-    1. edit your application's `package.json` file - see below for how to edit the file
-    2. update the `engines` property to `4.x` if it is not currently set to that
-    3. update the `node-red` property under the `dependencies` section to the
-       version of Node-RED you want to upgrade to.
+1. edit your application's `package.json` file - see below for how to edit the file
+2. update the `engines` property to `4.x` if it is not currently set to that
+3. update the `node-red` property under the `dependencies` section to the
+   version of Node-RED you want to upgrade to.
 
 
 In order to edit the file you must enable the Continuous Delivery integration
