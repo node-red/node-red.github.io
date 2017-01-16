@@ -14,7 +14,7 @@ We also provide a '[Deploy To Bluemix](#deploy-to-bluemix)' enabled repository.
 
 1. Log in or sign-up for an account at [Bluemix.net](http://bluemix.net)
 
-2. Navigate to the catalog and [search for 'Node-RED'](https://new-console.ng.bluemix.net/catalog/starters?search=Node-RED)
+2. Navigate to the catalog and [search for 'Node-RED'](https://console.ng.bluemix.net/catalog/starters?search=Node-RED)
 
 3. This will present you with two options:
 
@@ -50,23 +50,46 @@ edit the settings file:
 
 ##### Adding nodes
 
-In order to add nodes you need to edit the application's `package.json` file and
+You can add nodes from within the editor. Select the `manage palette` option from
+the dropdown menu within the editor.
+
+Alternatively, you can edit the the application's `package.json` file and
 add the required node modules in the `dependencies` section. The format is:
 `"node-red-node-package-name":"x.x.x"` Where x.x.x is the desired version number.
 
+##### Upgrading the version of Node-RED
+
+How you upgrade your instance of Node-RED will depend on when you deployed it
+originally as that will determine the version of the boilerplate and the version
+of the node.js buildpack used.
+
+If you deployed your instance after November 2016, you can trigger a restage
+using the [`cf` command-line tool](https://console.ng.bluemix.net/docs/cli/reference/cfcommands/index.html):
+
+    $ cf restage my-app
+
+If you deployed your instance before then, you will need to take some additional
+steps:
+
+    1. edit your application's `package.json` file - see below for how to edit the file
+    2. update the `engines` property to `4.x` if it is not currently set to that
+    3. update the `node-red` property under the `dependencies` section to the
+       version of Node-RED you want to upgrade to.
+
+
+In order to edit the file you must enable the Continuous Delivery integration
+option via your application's Bluemix dashboard page. That will create a git repository
+on either GitHub or IBM DevOps services, from where you can edit the file, save the
+changes and automatically update the application in Bluemix.
+
+
 ##### Changing the static web content
 
-The page you are reading now is served as static content from the application.
+The landing page of your instance is provide by static content with the application.
 This can be replaced with whatever content you want in the `public` directory.
 
 If you want to remove the static web content and serve the flow editor from the
 root path, delete the `httpStatic` and `httpAdminRoot` entries in the `bluemix-settings.js` file.
-
-
-##### Upgrading the version of Node-RED
-
-The boilerplate is configured to grab the latest stable release of Node-RED whenever the
-application is restaged into Bluemix. You can trigger a restage using the [`cf` command-line tool](https://console.ng.bluemix.net/docs/cli/reference/cfcommands/index.html).
 
 ---
 
