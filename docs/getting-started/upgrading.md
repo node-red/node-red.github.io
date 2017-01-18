@@ -4,12 +4,12 @@ title: Upgrading
 ---
 
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
-on Raspian Jessie, please use the `update-nodejs-and-nodered` script as referred to in <a href="/docs/hardware/raspberrypi#upgrading">these instructions for upgrading a Pi</a>.</div>
+on Raspian Jessie, please use the `update-nodejs-and-nodered` script as referred to in <a href="/docs/hardware/raspberrypi">these instructions for <b>upgrading a Pi</b></a>.</div>
 
 Currently we recommend the use of npm version 2 or 3, (4 is NOT recommended), please check which version you
 have installed by running the command `npm -v` before upgrading. If necessary run
 
-    sudo npm i -g npm@2.x
+    sudo npm i -g npm@3.x
     hash -r
 
 If you have installed Node-RED as a global npm package, you can upgrade to the

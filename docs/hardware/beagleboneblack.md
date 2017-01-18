@@ -3,13 +3,25 @@ layout: default
 title: Running on BeagleBone Boards
 ---
 
-The latest 4GB images for BeagleBone boards already have Node-RED installed into it's OS so you can just start running with the `node-red` command. You can use the intructions below to upgrade to later versions if you wish.
+The latest 4GB images for BeagleBone boards already have Node-RED pre-installed so you can just start running with the `node-red` command.
 
 The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to install as per below.
 
 <div class="doc-callout">
 These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
 </div>
+
+#### Upgrading 4GB images
+
+As they already have node.js 4.x installed - the easiest way to upgrade is to over-install the latest version:
+
+    sudo npm cache clean
+    sudo npm install -g --unsafe-perm node-red
+
+Then stop and restart Node-RED.
+
+**Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both node.js and Node-RED
+in different locations and will conflict with the existing systemd configuration files.
 
 #### Before you start
 
@@ -27,10 +39,10 @@ software certificates date checks to be valid.
 
 #### Updating node.js
 
-We recommend using node.js LTS 4.x.
+We recommend using node.js LTS 4.x or 6.x
 
     sudo apt-get install curl
-    curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     sudo apt-get install -y build-essential nodejs
     hash -r
 
