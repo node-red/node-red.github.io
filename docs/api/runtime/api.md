@@ -12,7 +12,7 @@ RED          | API entry point returned by `require('node-red');`
 &nbsp;&nbsp;[.httpNode](#httpNode)               | The node express application
 &nbsp;&nbsp;[.server](#server)                   | The http server instance
 RED.auth     | Authentication middleware
-&nbsp;&nbsp;&nbsp;&nbsp;[.needsPermissions(permission)](#needsPermissions) | Middleware used to ensure a user has a specific permission
+&nbsp;&nbsp;&nbsp;&nbsp;[.needsPermission(permission)](#needsPermission) | Middleware used to ensure a user has a specific permission
 RED.comms    |
 &nbsp;&nbsp;&nbsp;&nbsp;[.publish(msg)](#publish)| Send a message to the editor
 RED.library  |
@@ -83,7 +83,7 @@ RED.util     | Common utilities
 
 #####<a name="server"></a> RED.server
 
-#####<a name="needsPermissions"></a> RED.auth.needsPermissions(permission)
+#####<a name="needsPermission"></a> RED.auth.needsPermission(permission)
 
 #####<a name="publish"></a> RED.comms.publish(msg)
 
