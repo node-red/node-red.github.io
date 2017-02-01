@@ -5,20 +5,20 @@ title: Installation
 
 ### Install node.js
 
-We recommend the use of node.js LTS 4.x or 6.x . Node-RED no longer supports node.js 0.10.x or 0.12.x.
+We recommend the use of node.js LTS 6.x or 6.x . Node-RED no longer supports node.js 0.10.x or 0.12.x.
 <div class="doc-callout"><em>Note</em>: Node.js 7.x is under active development and is not recommended
 for a stable base. Many 3rd party node packages may not yet fully support Node 7.x and later, especially if they
 contain a binary component. Check with the author of the package if you are not sure.</div>
 
-You can get the latest Long Term Support (LTS) version of Node <code>4.x</code> from:
+You can get the latest Long Term Support (LTS) version of Node <code>6.x</code> from:
 
- - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v4.x/node-v4.7.2.pkg)
- - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.2-x86.msi)
+ - Max OS X Installer: [Universal](https://nodejs.org/dist/latest-v6.x/node-v6.9.5.pkg)
+ - Windows Installer: [32-bit](https://nodejs.org/dist/latest-v6.x/node-v6.9.5-x86.msi)
                       or
-                      [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.2-x64.msi)
- - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.2-linux-x86.tar.gz)
+                      [64-bit](https://nodejs.org/dist/latest-v6.x/node-v6.9.5-x64.msi)
+ - Linux Binaries: [32-bit](https://nodejs.org/dist/latest-v6.x/node-v6.9.5-linux-x86.tar.gz)
                     or
-                    [64-bit](https://nodejs.org/dist/latest-v4.x/node-v4.7.2-linux-x64.tar.gz)
+                    [64-bit](https://nodejs.org/dist/latest-v6.x/node-v6.9.5-linux-x64.tar.gz)
 
 It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
 specifically for your operating system.
@@ -28,7 +28,7 @@ We also have specific instructions available for certain hardware platforms:
  - [Raspberry Pi](../hardware/raspberrypi)
  - [BeagleBone Black](../hardware/beagleboneblack)
 
-Other download options are available [here](https://nodejs.org/dist/latest-v4.x/).
+Other download options are available [here](https://nodejs.org/dist/latest-v6.x/).
 
 ### Install Node-RED
 
