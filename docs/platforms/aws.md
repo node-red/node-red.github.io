@@ -3,12 +3,13 @@ layout: default
 title: Running on Amazon Web Services
 ---
 
-This guide takes you through the steps to get Node-RED running on an AWS EC2
-instance. It has two variants:
-1. Running node-red on the AWS Elastic Beanstalk Service (EBS)
-2. Running node-red on an Ubuntu image for AWS EC2
+This guide takes you through the steps to get Node-RED running in an AWS environment.
 
-## Running node-red on AWS EBS
+There are two approaches:
+1. [Running on the AWS Elastic Beanstalk Service (EBS)](#running-on-aws-eps)
+2. [Running under an Ubuntu image on AWS EC2](#running-on-aws-ec2-with-ubuntu)
+
+## Running on AWS EBS
 
 #### Prerequisites
 
@@ -18,31 +19,32 @@ instance. It has two variants:
 
 3. Create AWS credentials and save in a local file (~/.aws/config or Usersusername.awsconfig) as below
 
- ```
+    ```
 [profile eb-cli]
 aws_access_key_id = key id
 aws_secret_access_key = access key
 ```
+
 #### Create EB Environment
 
-1. Create a new directory (e.g. demoapp)
+1. Create a new directory (e.g. `demoapp`)
 
 2. cd to that directory
 
-3. run eb init to create a new elastic beanstalk project. select preferred region and use node.js as the plaform
+3. run `eb init` to create a new elastic beanstalk project. select preferred region and use node.js as the plaform
 You will be asked if you wish to use ssh. If you do, please ensure you have ssh installed on your computer if you wish to generate a new key pair.
 
 4. Login to the AWS Console on your browser, select Identity and Access Management (IAM) and add the AmazonS3FullAccess policy to the aws-elasticbeanstalk-ec2-role. Note: this gives full access from EBS to S3 and you may wish to tailor this policy to meet your own security needs
 
-#### Create node-red environment
+#### Create a Node-RED environment
 
-1. Create a package.json file with the following content (replacing "demoapp" with your app name)
+1. Create a `package.json` file with the following content (replacing "demoapp" with your app name)
 
-```javascript
+    ```javascript
 {   
     "name": "demoapp",
     "version": "1.0.0",
-    "description": "nodered demo app",
+    "description": "node-red demo app",
     "main": "",
     "scripts": {
         "start": "./node_modules/.bin/node-red -s ./settings.js"
@@ -62,21 +64,21 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
 }
 ```
 
-2. Copy the default node-red settings.js file at this link [link] (https://github.com/node-red/node-red/blob/master/settings.js) and store in the demoapp directory
+2. Copy the default [Node-RED settings.js file](https://github.com/node-red/node-red/blob/master/settings.js) to the demoapp directory
 
 3. Edit the settings.js file to add the following entries to module.exports (setting awsRegion to that used in eb init and replacing demoapp with your app name) :
 
-```
+    ```
      awsRegion: 'eu-west-1',
      awsS3Appname: 'demoapp',
      storageModule: require('node-red-contrib-storage-s3'),
 ```
 
-4. At the command prompt make sure you are in the your application's top-level directory and run the command “eb create” you may wish to specify a more unique  application name. This will take a long time to run but eventually will return successfully. 
+4. At the command prompt make sure you are in the your application's top-level directory and run the command `eb create`; you may wish to specify a more unique application name. This will take a long time to run but eventually will return successfully. 
 
-#### Configuring node-red access
+#### Configuring Node-RED access
 
-Node red is now accessible directly from the web url of the application. However this is insecure and does not work very well for logging. Instead we will configure direct access to the administration port of node-red on the ec2 instance it is using.
+Node-RED is now accessible directly from the web url of the application. However this is insecure and does not work very well for logging. Instead we will configure direct access to the administration port of node-red on the ec2 instance it is using.
 
 1. In the AWS Console, select EC2, then select security groups. You will see a set of security groups. Select one with a name of your environment and a description of "Security Group for ElasticBeanstalk Environment". Once selected, click on "Actions" and then "Edit inbound settings". A dialog box with rules with appear. Add a new rule. Set type to "all traffic" and source to "my ip". Save the rule.  
 
@@ -84,12 +86,12 @@ Node red is now accessible directly from the web url of the application. However
 
 3. Enter the IP address in the browser with a port of 8081. This will provide direct access to the node-red adminstration console.
 
-note: the public IP address also provides access to the node-red application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
+Note: the public IP address also provides access to the node-red application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
 
-Your node-red instance is now running on EBS. Any flows you create will be saved to AWS S3 so you can tear down the environment and the flows will be accessible whenever you redeploy.
+Your Node-RED instance is now running on EBS. Any flows you create will be saved to AWS S3 so you can tear down the environment and the flows will be accessible whenever you redeploy.
 
 
-## Running node-red on AWS EC2 with Ubuntu
+## Running on AWS EC2 with Ubuntu
 
 #### Create the base EC2 image
 
