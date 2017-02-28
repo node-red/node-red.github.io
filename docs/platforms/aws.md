@@ -7,7 +7,7 @@ This guide takes you through the steps to get Node-RED running in an AWS environ
 
 There are two approaches:
 
-1. [Running on the AWS Elastic Beanstalk Service (EBS)](#running-on-aws-eps)
+1. [Running on the AWS Elastic Beanstalk Service (EBS)](#running-on-aws-ebs)
 2. [Running under an Ubuntu image on AWS EC2](#running-on-aws-ec2-with-ubuntu)
 
 ## Running on AWS EBS
