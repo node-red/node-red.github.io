@@ -59,6 +59,8 @@ editor. It is an object with the following properties:
 - `paletteLabel`: (string\|function) the [label](appearance#label) to use in the palette.
 - `label`: (string\|function) the [label](appearance#label) to use in the workspace.
 - `labelStyle`: (string\|function) the [style](appearance#label-style) to apply to the label.
+- `inputLabels`: (string\function) optional [label](appearance#port-labels) to add on hover to the input port of a node.
+- `outputLabels`: (string\function) optional [labels](appearance#port-labels) to add on hover to the output ports of a node.
 - `icon`: (string) the [icon](appearance#icon) to use.
 - `align`: (string) the [alignment](appearance#alignment) of the icon and label.
 - `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behaviour).
