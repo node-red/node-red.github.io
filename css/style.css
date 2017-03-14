@@ -1,7 +1,7 @@
 body {
     color: #555;
     background: #eee;
-    font-family: Arial;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.6em;
 }
@@ -61,10 +61,15 @@ h4 {
 }
 .header-content .brand {
     display: inline-block;
-    width: 160px;
-    color: #f6f6f6;
     float: left;
-    margin-top: 5px;
+    margin-top: 3px;
+}
+.header-content .brand a {
+    display: block;
+    font-size: 20px;
+    border-bottom: 5px solid #333;
+    padding: 0 15px 0 15px;
+    color: #eee;
 }
 .header-content .logo {
     vertical-align: middle;
@@ -99,7 +104,7 @@ h4 {
     text-decoration: none;
     color: #eee;
 }
-.header ul a:hover {
+.header a:hover {
     border-bottom: 5px solid #eee;
 }
 

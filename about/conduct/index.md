@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: aboutSingle
 title: Contributor Covenant Code of Conduct
 ---
 

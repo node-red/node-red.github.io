@@ -1,0 +1,15 @@
+{% include header.html %}
+<div class="docs">
+  <div class="grid">
+    <div class="col-3-12">
+      {% include about-toc.html %}
+    </div>
+    <div class="col-9-12">
+      <div class="docs-content">
+        <h1 class="docs-title">{{ page.title }}</h1>
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+{% include footer.html %}

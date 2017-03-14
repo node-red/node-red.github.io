@@ -6,6 +6,8 @@
 	<title>Node-RED{% if page.title %} : {{ page.title }}{% endif %}</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
 	<link href="/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<script src="/jquery/js/jquery-1.9.1.js"></script>
 	<link href="/css/simplegrid.css" rel="stylesheet" media="screen">
@@ -32,13 +34,14 @@
 
 <div class="header">
     <div class="header-content">
-        <div class="brand"><a href="/"><img class="logo" src="/node-red.png" /> Node-RED</a></div>
+        <div class="brand"><a href="/">Node-RED</a></div>
         <ul class="navigation">
-            <li {% if page.url == "/index.html" %}class="current"{% endif %}><a href="/">home</a></li>
-            <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="https://nodered.org/blog">blog</a></li>
+            <li {% if page.url == "/" %}class="current"{% endif %}><a href="/">home</a></li>
+            <li {% if page.url contains '/about/' %}class="current"{% endif %}><a href="/about/">about</a></li>
+            <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="/blog/">blog</a></li>
             <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
             <li><a href="https://flows.nodered.org/">flows</a></li>
-            <li><a href="https://github.com/node-red/node-red">github</a></li>
+            <li><a href="https://github.com/node-red">github</a></li>
         </ul>
         <a href="#" class="menu"><i class="icon-reorder icon-2x"></i></a>
     </div>
