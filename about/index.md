@@ -16,8 +16,8 @@ data on. The network is responsible for the flow of data between the nodes.
 
 It is a model that lends itself very well to a visual representation and makes
 it more accessible to a wider range of users. If someone can break down a problem
-into discrete steps they can look at a flow and get a sense of what it is doing
- - without having to understand the individual lines of code within each node.
+into discrete steps they can look at a flow and get a sense of what it is doing;
+without having to understand the individual lines of code within each node.
 
 ## Runtime/Editor
 
