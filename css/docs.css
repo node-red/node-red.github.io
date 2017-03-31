@@ -219,4 +219,15 @@ code.node {
     ul.toc.open li.toc-expander div {
         transform: rotate(180deg);
     }
+
+    .doc-items li {
+        width: calc(50% - 30px);
+    }
+}
+
+@media handheld, only screen and (max-width: 450px) {
+    .doc-items li {
+        width: 100%;
+    }
+
 }
