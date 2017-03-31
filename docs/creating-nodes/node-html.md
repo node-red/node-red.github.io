@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+toc: creating-nodes-toc.html
 title: HTML File
 ---
 

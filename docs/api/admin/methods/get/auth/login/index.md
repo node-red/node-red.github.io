@@ -1,5 +1,6 @@
 ---
-layout: api
+layout: docs
+toc: api-toc.html
 title: GET /auth/login
 ---
 Get the active authentication scheme

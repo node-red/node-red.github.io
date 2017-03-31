@@ -61,22 +61,4 @@
         </ul>
     </li>
 </ul>
-
-<script>
-$(function() {
-    $(".toc-expander").click(function() {
-        if ($("ul.toc").hasClass('open')) {
-            $("ul.toc").removeClass('open');
-        } else {
-            $("ul.toc").addClass('open');
-        }
-    })
-});
-//$(function() {
-//    $("li.tocheader ul").hide();
-//    $("li.tocheader a.active").parent().parent().show();
-//    $("li.tocheader>span").click(function(e) {
-//        $(this).next().toggle("fast");
-//    });
-//});
-</script>
+{% include toc-footer.html %}

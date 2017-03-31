@@ -1,5 +1,6 @@
 ---
-layout: api
+layout: docs
+toc: api-toc.html
 title: Authentication
 ---
 The Node-RED admin API is secured using the `adminAuth` property in your `settings.js`

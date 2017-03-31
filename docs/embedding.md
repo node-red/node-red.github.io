@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: docs
+toc: user-guide-toc.html
 title: Embedding into an existing app
----   
+---
 
 It is possible to embed Node-RED into a larger application. A typical scenario
 would be where you use Node-RED to generate flows of data that you want to
@@ -50,7 +51,7 @@ server.listen(8000);
 // Start the runtime
 RED.start();
 {% endhighlight %}
-    
+
 When this approach is used, the `settings.js` file included with Node-RED is not
 used. Instead, the settings are passed to the `RED.init` call as shown above.
 
@@ -64,5 +65,3 @@ configure the Express instance as you want it:
  - `httpStatic`
  - `httpStaticAuth`
  - `https`
-
-

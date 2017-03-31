@@ -1,10 +1,8 @@
 ---
-layout: api
-title: Documentation
+layout: docs
+toc: api-toc.html
+title: API Reference
 ---
-## Overview
-
-Welcome to the Node-RED API documentation.
 
 ### [Admin HTTP API](admin)
 

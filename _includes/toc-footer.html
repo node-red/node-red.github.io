@@ -1,0 +1,32 @@
+
+<!-- <ul class="toc">
+    <li class="tocheader">
+        <ul>
+            <li><a href="/docs/getting-started/">Getting Started</a></li>
+            <li><a href="/docs/user-guide/">User Guide</a></li>
+            <li><a href="https://cookbook.nodered.org">Cookbook</a></li>
+            <li><a href="/docs/creating-nodes/">Creating Nodes</a></li>
+            <li><a href="#">Developing the core</a></li>
+            <li><a href="/docs/api/">API Reference</a></li>
+        </ul>
+    </li>
+</ul> -->
+
+<script>
+$(function() {
+    $(".toc-expander").click(function() {
+        if ($("ul.toc").hasClass('open')) {
+            $("ul.toc").removeClass('open');
+        } else {
+            $("ul.toc").addClass('open');
+        }
+    })
+});
+//$(function() {
+//    $("li.tocheader ul").hide();
+//    $("li.tocheader a.active").parent().parent().show();
+//    $("li.tocheader>span").click(function(e) {
+//        $(this).next().toggle("fast");
+//    });
+//});
+</script>

@@ -1,5 +1,6 @@
 ---
-layout: api
+layout: docs
+toc: api-toc.html
 title: POST /auth/revoke
 ---
 

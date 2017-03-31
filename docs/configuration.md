@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+toc: user-guide-toc.html
 title: Configuration
 ---
 The following properties can be used to configure Node-RED.

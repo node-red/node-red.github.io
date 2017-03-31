@@ -1,3 +1,50 @@
+.docs-intro {
+    background: #8f0000;
+    border-top: 10px solid #a22222;
+}
+.docs-intro .content {
+    height: 100px;
+}
+.docs-intro h1 {
+    text-align: center;
+    font-size: 2em;
+    margin: 80px 0 100px 0;
+    padding:0;
+    color: #f0f0f0;
+    font-weight: normal;
+}
+.doc-items {
+    list-style-type: none;
+    padding: 0;
+    margin:0 30px 0;
+}
+.doc-items li {
+    box-sizing: border-box;
+    background: #eee;
+    display: inline-block;
+    width: calc(33% - 30px);
+    margin: 10px 10px 50px 10px;
+}
+.doc-items li a.box-link {
+    padding: 15px 10px;
+    width: 100%;
+    height: 100%;
+}
+.doc-items img {
+    vertical-align: top;
+    margin-top: -50px;
+}
+.doc-items h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+.doc-items li a.box-link:hover h2 {
+    color: #eee;
+}
+.doc-item-info {
+    padding: 10px;
+}
 .docs {
     background: #eee;
     font-size: 16px;
@@ -27,7 +74,7 @@ ul.toc ul {
     padding: 0;
 }
 
-ul.toc li a, ul.toc li span {
+ul.toc li:not(.tocheader) a, ul.toc li span {
     padding: 6px 10px;
     display: block;
     width: 100%;
@@ -37,18 +84,24 @@ ul.toc li a, ul.toc li span {
     -border-right: 2px solid #B68181;
     -margin-bottom: 3px;
 }
+ul.toc li.tocheader > span a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
 ul.toc li.tocheader {
     margin-top: 3px;
 }
-ul.toc li.active a {
+ul.toc li:not(.tocheader).active a {
     border-left-color: #B68181;
     -border-right-color: #eee;
     background: #eee;
 }
-ul.toc li a:hover {
+ul.toc li:not(.tocheader) a:hover {
     border-left-color: #B68181;
 }
-ul.toc li.tocheader span {
+ul.toc li.tocheader > span {
     background: #B68181;
     border-left-color: #B68181;
     color: #fff;
@@ -59,7 +112,7 @@ ul.toc li.tocsubheader span {
     color: #666;
     padding-left: 20px;
 }
-ul.toc li li a {
+ul.toc li.tocheader li:not(.toctitle) a {
     padding-left: 40px;
 }
 

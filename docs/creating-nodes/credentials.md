@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+toc: creating-nodes-toc.html
 title: Node credentials
 ---
 
@@ -15,12 +16,12 @@ To add credentials to a node, the following steps are taken:
             username: {type:"text"},
             password: {type:"password"}
         },
-   
+
    The entries take a single option - their `type` which can be either `text` or
    `password`.
 
 2. Add suitable entries to the edit template for the node
-   
+
         <div class="form-row">
             <label for="node-input-username"><i class="icon-tag"></i> Username</label>
             <input type="text" id="node-input-username">
@@ -32,10 +33,10 @@ To add credentials to a node, the following steps are taken:
 
     Note that the template uses the same element `id` conventions as regular
     node properties.
-    
+
 3. In the node's `.js` file, the call to `RED.nodes.registerType` must be updated
    to include the credentials:
-   
+
         RED.nodes.registerType("my-node",MyNode,{
             credentials: {
                 username: {type:"text"},
@@ -84,4 +85,3 @@ that get provided by the user.
 For example, for a node to support an OAuth workflow, it must retain server-assigned
 tokens that the user never sees. The Twitter node provides a good example of how
 this can be achieved.
-

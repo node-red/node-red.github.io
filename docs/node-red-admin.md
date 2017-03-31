@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+toc: user-guide-toc.html
 title: Command-line Administration
 ---
 

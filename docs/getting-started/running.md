@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: docs
+toc: getting-started-toc.html
 title: Running
 ---
 

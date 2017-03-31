@@ -1,6 +1,7 @@
 .title {
     background: url(../images/title-wave.png) no-repeat 0% 100% #8f0000 ;
     border-top: 10px solid #a22222;
+    text-align: center;
 }
 .intro, .nodes {
     background: #eee;
@@ -92,7 +93,6 @@ a:hover {
 }
 .title .content {
     height: 280px;
-    text-align: center;
 }
 .title h1 {
     margin-top: 20px;
