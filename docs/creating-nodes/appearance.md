@@ -214,8 +214,8 @@ align: 'right',
 
 #### Port labels
 
-Nodes can optionally provide labels on their input and output ports, that can be seen my
-hovering the mouse over the port.
+From Node-RED version **0.17** onwards nodes can optionally provide labels on their input
+and output ports, that can be seen by hovering the mouse over the port.
 
 <div style="text-align:center">
     <img title="port labels" src="images/node-labels.png"/>
