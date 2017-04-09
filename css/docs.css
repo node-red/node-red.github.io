@@ -129,8 +129,13 @@ ul.toc li.tocheader li:not(.toctitle) a {
     border-radius: 3px;
     border: 1px solid #BE9A9A;
 }
-pre,code {
+pre,code,.code {
     font-family: 'Ubuntu Mono', Monospace;
+}
+.code {
+    color: #533;
+    background: #F3E7E7;
+    padding: 2px;
 }
 code {
     color: #533;

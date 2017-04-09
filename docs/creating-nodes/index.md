@@ -6,9 +6,6 @@ title: Creating Nodes
 
 The main way Node-RED can be extended is to add new nodes into its palette.
 
-*This guide is still being written - please provide any feedback to the
-[mailing list](https://groups.google.com/forum/#!forum/node-red)*
-
 The following sections exist and are largely complete:
 
  - [Creating your first node](first-node)
@@ -19,7 +16,10 @@ The following sections exist and are largely complete:
  - [Node appearance](appearance)
  - [Node status](status)
  - [Configuration nodes](config-nodes)
+ - [Help style guide](help-style-guide)
  - [Packaging](packaging)
+ - [Internationalisation](i18n)
+
 
 To do:
 

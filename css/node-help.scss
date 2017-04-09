@@ -1,0 +1,107 @@
+---
+---
+
+.node-help {
+    ul,ol {
+        padding: 0 0 0 2em;
+        margin: 0;
+    }
+    font-size: 14px;
+    line-height: 1.5em;
+    p {
+        margin: 0 0 10px;
+    }
+    h1 {
+        font-weight: 500;
+        font-size: 1.296em;
+        line-height: 1.3em;
+        margin: 8px auto;
+    }
+    h2 {
+        font-weight: 500;
+        font-size: 1.215em;
+        margin: 8px auto;
+        line-height: 1.3em;
+    }
+    h3 {
+        font-weight: 500;
+        font-size: 1.138em;
+        margin: 7px auto 5px;
+        line-height: 1.3em;
+    }
+    h4,
+    h5 {
+        font-weight: 500;
+        font-size: 1.067em;
+        line-height: 1.3em;
+        margin: 8px auto 5px;
+    }
+    & > span > p:first-child {
+    }
+    dl.message-properties {
+        border: 1px solid #ddd;
+        border-radius: 2px;
+
+        margin: 5px auto 10px;
+        &>dt {
+            padding: 0px 3px 2px 3px;
+            font-family: monospace;
+            font-weight: normal;
+            margin: 5px 3px 1px;
+            color: #AD1625;
+            white-space: nowrap;
+            &.optional {
+                font-style: italic;
+
+            }
+            .property-type {
+                font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+                color: #666;
+                font-style: italic;
+                font-size: 11px;
+                float: right;
+            }
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        }
+        &>dd {
+            margin: 0px 8px 2px 13px;
+            vertical-align: top;
+        }
+    }
+    ol.node-ports {
+        margin: 0;
+        padding: 0;
+        li {
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            list-style-position: inside;
+            padding: 3px;
+            margin-bottom: 5px;
+            dl.message-properties {
+                border: none;
+            }
+        }
+    }
+    .node-info-header {
+        i {
+            width: 10px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+            margin-right: 4px;
+        }
+        color: #333;
+        &:hover, &:focus {
+            text-decoration: none;
+        }
+        &.expanded {
+            i {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+}
