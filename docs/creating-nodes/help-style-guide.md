@@ -27,7 +27,7 @@ a consistent appearance between nodes.
 <div class="grid" style="min-height:auto; padding:5px 0 5px; border-bottom: 1px solid #f0f0f0;">
     <div class="col-1-2">
         If the node has an input, this section describes the properties of the
-        message the node will uses. The expected type of each property can also
+        message the node will use. The expected type of each property can also
         be provided. The description should be brief - if further description is
         needed, it should be in the Details section.
     </div>
@@ -69,7 +69,7 @@ a consistent appearance between nodes.
   </div>
  <div class="grid" style="min-height:auto; padding:5px 0 5px; border-bottom: 1px solid #f0f0f0;">
      <div class="col-1-2">
-        <p>This sections provides more detailed information about the node. It should
+        <p>This section provides more detailed information about the node. It should
         explain how it should be used, providing more information on its inputs/outputs.</p>
         <p></p>
      </div>
@@ -236,6 +236,7 @@ it is. They should be wrapped in `<code>` tags.
 The interesting part is in <code>msg.payload</code>.
 ~~~~~
 
+No other styling markup (e.g. `<b>`,`<i>`) should be used within the body of the help text.
 
 The help should not assume the reader is an experienced developer or deeply familiar
 with whatever the node exposes; above all, it needs to be helpful.
