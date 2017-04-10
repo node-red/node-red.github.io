@@ -9,6 +9,7 @@ There's lots more to write in this guide, we're just getting started.
 
 - [Configuring Node-RED](/docs/configuration)
 - [Security](/docs/security)
+- [Logging](/docs/user-guide/logging)
 - [Command-line Admin](/docs/node-red-admin)
 - [Using the Function node](/docs/writing-functions)
 - [Embedding into an existing app](/docs/embedding)

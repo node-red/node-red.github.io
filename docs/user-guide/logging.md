@@ -96,7 +96,7 @@ logging: {
         }
     }
 }
-~~~~
+
 
 The `level`, `metrics` and `audit` properties are the same as console logging.
 
