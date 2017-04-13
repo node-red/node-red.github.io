@@ -95,6 +95,8 @@ this.on('close', function(done) {
 });
 {% endhighlight %}
 
+Note that node-red will wait indefinitely for the `done()` call.
+
 ### Logging events
 
 If a node needs to log something to the console, it can use one of the follow functions:
