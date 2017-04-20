@@ -95,3 +95,14 @@ POST to `/auth/revoke`:
 <div class="doc-callout"><em>curl example</em>:
 <pre>curl --data 'token=A_SECRET_TOKEN' -H "Authorization: Bearer A_SECRET_TOKEN" http://localhost:1880/auth/revoke</pre>
 </div>
+
+### A note on paths
+
+The above assumes that you are using the http scheme rather than https. It also assumes that you have not used the `httpAdminRoot` setting to change the path that admin resources are delivered from.
+
+If you have changed either of those, you will need to adjust the paths given in the examples.
+
+<div class="doc-callout"><em>adjusted curl example</em>:<br>
+Assuming <code>httpAdminRoot</code> is set to <code>red</code> and <code>https</code> is configured
+<pre>curl https://localhost:1880/red/auth/login</pre>
+</div>
