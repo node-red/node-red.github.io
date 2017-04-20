@@ -54,7 +54,7 @@ The API is secured by access token.
 ### Step 1 - Obtain an access token
 
 An HTTP POST to `/auth/token` is used to exchange user credentials for an access
-token.
+token. This path is only available if an authentication scheme is enabled (see above).
 
 The following parameters must be provided:
 
