@@ -36,9 +36,9 @@ property called `prefix` to the node:
 
         function LowerCaseNode(config) {
             RED.nodes.createNode(this,config);
-            this.prefix = config.prefix;
             var node = this;
-            this.on('input', function(msg) {
+            node.prefix = config.prefix;
+            node.on('input', function(msg) {
                 msg.payload = node.prefix + msg.payload.toLowerCase();
                 node.send(msg);
             });
