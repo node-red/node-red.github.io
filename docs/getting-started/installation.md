@@ -4,6 +4,14 @@ toc: getting-started-toc.html
 title: Installation
 ---
 
+### Install on Linux
+
+Install Node-RED in seconds on [Ubuntu and other snap supported Linux distributions](https://snapcraft.io/docs/core/install) with:
+
+    snap install node-red--beta
+
+Installing a snap is very quick. Snaps are secure. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
+
 ### Install node.js
 
 We recommend the use of node.js LTS 6.x or 6.x . Node-RED no longer supports node.js 0.10.x or 0.12.x.
