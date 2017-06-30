@@ -11,15 +11,31 @@ suitable if you are running on a trusted network.
 This section describes how you can secure Node-RED. The security is split into
 two parts:
 
- - the [editor and admin API](#editor--admin-api-security)
- - the [HTTP Nodes and static content](#http-node-security).
+- the [editor and admin API](#editor--admin-api-security)
+  - [Username/password based authentication](#usernamepassword-based-authentication)
+    - [Generating the password hash](#generating-the-password-hash)
+  - [OAuth/OpenID based authentication](#oauthopenid-based-authentication)
+  - [Setting a default user](#setting-a-default-user)
+  - [User permissions](#user-permissions)
+  - [Token expiration](#token-expiration)
+  - [Accessing the Admin API](#accessing-the-admin-api)
+  - [Custom user authentication](#custom-user-authentication)
+- the [HTTP Nodes, Dashboard and static content](#http-node-security)
 
 ### Editor & Admin API security
+
+The Editor and Admin API supports two types of authentication:
+
+ - username/password credential based authentication
+ - *since Node-RED 0.17:* authentication against any OAuth/OpenID provider such
+   as Twitter or GitHub
+
+#### Username/password based authentication
 
 To enable user authentication on the Editor and Admin API, add the following to
 your `settings.js` file:
 
-{% highlight javascript %}
+```javascript
 adminAuth: {
     type: "credentials",
     users: [{
@@ -28,7 +44,7 @@ adminAuth: {
         permissions: "*"
     }]
 }
-{% endhighlight %}
+```
 
 The `users` property is an array of user objects. This allows you to define
 multiple users, each of whom can have different permissions.
@@ -43,7 +59,7 @@ could be used to enable HTTP Basic Authentication on the editor. This option is
 deprecated and should not be used.
 </div>
 
-#### Generating the password hash
+##### Generating the password hash
 
 To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin)
 command-line tool:
@@ -58,18 +74,75 @@ directory:
 
     node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here
 
+#### OAuth/OpenID based authentication
+
+*Since Node-RED 0.17*
+
+To use an external authentication source, Node-RED can take use a wide range of
+the strategies provided by [Passport](http://passportjs.org/).
+
+Node-RED authentication modules are available for both [Twitter](https://www.npmjs.com/package/node-red-auth-twitter)
+and [GitHub](https://www.npmjs.com/package/node-red-auth-github). They wrap up
+some of the strategy-specific detail to make it easier to use. But they can also
+be used as a template for authenticating with other similar strategies.
+
+The following example shows how to configure to authenticate against Twitter
+_without_ using the auth module we provide.
+
+```javascript
+adminAuth: {
+    type:"strategy",
+    strategy: {
+        name: "twitter",
+        label: 'Sign in with Twitter',
+        icon:"fa-twitter",
+        strategy: require("passport-twitter").Strategy,
+        options: {
+            consumerKey: TWITTER_APP_CONSUMER_KEY,
+            consumerSecret: TWITTER_APP_CONSUMER_SECRET,
+            callbackURL: "http://example.com/auth/strategy/callback"
+        },
+        verify: function(token, tokenSecret, profile, done) {
+            done(null, profile);
+        }
+    },
+    users: [
+       { username: "knolleary",permissions: ["*"]}
+    ]
+};
+```
+
+The `strategy` property takes the following options:
+
+ - `name` - the name of the passport strategy being used
+ - `strategy` - the passport strategy module
+ - `label`/`icon` - used on the login page. `icon` can be any FontAwesome icon name.
+ - `options` - an options object passed to the passport strategy when it is created.
+   Refer to the strategy's own documentation for what it requires. See below for a
+   node on the `callbackURL`.
+ - `verify` - the verify function used by the strategy. It must call `done` with
+   a user profile as the second argument if the user is valid. This is expected
+   to have a `username` property that is used to check against the list of valid
+   users. Passport attempts to standardize the user profile object, so most strategies
+   provide this property.
+
+The `callbackURL` used by a strategy is where the authentication provider will
+redirect to following an auth attempt. It must be the URL of your Node-RED editor
+with `/auth/strategy/callback` added to the path. For example, if you access the
+editor at `http://localhost:1880`, you would use `http://localhost:1880/auth/strategy/callback`.
+
 
 #### Setting a default user
 
 The example configuration above will prevent anyone from accessing the editor
 unless they log in.
 
-In some cases, it is desirable to allow unlogged in users some level of access.
+In some cases, it is desirable to allow everyone some level of access.
 Typically, this will be giving read-only access to the editor. To do this,
 the `default` property can be added to the `adminAuth` setting to define
 the default user:
 
-{% highlight javascript %}
+```javascript
 adminAuth: {
     type: "credentials",
     users: [ /* list of users */ ],
@@ -77,7 +150,7 @@ adminAuth: {
         permissions: "read"
     }
 }
-{% endhighlight %}
+```
 
 #### User permissions
 
@@ -105,12 +178,12 @@ The expiration time can be customised by setting the `sessionExpiryTime` propert
 of the `adminAuth` setting. This defines, in seconds, how long a token is valid
 for. For example, to set the tokens to expire after 1 day:
 
-{% highlight javascript %}
+```javascript
 adminAuth: {
     sessionExpiryTime: 86400,
     ...
 }
-{% endhighlight %}
+```
 
 #### Accessing the Admin API
 
@@ -126,9 +199,12 @@ existing authentication schemes.
 The following example shows how an external module can be used to provide the
 custom authentication code.
 
+*Note*: It uses the npm module `when` which must be installed for it to work.
+module.
+
  - Save the following in a file called `<node-red>/user-authentication.js`
 
-{% highlight javascript %}
+```javascript
 var when = require("when");
 module.exports = {
    type: "credentials",
@@ -171,13 +247,13 @@ module.exports = {
        });
    }
 }
-{% endhighlight %}
+```
 
  -  Set the `adminAuth` property in settings.js to load this module:
 
-{% highlight javascript %}
+```javascript
 adminAuth: require("./user-authentication");
-{% endhighlight %}
+```
 
 
 ### HTTP Node security
@@ -187,9 +263,9 @@ The routes exposed by the HTTP In nodes can be secured using basic authenticatio
 The `httpNodeAuth` property in your `settings.js` file can be used to define a single
 username and password that will be allowed to access the routes.
 
-{% highlight javascript %}
+```javascript
 httpNodeAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
-{% endhighlight %}
+```
 
 The `pass` property uses the same format as `adminAuth`. See [Generating the password hash](#generating-the-password-hash) for more information.
 

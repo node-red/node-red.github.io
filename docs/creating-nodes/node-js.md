@@ -6,6 +6,18 @@ title: JavaScript file
 
 The node `.js` file defines the runtime behaviour of the node.
 
+ - [Node constructor](#node-constructor)
+ - [Receiving messages](#receiving-messages)
+ - [Sending messages](#sending-messages)
+   - [Multiple outputs](#multiple-outputs)
+   - [Multiple messages](#multiple-messages)
+ - [Closing the node](#closing-the-node)
+   - [Timeout behaviour](#timeout-behaviour)
+ - [Logging events](#logging-events)
+   - [Handling errors](#handling-errors)
+ - [Setting status](#setting-status)
+ - [Custom node settings](#custom-node-settings)
+
 ### Node constructor
 
 Nodes are defined by a constructor function that can be used to create new instances
@@ -95,7 +107,35 @@ this.on('close', function(done) {
 });
 {% endhighlight %}
 
-Note that node-red will wait indefinitely for the `done()` call.
+*Since Node-RED 0.17*
+
+If the registered listener accepts two arguments, the first will be a boolean
+flag that indicates whether the node is being closed because it has been removed
+entirely, or that it is just being restarted.
+
+{% highlight javascript %}
+this.on('close', function(removed, done) {
+    if (removed) {
+        // This node has been deleted
+    } else {
+        // This node is being restarted
+    }
+    done();
+});
+{% endhighlight %}
+
+#### Timeout behaviour
+
+*Since Node-RED 0.17*
+
+Prior to Node-RED 0.17, the runtime would wait indefinitely for the `done` function
+to be called. This would cause the runtime to hang if a node failed to call it.
+
+In 0.17 and later, the runtime will timeout the node if it takes longer than 15
+seconds. An error will be logged and the runtime will continue to operate.
+
+
+
 
 ### Logging events
 
@@ -134,3 +174,48 @@ this.status({fill:"red",shape:"ring",text:"disconnected"});
 {% endhighlight %}
 
 The details of the status api can be found [here](status).
+
+### Custom node settings
+
+A node may want to expose configuration options in a user's `settings.js` file.
+
+The name of any setting must follow the following requirements:
+
+ - the name must be prefixed with the corresponding node type.
+ - the setting must use camel-case - see below for more information.
+ - the node must not require the user to have set it - it should have a sensible
+   default.
+
+For example, if the node type `sample-node` wanted to expose a setting called
+`colour`, the setting name should be `sampleNodeColour`.
+
+Within the runtime, the node can then reference the setting as
+`RED.setting.sampleNodeColour`.
+
+
+#### Exposing settings to the editor
+
+*Since Node-RED 0.17*
+
+In some circumstances, a node may want to expose the value of the setting to the
+editor. If so, the node must register the setting as part of its call to `registerType`:
+
+{% highlight javascript %}
+RED.nodes.registerType("sample",SampleNode, {
+    settings: {
+        sampleNodeColour: {
+            value: "red",
+            exportable: true
+        }
+    }
+});
+{% endhighlight %}
+
+ - `value` field specifies the default value the setting should take.
+ - `exportable` tells the runtime to make the setting available to the editor.
+
+As with the runtime, the node can then reference the setting as
+`RED.settings.sampleNodeColour` within the editor.
+
+If a node attempts to register a setting that does not meet the naming requirements
+an error will be logged.
