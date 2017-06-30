@@ -14,8 +14,8 @@ for how to upgrade if you are still on the pre-installed version.
 ---
 
 This release has been a while in the making, but comes to you with plenty of useful
-new features. There are close to 300 commits across the code base, with a record
-19 different contributors.
+new features. There are over 300 commits across the code base, with a record 20
+different contributors.
 
 
 ### TL;DR
@@ -112,10 +112,15 @@ editor to give you more room by clicking the button on the right of the input.
 The JSONata editor provides a tab to test your expression within the editor. You
 can paste in an example message (which, as described above, you can now copy
 straight out of the Debug sidebar) and see the results of the expression. It also
-includes a complete function reference for the JSONata language. Whilst we're
-talking about JSONata, we've also updated to the latest version (1.2.5) which brings
-a lot of new functions, including `$flowContext` and `$globalContext` that can
-be used to retrieve values from context within your expression.
+includes a complete function reference for the JSONata language.
+
+Whilst we're talking about JSONata, we've also updated to the latest version
+(1.2.6) which brings a lot of new functions, including `$flowContext` and
+`$globalContext` that can be used to retrieve values from context within your
+expression. We've also made it so you no longer have to use the `msg.` prefix in
+the expression - so where you previously would have used `msg.payload` you should
+now just use `payload`. Existing expressions will continue to work - but we
+recommend updating them.
 
 The Buffer editor lets you enter a JSON array and will display the data in
 hexadecimal below. If you enter invalid JSON, it will treat it as raw UTF-8 data
