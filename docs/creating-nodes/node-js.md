@@ -145,7 +145,14 @@ If a node needs to log something to the console, it can use one of the follow fu
 this.log("Something happened");
 this.warn("Something happened you should know about");
 this.error("Oh no, something bad happened");
+
+// Since Node-RED 0.17
+this.trace("Log some internal detail not needed for normal operation");
+this.debug("Log something more details for debugging the node's behaviour");
+
+
 {% endhighlight %}
+
 
 The `warn` and `error` messages also get sent to the flow editor debug tab.  
 
