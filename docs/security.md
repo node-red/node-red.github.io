@@ -22,6 +22,11 @@ two parts:
   - [Custom user authentication](#custom-user-authentication)
 - the [HTTP Nodes, Dashboard and static content](#http-node-security)
 
+<div class="doc-callout">
+<em>Note</em>: When adding security, you should also switch from using `http` to `https` otherwise you are transmitting
+credentials in a way that can be intercepted. The setting `https` is used for this purpose.
+</div>
+
 ### Editor & Admin API security
 
 The Editor and Admin API supports two types of authentication:
@@ -278,3 +283,7 @@ was expected to be an MD5 hash. This is cryptographically insecure, so has been
 superseded with bcrypt, as used by <code>adminAuth</code>. For backwards compatibility, MD5
 hashes are still supported - but they are not recommended.
 </div>
+
+#### Alternatives
+
+As an alternative to using `httpNodeAuth`, the `httpNodeMiddleware` setting allows you to specify some ExpressJS middleware. This can be used to provide your own security function.

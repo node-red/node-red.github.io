@@ -62,6 +62,11 @@ on in the flow.
 Finally, the `LowerCaseNode` function is registered with the runtime using the
 name for the node, `lower-case`.
 
+In order to retain a consistent reference to the nodes `this`, a variable called
+`node` is created pointing to `this`. `this`/`node` contains the information
+related to the created instance of the node. You would typically pass the nodes
+properties, `config`. to to `node` as well.
+
 If the node has any external module dependencies, they must be npm installed
 alongside the node files.
 
