@@ -13,11 +13,11 @@ help text.
 
 When packaged as an npm module, a `package.json` file is used to pull it all together.
 
- - [Creating a simple node](creating-a-simple-node)
-   - [package.json](packagejson)
-   - [lower-case.js](lower-casejs)
-   - [lower-case.html](lower-casehtml)
- - [Testing your node in Node-RED](testing-your-node-in-node-red)
+ - [Creating a simple node](#creating-a-simple-node)
+   - [package.json](#packagejson)
+   - [lower-case.js](#lower-casejs)
+   - [lower-case.html](#lower-casehtml)
+ - [Testing your node in Node-RED](#testing-your-node-in-node-red)
 
 
 ### Creating a simple node
