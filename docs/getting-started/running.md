@@ -12,18 +12,18 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Feb 22:51:09 - [info] Node-RED version: v0.14.6
-    25 Feb 22:51:09 - [info] Node.js  version: v4.6.0
-    25 Feb 22:51:09 - [info] Loading palette nodes
-    25 Feb 22:51:10 - [warn] ------------------------------------------
-    25 Feb 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
-    25 Feb 22:51:10 - [warn] ------------------------------------------
-    25 Feb 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
-    25 Feb 22:51:10 - [info] User Directory : /home/nol/.node-red
-    25 Feb 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
-    25 Feb 22:51:10 - [info] Creating new flows file : flows_noltop.json
-    25 Feb 22:51:10 - [info] Starting flows
-    25 Feb 22:51:10 - [info] Started flows
+    25 Jun 22:51:09 - [info] Node-RED version: v0.17.4
+    25 Jun 22:51:09 - [info] Node.js  version: v6.11.1
+    25 Jun 22:51:09 - [info] Loading palette nodes
+    25 Jun 22:51:10 - [warn] ------------------------------------------
+    25 Jun 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+    25 Jun 22:51:10 - [warn] ------------------------------------------
+    25 Jun 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
+    25 Jun 22:51:10 - [info] User Directory : /home/nol/.node-red
+    25 Jun 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
+    25 Jun 22:51:10 - [info] Creating new flows file : flows_noltop.json
+    25 Jun 22:51:10 - [info] Starting flows
+    25 Jun 22:51:10 - [info] Started flows
 
 You can then access the Node-RED editor at <http://localhost:1880>.
 
@@ -35,6 +35,18 @@ There are specific instructions available for certain hardware platforms:
 #### Next
 
 You can now create your [first flow](first-flow).
+
+----
+
+### Command-line usage
+
+    Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR] [flows.json]
+
+    Options:
+      -s, --settings FILE  use specified settings file
+      -u, --userDir  DIR   use specified user directory
+      -v                   enable verbose output
+      -?, --help           show usage
 
 ----
 
@@ -62,17 +74,6 @@ On Windows, run the following command from the same directory you ran `npm insta
 in, or that you extracted the release zip file:
 
     node node_modules/node-red/red.js
-
-
-### Command-line usage
-
-    Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR] [flows.json]
-
-    Options:
-      -s, --settings FILE  use specified settings file
-      -u, --userDir  DIR   use specified user directory
-      -v                   enable verbose output
-      -?, --help           show usage
 
 #### Storing user data
 
