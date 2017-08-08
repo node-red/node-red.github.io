@@ -75,6 +75,7 @@ identifier | description
 `num` | a Number
 `bool` | a Boolean
 `json` | a valid JSON string
+`bin` | a Node.js Buffer
 `re` | a Regular Expression
 `date` | the current timestamp
 
