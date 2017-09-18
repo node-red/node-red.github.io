@@ -8,11 +8,14 @@ Azure Virtual Machine instance.
 
 ### Install Node-RED on an Azure Web App
 
-1. Deploy to Azure with this button:
+> Note: The *Deploy to Azure Web App* project is not maintained by the Node-RED organization. If you have any issue you can open it in its own [node-red-azure-webapp repository](https://github.com/jmservera/node-red-azure-webapp/issues).
+
+
+1. Click Deploy to Azure:
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjmservera%2Fnode-red-azure-webapp%2Fmaster%2Fwebapp.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
-2. Open your site and wait until everything is deployed. It will take some minutes to be completely deployed. 
+2. Open your site (in port 80) and wait until everything is deployed. It will take some minutes to be completely deployed.
 
 Or...
 
@@ -22,7 +25,7 @@ Or...
 
 3. Configure the deployment options as an *External repository* pointing to [https://github.com/jmservera/node-red-azure-webapp.git](https://github.com/jmservera/node-red-azure-webapp.git)
 
-4. Open your site and wait until everything is deployed. It will take some minutes to be completely deployed.
+4. Open your site (in port 80) and wait until everything is deployed. It will take some minutes to be completely deployed.
 
 
 ### Install Node-RED on an Azure Virtual Machine
