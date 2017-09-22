@@ -6,11 +6,12 @@
 .intro, .nodes {
     background: #eee;
 }
+.intro {
+    border-bottom: 2px solid #a22222;
+}
 
 .features {
     background: #fff;
-    border-top: 2px solid #a22222;
-
 }
 
 .links {
@@ -210,11 +211,13 @@ a:hover {
     background: #aa6767;
     color: #eee;
 }
-
 .users {
-    background: #eee;
-    border-top: 2px solid #a22222;
-    border-bottom: 10px solid #a22222;
+    background: #fff;
+    border-bottom: 2px solid #a22222;
+}
+.users h3 {
+    margin-top:0;
+    text-align: center;
 }
 .users ul {
     text-align: center;
@@ -225,11 +228,10 @@ a:hover {
 .users ul li {
     margin: 10px;
     padding: 10px;
-    border: 1px solid red;
     display: inline-block;
     width: 200px;
-    height: 150px;
     vertical-align: middle;
+    background: white;
 }
 .users ul li img {
     width: 100%;
