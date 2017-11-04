@@ -21,7 +21,7 @@ latest version with the following commands:
 
 To check for, and re-install outdated nodes that are installed in the user directory you have two options:
 
-Use the `Manage Pallet` menu from within node-red's editor UI. You can then remove, add, and also update nodes. Or via the command-line as follows;
+Use the `Manage Pallete` menu from within node-red's editor UI. You can then remove, add, and also update nodes. Or via the command-line as follows;
 
     cd ~/.node-red
     npm outdated
