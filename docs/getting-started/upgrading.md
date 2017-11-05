@@ -19,15 +19,17 @@ latest version with the following commands:
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
 
-To check for outdated nodes that are installed in the user directory you can:
+To check for, and re-install outdated nodes that are installed in the user directory you have two options:
+
+Use the `Manage Pallete` menu from within node-red's editor UI. You can then remove, add, and also update nodes. Or via the command-line as follows;
 
     cd ~/.node-red
     npm outdated
 
-This will print a list of nodes that can be updated. To update them you can then run:
+This will print a list of nodes that can be updated.   
+To re-install the latest node version you can then run:
 
-    npm update              # to update all nodes, or
-    npm update foo          # to only update a node called foo
+    npm install foo          # to re-install the latest version of a node called foo
 
 You will then need to stop and restart Node-RED.
 
