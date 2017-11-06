@@ -12,7 +12,7 @@ You can search for available nodes in the [Node-RED library](http://flows.nodere
 
 ### Using the Editor
 
-From version 0.15 you can install nodes directly using the editor. To to this select
+From version 0.15 you can install nodes directly using the editor. To do this select
 `Manage Palette` from the menu (top right), and then select the `install` tab in the palette.
 You can now search for new nodes to install, update, and enable and disable existing nodes.
 
