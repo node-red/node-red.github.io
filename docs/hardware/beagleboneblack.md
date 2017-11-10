@@ -3,22 +3,37 @@ layout: default
 title: Running on BeagleBone Boards
 ---
 
-The latest 4GB images for BeagleBone boards already have Node-RED pre-installed so you can just start running with the `node-red` command.
+We recommend using the latest SD card images based on Debian Stretch - from https://beagleboard.org/latest-images
 
-The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to install as per below.
+The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot and point your browser at your BeagleBone, port 1880.
 
-<div class="doc-callout">
-These instructions only apply to the Debian versions of BeagleBoneBlack. <a href="http://beagleboard.org/latest-images">http://beagleboard.org/latest-images</a>
-</div>
+To view the Node-RED log
+
+        sudo journalctl -f -u node-red -o cat
+
+To stop Node-RED
+
+        sudo service node-red stop
+
+To start Node-RED
+
+        sudo service node-red start
+
+
+The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to be installed as per below.
+
+---
 
 #### Upgrading 4GB images
 
-As they already have node.js 4.x installed - the easiest way to upgrade is to over-install the latest version:
+As they already have node.js 6.x installed - the easiest way to upgrade is to over-install the latest version:
 
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
 
 Then stop and restart Node-RED.
+
+To upgrade node.js, just use the normal apt upgrade procedure.
 
 **Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both node.js and Node-RED
 in different locations and will conflict with the existing systemd configuration files.
@@ -39,7 +54,7 @@ software certificates date checks to be valid.
 
 #### Updating node.js
 
-We recommend using node.js LTS 4.x or 6.x
+We recommend using node.js LTS 6.x or 8.x
 
     sudo apt-get install curl
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
