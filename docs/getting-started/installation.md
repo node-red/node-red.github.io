@@ -17,8 +17,7 @@ We also have specific instructions available for certain hardware platforms and 
 
  - [Raspberry Pi](../hardware/raspberrypi)
  - [BeagleBone Black](../hardware/beagleboneblack)
-- [Windows](../platforms/windows)
-
+ - [Windows](../platforms/windows)
 
 Other download options are available [here](https://nodejs.org/dist/latest-v6.x/).
 
@@ -31,19 +30,8 @@ to your system path:
     sudo npm install -g --unsafe-perm node-red
 
 <div class="doc-callout">
-<p>
-<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
-running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
-without the <code>sudo</code> command.
-</p>
-<p>
-<em>Note</em>: During the install some errors may be reported by the <code>node-gyp</code>
-command. These are typically <em>non-fatal</em> errors and are related to optional dependencies
-that require a compiler in order to build them. <b>Node-RED will work without these
-optional dependencies</b>, but you may find additional node modules that require the
-ability to compile native code. You can find out how to install the <code>node-gyp</code>
-compiler dependencies <a href="https://github.com/TooTallNate/node-gyp#installation">here</a>.
-</p>
+<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If 
+running on Windows, see the <a href="../platforms/windows">Windows Install instructions</a>.
 </div>
 
 #### Next
