@@ -13,10 +13,12 @@ You can get the latest Long Term Support (LTS) version of Node <code>6.x</code> 
 It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
 specifically for your operating system.
 
-We also have specific instructions available for certain hardware platforms:
+We also have specific instructions available for certain hardware platforms and operating systems:
 
  - [Raspberry Pi](../hardware/raspberrypi)
  - [BeagleBone Black](../hardware/beagleboneblack)
+- [Windows](../platforms/windows)
+
 
 Other download options are available [here](https://nodejs.org/dist/latest-v6.x/).
 
