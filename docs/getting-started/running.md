@@ -12,20 +12,20 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Jun 22:51:09 - [info] Node-RED version: v0.17.4
-    25 Jun 22:51:09 - [info] Node.js  version: v6.11.1
-    25 Jun 22:51:09 - [info] Loading palette nodes
-    25 Jun 22:51:10 - [warn] ------------------------------------------
-    25 Jun 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
-    25 Jun 22:51:10 - [warn] ------------------------------------------
-    25 Jun 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
-    25 Jun 22:51:10 - [info] User Directory : /home/nol/.node-red
-    25 Jun 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
-    25 Jun 22:51:10 - [info] Creating new flows file : flows_noltop.json
-    25 Jun 22:51:10 - [info] Starting flows
-    25 Jun 22:51:10 - [info] Started flows
+    25 Oct 22:51:09 - [info] Node-RED version: v0.17.5
+    25 Oct 22:51:09 - [info] Node.js  version: v6.12.0
+    25 Oct 22:51:09 - [info] Loading palette nodes
+    25 Oct 22:51:10 - [warn] ------------------------------------------
+    25 Oct 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+    25 Oct 22:51:10 - [warn] ------------------------------------------
+    25 Oct 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
+    25 Oct 22:51:10 - [info] User Directory : /home/nol/.node-red
+    25 Oct 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
+    25 Oct 22:51:10 - [info] Creating new flows file : flows_noltop.json
+    25 Oct 22:51:10 - [info] Starting flows
+    25 Oct 22:51:10 - [info] Started flows
 
-You can then access the Node-RED editor at <http://localhost:1880>.
+You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
 
 There are specific instructions available for certain hardware platforms:
 
@@ -123,7 +123,7 @@ it easy to run applications on boot and ensure they are restarted if necessary.
     sudo npm install -g pm2
 
 <div class="doc-callout">
-<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
+<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux or OS X. If
 running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
 without the <code>sudo</code> command.
 </div>

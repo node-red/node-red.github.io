@@ -30,7 +30,7 @@ to your system path:
     sudo npm install -g --unsafe-perm node-red
 
 <div class="doc-callout">
-<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If 
+<em>Note</em>: <code>sudo</code> is only required during the install when running on Linux or OS X. If
 running on Windows, see the <a href="../platforms/windows">Windows Install instructions</a>.
 </div>
 
