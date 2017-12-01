@@ -6,20 +6,22 @@ title: Installation
 
 ### Install node.js
 
-We recommend the use of Node.js **LTS 8.x**. Node-RED no longer supports Node.js 0.10.x or 0.12.x.
+We recommend the use of Node.js **LTS 8.x**. Node-RED no longer supports Node.js 0.10.x or 0.12.x. Users of Node.js 6.x and 4.x should ensure they have the latest updates.
 
-You can get the latest Long Term Support (LTS) version of Node.js <code>8.x</code> from the Node.js [download site](https://nodejs.org/en/download/).
-
-It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
-specifically for your operating system.
-
-We also have specific instructions available for certain hardware platforms and operating systems:
+We have specific instructions available for certain hardware platforms and operating systems:
 
  - [Raspberry Pi](../hardware/raspberrypi)
  - [BeagleBone Black](../hardware/beagleboneblack)
  - [Windows](../platforms/windows)
 
-Other download options are available [here](https://nodejs.org/dist/latest-v6.x/).
+Linux and OSX users should install the **[packaged version](https://nodejs.org/en/download/package-manager/)**
+for your specific operating system or you can get the latest Long Term Support (LTS) version of Node.js from the [download site](https://nodejs.org/en/download/).
+
+To check your version of Node.js
+
+    node -v
+
+Other download options are available [here](https://nodejs.org/dist/latest-v8.x/).
 
 ### Install Node-RED
 
