@@ -6,9 +6,9 @@ title: Installation
 
 ### Install node.js
 
-We recommend the use of node.js **LTS 6.x**. Node-RED no longer supports node.js 0.10.x or 0.12.x.
+We recommend the use of Node.js **LTS 8.x**. Node-RED no longer supports Node.js 0.10.x or 0.12.x.
 
-You can get the latest Long Term Support (LTS) version of Node <code>6.x</code> from the nodejs [download site](https://nodejs.org/en/download/).
+You can get the latest Long Term Support (LTS) version of Node.js <code>8.x</code> from the Node.js [download site](https://nodejs.org/en/download/).
 
 It is often easiest to use a [packaged version](https://nodejs.org/en/download/package-manager/)
 specifically for your operating system.
@@ -23,7 +23,7 @@ Other download options are available [here](https://nodejs.org/dist/latest-v6.x/
 
 ### Install Node-RED
 
-The easiest way to install Node-RED is to use node's
+The easiest way to install Node-RED is to use the Node.js
 package manager, npm. Installing it as a global module adds the command `node-red`
 to your system path:
 
