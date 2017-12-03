@@ -84,10 +84,10 @@ includes a section on migrating your data out of the Node-RED install directory.
 
 To override what directory to use, the `--userDir` command-line option can be used.
 
-#### Passing arguments to the underlying node.js process
+#### Passing arguments to the underlying Node.js process
 
 There are occasions when it is necessary to pass arguments to the underlying
-node.js process. For example, when running on devices like the Raspberry Pi or
+Node.js process. For example, when running on devices like the Raspberry Pi or
 BeagleBone Black that have a constrained amount of memory.
 
 To do this, you must use the `node-red-pi` start script in place of `node-red`.

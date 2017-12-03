@@ -26,17 +26,19 @@ The 2GB console version suitable for flashing to older eMMC versions of the BBB 
 
 #### Upgrading 4GB images
 
-As they already have node.js 6.x installed - the easiest way to upgrade is to over-install the latest version:
+As they already have Node.js 6.x installed - the easiest way to upgrade is to over-install the latest version:
 
     sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
 
 Then stop and restart Node-RED.
 
-To upgrade node.js, just use the normal apt upgrade procedure.
+To upgrade Node.js, just use the normal apt upgrade procedure.
 
-**Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both node.js and Node-RED
+<div class="doc-callout">
+Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both Node.js and Node-RED
 in different locations and will conflict with the existing systemd configuration files.
+</div>
 
 #### Before you start
 
@@ -52,9 +54,9 @@ software certificates date checks to be valid.
 
     ntpdate -b -s -u pool.ntp.org
 
-#### Updating node.js
+#### Updating Node.js
 
-We recommend using node.js LTS 6.x or 8.x
+We recommend using Node.js LTS 6.x or 8.x
 
     sudo apt-get install curl
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -

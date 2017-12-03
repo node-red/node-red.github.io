@@ -34,7 +34,7 @@ create the following files:
 
 <h4 id="package-json"><i class="fa fa-file-o"></i> package.json</h4>
 
-This is a standard file used by node.js modules to describe their contents.
+This is a standard file used by Node.js modules to describe their contents.
 
 To generate a standard `package.json` file you can use the command `npm init`.
 This will ask a series of questions to help create the initial content for the

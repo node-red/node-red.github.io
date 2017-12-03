@@ -10,13 +10,14 @@ There are two ways to get started with Node-RED on a Raspberry Pi.
 
 You can then start [using the editor](#using-the-editor).
 
-## Raspbian Jessie
+## Raspbian
 
-As of the November 2015 version of Raspbian Jessie, Node-RED comes preinstalled on
-the SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
-This uses an old version of node.js and it is recommended to upgrade to the latest using the bash command below.
+Node-RED comes preinstalled on
+the full Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
 
-If you have the minimal version of Jessie, or other Debian based install, such as Ubuntu, that doesn't have Node-RED
+While usable, this uses an older version of Node.js and it is recommended to upgrade to the latest using the bash command below.
+
+If you have the minimal version of Rasbian, or other Debian based install, such as Ubuntu, or Diet-Pi, that doesn't have Node-RED
 already installed, you can install or upgrade using the Node-RED upgrade script command
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
@@ -28,36 +29,36 @@ already installed, you can install or upgrade using the Node-RED upgrade script 
 Nodes can be now be managed via the built in palette manager. However the default Pi install pre-loads some
 nodes globally and these cannot then be easily managed and updated. The intention of the script is to...  
 
- - upgrade an existing user to LTS 6.x nodejs and latest Node-RED
+ - upgrade an existing user to LTS 6.x or 8.x Node.js and latest Node-RED
  - migrate any existing globally installed nodes into the users ~/.node-red space so they can be managed via the palette manager
  - optionally (re)install the extra nodes that are pre-installed on a full Raspbian Pi image
 
 While aimed at the Pi user the script will also run on any Debian based operating system, such as Ubuntu, and so can
 be used on other hardware platforms, although it has not been widely tested.
 
-The command above runs many commands as *sudo* and does delete existing nodejs and the core Node-RED directories. Please inspect it by browsing to https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered
+The command above runs many commands as *sudo* and does delete existing Node.js and the core Node-RED directories. Please inspect it by browsing to https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered
 
 The script will perform the following steps
 
- - check if you are connected to the internet
+ - ask if you want to (re)install the extra Pi nodes
  - save a list of any globally installed *node-red-* nodes found in /usr/lib/node_modules
  - apt-get remove nodered
  - remove any node-red binaries from /usr/bin and /usr/local/bin
  - remove any node-red modules from /usr/lib/node_modules and /usr/local/lib/node_modules
- - detect if nodejs was installed from nodejs package or Debian
+ - detect if Node.js was installed from Node.js package or Debian
  - if not v6 or newer - remove as appropriate and install latest v6 LTS (not using apt)
  - clean out npm cache and .node-gyp cache to remove any previous versions of code
  - install Node-RED latest version
  - re-install under the user account any nodes that had previously been installed globally
  - re-install the extra Pi nodes if required
- - rebuild all nodes - to recompile any binaries to match latest nodejs version
- - add node-red-start, stop and log commands to /usr/bin
+ - rebuild all nodes - to recompile any binaries to match latest Node.js version
+ - add node-red-start, node-red-stop and node-red-log commands to /usr/bin
  - add menu shortcut and icon
  - add systemd script and set user
  - if on a Pi add a CPU temperature -> IoT example
  - update the local update script
 
-As of Node-RED version 0.14.x a version of the upgrade script is pre-installed and will do a full upgrade to the latest nodejs LTS and latest release version of Node-RED. However it will be out of date and may need to be run twice.
+As of Node-RED version 0.14.x a version of the upgrade script is pre-installed and will do a full upgrade to the latest Node.js LTS and latest release version of Node-RED. However it will be out of date and may need to be run twice.
 To use this method, run the following command as your normal user (typically `pi`):
 
     update-nodejs-and-nodered
@@ -100,10 +101,10 @@ If you want Node-RED to run when the Pi boots up you can use
     sudo systemctl enable nodered.service
 
 
-#### Adding nodes to preloaded version
+#### Adding nodes to preloaded version (Jessie only)
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default installation. This is not necessary if you have upgraded to node.js 6.x as per above.
+in the default Jessie installation. This is not necessary if you have upgraded to Node.js 6.x.
 
 The following commands install `npm` and then upgrade
 it to the latest `3.x` version.
@@ -122,21 +123,11 @@ You can then start [using the editor](#using-the-editor).
 
 ----
 
-## Manual install
+## Notes
 
-The pre-install uses the default node.js within Debian Jessie, which is version
-0.10.29. or version 4.4 in Debian Stretch. If manually installing we recommend using a
-more recent versions of node.js such as v6.x
+Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer support, and this documentation is now aimed at Jessie as a minimum.
 
-The simplest way to install Node.js and other dependencies is
-
-    sudo apt-get install build-essential python-rpi.gpio
-    bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
-
-**Note**: Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer supported, and this
-documentation is now aimed at Jessie as a minimum.
-
-#### Accessing GPIO
+### Accessing GPIO
 
 If you plan to access the GPIO pins with Node-RED, you should verify which version of the Python RPi.GPIO libraries are installed.
 
@@ -152,9 +143,13 @@ If you do not then the following commands will install the latest available:
 
     sudo apt-get update && sudo apt-get install python-rpi.gpio
 
+Also, the user must be a member of the `gpio` group. To add the current user to the group
+
+    sudo adduser $USER gpio
+
 If you want to run as a user other than pi (or root), you will need either to add that user to
-the [sudoers list](https://www.raspberrypi.org/documentation/linux/usage/users.md) - or maybe
-just access to python - for example by adding the following to sudoers using visudo.
+the [sudoers list](https://www.raspberrypi.org/documentation/linux/usage/users.md) - or maybe just access to python - for example by adding the
+following to sudoers using visudo.
 
     NodeREDusername ALL=(ALL) NOPASSWD: /usr/bin/python
 
@@ -176,7 +171,7 @@ appear between node and red.js.
     node --max-old-space-size=256 red.js
 
 This option limits the space it can use to 256MB before cleaning up. If you are
-running nothing else on your Pi you can afford to increase that figure to 512
+running nothing else on your Pi you can afford to increase that figure to 256
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 
@@ -223,7 +218,7 @@ If you need to use a proxy for http requests - you need to set the *HTTP_PROXY* 
 When using *systemd* this must be done within the service configuration. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and add another `Environment=` line, for example:
 
     Nice=5
-    Environment="NODE_OPTIONS=--max-old-space-size=256"
+    Environment="NODE_OPTIONS=--max-old-space-size=128"
     Environment="HTTP_PROXY=my-proxy-server-address"
 
 Save the file, and then run:
@@ -255,7 +250,7 @@ You can then start creating your [first flow](../getting-started/first-flow).
 
 ## Extra Nodes
 
-To install extra nodes make sure you are in your user-directory, by default this is `~/.node-red`.
+You can generally install extra nodes using the Editor UI, Menu - Manage Palette . To install extra nodes manually make sure you are in your user-directory, by default this is `~/.node-red`.
 
      cd ~/.node-red
 
@@ -272,8 +267,6 @@ You then need to stop and restart Node-RED to load the new nodes, and then refre
     node-red-stop
     node-red-start
 
-You can also install and remove extra nodes via the Editor UI,  Menu - Manage Palette.
-
 ## Interacting with the Pi hardware
 
 There are several ways of interacting with a Raspberry Pi using Node-RED.
@@ -282,13 +275,8 @@ There are several ways of interacting with a Raspberry Pi using Node-RED.
 : provided in the palette for monitoring and controlling the GPIO
   pins. This is the simplest and recommended method.
 
-**node-red-contrib-gpio** (optional)
+**contrib-gpio nodes** (optional)
 : additional nodes from @monteslu that provide generic gpio support for Pi, BeagleBone, Arduino, Edison, etc. They can be installed from [here](https://github.com/monteslu/node-red-contrib-gpio).
-
-**node-red-node-pi-gpiod** (optional)
-: additional nodes from the project that use the more recent pigpiod daemon - see [here](http://abyz.co.uk/rpi/pigpio/pigpiod.html) for details.
-One advantage they have is that the servo support is much better. They also allow remote access
-to the gpio from another machine. Of course this can potentially create a security risk.
 
 **wiring-pi module** (advanced)
 : this provides more complete access to the GPIO pins, and other devices, within
@@ -299,7 +287,9 @@ to the gpio from another machine. Of course this can potentially create a securi
 ### rpi-gpio nodes
 
 These use a python `nrgpio` command as part of the core install.
-This provides a way of controlling the GPIO pins via nodes in the Node-RED palette.
+This provides a way of controlling the GPIO pins via nodes in the Node-RED palette. Your user needs to be in the gpio group.
+
+    sudo adduser $USER gpio
 
 
 #### First Flow - Blink - gpio
@@ -324,7 +314,7 @@ toggling on and off once a second.
 This section is for advanced users only.
 In general most users will not need to do this.
 
-This version of working with the Raspberry Pi uses a node.js wrapper to the
+This version of working with the Raspberry Pi uses a Node.js wrapper to the
 WiringPi libraries previously installed, and so
 gives all functions you write access to the Pi capabilities at all times, so
 you can do more complex things, at the expense of having to write code within a

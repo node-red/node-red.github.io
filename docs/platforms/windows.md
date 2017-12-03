@@ -19,7 +19,7 @@ Run the downloaded MSI file.  Installing Node.js requires local administrator ri
 administrator, you will be prompted for an administrator password on install.  Accept the defaults when installing.  After installation completes, close any open command prompts and re-open to ensure new environment variables
 are picked up.
 
-Once installed, open a command prompt and run the following command to ensure Node.js and npm are installed correctly. 
+Once installed, open a command prompt and run the following command to ensure Node.js and npm are installed correctly.
 
 Using Powershell: `node --version; npm --version`
 
@@ -78,7 +78,7 @@ Node.js is installed into the `Program Files` folder as you would expect. Howeve
 <em>Note</em>: To see what a folder name like <code>%APPDATA%</code> translates to, you can simply type it into the address bar of the Windows File Explorer. Alternatively, in PowerShell, type the command <code>cd $Env:APPDATA</code>(<code>cd %APPDATA%</code> using cmd).
 </div>
 
-To fix this, either give permissions to the folder to other users and make sure that the folder is included in their `path` user environment variable. 
+To fix this, either give permissions to the folder to other users and make sure that the folder is included in their `path` user environment variable.
 
 Alternatively, change the global file location to somewhere accessible by other users. Make sure that you use the user that will be running Node-RED to make these changes.  For example, to change the location to `$env:ALLUSERSPROFILE\npmglobal` using PowerShell:
 
@@ -105,7 +105,7 @@ If you wish to have the built-in Python v2.7 install exposed for use, use the co
     npm install --global --production --add-python-to-path windows-build-tools
 
 <div class="doc-callout">
-<em>Notes</em>: 
+<em>Notes</em>:
 <ul>
 <li>Not all Node.js modules will work under Windows, check the install output carefully for any errors.</li>
 <li>During the install some errors may be reported by the <code>node-gyp</code>
@@ -125,6 +125,8 @@ If you have installed Node-RED as a global npm package, you can use the node-red
 This will output the Node-RED log to the terminal. You must keep the terminal open in order to keep Node-RED running.
 
 Note that running Node-RED will create a new folder in your `%HOMEPATH%` folder called `.node-red`. This is your `userDir` folder, think of it as the home folder for Node-RED configuration for the current user. You will often see this referred to as `~/.node-red` in documentation. `~` is shorthand for the user home folder on Unix-like systems. You can use the same reference if using PowerShell as your command line as recommended. If you are using the older `cmd` shell, that won't work.
+
+You can now create your [first flow](first-flow).
 
 #### Using PM2
 

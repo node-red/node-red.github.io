@@ -90,7 +90,7 @@ fairly stable, but analog readings often end up being at the full sample rate
 (default: 40 times a second...). This can be changed in the configuration of the
 serial port to reduce it to a more manageable rate.
 
-Details of the node.js arduino-firmata library can be found [here](https://www.npmjs.com/package/arduino-firmata).
+Details of the Node.js arduino-firmata library can be found [here](https://www.npmjs.com/package/arduino-firmata).
 
 ***
 

@@ -7,12 +7,6 @@ title: Upgrading
 <div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
 on a Raspberry Pi, please refer to <a href="/docs/hardware/raspberrypi">these instructions for <b>upgrading a Pi</b></a>.</div>
 
-Currently we require the use of npm version 2 or later, please check which version you
-have installed by running the command `npm -v` before upgrading. If necessary run
-
-    sudo npm i -g npm@3.x
-    hash -r
-
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following commands:
 
@@ -33,9 +27,9 @@ To re-install the latest node version you can then run:
 
 You will then need to stop and restart Node-RED.
 
-## Upgrading node.js
+## Upgrading Node.js
 
-If you upgrade node.js, for example from v0.10.x to v4.6.x, it is better to stop
+If you upgrade Node.js, for example from v4.x to v6.x, it is better to stop
 Node-RED, and then re-install as follows:
 
     sudo npm cache clean
