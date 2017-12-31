@@ -31,6 +31,7 @@ own right. Used by the core `Switch` and `Change` nodes.
         <h3>Methods</h3>
         <table>
             <tr><td><a href="#methods-addItem">addItem</a></td></tr>
+            <tr><td><a href="#methods-addItems">addItem</a></td></tr>
             <tr><td><a href="#methods-removeItem">removeItem</a></td></tr>
             <tr><td><a href="#methods-width">width</a></td></tr>
             <tr><td><a href="#methods-height">height</a></td></tr>
@@ -269,6 +270,14 @@ Adds an item to the end of the list. `itemData` is an object that will be associ
 with the item in the list.
 
     $("ol.list").editableList('addItem',{fruit:"banana"});
+
+#### <a href="#methods-addItems" name="methods-addItem">addItem( itemData )</a>
+
+Adds items contained in an array to the end of the list. `itemData` is an array of objects that will be associated
+with the item in the list.
+
+    $("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"});
+
 
 #### <a href="#methods-removeItem" name="methods-removeItem">removeItem( itemData )</a>
 
