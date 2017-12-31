@@ -15,6 +15,7 @@ own right. Used by the core `Switch` and `Change` nodes.
             <tr><td><a href="#options-addButton">addButton</a></td></tr>
             <tr><td><a href="#options-addItem">addItem</a></td></tr>
             <tr><td><a href="#options-connectWith">connectWith</a></td></tr>
+            <tr><td><a href="#options-header">header</a></td></tr>
             <tr><td><a href="#options-height">height</a></td></tr>
             <tr><td><a href="#options-filter">filter</a></td></tr>
             <tr><td><a href="#options-resize">resize</a></td></tr>
@@ -98,12 +99,21 @@ dragged from this list to any other jQuery `sortable` list, such as another `edi
         connectWith: ".my-other-list"
     });
 
+#### <a href="#options-header" name="options-header">header</a>
+
+<span class="method-return">Type: DOM/JQuery object</span>
+
+Inserts the DOM/JQuery object as a header for the list.
+
+    $("ol.list").editableList({
+        header: $("<div>").append($.parseHTML("<div style='width:40%; display: inline-grid'>Name</div><div style='display: inline-grid'>Type</div>")),
+    });
 
 #### <a href="#options-height" name="options-height">height</a>
 
 <span class="method-return">Type: String|Number</span>
 
-Sets the height of the list including, if enabled, its add button.
+Sets the height of the list including, if enabled, its add button.  Setting height to 'auto' removes the vertical scrollbar and displays the list at the full height needed to contain the contents.
 
     $("ol.list").editableList({
         height: 300
