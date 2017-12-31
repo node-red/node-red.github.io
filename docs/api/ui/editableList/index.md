@@ -271,12 +271,12 @@ with the item in the list.
 
     $("ol.list").editableList('addItem',{fruit:"banana"});
 
-#### <a href="#methods-addItems" name="methods-addItems">addItem( itemData )</a>
+#### <a href="#methods-addItems" name="methods-addItems">addItems( itemData )</a>
 
 Adds items contained in an array to the end of the list. `itemData` is an array of objects that will be associated
 with the item in the list.
 
-    $("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"});
+    $("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"}]);
 
 
 #### <a href="#methods-removeItem" name="methods-removeItem">removeItem( itemData )</a>
