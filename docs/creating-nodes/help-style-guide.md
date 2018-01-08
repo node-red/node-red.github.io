@@ -25,6 +25,24 @@ a consistent appearance between nodes.
     </div>
 </div>
 <div class="grid" style="min-height:auto; padding:5px 0 5px; border-bottom: 1px solid #f0f0f0;">
+   <div class="col-1-2">
+       If the node has any configuration properties, this section describes those properties
+       and how they affect the operation of the node.  The description should be brief - if further 
+       descrption is needed, it should be in the Details section.
+   </div>
+   <div class="col-1-2 node-help" style="padding-right: 5px; background: #f9f9f9;">
+       <h3>Properties</h3>
+          <dl class="message-properties">
+             <dt>server
+                 <span class="property-type">config node</span>
+             </dt>
+             <dd> the config node specifying the MQTT server to connect to. </dd>
+             <dt class="optional">topic <span class="property-type">string</span></dt>
+             <dd> the MQTT topic to publish to.</dd>
+        </dl>
+    </div>
+</div>
+<div class="grid" style="min-height:auto; padding:5px 0 5px; border-bottom: 1px solid #f0f0f0;">
     <div class="col-1-2">
         If the node has an input, this section describes the properties of the
         message the node will use. The expected type of each property can also
@@ -111,6 +129,15 @@ The above example was created with the following HTML.
 <script type="text/x-red" data-help-name="node-type">
 <p>Connects to a MQTT broker and publishes messages.</p>
 
+<h3>Properties</h3>    
+    <dl class="message-properties">
+        <dt >server <span class="property-type">config node</span></dt>
+        <dd> the MQTT server to publish to.</dd>
+        <dt class="optional">topic <span class="property-type">string</span></dt>
+        <dd> the MQTT topic to publish to. Overrides <code>msg.topic</code></dd>
+        <dt class="optional">QoS <span class="property-type">string</span></dt>
+        <dd> 0, fire and forget - 1, at least once - 2, once and once only. Overrides <code>msg.qos</code></dd>
+    </dl>
 <h3>Inputs</h3>
     <dl class="message-properties">
         <dt>payload
