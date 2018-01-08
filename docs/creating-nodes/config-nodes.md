@@ -102,7 +102,7 @@ module.exports = function(RED) {
         if (this.server) {
             // Do something with:
             //  this.server.host
-            //  this.server.post
+            //  this.server.port
         } else {
             // No config node configured
         }
