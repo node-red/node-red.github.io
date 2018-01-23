@@ -8,7 +8,7 @@ A node's properties are defined by the `defaults` object in its html definition.
 These are the properties that get passed to the node constructor function when
 an instance of the node is created in the runtime.
 
-In the example from the [creating you first node section](first-node), the
+In the example from the [creating your first node section](first-node), the
 node had a single property called `name`. In this section, we'll add a new
 property called `prefix` to the node:
 
@@ -136,4 +136,4 @@ For example, when the Inject node is configured to repeat, it stores the
 configuration as a cron-like string: `1,2 * * * *`. The node defines an
 `oneditprepare` function that can parse that string and present a more
 user-friendly UI. It also has an `oneditsave` function that compiles the options
-choosen by the user back into the corresponding cron string.
+chosen by the user back into the corresponding cron string.
