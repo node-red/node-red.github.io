@@ -199,17 +199,14 @@ existing authentication schemes.
 The following example shows how an external module can be used to provide the
 custom authentication code.
 
-*Note*: It uses the npm module `when` which must be installed for it to work.
-module.
 
  - Save the following in a file called `<node-red>/user-authentication.js`
 
 ```javascript
-var when = require("when");
 module.exports = {
    type: "credentials",
    users: function(username) {
-       return when.promise(function(resolve) {
+       return new Promise(function(resolve) {
            // Do whatever work is needed to check username is a valid
            // user.
            if (valid) {
@@ -224,7 +221,7 @@ module.exports = {
        });
    },
    authenticate: function(username,password) {
-       return when.promise(function(resolve) {
+       return new Promise(function(resolve) {
            // Do whatever work is needed to validate the username/password
            // combination.
            if (valid) {
@@ -240,7 +237,7 @@ module.exports = {
        });
    },
    default: function() {
-       return when.promise(function(resolve) {
+       return new Promise(function(resolve) {
            // Resolve with the user object for the default user.
            // If no default user exists, resolve with null.
            resolve({anonymous: true, permissions:"read"});
