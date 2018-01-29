@@ -31,6 +31,8 @@ controlled and allow developers to use familiar workflows to collaborate with ot
 In the 0.18 release, the projects feature is in preview mode. That means it must be
 enabled in the settings file.
 
+*The feature is not currently available in the IBM Cloud environment.*
+
 ### Enabling projects
 
 To enable the projects feature, edit your `settings.js` file and add the following
@@ -124,7 +126,7 @@ In the screenshot above, the current project has three modules listed in its
 `package.json` file, each in a different state:
 
  - `node-red-node-mysql` is not currently installed
- - `node-red-node-random` is in used by the current flow
+ - `node-red-node-random` is used by the current flow
  - `node-red-node-rbe` is listed, but is unused by the current flow
 
 Finally `node-red-node-smooth` provides a node that is used by the current flow,
@@ -160,7 +162,7 @@ to see a diff of what has changed. When you hover over the file, you'll see a
 to commit' list.
 
 When you have staged the files you want to commit, click the `commit` button, enter
-a message to go with the commit and confirm.
+a message and confirm.
 
 <br style="clear:both">
 
@@ -203,8 +205,8 @@ This provides three options:
 
 ##### Open an existing project
 
-Node-RED only runs one project at any time. By opening a another project you are
-changing what is running.
+Node-RED only runs one project at any time. By opening a another project you
+change what flows are running.
 
 The 'open project' view also allows you to delete projects by hovering over them
 in the list and clicking the delete button. You cannot delete the active project.

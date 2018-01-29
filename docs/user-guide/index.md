@@ -13,6 +13,7 @@ There's lots more to write in this guide, we're just getting started.
 - [Working with projects](/docs/user-guide/projects)
 - [Command-line Admin](/docs/node-red-admin)
 - [Using the Function node](/docs/writing-functions)
+- [Working with messages](/docs/user-guide/messages)
 - [Embedding into an existing app](/docs/embedding)
 
 
