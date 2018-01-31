@@ -36,3 +36,13 @@
     border: 1px solid #999;
     padding: 10px;
 }
+.post {
+
+}
+
+blockquote {
+    border-left: 10px solid #eee;
+    padding-left: 10px;
+    font-style: italic;
+    color: #888;
+}
