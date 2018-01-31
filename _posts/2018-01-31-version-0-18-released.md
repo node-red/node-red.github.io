@@ -87,7 +87,7 @@ a flow.
 
 To change the icon, open the settings section of a node's edit dialog and you'll
 see the new options beneath the port labels settings. With this release you have
-to pick from the list of available icons, but we'll be expanded on that in the
+to pick from the list of available icons, but we'll be expanding on that in the
 future.
 
 ### Support for scoped modules
@@ -103,7 +103,7 @@ is how many nodes are able to just work together, but it can also cause problems
 where a flow has to juggle its properties around to get the right thing into the payload
 at any given point.
 
-Some nodes are already more flexile than others and let you pick a different
+Some nodes are already more flexible than others and let you pick a different
 property to work with. We've now extended that to more nodes.
 
 In the core palette, the `range`, `HTML`, `JSON` and `XML` nodes have all been updated,
