@@ -7,11 +7,11 @@ title: Creating your first node
 Nodes get created when a flow is deployed, they may send and receive some messages
 whilst the flow is running and they get deleted when the next flow is deployed.
 
-They consist of a pair of files; a JavaScript file that defines what the
+They typically consist of a pair of files; a JavaScript file that defines what the
 node does, and an html file that defines the node's properties, edit dialog and
 help text.
 
-When packaged as an npm module, a `package.json` file is used to pull it all together.
+A `package.json` file is used to package it all together as an npm module.
 
  - [Creating a simple node](#creating-a-simple-node)
    - [package.json](#package-json)
@@ -24,6 +24,8 @@ When packaged as an npm module, a `package.json` file is used to pull it all tog
 
 This example will show how to create a node that converts message payloads to
 all lower-case characters.
+
+Ensure you have the recommended LTS version of Node.js installed on your system.  As of this writing this is version **LTS 8.x** which includes npm version 5.x.
 
 Create a directory where you will develop your code. Within that directory,
 create the following files:
@@ -149,16 +151,27 @@ For more information about the editor part of the node, see [here](node-html).
 
 ### Testing your node in Node-RED
 
-Once you have created a basic node module as described above, you can install
-it into your Node-RED runtime.
+Once you have created a basic node module as described above, you can install it into your Node-RED runtime.
 
-To test a node module locally, the `npm link` command can be used. This allows you
-to develop the node in a local directory and have it linked into a local node-red
-install, as if it had been npm installed.
+To test a node module locally using npm 5.x, the [`npm install <folder>`](https://docs.npmjs.com/cli/install) command can be used. This allows you
+to develop the node in a local directory and have it linked into a local node-red install during development.
 
-1. in the directory containing the node's `package.json` file, run: `sudo npm link`.
-2. in your node-red user directory, typically `~/.node-red` run: `npm link <name of node module>`.
+In your node-red user directory, typically `~/.node-red`, run:
 
-This creates the appropriate symbolic links between the two directories so Node-RED
-will discover the node when it starts. Any changes to the node's file can be picked
-up by simply restarting Node-RED.
+    npm install <location of node module>
+
+For example, if your node is located at `~/dev/node-red-contrib-example-lower-case` you would type the following:
+
+    cd ~/.node-red
+    npm install ~/dev/node-red-contrib-example-lower-case
+
+This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.
+
+If you are using an older version of npm, you can create a symbolic link manually to your project.  To do so:
+
+    cd ~/.node-red/node_modules
+    ln -s ~/dev/node-red-contrib-example-lower-case  .
+
+<div class="doc-callout">
+<em>Note</em>:  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  To prevent this, use the npm <code>--no-save</code> option.
+</div>
