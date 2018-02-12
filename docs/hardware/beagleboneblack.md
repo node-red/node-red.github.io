@@ -3,7 +3,7 @@ layout: default
 title: Running on BeagleBone Boards
 ---
 
-We recommend using the latest SD card images based on Debian 9.3 Stretch - from https://beagleboard.org/latest-images
+We recommend using the latest SD card images based on Debian Stretch - from https://beagleboard.org/latest-images
 
 The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot
 and point your browser at your BeagleBone, port 1880.
@@ -25,22 +25,19 @@ The 2GB console version suitable for flashing to older eMMC versions of the BBB 
 
 ---
 
-#### Upgrading 4GB images
+#### Upgrading
 
-The latest Debian images already have Node.js installed - the easiest way to upgrade is to use the built in upgrade tool:
+The latest Debian images already have Node-RED and Node.js installed - the easiest way to upgrade is to use the built in upgrade tool:
 
         sudo apt update
         sudo apt upgrade nodejs bb-node-red-installer
 
-If you are on the 2017 9.2 version you may need to run `apt-get dist-upgrade` first.
+This should also restart the Node-RED service - but you will need to refresh any open browser sessions.
 
-This should also restart the Node-RED service - but you will need to refresh any browser sessions.
+If you are on the 2017 Debian 9.2 version you may need to run `sudo apt dist-upgrade` first.
 
-<div class="doc-callout">
-Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install
-both Node.js and Node-RED in different locations and will conflict with the existing systemd configuration files.
-</div>
-
+**Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install
+both Node.js and Node-RED in different locations and will conflict with and break the existing systemd configuration files.
 
 ---
 
@@ -90,7 +87,7 @@ For other install options, e.g. to run in development mode from GitHub, see the 
 There are some BBB specific nodes that give you direct access to the I/O pins in the simplest possible manner.
 The easiest way to install them is direct from npm.
 
-For Debian Jessie based builds with kernel 4.x run the following commands in the user
+For Debian based builds with kernel 4.x run the following commands in the user
 directory of your Node-RED install. This is usually `~/.node-red`
 
     sudo npm install -g --unsafe-perm beaglebone-io johnny-five node-red-contrib-gpio
@@ -148,15 +145,3 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
 Once Node-RED is started, assuming you haven't changed the hostname, point a
 browser to [http://beaglebone.local:1880](http://beaglebone.local:1880).
-
-#### First Flow - Hello World
-
-To run a "hello world" flow that toggles the USR2 and USR3 LEDs, copy the following flow
-and paste it into the Import Nodes dialog (*Import From - Clipboard* in the
-dropdown menu, or Ctrl-I). After clicking okay, click in the workspace to place
-the new nodes.
-
-    [{"id":"184087e6.e7bf78","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":370,"y":188,"z":"345c8adc.cba376","wires":[["919e132f.6e61f"]]},{"id":"25e4d6c.fda1b2a","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":370,"y":228,"z":"345c8adc.cba376","wires":[["919e132f.6e61f"]]},{"id":"6be2c4b9.941d3c","type":"bbb-discrete-out","pin":"USR2","inverting":false,"toggle":false,"defaultState":"0","name":"","x":613,"y":136,"z":"345c8adc.cba376","wires":[[]]},{"id":"919e132f.6e61f","type":"bbb-discrete-out","pin":"USR3","inverting":false,"toggle":false,"defaultState":"0","name":"","x":619,"y":193,"z":"345c8adc.cba376","wires":[[]]},{"id":"1cf2bd40.e30d43","type":"inject","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":368,"y":102,"z":"345c8adc.cba376","wires":[["6be2c4b9.941d3c"]]},{"id":"3e4caa12.c1b356","type":"inject","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":368,"y":142,"z":"345c8adc.cba376","wires":[["6be2c4b9.941d3c"]]}]
-
-Click the deploy button and the flow should start running. The USR2 and USR3 LEDs
-can be manually set on or off using the Inject node buttons.
