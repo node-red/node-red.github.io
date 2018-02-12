@@ -3,9 +3,10 @@ layout: default
 title: Running on BeagleBone Boards
 ---
 
-We recommend using the latest SD card images based on Debian Stretch - from https://beagleboard.org/latest-images
+We recommend using the latest SD card images based on Debian 9.3 Stretch - from https://beagleboard.org/latest-images
 
-The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot and point your browser at your BeagleBone, port 1880.
+The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot
+and point your browser at your BeagleBone, port 1880.
 
 To view the Node-RED log
 
@@ -26,14 +27,14 @@ The 2GB console version suitable for flashing to older eMMC versions of the BBB 
 
 #### Upgrading 4GB images
 
-As they already have Node.js 6.x installed - the easiest way to upgrade is to over-install the latest version:
+The latest Debian images already have Node.js installed - the easiest way to upgrade is to use the built in upgrade tool:
 
-    sudo npm cache clean
-    sudo npm install -g --unsafe-perm node-red
+        sudo apt update
+        sudo apt upgrade nodejs bb-node-red-installer
+
+If you are on the 2017 9.2 version you may need to run `apt-get dist-upgrade` first.
 
 Then stop and restart Node-RED.
-
-To upgrade Node.js, just use the normal apt upgrade procedure.
 
 <div class="doc-callout">
 Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both Node.js and Node-RED
