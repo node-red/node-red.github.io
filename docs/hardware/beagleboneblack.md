@@ -37,11 +37,18 @@ If you are on the 2017 9.2 version you may need to run `apt-get dist-upgrade` fi
 This should also restart the Node-RED service - but you will need to refresh any browser sessions.
 
 <div class="doc-callout">
-Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both Node.js and Node-RED
-in different locations and will conflict with the existing systemd configuration files.
+Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install
+both Node.js and Node-RED in different locations and will conflict with the existing systemd configuration files.
 </div>
 
+
+---
+
 #### Before you start
+
+<div class="doc-callout">
+This section is deprecated in favour of using the images with Node-RED built in. See above.
+</div>
 
 If you are using the 2GB eMMC version of Debian it has been stripped right down so you may need to install some
 utility functions first
@@ -86,14 +93,8 @@ The easiest way to install them is direct from npm.
 For Debian Jessie based builds with kernel 4.x run the following commands in the user
 directory of your Node-RED install. This is usually `~/.node-red`
 
-    sudo npm install -g --unsafe-perm node-red-node-beaglebone
+    sudo npm install -g --unsafe-perm beaglebone-io johnny-five node-red-contrib-gpio
 
-For previous versions of Debian (eg Wheezy) - use the older version of this node.
-
-    sudo npm install -g --unsafe-perm node-red-node-beaglebone@0.0.8
-
-An alternative option is to use the gpio nodes contributed by @monteslu that
-are available [here](https://github.com/monteslu/node-red-contrib-gpio). These give more options for interfacing like i2c and software serial, as well as simple digital and analogue IO.
 
 ### Starting Node-RED
 
@@ -159,32 +160,3 @@ the new nodes.
 
 Click the deploy button and the flow should start running. The USR2 and USR3 LEDs
 can be manually set on or off using the Inject node buttons.
-
-#### Advanced functions
-
-For experts, the `octalbonescript` module can be made available for use inside
-Function nodes. This is NOT necessary for simple use with the built in nodes.
-
-To do this, first install the `octalbonescript` library - see
-[the octalbonescript readme](https://github.com/theoctal/octalbonescript)
-for detailed install instructions depending on your kernel, but for Debian Jessie it will be
-
-    cd ~/.node-red
-    npm i octalbonescript
-
-Then update `settings.js` to add the `octalbonescript` module to the
-Function global context - to find this run `node-red-pi`, and it will print the location of `settings.js` like
-
-    [info] Settings file  : /root/.node-red/settings.js
-
-Edit this `settings.js` file. And there we need to uncomment the octalbonescript library line.
-
-    functionGlobalContext: {
-        octalbonescript:require('octalbonescript')
-    },
-
-The module is then available to any functions you write as `context.global.octalbonescript`.
-
-An example flow that demonstrates this is below :
-
-    [{"id":"e370f54b.baa368","type":"inject","z":"e524537e.2ec11","name":"on","topic":"","payload":"1","repeat":"","once":false,"x":150,"y":320,"wires":[["383a5612.0d587a"]]},{"id":"cba5ca3b.02b978","type":"inject","z":"e524537e.2ec11","name":"off","topic":"","payload":"0","repeat":"","once":false,"x":150,"y":360,"wires":[["383a5612.0d587a"]]},{"id":"b545aca3.75e4e","type":"inject","z":"e524537e.2ec11","name":"tick","topic":"","payload":"","repeat":"1","once":false,"x":150,"y":260,"wires":[["ebbe2d86.c74b2"]]},{"id":"49b03095.64b31","type":"debug","z":"e524537e.2ec11","name":"","active":true,"x":630,"y":260,"wires":[]},{"id":"ebbe2d86.c74b2","type":"function","z":"e524537e.2ec11","name":"Toggle USR3 LED on input","func":"\nvar pin = \"USR3\"\nvar b = context.global.octalbonescript;\ncontext.state = context.state || b.LOW;\n\nb.pinModeSync(pin, b.OUTPUT);\n\n(context.state == b.LOW) ? context.state = b.HIGH : context.state = b.LOW;\nb.digitalWrite(pin, context.state);\n\nreturn msg;","outputs":1,"noerr":0,"x":380,"y":260,"wires":[["49b03095.64b31"]]},{"id":"383a5612.0d587a","type":"function","z":"e524537e.2ec11","name":"Set USR2 LED on input","func":"\nvar pin = \"USR2\";\nvar b = context.global.octalbonescript;\n\nb.pinModeSync(pin, b.OUTPUT);\n\nvar level = (msg.payload === \"1\")?1:0;\nb.digitalWrite(pin, level);\n\nreturn msg;","outputs":1,"noerr":0,"x":370,"y":320,"wires":[["49b03095.64b31"]]}]
