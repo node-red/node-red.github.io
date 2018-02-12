@@ -34,7 +34,7 @@ The latest Debian images already have Node.js installed - the easiest way to upg
 
 If you are on the 2017 9.2 version you may need to run `apt-get dist-upgrade` first.
 
-Then stop and restart Node-RED.
+This should also restart the Node-RED service - but you will need to refresh any browser sessions.
 
 <div class="doc-callout">
 Note: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install both Node.js and Node-RED
