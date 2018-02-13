@@ -19,7 +19,6 @@ A `package.json` file is used to package it all together as an npm module.
    - [lower-case.html](#lower-casehtml)
  - [Testing your node in Node-RED](#testing-your-node-in-node-red)
 
-
 ### Creating a simple node
 
 This example will show how to create a node that converts message payloads to
@@ -27,8 +26,7 @@ all lower-case characters.
 
 Ensure you have the recommended LTS version of Node.js installed on your system.  As of this writing this is version **LTS 8.x** which includes npm version 5.x.
 
-Create a directory where you will develop your code. Within that directory,
-create the following files:
+Create a directory where you will develop your code. Within that directory, create the following files:
 
  - `package.json`
  - `lower-case.js`
@@ -67,7 +65,7 @@ to the [packaging guide](packaging).
 
 <h4 id="lower-casejs"><i class="fa fa-file-o"></i> lower-case.js</h4>
 
-{% highlight javascript %}
+```javascript
 module.exports = function(RED) {
     function LowerCaseNode(config) {
         RED.nodes.createNode(this,config);
@@ -79,9 +77,9 @@ module.exports = function(RED) {
     }
     RED.nodes.registerType("lower-case",LowerCaseNode);
 }
-{% endhighlight %}
+```
 
-The node is wrapped as a node module. The module exports a function that gets called
+The node is wrapped as a Node.js module. The module exports a function that gets called
 when the runtime loads the node on start-up. The function is called with a single
 argument, `RED`, that provides the module access to the Node-RED runtime api.
 
@@ -108,7 +106,7 @@ For more information about the runtime part of the node, see [here](node-js).
 <h4 id="lower-casehtml"><i class="fa fa-file-o"></i> lower-case.html</h4>
 
 
-{% highlight html %}
+```html
 <script type="text/javascript">
     RED.nodes.registerType('lower-case',{
         category: 'function',
@@ -135,7 +133,7 @@ For more information about the runtime part of the node, see [here](node-js).
 <script type="text/x-red" data-help-name="lower-case">
     <p>A simple node that converts the message payloads into all lower-case characters</p>
 </script>
-{% endhighlight %}    
+```
 
 A node's HTML file provides the following things:
 
@@ -167,7 +165,7 @@ For example, if your node is located at `~/dev/node-red-contrib-example-lower-ca
 
 This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.
 
-If you are using an older version of npm, you can create a symbolic link manually to your project.  To do so:
+If you are using an older version of npm, you can create a symbolic link manually to your project.  For example on Mac or linux systems:
 
     cd ~/.node-red/node_modules
     ln -s ~/dev/node-red-contrib-example-lower-case  .
