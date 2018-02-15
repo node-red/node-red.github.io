@@ -93,10 +93,7 @@ There are some simple conventions to follow:
    dialog.
  - a typical row will have a `<label>` that contains an icon and the name of the
    property followed by an `<input>`. The icon is created using an `<i>` element
-   with a class taken from those available from [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/).
-
-   Note: we previously used the icons provided by [Bootstrap](http://getbootstrap.com/2.3.2/base-css#icons).
-   Their use is now deprecated within Node-RED in preference to Font Awesome.
+   with a class taken from those available from [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/).
  - if more interactivity is required, `oneditprepare` can be used to attach
    any event handlers on the dialog elements.
 
