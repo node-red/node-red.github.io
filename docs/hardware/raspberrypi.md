@@ -36,7 +36,7 @@ nodes globally and these cannot then be easily managed and updated. The intentio
 While aimed at the Pi user the script will also run on any Debian based operating system, such as Ubuntu, and so can
 be used on other hardware platforms, although it has not been widely tested.
 
-The command above runs many commands as *sudo* and does delete existing Node.js and the core Node-RED directories. Please inspect it by browsing to https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered
+The command above runs many commands as **sudo** and does delete existing Node.js and the core Node-RED directories. Please inspect it by browsing to https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered
 
 The script will perform the following steps
 
@@ -79,6 +79,9 @@ To see the list of nodes you had installed:
     cd ~/.node-red
     npm ls --depth=0
 
+#### Swapping SD Cards
+
+Different versions of Raspberry Pi use different Arm processors. The Node.js binary is different for Arm6 and Arm7. Swapping SD cards from Arm6 to Arm7, for example Pi Zero to Pi 3, is OK. Swapping the other way will not work, unless you uninstall Node.js and then re-run the upgrade script to install the appropriate version of Node.js.
 
 #### Running Node-RED
 
