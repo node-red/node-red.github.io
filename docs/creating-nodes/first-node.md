@@ -158,18 +158,76 @@ In your node-red user directory, typically `~/.node-red`, run:
 
     npm install <location of node module>
 
-For example, if your node is located at `~/dev/node-red-contrib-example-lower-case` you would type the following:
+For example, on Mac OS or linux, if your node is located at `~/dev/node-red-contrib-example-lower-case` you would type the following:
 
     cd ~/.node-red
     npm install ~/dev/node-red-contrib-example-lower-case
 
-This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.
+This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.  On Windows, again, using npm 5.x or greater:
 
-If you are using an older version of npm, you can create a symbolic link manually to your project.  For example on Mac or linux systems:
+    cd C:\Users\my_name\.node_red
+    npm install C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
+
+If you are using an older version of npm, you can create a symbolic link manually to your project.  For example, on Mac or linux systems:
 
     cd ~/.node-red/node_modules
     ln -s ~/dev/node-red-contrib-example-lower-case  .
 
+On Windows with older versions of npm, use `mklink` instead:
+
+    cd C:\Users\my_name\.node_red
+    mklink /D node_modules\node-red-contrib-example-lower-case C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
+
 <div class="doc-callout">
-<em>Note</em>:  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  To prevent this, use the npm <code>--no-save</code> option.
+<em>Note</em>:  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  If you want to prevent this, use the npm <code>--no-save</code> option.
 </div>
+
+### Unit Testing
+
+To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-contrib-test-helper) can be used.  The test-helper is a framework built on the Node-RED runtime to make it easier to test nodes.
+
+Using this framework, you can create test flows, and then assert that your node properties and output is working as expected.  For example, to add a unit test to the lower-case node you can add a `test` folder to your node module package containing a file called `_spec.js`
+
+<h4><i class="fa fa-file-o"></i> test/_spec.js</h4>
+
+```javascript
+var should = require("should");
+var helper = require("node-red-test-helper");
+var lowerNode = require("../lower-case.js");
+
+describe('lower-case Node', function () {
+
+  afterEach(function () {
+    helper.unload();
+  });
+
+  it('should be loaded', function (done) {
+    var flow = [{ id: "n1", type: "lower-case", name: "test name" }];
+    helper.load(lowerNode, flow, function () {
+      var n1 = helper.getNode("n1");
+      n1.should.have.property('name', 'test name');
+      done();
+    });
+  });
+
+  it('should make payload lower case', function (done) {
+    var flow = [{ id: "n1", type: "lower-case", name: "test name",wires:[["n2"]] },
+    { id: "n2", type: "helper" }];
+    helper.load(lowerNode, flow, function () {
+      var n2 = helper.getNode("n2");
+      var n1 = helper.getNode("n1");
+      n2.on("input", function (msg) {
+        msg.should.have.property('payload', 'uppercase');
+        done();
+      });
+      n1.receive({ payload: "UpperCase" });
+    });
+  });
+});
+```
+
+These tests check to see that the node is loaded into the runtime correctly, and that it correctly changes the payload to lower case as expected.
+
+Both tests load the node into the runtime using `helper.load` supplying the node under test and a test flow  The first checks that the node in the runtime has the correct name property.  The second test uses a helper node to check that the output from the node is, in fact, lower case.
+
+The helper module contains other examples of tests taken from the Node-RED core nodes.  For more information on the helper module, see the associated README.
