@@ -184,7 +184,7 @@ On Windows with older versions of npm, use `mklink` instead:
 
 ### Unit Testing
 
-To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-contrib-test-helper) can be used.  The test-helper is a framework built on the Node-RED runtime to make it easier to test nodes.
+To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-node-test-helper) can be used.  The test-helper is a framework built on the Node-RED runtime to make it easier to test nodes.
 
 Using this framework, you can create test flows, and then assert that your node properties and output is working as expected.  For example, to add a unit test to the lower-case node you can add a `test` folder to your node module package containing a file called `_spec.js`
 
