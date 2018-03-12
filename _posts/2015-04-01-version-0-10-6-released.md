@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.10.6 released
+author: nick
 ---
 
 Node-RED 0.10.6 is now available to [download](https://github.com/node-red/node-red/archive/0.10.6.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -26,28 +27,28 @@ By immediately bumping the version in git following a release (to make it odd), 
 Quite a few small changes have gone into the editor. Some of the ones worth highlighting are:
 
  - We've made some performance improvements to how flows are drawn in the editor. The more nodes/wires you have, the more noticeable they'll be.
- 
+
  - The palette has had an overdue update to bring the nodes' appearance inline with how they appear in the workspace.
- 
+
  ![Palette Update](/blog/content/images/2015/Mar/Selection_164.png)
 
  - If you try to leave the editor with undeployed changes, you'll get a browser alert warning you'll lose your changes and give you the option to stay on the page.
- 
+
  ![Confirm Navigation](/blog/content/images/2015/Mar/Selection_165.png)
- 
+
 
  - A common issue is where an Inject node's button is clicked on before it is deployed, which doesn't work. Or when it has undeployed changes and clicking the button causes the current deployed version to trigger.
- 
+
  Now, if a node has undeployed changes, the button is visually disabled.
- 
+
  ![Inject buttons](/blog/content/images/2015/Mar/Selection_166.png)
 
  - Another area that the node action buttons can cause unexpected behaviour is whilst editing a subflow. A subflow is best thought of as a template of nodes. When editing a subflow, you are editing the template, not the actual instance of the subflow. In this view, the node action buttons, such as on the Inject node, do not correspond to a single node in the runtime, so clicking on them won't work. To reflect this, the buttons are disabled when editing a subflow.
 
  - Whilst mentioning subflows, you can now get to a subflow's edit view by double-clicking on its entry in the palette
- 
+
  - We've moved away from the Eclipse Orion rich text editor component in favour of the [ACE code editor](http://ace.c9.io/) in the Function, Template and Comment nodes. We've still load the Orion library into the Editor as we know there are 3rd party nodes that depend on it.
- 
+
 ### Node changes
 
 #### Catch node
@@ -116,4 +117,3 @@ We've also released the Node-RED command-line administration tool. This allows y
 More details in the [documentation](http://nodered.org/docs/node-red-admin.html).
 
 This tool makes use of the Admin API which we've had in place for a couple releases. With the release of the tool, we're now happy the API is stable enough for others to make use of. The API is documented in the new [API section of our documentation](http://nodered.org/docs/api/index.html).
-

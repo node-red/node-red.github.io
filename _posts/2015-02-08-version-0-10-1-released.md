@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.10.1 released
+author: nick
 ---
 
 Node-RED 0.10.1 is now available to [download](https://github.com/node-red/node-red/archive/0.10.1.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -97,4 +98,3 @@ A consequence of adding support for v0.12 we will be **dropping support for v0.8
 With the surprise (well, it was to us) release of the Raspberry Pi 2, there has naturally been a lot of interest in getting Node-RED running on it. The main stumbling block has been getting a properly built version of node.js on there. [This page](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager#debian-and-ubuntu-based-linux-distributions) has a guide that should get it installed.
 
 Note that currently, the GPIO nodes are known not to work; they are awaiting an update to the underlying libraries, which an `apt-get upgrade` should pick up eventually.
-

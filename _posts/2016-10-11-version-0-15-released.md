@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.15 released
+author: nick
 ---
 
 Node-RED 0.15 is now available to [download](https://github.com/node-red/node-red/releases/download/0.15.0/node-red-0.15.0.zip) or [npm install](https://npmjs.org/package/node-red).

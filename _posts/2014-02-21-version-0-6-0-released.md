@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.6.0 released
+author: nick
 ---
 
 Node-RED 0.6.0 is now available to [download](https://github.com/node-red/node-red/archive/0.6.0.zip) or [npm install](https://npmjs.org/package/node-red). Please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).
@@ -41,7 +42,7 @@ For the sake of completeness, there is also a new option to provide basic auth d
 Internally, there has been a change to how nodes access the express app to attach their HTTP request handles. Previously, a node would just use `RED.app`. For example, from the Inject node:
 
     RED.app.post("/inject/:id", function(req,res) {
- 
+
 The use of `RED.app` has been deprecated. If you use it, you'll get a log message in the console warning about use of a deprecated API - although things will still work for now.
 
 These there are two new properties of `RED` to use:
@@ -63,13 +64,13 @@ you must do:
  - Importing a flow has got a bit easier now that you can drag and drop the flow json straight onto the canvas. Here's an example dragging from the new flow library.
 
 ![Drag and Drop](/blog/content/images/2014/Apr/nr_drag_and_drop.gif)
- 
+
  - To make it a bit easier to find things in the palette, we've added a search filter.
 
 ![Palette Filter](/blog/content/images/2014/Apr/nr_palette_filter.gif)
 
  - To help manage the configuration nodes used in a flow, we've added the config node sidebar tab. It lists all of the config nodes in the flow and highlights what's using each one. This means you can quickly spot any config nodes that are no longer being used and can be deleted.
- 
+
 ![Configuration Sidebar](/blog/content/images/2014/Apr/nr_config_sb.gif)
 
 
@@ -80,12 +81,11 @@ you must do:
  - Added nodes for Emoncms, Postgres and Amazon DynamoDB to the [node-red-nodes](https://github.com/node-red/node-red-nodes) repository
  - Added `socketTimeout` to settings.js for TCP server sockets
  - Added proper choice for regex support to change node
- - Fixed keepalive handling in MQTT client 
+ - Fixed keepalive handling in MQTT client
  - Added options for all 17 pins in WiringPi
  - Added new Range Node
  - Improved inject node payload options - allows an 'empty' payload to be injected
  - File node: the filename can be overridden by the incoming message's `filename` property. It will delete the file if the message has a `delete` property.
  - Added username/password to Mongo nodes
  - Added `httpNodeCors` to setting.js to enable cross-origin requests to be made
- - Added optional basic-auth to HTTP Request node 
-
+ - Added optional basic-auth to HTTP Request node

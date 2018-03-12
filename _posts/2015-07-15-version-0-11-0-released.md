@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.11.0 released
+author: nick
 ---
 
 Node-RED 0.11.1 is now available to [download](https://github.com/node-red/node-red/releases/download/0.11.1/node-red-0.11.1.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -20,7 +21,7 @@ We've finally tracked down and squashed the last remaining issues that were brea
 
 It is important to note that we have only tested the core runtime and nodes. 3rd party nodes may still have lurking issues - so be sure to test your flows out before you leap.
 
-### Internationalisation 
+### Internationalisation
 
 ... or i18n for short.
 
@@ -48,7 +49,7 @@ The node only allows messages to pass through based on one of two possible condi
 
  - for string or numeric values, if their `msg.payload` is different to the previous messages value.
  - for numeric values, if their `msg.payload` differs from the previous value by at least some margin (either absolute value or by a percentage)
- 
+
 This is particularly useful, for example, if you are reporting a sensor value. It isn't necessarily useful to report a temperature is unchanged every few seconds through the day. It is far more useful to report when the value has changed.
 
 ### Other changes
@@ -57,4 +58,3 @@ Aside from a couple bug fixes, the only other changes in the release were:
 
  - The File output node can be configured to create the directory if needed
  - The Function node already had `setTimeout` available to it - we've added `clearTimeout` as it seemed only polite
-

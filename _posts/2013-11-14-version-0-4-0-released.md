@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.4.0 released
+author: nick
 ---
 
 Node-RED 0.4.0 is now available to [download](https://github.com/node-red/node-red/archive/0.4.0.zip) or [npm install](https://npmjs.org/package/node-red). Please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).
@@ -39,7 +40,7 @@ In the [node-red-nodes](https://github.com/node-red/node-red-nodes) repository, 
 
 ### What's next?
 
-There's a healthy [list of issues](https://github.com/node-red/node-red/issues?state=open) and we've still got a whiteboard of scribblings to work through. 
+There's a healthy [list of issues](https://github.com/node-red/node-red/issues?state=open) and we've still got a whiteboard of scribblings to work through.
 
 Some of the items near the top of the list include:
 
@@ -47,7 +48,7 @@ Some of the items near the top of the list include:
  - add client id, usernamd and password support to the MQTT nodes. May even get Last Will and Testament support in.
  - enable session-oriented connections in the TCP nodes.
 
-  
+
 
 ### Upcoming events
 

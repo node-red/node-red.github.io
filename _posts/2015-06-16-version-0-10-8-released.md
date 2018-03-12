@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.10.8 released
+author: nick
 ---
 
 **Update** 0.10.10 has been release to fix a permissions issue with the Raspberry Pi GPIO nodes.
@@ -25,7 +26,7 @@ The following nodes have moved to their own npm package and have been added as d
  - Feedparse, now provided by `node-red-node-feedparser`
  - Email, now provided by `node-red-node-email`
  - Serialport, now provided by `node-red-node-serialport`
- 
+
 
 The following nodes have moved to their own npm package but have **not** been added as dependencies of the node-red package. This means, if you are using any of these nodes, you'll need to *manually install their new npm package to continue using them.*
 
@@ -56,4 +57,3 @@ This release includes a number of fixes and improvements throughout both the run
   The warning can be turned off if you are intentionally deploying unused nodes.
 
 - The `Catch` node, introduced in the previous release, now provides some protection against a flow getting stuck in an infinite loop of error handling. If a catch node detects the same message has been passed to it, from the same source node, more than 10 times, it will drop the message and log a warning. Sometimes it may be desirable for a flow to loop like this, for example if it is retrying some operation until it succeeds. In those cases, the flow should delete the `msg.error` property to prevent this loop detection from kicking in.
-

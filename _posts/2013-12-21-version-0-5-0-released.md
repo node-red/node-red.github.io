@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.5.0 released
+author: nick
 ---
 
 A bit later than planned, Node-RED 0.5.0 is now available to [download](https://github.com/node-red/node-red/archive/0.5.0.zip) or [npm install](https://npmjs.org/package/node-red). Please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).
@@ -78,5 +79,3 @@ npm-installable nodes have been on the to-do list for a while now; it's probably
 Another issue to tackle is a better separation of the admin UI from the runtime. Currently, you can use `httpRoot` to move where the admin UI is served from as well as apply basic authentication. An unfortunate side effect is that if you secure the admin UI, you end up also securing the HTTP In nodes - probably not the desired result. We need to separate these out, but the challenge is doing this in a backwardly compatible way.
 
 There are also a few [pull-requests](https://github.com/node-red/node-red-nodes/pulls) for new nodes working their way through the system.
-
-

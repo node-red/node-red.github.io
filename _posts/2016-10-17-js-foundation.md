@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Moving to the JS Foundation
+author: nick
 ---
 
 _[Nick O'Leary](https://twitter.com/knolleary) and [Dave Conway-Jones](https://twitter.com/ceejay), [IBM Emerging Technologies](https://www.ibm.com/blogs/emerging-technology/)_.

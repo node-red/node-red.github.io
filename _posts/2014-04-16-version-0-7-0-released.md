@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.7.0 released
+author: nick
 ---
 
 Node-RED 0.7.0 is now available to [download](https://github.com/node-red/node-red/archive/0.7.0.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -27,12 +28,12 @@ As we now have a couple different command-line options, we've added help:
 
     $ node red.js -?
     Usage: node red.js [-v] [-?] [--settings settings.js] [flows.json]
-    
+
     Options:
       -s, --settings FILE  use specified settings file
       -v                   enable verbose output
       -?, --help           show usage
-    
+
     Documentation can be found at http://nodered.org
 
 
@@ -68,8 +69,8 @@ As announced earlier on the [mailing list](https://groups.google.com/forum/#!top
  - 30-socketout - the matching outbound sockets
  - 32-multicast - the original multicast node - now replaced as part of the udp node
  - 35-rpi-gpio-in - original raspberry pi input node using a node library (no longer maintained) - now replaced by the one using gpio.
- - 35-rpi-gpio-out - the outbound pair 
- 
+ - 35-rpi-gpio-out - the outbound pair
+
 #### Deprecating HTTPGet
 In this release we have deprecated the httpget node. This had been logically replaced by the HTTPRequest node some time ago, but we never got around to properly deprecating it. When I highlighted this, it was pointed out there was a feature of the httpget node not available in its replacement; the ability to programmatically construct the url within the node.
 
@@ -106,6 +107,3 @@ You can still construct the url yourself and pass it in with the `url` property 
   - Pibrella board
 - Updated the Emoncms and Hue nodes with new capabilities
 - The Twilio node no longer requires you to provide your account details in `settings.js` - you can provide them within the node itself.
-
-
-

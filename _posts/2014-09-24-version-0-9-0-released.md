@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.9.0 released
+author: nick
 ---
 
 Node-RED 0.9.0 is now available to [download](https://github.com/node-red/node-red/archive/0.9.0.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -55,7 +56,7 @@ We've created a new repository of nodes for popular web services. This will grow
 To add these nodes to your palette, run:
 
     $ npm install node-red-node-web-nodes
-    
+
 
 #### Node updates
 
@@ -65,11 +66,11 @@ To add these nodes to your palette, run:
  - The MQTT node now supports configuring the qos and retain options on a message.
  - The Twitter node can tweet photos
  - The RaspberryPi GPIO nodes support the B+ model pins
- 
+
 #### Deprecated nodes
- 
+
  We deprecated the `httpget` node a couple of releases ago, but it's still just hanging on. Joining it on the list are:
- 
+
   - `imap` - the core email node provides this functionality
   - `parsexml`, `js2xml` - the XML parser node does a much better job then either of these did
 

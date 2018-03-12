@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.18 released
+author: nick
 ---
 
 At long last, Node-RED 0.18 is now available to [download](https://github.com/node-red/node-red/releases/download/0.18.0/node-red-0.18.0.zip) or [npm install](https://npmjs.org/package/node-red).

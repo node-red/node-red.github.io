@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Changing where Node-RED stores data
+author: nick
 ---
 
 One of the things we've been thinking about recently is our upgrade process.
@@ -46,7 +47,7 @@ This will also put the new command `node-red` onto your path, allowing you to ru
 When a new release is available, you simply run the following command to get it installed:
 
     sudo npm update -g node-red
-    
+
 
 If you choose to install it locally, rather than globally, you can still upgrade using the `npm update` command, but you won't get the `node-red` command on your path.
 
@@ -62,5 +63,3 @@ You will _not_ be able to run node-red straight from a git clone without first r
 We'll share more details of this just before it goes into the repository. But by way of advanced warning, if you are running from git just to get the very latest code, be prepared.
 
 If you are running from git for the convenience of upgrading between versions, you should move to the `npm install -g` approach above once we release 0.10.4.
-
-

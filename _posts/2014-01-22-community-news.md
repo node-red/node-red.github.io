@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Community News
+author: nick
 ---
 
 A couple community things we wanted to highlight.
@@ -19,7 +20,7 @@ One of the workshops is being run by friend of Node-RED, [Charalampos Doukas](ht
 
 > **[Magic Lights](http://www.makerland.org/workshops/#magic)**
 
->The workshop project involves using a RaspberryPi and Bluetooth 4.0 for automatically turning on a Philips Hue wireless lamp based on user proximity (using a smartphone or a device like the Fitbit). The workshop will teach participants how to use Node-RED for interacting with Objects/Smart Things. We will learn the basic elements of Node-RED, how to interface with hardware like the Arduino, how to write custom code and how to consume external services using APIs. 
+>The workshop project involves using a RaspberryPi and Bluetooth 4.0 for automatically turning on a Philips Hue wireless lamp based on user proximity (using a smartphone or a device like the Fitbit). The workshop will teach participants how to use Node-RED for interacting with Objects/Smart Things. We will learn the basic elements of Node-RED, how to interface with hardware like the Arduino, how to write custom code and how to consume external services using APIs.
 
 [Early bird tickets](http://www.makerland.org/tickets/) are available for a couple more weeks.
 

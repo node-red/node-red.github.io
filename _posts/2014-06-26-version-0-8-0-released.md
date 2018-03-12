@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.8.0 released
+author: nick
 ---
 
 Node-RED 0.8.0 is now available to [download](https://github.com/node-red/node-red/archive/0.8.0.zip) or [npm install](https://npmjs.org/package/node-red).
@@ -63,4 +64,3 @@ We have occasionally had a request to format the flow file to make it more human
 - The File In node can be used to read a file's contents
 - The Trigger node can be used to pulse IO pins, setup a watchdog or many other things
 - The Serial node has been updated to allow configuration of the data bits, parity and stop bits. It can also now be configured to handle binary data rather than assume everything is ASCII text.
-

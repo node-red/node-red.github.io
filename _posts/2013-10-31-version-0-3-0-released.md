@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.3.0 released
+author: nick
 ---
 
 Node-RED 0.3.0 is now available to [download](https://github.com/node-red/node-red/archive/0.3.0.zip) or [npm install](https://npmjs.org/package/node-red).

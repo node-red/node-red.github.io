@@ -8,7 +8,7 @@ title: Projects
  - [Enabling projects](#enabling-projects)
  - [Creating your first project](#creating-your-first-project)
  - [Working with projects](#working-with-projects)
-   - [Accessing Project Information](#accessing-project-information)
+   - [Accessing Project Settings](#accessing-project-settings)
      - [Project Dependencies](#project-dependencies)
      - [Project Settings](#project-settings)
    - [Version Control](#version-control)
@@ -101,12 +101,15 @@ Once you have created your project, you can continue to use the Node-RED editor
 just as you always have. There are some new parts of the editor that have been
 added to work with your project.
 
-#### Accessing Project Information
+#### Accessing Project Settings
 
 The Info sidebar now shows what project you are working on at the top. Next to
-the project name is a button that opens up the Project Information dialog.
+the project name is a button that opens up the Project Settings dialog.
 
 <img src="images/project_info_sidebar.png" width="314px">
+
+You can also access this from the `Projects -> Project Settings` option in the
+main menu.
 
 The dialog has three tabs:
 
@@ -195,7 +198,7 @@ by falling back to the command line.
 After you have created your first project by migrating your existing flow files
 you can create additional projects.
 
-Selecting `Project-New...` from the menu opens the Projects dialog.
+Selecting `Projects -> New` from the menu opens the Projects dialog.
 
 This provides three options:
 
@@ -221,6 +224,9 @@ This lets you create a new project. It provides the same options as the
 This lets you clone an existing remote repository. You can use either an `http(s)`
 or `git/ssh` url for the repository. If the repository requires authentication
 you must provide it here.
+
+*Note:* for `http` urls, do not include your username and/or password in the url
+itself. You can should provide those separately when prompted.
 
 *Node-RED does not currently make use of any credential helper you git client may be
 configured with. This is an area we look for feedback on from the community.*

@@ -36,8 +36,64 @@
     border: 1px solid #999;
     padding: 10px;
 }
-.post {
+.blog-posts .grid {
+    background: #f3f3f3;
+}
+.post-preview {
+    background: white;
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    width: calc(100% / 3 - 60px);
+    height: 300px;
+    top: -50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #fff;
+    border-radius: 3px;
+}
+.post-preview > a {
+    padding: 10px 15px;
+    position: absolute;
+    top: 0; left:0; right: 0; bottom: 0;
+}
+.post-preview > a:hover {
+    text-decoration: none;
+}
 
+.post-preview:hover {
+    border-color: #999;
+    box-shadow: 0px 2px 3px 0 #aaa;
+}
+.post-preview .post-content {
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.9em;
+}
+.post-preview p {
+    margin: 0;
+}
+.post-preview h2 {
+    margin: 5px 0 5px;
+    font-size: 22px;
+}
+.post-preview h3 {
+    margin: 5px 0 5px;
+    font-size: 18px;
+}
+
+.post-preview .post-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    padding-right: 10px;
+    background: rgba(255,255,255,0.5);
+    text-align: right;
+}
+.post-preview .post-meta {
+    font-size: 0.9em;
 }
 
 blockquote {
@@ -45,4 +101,20 @@ blockquote {
     padding-left: 10px;
     font-style: italic;
     color: #888;
+}
+
+.blog-posts-title {
+    height: 100px;
+    background: url(../images/title-wave.png) no-repeat 0% 25% #8f0000 ;
+    border-top: 10px solid #a22222;
+    text-align: center;
+}
+.blog-posts .grid {
+    overflow: visible;
+}
+@media handheld, only screen and (max-width: 767px) {
+    .post-preview {
+        width: calc(100% - 40px);
+        height: 200px;
+    }
 }

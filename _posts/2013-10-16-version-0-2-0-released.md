@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Version 0.2.0 released
+author: nick
 ---
 
 We're still finding our way with how we want to do regular releases, but as I said in the [original commit](https://github.com/node-red/node-red/commit/32796dd74ca2525e3fea302e79ff3fc596bb1bf3) to github, we've got to start somewhere.

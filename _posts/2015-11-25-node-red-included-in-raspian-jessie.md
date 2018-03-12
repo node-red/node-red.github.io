@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Node-RED now included in Raspbian Jessie
+author: nick
 ---
 
 
@@ -14,10 +15,3 @@ We're big fans of the Raspberry Pi and have been since the very early days of No
 We've always looked for ways to help improve the getting started experience of Node-RED and wanted to make it as accessible as possible to as wide an audience as we can. Having it pre-installed on the Pi, alongside other wonderful tools like Scratch, is a great step forward.
 
 For more information check out our updated [Raspberry Pi documentation](http://nodered.org/docs/hardware/raspberrypi.html) and get in touch on the [mailing list](https://groups.google.com/forum/#!forum/node-red) or [twitter](https://twitter.com/nodered) if you have any questions.
-
-
-
-
-
-
-

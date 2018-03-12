@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: A Roadmap to 1.0
+author: nick
 ---
 
 With the 0.17 release out of the way, we've turned our attention to what comes

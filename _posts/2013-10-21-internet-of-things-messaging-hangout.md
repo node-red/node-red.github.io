@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Internet of Things Messaging Hangout
+author: nick
 ---
 
 I was asked to join some of my Messaging colleagues in a Google Handout earlier today to talk about the Internet of Things, Node-RED and the upcoming [ThingMonk conference](http://redmonk.com/thingmonk/).
