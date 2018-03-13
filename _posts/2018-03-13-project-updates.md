@@ -22,7 +22,7 @@ project.
 
 It's hard to dig much into that number to understand more about where and how
 Node-RED is being used. One thing we can say is roughly 45% of those installs are
-happening within the IBM Cloud - a fact we can infer from the install statistics
+happening within the [IBM Cloud](https://console.bluemix.net/catalog/starters/node-red-starter) - a fact we can infer from the install statistics
 of the `node-red-bluemix-nodes` module. It also doesn't include people using the
 version that comes pre-installed on the Raspberry Pi, unless they have used our
 [update script](https://nodered.org/docs/hardware/raspberrypi) to get to the latest
