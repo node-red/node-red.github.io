@@ -22,7 +22,9 @@ already installed, you can install or upgrade using the Node-RED upgrade script 
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
-**Note:** Once you have used this script to upgrade, then you cannot use apt-get to upgrade the pre-installed version of Node-RED.
+On really minimal Debian installs you may want to `sudo apt-get install build-essential` before running the script so that the serialport builds and installs OK. This is optional.
+
+**Note:** Once you have used this script to upgrade, you cannot use apt-get to upgrade the pre-installed version of Node-RED.
 
 #### Install / Upgrade Script
 
