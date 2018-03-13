@@ -8,7 +8,7 @@ There are many ways you could choose to run Node-RED under Docker. This guide
 describe some of the ways you can do it.
 
 It assumes you have some basic familiarity with Docker and the
-[Docker Command Line](https://docs.docker.com/reference/commandline/cli/).
+[Docker Command Line](https://docs.docker.com/engine/reference/commandline/cli/).
 
 
 ### Container versions
@@ -24,12 +24,22 @@ standard dependencies that are required for native module compilation. If you
 want to add modules with native dependencies, use the standard image or extend
 the slim image with the missing packages.
 
+Additional images using a newer Node.js v8 base image are now available with the following tags.
+
+- **latest-v8** 
+- **slim-v8**
+- **rpi-v8**
+
+Node-RED releases are also tagged with a version label, allowing you to fix on a specific version: `latest:X.Y.Z`, 
+`slim:X.Y.Z`, `rpi:X.Y.Z`.
 
 ### Quick start
 
 To run the `latest` container:
 
     docker run -it -p 1880:1880 --name mynodered nodered/node-red-docker
+
+*Note:* on a Raspberry Pi you must use a `rpi`-tagged image: `nodered/node-red-docker:rpi`.
 
 This command will download the `nodered/node-red-docker` container from DockerHub
 and run an instance of it with the name of `mynodered` and with port 1880 exposed.
