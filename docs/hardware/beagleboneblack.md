@@ -21,6 +21,14 @@ To start Node-RED
 
     sudo service node-red start
 
+To set Node-RED to auto-run on every boot
+
+    sudo systemctl enable node-red.service
+
+and likewise to stop it auto-running on boot
+
+    sudo systemctl disable node-red.service
+
 
 The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to be manually installed as per below.
 
@@ -39,6 +47,18 @@ If you are on the 2017 Debian 9.2 version you may need to run `sudo apt full-upg
 
 **Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install
 both Node.js and Node-RED in different locations and will conflict with and break the existing systemd configuration files.
+
+---
+
+#### Configuring
+
+The Beaglebone is configured by default to run Node-RED as root. Therefore the configuration files are located in the
+`/root/.node-red` directory and you will need root privileges (sudo) to edit them. This is where you need to edit your
+`settings.js` file for example.
+
+Beaglebone also has a systemd service, `/lib/systemd/system/node-red.socket`, that automatically starts Node-RED
+when is sees an attempt to connect. By default this is port 1880 - but if you want change that you need to change it
+here as well as in the `settings.js` file.
 
 ---
 
