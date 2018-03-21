@@ -249,7 +249,7 @@ module.exports = {
  -  Set the `adminAuth` property in settings.js to load this module:
 
 ```javascript
-adminAuth: require("./user-authentication");
+adminAuth: require("./user-authentication")
 ```
 
 
