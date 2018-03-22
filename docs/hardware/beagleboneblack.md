@@ -9,6 +9,9 @@ We recommend using the latest Debian 9 Stretch based SD card images - from
 The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot
 and point your browser at your BeagleBone, port 1880.
 
+The 2GB console version suitable for flashing to older eMMC versions of the BBB is not recommended but can be
+installed as per the manual installation instructions below.
+
 To view the Node-RED log
 
     sudo journalctl -f -u node-red -o cat
@@ -21,7 +24,7 @@ To start Node-RED
 
     sudo service node-red start
 
-To set Node-RED to auto-run on every boot
+To set Node-RED to auto-start on every boot
 
     sudo systemctl enable node-red.service
 
@@ -29,8 +32,6 @@ and likewise to stop it auto-running on boot
 
     sudo systemctl disable node-red.service
 
-
-The 2GB console version suitable for flashing to older eMMC versions of the BBB will need to be manually installed as per below.
 
 ---
 
@@ -76,7 +77,7 @@ utility functions first
     sudo apt-get update
     sudo apt-get install -y curl locales ntpdate avahi-utils python build-essential
 
-Make sure the local time is set correctly. The BeagleboneBlack does not have a
+Make sure the local time is set correctly. The Beaglebone Black does not have a
 battery backed real time clock so needs to be set on every boot in order for
 software certificates date checks to be valid.
 

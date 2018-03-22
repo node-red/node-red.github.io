@@ -24,7 +24,7 @@ This guide will help you get Node-RED installed and running in just a few minute
         <h4>On a device</h4>
         <ul style="margin: 0; padding: 0">
             <li><a href="/docs/hardware/raspberrypi">Raspberry Pi</a></li>
-            <li><a href="/docs/hardware/beagleboneblack">BeagleBone Black</a></li>
+            <li><a href="/docs/hardware/beagleboneblack">BeagleBone Boards</a></li>
             <li><a href="/docs/hardware/arduino">Interacting with Arduino</a></li>
             <li><a href="/docs/platforms/android">Android</a></li>
         </ul>
