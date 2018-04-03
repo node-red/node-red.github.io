@@ -12,18 +12,18 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Oct 22:51:09 - [info] Node-RED version: v0.17.5
-    25 Oct 22:51:09 - [info] Node.js  version: v6.12.0
-    25 Oct 22:51:09 - [info] Loading palette nodes
-    25 Oct 22:51:10 - [warn] ------------------------------------------
-    25 Oct 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
-    25 Oct 22:51:10 - [warn] ------------------------------------------
-    25 Oct 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
-    25 Oct 22:51:10 - [info] User Directory : /home/nol/.node-red
-    25 Oct 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
-    25 Oct 22:51:10 - [info] Creating new flows file : flows_noltop.json
-    25 Oct 22:51:10 - [info] Starting flows
-    25 Oct 22:51:10 - [info] Started flows
+    25 Mar 22:51:09 - [info] Node-RED version: v0.18.4
+    25 Mar 22:51:09 - [info] Node.js  version: v8.11.1
+    25 Mar 22:51:09 - [info] Loading palette nodes
+    25 Mar 22:51:10 - [warn] ------------------------------------------
+    25 Mar 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
+    25 Mar 22:51:10 - [warn] ------------------------------------------
+    25 Mar 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
+    25 Mar 22:51:10 - [info] User Directory : /home/nol/.node-red
+    25 Mar 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
+    25 Mar 22:51:10 - [info] Creating new flows file : flows_noltop.json
+    25 Mar 22:51:10 - [info] Starting flows
+    25 Mar 22:51:10 - [info] Started flows
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
 
@@ -106,6 +106,10 @@ The following two commands show these two approaches:
 
 There are many methods of starting, stopping and monitoring applications at boot time.
 Raspberry Pi users are *strongly* recommended to follow [these instructions](../hardware/raspberrypi).
+
+Linux users that have a Debian flavour (e.g. Ubuntu, Mint, Debian, etc) may wish to use the
+[Adding Autostart capability using SystemD](../hardware/raspberrypi#adding-autostart-capability-using-systemd)
+instructions from the Raspberry Pi docs though you will need to edit the downloaded `/lib/systemd/system/nodered.service` file to suit your user and environment.
 
 The guide below sets out what we believe to be the most straight-forward for
 the majority of users. For Windows, PM2 does not autorun as a service -
