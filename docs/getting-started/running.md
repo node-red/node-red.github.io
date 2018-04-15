@@ -107,9 +107,9 @@ The following two commands show these two approaches:
 There are many methods of starting, stopping and monitoring applications at boot time.
 Raspberry Pi users are *strongly* recommended to follow [these instructions](../hardware/raspberrypi).
 
-Linux users that have a Debian flavour (e.g. Ubuntu, Mint, Debian, etc) may wish to use the
+Linux users that have a Debian flavour (e.g. Ubuntu, Mint, Debian, etc) are recommended to use the
 [Adding Autostart capability using SystemD](../hardware/raspberrypi#adding-autostart-capability-using-systemd)
-instructions from the Raspberry Pi docs though you will need to edit the downloaded `/lib/systemd/system/nodered.service` file to suit your user and environment.
+instructions from the Raspberry Pi docs though you will need to edit the downloaded `/lib/systemd/system/nodered.service` file to suit your *user id* and environment.
 
 The guide below sets out what we believe to be the most straight-forward for
 the majority of users. For Windows, PM2 does not autorun as a service -

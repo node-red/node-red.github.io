@@ -106,16 +106,16 @@ If you want Node-RED to run when the Pi boots up you can use
     sudo systemctl enable nodered.service
 
 
-#### Adding nodes to preloaded version (Jessie only)
+#### Adding nodes to preloaded version
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default Jessie installation. This is not necessary if you have upgraded to Node.js 6.x.
+in the default Raspbian installation. This is not necessary if you have upgraded to Node.js 6.x.
 
 The following commands install `npm` and then upgrade
-it to the latest `3.x` version.
+it to the latest version.
 
     sudo apt-get install npm
-    sudo npm install -g npm@3.x
+    sudo npm install -g npm
     hash -r
     cd ~/.node-red
     npm install node-red-{example node name}
@@ -217,14 +217,34 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
+#### Changing the systemd environment - non-Pi user
+
+To run as a user other than Pi, you need to edit the nodered.service file. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and change the lines 4, 5 and 6 as indicated by {your_user} below
+
+    [Service]
+    Type=simple
+    # Run as normal pi user - feel free to change...
+    User={your_user}
+    Group={your_user}
+    WorkingDirectory=/home/{your_user}
+    Nice=5
+    Environment="PI_NODE_OPTIONS=--max_old_space_size=256"
+    ...
+
+Save the file, and then run:
+
+    sudo systemctl daemon-reload
+
 #### Changing the systemd environment - using a proxy
 
 If you need to use a proxy for http requests - you need to set the *HTTP_PROXY* environment variable.
 When using *systemd* this must be done within the service configuration. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and add another `Environment=` line, for example:
 
+    ...
     Nice=5
     Environment="NODE_OPTIONS=--max-old-space-size=128"
     Environment="HTTP_PROXY=my-proxy-server-address"
+    ...
 
 Save the file, and then run:
 
