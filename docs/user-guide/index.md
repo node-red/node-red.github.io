@@ -6,7 +6,6 @@ title: User Guide
 
 There's lots more to write in this guide, we're just getting started.
 
-
 - [Configuring Node-RED](/docs/configuration)
 - [Security](/docs/security)
 - [Logging](/docs/user-guide/logging)
@@ -16,6 +15,9 @@ There's lots more to write in this guide, we're just getting started.
 - [Working with messages](/docs/user-guide/messages)
 - [Embedding into an existing app](/docs/embedding)
 
+<div class="doc-callout">
+<em>Note</em>:  Parts of the user guide assume the reader is somewhat familiar with <strong>Javascript</strong> (not Java).  There are many online resources to get up to speed. Mozilla, for example, has a good <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">re-introduction to Javascript</a> that should get you headed in the right direction.
+</div>
 
 ### Other places to get help
 
