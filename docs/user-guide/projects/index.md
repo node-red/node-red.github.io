@@ -39,7 +39,9 @@ To enable the projects feature, edit your `settings.js` file and add the followi
 option within the `module.exports` block and restart Node-RED.
 
 <div class="doc-callout">
-<em>Note</em>:  The <code>settings.js</code> file exports a <em>Javascript object</em>.  To configure Node-RED you should understand how to modify a Javascript object by adding new or modifying existing key/value pairs like the <code>editorTheme</code> below.
+<em>Note</em>:  The <code>settings.js</code> file exports a <em>JavaScript object</em>.
+To configure Node-RED you should understand how to modify a JavaScript object by adding
+new or modifying existing key/value pairs like the <code>editorTheme</code> below.
 </div>
 
 ```
