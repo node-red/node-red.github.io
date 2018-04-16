@@ -16,7 +16,10 @@ There's lots more to write in this guide, we're just getting started.
 - [Embedding into an existing app](/docs/embedding)
 
 <div class="doc-callout">
-<em>Note</em>:  Parts of the user guide assume the reader is somewhat familiar with <strong>Javascript</strong> (not Java).  There are <em>many</em> online resources to get up to speed. Mozilla, for example, has a good <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">re-introduction to Javascript</a>.  The brief <a href="http://node-ardx.org/js-primer">Javascript Primer</a> from the <a href="http://node-ardx.org/">Arduino's Experimenter's Guide for NodeJS</a> should also get you headed in the right direction.
+<em>Note</em>:  Parts of the user guide assume the reader is somewhat familiar with <strong>Javascript</strong> (not Java).  
+There are many online resources to get up to speed with Javascript. Mozilla, for example, has a good 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">re-introduction to Javascript</a>
+that should get you headed in the right direction.
 </div>
 
 ### Other places to get help
