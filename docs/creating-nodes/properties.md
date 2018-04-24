@@ -79,7 +79,11 @@ If more specific validation is required, the `validate` attribute can be used to
 provide a function that will check the value is valid. The function is passed the
 value and should return either true or false. It is called within the context of
 the node which means `this` can be used to access other properties of the node.
-This allows the validation to depend on other property values.
+This allows the validation to depend on other property values. 
+While editing a node the `this` object reflects the current configuration of the
+node and **not** the current form element value. The validator function should 
+try to access the property configuration element and take the `this` object as 
+fallback to achieve the right user experience.
 
 There is a group of common validation functions provided.
 
@@ -87,19 +91,27 @@ There is a group of common validation functions provided.
  - `RED.validators.regex(re)` - check the value matches the provided regular
    expression
 
+Both methods - `required` attribute and `validate` attribute - are reflected by
+the UI in the same way. The missing configuration marker on the node is triggered
+and the corresponding input is red surrounded when a value is not valid or missing.
+
 
 The following example shows how each of these validators can be applied.
 
-{% highlight javascript %}
+```javascript
 defaults: {
    minimumLength: { value:0, validate:RED.validators.number() },
    lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
-   custom: { value:"", validate:function(v) { return v.length > this.minimumLength } }
+   custom: { value:"", validate:function(v) {
+      var minimumLength=$("#node-input-name").length?$("#node-input-minimumLength").val():this.minimumLength;
+      return v.length > minimumLength 
+   } }
 },
-{% endhighlight %}
+```
 
 Note how the `custom` property is only valid if its length is greater than the
-current value of the `minimumLength` property.
+current value of the `minimumLength` property or the value of the minimumLength
+form element.
 
 ### Property edit dialog
 
