@@ -99,7 +99,7 @@ and even your issues raised on GitHub.
 To find out more about this news, check out:
 
  - the [Linux Foundation's
-press release](https://www.linuxfoundation.org/announcements/linux-foundation-unites-javascript-community-for-open-web-development)
+press release](https://www.linuxfoundation.org/press-release/the-linux-foundation-unites-javascript-community-for-open-web-development/)
  - a [blog post from Angel Diaz](https://www.ibm.com/blogs/cloud-computing/2016/10/ibm-partners-js-foundation/), IBM VP Cloud Architecture & Technology
 
 To see how Node-RED can be used alongside IBM Watson IoT, try out the [starter application](https://new-console.ng.bluemix.net/catalog/starters/internet-of-things-platform-starter/) in IBM Bluemix.
