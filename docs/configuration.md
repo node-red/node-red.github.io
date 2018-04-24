@@ -17,6 +17,10 @@ Node-RED includes a default `settings.js` file that will be used in absence of a
 user-provided settings file. It can also be used as a starting point for creating
 your own settings file. It can be seen on GitHub [here](https://github.com/node-red/node-red/blob/master/settings.js).
 
+<div class="doc-callout">
+<em>Note</em>:  The <code>settings.js</code> file exports a <em>JavaScript object</em>.  To configure Node-RED you should understand how to modify a JavaScript object by adding new or modifying existing key/value pairs.
+</div>
+
 When [embedded](embedding), they are passed in the call to `RED.init()`.
 However, when run in this mode, certain properties are ignored and are left to
 the embedding application to implement.
