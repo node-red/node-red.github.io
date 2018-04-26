@@ -126,7 +126,7 @@ This will output the Node-RED log to the terminal. You must keep the terminal op
 
 Note that running Node-RED will create a new folder in your `%HOMEPATH%` folder called `.node-red`. This is your `userDir` folder, think of it as the home folder for Node-RED configuration for the current user. You will often see this referred to as `~/.node-red` in documentation. `~` is shorthand for the user home folder on Unix-like systems. You can use the same reference if using PowerShell as your command line as recommended. If you are using the older `cmd` shell, that won't work.
 
-You can now create your [first flow](first-flow).
+You can now create your [first flow](../getting-started/first-flow).
 
 #### Using PM2
 
