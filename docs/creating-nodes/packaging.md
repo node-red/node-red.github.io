@@ -95,6 +95,6 @@ do with your code.
 ### Publishing to npm
 
 There are lots of guides to publishing a package to the npm repository.
-A basic overview is available [here](https://www.npmjs.org/doc/misc/npm-developers.html).
+A basic overview is available [here](https://docs.npmjs.com/misc/developers).
 
 Please be sure to publicise your node on the [project mailing list](https://groups.google.com/forum/#!forum/node-red).
