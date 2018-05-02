@@ -3,21 +3,13 @@ layout: default
 title: Running on Raspberry Pi
 ---
 
-There are two ways to get started with Node-RED on a Raspberry Pi.
-
-  - use the version preinstalled in **Raspbian** full image since November 2015.
-  - or **manual install** using an install script.
-
-You can then start [using the editor](#using-the-editor).
-
-## Raspbian
-
-Node-RED comes preinstalled on
-the full Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
+Node-RED comes preinstalled on the full Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
 
 While usable, this uses an older version of Node.js and it is recommended to upgrade to the latest using the bash command below.
 
-If you have the minimal version of Rasbian, or other Debian based install, such as Ubuntu, or Diet-Pi, that doesn't have Node-RED
+## Install / Upgrade
+
+If you have a version of Raspbian, or other Debian based install, such as Ubuntu, or Diet-Pi, that doesn't have Node-RED
 already installed, you can install or upgrade using the Node-RED upgrade script command
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
@@ -26,7 +18,7 @@ On really minimal Debian installs you may want to `sudo apt-get install build-es
 
 **Note:** Once you have used this script to upgrade, you cannot use apt-get to upgrade the pre-installed version of Node-RED.
 
-#### Install / Upgrade Script
+#### Script Description
 
 Nodes can be now be managed via the built in palette manager. However the default Pi install pre-loads some
 nodes globally and these cannot then be easily managed and updated. The intention of the script is to...  
@@ -48,7 +40,7 @@ The script will perform the following steps
  - remove any node-red binaries from /usr/bin and /usr/local/bin
  - remove any node-red modules from /usr/lib/node_modules and /usr/local/lib/node_modules
  - detect if Node.js was installed from Node.js package or Debian
- - if not v6 or newer - remove as appropriate and install latest v6 LTS (not using apt)
+ - if not v6 or newer - remove as appropriate and install latest v8 LTS (not using apt). It will leave Node.js 6 installs as-is.
  - clean out npm cache and .node-gyp cache to remove any previous versions of code
  - install Node-RED latest version
  - re-install under the user account any nodes that had previously been installed globally
