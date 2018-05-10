@@ -7,8 +7,12 @@ title: Get involved
 
 The two main places to discuss Node-RED are:
 
- - the [mailing list](https://groups.google.com/forum/#!forum/node-red)
+ - the [Node-RED forum](https://discourse.nodered.org)
  - the [slack team](https://nodered.org/slack)
+
+There is also the Google Groups based [mailing list](https://groups.google.com/forum/#!forum/node-red), but
+we are in the process of moving the community over to the new [Node-RED forum](https://discourse.nodered.org).
+The Google Group will become a read-only archive at some point in the near future.
 
 These are the best places to get started if you're stuck on something, think you may
 have hit a bug, have a suggestion for the greatest feature ever or if you just
