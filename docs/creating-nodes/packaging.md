@@ -97,4 +97,9 @@ do with your code.
 There are lots of guides to publishing a package to the npm repository.
 A basic overview is available [here](https://docs.npmjs.com/misc/developers).
 
-Please be sure to publicise your node on the [project mailing list](https://groups.google.com/forum/#!forum/node-red).
+### Adding to flows.nodered.org
+
+If all of the packaging requirements are met, the [Node-RED Flow Library](https://flows.nodered.org)
+will automatically index your node within a couple of hours. If it does not appear
+after that time, you can ask for help on the [Node-RED forum](https://discourse.nodered.org)
+or [slack](https://nodered.org/slack).
