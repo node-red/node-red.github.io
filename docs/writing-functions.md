@@ -23,6 +23,7 @@ described in their documentation.
     - [Flow context](#flow-context)
     - [Global context](#global-context)
  - [Adding status](#adding-status)
+ - [Referring node information](#referring-node-information)
  - [Other modules and functions](#other-modules-and-functions)
 
 ### Writing a Function
@@ -255,6 +256,15 @@ For details of the accepted parameters see the
 
 Any status updates can then also be caught by the Status node (available in
 Node-RED v0.12+).
+
+### Referring node information
+
+In the function block, id and name of the node can be referrenced using the following properties:
+
+{% highlight javascript %}
+node.id   // id of the node
+node.name // name of the node
+{% endhighlight %}
 
 #### Other modules and functions
 
