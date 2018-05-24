@@ -23,8 +23,9 @@ described in their documentation.
     - [Flow context](#flow-context)
     - [Global context](#global-context)
  - [Adding status](#adding-status)
- - [Referring node information](#referring-node-information)
- - [Other modules and functions](#other-modules-and-functions)
+ - [Loading additional modules](#loading-additional-modules)
+ - [API Reference](#api-reference)
+    - [Other modules and functions](#other-modules-and-functions)
 
 ### Writing a Function
 
@@ -146,6 +147,9 @@ node.error("Oh no, something bad happened");
 
 The `warn` and `error` messages also get sent to the flow editor debug tab.
 
+For finer grained logging, `node.trace()` and `node.debug()` are also available.
+If there is no logger configured to capture those levels, they will not be seen.
+
 #### Handling errors
 
 If the function encounters an error that should halt the current flow, it should
@@ -185,7 +189,7 @@ functions. This is in anticipation of being able to persist the context data in 
 
 ##### Flow context
 
-In Node-RED 0.13 or later, just as the `context` object is local to the node,
+Just as the `context` object is local to the node,
 there is also a flow-level context that is shared by all nodes, not just Function
 nodes, on a given tab. It is accessed via the `flow` object:
 
@@ -210,25 +214,8 @@ var myfoo = global.get("foo");  // this should now be "bar"
 {% endhighlight %}
 
 The global context can also be pre-populated with objects when Node-RED starts. This
-is defined in the main *settings.js* file under the *functionGlobalContext*
+is defined in the main *settings.js* file under the `functionGlobalContext`
 property.
-
-For example, the built-in `os` module can be made available to, all functions:
-
-{% highlight javascript %}
-functionGlobalContext: {
-    osModule:require('os')
-}
-{% endhighlight %}
-
-at which point, the module can be referenced within a function as
-`global.get('osModule')`.
-
-If any external module is "required", it must be installed manually in the user
-directory via npm.  
-
-    cd ~/.node-red
-    npm i name_of_3rd_party_module_to_be_required
 
 <div class="doc-callout"><em>Note</em>: Prior to Node-RED v0.13, the documented
 way to use global context was to access it as a sub-property of <code>context</code>:
@@ -254,17 +241,69 @@ node.status({});   // to clear the status
 For details of the accepted parameters see the
 [Node Status documentation](creating-nodes/status)
 
-Any status updates can then also be caught by the Status node (available in
-Node-RED v0.12+).
+Any status updates can then also be caught by the Status node.
 
-### Referring node information
+#### Loading additional modules
 
-In the function block, id and name of the node can be referrenced using the following properties:
+Additional node modules cannot be loaded directly within a Function node. They must
+be loaded in your *settings.js* file and added to the `functionGlobalContext`
+property.
+
+For example, the built-in `os` module can be made available to all functions by
+adding the following to your *settings.js* file.
 
 {% highlight javascript %}
-node.id   // id of the node
-node.name // name of the node
+functionGlobalContext: {
+    osModule:require('os')
+}
 {% endhighlight %}
+
+at which point, the module can be referenced within a function as
+`global.get('osModule')`.
+
+Modules loaded from your settings file must be installed in the same directory as
+the settings file. For most users that will be the default user directory - `~/.node-red`:
+
+    cd ~/.node-red
+    npm install name_of_3rd_party_module
+
+***
+
+### API Reference
+
+The following objects are available within the Function node.
+
+#### `node`
+ * `node.id` : the id of the Function node - *added in 0.19*
+ * `node.name` : the name of the Function node - *added in 0.19*
+ * `node.log(..)` : [log a message](#logging-events)
+ * `node.warn(..)` : [log a warning message](#logging-events)
+ * `node.error(..)` : [log an error message](#logging-events)
+ * `node.debug(..)` : [log a debug message](#logging-events)
+ * `node.trace(..)` : [log a trace message](#logging-events)
+ * `node.on(..)` : [register an event handler](#sending-messages-asynchronously)
+ * `node.status(..)` : [update the node status](#adding-status)
+ * `node.send(..)` : [send a message](#sending-messages-asynchronously)
+
+#### `context`
+ * `context.get(..)` : get a node-scoped context property
+ * `context.set(..)` : set a node-scoped context property
+ * `context.keys(..)` : return a list of all node-scoped context property keys
+ * `context.flow` : same as `flow`
+ * `context.global` : same as `global`
+
+#### `flow`
+ * `flow.get(..)` : get a flow-scoped context property
+ * `flow.set(..)` : set a flow-scoped context property
+ * `flow.keys(..)` : return a list of all flow-scoped context property keys
+
+#### `global`
+ * `global.get(..)` : get a global-scoped context property
+ * `global.set(..)` : set a global-scoped context property
+ * `global.keys(..)` : return a list of all global-scoped context property keys
+
+#### `RED`
+ * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused  
 
 #### Other modules and functions
 
