@@ -28,7 +28,9 @@ that should get you headed in the right direction.
 If you have a question, suggestion or just want to say hello, there are various
 places you can do so:
 
- - Subscribe to the [mailing list](https://groups.google.com/forum/#!forum/node-red)
-   and the [blog](http://blog.nodered.org)
+ - Join the [Node-RED Forum](https://discourse.nodered.org)
+ - Subscribe to the [blog](http://blog.nodered.org)
  - Join us on [Slack](http://nodered.org/slack/)
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
+
+We also have the old [Google Group mailing list](https://groups.google.com/forum/#!forum/node-red) - that is being retired in favour of the [forum](https://discourse.nodered.org), but there's still a lot of useful content on there that is worth searching.
