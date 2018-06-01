@@ -7,9 +7,9 @@ Node-RED comes preinstalled on the full Raspbian SD card image that can be downl
 
 While usable, this uses an older version of Node.js and it is recommended to upgrade to the latest using the bash command below.
 
-## Install / Upgrade
+### Install / Upgrade
 
-If you have a version of Raspbian, or other Debian based install, such as Ubuntu, or Diet-Pi, that doesn't have Node-RED
+If you have a version of Raspbian, or other **Debian** based install, such as **Ubuntu**, or **Diet-Pi**, that doesn't have Node-RED
 already installed, you can install or upgrade using the Node-RED upgrade script command
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
