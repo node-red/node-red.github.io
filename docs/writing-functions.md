@@ -5,7 +5,7 @@ title: Writing Functions
 ---
 
 The Function node allows JavaScript code to be run against the messages that are
-passed in and then return zero or more messages to continue the flow.
+passed through it.
 
 The message is passed in as an object called `msg`. By convention it will
 have a `msg.payload` property containing the body of the message.

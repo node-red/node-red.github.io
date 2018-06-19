@@ -6,14 +6,24 @@ title: User Guide
 
 There's lots more to write in this guide, we're just getting started.
 
+#### Using Node-RED
+
+- [Working with projects](/docs/user-guide/projects)
+- [The core nodes](/docs/user-guide/nodes)
+- [Writing Functions](/docs/writing-functions)
+- [Working with messages](/docs/user-guide/messages)
+
+#### Running Node-RED
+
 - [Configuring Node-RED](/docs/configuration)
 - [Security](/docs/security)
 - [Logging](/docs/user-guide/logging)
-- [Working with projects](/docs/user-guide/projects)
 - [Command-line Admin](/docs/node-red-admin)
-- [Using the Function node](/docs/writing-functions)
-- [Working with messages](/docs/user-guide/messages)
+
+#### Advanced
+
 - [Embedding into an existing app](/docs/embedding)
+
 
 <div class="doc-callout">
 <em>Note</em>:  Parts of the user guide assume the reader is somewhat familiar with
