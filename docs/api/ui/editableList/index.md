@@ -314,11 +314,11 @@ Sets the height of the editableList. This must be used in place of the standard
 
 #### <a href="#methods-items" name="methods-items">items()</a>
 
-<span class="method-return">Type: Array</span>
+<span class="method-return">Type: jQuery Object</span>
 
-Gets an Array of all list items. Each item is the jQuery DOM element for the item.
+Gets a jQuery object containing all list items.
 
-Each element stores the original data for the item under property called `data`.
+Each element stores the *original* data for the item under a data property named `data`.
 
     var items = $("ol.list").editableList('items');
 
