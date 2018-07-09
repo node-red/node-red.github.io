@@ -3,9 +3,8 @@ layout: default
 title: Running on Raspberry Pi
 ---
 
-Node-RED comes preinstalled on the full Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
-
-While usable, this uses an older version of Node.js and it is recommended to upgrade to the latest using the bash command below.
+From June 2018 Node-RED can be installed from the Pi Menu - Preferences - Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it can be upgraded either by using `sudo apt-get upgrade` or using the script below.
+Once the script below has been run then you upgrade by re-running the script.
 
 ### Install / Upgrade
 
@@ -50,14 +49,6 @@ The script will perform the following steps
  - add menu shortcut and icon
  - add systemd script and set user
  - if on a Pi add a CPU temperature -> IoT example
- - update the local update script
-
-As of Node-RED version 0.14.x a version of the upgrade script is pre-installed and will do a full upgrade to the latest Node.js LTS and latest release version of Node-RED. However it will be out of date and may need to be run twice.
-To use this method, run the following command as your normal user (typically `pi`):
-
-    update-nodejs-and-nodered
-
-**Note** - If the serialport nodes do not appear when you restart, please re-run the update command. If the update command does not run or is not found then use the bash command from above.
 
 **Caveat emptor** - The script has only been tested on installs with a small variety
 of the possible extra nodes. The script tries to rebuild any nodes with native
@@ -73,9 +64,11 @@ To see the list of nodes you had installed:
     cd ~/.node-red
     npm ls --depth=0
 
+
 #### Swapping SD Cards
 
 Different versions of Raspberry Pi use different Arm processors. The Node.js binary is different for Arm6 and Arm7. Swapping SD cards from Arm6 to Arm7, for example Pi Zero to Pi 3, is OK. Swapping the other way will not work, unless you uninstall Node.js and then re-run the upgrade script to install the appropriate version of Node.js.
+
 
 #### Running Node-RED
 
