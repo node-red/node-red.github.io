@@ -85,18 +85,7 @@ messages within the returned array. When multiple messages are returned for an
 output, subsequent nodes will receive the messages one at a time in the order
 they were returned.
 
-`Example 1:` In this example, `msg1`, `msg2`, `msg3` will be sent to the first output.
-`msg4` will be sent to the second output.
-
-{% highlight javascript %}
-var msg1 = { payload:"first out of output 1" };
-var msg2 = { payload:"second out of output 1" };
-var msg3 = { payload:"third out of output 1" };
-return [ [ msg1, msg2, msg3 ] ];
-{% endhighlight %}
-
-
-`Example 12:` In this example, `msg1`, `msg2`, `msg3` will be sent to the first output.
+In the following example, `msg1`, `msg2`, `msg3` will be sent to the first output.
 `msg4` will be sent to the second output.
 
 {% highlight javascript %}
