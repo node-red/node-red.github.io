@@ -50,7 +50,7 @@ You can now create your [first flow](first-flow).
       [flows.json]         name of the data file you want to work with. Using different names, 
                            such as greenhouse.json or robot.json, you can separate different 
                            undertakings you are working on. If you don't specify a name, it 
-                           defaults to flows_`servername`.json
+                           defaults to flows_xxxxxxxx.json where xxxxxxxx is your servername.
 
 ----
                            
