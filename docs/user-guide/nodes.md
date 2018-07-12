@@ -14,6 +14,7 @@ All nodes include documentation you can see in the Info sidebar tab when you sel
 - [Function](#function)
 - [Change](#change)
 - [Switch](#switch)
+- [Template](#template)
 
 ***
 
@@ -104,3 +105,55 @@ There are four types of rule:
 
 The node will route a message to all outputs corresponding to matching rules. But
 it can also be configured to stop evaluating rules when it finds one that matches.
+
+***
+
+<h3 id="template"><img alt="Template node" style="vertical-align: middle" src="/docs/user-guide/images/node_template.png" width="169px"></h3>
+
+The Template node can be used to generate text using a message's properties to
+fill out a template.
+
+It uses the [Mustache](https://mustache.github.io/mustache.5.html) templating
+language to generate the result.
+
+For example, a template of:
+
+{% raw %}
+```
+This is the payload: {{payload}} !
+```
+{% endraw %}
+
+Will replace `{% raw %}{{payload}}{% endraw %}` with the value of the message's `payload` property.
+
+By default, Mustache will replace certain characters with their HTML escape codes.
+To stop that happening, you can use triple braces: `{% raw %}{{{payload}}}{% endraw %}`.
+
+Mustache supports simple loops on lists. For example, if `msg.payload` contains
+an array of names, such as: `["Nick", "Dave", "Claire"]`, the following template
+will create an HTML list of the names:
+
+{% raw %}
+```
+<ul>
+{{#payload}}
+  <li>{{.}}</li>
+{{/payload}}
+</ul>
+```
+{% endraw %}
+
+
+```
+<ul>
+  <li>Nick</li>
+  <li>Dave</li>
+  <li>Claire</li>
+</ul>
+```
+
+The node will set the configured message or context property with the result of
+the template. If the template generates valid JSON or YAML content, it can be
+configured to parse the result to the corresponding JavaScript Object.
+
+***
