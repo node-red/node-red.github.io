@@ -15,7 +15,7 @@ your path:
     npm install -g node-red-admin
 
 <div class="doc-callout">
-<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
+<em>Note</em> : <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
 running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
 without the <code>sudo</code> command.
 </div>

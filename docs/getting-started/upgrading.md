@@ -4,7 +4,7 @@ toc: getting-started-toc.html
 title: Upgrading
 ---
 
-<div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
+<div class="doc-callout"><em>Note</em> : if you are using the preinstalled version
 on a Raspberry Pi, please refer to <a href="/docs/hardware/raspberrypi">these instructions for <b>upgrading a Pi</b></a>.</div>
 
 If you have installed Node-RED as a global npm package, you can upgrade to the

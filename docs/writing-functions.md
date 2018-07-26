@@ -20,7 +20,9 @@ described in their documentation.
  - [Logging events](#logging-events)
  - [Handling errors](#handling-errors)
  - [Storing data (context)](#storing-data)
-    - [Flow context](#flow-context)
+    - [Get/Set multiple values](#getset-multiple-values)
+    - [Asynchronous context access](#asynchronous-context-access)
+    - [Multiple context stores](#multiple-context-stores)
     - [Global context](#global-context)
  - [Adding status](#adding-status)
  - [Loading additional modules](#loading-additional-modules)
@@ -47,7 +49,7 @@ var newMsg = { payload: msg.payload.length };
 return newMsg;
 {% endhighlight %}
 
-<div class="doc-callout"><em>Note</em>: constructing a new message object will
+<div class="doc-callout"><em>Note</em> : constructing a new message object will
 lose any message properties of the received message. This will break some flows,
 for example the HTTP In/Response flow requires the <code>msg.req</code> and
 <code>msg.res</code> properties to be preserved end-to-end. In general, function
@@ -160,10 +162,41 @@ return nothing. To trigger a Catch node on the same tab, the function should cal
 node.error("hit an error", msg);
 {% endhighlight %}
 
-#### Storing data ####
+#### Storing data
 
-Aside from the `msg` object, the function can also store data between invocations
-within it's `context` object.
+Aside from the `msg` object, the function can also store data in the context store.
+
+More information about Context within Node-RED is available [here](user-guide/context).
+
+In the Function node there are three predefined variables that can be used to
+access context:
+
+   - `context` - the node's local context
+   - `flow` - the flow scope context
+   - `global` - the global scope context
+
+The following examples use `flow` context, but apply equally well to `context`
+and `global`.
+
+<div class="doc-callout"><em>Note</em> : these predefined variables are a feature
+of the Function node. If you are creating a custom node, check the <a href="/docs/creating-nodes/context">Creating Nodes guide</a> for how to access context.</div>
+
+
+There are two modes for accessing context; either synchronous or asynchronous.
+The built-in context stores provide both modes. Some stores may only provide
+asynchronous access and will throw an error if they are accessed synchronously.
+
+To get a value from context:
+
+{% highlight javascript %}
+var myCount = flow.get("count");
+{% endhighlight %}
+
+To set a value:
+
+{% highlight javascript %}
+flow.set("count", 123);
+{% endhighlight %}
 
 The following example maintains a count of how many times the function has been
 run:
@@ -176,54 +209,107 @@ count += 1;
 context.set('count',count);
 // make it part of the outgoing msg object
 msg.count = count;
+return msg;
 {% endhighlight %}
 
-By default, the context data is *not* persisted across restarts of Node-RED.
+##### Get/Set multiple values
 
-<div class="doc-callout"><em>Note</em>: Prior to Node-RED v0.13, the documented
-way to use <code>context</code> was to access it directly:
-<pre>var count = context.count;</pre>
-This method is still supported, but deprecated in favour of the <code>context.get</code>/<code>context.set</code>
-functions. This is in anticipation of being able to persist the context data in a future release.
-</div>
-
-##### Flow context
-
-Just as the `context` object is local to the node,
-there is also a flow-level context that is shared by all nodes, not just Function
-nodes, on a given tab. It is accessed via the `flow` object:
+Since Node-RED 0.19, it is also possible to get or set multiple values in one go:
 
 {% highlight javascript %}
-var count = flow.get('count')||0;
+// Node-RED 0.19 or later
+var values = flow.get(["count", "colour", "temperature"]);
+// values[0] is the 'count' value
+// values[1] is the 'colour' value
+// values[2] is the 'temperature' value
+{% endhighlight %}
+
+{% highlight javascript %}
+// Node-RED 0.19 or later
+flow.set(["count", "colour", "temperature"], [123, "red", "12.5"]);
+{% endhighlight %}
+
+In this case, any missing values are set to `null`.
+
+
+##### Asynchronous context access
+
+If the context store requires asynchronous access, the `get` and `set` functions
+require an extra callback parameter.
+
+{% highlight javascript %}
+// Get single value
+flow.get("count", function(err, myCount) { ... });
+
+// Get multiple values
+flow.get(["count", "colour"], function(err, count, colour) { ... })
+
+// Set single value
+flow.set("count", 123, function(err) { ... })
+
+// Set multiple values
+flow.set(["count", "colour", [123, "red"], function(err) { ... })
+{% endhighlight %}
+
+The first argument passes to the callback, `err`, is only set if an error
+occurred when accessing context.
+
+The asynchronous version of the count example becomes:
+
+{% highlight javascript %}
+context.get('count', function(err, count) {
+    if (err) {
+        node.error(err, msg);
+    } else {
+        // initialise the counter to 0 if it doesn't exist already
+        count = count || 0;
+        count += 1;
+        // store the value back
+        context.set('count',count, function(err) {
+            if (err) {
+                node.error(err, msg);
+            } else {
+                // make it part of the outgoing msg object
+                msg.count = count;
+                // send the message
+                node.send(msg);
+            }
+        });
+    }
+});
+{% endhighlight %}
+
+##### Multiple context stores
+
+With 0.19 it is possible to configure multiple context stores. For example, both
+a `memory` and `file` based store could be used.
+
+The `get`/`set` context functions accept an optional parameter to identify the store
+to use.
+
+{% highlight javascript %}
+// Get value - sync
+var myCount = flow.get("count", storeName);
+
+// Get value - async
+flow.get("count", storeName, function(err, myCount) { ... });
+
+// Set value - sync
+flow.set("count", 123, storeName);
+
+// Set value - async
+flow.set("count", 123, storeName, function(err) { ... })
 {% endhighlight %}
 
 
 ##### Global context
 
-There is also a global context available that is shared by, and accessible to
-all nodes. For example to make the variable foo available globally across the canvas:
-
-{% highlight javascript %}
-global.set("foo","bar");  // this is now available to other nodes
-{% endhighlight %}
-
-And can then be read using .get
-
-{% highlight javascript %}
-var myfoo = global.get("foo");  // this should now be "bar"
-{% endhighlight %}
-
-The global context can also be pre-populated with objects when Node-RED starts. This
+The global context can be pre-populated with objects when Node-RED starts. This
 is defined in the main *settings.js* file under the `functionGlobalContext`
 property.
 
-<div class="doc-callout"><em>Note</em>: Prior to Node-RED v0.13, the documented
-way to use global context was to access it as a sub-property of <code>context</code>:
-<pre>context.global.foo = "bar";
-var osModule = context.global.osModule;</pre>
-This method is still supported, but deprecated in favour of the <code>global.get</code>/<code>global.set</code>
-functions. This is in anticipation of being able to persist the context data in a future release.
-</div>
+This can be used to [load additional modules](#loading-additional-modules) within
+the Function node.
 
 #### Adding Status
 

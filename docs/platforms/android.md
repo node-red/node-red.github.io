@@ -5,7 +5,7 @@ title: Running on Android
 
 Using the <a href="https://termux.com">Termux</a> app in the app store makes it easy to run Node-RED on Android devices. You can get it from the <a href="https://play.google.com/store/apps/details?id=com.termux&amp;hl=en_GB">Play Store</a>.
 
-<div class="doc-callout"><em>Note</em>: the Node-RED team have no connection with the Termux application nor it's development. We cannot provide support for it in any way, other than to say that at this point in time it works rather well.</div>
+<div class="doc-callout"><em>Note</em> : the Node-RED team have no connection with the Termux application nor it's development. We cannot provide support for it in any way, other than to say that at this point in time it works rather well.</div>
 
 Install it, and run it. Then at the prompt type
 

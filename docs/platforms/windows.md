@@ -6,7 +6,7 @@ title: Running on Windows
 This page gives specific instructions on setting up Node-RED in a Microsoft Windows environment. The instructions are specific to Windows 10 but should also work for Windows 7 and Windows Server from 2008R2. It is not advisable to use versions prior to Windows 7 or Windows Server 2008R2 due to lack of current support.
 
 <div class="doc-callout">
-<em>Note</em>: Some of the following instructions mention the "command prompt". Where this is used, it refers to either the Windows cmd or PowerShell terminal shells. It is <a href="https://support.microsoft.com/en-us/help/4027690/windows-powershell-is-replacing-command-prompt">recommended to use PowerShell</a> on all newer versions of Windows as this gives you access to commands and folder names that are closer to those of Linux/Mac.
+<em>Note</em> : Some of the following instructions mention the "command prompt". Where this is used, it refers to either the Windows cmd or PowerShell terminal shells. It is <a href="https://support.microsoft.com/en-us/help/4027690/windows-powershell-is-replacing-command-prompt">recommended to use PowerShell</a> on all newer versions of Windows as this gives you access to commands and folder names that are closer to those of Linux/Mac.
 </div>
 
 ### Quick Start
@@ -47,7 +47,7 @@ Once installed, you are ready to [run Node-RED](#running-on-windows).
 In this section, we provide you with information on alternative ways to install Node.js, npm and the Windows Build Tools needed to install some Nodes for Node-RED on Windows.
 
 <div class="doc-callout">
-<em>Note</em>: You should <em>not</em> use an administrative (a.k.a. "elevated") command prompt unless specifically instructed to. You will very likely need to be quite familiar with command prompts as you learn about Node-RED and Node.js and it will be worth while reading some of the <a href="https://docs.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-windows-powershell">Microsoft articles on PowerShell</a>. the <a href="http://powershelltutorial.net/">PowerShell Tutorial</a> and <a href="https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-one-liners-help,-syntax,-display-and--files/">PowerShell One-Liners</a> sites may also be helpful.
+<em>Note</em> : You should <em>not</em> use an administrative (a.k.a. "elevated") command prompt unless specifically instructed to. You will very likely need to be quite familiar with command prompts as you learn about Node-RED and Node.js and it will be worth while reading some of the <a href="https://docs.microsoft.com/en-us/powershell/scripting/getting-started/fundamental/using-windows-powershell">Microsoft articles on PowerShell</a>. the <a href="http://powershelltutorial.net/">PowerShell Tutorial</a> and <a href="https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-one-liners-help,-syntax,-display-and--files/">PowerShell One-Liners</a> sites may also be helpful.
 </div>
 
 Standard installations of Node.js on Windows require local administrator rights. Download the appropriate version from the official [Node.js home page](https://nodejs.org/en/). It will offer you the best version. While you can use either 32 bit or 64 bit versions on 64 bit Windows, it is recommended to use the 64bit version of Node. If for some reason, you need a different installation, you can use the [Downloads Page](https://nodejs.org/en/download/).
@@ -63,7 +63,7 @@ There are two potentially useful alternatives to installing Node.js with the MSI
    Using a Node.js version manager such as [nvm-windows](https://github.com/coreybutler/nvm-windows) can be very helpful if you are doing Node.js development and need to test against different versions. Keep in mind that you will need to reinstall global packages and may need to re-install local packages when when you switch the version of Node you are using.
 
 <div class="doc-callout">
-<em>Note</em>: Microsoft maintain a parallel version of Node that uses the Microsoft Chakra Core JavaScript engine instead of V8. This is not recommended for Node-RED as it has not been tested.
+<em>Note</em> : Microsoft maintain a parallel version of Node that uses the Microsoft Chakra Core JavaScript engine instead of V8. This is not recommended for Node-RED as it has not been tested.
 </div>
 
 #### npm on Windows
@@ -75,7 +75,7 @@ When you install Node.js, you are also installing the npm package manager. You m
 Node.js is installed into the `Program Files` folder as you would expect. However, if you install a global _package_ like Node-RED using `npm -g`, it is installed into the `$env:APPDATA\npm` folder (`%APPDATA%\npm` using cmd) for the **current** user.  This is less than helpful if you are installing on a PC with multiple user logins or on a server and installing using an admin login rather than the login of the user that will run Node applications like Node-RED.
 
 <div class="doc-callout">
-<em>Note</em>: To see what a folder name like <code>%APPDATA%</code> translates to, you can simply type it into the address bar of the Windows File Explorer. Alternatively, in PowerShell, type the command <code>cd $Env:APPDATA</code>(<code>cd %APPDATA%</code> using cmd).
+<em>Note</em> : To see what a folder name like <code>%APPDATA%</code> translates to, you can simply type it into the address bar of the Windows File Explorer. Alternatively, in PowerShell, type the command <code>cd $Env:APPDATA</code>(<code>cd %APPDATA%</code> using cmd).
 </div>
 
 To fix this, either give permissions to the folder to other users and make sure that the folder is included in their `path` user environment variable.

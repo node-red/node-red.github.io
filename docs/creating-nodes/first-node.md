@@ -179,7 +179,7 @@ On Windows with older versions of npm, use `mklink` instead:
     mklink /D node_modules\node-red-contrib-example-lower-case C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
 
 <div class="doc-callout">
-<em>Note</em>:  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  If you want to prevent this, use the npm <code>--no-save</code> option.
+<em>Note</em> :  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  If you want to prevent this, use the npm <code>--no-save</code> option.
 </div>
 
 ### Unit Testing
