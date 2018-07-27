@@ -26,7 +26,7 @@ the slim image with the missing packages.
 
 Additional images using a newer Node.js v8 base image are now available with the following tags.
 
-- **latest-v8** 
+- **v8**
 - **slim-v8**
 - **rpi-v8**
 
