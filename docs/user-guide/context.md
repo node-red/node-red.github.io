@@ -63,7 +63,10 @@ contextStorage: {
 {% endhighlight %}
 
 Node-RED provides two built-in store modules: `memory` and `file`. It is also
-possible to create custom store plugins - full details are on the [api pages](../api/context/).
+possible to create custom store plugins.
+
+Full details on the built-in modules, and how to create custom modules, is
+available on the [api pages](../api/context/).
 
 Stores can provide either synchronous or asynchronous access. Synchronous access
 means a call to get data from the store returns immediately with the value. Asynchronous

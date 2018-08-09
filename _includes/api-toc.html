@@ -32,6 +32,8 @@
         <ul>
             <li class="toctitle{% if page.url == "/docs/api/context/" %} active{% endif %}"><a href="/docs/api/context/">Context Store API</a>
             <li {% if page.url contains "/docs/api/context/methods" %}class="active"{% endif %}><a href="/docs/api/context/methods">Methods</a>
+            <li {% if page.url contains "/docs/api/context/store/memory" %}class="active"{% endif %}><a href="/docs/api/context/store/memory">Memory store</a>
+            <li {% if page.url contains "/docs/api/context/store/localfilesystem" %}class="active"{% endif %}><a href="/docs/api/context/store/localfilesystem">File store</a>
         </ul>
     </li>
     <li class="tocheader">

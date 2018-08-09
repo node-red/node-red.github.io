@@ -9,10 +9,10 @@ title: Context Store API
 The Context Store API provides a pluggable way to configure where context data is
 stored.
 
-By default, Node-RED uses a memory-based implementation of this API. It also provides
-a file-based implementation.
+By default, Node-RED uses a [memory-based implementation](store/memory) of this API. It also provides
+a [file-based implementation](store/localfilesystem).
 
-The API functions are documented [here](methods/).
+To create a custom Context Store, a module should create that implements the [Store Module API](#store-module-api).
 
 ### Configuration
 
