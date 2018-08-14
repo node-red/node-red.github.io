@@ -35,7 +35,7 @@ Each context store configuration consists of two parts; a `module` property and 
 property.
 
 The `module` property identifies the context store plugin to use. It can either be
-the name of built-in module (currently either `memory` or `file`), or it should be
+the name of built-in module (currently either `memory` or `localfilesystem`), or it should be
 a module that has been loaded using `require`.
 
 {% highlight javascript %}
