@@ -18,7 +18,7 @@ To create a file store, the following configuration can be used.
 {% highlight javascript %}
 contextStorage: {
    default: {
-       module:"file",
+       module:"localfilesystem",
        config: {
            // see below
        }
