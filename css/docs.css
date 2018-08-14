@@ -208,6 +208,54 @@ code.node {
     white-space:nowrap;
 }
 
+div.figure {
+    max-width: 100%;
+}
+div.figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 4px 4px 8px 0px #ddd;
+}
+
+div.figure.align-right {
+    float: right;
+    width: auto;
+    margin: 5px 0 5px 20px;
+}
+div.figure.align-center {
+    margin: 5px auto;
+}
+div.figure p.caption {
+    margin-top: 3px;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #999;
+}
+
+.action-ref {
+    min-width: 310px;
+    float: right;
+    font-size: 0.9em;
+    background: #ffeecc;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.action-ref th {
+    text-align: left;
+    padding: 0px 20px 0px 5px;
+}
+.action-ref td {
+    padding: 0px 5px;
+}
+.action-ref td:first-child {
+    width: 110px;
+}
+.action-ref code {
+    background: none;
+    font-size: 1.1em;
+}
+
 @media handheld, only screen and (max-width: 755px) {
     ul.toc:not(.open) li.tocheader>span {
         display: none;
