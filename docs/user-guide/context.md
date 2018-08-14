@@ -57,12 +57,12 @@ For example, to enable file-based storage, the following options can be used:
 {% highlight javascript %}
 contextStorage: {
    default: {
-       module: "file"
+       module: "localfilesystem"
    }
 }
 {% endhighlight %}
 
-Node-RED provides two built-in store modules: `memory` and `file`. It is also
+Node-RED provides two built-in store modules: `memory` and `localfilesystem`. It is also
 possible to create custom store plugins.
 
 Full details on the built-in modules, and how to create custom modules, is
