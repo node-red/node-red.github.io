@@ -241,6 +241,11 @@ div.figure p.caption {
     margin-bottom: 10px;
     margin-left: 20px;
 }
+
+.action-ref.inline {
+    float: none;
+    margin-left: 0;
+}
 .action-ref th {
     text-align: left;
     padding: 0px 20px 0px 5px;
