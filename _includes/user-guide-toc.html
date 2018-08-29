@@ -4,6 +4,7 @@
     <li class="tocheader">
         <ul>
             <li class="toctitle active"><a href="/docs/user-guide/">User Guide</a></li>
+            <li {% if page.url == "/docs/user-guide/editor" %}class="active"{% endif %}><a href="/docs/user-guide/editor">Using the Node-RED Editor</a></li>
             <li {% if page.url contains "/docs/user-guide/projects/" %}class="active"{% endif %}><a href="/docs/user-guide/projects/">Working with projects</a></li>
             <li {% if page.url == "/docs/user-guide/nodes" %}class="active"{% endif %}><a href="/docs/user-guide/nodes">The core nodes</a></li>
             <li {% if page.url == "/docs/writing-functions" %}class="active"{% endif %}><a href="/docs/writing-functions">Writing Functions</a></li>

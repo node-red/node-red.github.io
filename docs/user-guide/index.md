@@ -8,6 +8,7 @@ There's lots more to write in this guide, we're just getting started.
 
 #### Using Node-RED
 
+- [Using the Node-RED Editor](/docs/user-guide/editor)
 - [Working with projects](/docs/user-guide/projects)
 - [The core nodes](/docs/user-guide/nodes)
 - [Writing Functions](/docs/writing-functions)
