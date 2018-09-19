@@ -172,7 +172,7 @@ below for how to add this to a manually installed version.
 
 #### Adding Autostart capability using SystemD
 
-The preferred way to autostart Node-RED on Pi is to use the built in systemd
+The preferred way to autostart Node-RED is to use the built in systemd
 capability.  The pre-installed version does this by using a `nodered.service`
 file and start and stop scripts. You may install these by running the following
 commands
@@ -202,13 +202,13 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
-#### Changing the systemd environment - non-Pi user
+#### Changing the systemd environment -  running as non-Pi user
 
-To run as a user other than Pi, you need to edit the nodered.service file. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and change the lines 4, 5 and 6 as indicated by {your_user} below
+To run as a user other than the default `pi`, you need to edit the nodered.service file. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and change the lines as indicated by {your_user} below
 
     [Service]
     Type=simple
-    # Run as normal pi user - feel free to change...
+    # Run as normal pi user - change to the user name you wish to run Node-RED as
     User={your_user}
     Group={your_user}
     WorkingDirectory=/home/{your_user}
