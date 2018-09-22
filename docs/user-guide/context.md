@@ -10,6 +10,7 @@ title: Working with context
  - [Using context in a flow](#using-context-in-a-flow)
  - [Using context in a Function node](#using-context-in-a-function-node)
  - [Using context in a custom node](#using-context-in-a-custom-node)
+ - [Deleting context from the file store](#deleting-context-from-the-file-store)
 
 ### What is context?
 
@@ -96,3 +97,9 @@ how to use context in the Function node.
 ### Using context in a custom node
 
 The [Creating Nodes guide](/docs/creating-nodes/context) describes how to use context in a custom node.
+
+### Deleting context from the file store
+
+Context can be permenantly deleted by using a Change node set to delete.
+
+<div style="text-align: center"><img src="/docs/user-guide/images/context_delete.png" width="488px"></div>
