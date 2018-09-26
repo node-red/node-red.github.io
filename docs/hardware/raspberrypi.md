@@ -4,7 +4,8 @@ title: Running on Raspberry Pi
 ---
 
 From June 2018 Node-RED can be installed from the Pi Menu - Preferences - Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it can be upgraded either by using `sudo apt-get upgrade` or using the script below.
-Once the script below has been run then you upgrade by re-running the script.
+Once the script below has been run, you should upgrade by re-running the script.
+If you decide to stick with apt to install npm then you must upgrade it to the latest by `sudo npm i -g npm` before adding any extra nodes.
 
 ### Install / Upgrade
 
@@ -22,7 +23,7 @@ On really minimal Debian installs you may want to `sudo apt-get install build-es
 Nodes can be now be managed via the built in palette manager. However the default Pi install pre-loads some
 nodes globally and these cannot then be easily managed and updated. The intention of the script is to...  
 
- - upgrade an existing user to LTS 6.x or 8.x Node.js and latest Node-RED
+ - upgrade an existing user to LTS 8.x Node.js and latest Node-RED
  - migrate any existing globally installed nodes into the users ~/.node-red space so they can be managed via the palette manager
  - optionally (re)install the extra nodes that are pre-installed on a full Raspbian Pi image
 
@@ -39,7 +40,7 @@ The script will perform the following steps
  - remove any node-red binaries from /usr/bin and /usr/local/bin
  - remove any node-red modules from /usr/lib/node_modules and /usr/local/lib/node_modules
  - detect if Node.js was installed from Node.js package or Debian
- - if not v6 or newer - remove as appropriate and install latest v8 LTS (not using apt). It will leave Node.js 6 installs as-is.
+ - if not v8 or newer - remove as appropriate and install latest v8 LTS (not using apt).
  - clean out npm cache and .node-gyp cache to remove any previous versions of code
  - install Node-RED latest version
  - re-install under the user account any nodes that had previously been installed globally
@@ -63,6 +64,12 @@ To see the list of nodes you had installed:
 
     cd ~/.node-red
     npm ls --depth=0
+
+**Note**: It does not update any nodes you had previously installed locally. To do that go into your user directory and run the commands below. The versions of some nodes may be fixed by the `package.json` file in that directory - you may need to hand edit this to select the versions you require before running `npm update`.
+
+    cd ~/.node-red
+    npm outdated
+    npm update
 
 
 #### Swapping SD Cards
@@ -90,11 +97,13 @@ If you want Node-RED to run when the Pi boots up you can use
 
     sudo systemctl enable nodered.service
 
+and likewise `sudo systemctl disable nodered.service` to disable autostart on boot.
+
 
 #### Adding nodes to preloaded version
 
 To add additional nodes you must first install the `npm` tool, as it is not included
-in the default Raspbian installation. This is not necessary if you have upgraded to Node.js 6.x.
+in the default Raspbian installation. This is not necessary if you have upgraded to Node.js 8.x.
 
 The following commands install `npm` and then upgrade
 it to the latest version.
