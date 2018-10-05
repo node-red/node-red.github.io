@@ -61,8 +61,8 @@ deprecated and should not be used.
 
 ##### Generating the password hash
 
-To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin)
-command-line tool:
+To generate a suitable password hash, you can use the `node-red-admin`
+command-line tool. Instructions for installing the tool are available [here](node-red-admin).
 
     node-red-admin hash-pw
 
