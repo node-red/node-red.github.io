@@ -4,7 +4,7 @@ toc: user-guide-toc.html
 title: Command-line Administration
 ---
 
-The [node-red-admin](http://npmjs.org/package/node-red-admin) command-line tool allows you to remotely administer a node-red
+The [node-red-admin](http://npmjs.org/package/node-red-admin) command-line tool allows you to remotely administer a Node-RED
 instance.
 
 ### Installation
@@ -23,8 +23,8 @@ without the <code>sudo</code> command.
 
 ### Target and Login
 
-The tool must first be pointed at the Node-RED instance you want it to access. By
-default, it assumes `http://localhost:1880`. To change that, use the `target` command:
+To remotely administer a Node-RED instance, the tool must first be pointed at the Node-RED instance you want
+it to access. By default, it assumes `http://localhost:1880`. To change that, use the `target` command:
 
     node-red-admin target http://node-red.example.com/admin
 
@@ -32,8 +32,12 @@ If [authentication](security) is enabled, you must then `login`:
 
     node-red-admin login
 
-These commands create a file called `~/.node-red/cli-config.json` that stores
+These commands create a file called `~/.node-red/.cli-config.json` that stores
 the target and access token information.
+
+<div class="doc-callout">
+<em>Note</em> : The `hash-pw` option does <i>not</i> require the tool to be logged in and can be run at any time.
+</div>
 
 ### Other commands
 
