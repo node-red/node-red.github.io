@@ -30,15 +30,16 @@ The choice of scope for any particular value will depend on how it is being used
 If a value only needs to be accessed by a single node, such as a Function node, then Node context is sufficient.
 
 More often context allows some sort of state to be shared between multiple nodes on the same editor tab. For 
-example,a sensor may publish new values regularly in one flow and you want to create a separate HTTP triggered 
+example, a sensor may publish new values regularly in one flow and you want to create a separate HTTP triggered 
 flow (on the same editor tab) to return the most recent value. By storing the sensor reading as a 'flow' context, 
 it is then available for the HTTP flow to return.
 
 The 'Global' context can be shared across flows on any editor tab, and can be preconfigured with values using 
 the functionGlobalContext property in the settings file.
 
-<div class="doc-callout"><em>Note</em> : for nodes within a subflow, the 'flow' context is scoped to the 
- subflow. The nodes cannot access the flow context of the flow containing the subflow instance node.</div>
+<div class="doc-callout"><em>Note</em>: for nodes within a subflow, the 'flow' context is scoped to the 
+ subflow. The nodes cannot access the flow context of the flow containing the subflow instance node.
+</div>
 
 
 ### Context stores
@@ -57,7 +58,7 @@ contextStorage: {
 },
 {% endhighlight %}
 
-`storeName`: The storeName used in get/sets
+`storeName`: The storeName used in get/sets<br>
 `storeModule`: Node-RED provides two built-in store modules: `memory` and `localfilesystem`. It is also possible 
 to create custom store plugins. You must specify `localfilesystem` (or your own custom module) to make the data 
 persistent. Full details on the built-in modules, and how to create custom modules, is available on the 
@@ -82,8 +83,8 @@ contextStorage: {
 },
 {% endhighlight %}
 
-The first entry will always be used when you don't specify it in a get/set `if` none of the `storeName`s 
-are "default". If you try to 'get' or 'set' using a `storeName` that does not exist it will use the default 
+The first entry will always be used if a 'storeName' is not specifed in a get/set AND none of the 'storeName's 
+are "default". If you try to 'get' or 'set' using a 'storeName' that does not exist, the default will be used 
 and you will see a one time warning in the log.
 
 NOTE: multiple entries in settings.js can lead to confusion. If you have:
@@ -102,10 +103,9 @@ and run the following code:
 	flow.set("count", 234, "default");    // the value is stored in memory
 	flow.set("count", 345, "memoryOnly"); // the value is stored in a file
 
-the first line stores '123' in default:count.
-the second line replaces '123' with '234' in default:count
-the third line stores '345' in memoryOnly:count
-
+The first line stores '123' in default:count.
+The second line replaces '123' with '234' in default:count.
+The third line stores '345' in memoryOnly:count.
 If you forget to specify the location in a 'get', you might end up with the wrong value.
 
 SUGGESTION: If you want have all your context data be persistant, setup your settings.js file with the following:
