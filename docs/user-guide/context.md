@@ -90,7 +90,7 @@ and you will see a one time warning in the log.
 NOTE: multiple entries in settings.js can lead to confusion. If you have:
 
 {% highlight javascript %}
-contextStorage: 
+contextStorage: {
   default    : { module: "memory" },
   storeInFile: { module: "localfilesystem"},
   memoryOnly : { module: "memory" }
@@ -111,7 +111,7 @@ If you forget to specify the location in a 'get', you might end up with the wron
 SUGGESTION: If you want have all your context data be persistant, setup your settings.js file with the following:
 
 {% highlight javascript %}
-contextStorage: 
+contextStorage: {
  	default    : { module: "localfilesystem"}
 },
 {% endhighlight %}
