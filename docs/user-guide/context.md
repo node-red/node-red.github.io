@@ -78,7 +78,7 @@ To enable file-based and memory storage, the following options could be used:
 
 {% highlight javascript %}
 contextStorage: {
-		 memoryOnly : { module: "memory" }
+   memoryOnly : { module: "memory" }
    default: { module: "localfilesystem" },
 },
 {% endhighlight %}
@@ -92,8 +92,8 @@ NOTE: multiple entries in settings.js can lead to confusion. If you have:
 {% highlight javascript %}
 contextStorage: 
   default    : { module: "memory" },
-		storeInFile: { module: "localfilesystem"},
-		memoryOnly : { module: "memory" }
+  storeInFile: { module: "localfilesystem"},
+  memoryOnly : { module: "memory" }
 },
 {% endhighlight %}
 
@@ -101,11 +101,11 @@ and run the following code:
 
 	flow.set("count", 123);               // the value is stored in memory
 	flow.set("count", 234, "default");    // the value is stored in memory
-	flow.set("count", 345, "memoryOnly"); // the value is stored in a file
+	flow.set("count", 345, "memoryOnly"); // the value is stored in memory
 
-The first line stores '123' in default:count.
-The second line replaces '123' with '234' in default:count.
-The third line stores '345' in memoryOnly:count.
+The first line stores '123' in default:count.<br>
+The second line replaces '123' with '234' in default:count.<br>
+The third line stores '345' in memoryOnly:count.<br>
 If you forget to specify the location in a 'get', you might end up with the wrong value.
 
 SUGGESTION: If you want have all your context data be persistant, setup your settings.js file with the following:
