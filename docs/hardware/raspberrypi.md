@@ -5,7 +5,7 @@ title: Running on Raspberry Pi
 
 The recommended way to install Node-RED on Pi is to use our script below, however Node-RED can be installed from the Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it is recommended to upgrade by using the script below.
 
-If you decide to not to use the script, and stick with apt to install Node-RED, then you **must** manually install npm and then upgrade it to the latest level by `sudo apt-get install npm && sudo npm i -g npm` before installing any extra nodes.
+If you decide not to use the script, and stick with apt to install Node-RED, then you **must** manually install npm and then upgrade it to the latest level by `sudo apt-get install npm && sudo npm i -g npm` before installing any extra nodes.
 
 You can upgrade Node-RED by re-running the script.
 
