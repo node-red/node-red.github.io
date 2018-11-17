@@ -3,9 +3,11 @@ layout: default
 title: Running on Raspberry Pi
 ---
 
-From June 2018 Node-RED can be installed from the Pi Menu - Preferences - Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it can be upgraded either by using `sudo apt-get upgrade` or using the script below.
-Once the script below has been run, you should upgrade by re-running the script.
-If you decide to stick with apt to install npm then you must upgrade it to the latest by `sudo npm i -g npm` before adding any extra nodes.
+The recommended way to install Node-RED on Pi is to use our script below, however Node-RED can be installed from the Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it is recommended to upgrade by using the script below.
+
+If you decide to not to use the script, and stick with apt to install Node-RED, then you **must** manually install npm and then upgrade it to the latest level by `sudo apt-get install npm && sudo npm i -g npm` before installing any extra nodes.
+
+You can upgrade Node-RED by re-running the script.
 
 ### Install / Upgrade
 
@@ -15,8 +17,6 @@ already installed, you can install or upgrade using the Node-RED upgrade script 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
 On really minimal Debian installs you may want to `sudo apt-get install build-essential` before running the script so that the serialport builds and installs OK. This is optional.
-
-**Note:** Once you have used this script to upgrade, you cannot use apt-get to upgrade the pre-installed version of Node-RED.
 
 #### Script Description
 
