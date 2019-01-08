@@ -16,7 +16,7 @@ There are two approaches:
 
 1. Ensure you have an AWS account with Elastic Beanstalk, SQS and S3 enabled
 
-2. Download EB command line and install on your local computer - see [link] (http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.html)
+2. Download EB command line and install on your local computer - see [link](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/GettingStarted.html)
 
 3. Create AWS credentials and save in a local file (~/.aws/config or Usersusername.awsconfig) as below
 
