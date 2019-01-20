@@ -32,7 +32,7 @@ currently connected or not.
 </div>
 
 If a node has any undeployed changes, it displays a blue circle above it. If there
-are are errors with its configuration, it displays a red triangle.
+are errors with its configuration, it displays a red triangle.
 
 Some nodes include a button on either its left or right edge. These allow some
 interaction with the node from within the editor. The Inject and Debug nodes

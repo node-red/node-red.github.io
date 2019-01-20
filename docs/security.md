@@ -100,11 +100,11 @@ adminAuth: {
         options: {
             consumerKey: TWITTER_APP_CONSUMER_KEY,
             consumerSecret: TWITTER_APP_CONSUMER_SECRET,
-            callbackURL: "http://example.com/auth/strategy/callback"
+            callbackURL: "http://example.com/auth/strategy/callback",
+            verify: function(token, tokenSecret, profile, done) {
+                done(null, profile);
+            }
         },
-        verify: function(token, tokenSecret, profile, done) {
-            done(null, profile);
-        }
     },
     users: [
        { username: "knolleary",permissions: ["*"]}
