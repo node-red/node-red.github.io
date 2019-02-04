@@ -1,11 +1,11 @@
 ---
 layout: docs
 toc: practice-toc.html
-title: Introduce
+title: Introduction
 ---
-*This guide is for who understands the basic fuctinality and want to develop more clear and reusable flows. If you thik that you are beginner, please read **[User Guide](https://nodered.org/docs/user-guide/)** and **[Cookbook](https://cookbook.nodered.org/)** first.*  
+*This guide is for developers who understand the basic fuctinality and want to develop more clear and reusable flows. If you think that you are beginner, please read **[User Guide](https://nodered.org/docs/user-guide/)** and **[Cookbook](https://cookbook.nodered.org/)** first.*  
 
-*In Node-RED, users can create flows easily and ad hoc. However, if you want to create more reusable and readable flows, some tips, practices and know how may be needed. Therefore, we would propose to create a new flow development guideline page to show such knowledge on Node-RED official page. We believe this page is useful for most Node-RED users.*  
+*In Node-RED, users can create flows easily and in ad hoc manner. However, if you want to create more reusable and readable flows, some tips, practices and know how may be needed. Therefore, flow development guideline page is intended for gathering such knowledge. We believe this page is useful for most Node-RED users.*  
 
 *Before adding guideline to the Node-RED official page through a pull request, we would like to discuss contents and where to place it with somebody who are interested in this guideline. This wiki page is for discussing them.*  
 

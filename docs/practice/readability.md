@@ -9,17 +9,17 @@ title: Improving readability
  
 ### Naming rule  
  
-*Name of nodes, tabs and subflow is important for readability and reusability of flows. This chapter presents some effective naming rules of them.(italic)*  
+*Name of nodes, tabs and subflow is important for readability and reusability of flows. This chapter presents some effective naming rules of them.*  
  
 ### Using proper nodes  
  
 *Each node can be used flexibly. For example, a function node can cover the same function of Change node, Switch node and so on. However, using a proper specialized node for your objective contributes improving understandability of your flows. This chapter introduces the roles and usage of core nodes such as **Change, Switch, Template, Link, HTTP**.*  
 
-*The **Function** node and **Exec** node are useful for JavaScript and other language developers because they can write JavaScript codes and commands directly. However, heavy use of them makes understanding flow difficult for other developers. This chapter describes a caution of these nodes and shows examples of alternative methods against Function node and Exec node.*  
+*The **Function** node and **Exec** node are useful for JavaScript and other language developers because they can write JavaScript codes and commands directly. However, heavy use of them makes understanding of flow difficult for other developers. This chapter describes a caution of these nodes and shows examples of alternative methods against Function node and Exec node.*  
  
 #### Link node
 
-*You can divide the flows when it be too long by using Link node. And it allows you create flows accroding to the size of the display and makes the layout clean.*  
+*You can divide the flows when it become too long by using Link node. And it allows you to create flows accroding to the size of the display and makes the layout clean.*  
 
 ### Changing icon  
  

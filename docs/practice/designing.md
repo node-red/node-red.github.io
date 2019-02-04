@@ -19,7 +19,7 @@ title: Designing a flow
  
 ### Designing messages  
  
-*There are risks that multiple nodes have dependencies by messages passing the nodes.*  
+*There are risks that multiple nodes have dependencies by messages passing through nodes.*  
 *For other developers to reuse flows, it is important to design messages so that dependencies get to be relaxed. This chapter proposes a guide about designing message.*  
  
 *We have already written actual contents on [here](https://github.com/node-red/node-red.github.io/wiki/Flow-Guideline-Contents).*  
@@ -28,7 +28,7 @@ title: Designing a flow
  
 *`msg` is a JavaScript object that contains a key-value structure like JSON. While a `msg` transits across multiple nodes, the nodes use some keys and values of the `msg`. If two or more nodes of them use the same key for different their own purposes, preparing `msg` for input of the nodes is so difficult.*  
  
-*Therefore, policies of key-value structure are needed and this subsection describes it as such as followings,*   
+*Therefore, policies of key-value structure are needed and this subsection describes it as followings,*   
  
 * *Top-level keys of `msg` are used to control the functionality of node*  
 * *`msg.payload` is used as input parameters of a process of a node*  
@@ -43,9 +43,9 @@ title: Designing a flow
  
 #### Using persistent storage outside of Node-RED  
  
-*If you handle the large amount of data, it is **not** recommended to set the data into `msg` since `msg` can be a cause of a lack of memory. Instead, you had better put the data on a persistent storage that is in outside of Node-RED and use reference to the data for handling the data.*  
+*If you handle the large amount of data, it is **not** recommended to set the data into `msg` since `msg` can exhaust available memory. Instead, you had better put the data on a persistent storage that is outside of Node-RED and use reference to the data for handling the data.*  
  
-#### Processing in order of arrival of messages  
+#### Processing messages in order of their arrival  
  
 *Since Node-RED (JavaScript) processes asynchronously, a node cannot assume that it executes process for arrival `msgs` by the order of arrival.*    
  
