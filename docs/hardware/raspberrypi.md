@@ -103,7 +103,7 @@ and likewise `sudo systemctl disable nodered.service` to disable autostart on bo
 #### Adding nodes to preloaded Raspbian version
 
 If you **have not upgraded** the pre-installed version to the latest version using the script above, then in
-order o add additional nodes you must first install the `npm` tool, as it is not included
+order to add additional nodes you must first install the `npm` tool, as it is not included
 in the default Raspbian installation. This is not necessary if you have upgraded using the script above.
 
 The following commands install `npm` and then upgrade it to the latest version.

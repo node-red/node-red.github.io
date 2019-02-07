@@ -22,11 +22,11 @@ Then you can point a browser to `localhost:1880`
 
  - You can also npm install other node-red nodes such as `node-red-dashboard` in the standard way :
 
-    cd ~/.node-red
-    npm i node-red-dashboard
+       cd ~/.node-red
+       npm i node-red-dashboard
 
  - The `volume-down` key is the ctrl key - so `vol-down-c` can be used to "break" a running app.
- - The instructions above also install the `nano` editor, as I find it useful for editing files.
+ - The instructions above also install the `nano` editor, which is useful for editing files.
 
 
 ### Misc
