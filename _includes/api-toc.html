@@ -39,8 +39,10 @@
     <li class="tocheader">
         <ul>
             <li class="toctitle{% if page.url == "/docs/api/ui/" %} active{% endif %}"><a href="/docs/api/ui/">Editor Widgets</a>
-            <li {% if page.url == "/docs/api/ui/typedInput" %}class="active"{% endif %}><a href="/docs/api/ui/typedInput">TypedInput</a>
-            <li {% if page.url == "/docs/api/ui/editableList" %}class="active"{% endif %}><a href="/docs/api/ui/editableList">EditableList</a>
+            <li {% if page.url contains "/docs/api/ui/editableList" %}class="active"{% endif %}><a href="/docs/api/ui/editableList">EditableList</a>
+            <li {% if page.url contains "/docs/api/ui/searchBox" %}class="active"{% endif %}><a href="/docs/api/ui/searchBox">SearchBox</a>
+            <li {% if page.url contains "/docs/api/ui/treeList" %}class="active"{% endif %}><a href="/docs/api/ui/treeList">TreeList</a>
+            <li {% if page.url contains "/docs/api/ui/typedInput" %}class="active"{% endif %}><a href="/docs/api/ui/typedInput">TypedInput</a>
         </ul>
     </li>
 </ul>

@@ -7,8 +7,6 @@ title: TypedInput Widget
 A replacement for a regular `<input>` that allows the type of the value to be
 chosen, including options for string, number and boolean types.
 
-_Since: 0.14_
-
 <div class="widget">
     <div class="col-4-12">
         <h3>Options</h3>
@@ -43,7 +41,6 @@ _Since: 0.14_
 
 ### Options
 
-
 #### <a href="#options-default" name="options-default">default</a>
 
 <span class="method-return">Type: String</span>
@@ -51,9 +48,11 @@ _Since: 0.14_
 If defined, sets the default type of the input if [`typeField`](#options-typeField)
 is not set.
 
-    $(".input").typedInput({
-        default: "msg"
-    });
+```javascript
+$(".input").typedInput({
+    default: "msg"
+});
+```
 
 #### <a href="#options-types" name="options-types">types</a>
 
@@ -78,11 +77,13 @@ identifier | description
 `bin` | a Node.js Buffer
 `re` | a Regular Expression
 `date` | the current timestamp
+`env` | an environment variable
 
-    $(".input").typedInput({
-        types: ["msg","str"]
-    });
-
+```javascript
+$(".input").typedInput({
+    types: ["msg","str"]
+});
+```
 
 #### <a href="#options-typeField" name="options-typeField">typeField</a>
 
@@ -93,10 +94,11 @@ the type value of the typedInput. This option allows such an existing element to
 provided. As the type of the typedInput is changed, the value of the provided input
 will also change.
 
-    $(".input").typedInput({
-        typeField: ".my-type-field"
-    });
-
+```javascript
+$(".input").typedInput({
+    typeField: ".my-type-field"
+});
+```
 
 ### Methods
 
@@ -108,20 +110,25 @@ will also change.
 
 Gets the selected type of the typedInput.
 
-    var type = $(".input").typedInput('type');
-
+```javascript
+var type = $(".input").typedInput('type');
+```
 
 #### <a href="#methods-type-set" name="methods-type-set">type( type )</a>
 
 Sets the selected type of the typedInput.
 
-    $(".input").typedInput('type','msg');
+```javascript
+$(".input").typedInput('type','msg');
+```
 
 #### <a href="#methods-types" name="methods-types">types( types )</a>
 
 Sets the list of types offered by the typedInput. See the description of the [`types` option](#options-types).
 
-    $(".input").typedInput('types',['str','num']);
+```javascript
+$(".input").typedInput('types',['str','num']);
+```
 
 #### <a href="#methods-validate" name="methods-validate">validate()</a>
 
@@ -130,7 +137,9 @@ Sets the list of types offered by the typedInput. See the description of the [`t
 Triggers a revalidation of the typedInput's type/value. This occurs automatically
 whenever the type or value change, but this method allows it to be run manually.
 
-    var isValid = $(".input").typedInput('validate');
+```javascript
+var isValid = $(".input").typedInput('validate');
+```
 
 <a name="methods-value"></a>
 
@@ -140,21 +149,26 @@ whenever the type or value change, but this method allows it to be run manually.
 
 Gets the value of the typedInput.
 
-    var value = $(".input").typedInput('value');
+```javascript
+var value = $(".input").typedInput('value');
+```
 
 #### <a href="#methods-value-set" name="methods-value-set">value( value )</a>
 
 Sets the value of the typedInput.
 
-    $(".input").typedInput('value','payload');
+```javascript
+$(".input").typedInput('value','payload');
+```
 
 #### <a href="#methods-width" name="methods-width">width( width )</a>
 
 Sets the width of the typedInput. This must be used in place of the standard
 `jQuery.width()` function as it ensures the component resizes properly.
 
-    $(".input").typedInput('width', '200px');
-
+```javascript
+$(".input").typedInput('width', '200px');
+```
 
 ### Events
 
@@ -162,7 +176,9 @@ Sets the width of the typedInput. This must be used in place of the standard
 
 Triggered when either the type or value of the input is changed.
 
-    $(".input").on('change', function(type, value) {} );
+```javascript
+$(".input").on('change', function(type, value) {} );
+```
 
 ### Types
 
@@ -186,29 +202,35 @@ Property | Type    | Required | Description
 
 Number type:
 
-    {
-        value:"num",
-        label:"number",
-        icon:"red/images/typedInput/09.png",
-        validate:/^[+-]?[0-9]*\.?[0-9]*([eE][-+]?[0-9]+)?$/
-    }
+```javascript
+{
+    value:"num",
+    label:"number",
+    icon:"red/images/typedInput/09.png",
+    validate:/^[+-]?[0-9]*\.?[0-9]*([eE][-+]?[0-9]+)?$/
+}
+```
 
 Boolean type:
 
-    {
-        value:"bool",
-        label:"boolean",
-        icon:"red/images/typedInput/bool.png",
-        options:["true","false"]
-    }
+```javascript
+{
+    value:"bool",
+    label:"boolean",
+    icon:"red/images/typedInput/bool.png",
+    options:["true","false"]
+}
+```
 
 Timestamp type:
 
-    {
-        value:"date",
-        label:"timestamp",
-        hasValue:false
-    }
+```javascript
+{
+    value:"date",
+    label:"timestamp",
+    hasValue:false
+}
+```
 
 
 <style>

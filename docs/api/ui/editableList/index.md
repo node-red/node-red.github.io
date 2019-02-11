@@ -39,13 +39,14 @@ own right. Used by the core `Switch` and `Change` nodes.
             <tr><td><a href="#methods-items">items</a></td></tr>
             <tr><td><a href="#methods-empty">empty</a></td></tr>
             <tr><td><a href="#methods-filter">filter</a></td></tr>
+            <tr><td><a href="#methods-show">show</a></td></tr>
             <tr><td><a href="#methods-sort">sort</a></td></tr>
             <tr><td><a href="#methods-length">length</a></td></tr>
         </table>
     </div>
     <div class="col-4-12">
-    <h3>Events</h3>
-    <h3>Types</h3>
+        <h3>Events</h3>
+        <h3>Types</h3>
     </div>
 </div>
 
@@ -65,9 +66,11 @@ If set to `false` (boolean), the button is not shown.
 
 If set to a non-blank string, a button is shown using its value as the text of the button.
 
-    $("ol.list").editableList({
-        addButton: "pets"
-    });
+```javascript
+$("ol.list").editableList({
+    addButton: "pets"
+});
+```
 
 #### <a href="#options-addItem" name="options-addItem">addItem( row, index, data )</a>
 
@@ -82,11 +85,13 @@ A callback function that gets called when a new item is being added to the list.
 If it was triggered by clicking the 'add button', `data` will be `{}`. Otherwise
 it will be the data passed to the call to the [`addItem`](#methods-addItem) method.
 
-    $("ol.list").editableList({
-        addItem: function(row, index, data) {
-            $(row).html("Item "+index);
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    addItem: function(row, index, data) {
+        $(row).html("Item "+index);
+    }
+});
+```
 
 #### <a href="#options-connectWith" name="options-connectWith">connectWith</a>
 
@@ -95,9 +100,11 @@ it will be the data passed to the call to the [`addItem`](#methods-addItem) meth
 If the list is [sortable](#options-sortable), this option allows items to be
 dragged from this list to any other jQuery `sortable` list, such as another `editableList`.
 
-    $("ol.list").editableList({
-        connectWith: ".my-other-list"
-    });
+```javascript
+$("ol.list").editableList({
+    connectWith: ".my-other-list"
+});
+```
 
 #### <a href="#options-header" name="options-header">header</a>
 
@@ -105,9 +112,11 @@ dragged from this list to any other jQuery `sortable` list, such as another `edi
 
 Inserts the DOM/JQuery object as a header for the list.
 
-    $("ol.list").editableList({
-        header: $("<div>").append($.parseHTML("<div style='width:40%; display: inline-grid'>Name</div><div style='display: inline-grid'>Type</div>")),
-    });
+```javascript
+$("ol.list").editableList({
+    header: $("<div>").append($.parseHTML("<div style='width:40%; display: inline-grid'>Name</div><div style='display: inline-grid'>Type</div>")),
+});
+```
 
 #### <a href="#options-height" name="options-height">height</a>
 
@@ -115,9 +124,11 @@ Inserts the DOM/JQuery object as a header for the list.
 
 Sets the height of the list including, if enabled, its add button.  Setting height to 'auto' removes the vertical scrollbar and displays the list at the full height needed to contain the contents.
 
-    $("ol.list").editableList({
-        height: 300
-    });
+```javascript
+$("ol.list").editableList({
+    height: 300
+});
+```
 
 #### <a href="#options-filter" name="options-filter">filter( data )</a>
 
@@ -130,11 +141,13 @@ A callback function that gets called to filter what items are visible in the lis
 The function should return `true`/`false` (boolean) to indicate whether the item
 should be visible.
 
-    $("ol.list").editableList({
-        filter: function(data) {
-            return data.index%2 === 0
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    filter: function(data) {
+        return data.index%2 === 0
+    }
+});
+```
 
 
 #### <a href="#options-resize" name="options-resize">resize()</a>
@@ -143,11 +156,13 @@ should be visible.
 
 A function that gets called when the size of the list changes.
 
-    $("ol.list").editableList({
-        resize: function() {
-            console.log("I have changed in size")
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    resize: function() {
+        console.log("I have changed in size")
+    }
+});
+```
 
 #### <a href="#options-resizeItem" name="options-resizeItem">resizeItem( row, index )</a>
 
@@ -163,12 +178,14 @@ The original data for the item is stored under a property called `data`.
 
 This callback is invoked after the main [`resize`](#options-resize) callback is called.
 
-    $("ol.list").editableList({
-        resizeItem: function(row,index) {
-            var originalData = $(row).data('data');
-            consol.log("Resize the row for item:", originalData)
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    resizeItem: function(row,index) {
+        var originalData = $(row).data('data');
+        consol.log("Resize the row for item:", originalData)
+    }
+});
+```
 
 #### <a href="#options-scrollOnAdd" name="options-scrollOnAdd">scrollOnAdd</a>
 
@@ -182,10 +199,11 @@ added items.
 
 If set to `false` (boolean), the list will not scroll.
 
-
-    $("ol.list").editableList({
-        scrollOnAdd: false
-    });
+```javascript
+$("ol.list").editableList({
+    scrollOnAdd: false
+});
+```
 
 #### <a href="#options-sort" name="options-sort">sort( itemDataA, itemDataB )</a>
 
@@ -203,11 +221,13 @@ If the function returns 0, the items are left unchanged.
 
 If the function returns a value greater than 0, `itemDataA` comes after `itemDataB`.
 
-    $("ol.list").editableList({
-        sort: function(dataA, dataB) {
-            return dataA.index-dataB.index;
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    sort: function(dataA, dataB) {
+        return dataA.index-dataB.index;
+    }
+});
+```
 
 #### <a href="#options-sortable" name="options-sortable">sortable</a>
 
@@ -220,9 +240,11 @@ If set to `true` (boolean), a default drag handle is displayed alongside the ite
 If set to a CSS Selector, that is used to identify the element that should be used
 as the drag handle within the item's content element.
 
-    $("ol.list").editableList({
-        sortable: true
-    });
+```javascript
+$("ol.list").editableList({
+    sortable: true
+});
+```
 
 #### <a href="#options-sortItems" name="options-sortItems">sortItems( items )</a>
 
@@ -234,11 +256,13 @@ A function that is called after an item in the list is moved.
 
 Each row element stores the original data for the item under property called `data`.
 
-    $("ol.list").editableList({
-        sortItems: function(items) {
-            console.log("The items have changed order")
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    sortItems: function(items) {
+        console.log("The items have changed order")
+    }
+});
+```
 
 
 #### <a href="#options-removable" name="options-removable">removable</a>
@@ -249,9 +273,11 @@ If set to `true`, each row is displayed with a delete button on the right-hand s
 Clicking the button will remove the row from the list and trigger the
 [`removeItem`](#options-removeItem) callback, if set.
 
+```javascript
 $("ol.list").editableList({
     removable: true
 });
+```
 
 #### <a href="#options-removeItem" name="options-removeItem">removeItem( data )</a>
 
@@ -265,11 +291,13 @@ The remove can be triggered by either clicking an item's [remove button](#option
 or calling the [`remoteItem` method](#methods-removeItem).
 
 
-    $("ol.list").editableList({
-        removeItem: function(data) {
-            console.log("An item has been removed")
-        }
-    });
+```javascript
+$("ol.list").editableList({
+    removeItem: function(data) {
+        console.log("An item has been removed")
+    }
+});
+```
 
 
 ### Methods
@@ -279,38 +307,45 @@ or calling the [`remoteItem` method](#methods-removeItem).
 Adds an item to the end of the list. `itemData` is an object that will be associated
 with the item in the list.
 
-    $("ol.list").editableList('addItem',{fruit:"banana"});
+```javascript
+$("ol.list").editableList('addItem',{fruit:"banana"});
+```
 
 #### <a href="#methods-addItems" name="methods-addItems">addItems( itemData )</a>
 
 Adds items contained in an array to the end of the list. `itemData` is an array of objects that will be associated
 with the item in the list.
 
-    $("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"}]);
-
+```javascript
+$("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"}]);
+```
 
 #### <a href="#methods-removeItem" name="methods-removeItem">removeItem( itemData )</a>
 
 Removes an item from the list. `itemData` is the object that identifies the item
 to be removed.
 
-    $("ol.list").editableList('removeItem',{fruit:"banana"});
+```javascript
+$("ol.list").editableList('removeItem',{fruit:"banana"});
+```
 
 #### <a href="#methods-width" name="methods-width">width( width )</a>
 
 Sets the width of the editableList. This must be used in place of the standard
 `jQuery.width()` function as it ensures the component resizes properly.
 
-    $("ol.input").editableList('width', '200px');
-
+```javascript
+$("ol.input").editableList('width', '200px');
+```
 
 #### <a href="#methods-height" name="methods-height">height( height )</a>
 
 Sets the height of the editableList. This must be used in place of the standard
 `jQuery.height()` function as it ensures the component resizes properly.
 
-    $("ol.input").editableList('height', '200px');
-
+```javascript
+$("ol.input").editableList('height', '200px');
+```
 
 #### <a href="#methods-items" name="methods-items">items()</a>
 
@@ -320,13 +355,17 @@ Gets an Array of all list items. Each item is the jQuery DOM element for the ite
 
 Each element stores the original data for the item under property called `data`.
 
-    var items = $("ol.list").editableList('items');
+```javascript
+var items = $("ol.list").editableList('items');
+```
 
 #### <a href="#methods-empty" name="methods-empty">empty()</a>
 
 Clears the list of all items. This does not trigger any callbacks.
 
-    $("ol.list").editableList('empty');
+```javascript
+$("ol.list").editableList('empty');
+```
 
 #### <a href="#methods-filter" name="methods-filter">filter( filter )</a>
 
@@ -343,9 +382,21 @@ function.
 
 If `filter` is `null`, the filter is removed.
 
-    var filteredCount = $("ol.list").editableList('filter',function(data) {
-        return data.index%2 === 0
-    });
+```javascript
+var filteredCount = $("ol.list").editableList('filter',function(data) {
+    return data.index%2 === 0
+});
+```
+
+#### <a href="#methods-show" name="methods-show">show( item )</a>
+
+*Since 0.20.0*
+
+Scrolls the list to ensure the specific item is in view.
+
+```javascript
+$("ol.list").editableList('show', item);
+```
 
 #### <a href="#methods-sort" name="methods-sort">sort( sort )</a>
 
@@ -363,9 +414,11 @@ function.
 If `sort` is not provided, the list is sorted using the current active sort
 function.
 
-    $("ol.list").editableList('sort', function(dataA, dataB) {
-        return dataA.index-dataB.index;
-    });
+```javascript
+$("ol.list").editableList('sort', function(dataA, dataB) {
+    return dataA.index-dataB.index;
+});
+```
 
 #### <a href="#methods-length" name="methods-length">length()</a>
 
@@ -373,7 +426,9 @@ function.
 
 Gets the number of list items.
 
-    var length = $("ol.list").editableList('length');
+```javascript
+var length = $("ol.list").editableList('length');
+```
 
 <style>
 
