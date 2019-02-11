@@ -7,6 +7,8 @@ title: Working with context
  - [What is context](#what-is-context)
  - [Context scopes](#context-scopes)
  - [Context stores](#context-stores)
+   - [Saving context data to the file-system](#saving-context-data-to-the-file-system)
+   - [Using multiple context stores](#using-multiple-context-stores)
  - [Using context in a flow](#using-context-in-a-flow)
  - [Using context in a Function node](#using-context-in-a-function-node)
  - [Using context in a custom node](#using-context-in-a-custom-node)
@@ -38,9 +40,11 @@ storing the sensor reading in context it is then available for the HTTP flow to 
 The Global context can be preconfigured with values using the `functionGlobalContext`
 property in the settings file.
 
-<div class="doc-callout"><em>Note</em> : for nodes within a subflow, the 'flow' context
-is scoped to the subflow. The nodes cannot access the flow context of the flow
-containing the subflow instance node.</div>
+<div class="doc-callout"><em>Note</em> : for nodes in a subflow, the <code>flow</code>
+context is shared by those nodes and not the flow the subflow is on.
+From Node-RED 0.20, the nodes inside a subflow can access the context of the
+parent flow by prepending <code>$parent.</code> to the context key. For example:
+<pre>var colour = flow.get("$parent.colour");</pre></div>
 
 
 ### Context stores
@@ -49,32 +53,61 @@ By default, context is stored in memory only. This means its contents are cleare
 whenever Node-RED restarts. With the 0.19 release, it is possible to configure
 Node-RED to save context data so it is available across restarts.
 
-The `contextStorage` property in settings.js can be used to configure how context
+The `contextStorage` property in `settings.js` can be used to configure how context
 data is stored.
 
-For example, to enable file-based storage, the following options can be used:
+Node-RED provides two built-in modules for this: `memory` and `localfilesystem`.
+It is also possible to create custom store plugins to save the data elsewhere.
 
-{% highlight javascript %}
+#### Saving context data to the file-system
+
+To enable file-based storage, the following option can be used:
+
+```javascript
 contextStorage: {
    default: {
        module: "localfilesystem"
    }
 }
-{% endhighlight %}
+```
 
-Node-RED provides two built-in store modules: `memory` and `localfilesystem`. It is also
-possible to create custom store plugins.
+This sets the default context store to be an instance of the `localfilesystem`
+plugin, with all of its default settings. That means:
 
-Full details on the built-in modules, and how to create custom modules, is
-available on the [api pages](../api/context/).
+ - it will store the context data in files under `~/.node-red/context/`
+ - it caches the values in memory and only writes them out to the file-system
+   every 30 seconds.
 
-Stores can provide either synchronous or asynchronous access. Synchronous access
-means a call to get data from the store returns immediately with the value. Asynchronous
-access means a call to get data must also provide a callback function that is called
-once the value is available.
+<div class="doc-callout"><em>Note</em> : Depending on when you installed Node-RED,
+your <code>settings.js</code> file may not have an example entry for <code>contextStorage</code>.
+If that is the case, you can copy the example above and add it yourself.</div>
 
-The built-in `memory` and `file` stores both offer synchronous access. This means
-existing (pre-0.19) flows can use these stores without any changes.
+#### Using multiple context stores
+
+It is possible to configure more than one store so that some values are saved to
+the local file-system and some are only held in memory.
+
+For example, to configure the default store to be in-memory only, and a second
+store for the file-system, the following options can be used:
+
+```javascript
+contextStorage: {
+   default: "memoryOnly",
+   memoryOnly: { module: 'memory' },
+   file: { module: 'localfilesystem' }
+}
+```
+
+In this example, the `default` property tells Node-RED which store to use if a
+request to access context doesn't specify a store.
+
+<div class="doc-callout"><em>Note</em> : if you choose to configure multiple
+<code>localfilesystem</code> stores, you <em>must</em> set their <code>dir</code>
+option so they use different directories to store data. Details on how to configure
+the store is available <a href="/docs/api/context/store/localfilesystem#options">here</a></div>
+
+Full details on the built-in modules, what configuration options they provide and
+how to create custom modules, are available on the [api pages](../api/context/).
 
 ### Using context in a flow
 
@@ -87,6 +120,12 @@ under the key of `myData`.
 Various nodes can access context directly. For example, the Inject node can be configured
 to inject a context value and the Switch node can route messages based on a value
 stored in context.
+
+If you have multiple context stores configured, the UI will allow you to pick
+which store a value should be stored in.
+
+<div style="text-align: center"><img src="/docs/user-guide/images/context_change_multiple_stores.png" width="471px"></div>
+
 
 ### Using context in a Function node
 
