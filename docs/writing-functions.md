@@ -181,7 +181,6 @@ and `global`.
 <div class="doc-callout"><em>Note</em> : these predefined variables are a feature
 of the Function node. If you are creating a custom node, check the <a href="/docs/creating-nodes/context">Creating Nodes guide</a> for how to access context.</div>
 
-
 There are two modes for accessing context; either synchronous or asynchronous.
 The built-in context stores provide both modes. Some stores may only provide
 asynchronous access and will throw an error if they are accessed synchronously.
