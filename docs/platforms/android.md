@@ -49,4 +49,4 @@ Install add-on access into Termux
 
     apt install termux-api
 
-Link to - <a href="https://termux.com/add-on-api.html">How to use Termux API</a>
+Link to - <a href="https://wiki.termux.com/wiki/Termux:API">How to use Termux API</a>
