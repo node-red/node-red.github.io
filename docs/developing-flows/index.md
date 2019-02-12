@@ -1,6 +1,6 @@
 ---
 layout: docs
-toc: practice-toc.html
+toc: developing-flows-toc.html
 title: Introduction
 ---
 *This guide is for developers who understand the basic fuctinality and want to develop more clear and reusable flows. If you think that you are beginner, please read **[User Guide](https://nodered.org/docs/user-guide/)** and **[Cookbook](https://cookbook.nodered.org/)** first.*  
