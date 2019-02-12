@@ -4,10 +4,10 @@ title: Running on BeagleBone Boards
 ---
 
 We recommend using the latest Debian 9 Stretch based SD card images - from
- <a href="https://beagleboard.org/latest-images" target="_new">beagleboard.org</a>.
+ <a href="https://beagleboard.org/latest-images" target="bbb">beagleboard.org</a>.
 
-The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start, so you can just boot
-and point your browser at your BeagleBone, port 1880.
+The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start,
+so you can just boot and point your browser at your BeagleBone, port 1880.
 
 The 2GB console version suitable for flashing to older eMMC versions of the BBB is not recommended but can be
 installed as per the manual installation instructions below.
@@ -46,8 +46,9 @@ This should also restart the Node-RED service - but you will need to refresh any
 
 If you are on the 2017 Debian 9.2 version you may need to run `sudo apt full-upgrade` first.
 
-**Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as it will re-install
-both Node.js and Node-RED in different locations and will conflict with and break the existing systemd configuration files.
+**Note**: Do NOT use the Raspberry Pi / Debian upgrade script (`update-nodejs-and-nodered`) as
+it will re-install both Node.js and Node-RED in different locations and will conflict with and
+break the existing systemd configuration files.
 
 ---
 
@@ -85,10 +86,10 @@ software certificates date checks to be valid.
 
 #### Updating Node.js
 
-We recommend using Node.js LTS 6.x or 8.x
+We recommend using Node.js LTS 8.x or 10.x
 
     sudo apt-get install curl
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y build-essential nodejs
     hash -r
 

@@ -54,15 +54,15 @@ to do everything within the editor and has a password of `password`. Note that
 the password is securely hashed using the bcrypt algorithm.
 
 <div class="doc-callout">
-<em>Note</em>: in previous releases of Node-RED, the setting <code>httpAdminAuth</code>
+<em>Note</em> : in previous releases of Node-RED, the setting <code>httpAdminAuth</code>
 could be used to enable HTTP Basic Authentication on the editor. This option is
 deprecated and should not be used.
 </div>
 
 ##### Generating the password hash
 
-To generate a suitable password hash, you can use the [`node-red-admin`](node-red-admin)
-command-line tool:
+To generate a suitable password hash, you can use the `node-red-admin`
+command-line tool. Instructions for installing the tool are available [here](node-red-admin).
 
     node-red-admin hash-pw
 
@@ -100,11 +100,11 @@ adminAuth: {
         options: {
             consumerKey: TWITTER_APP_CONSUMER_KEY,
             consumerSecret: TWITTER_APP_CONSUMER_SECRET,
-            callbackURL: "http://example.com/auth/strategy/callback"
+            callbackURL: "http://example.com/auth/strategy/callback",
+            verify: function(token, tokenSecret, profile, done) {
+                done(null, profile);
+            }
         },
-        verify: function(token, tokenSecret, profile, done) {
-            done(null, profile);
-        }
     },
     users: [
        { username: "knolleary",permissions: ["*"]}
@@ -270,7 +270,7 @@ Access to any static content defined by the `httpStatic` property can be secured
 using the `httpStaticAuth` property, which uses the same format.
 
 <div class="doc-callout">
-<em>Note</em>: in previous releases of Node-RED, the <code>pass</code> property
+<em>Note</em> : in previous releases of Node-RED, the <code>pass</code> property
 was expected to be an MD5 hash. This is cryptographically insecure, so has been
 superseded with bcrypt, as used by <code>adminAuth</code>. For backwards compatibility, MD5
 hashes are still supported - but they are not recommended.

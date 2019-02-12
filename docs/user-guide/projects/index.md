@@ -39,7 +39,7 @@ To enable the projects feature, edit your `settings.js` file and add the followi
 option within the `module.exports` block and restart Node-RED.
 
 <div class="doc-callout">
-<em>Note</em>:  The <code>settings.js</code> file exports a <em>JavaScript object</em>.
+<em>Note</em> :  The <code>settings.js</code> file exports a <em>JavaScript object</em>.
 To configure Node-RED you should understand how to modify a JavaScript object by adding
 new or modifying existing key/value pairs like the <code>editorTheme</code> below.
 </div>
@@ -214,7 +214,7 @@ This provides three options:
 
 ##### Open an existing project
 
-Node-RED only runs one project at any time. By opening a another project you
+Node-RED only runs one project at any time. By opening another project you
 change what flows are running.
 
 The 'open project' view also allows you to delete projects by hovering over them

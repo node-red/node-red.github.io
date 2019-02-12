@@ -103,7 +103,7 @@ defaults: {
    minimumLength: { value:0, validate:RED.validators.number() },
    lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
    custom: { value:"", validate:function(v) {
-      var minimumLength=$("#node-input-name").length?$("#node-input-minimumLength").val():this.minimumLength;
+      var minimumLength=$("#node-input-minimumLength").length?$("#node-input-minimumLength").val():this.minimumLength;
       return v.length > minimumLength 
    } }
 },

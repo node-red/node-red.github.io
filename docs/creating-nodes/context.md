@@ -4,40 +4,28 @@ toc: creating-nodes-toc.html
 title: Node context
 ---
 
-A node can store data within its context object. This context object is reset
-whenever the node is redeployed and when Node-RED is restarted.
+A node can store data within its context object.
+
+For more information about context, read the [Working with Context guide](../user-guide/context).
+
+There are three scopes of context available to a node:
+
+- Node - only visible to the node that set the value
+- Flow - visible to all nodes on the same flow (or tab in the editor)
+- Global - visible to all nodes
+
+Unlike the Function node which provides predefined variables to
+access each of these contexts, a custom node must access these
+contexts for itself:
 
 {% highlight javascript %}
 // Access the node's context object
-var context = this.context();
+var nodeContext = this.context();
 
-var count = context.get('count') || 0;
-count += 1;
-context.set('count',count);
-
-{% endhighlight %}
-
-##### Flow context
-
-The flow-level context is shared by all nodes on a given tab.
-
-{% highlight javascript %}
 var flowContext = this.context().flow;
-var count = flowContext.get('count')||0;
-{% endhighlight %}
 
-##### Global context
-
-The global context is shared by, and accessible to all nodes. For example to
-make the variable `foo` available globally:
-
-{% highlight javascript %}
 var globalContext = this.context().global;
-globalContext.set("foo","bar");  // this is now available to other nodes
 {% endhighlight %}
 
-##### Accessing context in a Function node
-
-In the Function node, the `flow` and `global` context objects are made available
-as top-level objects. See [this section](/docs/writing-functions#storing-data)
-for more information.
+Each of these context objects has the same `get`/`set` functions described
+in the [Writing Functions guide](/docs/writing-functions#storing-data).

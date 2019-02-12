@@ -63,7 +63,7 @@ To start the container:
 
 
 <div class="doc-callout">
-<p><em>Note</em>: your flows will be stored in the file called <code>flows.json</code>
+<p><em>Note</em> : your flows will be stored in the file called <code>flows.json</code>
 within the container. This can be customised by setting the <code>FLOWS</code>
 environment parameter:
 </p>
@@ -109,7 +109,7 @@ on the host machine:
     docker start mynodered
 
 <div class="doc-callout">
-<p><em>Note</em>: Modules with a native dependencies will be compiled on the host
+<p><em>Note</em> : Modules with a native dependencies will be compiled on the host
 machine's architecture. These modules will not work inside the Node-RED
 container unless the architecture matches the container's base image. For native
 modules, it is recommended to install using a local shell or update the

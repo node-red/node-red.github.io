@@ -3,29 +3,29 @@ layout: default
 title: Running on Raspberry Pi
 ---
 
-Node-RED comes preinstalled on the full Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/).
+The recommended way to install Node-RED on Pi is to use our script below, however Node-RED can be installed from the Recommended Software application installed on the Raspbian SD card image that can be downloaded from [RaspberryPi.org](https://www.raspberrypi.org/downloads/raspbian/). If installed in this manner it is recommended to upgrade by using the script below.
 
-While usable, this uses an older version of Node.js and it is recommended to upgrade to the latest using the bash command below.
+You can upgrade Node-RED by re-running the script.
 
-## Install / Upgrade
+### Install / Upgrade
 
-If you have a version of Raspbian, or other Debian based install, such as Ubuntu, or Diet-Pi, that doesn't have Node-RED
-already installed, you can install or upgrade using the Node-RED upgrade script command
+If you have a version of Raspbian, or other **Debian** based install, such as **Ubuntu**, or **Diet-Pi**,
+that doesn't have Node-RED already installed, you can install or upgrade using the Node-RED upgrade script command
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
-On really minimal Debian installs you may want to `sudo apt-get install build-essential` before running the script so that the serialport builds and installs OK. This is optional.
-
-**Note:** Once you have used this script to upgrade, you cannot use apt-get to upgrade the pre-installed version of Node-RED.
+On really minimal Debian installs you may need to run `sudo apt-get install build-essential` before running the script
+so that the serialport builds and installs OK. This is optional.
 
 #### Script Description
 
 Nodes can be now be managed via the built in palette manager. However the default Pi install pre-loads some
 nodes globally and these cannot then be easily managed and updated. The intention of the script is to...  
 
- - upgrade an existing user to LTS 6.x or 8.x Node.js and latest Node-RED
+ - upgrade an existing user to LTS 8.x or 10.x Node.js and latest Node-RED
  - migrate any existing globally installed nodes into the users ~/.node-red space so they can be managed via the palette manager
  - optionally (re)install the extra nodes that are pre-installed on a full Raspbian Pi image
+ - Note: it DOES NOT update any user installed existing nodes. This must be done manually by the user (see below).
 
 While aimed at the Pi user the script will also run on any Debian based operating system, such as Ubuntu, and so can
 be used on other hardware platforms, although it has not been widely tested.
@@ -40,7 +40,7 @@ The script will perform the following steps
  - remove any node-red binaries from /usr/bin and /usr/local/bin
  - remove any node-red modules from /usr/lib/node_modules and /usr/local/lib/node_modules
  - detect if Node.js was installed from Node.js package or Debian
- - if not v6 or newer - remove as appropriate and install latest v8 LTS (not using apt). It will leave Node.js 6 installs as-is.
+ - if not v8 or newer - remove as appropriate and install latest v8 or v10 LTS (not using apt).
  - clean out npm cache and .node-gyp cache to remove any previous versions of code
  - install Node-RED latest version
  - re-install under the user account any nodes that had previously been installed globally
@@ -50,14 +50,6 @@ The script will perform the following steps
  - add menu shortcut and icon
  - add systemd script and set user
  - if on a Pi add a CPU temperature -> IoT example
- - update the local update script
-
-As of Node-RED version 0.14.x a version of the upgrade script is pre-installed and will do a full upgrade to the latest Node.js LTS and latest release version of Node-RED. However it will be out of date and may need to be run twice.
-To use this method, run the following command as your normal user (typically `pi`):
-
-    update-nodejs-and-nodered
-
-**Note** - If the serialport nodes do not appear when you restart, please re-run the update command. If the update command does not run or is not found then use the bash command from above.
 
 **Caveat emptor** - The script has only been tested on installs with a small variety
 of the possible extra nodes. The script tries to rebuild any nodes with native
@@ -73,9 +65,17 @@ To see the list of nodes you had installed:
     cd ~/.node-red
     npm ls --depth=0
 
+**Note**: It does not update any nodes you had previously installed locally. To do that go into your user directory and run the commands below. The versions of some nodes may be fixed by the `package.json` file in that directory - you may need to hand edit this to select the versions you require before running `npm update`.
+
+    cd ~/.node-red
+    npm outdated
+    npm update
+
+
 #### Swapping SD Cards
 
 Different versions of Raspberry Pi use different Arm processors. The Node.js binary is different for Arm6 and Arm7. Swapping SD cards from Arm6 to Arm7, for example Pi Zero to Pi 3, is OK. Swapping the other way will not work, unless you uninstall Node.js and then re-run the upgrade script to install the appropriate version of Node.js.
+
 
 #### Running Node-RED
 
@@ -97,14 +97,16 @@ If you want Node-RED to run when the Pi boots up you can use
 
     sudo systemctl enable nodered.service
 
+and likewise `sudo systemctl disable nodered.service` to disable autostart on boot.
 
-#### Adding nodes to preloaded version
 
-To add additional nodes you must first install the `npm` tool, as it is not included
-in the default Raspbian installation. This is not necessary if you have upgraded to Node.js 6.x.
+#### Adding nodes to preloaded Raspbian version
 
-The following commands install `npm` and then upgrade
-it to the latest version.
+If you **have not upgraded** the pre-installed version to the latest version using the script above, then in
+order o add additional nodes you must first install the `npm` tool, as it is not included
+in the default Raspbian installation. This is not necessary if you have upgraded using the script above.
+
+The following commands install `npm` and then upgrade it to the latest version.
 
     sudo apt-get install npm
     sudo npm install -g npm
@@ -122,7 +124,8 @@ You can then start [using the editor](#using-the-editor).
 
 ## Notes
 
-Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer support, and this documentation is now aimed at Jessie as a minimum.
+Debian/Raspbian Wheezy is now beyond "End of Life", and is no longer support, and this documentation is now aimed
+at Jessie as a minimum.
 
 ### Accessing GPIO
 
@@ -179,7 +182,7 @@ below for how to add this to a manually installed version.
 
 #### Adding Autostart capability using SystemD
 
-The preferred way to autostart Node-RED on Pi is to use the built in systemd
+The preferred way to autostart Node-RED is to use the built in systemd
 capability.  The pre-installed version does this by using a `nodered.service`
 file and start and stop scripts. You may install these by running the following
 commands
@@ -209,13 +212,13 @@ Systemd uses the `/var/log/system.log` for logging.  To filter the log use
 
     sudo journalctl -f -u nodered -o cat
 
-#### Changing the systemd environment - non-Pi user
+#### Changing the systemd environment -  running as non-Pi user
 
-To run as a user other than Pi, you need to edit the nodered.service file. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and change the lines 4, 5 and 6 as indicated by {your_user} below
+To run as a user other than the default `pi`, you need to edit the nodered.service file. To edit this use sudo to edit the file `/lib/systemd/system/nodered.service` and change the lines as indicated by {your_user} below
 
     [Service]
     Type=simple
-    # Run as normal pi user - feel free to change...
+    # Run as normal pi user - change to the user name you wish to run Node-RED as
     User={your_user}
     Group={your_user}
     WorkingDirectory=/home/{your_user}
@@ -254,13 +257,13 @@ One way to find the IP address of the Pi is to use the command
 Then browse to `http://{the-ip-address-returned}:1880/`
 
 <div class="doc-callout">
- <em>Note:</em> the default browser included in Raspbian, Epiphany,
-has some quirks that mean certain keyboard short-cuts do not work within the
-Node-RED editor. We <b>strongly</b> recommend installing the Firefox-ESR browser instead:
+ <em>Note:</em> the default browser included in Raspbian, used to be Epiphany, and
+has some quirks that meant certain keyboard short-cuts do not work within the
+Node-RED editor. We <b>strongly</b> recommend installing the Firefox-ESR or Chromium browser instead:
 <pre>
     sudo apt-get install firefox-esr
 </pre>
-More recent build include Chromium - which also works fine but can be rather slow on a Pi1 or Zero.
+More recent build include Chromium y default - which also works fine but can be rather slow on a Pi1 or Zero.
 </div>
 
 You can then start creating your [first flow](../getting-started/first-flow).
@@ -283,6 +286,7 @@ You then need to stop and restart Node-RED to load the new nodes, and then refre
 
     node-red-stop
     node-red-start
+
 
 ## Interacting with the Pi hardware
 

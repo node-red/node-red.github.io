@@ -120,14 +120,14 @@ you may prefer the [NSSM option](#alternative-options) below.
 [PM2](https://github.com/Unitech/pm2) is a process manager for Node.js. It makes
 it easy to run applications on boot and ensure they are restarted if necessary.
 
-<div class="doc-callout"><em>Note</em>: PM2 is released under GNU-AGPL-3.0 license - please check the terms of the license before deploying.</div>
+<div class="doc-callout"><em>Note</em> : PM2 is released under GNU-AGPL-3.0 license - please check the terms of the license before deploying.</div>
 
 ##### 1. Install PM2
 
     sudo npm install -g pm2
 
 <div class="doc-callout">
-<em>Note</em>: <code>sudo</code> is required if running as a non-root user on Linux or OS X. If
+<em>Note</em> : <code>sudo</code> is required if running as a non-root user on Linux or OS X. If
 running on Windows, you will need to run in a <a href="https://technet.microsoft.com/en-gb/library/cc947813%28v=ws.10%29.aspx">command shell as Administrator</a>,
 without the <code>sudo</code> command.
 </div>
@@ -156,14 +156,14 @@ The `--` argument must appear before any arguments you want to pass to node-red.
     pm2 start /usr/bin/node-red -- -v
 
 <div class="doc-callout">
-<em>Note</em>: if you are running on a device like the Raspberry Pi or BeagleBone
+<em>Note</em> : if you are running on a device like the Raspberry Pi or BeagleBone
 Black that have a constrained amount of memory, you must pass an additional argument:
 
 <pre>pm2 start /usr/bin/node-red --node-args="--max-old-space-size=128" -- -v</pre>
 </div>
 
 <div class="doc-callout">
-<em>Note</em>: if you want to run as the root user, you must use the `--userDir`
+<em>Note</em> : if you want to run as the root user, you must use the `--userDir`
 option to specify where Node-RED should store your data.
 </div>
 

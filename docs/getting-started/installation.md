@@ -64,7 +64,7 @@ Once cloned, the core pre-requisite modules must be installed :
     npm install
 
 <div class="doc-callout">
-<em>Note</em>: when running from a clone of the git repository, it is necessary
+<em>Note</em> : when running from a clone of the git repository, it is necessary
 to install all dependencies, not just the production level ones. This is why the
  <code>--production</code> option should not be used.
 </div>

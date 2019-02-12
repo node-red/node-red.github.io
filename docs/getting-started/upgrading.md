@@ -4,13 +4,12 @@ toc: getting-started-toc.html
 title: Upgrading
 ---
 
-<div class="doc-callout"><em>Note</em>: if you are using the preinstalled version
+<div class="doc-callout"><em>Note</em> : if you are using the preinstalled version
 on a Raspberry Pi, please refer to <a href="/docs/hardware/raspberrypi">these instructions for <b>upgrading a Pi</b></a>.</div>
 
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following commands:
 
-    sudo npm cache clean
     sudo npm install -g --unsafe-perm node-red
 
 To check for, and re-install outdated nodes that are installed in the user directory you have two options:
@@ -29,10 +28,10 @@ You will then need to stop and restart Node-RED.
 
 ## Upgrading Node.js
 
-If you upgrade Node.js, for example from v4.x to v6.x, it is better to stop
+If you upgrade Node.js, for example from v4.x to v8.x, it is better to stop
 Node-RED, and then re-install as follows:
 
-    sudo npm cache clean
+    sudo npm cache clean --force
     sudo npm install -g --unsafe-perm node-red
 
 You will also need to rebuild any nodes that have binary dependancies. If you
