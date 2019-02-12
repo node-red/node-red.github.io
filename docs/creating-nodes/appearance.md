@@ -71,7 +71,7 @@ A node can provide its own icon in a directory called `icons` alongside its `.js
 and `.html` files. These directories get added to the search path when the editor
 looks for a given icon filename. Because of this, the icon filename must be unique.
 
-The icon should be white on a transparent background, 20 x 30 in size.
+The icon should be white on a transparent background, 40 x 60 in size.
 
 #### User defined icon
 
