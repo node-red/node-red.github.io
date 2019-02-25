@@ -4,7 +4,7 @@ title: Contributing to Node-RED
 ---
 
 The starting point for any contribution should be a discussion with the community.
-Our preferred mechanism for that is the project mailing list, although discussions
+Our preferred mechanism for that is the project forum, although discussions
 on the Slack team are equally valid. This serves two purposes:
 
  - it reaches a wide audience, including those who are not GitHub users.
@@ -20,14 +20,28 @@ also contribute the code, an item is added by a Committer to the Trello Whiteboa
 The Whiteboard acts as a backlog of features that can be drawn on by the TC when
 prioritising work.
 
-If an item has a Contributor to do the work, an issue should be raised on the
-GitHub project. The issue should provide a description of the feature and any key
-design points that are needed. This issue can then also be used to help refine
-the proposal. The issue should clearly identify who is working on it - this is
-to avoid accidental duplication of work and ensure there is a focal point for the
-work.
+If an item has a Contributor to do the work, the next step will depend on the nature
+of the change.
 
-Eventually a pull request (PR) will arrive that references the issue.
+If it is a small, well-defined feature, such as adding an option to an
+existing node, an issue should be raised on the GitHub project. The issue should
+provide a description of the feature and any key design points that are needed.
+This issue can then also be used to help refine the proposal. The issue should
+clearly identify who is working on it - this is to avoid accidental duplication
+of work and ensure there is a focal point for the work.
+
+For larger features, a design proposal will be required. The [node-red/designs](https://github.com/node-red/designs)
+repository is used to manage the proposals. The first step is to fill out the
+proposal template included in that repository and a pull request (PR) opened to
+add the proposal to the `0-initial` folder. The PR will be used to refine the
+initial proposal to ensure it is aligned to the project's goals. Once the basic
+proposal is accepted it can be moved to the `1-in-progress` folder. From there
+the design can be refined with more detail added along with any further discussion.
+This is also the point where a code PR can be raised against the relevant repository.
+Once the feature has been implemented, the design can be moved to the `2-complete`
+folder.
+
+Any code pull request should references the issue or design document.
 
 The Committer community have a responsibility to review the PR in a timely manner.
 For any significant changes, the PR should be allowed to sit on the list for at
@@ -83,11 +97,9 @@ of activity. The following describes how we use it today.
    any additional bug fixes that have been made since. At any time, this branch
    could get shipped as the next maintenance release. At the time of writing,
    this contains 0.16.2 and a few fixes that will be released as 0.16.3 at some point.
- - Development branch (eg `0.17`) - development work on the next milestone release
-   occurs in a branch named after the expected release version number. This is
-   where new features are developed. At the time of writing, this is the 0.17
-   release.
- - Larger features get developed in their own branches and merged to the current
+ - `dev` - this branch contains the development work on the next milestone release.
+   This is where new features are developed.
+ - Larger features get developed in their own branches and merged to the
    development branch as and when the feature is sufficiently stable for wider
    consumption.
 
@@ -97,15 +109,15 @@ The project uses a number of tools to support its activities. The following list
 is a current reflection of what is used and in what capacity.
 
 
- - [Mailing List](https://groups.google.com/forum/#!forum/node-red)
+ - [Forum](https://discourse.nodered.org)
 
-   This is the main discussion venue for the project. Anyone can join the mailing
-   list.
+   This is the main discussion venue for the project. Anyone can join the forum.
 
  - [Slack](https://nodered.org/slack)
 
    For active, real-time, conversations, slack can be more productive than the
-   mailing list. Anyone can join the slack team.
+   forum. Anyone can join the slack team. The `#dev` channel is used for discussions
+   on project development.
 
  - [Trello - Whiteboard](https://trello.com/b/R0O3CSrI/node-red-whiteboard)
 
