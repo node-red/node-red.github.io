@@ -16,44 +16,50 @@ Once the community discussion reaches a conclusion, the request is either droppe
 or taken forward.
 
 For a feature request from a member of the community who is not in a position to
-also contribute the code, an item is added by a Committer to the Trello Whiteboard.
-The Whiteboard acts as a backlog of features that can be drawn on by the TC when
-prioritising work.
+also contribute the design or code, an item is added by a Committer to the
+[Trello Whiteboard](https://trello.com/b/R0O3CSrI/node-red-whiteboard). The
+Whiteboard acts as a backlog of features that can be drawn on when prioritising
+work.
 
 If an item has a Contributor to do the work, the next step will depend on the nature
 of the change.
 
-If it is a small, well-defined feature, such as adding an option to an
-existing node, an issue should be raised on the GitHub project. The issue should
-provide a description of the feature and any key design points that are needed.
-This issue can then also be used to help refine the proposal. The issue should
+If it is a well-defined feature that has limited impact - such as adding a new
+option to an existing node - an issue should be raised in the appropriate
+repository with the `feature` label applied. The issue should provide a
+description of the feature and any key design points that are needed.
+This issue can then be used to help refine the proposal. The issue should
 clearly identify who is working on it - this is to avoid accidental duplication
 of work and ensure there is a focal point for the work.
 
-For larger features, a design proposal will be required. The [node-red/designs](https://github.com/node-red/designs)
-repository is used to manage the proposals. The first step is to fill out the
-proposal template included in that repository and a pull request (PR) opened to
-add the proposal to the `0-initial` folder. The PR will be used to refine the
-initial proposal to ensure it is aligned to the project's goals. Once the basic
-proposal is accepted it can be moved to the `1-in-progress` folder. From there
-the design can be refined with more detail added along with any further discussion.
-This is also the point where a code PR can be raised against the relevant repository.
-Once the feature has been implemented, the design can be moved to the `2-complete`
-folder.
+If it is a larger scoped feature that may require multiple pull-requests to
+implement, or has a great impact to the end user, a design note should be
+created in the [node-red/designs](https://github.com/node-red/designs) repo.
 
-Any code pull request should references the issue or design document.
+Once the design has been approved and moved to the `in-progress` state, an issue
+should be raised in the appropriate repository with the `feature` label applied.
+If the design identifies multiple stages of delivery for the feature, an issue
+should be raised for each stage as needed. The issues should reference the design
+note. Each issue should have a milestone set if it is planned for a particular release.
 
-The Committer community have a responsibility to review the PR in a timely manner.
-For any significant changes, the PR should be allowed to sit on the list for at
-least 48 hours - with consideration for weekends and other holiday periods. This
-gives all committers a fair chance to review the PR, or at least register their
-desire to give it a proper review, regardless of their timezone.
+At some point a pull request will arrive. This will go through the normal review
+processes. The Committer community have a responsibility to review the PR in a
+timely manner. For any significant changes, the PR should be allowed to sit on
+the list for at least 48 hours - with consideration for weekends and other
+holiday periods. This gives all committers a fair chance to review the PR, or at
+least register their desire to give it a proper review, regardless of their
+timezone.
 
 If there are no outstanding objections, a Committer will accept the PR.
 
 If there are objections, a suitable consensus amongst the Committers should be reached.
 
 Once all PRs relating to an issue have been resolved, the issue can be closed.
+
+Once it has been merged, the corresponding feature issue should be
+closed. If there is a corresponding design note, its history section should be
+updated to reflect where/when the item was delivered.
+
 
 ## Pull-Request Requirements
 
