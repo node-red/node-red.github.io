@@ -27,7 +27,7 @@ This survey is an opportunity for us to get a better understanding of who our us
 are, what they do with Node-RED and to help the project stay pointed in the right
 direction.
 
-Please spare us 10 minutes of your time to fill in the survey here:  https://tiny.cc/NodeRED2019Survey
+Please spare us 10 minutes of your time to fill in the survey here:  [https://tiny.cc/NodeRED2019Survey]()
 
 All responses are completely anonymous unless you choose to share your contact
 information with us. If you do share your contact information with us, it is purely
