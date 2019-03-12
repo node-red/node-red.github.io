@@ -14,6 +14,33 @@ If upgrading, please read the [upgrade instructions](http://nodered.org/docs/get
 
 ---
 
+### Community Survey
+
+This release comes just as we launch our [2019 Community Survey](https://tiny.cc/NodeRED2019Survey).
+
+We speak to lots of you in [Slack](https://nodered.org/slack) and the [Forum](https://discourse.nodered.org)
+and love hearing about how Node-RED is being used. But we know there's a much
+larger community of users and developers out there who are using Node-RED that we
+haven't spoken to.
+
+This survey is an opportunity for us to get a better understanding of who our users
+are, what they do with Node-RED and to help the project stay pointed in the right
+direction.
+
+Please spare us 10 minutes of your time to fill in the survey here:  https://tiny.cc/NodeRED2019Survey
+
+All responses are completely anonymous unless you choose to share your contact
+information with us. If you do share your contact information with us, it is purely
+to allow us (the core Node-RED team and no-one else) to follow-up on your responses.
+
+The survey will be open until mid-April at which point we'll compile the results
+into a report to be shared on the blog here.
+
+[Take the survey today!](https://tiny.cc/NodeRED2019Survey) - and spread the word
+to your friends and colleagues to help us reach as wider an audience as possible.
+
+---
+
 Unlike previously releases, we've already done a few beta releases of 0.20 over
 the last couple of months. This has allowed us to get more feedback on the new
 features and flush out lots of edge cases before making it more widely available.
