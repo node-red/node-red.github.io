@@ -77,7 +77,7 @@ you can use it. This must be done globally.
 You can then build and run the application
 
     grunt build
-    node red
+    npm start
 
 ### Next steps
 
