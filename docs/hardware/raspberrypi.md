@@ -7,6 +7,8 @@ The recommended way to install Node-RED on Pi is to use our script below, howeve
 
 You can upgrade Node-RED by re-running the script.
 
+Node-RED no longer supports Node.js 4.x or earlier. The last version to support 4.x was 0.19.6.
+
 ### Install / Upgrade
 
 If you have a version of Raspbian, or other **Debian** based install, such as **Ubuntu**, or **Diet-Pi**,
@@ -14,8 +16,8 @@ that doesn't have Node-RED already installed, you can install or upgrade using t
 
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
-On really minimal Debian installs you may need to run `sudo apt-get install build-essential` before running the script
-so that the serialport builds and installs OK. This is optional.
+On really minimal Debian installs you may need to run `sudo apt-get install build-essential` before
+running the script so that the serialport builds and installs OK. This is optional.
 
 #### Script Description
 

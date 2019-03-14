@@ -51,11 +51,10 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
         "start": "./node_modules/.bin/node-red -s ./settings.js"
     },
     "engines": {
-        "node": "4.x"
+        "node": "10.x"
     },
     "dependencies": {
-        "node-red": "0.16.x",
-        "serialport": "2.1.x",
+        "node-red": "0.20.x",
         "aws-sdk": "2.4.x",
         "node-red-contrib-storage-s3": "0.0.x",
         "when": "3.7.x"
@@ -75,7 +74,7 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
      storageModule: require('node-red-contrib-storage-s3'),
 ```
 
-4. At the command prompt make sure you are in the your application's top-level directory and run the command `eb create`; you may wish to specify a more unique application name. This will take a long time to run but eventually will return successfully. 
+4. At the command prompt make sure you are in the your application's top-level directory and run the command `eb create`; you may wish to specify a more unique application name. This will take a long time to run but eventually will return successfully.
 
 #### Configuring Node-RED access
 
@@ -121,7 +120,7 @@ Follow the AWS guide for [connecting to your instance](http://docs.aws.amazon.co
 
 Once logged in you need to install node.js and Node-RED
 
-       curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+       curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
        sudo apt-get install -y nodejs build-essential
        sudo npm install -g node-red
 

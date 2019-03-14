@@ -43,7 +43,7 @@ previous stage.
 
 Once logged in you need to install node.js and Node-RED
 
-       curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+       curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
        sudo apt-get install -y nodejs build-essential
        sudo npm install -g node-red
 
