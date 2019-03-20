@@ -29,7 +29,7 @@ Argument | Description
 ---------|----------------------
 settings | the runtime settings
 
-Returns a promise that resolves when the storage system is initalised.
+Returns a promise that resolves when the storage system is initialised.
 
 ### Storage.getFlows()
 
