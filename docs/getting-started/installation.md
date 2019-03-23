@@ -4,7 +4,7 @@ toc: getting-started-toc.html
 title: Installation
 ---
 
-Before you can install Node-RED, you must have a working install of Node.js. We recommend the use of Node.js **LTS 8.x or 10.x**. Users of Node.js 6.x should ensure they have the latest updates. Node-RED no longer supports Node.js 4.x or earlier.
+Before you can install Node-RED, you must have a working install of Node.js. We recommend the use of Node.js **LTS 8.x or 10.x**. Node-RED no longer supports Node.js 6.x or earlier.
 
 We have specific instructions available for certain hardware platforms and operating systems:
 
