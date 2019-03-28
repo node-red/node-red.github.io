@@ -40,13 +40,17 @@ You can now create your [first flow](first-flow).
 
 ### Command-line usage
 
-    Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR] [flows.json]
+Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR]
+                [--port PORT] [--title TITLE] [--safe] [flows.json]
 
-    Options:
-      -s, --settings FILE  use specified settings file
-      -u, --userDir  DIR   use specified user directory
-      -v                   enable verbose output
-      -?, --help           show usage
+Options:
+  -p, --port     PORT  port to listen on
+  -s, --settings FILE  use specified settings file
+      --title    TITLE process window title
+  -u, --userDir  DIR   use specified user directory
+  -v, --verbose        enable verbose output
+      --safe           enable safe mode
+  -?, --help           show this help
 
 ----
 
