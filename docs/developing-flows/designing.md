@@ -14,9 +14,11 @@ If a project needs complicated logic, it is better to design flow before startin
 * Implementation  
  
 ### Designing flow structure  
-<!-- > 
+
+{% comment %}
 *As the size of flows in a tab gets larger, it can be difficult to recognize a function of each flow within a tab. To improve reusability of flows, it would be better to decide the responsibility of flows within each tab and the scale of one tab. To do this, it is helpful to sort out what kind of things, people, work, rules are in the target domain of the application, and relationship of them.*  
--->
+{% endcomment %}
+
 #### Designing flow within a tab
 
 There is a case that one application is constructed by multiple function. For example, if you are developing an application that detects temperature and humidity with a sensor and sounds an alert on an external device, you should complete each function within one flow because it is likely that a mix of function logic, such as sensor, threshold identification, and access to the device, will be complicated.
@@ -49,9 +51,10 @@ For example, if the process of sending e-mail is written as a sub-flow, it can b
 ### Designing messages  
  
 There are risks that multiple nodes have dependencies by messages passing through nodes. For other developers to reuse flows, it is important to design messages so that dependencies get to be relaxed. 
-<!-- 
+
+{% comment %}
 This chapter proposes a guide about designing message.  
--->
+{% endcomment %}
 
 Messages that travel the flow are in the form of a JavaScript object with the object name typically referred as `msg`.
 Although these messages are partially affected by the restrictions of Node-RED and Node.js and the execution model, the ability to give the message object any attributes and assign it values of any data type makes it highly flexible.
@@ -73,17 +76,17 @@ Therefore, like the flow structure, appropriate message design is an important f
 Note that it is possible for the design of the message to influence the system design.
 You better to design the messages before implementing a flow.
 
-<!-- 
+{% comment %}
 *We have already written actual contents on [here](https://github.com/node-red/node-red.github.io/wiki/Flow-Guideline-Contents).*  
---> 
+{% endcomment %}
 
 #### Designing key-value structure of `msg`  
 
-<!-- 
+{% comment %}
 *`msg` is a JavaScript object that contains a key-value structure like JSON. While a `msg` transits across multiple nodes, the nodes use some keys and values of the `msg`. If two or more nodes of them use the same key for different their own purposes, preparing `msg` for input of the nodes is so difficult.*  
  
 *Therefore, strategy of key-value structure are needed and this subsection describes it as followings,*   
--->
+{% endcomment %}
 
 There are no naming restrictions that apply to the property names of `msg` objects. Consequently, there is a risk that multiple nodes will unintentionally use the same property.
 To mitigate this issue, a design strategy is preferably in place whereby the parameters in which data is stored in the `msg` object are predetermined for each type of data.
@@ -119,10 +122,10 @@ In addition, the first node of the flow verifies that the message received as in
 Properties other than those expected can be used freely in the flow.
 This verification process also expresses the boundaries of dependencies between flows.
 
-<!--
+{% comment %}
 * *Top-level keys of `msg` are used to control the functionality of node*  
 * *`msg.payload` is used as input parameters of a process of a node*  
- -->
+{% endcomment %}
 
 #### Keeping properties  
  
@@ -130,9 +133,9 @@ In the case of using `Function` node, you can prepare output messages by creatin
  
 #### Add tag into `msg` to distinguish a node that sent the `msg`  
 
-<!-- 
+{% comment %}
 *[Tips] If it is needed that a (latter) node executes a different process depending on a (former) node that send `msg`, former node adds tags describing the former node itself. With the tag, the latter node decide the process to execute.*  
--->
+{% endcomment %}
 
 Nodes can have multiple output ports, but only one input port. Messages moving through the flow include messages that control nodes and messages that provide data to be processed. When there is a need to distinguish among different types of input messages on each path of a flow, you should do so using properties in the message.
 
@@ -145,9 +148,10 @@ Specifically, you assign a tag that identifies the execution path as a message p
 #### Using persistent storage outside of Node-RED  
  
 If you handle the large amount of data, it is **not** recommended to set the data into `msg` since `msg` can exhaust available memory.
-<!--
+
+{% comment %}
 Instead, you had better put the data on a persistent storage that is outside of Node-RED and use reference to the data for handling the data.*  
---> 
+{% endcomment %}
 
 Because messages are held in memory, sending messages that contain large amounts of data significantly impacts processing time and memory usage.
 The processing of Node-RED will come to a standstill when memory is exhausted.
@@ -177,7 +181,7 @@ That is, your flow should produce the correct result even if messages arrive in 
 
 If you want to design the flow depending on messages in order, you should use `Sort` node. You can check how to use `Sort` node at **Sequential guarantee** of [Non-functional requirements](non-functional).
 
-<!--   
+{% comment %}
 If you want to assume processes by the order of arrival, try this code. 
  
 ```javascript  
@@ -190,4 +194,4 @@ if(msgs.length === ...) {
 context.set('messages', msgs);  
  
 ```  
- -->  
+{% endcomment %}
