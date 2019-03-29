@@ -25,9 +25,11 @@ Another approach is to use `Link` nodes as the interface between flows on differ
 |**`HTTP`**|You can connect with systems other than Node-RED, such as test systems.| Processing is unnecessarily exposed to outside entities.
 
 ### Managing flow parameter  
-<!--  
+
+{% comment %}  
 *Global context can be used as a parameter of flow execution. However, if you use the global context in various nodes, identifying dependencies between nodes becomes a hard work, and it can lead to bugs. To minimize the dependence on the global context, it is necessary to make it easier to see where the global context is used.*    
--->
+{% endcomment %}
+
 You should consider some situations that you need to change the output value according to environment variables.
 For example, you might want to change the OS that process application to Windows and Linux.
 In addition, you may be necessary to get proxy information to link it to other websites.
