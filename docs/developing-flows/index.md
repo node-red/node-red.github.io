@@ -33,8 +33,8 @@ Project management methods for developing flows among multiple people
 Techniques to meet non-functional requirements.
 
 
-<!-- 
+{% comment %}
 *Before adding guideline to the Node-RED official page through a pull request, we would like to discuss contents and where to place it with somebody who are interested in this guideline. This wiki page is for discussing them.*  
 
 *At first, we’d like to show a contents list and where to place it on Node-RED official page. After that, we will write the actual contents and discuss it with Node-RED community because we would reduce unnecessary work.*  
--->
+{% endcomment %}
