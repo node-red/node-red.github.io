@@ -5,9 +5,9 @@ title: Improving readability
 ---
 ### Align nodes  
 
-<!-- 
+{% comment %}
 *As the size of the application increases, the process of flow will become complicated, which decreases readability and understandability. One of the key points to improve readability and understandability is a proper node alignment such that flows of one function are adjacent to each other. This chapter shows effective node alignment.*  
--->
+{% endcomment %}
 
 A key feature of Node-RED is the ability to create applications without programming ability, provided the application is small and its processing is easy to follow.
 However, as application size increases, visual programming could suffers an effect similar to the "spaghetti code" of general programming.
@@ -105,11 +105,11 @@ It is recommended that you use flow names of 15 or fewer characters.
  
 ### Using proper nodes  
  
-<!--
+{% comment %}
 *Each node can be used flexibly. For example, a function node can cover the same function of Change node, Switch node and so on. However, using a proper specialized node for your objective contributes improving understandability of your flows. This chapter introduces the roles and usage of core nodes such as **Change, Switch, Template, Link, HTTP**.*  
 
 *The **Function** node and **Exec** node are useful for JavaScript and other language developers because they can write JavaScript codes and commands directly. However, heavy use of them makes understanding of flow difficult for other developers. This chapter describes a caution of these nodes and shows examples of alternative methods against Function node and Exec node.*  
--->
+{% endcomment %}
 
 Each type of node has an expected role.
 For example, a `Change` node is expected to perform processing that changes the value of a variable.
@@ -198,9 +198,11 @@ Use `Exec` nodes as little as possible, and keep these concerns in mind when doi
 ### Changing icon  
  
 When the same kind nodes are in the flow (e.g. a case that managing a large number of devices with `MQTT` nodes), it is difficult to distinguish nodes. But, it can be solved by designating different icons for each node. 
-<!--
+
+{% comment %}
 This chapter introduces the procedure for changing the icon and some Use Cases.  
--->
+{% endcomment %}
+
 Something to keep in mind is that overusing the icon changing function can in fact make it more difficult to identify nodes on sight. 
 You need to take care to maintain a balance.
 
@@ -270,13 +272,13 @@ This might include, for example, any changes it makes to `global` and `flow` con
 
 ### Refactoring  
 
-<!-- 
+{% comment %} 
 *It is better to check and refactor the developed flows before presenting it to other developers. This section shows refactoring points such as followings,*  
  
 1. *Coding Style*  
 2. *Flow implementation*  
 3. *Readability and reusability*  
--->
+{% endcomment %}
 
 We recommend that flow developers perform refactoring of the flows they develop to improve legibility.
 While we expect developers to have followed these guidelines in all aspects of development, this section provides a list of key areas to focus on when refactoring flows.
