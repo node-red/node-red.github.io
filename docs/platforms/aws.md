@@ -64,7 +64,7 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
 }
 ```
 
-2. Copy the default [Node-RED settings.js file](https://github.com/node-red/node-red/blob/master/settings.js) to the demoapp directory
+2. Copy the default [Node-RED settings.js file](https://github.com/node-red/node-red/blob/master/packages/node_modules/node-red/settings.js) to the demoapp directory
 
 3. Edit the settings.js file to add the following entries to module.exports (setting awsRegion to that used in eb init and replacing demoapp with your app name) :
 
