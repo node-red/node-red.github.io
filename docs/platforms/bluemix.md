@@ -73,13 +73,7 @@ To trigger an upgrade following a new release being made available:
 
         cf restage [APPLICATION_NAME]
 
-If you deployed your instance **before November 2016** you will need to take some additional steps:
-
-1. edit your application's `package.json` file - see below for how to edit the file
-2. update the `engines` property to `8.x` if it is not currently set to that
-3. update the `node-red` property under the `dependencies` section to the
-   version of Node-RED you want to upgrade to.
-
+3. If you are upgrade to Node-RED 0.20 or later, you **must** ensure your application is running on Node.js 8 or later. To do that, edit you application `package.json` file - see below for how to edit the file. Update the `engines` property to `8.x` if it is not currently set to that.
 
 In order to edit the file, you must enable the Continuous Delivery integration
 option via your application's IBM Cloud dashboard page. That will create a git repository
