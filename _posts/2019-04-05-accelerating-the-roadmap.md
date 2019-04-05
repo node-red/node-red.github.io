@@ -2,11 +2,12 @@
 layout: blog
 title: Accelerating the journey to 1.0
 author: nick
+description: Version 1.0 is coming. Soon.
 ---
 
-Our roadmap to version 1.0 was published in July 2017. It described a set of themes
-we wanted to address within the project, along with the functional items we decided
-were necessary to get there.
+Our [roadmap to version 1.0](/blog/2017/07/17/roadmap-to-1-dot-0) was published
+in July 2017. It described a set of themes we wanted to address within the project,
+along with the functional items we decided were necessary to get there.
 
 Since then we've made gradual progress through the roadmap with three milestone
 releases containing many of its features. But there are still a number of features
@@ -48,7 +49,7 @@ of how they can be used, but the technical work has been done.
 
 There are three items from the original roadmap that have not yet been delivered:
 
- - Library Redesign - an overhaul of the built-in library experience; on of the
+ - Library Redesign - an overhaul of the built-in library experience; one of the
    oldest bits of the Node-RED user experience that has not had much attention.
  - Pluggable Message Routing - the ability to plug custom code into how messages
    are passed between nodes.
@@ -127,7 +128,11 @@ available in early June.
 
 ### And then?
 
-As we said at the start, version 1.0 is not the end of the project. By the time
-1.0 is released we'll have a clear roadmap of the ongoing work to take us to the
-next milestone. We'll also have the results of our Community Survey to feed back
-into the plan.
+As we said at the start, version 1.0 is not the end of the project - its the
+next step forward in the project's growth.
+
+Alongside the release we'll have a clear roadmap of the ongoing work to take us
+to the next milestone and beyond.
+
+We'll also have the results of our Community Survey to feed back into the plan -
+if you haven't completed the survey yet, [please do](https://tiny.cc/NodeRED2019Survey)!
