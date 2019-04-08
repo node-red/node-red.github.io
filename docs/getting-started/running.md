@@ -42,20 +42,21 @@ You can now create your [first flow](first-flow).
 
 ### Command-line usage
 
-    Usage: node-red [-v] [-?] [--port 1880][--settings settings.js] [--userDir DIR] [flows.json]
+    Usage: node-red [-v] [-?] [--port PORT] [--safe] [--settings settings.js] 
+                    [--title TITLE] [--userDir DIR] [flows.json]
 
     Options:
-      -p, --port           use specified TCP port for editor web ui
+      -p, --port PORT      use specified TCP port for editor web ui
           --safe           start Node-RED editor without running flows
       -s, --settings FILE  use specified settings file
           --title TITLE    set process window title         
       -u, --userDir DIR    use specified user directory
       -v                   enable verbose output
       -?, --help           show usage
-      [flows.json]         name of the data file you want to work with. Using different names, 
+      flows.json           name of the flow file you want to work with. Using different names, 
                            such as greenhouse.json or robot.json, you can separate different 
                            undertakings you are working on. If you don't specify a name, it 
-                           defaults to flows_xxxxxxxx.json where xxxxxxxx is your servername.
+                           defaults to flows_xxx.json where xxx is the hostname of your server.
 
 ----
                            
