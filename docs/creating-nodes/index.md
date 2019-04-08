@@ -19,6 +19,7 @@ The following sections exist and are largely complete:
  - [Help style guide](help-style-guide)
  - [Packaging](packaging)
  - [Internationalisation](i18n)
+ - [Node generator](node-generator)
 
 
 To do:
