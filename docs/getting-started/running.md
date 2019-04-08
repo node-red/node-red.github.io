@@ -12,14 +12,16 @@ command:
     Welcome to Node-RED
     ===================
 
-    25 Mar 22:51:09 - [info] Node-RED version: v0.18.4
-    25 Mar 22:51:09 - [info] Node.js  version: v8.11.1
+    25 Mar 22:51:09 - [info] Node-RED version: v0.20.5
+    25 Mar 22:51:09 - [info] Node.js  version: v10.15.3
     25 Mar 22:51:09 - [info] Loading palette nodes
     25 Mar 22:51:10 - [warn] ------------------------------------------
     25 Mar 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
     25 Mar 22:51:10 - [warn] ------------------------------------------
     25 Mar 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
+    25 Mar 22:51:10 - [info] Context store  : 'default' [module=localfilesystem]
     25 Mar 22:51:10 - [info] User Directory : /home/nol/.node-red
+    25 Mar 22:51:10 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
     25 Mar 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
     25 Mar 22:51:10 - [info] Creating new flows file : flows_noltop.json
     25 Mar 22:51:10 - [info] Starting flows
@@ -40,20 +42,24 @@ You can now create your [first flow](first-flow).
 
 ### Command-line usage
 
-Usage: node-red [-v] [-?] [--settings settings.js] [--userDir DIR]
-                [--port PORT] [--title TITLE] [--safe] [flows.json]
+    Usage: node-red [-v] [-?] [--port PORT] [--safe] [--settings settings.js] 
+                    [--title TITLE] [--userDir DIR] [flows.json]
 
-Options:
-  -p, --port     PORT  port to listen on
-  -s, --settings FILE  use specified settings file
-      --title    TITLE process window title
-  -u, --userDir  DIR   use specified user directory
-  -v, --verbose        enable verbose output
-      --safe           enable safe mode
-  -?, --help           show this help
+    Options:
+      -p, --port PORT      use specified TCP port for editor web ui
+          --safe           start Node-RED editor without running flows
+      -s, --settings FILE  use specified settings file
+          --title TITLE    set process window title         
+      -u, --userDir DIR    use specified user directory
+      -v                   enable verbose output
+      -?, --help           show usage
+      flows.json           name of the flow file you want to work with. Using different names, 
+                           such as greenhouse.json or robot.json, you can separate different 
+                           undertakings you are working on. If you don't specify a name, it 
+                           defaults to flows_xxx.json where xxx is the hostname of your server.
 
 ----
-
+                           
 #### Running from a local install - Linux & Mac OS X
 
 The `node-red` command can still be accessed even if Node-RED hasn't been installed

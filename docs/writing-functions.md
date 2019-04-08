@@ -40,6 +40,9 @@ return msg;
 
 If the function returns `null`, then no message is passed on and the flow ends.
 
+The function must always return a msg object. Returning a number or string will
+result in an error.
+
 The returned message object does not need to be same object as was passed in;
 the function can construct a completely new object before returning it. For
 example:
