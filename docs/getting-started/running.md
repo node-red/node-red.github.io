@@ -52,9 +52,13 @@ You can now create your [first flow](first-flow).
       -u, --userDir DIR    use specified user directory
       -v                   enable verbose output
       -?, --help           show usage
+      [flows.json]         name of the data file you want to work with. Using different names, 
+                           such as greenhouse.json or robot.json, you can separate different 
+                           undertakings you are working on. If you don't specify a name, it 
+                           defaults to flows_xxxxxxxx.json where xxxxxxxx is your servername.
 
 ----
-
+                           
 #### Running from a local install - Linux & Mac OS X
 
 The `node-red` command can still be accessed even if Node-RED hasn't been installed
