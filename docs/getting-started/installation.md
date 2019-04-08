@@ -32,6 +32,17 @@ Note: <code>sudo</code> is only required during the install when running on Linu
 running on Windows, see the <a href="../platforms/windows">Windows Install instructions</a>.
 </div>
 
+### Install via SNAP
+
+If your OS supports [SNAPs](https://snapcraft.io/docs/core/install) you can install Node-RED with:
+
+    snap install node-red
+
+but please note that this runs in a secure container and so does not have access to any extra facilities
+that may be needed for your use, such as gcc to compile nodes that have native plugins, git (for projects),
+direct access to gpio, any external programs (to call out to), and so on. You can run it in "classic"
+mode, which reduces the container security, but we leave that as an exercise for the reader.
+
 #### Next
 
 Once installed, you are ready to [run Node-RED](running).
