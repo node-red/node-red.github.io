@@ -29,3 +29,6 @@ var globalContext = this.context().global;
 
 Each of these context objects has the same `get`/`set` functions described
 in the [Writing Functions guide](/docs/writing-functions#storing-data).
+
+Note: Configuration nodes that are used by and shared by other nodes are by default global, unless otherwise
+specified by the user of the node. As such it cannot be assumed that they have access to a Flow context.
