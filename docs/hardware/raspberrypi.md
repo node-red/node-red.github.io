@@ -7,7 +7,7 @@ The recommended way to install Node-RED on Pi is to use our script below, howeve
 
 You can upgrade Node-RED by re-running the script.
 
-Node-RED no longer supports Node.js 4.x or earlier. The last version to support 4.x was 0.19.6.
+Node-RED no longer supports Node.js 6.x or earlier. The last version to support 6.x was 0.19.6.
 
 ### Install / Upgrade
 
@@ -17,7 +17,7 @@ that doesn't have Node-RED already installed, you can install or upgrade using t
     bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
 
 On really minimal Debian installs you may need to run `sudo apt-get install build-essential` before
-running the script so that the serialport builds and installs OK. This is optional.
+running the script so that the serialport builds and installs correctly. This is optional.
 
 #### Script Description
 
@@ -173,7 +173,7 @@ appear between node and red.js.
     node --max-old-space-size=256 red.js
 
 This option limits the space it can use to 256MB before cleaning up. If you are
-running nothing else on your Pi you can afford to increase that figure to 256
+running nothing else on your Pi you can afford to increase that figure to 512MB
 and possibly even higher. The command `free -h` will give you some clues as to
 how much memory is currently available.
 

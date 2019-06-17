@@ -49,18 +49,7 @@ Once installed, you are ready to [run Node-RED](running).
 
 ----
 
-### Alternative install methods
-
-#### Download a release
-
-You can download the latest release from [here](https://github.com/node-red/node-red/releases/latest).
-The zip contains a top-level folder called `node-red-X.Y.Z` where `X.Y.Z` is the
-version number. Once extracted, from within that top-level folder, run the
-following command:
-
-    npm install --production
-
-#### For Development - from GitHub
+### For Development - from GitHub
 
 Running the code from GitHub is only intended for users who are happy to be using
 development code, or for developers wanting to contribute to the code.
