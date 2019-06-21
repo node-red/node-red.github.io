@@ -19,17 +19,17 @@ Drag an Inject node onto the workspace from the palette.
 
 Double click the node to bring up the edit dialog. Set the repeat interval to `every 5 minutes`.
 
-Click Ok to close the dialog.
+Click Done to close the dialog.
 
 #### 2. Add an HttpRequest node
 
-The HttpRequest node can be used to retrieve a web-page when triggered.
+The HttpRequest node (not the first http node you see) can be used to retrieve a web-page when triggered.
 
 After adding one to the workspace, edit it to set the `URL` property to:
 
     https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.csv
 
-You can optionally add a friendly name.
+You can optionally add a friendly Name. Then click Done when to close the dialog.
 
 This is the US Geological Survey web site feed of significant earthquakes in the last 7 days,
 there are plenty of other options there if you want to play around - see https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php
@@ -37,9 +37,11 @@ there are plenty of other options there if you want to play around - see https:/
 
 #### 3. Add a CSV node
 
-Add a CSV node and edit the properties, and tick the
+Add a CSV node and edit the properties, (open by double clicking) and tick the
 
     Input - [x] First row contains column names
+    
+Then click Done to close.
 
 #### 4. Add a Debug node
 
@@ -56,16 +58,17 @@ Add a Debug node to the output.
   - Wire a Switch node to the output of the CSV node.
   - Configure the property to be `msg.payload.mag`
   - Configure the test to be `>=` and the value to be `7`
+  - Click Done to close
 
 #### 8. Add a Change node
 
   - Wire a Change node to the output of the Switch node.
   - Configure the node to `Set`, `msg.payload` to be `PANIC!`.
+  - Click Done to close
 
 #### 9. Add a Debug node
 
-Wire a Debug node to the output of the Change node
-
+Wire a new Debug node to the output of the Change node
 
 #### 10. Deploy
 
