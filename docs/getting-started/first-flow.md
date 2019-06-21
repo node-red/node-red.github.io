@@ -36,7 +36,7 @@ of one to the input port of the other.
 At this point, the nodes only exist in the editor and must be deployed to the
 server.
 
-Click the Deploy button. Simple as that.
+Click the Deploy button.
 
 With the Debug sidebar tab selected, click the Inject button. You should see
 numbers appear in the sidebar. By default, the Inject node uses the number of
@@ -47,10 +47,11 @@ useful with that.
 
 The Function node allows you to pass each message though a JavaScript function.
 
-Wire the Function node in between the Inject and Debug nodes. You may need to
-delete the existing wire (select it and hit delete on the keyboard).
+Delete the existing wire (select it and hit delete on the keyboard).
 
-Double-click on the Function node to bring up the edit dialog. Copy the follow
+Wire the Function node in between the Inject and Debug nodes. 
+
+Double-click on the Function node to bring up the edit dialog. Copy the following
 code into the function field:
 
 {% highlight javascript %}
@@ -62,7 +63,7 @@ msg.payload = date.toString();
 return msg;
 {% endhighlight %}
 
-Click Ok to close the edit dialog and then click the deploy button.
+Click Done to close the edit dialog and then click the deploy button.
 
 Now when you click the Inject button, the messages in the sidebar will be more
 readable time stamps.
