@@ -17,6 +17,7 @@ The following sections exist and are largely complete:
  - [Node status](status)
  - [Configuration nodes](config-nodes)
  - [Help style guide](help-style-guide)
+ - [Adding examples](examples)
  - [Packaging](packaging)
  - [Internationalisation](i18n)
 
