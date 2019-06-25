@@ -20,6 +20,7 @@ The following sections exist and are largely complete:
  - [Adding examples](examples)
  - [Packaging](packaging)
  - [Internationalisation](i18n)
+ - [Node generator](node-generator)
 
 
 To do:
