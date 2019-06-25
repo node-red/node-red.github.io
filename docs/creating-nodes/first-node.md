@@ -230,4 +230,4 @@ These tests check to see that the node is loaded into the runtime correctly, and
 
 Both tests load the node into the runtime using `helper.load` supplying the node under test and a test flow  The first checks that the node in the runtime has the correct name property.  The second test uses a helper node to check that the output from the node is, in fact, lower case.
 
-The helper module contains other examples of tests taken from the Node-RED core nodes.  For more information on the helper module, see the associated README.
+The helper module contains other examples of tests taken from the Node-RED core nodes.  For more information on the helper module, see the [testing guide](testing).
