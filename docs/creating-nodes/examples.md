@@ -1,13 +1,13 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Adding examples
+slug: examples
 ---
 
 A packaged node can provide simple example flows that demonstrate how it can be used.
 
-They will appear under the <code>Menu - Import</code> dialogue, in the <code>Examples</code>
-section.
+They will appear under the Examples section of the library import menu.
 
 Ideally they should be short, have a comment node to describe the functionality, and not use
 any other 3rd party nodes that need to be installed.
