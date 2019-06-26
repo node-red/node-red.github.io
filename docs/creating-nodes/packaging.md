@@ -18,6 +18,10 @@ Here is a typical directory structure for a node package:
        |-sample.js
        \-icons
           \-sample.png
+          \-small.svg
+       \-examples
+          \-example 1.json
+          \-example 2.json
     - README.md
     - LICENSE
 
