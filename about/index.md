@@ -43,6 +43,19 @@ It was open-sourced in September 2013 and has been developed in the open ever
 since, culminating in it being one of the founding projects of the JS Foundation
 in October 2016.
 
+<div class="doc-callout">
+<b>Why is it called Node-RED?</b> The name was a light-hearted play on words
+sounding like 'Code Red'. It stuck and was a great improvement on whatever it was
+called in the first few days.
+
+The 'Node' part reflects both the flow/node programming model as well as the
+underlying Node.JS runtime. We never did come to a conclusion
+on what the 'RED' part stands for. "Rapid Event Developer" was one suggestion,
+but we've never felt compelled to formalise anything.
+
+We stick with 'Node-RED'.
+</div>
+
 For some more of the history and highlights:
 
 - read our blog post announcing the

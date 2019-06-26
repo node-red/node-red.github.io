@@ -165,3 +165,4 @@ sudo npm install -g --unsafe-perm node-red
 
  - [Learn how to secure your editor](/docs/user-guide/runtime/securing-node-red)
  - [Create your first flow](/tutorials/first-flow)
+ - [Starting Node-RED on boot](/docs/faq/starting-node-red-on-boot)

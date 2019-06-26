@@ -5,25 +5,25 @@ title: Frequently Asked Questions
 
 #### General
 
- - [Why is the project called Node-RED?]()
- - [What is the history of the project?]()
+ - [Why is the project called Node-RED?](/about/#history)
+ - [What is the history of the project?](/about/#history)
+ - [What is 'Flow-based Programming'](/about/#flow-based-programming)
 
 #### Node.js
 
- - [Supported versions of Node.js](node-versions)
+ - [What versions of Node.js are supported?](node-versions)
 
 
 #### Node-RED
 
- - [Why do nodes only have one input?]()
- - [How can ](starting-node-red-on-boot)
+ - [How can I start Node-RED on boot?](starting-node-red-on-boot)
 
 #### Raspbery Pi
 
- - [Interacting with Raspberry Pi GPIO](interacting-with-pi-gpio)
- - [Customising the Raspberry Pi service](customising-systemd-on-pi)
+ - [How do I interact with Raspberry Pi GPIO?](interacting-with-pi-gpio)
+ - [How can I customising the Raspberry Pi service?](customising-systemd-on-pi)
 
 
 #### Hardware
 
- - [Interacting with Arduino](interacting-with-arduino)
+ - [How can I interact with Arduino devices?](interacting-with-arduino)
