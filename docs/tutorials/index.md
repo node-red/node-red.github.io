@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: docs-tutorial
 title: Tutorials
 ---
 
@@ -14,7 +14,8 @@ to get the most from it.
       <h2>Your first flow</h2>
     </div>
     <div class="post-content">
-      Create your very first flow in Node-RED.
+    This tutorial introduces the Node-RED editor and creates a flow the demonstrates
+    the Inject, Debug and Function nodes.
     </div>
   </a>
 </div>
@@ -25,7 +26,8 @@ to get the most from it.
       <h2>Your second flow</h2>
     </div>
     <div class="post-content">
-      Build on your first flow to begin pulling in external data sources
+    This tutorial builds on the first tutorial to make a flow that
+    starts to bring in data from external sources to do something useful locally.
     </div>
   </a>
 </div>
