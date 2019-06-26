@@ -1,6 +1,7 @@
 ---
 layout: aboutSingle
 title: Contributing to Node-RED
+slug: contributing
 ---
 
 The starting point for any contribution should be a discussion with the community.
@@ -61,7 +62,7 @@ closed. If there is a corresponding design note, its history section should be
 updated to reflect where/when the item was delivered.
 
 
-## Pull-Request Requirements
+### Pull-Request Requirements
 
 Any pull-request that introduces a code change is expected to meet certain
 criteria before it will be accepted:
@@ -92,7 +93,7 @@ The project places no requirements on what development methodology is used to
 make the code change prior to raising the PR. The project places high value on
 having good test coverage and documentation.
 
-## Git Workflow
+### Git Workflow
 
 The following workflow is used in git for the main project repositories.
 
@@ -109,7 +110,7 @@ of activity. The following describes how we use it today.
    development branch as and when the feature is sufficiently stable for wider
    consumption.
 
-## Tools
+### Tools
 
 The project uses a number of tools to support its activities. The following list
 is a current reflection of what is used and in what capacity.

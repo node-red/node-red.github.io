@@ -1,7 +1,13 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: GET /auth/login
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - url: "/docs/api/admin/methods"
+    label: "methods"
+  - get auth
 ---
 Get the active authentication scheme
 
@@ -39,4 +45,3 @@ In the current version, there are two possible responses:
 
 The `prompts` field indicates what properties are required to be provided in the
 [token exchange](../../../post/auth/token).
-

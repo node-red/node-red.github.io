@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Configuration nodes
+slug: config nodes
 ---
 
 Some nodes need to share configuration. For example, the MQTT In and MQTT Out

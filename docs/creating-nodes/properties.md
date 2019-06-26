@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Node properties
+slug: properties
 ---
 
 A node's properties are defined by the `defaults` object in its html definition.
@@ -79,10 +80,10 @@ If more specific validation is required, the `validate` attribute can be used to
 provide a function that will check the value is valid. The function is passed the
 value and should return either true or false. It is called within the context of
 the node which means `this` can be used to access other properties of the node.
-This allows the validation to depend on other property values. 
+This allows the validation to depend on other property values.
 While editing a node the `this` object reflects the current configuration of the
-node and **not** the current form element value. The validator function should 
-try to access the property configuration element and take the `this` object as 
+node and **not** the current form element value. The validator function should
+try to access the property configuration element and take the `this` object as
 fallback to achieve the right user experience.
 
 There is a group of common validation functions provided.
@@ -104,7 +105,7 @@ defaults: {
    lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
    custom: { value:"", validate:function(v) {
       var minimumLength=$("#node-input-minimumLength").length?$("#node-input-minimumLength").val():this.minimumLength;
-      return v.length > minimumLength 
+      return v.length > minimumLength
    } }
 },
 ```

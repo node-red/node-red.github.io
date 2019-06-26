@@ -1,18 +1,9 @@
 ---
-layout: docs
-toc: user-guide-toc.html
+layout: docs-user-guide
+toc: toc-user-guide.html
 title: Working with context
+slug: context
 ---
-
- - [What is context](#what-is-context)
- - [Context scopes](#context-scopes)
- - [Context stores](#context-stores)
-   - [Saving context data to the file-system](#saving-context-data-to-the-file-system)
-   - [Using multiple context stores](#using-multiple-context-stores)
- - [Using context in a flow](#using-context-in-a-flow)
- - [Using context in a Function node](#using-context-in-a-function-node)
- - [Using context in a custom node](#using-context-in-a-custom-node)
- - [Deleting context from the file store](#deleting-context-from-the-file-store)
 
 ### What is context?
 

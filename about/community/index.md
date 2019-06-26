@@ -1,9 +1,12 @@
 ---
 layout: aboutSingle
 title: Get involved
+slug: involved
+redirect_from:
+  - /community/
 ---
 
-## Discussion
+### Discussion
 
 The two main places to discuss Node-RED are:
 
@@ -25,6 +28,6 @@ The project is [@NodeRED](https://twitter.com/nodered) on Twitter, which we use
 for general announcements and links. You may also want to follow [@red_nodes](https://twitter.com/red_nodes)
 which provides a feed of nodes published to the [flow library](https://flows.nodered.org).
 
-## User Groups
+### User Groups
 
 - [Node-RED User Group Japan](https://nodered.jp/)

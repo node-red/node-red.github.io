@@ -39,19 +39,39 @@
 .blog-posts .grid {
     background: #f3f3f3;
 }
+.blog-posts .post-preview {
+    margin: 20px;
+    top: -50px;
+    border-color: #fff;
+    width: calc(100% / 3 - 60px);
+    height: 300px;
+}
+.blog-posts .post-preview .post-header {
+    text-align: left;
+}
+.blog-posts .post-preview .post-header .post-meta {
+    text-align: center;
+}
+
 .post-preview {
     background: white;
     position: relative;
     display: inline-block;
-    margin: 20px;
-    width: calc(100% / 3 - 60px);
-    height: 300px;
-    top: -50px;
+    margin: 0 10px 10px;
+    width: calc(100% / 3 - 30px);
     overflow: hidden;
+    height: 250px;
     text-overflow: ellipsis;
-    border: 1px solid #fff;
+    border: 1px solid #999;
     border-radius: 3px;
 }
+.post-preview .post-header {
+    text-align: center;
+}
+.post-preview .post-header img {
+    max-width: 100px;
+}
+
 .post-preview > a {
     padding: 10px 15px;
     position: absolute;

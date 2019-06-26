@@ -1,7 +1,13 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: PUT /flow/:id
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - url: "/docs/api/admin/methods"
+    label: "methods"
+  - update flow
 ---
 
 Update a flow in the active configuration. A flow is represented as a tab within the
