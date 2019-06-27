@@ -30,8 +30,8 @@ which provides a feed of nodes published to the [flow library](https://flows.nod
 
 ### Community Survey
 
-We ran our first community-wide survey in March/April 2019. A summary of the
-results is available [here](/about/community/survey/2019).
+We ran our first community-wide survey in March/April 2019. The results are
+available [here](/about/community/survey/2019).
 
 ### User Groups
 

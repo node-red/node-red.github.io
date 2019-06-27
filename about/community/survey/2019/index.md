@@ -1,5 +1,5 @@
 ---
-layout: about-single
+layout: about-survey
 title: 2019 Node-RED Community Survey
 slug:
   - url: /about/community
@@ -285,7 +285,6 @@ $(function() {
 </script>
 <style>
     h3 {
-        border-top: 1px solid #B68181;
         padding-top: 20px;
     }
 
