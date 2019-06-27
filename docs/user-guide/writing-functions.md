@@ -156,7 +156,7 @@ node.error("hit an error", msg);
 
 Aside from the `msg` object, the function can also store data in the context store.
 
-More information about Context within Node-RED is available [here](user-guide/context).
+More information about Context within Node-RED is available [here](/docs/user-guide/context).
 
 In the Function node there are three predefined variables that can be used to
 access context:
@@ -314,7 +314,7 @@ node.status({});   // to clear the status
 {% endhighlight %}
 
 For details of the accepted parameters see the
-[Node Status documentation](creating-nodes/status)
+[Node Status documentation](/docs/creating-nodes/status)
 
 Any status updates can then also be caught by the Status node.
 
