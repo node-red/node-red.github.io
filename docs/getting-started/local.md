@@ -157,8 +157,13 @@ The following two commands show these two approaches:
 
 ### Upgrading Node-RED
 
-<div class="doc-callout"><em>Note</em> : if you runnning on a Raspberry Pi,
-please use <a href="/docs/hardware/raspberrypi">these instructions</a>.</div>
+<div class="doc-callout">
+<div style="float: left; margin-right: 10px;"><img src="/images/logos/raspberrypi.svg" height="30">
+<img src="/images/logos/debian.svg" height="30">
+<img src="/images/logos/ubuntu.svg" height="30">
+</div>
+If you installed Node-RED using the Pi script, you can rerun it to upgrade. The
+script is available <a href="/docs/hardware/raspberrypi">here</a>.</div>
 
 If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
@@ -168,7 +173,11 @@ sudo npm install -g --unsafe-perm node-red
 ```
 
 <div class="doc-callout">
-<em>Note</em> : If you are using Windows, do not start the command with <code>sudo</code>.</div>
+<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+<img src="/images/logos/windows.svg" height="30">
+</div>
+If you are using Windows, do not start the command with <code>sudo</code>.
+</div>
 
 
 
