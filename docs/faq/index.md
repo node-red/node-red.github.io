@@ -18,7 +18,7 @@ title: Frequently Asked Questions
 
  - [How can I start Node-RED on boot?](starting-node-red-on-boot)
 
-#### Raspbery Pi
+#### Raspberry Pi
 
  - [How do I interact with Raspberry Pi GPIO?](interacting-with-pi-gpio)
  - [How can I customising the Raspberry Pi service?](customising-systemd-on-pi)
