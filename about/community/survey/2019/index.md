@@ -1,11 +1,51 @@
 ---
-layout: aboutSingle
+layout: about-single
 title: 2019 Node-RED Community Survey
-slug: survey
+slug:
+  - url: /about/community
+    label: community
+  - 2019 survey
 ---
 
 <script src="./charts.js"></script>
 <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+### Introduction
+
+These are the results of our first ever community-wide survey.
+
+We talk to lots of users through our interactions on slack, the forum and elsewhere.
+This gives us good insight on specific tasks our users are trying to achieve. But
+it is often in the context of them asking for advice or guidance on how to complete
+the task. This can give a misleading view on what users are actually doing; we
+don't always get to hear about the users who are successfully doing things without
+the community's help. Nor do we get the background context of the questions we do
+see.
+
+The goal of this survey was to get a better overall picture of how and where
+Node-RED is being used, and whether that fitted with our own perceptions. It was
+also a goal to validate the priorities of the project's future roadmap.
+
+### Summary
+
+ - The survey received a good number of responses (871) from a reasonably wide
+   cross section of the community
+ - Whilst there were no major surprises in the results, it did reaffirm many of
+   our perceptions.
+ - Most respondents use Node-RED in a personal capacity, for home automation and
+   similar tasks.
+ - However, Node-RED is being used in production and there is a growing amount
+   of commercial usage.
+ - JavaScript is the prominent language used alongside Node-RED, but Python and
+   Java are also well represented.
+ - Devices are the most common platform for running Node-RED, with the Raspberry Pi
+   way out in the lead.
+ - Almost of third of respondents use separate 'development' and 'production' systems,
+   however they do not have any automation to move between them. This was
+   also reflected in the written comments looking for workflow improvements around
+   version control, CI/CD integration testing and documentation to support these
+   scenarios
+
 
 ### You and Node-RED
 
@@ -76,7 +116,7 @@ maintained and have fallen behind the core Function node in terms of available
 functionality.
 
 
-### You and Node-RED
+### You and Node-RED 2
 
 Naming things is hard. It was only after we closed the survey and started compiling
 these results that I noticed we had two sections called the same thing. But no matter.
@@ -196,7 +236,7 @@ help us to shape on the roadmap for the future of the project.
 
 ---
 
-## Methodology
+### Methodology
 
 The  survey was open for submissions for 45 days from March 12th
 to April 26th, 2019. It was publicised across all of our social channels - the forum,
@@ -217,6 +257,7 @@ community.
 As this was the first time we've done such a survey, inspiration was sought from
 various, more established, tech community surveys. This helped identify the sorts
 of questions we could be asking, albeit tailored to Node-RED.
+
 
 
 

@@ -1,7 +1,7 @@
 ---
-layout: aboutSingle
+layout: about-single
 title: Get involved
-slug: involved
+slug: community
 redirect_from:
   - /community/
 ---
@@ -27,6 +27,11 @@ the tag `node-red`.
 The project is [@NodeRED](https://twitter.com/nodered) on Twitter, which we use
 for general announcements and links. You may also want to follow [@red_nodes](https://twitter.com/red_nodes)
 which provides a feed of nodes published to the [flow library](https://flows.nodered.org).
+
+### Community Survey
+
+We ran our first community-wide survey in March/April 2019. A summary of the
+results is available [here](/about/community/survey/2019).
 
 ### User Groups
 

@@ -123,7 +123,7 @@
                 {"name": "tcp", "value": 1},
                 {"name": "template", "value": 1},
                 {"name": "vendor", "value": 50},
-                {"other": "vendor", "value": 30}
+                {"name": "other", "value": 30}
             ]
         },
         {

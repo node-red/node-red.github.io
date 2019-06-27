@@ -1,5 +1,5 @@
 ---
-layout: aboutSingle
+layout: about-single
 title: Contributing to Node-RED
 slug: contributing
 ---

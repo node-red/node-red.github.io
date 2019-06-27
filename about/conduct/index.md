@@ -1,5 +1,5 @@
 ---
-layout: aboutSingle
+layout: about-single
 title: Contributor Covenant Code of Conduct
 slug: conduct
 redirect_from:

@@ -110,4 +110,5 @@ it into the editor, copy it to your clipboard and then paste it into the Import 
 
  - [Using the editor](/docs/user-guide/editor/)
  - [The Core nodes](/docs/user-guide/nodes)
+ - [Working with messages](/docs/user-guide/messages)
  - [Using the Function node](/docs/user-guide/writing-functions)

@@ -1,7 +1,7 @@
 <div class="breadcrumbs">
     <div class="grid">
         {% if top_slug %}
-        <a {% unless parent_slug %}class="active" {% endunless %}href="{{top_url}}">{{top_slug}}</a>
+        <a {% unless parent_slug or page.slug %}class="active" {% endunless %}href="{{top_url}}">{{top_slug}}</a>
         {% else %}
         <a {% unless parent_slug %}class="active" {% endunless %}href="/docs">docs</a>
         {% endif %}
