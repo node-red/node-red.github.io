@@ -65,10 +65,9 @@ To start the container:
 
 
 <div class="doc-callout">
-<p><em>Note</em> : your flows will be stored in the file called <code>flows.json</code>
+Your flows will be stored in the file called <code>flows.json</code>
 within the container. This can be customised by setting the <code>FLOWS</code>
 environment parameter:
-</p>
 <pre>docker run -it -p 1880:1880 -e FLOWS=my_flows.json nodered/node-red-docker</pre>
 <p>Node.js runtime arguments can be passed to the container using an environment parameter (<code>NODE_OPTIONS</code>). For example, to fix the heap size used by the Node.js garbage collector you would use the following command:
 </p>
@@ -111,11 +110,11 @@ on the host machine:
     docker start mynodered
 
 <div class="doc-callout">
-<p><em>Note</em> : Modules with a native dependencies will be compiled on the host
+Modules with a native dependencies will be compiled on the host
 machine's architecture. These modules will not work inside the Node-RED
 container unless the architecture matches the container's base image. For native
 modules, it is recommended to install using a local shell or update the
-package.json and re-build.</p></div>
+package.json and re-build.</div>
 
 
 ### Building the container from source

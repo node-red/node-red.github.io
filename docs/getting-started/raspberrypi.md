@@ -26,6 +26,10 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/
 ```
 
 <div class="doc-callout">
+<div style="float: left; margin-right: 10px; margin-bottom: 30px;">
+<img src="/images/logos/debian.svg" height="30">
+<img src="/images/logos/ubuntu.svg" height="30">
+</div>
 This script will work on any Debian-based operating system, including Ubuntu
 and Diet-Pi. You may need to run <code>sudo apt-get install build-essential</code>
 first to ensure npm is able to build any binary modules it needs to install.
@@ -43,6 +47,9 @@ This script will:
  the service
 
 <div class="doc-callout">
+<div style="float: left; margin-right: 10px;margin-bottom: 40px;">
+<img src="/images/logos/raspberrypi.svg" height="30">
+</div>
 Node-RED has also been packaged for the Raspbian repositories and appears in their
 list of 'Recommended Software'. This allows it to be installed using
 <code>apt-get install nodered</code> and includes the Raspbian-packaged version

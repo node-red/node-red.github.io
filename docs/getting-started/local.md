@@ -14,6 +14,15 @@ redirect_from:
 
 To install Node-RED locally you will need a [supported version of Node.js](/docs/faq/node-versions).
 
+<div class="doc-callout">
+<div style="float: left; margin-right: 10px;"><img src="/images/logos/raspberrypi.svg" height="30">
+<img src="/images/logos/debian.svg" height="30">
+<img src="/images/logos/ubuntu.svg" height="30">
+</div>
+If you are on a Raspberry Pi or any Debian-based operating system, including
+Ubuntu and Diet-Pi, you can use or Pi install script available <a href="raspberrypi">here</a>.
+</div>
+
 ### Installing with npm
 
 To install Node-RED you can use the `npm` command that comes with node.js:
@@ -23,7 +32,10 @@ sudo npm install -g --unsafe-perm node-red
 ```
 
 <div class="doc-callout">
-Note: If you are using Windows, do not start the command with <code>sudo</code>.
+<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+<img src="/images/logos/windows.svg" height="30">
+</div>
+If you are using Windows, do not start the command with <code>sudo</code>.
 </div>
 
 This command will install Node-RED as a global module along with its dependencies.
