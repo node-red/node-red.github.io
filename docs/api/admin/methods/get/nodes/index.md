@@ -1,7 +1,13 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: GET /nodes
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - url: "/docs/api/admin/methods"
+    label: "methods"
+  - get nodes
 ---
 
 Get a list of the installed nodes

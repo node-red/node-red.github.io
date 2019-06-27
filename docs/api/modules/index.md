@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-modules.html
 title: Module APIs
+slug: modules
 ---
 
  - [0.20.0](v/0.20.0)

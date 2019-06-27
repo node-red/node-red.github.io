@@ -1,0 +1,421 @@
+{
+    "you-and-nr-01": {
+        "title":"How would you describe your use of Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Personal","value":74.6},
+            {"name":"Proof-of-concept","value":54.3},
+            {"name":"In production","value":35.1},
+            {"name":"Commercial","value":16.1}
+        ]
+    },
+    "you-and-nr-02": {
+        "title":"In what capacity do you use Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Personal use","value":75.4},
+            {"series":1,"name":"Education: Pre-university level","value":4.1},
+            {"series":1,"name":"Education: University level","value":7.6},
+            {"series":1,"name":"Education: Other","value":4},
+            {"series":2,"name":"Professional: Developing solutions","value":40.3},
+            {"series":2,"name":"Professional: Integrating into own products","value":30.7},
+            {"series":2,"name":"Professional: provided by another product","value":5.2}
+        ]
+    },
+
+    "educational-use-01": {
+        "title":"What best describes your role?",
+        "total": 170,
+        "data": [
+            {"series":1,"name":"Student","value":44.1},
+            {"series":1,"name":"Tutor","value":55.9}
+        ]
+    },
+    "educational-use-02": {
+        "title":"What best describes how Node-RED is used?",
+        "total": 168,
+        "data": [
+            {"series":1,"name":"The course teaches Node-RED and/or requires its use to complete an assignment","value":25},
+            {"series":1,"name":"I chose to use Node-RED to complete an assignment","value":79.8}
+        ]
+    },
+
+    "professional-use-01": {
+        "title":"What best describes your role at work?",
+        "total": 604,
+        "data": [
+            {"name":"Software Developer","value":69},
+            {"name":"Designer","value":20},
+            {"name":"Project manager","value":22},
+            {"name":"Dev-ops","value":15.2},
+            {"name":"System admin","value":19.5},
+            {"name":"Student","value":5},
+            {"name":"Leadership position","value":19.2},
+            {"name":"Other","value":14.2}
+        ]
+    },
+    "professional-use-02": {
+        "title":"How many employees does your company have?",
+        "total": 607,
+        "data": [
+            {"name":"1 - 10","value":39.5},
+            {"name":"10 - 100","value":21.9},
+            {"name":"100 - 1000","value":16},
+            {"name":"1000+","value":22.6}
+        ]
+    },
+    "professional-use-03": {
+        "title":"How many employees use Node-RED?",
+        "total": 577,
+        "data": [
+            {"name":"Just you","value":50.6},
+            {"name":"2 - 10","value":38.8},
+            {"name":"10 - 100","value":8.3},
+            {"name":"100 - 1000","value":2.3}
+        ]
+    },
+    "professional-use-04": {
+        "title": "What sectors are you using Node-RED in?",
+        "total": 515,
+        "data": [
+            {"name":"Technology","value":62.7},
+            {"name":"Manufacturing","value":31.5},
+            {"name":"Utilities","value":26.8},
+            {"name":"Agriculture","value":15},
+            {"name":"Consulting","value":13.4},
+            {"name":"Education","value":12},
+            {"name":"Arts","value":8},
+            {"name":"Transportation","value":7.8},
+            {"name":"Retailers","value":7.2},
+            {"name":"Health care","value":5.6},
+            {"name":"Financial","value":5.2},
+            {"name":"Travel","value":5},
+            {"name":"Government","value":4.1},
+            {"name":"Real estate","value":2.9},
+            {"name":"Advertising","value":2.3},
+            {"name":"Insurance","value":1.2}
+        ]
+    },
+    "professional-use-05": {
+        "title": "If you use Node-RED alongside other technology stacks, what are the primary languages used in those stacks?",
+        "total": 552,
+        "data": [
+            {"name":"JavaScript","value":74.5},
+            {"name":"Python","value":44},
+            {"name":"Java","value":19.4},
+            {"name":"PHP","value":12.1},
+            {"name":"Other","value":11.6},
+            {"name":"C/C++","value":9.6},
+            {"name":"TypeScript","value":8.5},
+            {"name":"Go","value":4.3},
+            {"name":"C#","value":3.3},
+            {"name":"Scala","value":1.4},
+            {"name":"Ruby","value":1.3},
+            {"name":".net","value":1.1},
+            {"name":"Scratch","value":0.2}
+        ]
+    },
+    "you-and-nr2-01": {
+        "title":"How long have you been using Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"< 3 months","value":15.8},
+            {"name":"3 - 6 months","value":13.1},
+            {"name":"6 - 12 months","value":17.9},
+            {"name":"1 - 2 years","value":24.8},
+            {"name":"2 - 3 years","value":17.2},
+            {"name":"3+ years","value":11.1}
+        ]
+    },
+    "you-and-nr2-02": {
+        "title":"How often do you use Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Regularly","value":74.1},
+            {"name":"Sometimes","value":23},
+            {"name":"Rarely","value":2.8}
+        ]
+    },
+    "you-and-nr2-03": {
+        "title": "How would you grade you knowledge of these technologies?",
+        "total": 871,
+        "stacked": true,
+        "series":["None","Basic","Intermediate","Advanced"],
+        "data": [
+            {"name":"Node-RED", "None":2.1, "Basic":34.3, "Intermediate":49, "Advanced":14.5},
+            {"name":"HTML", "None":7.1, "Basic":36.4, "Intermediate":35.2, "Advanced":19.5},
+            {"name":"JavaScript", "None":9, "Basic":37.9, "Intermediate":35.2, "Advanced":16.4},
+            {"name":"MQTT", "None":11.8, "Basic":35.4, "Intermediate":35.9, "Advanced":14.2},
+            {"name":"Git", "None":19.7, "Basic":37.9, "Intermediate":27.3, "Advanced":11.4},
+            {"name":"CSS", "None":20.3, "Basic":40.5, "Intermediate":25.6, "Advanced":10},
+            {"name":"Node.js", "None":20.4, "Basic":43.4, "Intermediate":23.4, "Advanced":9.9},
+            {"name":"Docker", "None":40.6, "Basic":28.4, "Intermediate":18.6, "Advanced":7.5},
+            {"name":"Serverless", "None":55.9, "Basic":24, "Intermediate":11.1, "Advanced":3.4},
+            {"name":"K8S", "None":68.4, "Basic":17.8, "Intermediate":5.1, "Advanced":1.6}
+        ]
+    },
+    "you-and-nr2-04": {
+        "title":"What type of applications have you created with Node-RED?",
+        "total": 868,
+        "data": [
+            {"name":"Home automation","value":75.7},
+            {"name":"Hosted dashboard","value":47.5},
+            {"name":"edge device logic","value":43.3},
+            {"name":"REST APIs","value":33.8},
+            {"name":"Building Control","value":29.3},
+            {"name":"processing data","value":27.1},
+            {"name":"PLC devices","value":24},
+            {"name":"IFTTT style","value":23.7},
+            {"name":"Other","value":9.1},
+            {"name":"ETL workloads","value":6.8},
+            {"name":"BPM workloads","value":3.6}
+        ]
+    },
+    "use-nr-01-a": {
+        "title":"Where do you run Node-RED?",
+        "total": 871,
+        "data": [
+            { "name":"Embedded Device","value":57.3},
+            { "series":1, "name":"PC/Mobile","value":26.8},
+            { "series":2, "name":"Cloud","value":15.8}
+        ]
+    },
+    "use-nr-01-b": {
+        "title":"Where do you run Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Raspberry Pi 2/3","value":67.7},
+            {"name":"Raspberry Pi Zero","value":18.8},
+            {"name":"Intel Nuc","value":8.8},
+            {"name":"Device - Other","value":7.5},
+            {"name":"Raspberry Pi 1","value":6.7},
+            {"name":"Device - Industrial controller","value":6},
+            {"name":"OrangePi","value":3.2},
+            {"name":"Asus Tinker Board","value":1.4},
+            {"series":1, "name":"Personal Computer","value":48.7},
+            {"series":1, "name":"Mobile Device","value":7.6},
+            {"series":2, "name":"IBM Cloud","value":10.1},
+            {"series":2, "name":"Amazon","value":8.3},
+            {"series":2, "name":"Azure","value":4.4},
+            {"series":2, "name":"Cloud - Other","value":4.2},
+            {"series":2, "name":"Google Cloud","value":2.8},
+            {"series":2, "name":"Digital Ocean","value":2.4},
+            {"series":2, "name":"Cloud - Commercial","value":1}
+        ]
+    },
+
+
+    "use-nr-02": {
+        "title":"What Operating System do you run Node-RED on?",
+        "total": 863,
+        "data": [
+            {"name":"Raspbian","value":64.8},
+            {"name":"Ubuntu","value":33.1},
+            {"name":"Windows 10","value":26.7},
+            {"name":"Docker","value":25.3},
+            {"name":"Debian","value":20.5},
+            {"name":"macOS","value":14.1},
+            {"name":"Other","value":11.2},
+            {"name":"Windows 7","value":7.6},
+            {"name":"Hass.io","value":6.1},
+            {"name":"RHEL","value":4.4}
+        ]
+    },
+    "use-nr-03": {
+        "total": 871,
+        "title":"What version of Node.js do you use?",
+        "data": [
+            {"name":"0.12","value":1},
+            {"name":"4.x","value":2},
+            {"name":"6.x","value":7.8},
+            {"name":"8.x","value":40.6},
+            {"name":"10.x","value":41.3},
+            {"name":"11.x","value":1},
+            {"name":"Not sure","value":27.4},
+            {"name":"Other","value":0.5}
+        ]
+    },
+    "use-nr-04": {
+        "title": "What features of Node-RED do you use?",
+        "total": 871,
+        "stacked": true,
+        "series":["Not heard of it","Never","Rarely","Sometimes","Regularly"],
+        "data": [
+            {"name":"Context", "Not heard of it":3.8, "Never":3, "Rarely":6.1, "Sometimes":26.9, "Regularly":53},
+            {"name":"Dashboard", "Not heard of it":1.5, "Never":8.5, "Rarely":6, "Sometimes":19.3, "Regularly":59.9},
+            {"name":"Link nodes", "Not heard of it":5.5, "Never":8, "Rarely":8.8, "Sometimes":24.6, "Regularly":42},
+            {"name":"Status nodes", "Not heard of it":9.9, "Never":9.9, "Rarely":10.6, "Sometimes":32, "Regularly":27.8},
+            {"name":"Library", "Not heard of it":6.4, "Never":13.5, "Rarely":13.2, "Sometimes":30, "Regularly":26.1},
+            {"name":"Subflows", "Not heard of it":6.9, "Never":14.1, "Rarely":15.6, "Sometimes":28.4, "Regularly":25.1},
+            {"name":"JSONata", "Not heard of it":13.4, "Never":11.9, "Rarely":13.7, "Sometimes":28.2, "Regularly":21.9},
+            {"name":"EnvVars", "Not heard of it":10.1, "Never":15.3, "Rarely":13.5, "Sometimes":28.8, "Regularly":20.3},
+            {"name":"Catch nodes", "Not heard of it":16.8, "Never":11.3, "Rarely":17.7, "Sometimes":26.6, "Regularly":16.2},
+            {"name":"Projects", "Not heard of it":15.6, "Never":25.4, "Rarely":12.9, "Sometimes":15.6, "Regularly":15.7},
+            {"name":"Key shortcuts", "Not heard of it":18.8, "Never":34.8, "Rarely":14.9, "Sometimes":11.7, "Regularly":4.2}
+        ]
+    },
+    "use-nr-05": {
+        "title":"What best describes how you use Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Single Instance","value":75.5},
+            {"name":"Maintain separate development and 'production' instances of Node-RED with a manual process to copy flows between them","value":27.7},
+            {"name":"Maintain separate development and 'production' instances of Node-RED with an automated process to copy flows between them","value":7.9}
+        ]
+    },
+    "use-nr-06": {
+        "title":"What messaging technologies do you use with Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"MQTT","value":79},
+            {"name":"HTTP","value":71},
+            {"name":"WebSockets","value":39},
+            {"name":"TCP","value":37.5},
+            {"name":"Serial","value":27.4},
+            {"name":"Modbus","value":15.8},
+            {"name":"OPC UA","value":9.3},
+            {"name":"Kafka","value":3.8},
+            {"name":"UDP","value":1},
+            {"name":"OSC","value":0.5},
+            {"name":"AMQP","value":0.6},
+            {"name":"XMPP","value":0.2},
+            {"name":"MIDI","value":0.2},
+            {"name":"COAP","value":0.1}
+        ]
+    },
+    "use-nr-07": {
+        "title":"What social networks do you use with Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"Email","value":46},
+            {"name":"Telegram","value":19.5},
+            {"name":"Twitter","value":15},
+            {"name":"Facebook","value":3.7},
+            {"name":"Slack","value":2}
+        ]
+    },
+    "use-nr-08": {
+        "title":"What database technologies do you use with Node-RED?",
+        "total": 871,
+        "data": [
+            {"name":"MySQL","value":32.4},
+            {"name":"InfluxDB","value":24.2},
+            {"name":"SQLite","value":23.4},
+            {"name":"Mongo","value":17.1},
+            {"name":"PostgreSQL","value":10.8},
+            {"name":"MS SQL","value":8.6},
+            {"name":"Redis","value":7.2},
+            {"name":"Cloudant","value":4.7},
+            {"name":"DB2","value":2.6},
+            {"name":"CouchDB","value":2.5},
+            {"name":"LevelDB","value":0.7},
+            {"name":"Apache TinkerPop","value":0.6},
+            {"name":"Cassandra","value":0.6}
+        ]
+    },
+
+    "publish-node-01": {
+        "title":"Have you ever published your own Node-RED node module?",
+        "total": 863,
+        "data": [
+            {"name":"No","value":87.6},
+            {"name":"Yes","value":12.4}
+        ]
+    },
+    "publish-node-02": {
+        "title":"How many node modules have you published?",
+        "total":108,
+        "data": [
+            {"name":"1","value":31.5},
+            {"name":"2 - 5","value":57.4},
+            {"name":"6 - 10","value":6.5},
+            {"name":"11 +","value":4.6}
+        ]
+    },
+    "publish-node-03": {
+        "title":"What best describes the node(s) you have published?",
+        "total":108,
+        "data": [
+            {"name":"missing from the core nodes","value":50},
+            {"name":"copy of an existing node","value":33.3},
+            {"name":"API you are associated with","value":29.6},
+            {"name":"API that you aren't otherwise affiliated with","value":25},
+            {"name":"part of a tutorial","value":11.1},
+            {"name":"Other","value":6.5}
+        ]
+    },
+    "nr-community-01": {
+        "stacked": true,
+        "total": 871,
+        "series":["No","Yes"],
+        "data": [
+            {"name":"Have you ever raised an issue against any of the Node-RED project repositories?","No":78.5,"Yes":20.2},
+            {"name":"Have you ever submitted a pull-request against any of the Node-RED project repositories?","No":89.1,"Yes":9.6}
+        ]
+    },
+    "nr-community-02": {
+        "title":"If you answered no to either of the previous questions, was that because....?",
+        "total":797,
+        "data": [
+            {"name":"Have never needed to","value":54.7},
+            {"name":"Managed to resolve the problem via the project forum or elsewhere.","value":37.4},
+            {"name":"Not interested","value":5.5},
+            {"name":"Unable to due to company policy","value":2}
+        ]
+    },
+    "nr-community-03": {
+        "title":"When you hit a problem with Node-RED, where do you look for help?",
+        "total": 871,
+        "data": [
+            {"name":"Search Engine","value":74.3},
+            {"name":"Forum","value":73.5},
+            {"name":"GitHub","value":49.6},
+            {"name":"Stack Overflow","value":42.9},
+            {"name":"Slack","value":18.3},
+            {"name":"Other","value":3.4},
+            {"name":"Facebook","value":2.8},
+            {"name":"Twitter","value":1.6},
+            {"name":"Reddit","value":1.4}
+        ]
+    },
+    "about-you-01": {
+        "title": "What is your age?",
+        "total": 863,
+        "data": [
+            {"name":"Under 18","value":0.2},
+            {"name":"18-24","value":5},
+            {"name":"25-34","value":18.4},
+            {"name":"35-44","value":31.4},
+            {"name":"45-54","value":26.7},
+            {"name":"55-64","value":12.7},
+            {"name":"65+","value":5.1},
+            {"name":"Rather not say","value":0.5}
+        ]
+    },
+    "about-you-02": {
+        "title": "In which region do you live?",
+        "total": 864,
+        "data": [
+            {"name":"Europe","value":60.5},
+            {"name":"North America","value":21.9},
+            {"name":"Asia","value":6.9},
+            {"name":"Oceania","value":4.1},
+            {"name":"South America","value":3.8},
+            {"name":"Africa","value":1.9},
+            {"name":"Other","value":0.6},
+            {"name":"Central America","value":0.3}
+        ]
+    },
+    "about-you-03": {
+        "title": "Tell us about your employment status",
+        "total": 842,
+        "data": [
+            {"name":"Full-time employment","value":69.6},
+            {"name":"Self-employed","value":15.7},
+            {"name":"Retired","value":7.5},
+            {"name":"Part-time employment","value":3.4},
+            {"name":"Full-time education","value":2.3},
+            {"name":"Unemployed","value":1.5}
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+<div class="breadcrumbs">
+    <div class="grid">
+        {% if top_slug %}
+        <a {% unless parent_slug or page.slug %}class="active" {% endunless %}href="{{top_url}}">{{top_slug}}</a>
+        {% else %}
+        <a {% unless parent_slug %}class="active" {% endunless %}href="/docs">docs</a>
+        {% endif %}
+        {% if parent_slug %} &bull; <a {% unless page.slug %}class="active" {% endunless %}href="{{parent_url}}">{{parent_slug}}</a>{% endif %}
+        {% for slug in page.slug %}&bull; <a {% if forloop.last %}class="active" {% endif %}href="{% if slug.url %}{{slug.url}}{% endif %}">{% if slug.label %}{{slug.label}}{% else %}{{slug}}{% endif %}</a>{% endfor %}
+
+    </div>
+</div>

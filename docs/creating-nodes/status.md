@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Node status
+slug: status
 ---
 
 Whilst running, a node is able to share status information with the editor UI.

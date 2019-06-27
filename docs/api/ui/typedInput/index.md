@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-ui.html
 title: TypedInput Widget
+slug:
+  - url: "/docs/api/ui"
+    label: "ui widgets"
+  - 'typedinput'
 ---
 
 A replacement for a regular `<input>` that allows the type of the value to be

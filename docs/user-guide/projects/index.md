@@ -1,23 +1,9 @@
 ---
-layout: docs
-toc: user-guide-toc.html
+layout: docs-user-guide
+toc: toc-user-guide.html
 title: Projects
+slug: projects
 ---
-
- - [Introducing projects](#introducing-projects)
- - [Enabling projects](#enabling-projects)
- - [Creating your first project](#creating-your-first-project)
- - [Working with projects](#working-with-projects)
-   - [Accessing Project Settings](#accessing-project-settings)
-     - [Project Dependencies](#project-dependencies)
-     - [Project Settings](#project-settings)
-   - [Version Control](#version-control)
-     - [Local Changes](#local-changes)
-     - [Commit History](#commit-history)
-   - [Creating new projects](#creating-new-projects)
-     - [Open an existing project](#open-an-existing-project)
-     - [Create a new project](#create-a-new-project)
-     - [Clone a project repository](#clone-a-project-repository)
 
 ### Introducing projects
 

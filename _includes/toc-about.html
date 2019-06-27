@@ -1,0 +1,21 @@
+<ul class="toc">
+    <li class="toc-expander"><div>V</div></li>
+    <li class="tocheader">
+        <ul>
+        <li {% if page.url == "/about/" %}class="active"{% endif %}><a href="/about/">About</a></li>
+        <li {% if page.url == "/about/governance/" %}class="active"{% endif %}><a href="/about/governance/">Governance</a></li>
+        <li {% if page.url == "/about/conduct/" %}class="active"{% endif %}><a href="/about/conduct/">Code of Conduct</a></li>
+        <li {% if page.url == "/about/community/" %}class="active"{% endif %}><a href="/about/community/">Community</a></li>
+        <li {% if page.url == "/about/contribute/" %}class="active"{% endif %}><a href="/about/contribute/">Contribute</a></li>
+        <li {% if page.url == "/about/resources/" %}class="active"{% endif %}><a href="/about/resources/">Resources</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 60px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>

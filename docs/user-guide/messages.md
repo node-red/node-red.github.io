@@ -1,20 +1,10 @@
 ---
-layout: docs
-toc: user-guide-toc.html
+layout: docs-user-guide
+toc: toc-user-guide.html
 title: Working with messages
+slug: messages
 ---
 
-
- - [Understanding the structure of a message](#understanding-the-structure-of-a-message)
-   - [Working with JSON](#working-with-json)
- - [Changing message properties](#changing-message-properties)
- - [Message sequences](#message-sequences)
-   - [Understanding `msg.parts`](#understanding-msgparts)
-   - [Working with sequences](#working-with-sequences)
-     - [Split](#split)
-     - [Join](#join)
-     - [Sort](#sort)
-     - [Batch](#batch)
 
 A Node-RED flow works by passing messages between nodes. The messages are simple
 JavaScript objects that can have any set of properties.

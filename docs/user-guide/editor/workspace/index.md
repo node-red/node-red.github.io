@@ -1,6 +1,10 @@
 ---
-layout: docs
-toc: editor-guide-toc.html
+layout: docs-editor-guide
+slug:
+  - url: /docs/user-guide/editor
+    label: editor
+  - workspace
+toc: toc-editor-guide.html
 title: Workspace
 ---
 
@@ -16,7 +20,6 @@ The workspace has a row of tabs along the top; one for each flow and any subflow
 that have been opened.
 
 <br style="clear: both;" />
-
 
 ### View tools
 

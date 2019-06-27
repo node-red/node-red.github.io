@@ -1,0 +1,17 @@
+<ul class="toc">
+    <li class="toc-expander"><div>V</div></li>
+    <li class="tocheader">
+        <ul id="page-toc">
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        $(".docs-content h3, .docs-content h4").each(function() {
+            var li = $('<li id="toc-item-'+$(this).attr('id')+'"><a href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo("#page-toc");
+            if ($(this)[0].nodeName === "H3") {
+                li.addClass("toctitle")
+            }
+        })
+    })
+</script>

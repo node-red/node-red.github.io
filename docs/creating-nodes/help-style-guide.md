@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Node help style guide
+slug: help
 ---
 
 When a node is selected, its help text is displayed in the info tab. This help

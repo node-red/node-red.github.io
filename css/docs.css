@@ -58,16 +58,24 @@
 h1.docs-title {
     border-bottom: 2px solid #B68181;
     padding-bottom: 10px;
+    margin-top: 30px;
     margin-bottom: 40px;
     font-weight: normal;
 
 }
+ul.fixed-toc {
+    position: fixed;
+    top: -28px;
+}
+
 ul.toc {
-    position: relative;
     overflow: hidden;
     list-style-type: none;
-    margin: 18px 0 20px 0;
+    margin: 40px 0 20px 0;
     padding: 0;
+    font-size: 14px;
+    line-height: 16px;
+    z-index: 1;
 }
 ul.toc ul {
     list-style-type: none;
@@ -113,9 +121,13 @@ ul.toc li.tocsubheader span {
     padding-left: 20px;
 }
 ul.toc li.tocheader li:not(.toctitle) a {
-    padding-left: 40px;
+    padding-left: 30px;
+    font-size: 14px;
 }
-
+ul.toc li.tocheader li.toctitle a {
+    font-size: 15px;
+    line-height: 18px;
+}
 .docs-content a {
     color: #aa6767;
 }
@@ -123,11 +135,14 @@ ul.toc li.tocheader li:not(.toctitle) a {
     max-width: 100%;
 }
 .docs-content pre {
-    padding: 4px 10px;
-    background: #F3E7E7;
-    color: #533;
+    padding: 10px;
+    background: #564848;
+    color: #eee;
     border-radius: 3px;
-    border: 1px solid #BE9A9A;
+}
+.docs-content pre code {
+    background: inherit;
+    color: inherit;
 }
 pre,code,.code {
     font-family: 'Ubuntu Mono', Monospace;
@@ -180,10 +195,11 @@ h5 {
 }
 
 .doc-callout {
-    margin: 10px 30px;
+    margin: 10px 0px;
     background: #FFFFE0;
     padding: 10px;
     border-radius: 3px;
+    font-size: 0.85em;
     border: 1px solid #BE9A9A;
 }
 
@@ -235,7 +251,8 @@ div.figure p.caption {
     color: #999;
 }
 
-.action-ref {
+table.action-ref {
+    width: auto;
     min-width: 310px;
     float: right;
     font-size: 0.9em;
@@ -244,24 +261,43 @@ div.figure p.caption {
     margin-left: 20px;
 }
 
-.action-ref.inline {
+table.action-ref.inline {
     float: none;
     margin-left: 0;
 }
-.action-ref th {
+table.action-ref th {
+    font-weight: bold;
+    font-family: inherit;
+    border-bottom: inherit;
     text-align: left;
+    font-size: inherit;
     padding: 0px 20px 0px 5px;
 }
-.action-ref td {
+table.action-ref td {
     padding: 0px 5px;
+    border: none;
 }
-.action-ref td:first-child {
+table.action-ref td:first-child {
     width: 110px;
+    border: none;
 }
-.action-ref code {
+table.action-ref code {
     background: none;
     font-size: 1.1em;
 }
+
+ul.multi-column-toc {
+    column-count: 3;
+}
+
+
+
+/* @media handheld, only screen and (max-width: 1200px) {
+    ul.fixed-toc {
+        position: relative;
+        top: auto;
+    }
+} */
 
 @media handheld, only screen and (max-width: 755px) {
     ul.toc:not(.open) li.tocheader>span {
@@ -283,11 +319,96 @@ div.figure p.caption {
     .doc-items li {
         width: calc(50% - 30px);
     }
+
+    ul.fixed-toc {
+        position: relative;
+        top: auto;
+    }
+
 }
 
 @media handheld, only screen and (max-width: 450px) {
     .doc-items li {
         width: 100%;
     }
+    ul.multi-column-toc {
+        column-count: 2;
+    }
 
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
+}
+th {
+    font-family: "Roboto Slab";
+    font-weight: normal;
+    text-align: left;
+    font-size: 20px;
+    padding: 0 5px;
+    border-bottom: 2px solid #B68181;
+}
+th:not(:first-child),td:not(:first-child) {
+    border-left: 1px solid #F4DEDE;
+}
+td {
+    padding: 6px 5px;
+    border-bottom: 1px solid #F4DEDE;
+}
+td:first-child span {
+    font-family: "Ubuntu Mono";
+    font-size: 0.9em;
+    background: #F4DEDE;
+    border: 1px solid #F4DEDE;
+    border-radius: 3px;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+}
+td:first-child {
+    padding: 6px 15px 6px 5px;
+    width: 1px;
+    white-space: nowrap;
+}
+th:first-child {
+    padding: 6px 15px 6px 5px;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.breadcrumbs {
+    min-height: 0;
+    height: 50px;
+}
+.breadcrumbs > div.grid {
+    color: white;
+    background: rgb(216,112,112);
+
+    min-height: 0;
+    line-height: 50px;
+    font-size: 20px;
+    font-family: Roboto Slab;
+}
+.breadcrumbs > div a {
+    color: white;
+    opacity: 0.9;
+    display: inline-block;
+    height: 48px;
+    box-sizing: border-box;
+    border-bottom: 4px solid rgba(0,0,0,0);
+}
+.breadcrumbs > div a:hover, .breadcrumbs > div a.active {
+    text-decoration: none;
+    border-color: white;
+    opacity: 1;
+}
+.breadcrumbs > div > a:not(:first-child) {
+    margin-left: 10px;
+}
+.breadcrumbs > div > a {
+    margin-right: 10px;
 }

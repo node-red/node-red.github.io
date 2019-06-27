@@ -1,6 +1,12 @@
 ---
-layout: docs
-toc: editor-guide-toc.html
+layout: docs-editor-guide
+slug:
+  - url: /docs/user-guide/editor
+    label: editor
+  - url: "/docs/user-guide/editor/workspace"
+    label: "workspace"
+  - nodes
+toc: toc-editor-guide.html
 title: Nodes
 ---
 

@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Creating your first node
+slug: first node
 ---
 
 Nodes get created when a flow is deployed, they may send and receive some messages

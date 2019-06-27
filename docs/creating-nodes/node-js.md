@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: JavaScript file
+slug: .js
 ---
 
 The node `.js` file defines the runtime behaviour of the node.

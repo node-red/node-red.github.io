@@ -1,6 +1,7 @@
 ---
-layout: aboutSingle
+layout: about-single
 title: Governance
+slug: governance
 ---
 
 The Node-RED project has been developed in the open since 2013. The core of the
@@ -26,9 +27,9 @@ It reflects how we have managed the project up to now and reflects the current
 scale of contributor community.
 
 
-## Roles and responsibilities
+### Roles and responsibilities
 
-### Users
+#### Users
 
 Users are community members who have a need for the project. They are for whom
 we develop the project. There is no such thing as a typical user and no assumptions
@@ -40,7 +41,7 @@ help spread interest.
 Users who choose to provide feedback or get more involved with the project
 instantly cross the line to become a Contributor.
 
-### Contributors
+#### Contributors
 
 Contributors are a subset of the community who take a more active role in the
 development of the project. This can cover many different aspects and is not
@@ -52,7 +53,7 @@ within, and commitment to, the community will increase. For a Contributor with a
 proven track record of changes to the project repositories (code, documentation,
 etc), they may find themselves invited to become a Committer.
 
-### Committers
+#### Committers
 
 Committers are a subset of contributors who have demonstrated a commitment to
 the project and ability to provide valued contributions - of any variety. They
@@ -78,7 +79,7 @@ with the project. In exceptional circumstances, the Committer community may
 conclude Committer status should be removed from an individual who is not
 maintaining their responsibilities to the project.
 
-### Technical Committee
+#### Technical Committee
 
 Given the current small size of Committer community, they also represent the
 core decision making group. Through a consensus-seeking mode of discussion,
@@ -91,7 +92,7 @@ If the goals of the project are successfully met, the committer community will
 grow to a point where a more formalised Technical Committee will be needed. The
 exact nature of the TC will be determined at that time.
 
-## Code of Conduct
+### Code of Conduct
 
 The project believes strongly that a clear code of conduct helps to ensure the
 community remains open and welcoming to everyone. It has adopted a Code of Conduct
@@ -105,7 +106,7 @@ Any issues can be safely reported, in confidence, to the TC at team@nodered.org,
 or directly to any member of the TC.
 
 
-## References
+### References
 
 This governance model has been inspired by many existing open source projects:
 

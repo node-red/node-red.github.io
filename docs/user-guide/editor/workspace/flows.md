@@ -1,14 +1,32 @@
 ---
-layout: docs
-toc: editor-guide-toc.html
+layout: docs-editor-guide
+slug:
+  - url: /docs/user-guide/editor
+    label: editor
+  - url: "/docs/user-guide/editor/workspace"
+    label: "workspace"
+  - "flows"
+toc: toc-editor-guide.html
 title: Flows
 ---
 
+A flow is represented as a tab within the editor workspace and is the main way
+to organise nodes.
 
 <div class="figure">
   <img src="../images/editor-flow-tabs.png" alt="Flow tabs">
   <p class="caption">Flow tabs</p>
 </div>
+
+<div class="doc-callout">
+<em>Note</em> : The term "flow" is also used to informally describe a single set
+of connected nodes. So a flow (tab) can contain multiple flows (sets of connected nodes).
+</div>
+
+Each flow can have a name, and description that is displayed in the [Information sidebar](../sidebar/info).
+
+All of the nodes in a flow can access the same [flow-scoped context](/docs/user-guide/context).
+
 
 #### Adding a flow
 

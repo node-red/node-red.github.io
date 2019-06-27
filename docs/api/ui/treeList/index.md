@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-ui.html
 title: TreeList Widget
+slug:
+  - url: "/docs/api/ui"
+    label: "ui widgets"
+  - 'treelist'
 ---
 
 __Since 0.20.0__

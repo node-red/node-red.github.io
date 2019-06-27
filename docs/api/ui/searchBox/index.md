@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-ui.html
 title: SearchBox Widget
+slug:
+  - url: "/docs/api/ui"
+    label: "ui widgets"
+  - 'searchbox'
 ---
 
 An enhanced `<input>` element that provides common features for a search input.

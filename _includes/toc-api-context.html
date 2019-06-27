@@ -1,0 +1,19 @@
+<ul class="toc">
+    <li class="toc-expander">V</li>
+    <li class="tocheader">
+        <ul>
+            <li class="{% if page.url == "/docs/api/context/" %} active{% endif %}"><a href="/docs/api/context/">Context Store API</a>
+            <li {% if page.url contains "/docs/api/context/methods" %}class="active"{% endif %}><a href="/docs/api/context/methods">Methods</a>
+            <li {% if page.url contains "/docs/api/context/store/memory" %}class="active"{% endif %}><a href="/docs/api/context/store/memory">Memory store</a>
+            <li {% if page.url contains "/docs/api/context/store/localfilesystem" %}class="active"{% endif %}><a href="/docs/api/context/store/localfilesystem">File store</a>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 60px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>

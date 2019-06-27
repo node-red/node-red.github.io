@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-ui.html
 title: Editor UI Widgets
+slug: "ui widgets"
 ---
 
 A set of jQuery widgets are available that can be used within a node's edit template.
