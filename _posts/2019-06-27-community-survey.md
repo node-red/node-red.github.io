@@ -18,7 +18,7 @@ It has taken some time to compile the results, in no small part the need to read
 and categories over 2000 written in comments.
 
 This was a really useful exercise in getting to know our community better. The
-feedback will be invaluable to how we priorities ours plans beyond version 1.0.
+feedback will be invaluable to how we prioritise ours plans beyond version 1.0.
 
 Thank you to everyone who participated.
 
