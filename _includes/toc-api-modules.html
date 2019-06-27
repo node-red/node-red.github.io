@@ -1,0 +1,16 @@
+<ul class="toc">
+    <li class="toc-expander">V</li>
+    <li class="tocheader">
+        <ul>
+            <li class="{% if page.url == "/docs/api/modules/" %} active{% endif %}"><a href="/docs/api/modules/">Module APIs</a>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 60px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>

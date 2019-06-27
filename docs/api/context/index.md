@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-context.html
 title: Context Store API
+slug: context
 ---
 
 **New in 0.19**

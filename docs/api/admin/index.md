@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: Admin API
+slug: admin
 ---
 
 This API can be used to remotely administer the runtime. It is used by the Node-RED

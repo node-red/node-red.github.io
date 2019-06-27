@@ -1,0 +1,25 @@
+{% include header.html %}
+<div class="docs">
+    {% include breadcrumbs.html %}
+    <div class="grid">
+{% if page.toc %}
+        <div id="toc-column" class="col-3-12">
+            {% include {{ page.toc }} %}
+            {% include toc-footer.html %}
+        </div>
+        <div class="col-9-12">
+{% else %}
+        <div class="col-1-12">&nbsp;</div>
+        <div class="col-10-12">
+{% endif %}
+            <div class="docs-content">
+                <h1 class="docs-title">{{ page.title }}</h1>
+                <div>{{ content }}</div>
+            </div>
+        </div>
+{% unless page.toc %}
+        <div class="col-1-12">&nbsp;</div>
+{% endunless %}
+    </div>
+</div>
+{% include footer.html %}

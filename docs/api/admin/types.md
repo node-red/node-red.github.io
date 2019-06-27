@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: Types
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - types
 ---
 
 The following types can be used with the API methods.

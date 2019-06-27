@@ -1,13 +1,17 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-storage.html
 title: Storage API
+slug:
+  - url: "/docs/api/storage"
+    label: "storage"
+  - 'methods'
 ---
 
 A Storage plugin is a node.js module that exposes the following functions on its
 `module.exports`.
 
- Function                                                      | Description 
+ Function                                                      | Description
 ---------------------------------------------------------------|-------------------------
 [Storage.init(settings)](#storageinitsettings)                 | initialise the storage system
 [Storage.getFlows()](#storagegetflows)                         | get the flow configuration
@@ -97,7 +101,7 @@ name     | the pathname of the entry to return
 
 Returns a promise that resolves with the result.
 
-If `name` represents to a single entry, the result is the content of the entry. 
+If `name` represents to a single entry, the result is the content of the entry.
 For example, the code of a function.
 
 If `name` represents to a logical directory, the result is a directory listing array.
@@ -148,4 +152,3 @@ Returns a promise that resolves to the content of a flow.
 #### Storage.saveFlow(name,flow)
 
 Returns a promise that resolves when flow is saved to the library.
-

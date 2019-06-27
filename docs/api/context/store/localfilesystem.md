@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-context.html
 title: Local Filesystem Context Store
+slug:
+  - url: "/docs/api/context"
+    label: "context"
+  - 'filesystem'
 ---
 
 **New in 0.19**

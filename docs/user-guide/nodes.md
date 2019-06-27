@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: user-guide-toc.html
+layout: docs-user-guide
+toc: toc-user-guide.html
 title: The Core Nodes
+slug: core nodes
 ---
 
 The Node-RED palette includes a default set of nodes that are the basic building
@@ -18,7 +19,9 @@ All nodes include documentation you can see in the Info sidebar tab when you sel
 
 ***
 
-<h3 id="inject"><img alt="Inject node" style="vertical-align: middle" src="/docs/user-guide/images/node_inject.png" width="169px"></h3>
+<img alt="Inject node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_inject.png" width="169px">
+
+### Inject
 
 The Inject node can be used to manual trigger a flow by clicking the node's button
 within the editor. It can also be used to automatically trigger flows at regular
@@ -35,7 +38,9 @@ The `payload` can be set to a variety of different types:
 
 ***
 
-<h3 id="debug"><img alt="Debug node" style="vertical-align: middle" src="/docs/user-guide/images/node_debug.png" width="169px"></h3>
+<img alt="Debug node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_debug.png" width="169px">
+
+### Debug
 
 The Debug node can be used to display messages in the Debug sidebar within the editor.
 
@@ -57,16 +62,20 @@ information about using the Debug sidebar.
 
 ***
 
-<h3 id="function"><img alt="Function node" style="vertical-align: middle" src="/docs/user-guide/images/node_function.png" width="169px"></h3>
+<img alt="Function node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_function.png" width="169px">
+
+### Function
 
 The Function node allows JavaScript code to be run against the messages that are
 passed through it.
 
-A complete guide for using the Function node is available [here](/docs/writing-functions).
+A complete guide for using the Function node is available [here](/docs/user-guide/writing-functions).
 
 ***
 
-<h3 id="change"><img alt="Change node" style="vertical-align: middle" src="/docs/user-guide/images/node_change.png" width="169px"></h3>
+<img alt="Change node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_change.png" width="169px">
+
+### Change
 
 The Change node can be used to modify a message's properties and set context properties
 without having to resort to a Function node.
@@ -85,10 +94,17 @@ JSONata is a declarative query and transformation language for JSON data.
 
 ***
 
-<h3 id="switch"><img alt="Switch node" style="vertical-align: middle" src="/docs/user-guide/images/node_switch.png" width="169px"></h3>
+<img alt="Switch node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_switch.png" width="169px">
+
+### Switch
+
 
 The Switch node allows messages to be routed to different branches of a flow by
 evaluating a set of rules against each message.
+
+<div class="doc-callout">The name "switch" comes from the "switch statement" that
+is common to many programming languages. It is not a reference to a physical
+switch</div>
 
 The node is configured with the property to test - which can be either a message
 property or a context property.
@@ -108,7 +124,10 @@ it can also be configured to stop evaluating rules when it finds one that matche
 
 ***
 
-<h3 id="template"><img alt="Template node" style="vertical-align: middle" src="/docs/user-guide/images/node_template.png" width="169px"></h3>
+<img alt="Template node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_template.png" width="169px">
+
+### Template
+
 
 The Template node can be used to generate text using a message's properties to
 fill out a template.

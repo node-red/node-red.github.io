@@ -1,0 +1,19 @@
+{% assign top_url = '/about' %}
+{% assign top_slug = 'about' %}
+{% include header.html %}
+<div class="docs">
+    {% include breadcrumbs.html %}
+    <div class="grid">
+        <div id="toc-column" class="col-3-12">
+            {% include toc-about-survey.html %}
+            {% include toc-footer.html %}
+        </div>
+        <div class="col-9-12">
+            <div class="docs-content">
+                <h1 class="docs-title">{{ page.title }}</h1>
+                <div>{{ content }}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include footer.html %}

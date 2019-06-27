@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Node credentials
+slug: credentials
 ---
 
 A node may define a number of properties as `credentials`. These are properties

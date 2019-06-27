@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-storage.html
 title: Storage API
+slug: storage
 ---
 
 The Storage API provides a pluggable way to configure where the Node-RED runtime
@@ -47,7 +48,7 @@ function getFlows() {
     return when.promise(function(resolve,reject) {
         // resolve - a function to be called with the successful result
         // reject - a function to be called if an error occurs
-    
+
         // do some asynchronous work, with a callback on completion
         doAsyncWork(function(err,result) {
             if (err) {
@@ -67,5 +68,3 @@ getFlows()
         // Called when getFlows hits an error
     });
 {% endhighlight %}
-
-

@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Node-RED{% if page.title %} : {{ page.title }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title }} : {% endif %}Node-RED</title>
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -17,7 +17,6 @@
 	<link href="/css/blog.css?d=20190627" rel="stylesheet" media="screen">
 	<link href="/css/syntax.css?d=20190627" rel="stylesheet" media="screen">
 	<link type="application/atom+xml" rel="alternate" href="{{ site.url }}/feed.xml" />
-	{% if page.url contains "/api/" %}<link href="/css/api.css" rel="stylesheet" media="screen">{% endif %}
 	{% if page.layout == 'blog' %}<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nodered" />
 	<meta name="twitter:title" content="{{ page.title | xml_escape }}" />

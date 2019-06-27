@@ -1,6 +1,6 @@
 ---
 layout: docs
-toc: developing-toc.html
+toc: toc-developing.html
 title: Developing Node-RED
 ---
 

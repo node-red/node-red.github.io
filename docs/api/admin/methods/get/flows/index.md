@@ -1,7 +1,13 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: GET /flows
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - url: "/docs/api/admin/methods"
+    label: "methods"
+  - get flows
 ---
 
 Get the active flow configuration.

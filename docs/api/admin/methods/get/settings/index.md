@@ -1,7 +1,13 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: GET /settings
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - url: "/docs/api/admin/methods"
+    label: "methods"
+  - get settings
 ---
 
 Get the runtime settings.
@@ -38,4 +44,4 @@ Field          | Description
 ---------------|------------
 `httpNodeRoot` | The root path of HTTP nodes
 `version`      | Node-RED runtime version
-`user`         | Information about the logged in user. This field is only present if [authentication is enabled](/docs/security).
+`user`         | Information about the logged in user. This field is only present if [authentication is enabled](/docs/user-guide/runtime/securing-node-red).

@@ -1,7 +1,8 @@
 ---
-layout: docs
-toc: creating-nodes-toc.html
+layout: docs-creating-nodes
+toc: toc-creating-nodes.html
 title: Node appearance
+slug: appearance
 ---
 
 There are three aspects of a node's appearance that can be customised; the icon,

@@ -1,0 +1,20 @@
+<ul class="toc">
+    <li class="toc-expander">V</li>
+    <li class="tocheader">
+        <ul>
+            <li class="{% if page.url == "/docs/api/admin/" %} active{% endif %}"><a href="/docs/api/admin/">Admin HTTP API</a>
+            <li {% if page.url == "/docs/api/admin/oauth" %}class="active"{% endif %}><a href="/docs/api/admin/oauth">Authentication</a>
+            <li {% if page.url == "/docs/api/admin/types" %}class="active"{% endif %}><a href="/docs/api/admin/types">Types</a>
+            <li {% if page.url == "/docs/api/admin/errors" %}class="active"{% endif %}><a href="/docs/api/admin/errors">Errors</a>
+            <li {% if page.url contains "/docs/api/admin/methods" %}class="active"{% endif %}><a href="/docs/api/admin/methods">Methods</a>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 60px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>

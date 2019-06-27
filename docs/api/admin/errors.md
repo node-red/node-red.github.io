@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: Errors
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - errors
 ---
 
 All API methods use standard HTTP response codes to indicate success or failure.

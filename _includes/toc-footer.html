@@ -1,32 +1,83 @@
-
-<!-- <ul class="toc">
-    <li class="tocheader">
-        <ul>
-            <li><a href="/docs/getting-started/">Getting Started</a></li>
-            <li><a href="/docs/user-guide/">User Guide</a></li>
-            <li><a href="https://cookbook.nodered.org">Cookbook</a></li>
-            <li><a href="/docs/creating-nodes/">Creating Nodes</a></li>
-            <li><a href="#">Developing the core</a></li>
-            <li><a href="/docs/api/">API Reference</a></li>
-        </ul>
-    </li>
-</ul> -->
-
+&nbsp;
 <script>
 $(function() {
+    var TOC = $("ul.toc");
+
     $(".toc-expander").click(function() {
-        if ($("ul.toc").hasClass('open')) {
-            $("ul.toc").removeClass('open');
+        if (TOC.hasClass('open')) {
+            TOC.removeClass('open');
         } else {
-            $("ul.toc").addClass('open');
+            TOC.addClass('open');
         }
     })
+
+    var fixed = false;
+    $(window).on("scroll", function(e) {
+        if ($(window).scrollTop() > 140) {
+            if (!fixed) {
+                TOC.addClass("fixed-toc");
+                TOC.width(TOC.parent().width());
+                fixed = true;
+            }
+        } else {
+            if (fixed) {
+                TOC.removeClass("fixed-toc");
+                TOC.width(TOC.parent().width());
+                fixed = false;
+            }
+        }
+
+    });
+
+    var positions = [];
+    var windowHeight;
+    var currentItem;
+
+
+    function resizeWindow() {
+        TOC.width(TOC.parent().width());
+        calculatePositions();
+        windowHeight = $(window).height();
+    }
+    function calculatePositions() {
+        positions = [];
+        $(".docs-content h3,.docs-content h4").each(function() {
+            positions.push({
+                el: $("#toc-item-"+$(this).attr('id')),
+                pos: $(this).position().top+$(this).height()+parseInt($(this).css("marginTop"))
+            });
+        });
+    }
+
+    function getCurrentItem() {
+        var top = $(window).scrollTop();
+        var previous = positions[0].el;
+        for (var i=0;i<positions.length;i++) {
+            if (positions[i].pos > top) {
+                if (positions[i].pos-top < windowHeight/2 ) {
+                    return positions[i].el;
+                } else {
+                    return previous;
+                }
+            }
+            previous = positions[i].el;
+        }
+    }
+    function scrollWindow() {
+        var targetItem = getCurrentItem();
+        if (targetItem !== currentItem) {
+            if (currentItem) {
+                currentItem.removeClass("active");
+            }
+            currentItem = targetItem;
+            currentItem.addClass("active");
+        }
+    }
+    $(window).resize(resizeWindow);
+    $(window).on("scroll",scrollWindow);
+
+    resizeWindow();
+    scrollWindow();
+
 });
-//$(function() {
-//    $("li.tocheader ul").hide();
-//    $("li.tocheader a.active").parent().parent().show();
-//    $("li.tocheader>span").click(function(e) {
-//        $(this).next().toggle("fast");
-//    });
-//});
 </script>

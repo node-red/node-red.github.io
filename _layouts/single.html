@@ -1,16 +1,14 @@
 {% include header.html %}
 <div class="docs">
-  <div class="grid docs-content">
-    <div class="col-2-12">&nbsp;</div>
-    <div class="col-8-12">
-        <div class="post-header">
-          <h2 class="post-title">{{ page.title }}</h2>
-        </div>
-        <div class="post-content">
-            {{ content }}
-        </div>
+  <div class="grid">
+    <div class="col-1-12">&nbsp;</div>
+    <div class="col-10-12">
+      <div class="docs-content">
+        <h1 class="docs-title">{{ page.title }}</h1>
+        {{ content }}
+      </div>
     </div>
-    <div class="col-2-12">&nbsp;</div>
+    <div class="col-1-12">&nbsp;</div>
   </div>
 </div>
 {% include footer.html %}

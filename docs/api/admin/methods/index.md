@@ -1,7 +1,12 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: Admin API Methods
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - methods
+
 ---
 
  Endpoint                                                   | Description

@@ -1,7 +1,11 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-ui.html
 title: EditableList Widget
+slug:
+  - url: "/docs/api/ui"
+    label: "ui widgets"
+  - 'editablelist'
 ---
 
 

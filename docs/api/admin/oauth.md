@@ -1,10 +1,15 @@
 ---
-layout: docs
-toc: api-toc.html
+layout: docs-api
+toc: toc-api-admin.html
 title: Authentication
+slug:
+  - url: "/docs/api/admin"
+    label: "admin"
+  - auth
+
 ---
 The Node-RED admin API is secured using the `adminAuth` property in your `settings.js`
-file. The [security](/docs/security) section describes how that property
+file. The [security](/docs/user-guide/runtime/securing-node-red) section describes how that property
 should be configured.
 
 If that property is not set the Node-RED admin API is accessible to anyone with

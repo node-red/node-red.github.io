@@ -1,6 +1,10 @@
 ---
-layout: docs
-toc: editor-guide-toc.html
+layout: docs-editor-guide
+slug:
+  - url: /docs/user-guide/editor
+    label: editor
+  - palette
+toc: toc-editor-guide.html
 title: Palette
 ---
 

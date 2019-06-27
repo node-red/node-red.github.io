@@ -1,5 +1,12 @@
 {% include header.html %}
 <div class="docs">
+  <!-- {% if page.slug %}
+  <div style="min-height: 0;height: 50px; background: #a22222; color: white;">
+    <div class="grid" style="background: #a22222;min-height: 0; line-height: 50px; font-size: 20px;    font-family: Roboto Slab;">
+        {{ page.slug }}
+    </div>
+  </div>
+  {% endif %} -->
   <div class="grid">
     <div class="col-3-12">
     {% include {{ page.toc }} %}
