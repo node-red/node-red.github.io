@@ -255,3 +255,6 @@ a.box-link:hover {
 a.box-link:not(:first-child) {
     margin-left: 20px;
 }
+a.box-link img {
+    width: 150px;
+}
