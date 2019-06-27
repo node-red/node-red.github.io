@@ -4,6 +4,7 @@ toc: toc-user-guide.html
 title: Embedding into an existing app
 slug: embedding
 redirect_from:
+  - /docs/embedding
   - /docs/user-guide/embedding
 ---
 

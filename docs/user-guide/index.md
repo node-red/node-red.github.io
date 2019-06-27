@@ -30,7 +30,7 @@ title: User Guide
 
 ### Advanced
 
-- [Embedding into an existing app](/docs/runtime/embedding)
+- [Embedding into an existing app](/docs/user-guide/runtime/embedding)
 
 ### Other places to get help
 
