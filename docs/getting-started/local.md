@@ -20,7 +20,7 @@ To install Node-RED locally you will need a [supported version of Node.js](/docs
 <img src="/images/logos/ubuntu.svg" height="30">
 </div>
 If you are on a Raspberry Pi or any Debian-based operating system, including
-Ubuntu and Diet-Pi, you can use or Pi install script available <a href="raspberrypi">here</a>.
+Ubuntu and Diet-Pi, you can use the Pi install script available <a href="raspberrypi">here</a>.
 </div>
 
 ### Installing with npm
