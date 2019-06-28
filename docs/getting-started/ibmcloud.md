@@ -52,7 +52,7 @@ To change those options, you can set some environment variables from either the 
 2. Add the required user-defined variables:
     - `NODE_RED_USERNAME` - the username to secure the editor with
     - `NODE_RED_PASSWORD` - the password to secure the editor with
-    - `NODE_RED_GUEST_USER` - set to true to allow anonymous users to have read-only access to the editor
+    - `NODE_RED_GUEST_ACCESS` - set to true to allow anonymous users to have read-only access to the editor
 3. Click Save.
 
 ##### Adding nodes
