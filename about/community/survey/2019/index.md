@@ -5,6 +5,8 @@ slug:
   - url: /about/community
     label: community
   - 2019 survey
+redirect_from:
+  - /2019survey
 ---
 
 <script src="./charts.js"></script>
