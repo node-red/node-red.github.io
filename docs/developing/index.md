@@ -1,6 +1,5 @@
 ---
-layout: docs
-toc: toc-developing.html
+layout: docs-dev
 title: Developing Node-RED
 ---
 
@@ -12,5 +11,5 @@ In the meantime:
  - Here are our [Contribution Guidelines](/about/contribute/)
  - Various design notes are on the [wiki](https://github.com/node-red/node-red/wiki)
 
-If this is an area you are interested in, come talk to us on the [mailing list](https://groups.google.com/forum/#!forum/node-red)
-or [Slack team](http://nodered.org/slack/).
+If this is an area you are interested in, come talk to us in the [forum](https://discourse.nodered.org)
+or [Slack team](/slack).
