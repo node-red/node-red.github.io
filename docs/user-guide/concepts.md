@@ -86,7 +86,7 @@ slug: concepts
 <b id="wire">Wire</b>
 : Wires connect the nodes and represent how messages pass through the flow.
 
-    - [Working with Wires](http://localhost:4000/docs/user-guide/editor/workspace/wires)
+    - [Working with Wires](/docs/user-guide/editor/workspace/wires)
 
 <b id="palette">Palette</b>
 : The Palette is on the left of the editor and lists of the nodes that are available
