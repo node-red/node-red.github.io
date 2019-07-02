@@ -21,7 +21,7 @@ to get the most from it.
 </div>
 
 <div class="post-preview">
-  <a href="first-flow">
+  <a href="second-flow">
     <div class="post-header">
       <h2>Your second flow</h2>
     </div>
@@ -31,6 +31,5 @@ to get the most from it.
     </div>
   </a>
 </div>
-
 
 </div>

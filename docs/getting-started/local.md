@@ -185,5 +185,5 @@ If you are using Windows, do not start the command with <code>sudo</code>.
 ### Next steps
 
  - [Learn how to secure your editor](/docs/user-guide/runtime/securing-node-red)
- - [Create your first flow](/tutorials/first-flow)
+ - [Create your first flow](/docs/tutorials/first-flow)
  - [Starting Node-RED on boot](/docs/faq/starting-node-red-on-boot)
