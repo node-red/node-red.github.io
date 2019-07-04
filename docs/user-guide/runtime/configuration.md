@@ -9,7 +9,7 @@ redirect_from:
 The following properties can be used to configure Node-RED.
 
 When running as a normal application, it loads its configuration from a settings
-file. For more information about the settings file and where it is, read [this guide](/docs/faq/settings-file).
+file. For more information about the settings file and where it is, read [this guide](settings-file).
 
 When running as an [embedded application](embedding), the configuration options
 are passed in the call to `RED.init()`. However, when run in this mode, certain
@@ -116,7 +116,7 @@ The default level is `info`. For embedded devices with limited flash storage you
 ### Editor Configuration
 
 adminAuth
-: enables user-level security in the editor and admin API. See [security](security)
+: enables user-level security in the editor and admin API. See [Securing Node-RED](securing-node-red)
   for more information.
 
 paletteCategories
