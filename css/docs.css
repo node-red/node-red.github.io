@@ -129,7 +129,7 @@ ul.toc li.tocheader li.toctitle a {
     line-height: 18px;
 }
 .docs-content a {
-    color: #aa6767;
+    color: #aa4444;
 }
 .docs-content img {
     max-width: 100%;
@@ -386,7 +386,7 @@ th:first-child {
 }
 .breadcrumbs > div.grid {
     color: white;
-    background: rgb(216,112,112);
+    background: #aa4444;
 
     min-height: 0;
     line-height: 50px;
@@ -397,7 +397,7 @@ th:first-child {
     color: white;
     opacity: 0.9;
     display: inline-block;
-    height: 48px;
+    height: 45px;
     box-sizing: border-box;
     border-bottom: 4px solid rgba(0,0,0,0);
 }

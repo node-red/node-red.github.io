@@ -249,7 +249,7 @@ a.box-link {
 }
 a.box-link:hover {
     text-decoration: none;
-    background: #aa6767;
+    background: #aa5555;
     color: #eee;
 }
 a.box-link:not(:first-child) {
