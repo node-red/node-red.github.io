@@ -107,7 +107,7 @@ The log output provides you various pieces of information:
  - The name of the flows file it is using.
 
 Node-RED uses `flows_<hostname>.json` as the default flows file. You can change
-this by providing the flow file name as argument to the `node-red` command](/docs/faq/command-line-usage).
+this by providing the flow file name as argument to the `node-red` [command](/docs/getting-started/local#command-line-usage).
 
 ### Command-line Usage
 
