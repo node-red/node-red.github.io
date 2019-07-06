@@ -3,7 +3,7 @@ layout: about-single
 title: About
 ---
 
-Node-RED is a flow-based programming tool, original developed by [IBM's Emerging Technology Services](https://emerging-technology.co.uk)
+Node-RED is a flow-based programming tool, originally developed by [IBM's Emerging Technology Services](https://emerging-technology.co.uk)
 team and now a part of the [JS Foundation](https://js.foundation).
 
 ### Flow-based Programming
@@ -21,7 +21,7 @@ without having to understand the individual lines of code within each node.
 
 ### Runtime/Editor
 
-Node-RED consists of a Node.js-based runtime that you point a web browser at to
+Node-RED consists of a Node.js based runtime that you point a web browser at to
 access the flow editor. Within the browser you create your application by dragging
 nodes from your palette into a workspace and start to wire them together. With a
 single click, the application is deployed back to the runtime where it is run.
