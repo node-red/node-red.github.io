@@ -121,4 +121,4 @@ can find the IP address by running `hostname -I` on the Pi.
 
 - [Learn how to secure your editor](/docs/user-guide/runtime/securing-node-red)
 - [Create your first flow](/docs/tutorials/first-flow)
-- [Adding nodes to the palette](/docs/faq/adding-nodes)
+- [Adding nodes to the palette](/docs/user-guide/runtime/adding-nodes)
