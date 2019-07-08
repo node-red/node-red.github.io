@@ -14,12 +14,13 @@ title: User Guide
  - [The Settings file](/docs/user-guide/runtime/settings-file)
  - [Configuration options](/docs/user-guide/runtime/configuration)
  - [Securing Node-RED](/docs/user-guide/runtime/securing-node-red)
- - [Logging](/docs/user-guide/logging)
+ - [Logging](/docs/user-guide/runtime/logging)
 
 ### Using Node-RED
 
 - [Using the Node-RED Editor](/docs/user-guide/editor)
 - [The core nodes](/docs/user-guide/nodes)
+- [Adding nodes to the palette](/docs/user-guide/runtime/adding-nodes)
 - [Using the Function node](/docs/user-guide/writing-functions)
 - [Working with context](/docs/user-guide/context)
 - [Working with messages](/docs/user-guide/messages)
