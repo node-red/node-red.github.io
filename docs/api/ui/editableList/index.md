@@ -317,7 +317,7 @@ Adds items contained in an array to the end of the list. `itemData` is an array 
 with the item in the list.
 
 ```javascript
-$("ol.list").editableList('addItem',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"}]);
+$("ol.list").editableList('addItems',[{fruit:"banana"},{fruit:"apple"},{fruit:"pear"}]);
 ```
 
 #### <a href="#methods-removeItem" name="methods-removeItem">removeItem( itemData )</a>
