@@ -134,3 +134,4 @@ by members of the community.
  - [A Launchd script](https://gist.github.com/natcl/4688162920f368707613) by natcl (OS X)
  - [Running as a Windows service using NSSM](https://gist.github.com/dceejay/576b4847f0a17dc066db) by dceejay
  - [Running as Windows/OS X service](http://www.hardill.me.uk/wordpress/2014/05/30/running-node-red-as-a-windows-or-osx-service/)  by Ben Hardill
+ - [An rc.d script](https://gist.github.com/apearson/56a2cd137099dbeaf6683ef99aa43ce0) by apearson (freebsd)
