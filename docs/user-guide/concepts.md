@@ -113,7 +113,7 @@ slug: concepts
   editor. These include panels to view more information and help about a node,
   to view debug message and to view the flow's configuration nodes.
 
-    - [Working with the Sidebar](docs/user-guide/editor/sidebar/)
+    - [Working with the Sidebar](/docs/user-guide/editor/sidebar/)
 
 
 <script>
