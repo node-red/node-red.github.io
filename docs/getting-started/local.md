@@ -135,7 +135,7 @@ Option                  | Description     |
 Node-RED uses `flows_<hostname>.json` as the default flows file. If the computer
 you are running on may change its hostname, then you should ensure you provide a
 static file name; either as a command-line argument or using the `flowsFile` option
-in your [settings file](settings-file).
+in your [settings file](/docs/user-guide/runtime/settings-file).
 
 ### Passing arguments to the underlying Node.js process
 
