@@ -31,7 +31,7 @@ it to access. By default, it assumes `http://localhost:1880`. To change that, us
 
     node-red-admin target http://node-red.example.com/admin
 
-If [authentication](security) is enabled, you must then `login`:
+If [authentication](/docs/user-guide/runtime/securing-node-red) is enabled, you must then `login`:
 
     node-red-admin login
 

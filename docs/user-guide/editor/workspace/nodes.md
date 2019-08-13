@@ -123,4 +123,4 @@ It also provides a select box to set the scope of the config node. The scope
 determines which flows the config node is available on. By default it is available
 on all flows, but the select box can be used to make it local to just one flow.
 
-The [Configuration Nodes Sidebar](sidebar/config) can be used to manage all config nodes.
+The [Configuration Nodes Sidebar](/docs/user-guide/editor/sidebar/config) can be used to manage all config nodes.
