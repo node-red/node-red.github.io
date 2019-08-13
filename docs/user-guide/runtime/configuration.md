@@ -137,7 +137,8 @@ The theme of the editor can be changed by using the following settings object. A
         page: {
             title: "Node-RED",
             favicon: "/absolute/path/to/theme/icon",
-            css: "/absolute/path/to/custom/css/file"
+            css: "/absolute/path/to/custom/css/file",
+            scripts: [ "/absolute/path/to/custom/script/file", "/another/script/file"]
         },
         header: {
             title: "Node-RED",
@@ -161,9 +162,23 @@ The theme of the editor can be changed by using the following settings object. A
         userMenu: false, // Hide the user-menu even if adminAuth is enabled
         login: {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
+        },
+        logout: {
+            redirect: "http://example.com"
+        },
+        palette: {
+            editable: true, // Enable/disable the Palette Manager
+            catalogues: [   // Alternative palette manager catalogues
+                'https://catalogue.nodered.org/catalogue.json'
+            ],
+            theme: [ // Override node colours - rules test against category/type by RegExp.
+                { category: ".*", type: ".*", color: "#f0f" }
+            ]
+        },
+        projects: {
+            enabled: false // Enable the projects feature
         }
     },
-
 
 ### Dashboard
 
