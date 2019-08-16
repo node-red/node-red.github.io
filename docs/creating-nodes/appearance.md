@@ -16,16 +16,26 @@ The value of the property can be either a string or a function.
 
 If the value is a string, that is used as the icon.
 
-If the value is a function, it will get evaluated when the node is first loaded, or after it has been edited. The function is expected to return the value to use as the icon.
-The function will be called both for nodes in the workspace, where `this` references a node instance, as well as
-for the node's entry in the palette. In this latter case, `this` will not refer to a particular node instance and
-the function *must* return a valid value.
+If the value is a function, it will get evaluated when the node is first loaded,
+or after it has been edited. The function is expected to return the value to use
+as the icon.
 
-                ...
-                icon: "file.png",
-                ...
+The function will be called both for nodes in the workspace, where `this` references
+a node instance, as well as for the node's entry in the palette. In this latter case,
+ `this` will not refer to a particular node instance and the function *must* return
+ a valid value.
 
-There are some stock icons available for use, or the node can provide its own.
+{% highlight javascript %}
+...
+icon: "file.png",
+...
+{% endhighlight %}
+
+The icon can be either:
+
+ - the name of a stock icon provided by Node-RED,
+ - the name of a custom icon provided by the module,
+ - a Font Awesome 4.7 icon
 
 #### Stock icons
 
@@ -48,23 +58,27 @@ There are some stock icons available for use, or the node can provide its own.
 </style>
 
 <ul class="nr-icon-list">
-<li><img src="images/alert.png"/> alert.png</li>
-<li><img src="images/arrow-in.png"/> arrow-in.png</li>
-<li><img src="images/bridge-dash.png"/> bridge-dash.png</li>
-<li><img src="images/bridge.png"/> bridge.png</li>
-<li><img src="images/db.png"/> db.png</li>
-<li><img src="images/debug.png"/> debug.png</li>
-<li><img src="images/envelope.png"/> envelope.png</li>
-<li><img src="images/feed.png"/> feed.png</li>
-<li><img src="images/file.png"/> file.png</li>
-<li><img src="images/function.png"/> function.png</li>
-<li><img src="images/hash.png"/> hash.png</li>
-<li><img src="images/inject.png"/> inject.png</li>
-<li><img src="images/light.png"/> light.png</li>
-<li><img src="images/serial.png"/> serial.png</li>
-<li><img src="images/template.png"/> template.png</li>
-<li><img src="images/white-globe.png"/> white-globe.png</li>
+<li><img src="images/alert.svg"/> alert.png</li>
+<li><img src="images/arrow-in.svg"/> arrow-in.png</li>
+<li><img src="images/bridge-dash.svg"/> bridge-dash.png</li>
+<li><img src="images/bridge.svg"/> bridge.png</li>
+<li><img src="images/db.svg"/> db.png</li>
+<li><img src="images/debug.svg"/> debug.png</li>
+<li><img src="images/envelope.svg"/> envelope.png</li>
+<li><img src="images/feed.svg"/> feed.png</li>
+<li><img src="images/file.svg"/> file.png</li>
+<li><img src="images/function.svg"/> function.png</li>
+<li><img src="images/hash.svg"/> hash.png</li>
+<li><img src="images/inject.svg"/> inject.png</li>
+<li><img src="images/light.svg"/> light.png</li>
+<li><img src="images/serial.svg"/> serial.png</li>
+<li><img src="images/template.svg"/> template.png</li>
+<li><img src="images/white-globe.svg"/> white-globe.png</li>
 </ul>
+
+**Note**: In Node-RED 1.0, all of these icons have been replaced with SVG alternatives
+for a better appearance. For ensure backwards compatibility, the editor will automatically
+swap any request for the png version for the SVG version if it is available.
 
 #### Custom icon
 
@@ -74,17 +88,25 @@ looks for a given icon filename. Because of this, the icon filename must be uniq
 
 The icon should be white on a transparent background, 40 x 60 in size.
 
+#### Font Awesome icon
+
+Node-RED includes the full set of [Font Awesome 4.7 icons](https://fontawesome.com/v4.7.0/icons/).
+
+To specify a FA icon, the property should take the form:
+
+{% highlight javascript %}
+...
+icon: "font-awesome/fa-automobile",
+...
+{% endhighlight %}
+
 #### User defined icon
 
-From Node-RED version 0.18 the node's icon can be overwritten by the user using the `node settings` section of the configuration editor.
+Individual node icons can be customised by the user within the editor on the 'appearance'
+tab of the node's edit dialog.
 
-<div style="text-align:center">
-    <img title="port label editor" src="images/user-defined-icon.png"/>
-</div>
-
-The name of installed modules that contain one or more icon files or `node-red` for core nodes are shown on the left. The name of icon files in the module are shown on the right.
-
-**Note**: If a node has `icon` property by default, the node's icon cannot be overwritten (e.g. ui_button node of node-red-dashboard).
+**Note**: If a node has an `icon` property in its `defaults` object, its icon
+cannot be customised. For example, the `ui_button` node of `node-red-dashboard`.
 
 ### Background Colour
 
@@ -227,8 +249,8 @@ align: 'right',
 
 #### Port labels
 
-From Node-RED version **0.17** onwards nodes can optionally provide labels on their input
-and output ports, that can be seen by hovering the mouse over the port.
+Nodes can provide labels on their input and output ports that can be seen by
+hovering the mouse over the port.
 
 <div style="text-align:center">
     <img title="port labels" src="images/node-labels.png"/>
@@ -236,18 +258,22 @@ and output ports, that can be seen by hovering the mouse over the port.
 
 These can either be set statically by the node's html file
 
-    ...,
-    inputLabels: "parameter for input",
-    outputLabels: ["stdout","stderr","rc"],
-    ...
+{% highlight javascript %}
+...
+inputLabels: "parameter for input",
+outputLabels: ["stdout","stderr","rc"],
+...
+{% endhighlight %}
 
 or generated by a function, that is passed an index to indicate the output pin (starting from 0).
 
-    ...,
-    outputLabels: function(index) {
-        return "my port number "+index;
-    }
-    ...
+{% highlight javascript %}
+...
+outputLabels: function(index) {
+    return "my port number "+index;
+}
+...
+{% endhighlight %}
 
 
 In both cases they can be overwritten by the user using the `node settings` section of the configuration editor.
@@ -261,3 +287,68 @@ In both cases they can be overwritten by the user using the `node settings` sect
 </div>
 
 **Note**: Labels are not generated dynamically, and cannot be set by `msg` properties.
+
+### Buttons
+
+A node can have a button on its left or right hand edge, as seen with the core
+Inject and Debug nodes.
+
+A key principle is the editor is not a dashboard for controlling your flows. So
+in general, nodes should not have buttons on them. The Inject and Debug nodes are
+special cases as the buttons play a role in the development of flows.
+
+The `button` property in its definition is used to describe the behaviour of the
+button. It must provide, as a minimum, an `onclick` function that will be called
+when the button is clicked.
+
+{% highlight javascript %}
+...
+button: {
+    onclick: function() {
+        // Called when the button is clicked
+    }
+},
+...
+{% endhighlight %}
+
+The property can also define an `enabled` function to dynamically enable and
+disable the button based on the node's current configuration. Similarly, it can
+define a `visible` function to determine whether the button should be shown at all.
+
+{% highlight javascript %}
+...
+button: {
+    enabled: function() {
+        // return whether or not the button is enabled, based on the current
+        // configuration of the node
+        return !this.changed
+    },
+    visible: function() {
+        // return whether or not the button is visible, based on the current
+        // configuration of the node
+        return this.hasButton
+    },
+    onclick: function() { }
+},
+...
+{% endhighlight %}
+
+The `button` can also be configured as a toggle button - as seen with the Debug
+node. This is done by added a property called `toggle` that identifies a property
+in the node's `defaults` object that should be used to store a boolean value whose
+value is toggled whenever the button is pressed.
+
+
+{% highlight javascript %}
+...
+defaults: {
+    ...
+    buttonState: {value: true}
+    ...
+},
+button: {
+    toggle: "buttonState",
+    onclick: function() { }
+}
+...
+{% endhighlight %}

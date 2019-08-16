@@ -2,7 +2,7 @@
 layout: blog
 title: Making flows asynchronous by default
 author: nick
-description: Changes are coming in Node-RED 1.0 to how messages are routed in a flow. Find out what its means to go asynchronous.
+description: Changes are coming in Node-RED 1.0 to how messages are routed in a flow. Find out what it means to go asynchronous.
 ---
 
 In Node-RED 1.0, we are changing the way messages pass between nodes from being
@@ -92,7 +92,7 @@ When a flow branches, the branches will be evaluated in 'parallel'.
 ![](/blog/content/images/2019/08/flow2-async.svg)
 
 Which also means a flow with Debug nodes at each point, will log the message
-is the expected order.
+in the expected order.
 
 ![](/blog/content/images/2019/08/flow4-async.svg)
 

@@ -8,9 +8,9 @@ slug: first node
 Nodes get created when a flow is deployed, they may send and receive some messages
 whilst the flow is running and they get deleted when the next flow is deployed.
 
-They typically consist of a pair of files; a JavaScript file that defines what the
-node does, and an html file that defines the node's properties, edit dialog and
-help text.
+They consist of a pair of files:
+ -  a JavaScript file that defines what the node does,
+ -  an html file that defines the node's properties, edit dialog and help text.
 
 A `package.json` file is used to package it all together as an npm module.
 
@@ -25,7 +25,8 @@ A `package.json` file is used to package it all together as an npm module.
 This example will show how to create a node that converts message payloads to
 all lower-case characters.
 
-Ensure you have the recommended LTS version of Node.js installed on your system.  As of this writing this is version **LTS 8.x** which includes npm version 5.x.
+Ensure you have the current LTS version of Node.js installed on your system. At
+the time of writing this is 10.x.
 
 Create a directory where you will develop your code. Within that directory, create the following files:
 
@@ -152,44 +153,41 @@ For more information about the editor part of the node, see [here](node-html).
 
 Once you have created a basic node module as described above, you can install it into your Node-RED runtime.
 
-To test a node module locally using npm 5.x, the [`npm install <folder>`](https://docs.npmjs.com/cli/install) command can be used. This allows you
-to develop the node in a local directory and have it linked into a local node-red install during development.
+To test a node module locally the [`npm install <folder>`](https://docs.npmjs.com/cli/install)
+command can be used. This allows you to develop the node in a local directory and
+have it linked into a local node-red install during development.
 
 In your node-red user directory, typically `~/.node-red`, run:
 
     npm install <location of node module>
 
-For example, on Mac OS or linux, if your node is located at `~/dev/node-red-contrib-example-lower-case` you would type the following:
+For example, on Mac OS or Linux, if your node is located at `~/dev/node-red-contrib-example-lower-case` you would do the following:
 
     cd ~/.node-red
     npm install ~/dev/node-red-contrib-example-lower-case
 
-This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.  On Windows, again, using npm 5.x or greater:
+On Windows you would do:
 
     cd C:\Users\my_name\.node_red
     npm install C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
 
-If you are using an older version of npm, you can create a symbolic link manually to your project.  For example, on Mac or linux systems:
-
-    cd ~/.node-red/node_modules
-    ln -s ~/dev/node-red-contrib-example-lower-case  .
-
-On Windows with older versions of npm, use `mklink` instead:
-
-    cd C:\Users\my_name\.node_red
-    mklink /D node_modules\node-red-contrib-example-lower-case C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
+This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.  On Windows, again, using npm 5.x or greater:
 
 <div class="doc-callout">
-<em>Note</em> :  npm 5 will add your module as a dependency in the <code>package.json</code> file located in your user directory.  If you want to prevent this, use the npm <code>--no-save</code> option.
+<em>Note</em> :  <code>npm</code> will automatically add an entry for your module in the
+<code>package.json</code> file located in your user directory.  If you don't want
+it to do this, use the <code>--no-save</code> option to the <code>npm install</code>
+command.
 </div>
 
 ### Unit Testing
 
-To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-node-test-helper) can be used.  The test-helper is a framework built on the Node-RED runtime to make it easier to test nodes.
+To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-node-test-helper) can be used.  The test-helper is a framework
+built on the Node-RED runtime to make it easier to test nodes.
 
 Using this framework, you can create test flows, and then assert that your node properties and output is working as expected.  For example, to add a unit test to the lower-case node you can add a `test` folder to your node module package containing a file called `_spec.js`
 
-<h4><i class="fa fa-file-o"></i> test/_spec.js</h4>
+<h4 id="lower-casespecjs"><i class="fa fa-file-o"></i> test/lower-case_spec.js</h4>
 
 ```javascript
 var should = require("should");
