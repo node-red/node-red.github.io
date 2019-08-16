@@ -1,0 +1,131 @@
+<svg width="696" height="267" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <style>
+            .m1 { opacity: 0; animation: m1-steps 5.25s steps(1,end) infinite }
+            .m2 { opacity: 0; animation: m2-steps 5.25s steps(1,end) infinite }
+            .m3 { opacity: 0; animation: m3-steps 5.25s steps(1,end) infinite }
+            .m4 { opacity: 0; animation: m4-steps 5.25s steps(1,end) infinite }
+
+            .m5 { opacity: 0; animation: m5-steps 5.25s steps(1,end) infinite }
+            .m6 { opacity: 0; animation: m6-steps 5.25s steps(1,end) infinite }
+
+            .m7 { opacity: 0; animation: m7-steps 5.25s steps(1,end) infinite }
+            .m8 { opacity: 0; animation: m8-steps 5.25s steps(1,end) infinite }
+            .m9 { opacity: 0; animation: m9-steps 5.25s steps(1,end) infinite }
+
+            @keyframes m1-steps { 0% { opacity: 1 } 14.286% { opacity: 0 } 28.572% { opacity: 0 } 42.858% { opacity: 0 } 57.144% { opacity: 0 } 71.430% { opacity: 0 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m2-steps { 0% { opacity: 0 } 14.286% { opacity: 1 } 28.572% { opacity: 0 } 42.858% { opacity: 0 } 57.144% { opacity: 0 } 71.430% { opacity: 0 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m3-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 1 } 42.858% { opacity: 0 } 57.144% { opacity: 0 } 71.430% { opacity: 0 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m4-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 0 } 42.858% { opacity: 1 } 57.144% { opacity: 1 } 71.430% { opacity: 1 } 85.716% { opacity: 1 } 100% { opacity: 1 } }
+
+            @keyframes m5-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 1 } 42.858% { opacity: 1 } 57.144% { opacity: 0 } 71.430% { opacity: 0 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m6-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 0 } 42.858% { opacity: 0 } 57.144% { opacity: 1 } 71.430% { opacity: 1 } 85.716% { opacity: 1 } 100% { opacity: 1 } }
+
+            @keyframes m7-steps { 0% { opacity: 0 } 14.286% { opacity: 1 } 28.572% { opacity: 1 } 42.858% { opacity: 1 } 57.144% { opacity: 1 } 71.430% { opacity: 0 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m8-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 0 } 42.858% { opacity: 0 } 57.144% { opacity: 0 } 71.430% { opacity: 1 } 85.716% { opacity: 0 } 100% { opacity: 0 } }
+            @keyframes m9-steps { 0% { opacity: 0 } 14.286% { opacity: 0 } 28.572% { opacity: 0 } 42.858% { opacity: 0 } 57.144% { opacity: 0 } 71.430% { opacity: 0 } 85.716% { opacity: 1 } 100% { opacity: 1 } }
+        </style>
+    </defs>
+
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M120.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M120.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M300.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M300.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M300.5 53.5c75 0 5 160 80 160" stroke="#fff" stroke-width="5"/>
+        <path d="M300.5 53.5c75 0 5 160 80 160" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M480.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M480.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M480.5 213.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M480.5 213.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M480.5 53.5c75 0 5 80 80 80" stroke="#fff" stroke-width="5"/>
+        <path d="M480.5 53.5c75 0 5 80 80 80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(20.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#a6bbcf" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(200.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#fdd0a2" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(380.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#fdd0a2" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(560.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#87a980" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group red-ui-flow-node-icon-group-right">
+            <path fill-opacity=".05" d="M70 0h30v30H70z"/>
+            <path d="M70 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(380.5 198.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#fdd0a2" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(560.5 198.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#87a980" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group red-ui-flow-node-icon-group-right">
+            <path fill-opacity=".05" d="M70 0h30v30H70z"/>
+            <path d="M70 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(560.5 118.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#87a980" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group red-ui-flow-node-icon-group-right">
+            <path fill-opacity=".05" d="M70 0h30v30H70z"/>
+            <path d="M70 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+    </g>
+    <g stroke-miterlimit="6.5" color="#000">
+        <g fill="#ffc553" stroke="#c49231">
+            <rect class="m1" x="120.5" y="20.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m2" x="301.5" y="20.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m3" x="481.5" y="20.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m4" x="661.5" y="20.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+        </g>
+        <g fill="#53b9ff" stroke="#4085b5">
+            <rect class="m5" x="481.5" y="73.5" width="14" height="14" rx="3" fill="#53b9ff" style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m6" x="661.5" y="152.5" width="14" height="14" rx="3" fill="#53b9ff" style="isolation:auto;mix-blend-mode:normal"/>
+        </g>
+        <g fill="#ff7a53" stroke="#c45939">
+            <rect class="m7" x="301.5" y="73.5" width="14" height="14" rx="3"  style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m8" x="481.5" y="232.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+            <rect class="m9" x="661.5" y="232.5" width="14" height="14" rx="3" style="isolation:auto;mix-blend-mode:normal"/>
+        </g>
+    </g>
+</svg>
