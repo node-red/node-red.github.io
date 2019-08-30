@@ -85,7 +85,7 @@ that doesn't use `node-red` as a prefix can be used.
 
 The README.md file should describe the capabilities of the node, and list any
 pre-requisites that are needed in order to make it function. It may also be
-useful to include any extra instuctions not included in the *info* tab part
+useful to include any extra instructions not included in the *info* tab part
 of the node's html file, and maybe even a small example flow demonstrating it's
 use.
 
