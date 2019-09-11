@@ -30,8 +30,8 @@ All of the nodes in a flow can access the same [flow-scoped context](/docs/user-
 
 #### Adding a flow
 
-To add a new flow, click the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-plus"></i> button
-in the top bar.
+To add a new flow, either click the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-plus"></i> button
+in the top bar, or double-click on free space in the tab bar.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
@@ -39,6 +39,10 @@ in the top bar.
  <tr><td>Menu option</td><td><code>Flows -&gt; Add</code></td></tr>
  <tr><td>Action</td><td><code>core:add-flow</code></td></tr>
 </table>
+
+#### Reordering flows
+
+Flows can be reordered in the workspace by dragging their tabs around in the tab bar.
 
 #### Editing flow properties
 
@@ -60,10 +64,28 @@ open the Flow Properties dialog.
 Within the dialog, the flow's name and description can be set. The description
 can use Markdown syntax for formatting and will appear in the [Information sidebar](../sidebar/info).
 
-The Status property can be used to disable or enable the flow.
+#### Enabling or disabling a flow
+
+The flow can be enabled or disabled using the toggle button at the bottom of the
+dialog. If a flow is disabled, none of the nodes it contains will be created when
+the flow is deployed.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:enable-flow</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:disable-flow</code></td></tr>
+</table>
+
 
 <br style="clear: both;" />
-
 
 #### Deleting a flow
 
@@ -74,4 +96,36 @@ To delete a flow, click the 'Delete' button in the Flow Properties dialog.
  <tr><td>Key shortcut</td><td><i>none</i></td></tr>
  <tr><td>Menu option</td><td><code>Flows -&gt; Delete</code></td></tr>
  <tr><td>Action</td><td><code>core:remove-flow</code></td></tr>
+</table>
+
+<div style="width:400px" class="figure align-right">
+  <img src="../images/editor-flow-search-tabs.png" alt="Search flows">
+  <p class="caption">Search flows</p>
+</div>
+
+#### Switching between flows
+
+
+To open a list of the available flows, click the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list-ul"></i> button
+in the top bar.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Shift-f</code></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:list-flows</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Shift-j</code></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:show-previous-tab</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Shift-k</code></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:show-next-tab</code></td></tr>
 </table>

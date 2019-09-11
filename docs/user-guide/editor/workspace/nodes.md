@@ -64,30 +64,62 @@ and finally a complete, alphabetical, list of the remaining nodes.
 As with the main palette, the dialog has an input at the top to filter the list
 and quickly find a node.
 
-#### Editing node configuration
+If `Ctrl` or `Command` is kept held down when clicking on a node in the list,
+the node will be added and the Quick-Add dialog kept open to add the next node
+in the flow.
+
+If a wire is clicked on when triggering the dialog, the added node will be spliced
+into the wire.
+
+#### Editing node properties
 
 A node's configuration can be edited by double clicking on the node, or pressing
 `Enter` when the workspace has focus. If multiple nodes are selected, the *first*
 node in the selection will be edited.
 
+The edit dialog contains three tabs:
+
+<ul>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - the edit form specific to the node type being edited.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-file-text"></i> : Description - per-node documentation formatted using Markdown. This is displayed in the <a href="../sidebar/info">Information sidebar</a> when the node is selected.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-object-group"></i> : Appearance - options to customise the appearance of the node.</li>
+</ul>
+
 <div class="figure">
-  <img style="width: calc(50% - 10px); display: inline-block;" src="../images/editor-edit-node.png" alt="Node edit dialog - properties">
-  <img style="width: calc(50% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-node-settings.png" alt="Node edit dialog - properties">
-  <p class="caption">Node edit dialog - properties and settings sections</p>
+  <img style="width: calc(30% - 10px); display: inline-block;" src="../images/editor-edit-node.png" alt="Node edit dialog - properties">
+  <img style="width: calc(30% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-node-description.png" alt="Node edit dialog - description">
+  <img style="width: calc(30% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-node-appearance.png" alt="Node edit dialog - appearance">
+  <p class="caption">Node edit dialog - properties, description and appearance tabs</p>
 </div>
 
-The node edit dialog has two separate sections; properties and settings. The
-properties section shows the edit form specific to the node type being edited.
-The settings section shows the common settings that can be set on all nodes.
-This includes the custom port labels as well as the icon for the node.
 
-Clicking on the icon shows the Node icon picker that can be used to select the icon
-for the node from the list of all available icons.
+The Appearance tab provides options to:
 
-<div style="width:346px;" class="figure align-center">
-  <img src="../images/editor-edit-node-settings-icon.png" alt="Node icon picker">
-  <p class="caption">Node icon picker</p>
-</div>
+ - select whether the node's label is shown
+ - change the icon of the node
+ - provide custom port labels.
+
+
+#### Enabling or disabling a node
+
+An node can be enabled or disabled using the toggle button at the bottom of the
+dialog. If a node is disabled it will not be created when the flow is deployed. If
+a disabled node sits in the middle of a flow, no messages will pass through it.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:enable-selected-nodes</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><i>none</i></td></tr>
+ <tr><td>Action</td><td><code>core:disable-selected-nodes</code></td></tr>
+</table>
+
 
 #### Configuration nodes
 
@@ -110,17 +142,20 @@ Clicking the button next to the select box will open the edit dialog for the
 selected node, or add a new instance.
 
 
-<div  class="figure">
+<div style="width:321px;" class="figure align-right">
   <img src="../images/editor-edit-config-node.png" alt="Configuration node edit dialog">
   <p class="caption">Configuration node edit dialog</p>
 </div>
 
-The config node edit dialog only has the node properties section - as a config node
-has no icon or ports to set labels on.
+The config node edit dialog only has the node properties and description tabs -
+as a config node has no icon or ports to set labels on.
 
 In the footer of the dialog is an indication of how many nodes use this config node.
 It also provides a select box to set the scope of the config node. The scope
 determines which flows the config node is available on. By default it is available
 on all flows, but the select box can be used to make it local to just one flow.
+
+As with normal nodes, it can also be enabled or disabled using the toggle button
+in the footer.
 
 The [Configuration Nodes Sidebar](/docs/user-guide/editor/sidebar/config) can be used to manage all config nodes.

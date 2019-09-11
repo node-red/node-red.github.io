@@ -25,19 +25,14 @@ For more information about using context, read the [Working with context](/docs/
  <tr><td>Key shortcut</td><td><code>Ctrl/⌘-g x</code></td></tr>
 </table>
 
-The panel is split into three sections, one for each context scope.
+The panel is split into three sections, one for each context scope; node, flow and
+global.
 
-The 'Node' section shows the context of the current selected node. It does not
-display the contents automatically and requires the user to click the refresh button
-to load it.
+The refresh button, <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-refresh"></i> must
+be clicked to load the context contents.
 
-The 'Flow' section shows the context of the current flow. This automatically refreshes
-whenever the flow is changed in the main workspace.
-
-The 'Global' section shows the global context and is loaded each time the editor
-is loaded.
-
-For all three scopes, to see changes, the corresponding refresh button must be clicked.
+The Node and Flow sections both have a checkbox next to their refresh button to turn
+on automatic refreshing of the contents whenever the selected node or flow changes.
 
 Hovering the mouse over any context property name will show a refresh button that
 can be used to refresh just that one value.

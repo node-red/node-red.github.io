@@ -48,5 +48,12 @@ it can be better to disable them by clicking their button in the workspace.
 
 The sidebar can be cleared at any time by clicking the <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-trash"></i> button.
 
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:clear-debug-messages</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Alt-l</code></td></tr>
+</table>
+
+
 The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-desktop"></i> button
 in the sidebar footer can be used to open a separate browser window containing the Debug sidebar.

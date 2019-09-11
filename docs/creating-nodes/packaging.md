@@ -12,18 +12,19 @@ them easy to install along with any dependencies they may have.
 
 Here is a typical directory structure for a node package:
 
-    - package.json
-    - sample
-       |-sample.html
-       |-sample.js
-       \-icons
-          \-sample.png
-          \-small.svg
-       \-examples
-          \-example 1.json
-          \-example 2.json
-    - README.md
-    - LICENSE
+```
+├── LICENSE
+├── README.md
+├── package.json
+└── sample
+    ├── examples
+    │   ├── example-1.json
+    │   └── example-2.json
+    ├── icons
+    │   └── my-icon.svg
+    ├── sample.html
+    └── sample.js
+```
 
 There are no strict requirements over the directory structure used within the
 package. If a package contains multiple nodes, they could all exist in the same
@@ -40,7 +41,7 @@ In your node-red user directory, typically `~/.node-red`, run:
 
 This creates the appropriate symbolic link to the directory so that Node-RED
 will discover the node when it starts. Any changes to the node's file can be picked
-up by simply restarting Node-RED. 
+up by simply restarting Node-RED.
 
 ### package.json
 

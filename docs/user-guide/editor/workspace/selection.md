@@ -48,6 +48,18 @@ press `Ctrl/Command-a`.
  <tr><td>Key shortcut</td><td><code>Ctrl/⌘-a</code></td></tr>
 </table>
 
+### Selecting flows
+
+It is possible to select multiple flows in the editor by holding the `Ctrl/Command`
+key when clicking on its tab.
+
+Once selected, they can be deleted, copied or exported just like any selection.
+
+<div style="width: 541px" class="figure align-centre">
+  <img src="../images/editor-flow-select.png" alt="Selecting flows">
+  <p class="caption">Selecting flows</p>
+</div>
+
 ### Editor clipboard
 
 <div style="width: 400px; float: right">

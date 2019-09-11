@@ -1,7 +1,7 @@
 ---
 layout: docs-creating-nodes
 toc: toc-creating-nodes.html
-title: Adding examples
+title: Example flows
 slug: examples
 ---
 

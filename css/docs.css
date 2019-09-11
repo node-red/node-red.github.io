@@ -235,7 +235,11 @@ div.figure img {
     height: auto;
     box-shadow: 4px 4px 8px 0px #ddd;
 }
-
+div.figure.align-left {
+    float: left;
+    width: auto;
+    margin: 5px 20px 5px 0;
+}
 div.figure.align-right {
     float: right;
     width: auto;

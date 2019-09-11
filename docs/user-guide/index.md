@@ -8,6 +8,7 @@ title: User Guide
  - [Installing Node-RED](/docs/getting-started)
  - [Creating your first flow](/docs/tutorials/first-flow)
  - [Node-RED Concepts](/docs/user-guide/concepts)
+ - [Using the Node-RED Editor](/docs/user-guide/editor)
 
 ### Configuring Node-RED
 
@@ -18,7 +19,6 @@ title: User Guide
 
 ### Using Node-RED
 
-- [Using the Node-RED Editor](/docs/user-guide/editor)
 - [The core nodes](/docs/user-guide/nodes)
 - [Adding nodes to the palette](/docs/user-guide/runtime/adding-nodes)
 - [Using the Function node](/docs/user-guide/writing-functions)

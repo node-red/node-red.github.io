@@ -26,3 +26,19 @@ The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-al
 buttons at the bottom of the palette can be used to collapse or expand all categories.
 
 Above the palette is an input that can be used to filter the list of nodes.
+
+
+<div  style="width: 64px"  class="figure align-left">
+  <img src="../images/editor-palette-toggle.png" alt="Palette toggle">
+  <p class="caption">Palette toggle</p>
+</div>
+
+The entire palette can be hidden by clicking the palette toggle that is shown when
+the mouse is over the palette.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-p</code></td></tr>
+ <tr><td>Menu option</td><td><code>View -&gt; Show Palette</code></td></tr>
+ <tr><td>Action</td><td><code>core:toggle-palette</code></td></tr>
+</table>
