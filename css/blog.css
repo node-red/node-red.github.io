@@ -89,6 +89,8 @@
     margin-top: 5px;
     color: #666;
     font-size: 0.9em;
+    overflow: hidden;
+    max-height: 180px;
 }
 .post-preview p {
     margin: 0;
