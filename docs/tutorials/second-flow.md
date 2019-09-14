@@ -68,7 +68,7 @@ Add wires connecting:
 ### 7. Add a Switch node
 
 Add a Switch node to the workspace. Edit its properties and configure it to check
-the property `msg.payload.mag` with a test of `>=` and the value `7`. Click
+the property `msg.payload.mag` with a test of `>=` change it to test on a `number` and the value `7`. Click
 Done to close.
 
 Add a second wire from the CSV node to this Switch node.
@@ -101,6 +101,7 @@ messages like:
     msg.payload : string(6)
     "PANIC!"
 
+You could change the switch value of `7` to a smaller one to test you're programm. Remember to click on deploy after the change.
 ***
 
 ### Summary
