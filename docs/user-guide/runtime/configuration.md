@@ -150,7 +150,7 @@ The theme of the editor can be changed by using the following settings object. A
             label:"Save",
             icon: "/absolute/path/to/deploy/button/image" // or null to remove image
         },
-        menu: { // Hide unwanted menu items by id. see editor/js/main.js:loadEditor for complete list
+        menu: { // Hide unwanted menu items by id. see packages/node_modules/@node-red/editor-client/src/js/red.js:loadEditor for complete list
             "menu-item-import-library": false,
             "menu-item-export-library": false,
             "menu-item-keyboard-shortcuts": false,
