@@ -23,6 +23,15 @@ If you are on a Raspberry Pi or any Debian-based operating system, including
 Ubuntu and Diet-Pi, you can use the Pi install script available <a href="raspberrypi">here</a>.
 </div>
 
+<div class="doc-callout">
+<div style="float: left; margin-right: 10px;"><img src="/images/logos/redhat.svg" height="30">
+<img src="/images/logos/fedora.svg" height="30">
+<img src="/images/logos/centos.svg" height="30">
+</div>
+If you are on an RPM-based operating system, including
+RedHat, Fedora and CentOS, you can use the RPM install script available <a href="https://github.com/node-red/linux-installers">here</a>.
+</div>
+
 ### Installing with npm
 
 To install Node-RED you can use the `npm` command that comes with node.js:

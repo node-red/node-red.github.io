@@ -11,6 +11,7 @@ redirect_from:
 ### Prerequisites
 
 If you are using Raspbian, then you must have Raspbian Jessie as a minimum version.
+Raspbian Buster is the currently supported version.
 
 ### Installing Node-RED
 
@@ -19,10 +20,10 @@ Pi. The script can also be used to upgrade an existing install when a new
 release is available.
 
 Running the following command will download and run the script. If you want
-to review the contents of the script first, you can view it [here](https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered).
+to review the contents of the script first, you can view it [here](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
 
 ```
-bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
 
 <div class="doc-callout">
