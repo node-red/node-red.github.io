@@ -127,7 +127,7 @@ an example of which is available from the community link below.
 There are many alternative approaches. The following are some of those created
 by members of the community.
 
- - [A systemd script (used by the Pi pre-install)](https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/nodered.service) by @NodeRED (linux)
+ - [A systemd script (used by the Pi pre-install)](https://raw.githubusercontent.com/node-red/linux-installers/master/resources/nodered.service) by @NodeRED (linux)
  - [A systemd script](https://gist.github.com/Belphemur/3f6d3bf211b0e8a18d93) by Belphemur (linux)
  - [An init.d script](https://gist.github.com/bigmonkeyboy/9962293)  by dceejay (linux)
  - [An init.d script](https://gist.github.com/Belphemur/cf91100f81f2b37b3e94) by Belphemur (linux)
