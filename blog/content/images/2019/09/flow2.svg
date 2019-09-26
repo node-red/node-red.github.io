@@ -1,0 +1,48 @@
+<svg width="696" height="89" xmlns="http://www.w3.org/2000/svg">
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M120.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M120.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M300.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M300.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-link" fill="none">
+        <path d="M480.5 53.5h80" stroke="#fff" stroke-width="5"/>
+        <path d="M480.5 53.5h80" stroke="#999" stroke-width="3"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(20.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#a6bbcf" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(200.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#fdd0a2" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(380.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#fdd0a2" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group">
+            <path fill-opacity=".05" d="M0 0h30v30H0z"/>
+            <path d="M30 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(95 10)"/>
+    </g>
+    <g class="red-ui-flow-node red-ui-flow-node-group" transform="translate(560.5 38.5)">
+        <rect width="100" height="30" rx="5" ry="5" fill="#87a980" stroke="#999"/>
+        <g class="red-ui-flow-node-icon-group red-ui-flow-node-icon-group-right">
+            <path fill-opacity=".05" d="M70 0h30v30H70z"/>
+            <path d="M70 1v28" stroke="#000" stroke-opacity=".1"/>
+        </g>
+        <rect width="10" height="10" rx="3" ry="3" fill="#d9d9d9" stroke="#999" transform="translate(-5 10)"/>
+    </g>
+</svg>
