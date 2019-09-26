@@ -52,10 +52,18 @@ This command will install Node-RED as a global module along with its dependencie
 You can confirm it has succeed if the end of the command output looks similar to:
 
 ```
-+ node-red@0.20.6
-added 364 packages from 350 contributors and audited 1493 packages in 16.606s
++ node-red@1.0.0
+added 332 packages from 341 contributors in 18.494s
 found 0 vulnerabilities
 ```
+
+### Installing with docker
+
+To run this directly in Docker in its simplest form just run:
+```
+docker run -it -p 1880:1880 --name mynodered nodered/node-red
+```
+For more detailed information see our [docker](/docs/getting-started/docker) guide.
 
 ### Installing with snap
 
@@ -90,20 +98,20 @@ $ node-red
 Welcome to Node-RED
 ===================
 
-25 Mar 22:51:09 - [info] Node-RED version: v0.20.5
-25 Mar 22:51:09 - [info] Node.js  version: v10.15.3
-25 Mar 22:51:09 - [info] Loading palette nodes
-25 Mar 22:51:10 - [warn] ------------------------------------------
-25 Mar 22:51:10 - [warn] [rpi-gpio] Info : Ignoring Raspberry Pi specific node
-25 Mar 22:51:10 - [warn] ------------------------------------------
-25 Mar 22:51:10 - [info] Settings file  : /home/nol/.node-red/settings.js
-25 Mar 22:51:10 - [info] Context store  : 'default' [module=localfilesystem]
-25 Mar 22:51:10 - [info] User Directory : /home/nol/.node-red
-25 Mar 22:51:10 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
-25 Mar 22:51:10 - [info] Server now running at http://127.0.0.1:1880/
-25 Mar 22:51:10 - [info] Creating new flows file : flows_noltop.json
-25 Mar 22:51:10 - [info] Starting flows
-25 Mar 22:51:10 - [info] Started flows
+26 Sep 23:43:39 - [info] Node-RED version: v1.0.0-beta.4
+26 Sep 23:43:39 - [info] Node.js  version: v10.15.3
+26 Sep 23:43:39 - [info] Darwin 18.7.0 x64 LE
+26 Sep 23:43:39 - [info] Loading palette nodes
+26 Sep 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
+26 Sep 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
+26 Sep 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
+26 Sep 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
+26 Sep 23:43:44 - [info] User directory : /Users/nol/.node-red
+26 Sep 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
+26 Sep 23:43:44 - [info] Creating new flows file : flows_noltop.json
+26 Sep 23:43:44 - [info] Starting flows
+26 Sep 23:43:44 - [info] Started flows
+26 Sep 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
 ```
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.

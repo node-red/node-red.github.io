@@ -16,7 +16,7 @@ As of Node-RED 1.0 this project provides the build for the `nodered/node-red` co
 Previous 0.20.x versions are still available at https://hub.docker.com/r/nodered/node-red-docker.
 
 ### Quick Start
-To run this directly in Docker at its simplest form just run:
+To run this directly in Docker in its simplest form just run:
 
         docker run -it -p 1880:1880 --name mynodered nodered/node-red
 
