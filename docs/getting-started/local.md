@@ -99,8 +99,8 @@ $ node-red
 Welcome to Node-RED
 ===================
 
-26 Sep 23:43:39 - [info] Node-RED version: v1.0.0-beta.4
-26 Sep 23:43:39 - [info] Node.js  version: v10.15.3
+26 Sep 23:43:39 - [info] Node-RED version: v1.0.0
+26 Sep 23:43:39 - [info] Node.js  version: v10.16.3
 26 Sep 23:43:39 - [info] Darwin 18.7.0 x64 LE
 26 Sep 23:43:39 - [info] Loading palette nodes
 26 Sep 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
