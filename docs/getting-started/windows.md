@@ -17,7 +17,7 @@ This page gives specific instructions on setting up Node-RED in a Microsoft Wind
 
 #### 1. Install Node.js
 
-Download the latest 8.x LTS version of Node.js from the official [Node.js home page](https://nodejs.org/en/). It will offer you the best version for your system.
+Download the latest 10.x LTS version of Node.js from the official [Node.js home page](https://nodejs.org/en/). It will offer you the best version for your system.
 
 Run the downloaded MSI file.  Installing Node.js requires local administrator rights; if you are not a local
 administrator, you will be prompted for an administrator password on install.  Accept the defaults when installing.  After installation completes, close any open command prompts and re-open to ensure new environment variables
@@ -31,8 +31,8 @@ Using cmd: `node --version && npm --version`
 
 You should receive back output that looks similar to:
 
-    v8.9.0
-    5.5.1
+    v10.16.3
+    6.11.3
 
 #### 2. Install Node-RED
 

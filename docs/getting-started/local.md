@@ -26,7 +26,7 @@ Ubuntu and Diet-Pi, you can use the Pi install script available <a href="raspber
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px;"><img src="/images/logos/redhat.svg" height="30">
 <img src="/images/logos/fedora.svg" height="30">
-<img src="/images/logos/centos.svg" height="30">
+<img src="/images/logos/centos.svg" height="40">
 </div>
 If you are on an RPM-based operating system, including
 RedHat, Fedora and CentOS, you can use the RPM install script available <a href="https://github.com/node-red/linux-installers">here</a>.
@@ -45,11 +45,12 @@ sudo npm install -g --unsafe-perm node-red
 <img src="/images/logos/windows.svg" height="30">
 </div>
 If you are using Windows, do not start the command with <code>sudo</code>.
+More information on Windows installation can be found <a href="/docs/getting-started/windows">here</a>.
 </div>
 
 This command will install Node-RED as a global module along with its dependencies.
 
-You can confirm it has succeed if the end of the command output looks similar to:
+You can confirm it has succeeded if the end of the command output looks similar to:
 
 ```
 + node-red@1.0.0
@@ -59,7 +60,7 @@ found 0 vulnerabilities
 
 ### Installing with docker
 
-To run this directly in Docker in its simplest form just run:
+To run in Docker in its simplest form just run:
 ```
 docker run -it -p 1880:1880 --name mynodered nodered/node-red
 ```

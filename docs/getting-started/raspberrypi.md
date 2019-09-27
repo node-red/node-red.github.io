@@ -55,7 +55,7 @@ Node-RED has also been packaged for the Raspbian repositories and appears in the
 list of 'Recommended Software'. This allows it to be installed using
 <code>apt-get install nodered</code> and includes the Raspbian-packaged version
 of Node.js, but <em>does not</em> include <code>npm</code>.
-<p>Whilst using these packages appears convenient at first, we <b>strongly recommend</b>
+<p>While using these packages is convenient at first, we <b>strongly recommend</b>
 using our install script above instead.</p>
 </div>
 
@@ -87,6 +87,7 @@ The following commands are provided to work with the service:
  Pressing `Ctrl-C` or closing the window does *not* stop the service; it keeps
  running in the background
  - `node-red-stop` - this stops the Node-RED service
+ - `node-red-restart` - this stops and restarts the Node-RED service
  - `node-red-log` - this displays the log output of the service
 
 You can also start the Node-RED service on the Raspbian Desktop by selecting
@@ -94,7 +95,7 @@ the `Menu -> Programming -> Node-RED` menu option.
 
 ### Autostart on boot
 
-If you want Node-RED to run when the Pi is turned on, you can enable the service
+If you want Node-RED to run when the Pi is turned on, or re-booted, you can enable the service
 to autostart by running the command:
 
 ```
@@ -112,9 +113,9 @@ Once Node-RED is running you can access the editor in a browser.
 
 If you are using the browser on the Pi desktop, you can open the address: <http://localhost:1880>.
 
-<div class="doc-callout">We recommend Chromium or Firefox-ESR on the Pi and <i>not</i> Epiphany</div>
+<div class="doc-callout">We recommend using a browser outside of the PI and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox-ESR and <i>not</i> Epiphany</div>
 
-Otherwise, you should use the IP address of the Pi: `http://<ip-address>:1880`. You
+When browsing from another machine you should use the hostname or IP-address of the Pi: `http://<hostname>:1880`. You
 can find the IP address by running `hostname -I` on the Pi.
 
 
