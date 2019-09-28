@@ -101,7 +101,7 @@ messages like:
     msg.payload : string(6)
     "PANIC!"
 
-You could change the switch value of `7` to a smaller one to test you're programm. Remember to click on deploy after the change.
+You could change the switch value of `7` to a smaller one to test your programm. Remember to click on deploy after the change.
 ***
 
 ### Summary
