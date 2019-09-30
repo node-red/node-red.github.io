@@ -72,7 +72,7 @@ If your OS supports [Snap](https://snapcraft.io/docs/core/install) you can insta
 Node-RED with:
 
 ```
-snap install node-red
+sudo snap install node-red
 ```
 
 When installed as a Snap package, it will run in a secure container that does
