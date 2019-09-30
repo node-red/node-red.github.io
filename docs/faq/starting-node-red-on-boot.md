@@ -17,16 +17,19 @@ This script installs Node-RED as a [systemd](https://wiki.debian.org/systemd) se
 For more information, read the [Running on Raspberry Pi](/docs/getting-started/raspberrypi#autostart-on-boot)
 guide.
 
-If you are not using Raspbian, you will need to edit the service file to suit
+If you are not using Raspbian, you may need to edit the service file to suit
 your local user id and environment. Details for how to do that are available
 [here](/docs/faq/customising-systemd-on-pi).
+
+### RPM based Linux, RedHat, Fedora, CentOS
+
+We also provide an install script for RPM based linux [available here](https://github.com/node-red/linux-installers), that also sets up systemd.
 
 ### Other Linux, OSX
 
 The guide below sets out what we believe to be the most straight-forward for
 the majority of users. For Windows, PM2 does not autorun as a service -
 you may prefer the [NSSM option](#alternative-options) below.
-
 
 #### Using PM2
 
