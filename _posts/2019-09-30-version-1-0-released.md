@@ -12,7 +12,7 @@ Node-RED 1.0.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nIVBZQi18fQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This release has been a long time coming, and gives us a stable base build on.
+This release has been a long time coming, and gives us a stable base to build upon.
 It is an opportunity to reflect on not only how much we've achieved with the project,
 but also how much there is still to do. The backlog contains a long list of
 features and improvements for us to work on in as we plot a course to 2.0.
@@ -21,7 +21,7 @@ A big thank you to everyone in the community who have contributed to this releas
 Whether through code, documentation, ideas or feedback, it all helps to keep the
 project moving in the right direction.
 
-If you are new to Node-RED or just getting started, we've also published a new
+If you are new to Node-RED or wanted a refresher of the basics, we've also published a new
 video series to introduce the essentials of Node-RED. There's lots more to add,
 but there's plenty to get you started.
 
