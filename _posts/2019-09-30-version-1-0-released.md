@@ -242,9 +242,9 @@ rate nodes before. We've also introduced the idea of Collections; groups of node
 and flows that anyone can create.
 
 Some of the collections that have already been created include:
- - [Extra nodes for Node-RED Dashboard](https://flows-new.nodered.org/collection/590bc13ff3a5f005c7d2189bbb563976)
- - [Nodes and flows that help schedule tasks](https://flows-new.nodered.org/collection/c8156f6276976bfb518d1e60442e01e2)
- - [Nodes that help with routing messages](https://flows-new.nodered.org/collection/B1C6pe3gKjH9)
+ - [Extra nodes for Node-RED Dashboard](https://flows.nodered.org/collection/590bc13ff3a5f005c7d2189bbb563976)
+ - [Nodes and flows that help schedule tasks](https://flows.nodered.org/collection/c8156f6276976bfb518d1e60442e01e2)
+ - [Nodes that help with routing messages](https://flows.nodered.org/collection/B1C6pe3gKjH9)
 
 This is a great way for the community to help curate all of the great content in
 the library.
