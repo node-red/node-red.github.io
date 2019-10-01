@@ -45,20 +45,87 @@ RED.nodes.registerType("sample",SampleNode);
 Nodes register a listener on the `input` event to receive messages from the
 up-stream nodes in a flow.
 
+With Node-RED 1.0, a new style of listener was introduced to allow the node
+to notify the runtime when it has finished handling a message. This added
+two new parameters to the listener function. Some care is needed to ensure
+the node can still be installed in Node-RED 0.x which does not use this new
+style of listener.
+
 {% highlight javascript %}
-this.on('input', function(msg) {
+this.on('input', function(msg, send, done) {
     // do something with 'msg'
+
+    // Once finished, call 'done'.
+    // This call is wrapped in a check that 'done' exists
+    // so the node will work in earlier versions of Node-RED (<1.0)
+    if (done) {
+        done();
+    }
 });
 {% endhighlight %}
 
+#### Handling errors
+
+If the node encounters an error whilst handling the message, it should pass
+the details of the error to the `done` function.
+
+This will trigger any Catch nodes present on the same tab, allowing the user to
+build flows to handle the error.
+
+Again, some care is needed in the case the node is installed in Node-RED 0.x which
+does not provide the `done` function. In that case, it should use `node.error`:
+
+
+{% highlight javascript %}
+let node = this;
+this.on('input', function(msg, send, done) {
+    // do something with 'msg'
+
+    // If an error is hit, report it to the runtime
+    if (err) {
+        if (done) {
+            // Node-RED 1.0 compatible
+            done(err);
+        } else {
+            // Node-RED 0.x compatible
+            node.error(err, msg);
+        }
+    }
+});
+{% endhighlight %}
+
+
 ### Sending messages
 
-Nodes can send messages to the down-stream nodes in a flow using the `send` function:
+If the node sits at the start of the flow and produces messages in response to
+external events, it should use the `send` function on the Node object:
 
 {% highlight javascript %}
 var msg = { payload:"hi" }
 this.send(msg);
 {% endhighlight %}
+
+If the node wants to send from inside the `input` event listener, in response to
+receiving a message, it should use the `send` function that is passed to the listener
+function:
+
+{% highlight javascript %}
+let node = this;
+this.on('input', function(msg, send, done) {
+    // For maximum backwards compatibility, check that send exists.
+    // If this node is installed in Node-RED 0.x, it will need to
+    // fallback to using `node.send`
+    send = send || function() { node.send.apply(node,arguments) }
+
+    msg.payload = "hi";
+    send(msg);
+
+    if (done) {
+        done();
+    }
+});
+{% endhighlight %}
+
 
 If `msg` is null, no message is sent.
 
@@ -154,23 +221,7 @@ this.debug("Log something more details for debugging the node's behaviour");
 
 {% endhighlight %}
 
-
 The `warn` and `error` messages also get sent to the flow editor debug tab.  
-
-#### Handling errors
-
-If the node encounters an error that should halt the current flow, it should log
-the event with the `this.error` function.
-
-If the error is one that a user of the node may want to handle for themselves,
-the function should be called with the original message (or an empty message if
-this is an Input node) as the second argument:
-
-{% highlight javascript %}
-node.error("hit an error", msg);
-{% endhighlight %}
-
-This will trigger any Catch nodes present on the same tab.
 
 ### Setting status
 

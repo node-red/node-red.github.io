@@ -108,14 +108,57 @@ If the function needs to perform an asynchronous action before sending a message
 it cannot return the message at the end of the function.
 
 Instead, it must make use of the `node.send()` function, passing in the message(s)
-to be sent. For example:
+to be sent. It takes the same arrangement of messages as that can be returned, as
+described in the previous sections.
+
+ For example:
 
 {% highlight javascript %}
 doSomeAsyncWork(msg, function(result) {
-    node.send({payload:result});
+    msg.payload = result;
+    node.send(msg);
 });
 return;
 {% endhighlight %}
+
+**Since Node-RED 1.0**
+
+The Function node will clone every message object you pass to `node.send` to
+ensure there is no unintended modification of message objects that get reused
+in the function. Before Node-RED 1.0, the Function node would not clone the
+*first* message passed to `node.send`, but would clone the rest.
+
+The Function can request the runtime to *not clone* the first message passed to
+`node.send` by passing in `false` as a second argument to the function. It would
+do this is the message contains something that is not otherwise cloneable, or for
+performance reasons to minimise the overhead of sending messages:
+
+{% highlight javascript %}
+node.send(msg,false);
+{% endhighlight %}
+
+#### Finishing with a message
+
+**Since Node-RED 1.0**
+
+If a Function node does asynchronous work with a message, the runtime will not
+automatically know when it has finished handling the message.
+
+To help it do so, the Function node should call `node.done()` at the appropriate
+time. This will allow the runtime to properly track messages through the system.
+
+{% highlight javascript %}
+doSomeAsyncWork(msg, function(result) {
+    msg.payload = result;
+    node.send(msg);
+    node.done();
+});
+return;
+{% endhighlight %}
+
+
+
+### Tidying up
 
 If you do use asynchronous callback code in your functions then you may need to
 tidy up any outstanding requests, or close any connections,  whenever the flow gets
@@ -359,6 +402,7 @@ The following objects are available within the Function node.
  * `node.on(..)` : [register an event handler](#sending-messages-asynchronously)
  * `node.status(..)` : [update the node status](#adding-status)
  * `node.send(..)` : [send a message](#sending-messages-asynchronously)
+ * `node.done(..)` : [finish with a message](#finishing-with-a-message)
 
 #### `context`
  * `context.get(..)` : get a node-scoped context property
