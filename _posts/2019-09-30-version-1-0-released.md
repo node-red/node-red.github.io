@@ -190,7 +190,7 @@ more consistent CSS structure.
 There's no easy way around that. You will want to disable your custom theme before trying this beta for the first time.
 
 If you are using the wonderful `node-red-contrib-theme-midnight-red`, then there is already
-a [1.0 ready version available](https://github.com/bonanitech/node-red-contrib-theme-midnight-red/tree/1.0).
+a [1.0 ready version available](https://github.com/bonanitech/node-red-contrib-theme-midnight-red).
 
 Pretty much every single CSS class and DOM ID used by the editor has been changed. The classes and ids we were using reflected 5 years of incremental development, including things dating back to the very first day I started creating Node-RED.
 
