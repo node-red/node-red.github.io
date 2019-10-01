@@ -5,6 +5,8 @@ slug: editor
 toc: toc-editor-guide.html
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLyNBB9VCLmo1hyO-4fIZ08gqFcXBkHy-6" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 The editor window consists of four components:
 
  - The header at the top, containing the deploy button, main menu, and, if user
