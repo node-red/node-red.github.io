@@ -7,37 +7,25 @@ redirect_from:
   - /docs/platforms/bluemix
 ---
 
-Node-RED is available on the IBM Cloud platform as one of the [boilerplate applications](#boilerplate-application)
+Node-RED is available on the IBM Cloud platform as one of the [Starter Kits applications](#starter-kit-application)
 in the catalog.
 
 We also provide a '[Deploy To IBM Cloud](#deploy-to-ibm-cloud)' enabled repository.
 
 ---
 
-### Boilerplate application
+### Starter Kit application
 
-1. Log in or sign-up for an account at [bluemix.net](http://bluemix.net)
+1. Log in or sign-up for an account at [cloud.ibm.com](https://cloud.ibm.com)
 
-2. Navigate to the catalog and [search for 'Node-RED'](https://console.ng.bluemix.net/catalog?search=Node-RED)
+2. Navigate to the catalog and [search for 'Node-RED'](https://cloud.ibm.com/catalog?search=node-red).
+   This will present you with the **Node-RED Starter**. This gives you a Node-RED instance running as a Cloud Foundry 
+   application. It also provides a Cloudant database instance
+   and a collection of nodes that make it easy to access various IBM Cloud services.
 
-3. This will present you with two options:
-
-    1. **Node-RED Starter** - a vanilla Node-RED instance
-
-    2. **Internet of Things Platform Starter** - this gives you everything you need
-       to start quickly using Node-RED with the Watson IoT Platform, including
-       some default flows to show how things work
-
-   In both cases you will get:
-
-     - a Cloudant database instance to store your flow configuration    
-     - a collection of nodes that make it easy to access various Bluemix services, including
-       both the Watson IoT platform and the Watson Cognitive services
-
-4. Click the starter application you want to use, give it a name and click create.
+3. Click the starter application you want to use, give it a name and click create.
 
 A couple of minutes later, you'll be able to access your instance of Node-RED at `https://<yourAppName>.mybluemix.net`
-
 
 #### Customising your Node-RED application
 
@@ -69,7 +57,7 @@ add the required node modules in the `dependencies` section. The format is:
 The application's package.json is setup to grab the latest stable release of Node-RED.
 To trigger an upgrade following a new release being made available:
 
-1. Per default [IBM Cloud maintains a cache directory](https://console.bluemix.net/docs/runtimes/nodejs/configurationOptions.html#cache_behavior) per node application, to store resolved dependencies so they are not downloaded and installed every time. For updates this cache should be disabled. Set the NODE_MODULES_CACHE environment variable to false. You can either do this on your application's IBM Cloud console page (Runtime -> Environment Variables), or by using the cf command-line:
+1. Applications running in the Cloud Foundry space of IBM Cloud maintain a cache directory per node application, to store resolved dependencies so they are not downloaded and installed every time the application is restaged. To update the dependencies, including the version of node-RED, this cache must be disabled. Set the NODE_MODULES_CACHE environment variable to false. You can either do this on your application's IBM Cloud console page (Runtime -> Environment Variables), or by using the cf command-line:
 
         cf set-env [APPLICATION_NAME] NODE_MODULES_CACHE false
 
@@ -77,7 +65,7 @@ To trigger an upgrade following a new release being made available:
 
         cf restage [APPLICATION_NAME]
 
-3. If you are upgrade to Node-RED 0.20 or later, you **must** ensure your application is running on Node.js 8 or later. To do that, edit you application `package.json` file - see below for how to edit the file. Update the `engines` property to `8.x` if it is not currently set to that.
+3. If you are upgrade to Node-RED 0.20 or later, you **must** ensure your application is running on Node.js 10 or later. To do that, edit you application `package.json` file - see below for how to edit the file. Update the `engines` property to `10.x` if it is not currently set to that.
 
 In order to edit the file, you must enable the Continuous Delivery integration
 option via your application's IBM Cloud dashboard page. That will create a git repository
@@ -97,13 +85,13 @@ root path, delete the `httpStatic` and `httpAdminRoot` entries in the `bluemix-s
 
 ### Deploy To IBM Cloud
 
-The [Deploy To Bluemix enabled repository](https://github.com/node-red/node-red-bluemix-starter)
+The [Deploy To IBM Cloud enabled repository](https://github.com/node-red/node-red-bluemix-starter)
 lets you create your own customised Node-RED application that can then
 be deployed to IBM Cloud with a couple clicks.
 
 You can try it out now by clicking here:
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/node-red/node-red-bluemix-starter.git)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibmets/node-red-bluemix-starter.git)
 
 When you click the button, you are taken to IBM Cloud where you get a pick a name
 for your application at which point the platform takes over, grabs the code from
