@@ -41,15 +41,19 @@ $(function() {
     }
     function calculatePositions() {
         positions = [];
-        $(".docs-content h3,.docs-content h4").each(function() {
+        $(".docs-content > div >  h3,.docs-content > div >  h4").each(function() {
             positions.push({
                 el: $("#toc-item-"+$(this).attr('id')),
-                pos: $(this).position().top+$(this).height()+parseInt($(this).css("marginTop"))
+                orig: $(this),
+                pos: $(this).offset().top +parseInt($(this).css("marginTop"))
             });
         });
     }
 
     function getCurrentItem() {
+        if (positions.length === 0) {
+            return;
+        }
         var top = $(window).scrollTop();
         var previous = positions[0].el;
         for (var i=0;i<positions.length;i++) {
@@ -75,9 +79,10 @@ $(function() {
     }
     $(window).resize(resizeWindow);
     $(window).on("scroll",scrollWindow);
-
-    resizeWindow();
-    scrollWindow();
+    setTimeout(function() {
+        resizeWindow();
+        scrollWindow();
+    },500);
 
 });
 </script>
