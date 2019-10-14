@@ -7,9 +7,8 @@ redirect_from:
   - /docs/platforms/docker
 ---
 
-
 This guide assumes you have some basic familiarity with Docker and the
-[Docker Command Line](https://docs.docker.com/engine/reference/commandline/cli/). It describes some of the many ways Node-RED can be run under Docker and has support for multiple architectures (amd64, arm32v6, arm32v7 and arm64v8).
+[Docker Command Line](https://docs.docker.com/engine/reference/commandline/cli/). It describes some of the many ways Node-RED can be run under Docker and has support for multiple architectures (amd64, arm32v6, arm32v7, arm64v8 and s390x).
 
 As of Node-RED 1.0 this project provides the build for the `nodered/node-red` container on [Docker Hub](https://hub.docker.com/r/nodered/node-red/). Note: the name has changed to nodered/node-red.
 
@@ -26,7 +25,7 @@ Let's dissect that command:
         -it                     - attach a terminal session so we can see what is going on
         -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
         --name mynodered        - give this machine a friendly local name
-        nodered/node-red        - the image to base it on - currently Node-RED v1.0.1
+        nodered/node-red        - the image to base it on
 
 
 Running that command should give a terminal window with a running instance of Node-RED.
@@ -34,7 +33,7 @@ Running that command should give a terminal window with a running instance of No
         Welcome to Node-RED
         ===================
 
-        03 Oct 12:57:10 - [info] Node-RED version: v1.0.1
+        03 Oct 12:57:10 - [info] Node-RED version: v1.0.2
         03 Oct 12:57:10 - [info] Node.js  version: v10.16.3
         03 Oct 12:57:10 - [info] Linux 4.9.184-linuxkit x64 LE
         03 Oct 12:57:11 - [info] Loading palette nodes
@@ -70,6 +69,8 @@ The advantage of doing this is that by giving it a name (mynodered) we can manip
 more easily, and by fixing the host port we know we are on familiar ground.
 Of course this does mean we can only run one instance at a time... but one step at a time folks...
 
+**Note**: Currently there is a bug in Docker's architecture detection that fails for Arm6 CPU - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full build label, for example:
+
 If we are happy with what we see, we can detach the terminal with `Ctrl-p` `Ctrl-q` - the
 container will keep running in the background.
 
@@ -95,7 +96,7 @@ The tag naming convention is `<node-red-version>-<node-version>-<image-type>-<ar
 - `<image-type>` is type of image and is optional, can be either _none_ or minimal.
     - _none_ : is the default and has Python 2 & Python 3 + devtools installed
     - minimal : has no Python installed and no devtools installed
-- `<architecture>` is the architecture of the Docker host system, can be either amd64, arm32v6, arm32v7, arm64.
+- `<architecture>` is the architecture of the Docker host system, can be either amd64, arm32v6, arm32v7, arm64, or s390x
 
 The minimal versions (without python and build tools) are not able to install nodes that require any locally compiled native code.
 
@@ -107,75 +108,22 @@ docker run -it -p 1880:1880 --name mynodered nodered/node-red:latest-minimal
 The Node-RED images are based on [official Node JS Alpine Linux](https://hub.docker.com/_/node/) images to keep them as small as possible.
 Using Alpine Linux reduces the built image size, but removes standard dependencies that are required for native module compilation. If you want to add dependencies with native dependencies, extend the Node-RED image with the missing packages on running containers or build new images see [docker-custom](docker-custom/README.md).
 
-The following table shows the variety of provided Node-RED images.
+See the [Github project README](https://github.com/node-red/node-red-docker/blob/master/README.md) for detailed Image, Tag and Manifest information.
 
-| **Tag**                    |**Node**| **Arch** | **Python** |**Dev**| **Base Image**         |
-|----------------------------|--------|----------|------------|-------|------------------------|
-| 1.0.1-10-amd64             |   10   | amd64    |   2.x 3.x  |  yes  | amd64/node:10-alpine   |
-| 1.0.1-10-arm32v6           |   10   | arm32v6  |   2.x 3.x  |  yes  | arm32v6/node:10-alpine |
-| 1.0.1-10-arm32v7           |   10   | arm32v7  |   2.x 3.x  |  yes  | arm32v7/node:10-alpine |
-| 1.0.1-10-arm64v8           |   10   | arm64v8  |   2.x 3.x  |  yes  | arm64v8/node:10-alpine |
-|                            |        |          |            |       |                        |
-| 1.0.1-10-minimal-amd64     |   10   | amd64    |     no     |  no   | amd64/node:10-alpine   |
-| 1.0.1-10-minimal-arm32v6   |   10   | arm32v6  |     no     |  no   | arm32v6/node:10-alpine |
-| 1.0.1-10-minimal-arm32v7   |   10   | arm32v7  |     no     |  no   | arm32v7/node:10-alpine |
-| 1.0.1-10-minimal-arm64v8   |   10   | arm64v8  |     no     |  no   | arm64v8/node:10-alpine |
-
-
-| **Tag**                    |**Node**| **Arch** | **Python** |**Dev**| **Base Image**         |
-|----------------------------|--------|----------|------------|-------|------------------------|
-| 1.0.1-12-amd64             |   12   | amd64    |   2.x 3.x  |  yes  | amd64/node:12-alpine   |
-| 1.0.1-12-arm32v6           |   12   | arm32v6  |   2.x 3.x  |  yes  | arm32v6/node:12-alpine |
-| 1.0.1-12-arm32v7           |   12   | arm32v7  |   2.x 3.x  |  yes  | arm32v7/node:12-alpine |
-| 1.0.1-12-arm64v8           |   12   | arm64v8  |   2.x 3.x  |  yes  | arm64v8/node:12-alpine |
-|                            |        |          |            |       |                        |
-| 1.0.1-12-minimal-amd64     |   12   | amd64    |     no     |  no   | amd64/node:12-alpine   |
-| 1.0.1-12-minimal-arm32v6   |   12   | arm32v6  |     no     |  no   | arm32v6/node:12-alpine |
-| 1.0.1-12-minimal-arm32v7   |   12   | arm32v7  |     no     |  no   | arm32v7/node:12-alpine |
-| 1.0.1-12-minimal-arm64v8   |   12   | arm64v8  |     no     |  no   | arm64v8/node:12-alpine |
-
-- All images have bash, tzdata, nano, curl git and openssl tools pre-installed to support Node-RED's Projects feature.
-
-### Manifest Lists
-The following table shows the provided Manifest Lists.
-
-| **Tag**                                | **Node-RED Base Image**                    |
-|----------------------------------------|--------------------------------------------|
-| latest, 1.0.1,                         | nodered/node-red:1.0.1-10-amd64            |
-| latest-10, 1.0.1-10                    | nodered/node-red:1.0.1-10-arm32v6          |
-|                                        | nodered/node-red:1.0.1-10-arm32v7          |
-|                                        | nodered/node-red:1.0.1-10-arm64v8          |
-|                                        |                                            |
-| latest-minimal, 1.0.1-minimal,         | nodered/node-red:1.0.1-10-amd64-minimal    |
-| latest-10-minimal, 1.0.1-10-minimal    | nodered/node-red:1.0.1-10-arm32v6-minimal  |
-|                                        | nodered/node-red:1.0.1-10-arm32v7-minimal  |
-|                                        | nodered/node-red:1.0.1-10-arm64v8-minimal  |
-
-| **Tag**                                | **Node-RED Base Image**                    |
-|----------------------------------------|--------------------------------------------|
-| latest-12, 1.0.1-12                    | nodered/node-red:1.0.1-12-amd64            |
-|                                        | nodered/node-red:1.0.1-12-arm32v6          |
-|                                        | nodered/node-red:1.0.1-12-arm32v7          |
-|                                        | nodered/node-red:1.0.1-12-arm64v8          |
-|                                        |                                            |
-| latest-12-minimal, 1.0.1-12-minimal    | nodered/node-red:1.0.1-12-amd64-minimal    |
-|                                        | nodered/node-red:1.0.1-12-arm32v6-minimal  |
-|                                        | nodered/node-red:1.0.1-12-arm32v7-minimal  |
-|                                        | nodered/node-red:1.0.1-12-arm64v8-minimal  |
-
-With the support of Docker manifest list, there is no need to explicitly add the tag for the architecture to use.
-When a docker run command or docker service command or docker stack command is executed, docker checks which architecture is required and verifies if it is available in the docker repository. If it does, docker pulls the matching image for it.
-
-Therefore all tags regarding Raspberry PI's are dropped.
-
-For example: suppose you are running on a Raspberry PI 3B, which has arm32v7 as architecture. Then just run the following command to pull the image (tagged by `1.0.1-10-arm32v7`), and run the container.
+For example: suppose you are running on a Raspberry PI 3B, which has arm32v7 as architecture. Then just run the following command to pull the image (tagged by `1.0.2-10-arm32v7`), and run the container.
 ```
 docker run -it -p 1880:1880 --name mynodered nodered/node-red:latest
 ```
 
-The same command can be used for running on an amd64 system, since docker discovers its running on a amd64 host and pulls the image with the matching tag (`1.0.1-10-amd64`).
+The same command can be used for running on an amd64 system, since docker discovers its running on a amd64 host and pulls the image with the matching tag (`1.0.2-10-amd64`).
 
 This gives the advantage that you don't need to know/specify which architecture you are running on and makes docker run commands and docker compose files more flexible and exchangeable across systems.
+
+**Note**: Currently there is a bug in Docker's architecture detection that fails for Arm6 CPU - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full build label, for example:
+```
+docker run -it -p 1880:1880 --name mynodered nodered/node-red:1.0.2-10-minimal-arm32v6
+```
+
 
 ### Raspberry PI - native GPIO support
 | v1.0 - BREAKING: Native GPIO support for Raspberry PI has been dropped |
@@ -197,6 +145,7 @@ Disadvantages of the native GPIO support are:
 
 For detailed install instruction please refer to the `node-red-node-pi-gpiod` [README](https://github.com/node-red/node-red-nodes/tree/master/hardware/pigpiod#node-red-node-pi-gpiod)  
 
+**Note**: There is a contributed [gpiod project](https://github.com/corbosman/node-red-gpiod) that runs the gpiod in its own container rather than on the host if required.
 
 ### Managing User Data
 
@@ -295,31 +244,6 @@ The above compose file:
 - creates a node-red-net network and attaches the container to this network
 - persists the `/data` dir inside the container to the `/mnt/docker-cluster/node-red/data` dir outside the container
 
-### Project Layout
-This repository contains Dockerfiles to build the Node-RED Docker images listed above.
-
-#### package.json
-
-The package.json is a metafile that downloads and installs the required version
-of Node-RED and any other npms you wish to install at build time. During the
-Docker build process, the dependencies are installed under `/usr/src/node-red`.
-
-The main sections to modify are
-
-    "dependencies": {
-        "node-red": "^1.0.1",           <-- set the version of Node-RED here
-        "node-red-dashboard": "*"        <-- add any extra npm packages here
-    },
-
-This is where you can pre-define any extra nodes you want installed every time
-by default, and then
-
-    "scripts"      : {
-        "start": "node-red -v $FLOWS"
-    },
-
-This is the command that starts Node-RED when the container is run.
-
 #### Startup
 
 Node-RED is started using NPM start from this `/usr/src/node-red`, with the `--userDir`
@@ -347,51 +271,22 @@ Other useful environment variables include
  - -e NODE_RED_ENABLE_SAFE_MODE=false # setting to true starts Node-RED in safe (not running) mode
  - -e NODE_RED_ENABLE_PROJECTS=false  # setting to true starts Node-RED with the projects feature enabled
 
-
-#### Node-RED Admin Tool
-
-Using the administration tool, with port forwarding on the container to the host
-system, extra nodes can be installed without leaving the host system.
-
-        $ npm install -g node-red-admin
-        $ node-red-admin install node-red-node-openwhisk
-
-This tool assumes Node-RED is available at the following address
-`http://localhost:1880`.
-
-Refreshing the browser page should now reveal the newly added node in the palette.
-
 #### Container Shell
-
-        $ docker exec -it mynodered /bin/bash
+```
+$ docker exec -it mynodered /bin/bash
+```
 
 Will give a command line inside the container - where you can then run the npm install
 command you wish - e.g.
-
-        $ cd /data
-        $ npm install node-red-node-smooth
-        $ exit
-        $ docker stop mynodered
-        $ docker start mynodered
+```
+$ cd /data
+$ npm install node-red-node-smooth
+$ exit
+$ docker stop mynodered
+$ docker start mynodered
+```
 
 Refreshing the browser page should now reveal the newly added node in the palette.
-
-#### Building Custom Image
-
-Creating a new Docker image, using the public Node-RED images as the base image,
-allows you to install extra nodes during the build process.
-
-This Dockerfile builds a custom Node-RED image with the flightaware module
-installed from NPM.
-
-```
-FROM nodered/node-red
-RUN npm install node-red-contrib-flightaware
-```
-
-Alternatively, you can modify the package.json in this repository and re-build
-the images from scratch. This will also allow you to modify the version of
-Node-RED that is installed. See [README](docker-custom/README.md) in the `docker-custom` directory.
 
 ### Running headless
 
