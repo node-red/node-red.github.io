@@ -19,7 +19,7 @@ function must have the following functions:
 [ContextStore.open()](#contextstoreopen)                       | Open the storage ready for use
 [ContextStore.close()](#contextstoreclose)                     | Close the storage
 [ContextStore.get(scope, key, callback)](#contextstoregetscope-key-callback) | Get values from the store
-[ContextStore.set(scope, key, value, callback)](#contextstoresetscope-key-value-callback) | Set values in the store
+[ContextStore.set(scope, value, key, callback)](#contextstoresetscope-value-key-callback) | Set values in the store
 [ContextStore.keys(scope, calback)](#contextstorekeysscope-callback) | Get a list of all keys in the store
 [ContextStore.delete(scope)](#contextstoredeletescope)               | Delete all keys for a given scope
 [ContextStore.clean(activeNodes)](#contextstorecleanactivenodes)     | Clean the context store
@@ -61,13 +61,13 @@ If no callback is provided, and the store supports synchronous access, the
 `get` function should return the individual value, or array of values for the keys.
 If the store does not support synchronous access it should throw an error.
 
-### ContextStore.set(scope, key, value, [callback])
+### ContextStore.set(scope, value, key, [callback])
 
 Argument | Description
 ---------|------------------------------
 scope    | the scope of the key
-key      | the key, or array of keys, to set the value(s) for.
 value    | the value, or array of values
+key      | the key, or array of keys, to set the value(s) for.
 callback | *optional* a callback function to invoke when the value is set
 
 The `key` argument can be either a String identifying a single key, or an Array
