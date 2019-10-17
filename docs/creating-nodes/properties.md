@@ -57,6 +57,14 @@ The entries in the `defaults` object can have the following attributes:
 - `type` : (string) *optional* if this property is a pointer to a
   [configuration node](config-nodes),  this identifies the type of the node.
 
+*Note:  Make sure each property of defaults is an object.
+        If, after you make a code change and restart your server, you notice the flow is empty, 
+        and that none of the nodes appear to respond to clicks, look in the console log.  You 
+        may see an error similar to the following,
+        ```Cannot use 'in' operator to search for 'required' in jquery```.
+        That could indicate that you used a string, or something else besides an object as a value 
+        for one of the properties in defaults.*
+
 ### Reserved property names
 
 There are some reserved names for properties that must not be used. These are:
