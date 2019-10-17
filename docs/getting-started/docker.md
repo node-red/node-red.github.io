@@ -70,6 +70,9 @@ more easily, and by fixing the host port we know we are on familiar ground.
 Of course this does mean we can only run one instance at a time... but one step at a time folks...
 
 **Note**: Currently there is a bug in Docker's architecture detection that fails for Arm6 CPU - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full build label, for example:
+```
+docker run -it -p 1880:1880 --name mynodered nodered/node-red:1.0.2-10-minimal-arm32v6
+```
 
 If we are happy with what we see, we can detach the terminal with `Ctrl-p` `Ctrl-q` - the
 container will keep running in the background.
