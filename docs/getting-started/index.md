@@ -101,7 +101,7 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
       <h2>AWS</h2>
     </div>
     <div class="post-content">
-      Get started running on EBS or EC2
+      Get started running on Elastic Beanstalk or EC2
     </div>
   </a>
 </div>

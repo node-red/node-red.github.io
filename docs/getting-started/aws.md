@@ -11,8 +11,9 @@ This guide takes you through the steps to get Node-RED running in an AWS environ
 
 There are two approaches:
 
-1. [Running on the AWS Elastic Beanstalk Service (EBS)](#running-on-aws-ebs)
-2. [Running under an Ubuntu image on AWS EC2](#running-on-aws-ec2-with-ubuntu)
+1. [Running on the AWS Elastic Beanstalk Service (EB)](#running-on-aws-ebs)
+2. [Running on Elastic Beanstalk with High Availability](#running-on-elastic-beanstalk-with-high-availabilty)
+3. [Running under an Ubuntu image on AWS EC2](#running-on-aws-ec2-with-ubuntu)
 
 ### Running on AWS EBS
 
@@ -24,7 +25,7 @@ There are two approaches:
 
 3. Create AWS credentials and save in a local file (~/.aws/config or Usersusername.awsconfig) as below
 
-    ```
+```
 [profile eb-cli]
 aws_access_key_id = key id
 aws_secret_access_key = access key
@@ -45,7 +46,7 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
 
 1. Create a `package.json` file with the following content (replacing "demoapp" with your app name)
 
-    ```javascript
+```javascript
 {   
     "name": "demoapp",
     "version": "1.0.0",
@@ -72,7 +73,7 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
 
 3. Edit the settings.js file to add the following entries to module.exports (setting awsRegion to that used in eb init and replacing demoapp with your app name) :
 
-    ```
+```
      awsRegion: 'eu-west-1',
      awsS3Appname: 'demoapp',
      storageModule: require('node-red-contrib-storage-s3'),
@@ -93,6 +94,16 @@ Node-RED is now accessible directly from the web url of the application. However
 Note: the public IP address also provides access to the node-red application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
 
 Your Node-RED instance is now running on EBS. Any flows you create will be saved to AWS S3 so you can tear down the environment and the flows will be accessible whenever you redeploy.
+
+### Running on Elastic Beanstalk with High Availabilty
+
+This deployment option gives you a multiple node Node-RED setup, with a shared filesystem using Amazon Elastic File System (EFS). Because it runs multiple nodes behind a load balancer, you will have high availabiliity - if a node dies, Elastic Beanstalk will replace it automgically.
+
+![solution diagram](/images/node-red-ha-on-aws.png "Node-RED on Elastic Beanstalk with High Availabilty")
+
+To get started, clone the repository here [https://github.com/guysqr/node-red-ha-on-aws](https://github.com/guysqr/node-red-ha-on-aws) and follow the simple instructions. The infrastructure is created for you by a CloudFormation template, so you don't need to know much about AWS to set it up.
+
+In addition, this deployment option enables you to run Node-RED under https and to login via Auth0 (or you can easily swap to in-built auth or any Passport-compatible ID provider).
 
 
 ### Running on AWS EC2 with Ubuntu
