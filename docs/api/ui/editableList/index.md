@@ -186,7 +186,7 @@ This callback is invoked after the main [`resize`](#options-resize) callback is 
 $("ol.list").editableList({
     resizeItem: function(row,index) {
         var originalData = $(row).data('data');
-        consol.log("Resize the row for item:", originalData)
+        console.log("Resize the row for item:", originalData)
     }
 });
 ```
