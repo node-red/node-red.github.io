@@ -47,7 +47,7 @@ property called `prefix` to the node:
 
 ### Property definitions
 
-The entries in the `defaults` object can have the following attributes:
+The entries in the `defaults` object must be objects and can have the following attributes:
 
 - `value` : (any type) the default value the property takes
 - `required` : (boolean) *optional* whether the property is required. If set to
@@ -56,14 +56,6 @@ The entries in the `defaults` object can have the following attributes:
   value of the property.
 - `type` : (string) *optional* if this property is a pointer to a
   [configuration node](config-nodes),  this identifies the type of the node.
-
-*Note:  Make sure each property of defaults is an object.
-        If, after you make a code change and restart your server, you notice the flow is empty, 
-        and that none of the nodes appear to respond to clicks, look in the console log.  You 
-        may see an error similar to the following,
-        ```Cannot use 'in' operator to search for 'required' in jquery```.
-        That could indicate that you used a string, or something else besides an object as a value 
-        for one of the properties in defaults.*
 
 ### Reserved property names
 
