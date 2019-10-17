@@ -47,7 +47,7 @@ property called `prefix` to the node:
 
 ### Property definitions
 
-The entries in the `defaults` object can have the following attributes:
+The entries in the `defaults` object must be objects and can have the following attributes:
 
 - `value` : (any type) the default value the property takes
 - `required` : (boolean) *optional* whether the property is required. If set to
