@@ -23,7 +23,7 @@ would be terrible.
 
 Instead, Node.js passes those sorts of actions to the underlying operating system,
 which is multi-threaded, and registers a callback that will be called when the
-action completes. This is the idea of the [Event Loop that is at the heart of Node.js](https://nodejs.org/uk/docs/guides/event-loop-timers-and-nexttick/).
+action completes. This is the idea of the [Event Loop that is at the heart of Node.js](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/).
 
 To overly simplify it, you can think of it as a queue of work. Each time the Event
 Loop runs, it takes the next piece of work and runs it, which may in turn cause
