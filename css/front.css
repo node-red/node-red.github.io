@@ -258,6 +258,6 @@ a.box-link:not(:first-child) {
 a.box-link img {
     width: 150px;
 }
-a.node-red-latest-version {
+.node-red-latest-version {
     color: #c19e9e;
 }

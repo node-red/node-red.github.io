@@ -26,7 +26,6 @@ Install it, and run it. Then at the prompt type
 
 Then you can point a browser to `http://localhost:1880`
 
-
 ### Notes
 
  - You can also npm install other node-red nodes such as `node-red-dashboard` in the standard way :
@@ -36,7 +35,6 @@ Then you can point a browser to `http://localhost:1880`
 
  - The `volume-down` key is the ctrl key - so `vol-down-c` can be used to "break" a running app.
  - The instructions above also install the `nano` editor, which is useful for editing files.
-
 
 ### Autostarting
 
@@ -57,8 +55,6 @@ Install add-on app - <a href="https://play.google.com/store/apps/details?id=com.
 Install add-on access into Termux
 
     apt install termux-api
-
-Link to -
 
 ### Useful links
 

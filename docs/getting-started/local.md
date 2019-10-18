@@ -45,7 +45,7 @@ sudo npm install -g --unsafe-perm node-red
 <img src="/images/logos/windows.svg" height="30">
 </div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-More information on Windows installation can be found <a href="/docs/getting-started/windows">here</a>.
+More information about installing Node-RED on Windows can be found <a href="/docs/getting-started/windows">here</a>.
 </div>
 
 This command will install Node-RED as a global module along with its dependencies.
@@ -78,6 +78,7 @@ sudo snap install node-red
 When installed as a Snap package, it will run in a secure container that does
 not have access to some extra facilities that may be needed for you to use, such as:
 
+ - access to main system storage. Can only read/write to local home directories.
  - `gcc` - needed to compile any binary components of nodes you want to install
  - `git` - needed if you want to use the Projects feature
  - direct access to gpio hardware
@@ -85,7 +86,6 @@ not have access to some extra facilities that may be needed for you to use, such
 
 You can run it in "classic" mode which reduces the container security but then
 does provide wider access.
-
 
 ### Running
 
@@ -99,20 +99,20 @@ $ node-red
 Welcome to Node-RED
 ===================
 
-26 Sep 23:43:39 - [info] Node-RED version: v1.0.0
-26 Sep 23:43:39 - [info] Node.js  version: v10.16.3
-26 Sep 23:43:39 - [info] Darwin 18.7.0 x64 LE
-26 Sep 23:43:39 - [info] Loading palette nodes
-26 Sep 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
-26 Sep 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
-26 Sep 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
-26 Sep 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
-26 Sep 23:43:44 - [info] User directory : /Users/nol/.node-red
-26 Sep 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
-26 Sep 23:43:44 - [info] Creating new flows file : flows_noltop.json
-26 Sep 23:43:44 - [info] Starting flows
-26 Sep 23:43:44 - [info] Started flows
-26 Sep 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
+11 Oct 23:43:39 - [info] Node-RED version: v1.0.2
+11 Oct 23:43:39 - [info] Node.js  version: v10.16.3
+11 Oct 23:43:39 - [info] Darwin 18.7.0 x64 LE
+11 Oct 23:43:39 - [info] Loading palette nodes
+11 Oct 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
+11 Oct 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
+11 Oct 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
+11 Oct 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
+11 Oct 23:43:44 - [info] User directory : /Users/nol/.node-red
+11 Oct 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
+11 Oct 23:43:44 - [info] Creating new flows file : flows_noltop.json
+11 Oct 23:43:44 - [info] Starting flows
+11 Oct 23:43:44 - [info] Started flows
+11 Oct 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
 ```
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
