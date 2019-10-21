@@ -16,6 +16,7 @@ was renamed to `nodered/node-red`.
 Previous 0.20.x versions are still available at https://hub.docker.com/r/nodered/node-red-docker.
 
 ### Quick Start
+
 To run in Docker in its simplest form just run:
 
     docker run -it -p 1880:1880 --name mynodered nodered/node-red
@@ -116,6 +117,7 @@ This can either be done using a bind mount or a named data volume.
 Node-RED uses the `/data` directory inside the container to store user configuration data.
 
 #### Using a Host Directory for Persistence (Bind Mount)
+
 To save your Node-RED user directory inside the container to a host directory outside the container, you can use the
 command below. To allow access to this host directory, the node-red user (default uid=1000) inside the container must
 have the same uid as the owner of the host directory.
@@ -147,9 +149,15 @@ local               node_red_user_data
 $ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
 ```
 
+If you need to backup the data from the mounted volume you can access it while the container is running.
+```
+$ docker cp  mynodered:/data  /your/backup/directory
+```
+
 Using Node-RED to create and deploy some sample flows, we can now destroy the
 container and start a new instance without losing our user data.
 ```
+$ docker stop mynodered
 $ docker rm mynodered
 $ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
 ```
@@ -232,30 +240,22 @@ docker run -it -p 1880:1880 -e NODE_OPTIONS="--max_old_space_size=128" nodered/n
 
 ### Running headless
 
-The barest minimum we need to just run Node-RED is
-
-    $ docker run -d -p 1880 --name mynodered nodered/node-red
-
-This will create a local running instance of a machine - that will have some
-docker id number and be running on a random port... to find out run
-
-    $ docker ps
-    CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS                                            NAMES
-dd78e5bab6c4        nodered/node-red             "npm start -- --user…"   7 seconds ago       Up 5 seconds        0.0.0.0:32768->1880/tcp                          charming_chatterjee
-    $
-
-You can now point a browser to the host machine on the tcp port reported back, so in the example
-above browse to `http://{host ip}:32768`
+To run headless, (i.e. in the background), just replace the `-it` in most previous commands
+with `-d`, for example:
+```
+docker run -d -p 1880:1880 --name mynodered nodered/node-red
+```
 
 ### Container Shell
 
 Once it is running headless you can use the following command to get access back into the container.
 ```
 $ docker exec -it mynodered /bin/bash
+bash-4.4$ 
 ```
 
 Will give a command line inside the container - where you can then run the npm install
-command you wish - e.g.
+command you wish - for example
 ```
 bash-4.4$ npm install node-red-dashboard
 bash-4.4$ exit
@@ -263,7 +263,25 @@ $ docker stop mynodered
 $ docker start mynodered
 ```
 
-Refreshing the browser page should now reveal the newly added node in the palette.
+Refreshing the browser page should now reveal the newly added nodes in the palette.
+
+### Multiple Instances
+
+Running
+```
+docker run -d -p 1880 nodered/node-red
+```
+will create a local running instance of a machine. Note: we did not specify a name.
+
+This container will have an id number and be running on a random port... to find out which port, run `docker ps`
+```
+$ docker ps
+CONTAINER ID  IMAGE             COMMAND                 CREATED         STATUS        PORTS                    NAMES
+860258cab092  nodered/node-red  "npm start -- --user…"  10 seconds ago  Up 9 seconds  0.0.0.0:32768->1880/tcp  dazzling_euler
+```
+
+You can now point a browser to the host machine on the tcp port reported back, so in the example
+above browse to `http://{host ip}:32768`
 
 ### Linking Containers
 
@@ -271,13 +289,13 @@ You can link containers "internally" within the docker runtime by using the --li
 
 For example I have a simple MQTT broker container available as
 
-        docker run -it --name mybroker eclipse-mosquitto
+    docker run -it --name mybroker eclipse-mosquitto
 
 (no need to expose the port 1883 globally unless you want to... as we do magic below)
 
 Then run nodered docker - but this time with a link parameter (name:alias)
 
-        docker run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red
+    docker run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red
 
 the magic here being the `--link` that inserts a entry into the node-red instance
 hosts file called *broker* that links to the external mybroker instance....  but we do
@@ -291,6 +309,7 @@ This way the internal broker is not exposed outside of the docker host - of cour
 you may add `-p 1883:1883`  etc to the broker run command if you want to see it...
 
 ### Raspberry PI - native GPIO support
+
 | v1.0 - BREAKING: Native GPIO support for Raspberry PI has been dropped |
 | --- |
 The replacement for native GPIO is [node-red-node-pi-gpiod](https://github.com/node-red/node-red-nodes/tree/master/hardware/pigpiod).
@@ -310,6 +329,13 @@ Disadvantages of the native GPIO support are:
   4. Configure `pi gpiod` nodes to connect to `PiGPIOd daemon`. Often the host machine will have an IP 172.17.0.1 port 8888 - but not always. You can use `docker exec -it mynodered ip route show default | awk '/default/ {print $3}'` to check.
 
 **Note**: There is a contributed [gpiod project](https://github.com/corbosman/node-red-gpiod) that runs the gpiod in its own container rather than on the host if required.
+
+### Serial Port - Dialout - Adding Groups
+
+To access the host serial port you may need to add the container to the `dialout` group. This can be enabled by adding `--group-add dialout` to the start command. For example
+```
+docker run -it -p 1880:1880 --group-add dialout --name mynodered nodered/node-red
+```
 
 ---
 
