@@ -14,7 +14,7 @@ Version | Support Level | Notes
  9.x  | *Unsupported* |
  **10.x**  | **Recommended** |
   11.x  | *Unsupported* |
-  12.x  | **Supported** |  
+  **12.x**  | **Supported** |  
 
 
 We try to stay up to date with Node.js releases. Our goal is to support
