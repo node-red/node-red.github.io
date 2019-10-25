@@ -93,7 +93,7 @@ Using Alpine Linux reduces the built image size, but removes standard dependenci
 
 See the [Github project README](https://github.com/node-red/node-red-docker/blob/master/README.md) for detailed Image, Tag and Manifest information.
 
-For example: suppose you are running on a Raspberry PI 3B, which has arm32v7 as architecture. Then just run the following command to pull the image (tagged by `1.0.2-10-arm32v7`), and run the container.
+For example: suppose you are running on a Raspberry PI 3B, which has `arm32v7` as architecture. Then just run the following command to pull the image (tagged by `1.0.2-10-arm32v7`), and run the container.
 ```
 docker run -it -p 1880:1880 --name mynodered nodered/node-red:latest
 ```
@@ -102,7 +102,7 @@ The same command can be used for running on an amd64 system, since Docker discov
 
 This has the advantage that you don't need to know/specify which architecture you are running on and makes docker run commands and docker compose files more flexible and exchangeable across systems.
 
-**Note**: Currently there is a bug in Docker's architecture detection that fails for Arm6 CPU - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full build label, for example:
+**Note**: Currently there is a bug in Docker's architecture detection that fails for `arm32v6` - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full image tag, for example:
 ```
 docker run -it -p 1880:1880 --name mynodered nodered/node-red:1.0.2-10-arm32v6
 ```
