@@ -125,7 +125,7 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
       <h2>Google Cloud Platform</h2>
     </div>
     <div class="post-content">
-      Running on an virtual machines on Google infrastructure
+      Running on an Virtual Machine on Google infrastructure
     </div>
   </a>
 </div>
