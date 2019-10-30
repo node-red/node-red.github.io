@@ -1,39 +1,47 @@
 ---
 layout: docs-getting-started
-title: Running on Microsoft Azure
+title: Running on Google Cloud Platform (GCP)
 slug: azure
 toc: toc-user-guide.html
 redirect_from:
-  - /docs/platforms/azure
+  - /docs/platforms/gcp
 ---
 
-This guide takes you through the steps to get Node-RED running on an Azure
+This guide takes you through the steps to get Node-RED running on an GCP
 Virtual Machine instance.
 
 #### Create the base image
 
-1. Log in to the [Azure console](https://portal.azure.com/)
+1. Log in to the [Google Cloud Platform Console](https://console.cloud.google.com/)
 
-2. Click to add a New ... Virtual Machine
+1. Select your project.
 
-3. In the list of Virtual Machines, select **Ubuntu Server**, then click 'Create'
+1. Click `Compute Engine` >> `VM instances` >> `Create`
 
-4. Give your machine a name, the username you want to use and the authentication
-   details you want to use to access the instance
+1. Give your machine a name, Region, Zone. [more info](https://cloud.google.com/compute/docs/regions-zones)
 
-5. Choose the Size of your instance. Remember that node.js is single-threaded so
+1. Choose the Size of your instance. Remember that node.js is single-threaded so
    there's no benefit to picking a size with multiple cores for a simple node-red
-   instance. `A1 Basic` is a good starting point
+   instance. `f1-micro(1 vCPU, 614 MB memory)` is a good starting point.
 
-6. On the 'Settings' step, click on the 'Network security group' option. Add a
-   new 'Inbound rule' with the options set as:
+1. In the list of Boot disk, select **Ubuntu**, then click 'Select'.
+
+1. Click 'Create' on the Settings page, check the Summary then click 'Ok' to deploy
+   the new instance.
+ 
+1. Click `VPC network` >> `VPC networks` >> `Firewall rules` >> `CREATE FIREWALL RULE`
+   new 'Create a firewall rule' with the options set as:
      - Name: node-red-editor
+     - Network: default
      - Priority: 1010
-     - Protocol: TCP
-     - Destination port range: 1880
-
-7. Click 'Ok' on the Settings page, check the Summary then click 'Ok' to deploy
-   the new instance
+     - Direction of traffic: Ingress
+     - Action on match: Allow
+     - Targets: ALL Instances in the network
+     - Source filter: IP ranges
+     - Source IP ranges: 0.0.0.0/0 
+     - Protocols and ports: Specified protocols and ports
+       - tcp: 1880
+   Click `Create` on the Settings page.
 
 After a couple of minutes your instance will be running. In the console
 you can find your instance's IP address
