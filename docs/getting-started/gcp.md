@@ -1,7 +1,7 @@
 ---
 layout: docs-getting-started
 title: Running on Google Cloud Platform (GCP)
-slug: azure
+slug: gcp
 toc: toc-user-guide.html
 redirect_from:
   - /docs/platforms/gcp
