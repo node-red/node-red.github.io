@@ -16,21 +16,9 @@ Virtual Machine instance.
 
 1. Select your project.
 
-1. Click `Compute Engine` >> `VM instances` >> `Create`
-
-1. Give your machine a name, Region, Zone. [more info](https://cloud.google.com/compute/docs/regions-zones)
-
-1. Choose the Size of your instance. Remember that node.js is single-threaded so
-   there's no benefit to picking a size with multiple cores for a simple node-red
-   instance. `f1-micro(1 vCPU, 614 MB memory)` is a good starting point.
-
-1. In the list of Boot disk, select **Ubuntu**, then click 'Select'.
-
-1. Click 'Create' on the Settings page, check the Summary then click 'Ok' to deploy
-   the new instance.
- 
 1. Click `VPC network` >> `VPC networks` >> `Firewall rules` >> `CREATE FIREWALL RULE`
-   new 'Create a firewall rule' with the options set as:
+
+   new `Create a firewall rule` with the options set as:
      - Name: node-red-editor
      - Network: default
      - Priority: 1010
@@ -41,10 +29,29 @@ Virtual Machine instance.
      - Source IP ranges: 0.0.0.0/0 
      - Protocols and ports: Specified protocols and ports
        - tcp: 1880
+
    Click `Create` on the Settings page.
 
+1. Click `Compute Engine` >> `VM instances` >> `Create`
+
+   Give your machine info 
+     - Name: node-red-instance
+     - Region: us-central1
+     - Zone: us-central1-a
+     - Machine configuration
+       - Machine family
+         - General-purpose
+       - Series
+         - N1
+       - Machine type
+         - f1-micro
+     - Boot disk
+       - Ubuntu 18.04 LTS
+
+   Click `Create` on the Settings page, then the instance will start to be created.
+ 
 After a couple of minutes your instance will be running. In the console
-you can find your instance's IP address
+you can find your instance's IP address as `External IP`.
 
 #### Setup Node-RED
 
