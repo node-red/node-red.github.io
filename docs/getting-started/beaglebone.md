@@ -10,14 +10,18 @@ redirect_from:
 
 ### Installing
 
-We recommend using the latest Debian 9 Stretch based SD card images - from
- <a href="https://beagleboard.org/latest-images" target="bbb">beagleboard.org</a>.
+If you want the latest Node-RED 1.x then you need to use the Alpha Testing - Debian (10) Buster image from
+ <a href="https://beagleboard.org/latest-images" target="bbb">beagleboard.org</a> - and then do a full upgrade to latest. 
 
-The 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start,
+    sudo apt update && sudo apt full-upgrade
+
+All the 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start,
 so you can just boot and point your browser at your BeagleBone, port 1880.
 
 The 2GB console version suitable for flashing to older eMMC versions of the BBB is not recommended but can be
 installed as per the manual installation instructions below.
+
+### Running
 
 To view the Node-RED log
 
