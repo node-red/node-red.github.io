@@ -15,6 +15,13 @@ If you want the latest Node-RED 1.x then you need to use the Alpha Testing - Deb
 
     sudo apt update && sudo apt full-upgrade
 
+Currently, Debian (10) Buster is only available as an SD card image. If flashing the image to the eMMC is desired, the line
+
+    cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+
+should be uncommented in the /boot/uEnv.txt file. The image can then be flashed to the eMMC like any 'flasher' image on the
+BeagleBoard website.
+	
 All the 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start,
 so you can just boot and point your browser at your BeagleBone, port 1880.
 
