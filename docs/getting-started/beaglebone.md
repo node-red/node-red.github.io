@@ -20,7 +20,9 @@ Currently, Debian (10) Buster is only available as an SD card image. If flashing
     cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
 
 should be uncommented in the /boot/uEnv.txt file. The image can then be flashed to the eMMC like any 'flasher' image on the
-BeagleBoard website.
+BeagleBoard website. To do this, insert the SD card with the BeagleBone powered off, hold down the S2 button and apply power.
+Once the LEDs start flashing, release the button. Flashing will take between 5 and 25 minutes. The BeagleBone will power down
+at the end of this process, the SD card can be removed, and the BeagleBone will now boot from the eMMC.
 
 All the 4GB images for BeagleBone boards already have Node-RED pre-installed and set to auto-start,
 so you can just boot and point your browser at your BeagleBone, port 1880.
