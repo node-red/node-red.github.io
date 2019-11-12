@@ -15,11 +15,11 @@ If you want the latest Node-RED 1.x then you need to use the Alpha Testing - Deb
 
     sudo apt update && sudo apt full-upgrade
 
-Currently, Debian (10) Buster is only available as an SD card image. If flashing the image to the eMMC is desired, the line
+Currently, Debian (10) Buster is only available as an SD card image. If you wish to flash the image to the eMMC, edit the file `/boot/uEnv.txt` file, and uncomment the line
 
     cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
 
-should be uncommented in the /boot/uEnv.txt file. The image can then be flashed to the eMMC like any 'flasher' image on the
+The image can then be flashed to the eMMC like any 'flasher' image on the
 BeagleBoard website. To do this, insert the SD card with the BeagleBone powered off, hold down the S2 button and apply power.
 Once the LEDs start flashing, release the button. Flashing will take between 5 and 25 minutes. The BeagleBone will power down
 at the end of this process, the SD card can be removed, and the BeagleBone will now boot from the eMMC.
