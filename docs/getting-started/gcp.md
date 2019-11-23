@@ -60,23 +60,35 @@ The next task is to log into the instance then install node.js and Node-RED.
 Log into your instance using the authentication details you specified in the
 previous stage.
 
-Once logged in you need to install node.js and Node-RED
+Once logged in you need to install node.js and Node-RED using manual install. 
+
+[NodeSource Node.js Binary Distributions](https://github.com/nodesource/distributions#manual-installation)
+
+Remove the old PPA if it exists
 
        sudo add-apt-repository -y -r ppa:chris-lea/node.js
        sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
        sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 
+Add the NodeSource package signing key
+
        curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 
+Add the desired NodeSource repository
+
+       VERSION=node_10.x
        DISTRO="$(lsb_release -s -c)"
        echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
        echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
 
+Update package lists and install Node.js
+
        sudo apt-get update
        sudo apt-get install nodejs
 
-       curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-       sudo apt-get install -y nodejs build-essential
+Install Node-RED
+
+       sudo apt-get install build-essential
        sudo npm install -g node-red
 
 
