@@ -66,7 +66,6 @@ Once logged in you need to install node.js and Node-RED
        sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
        sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 
-
        curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 
        DISTRO="$(lsb_release -s -c)"
