@@ -191,7 +191,7 @@ Using this framework, you can create test flows, and then assert that your node 
 
 ```javascript
 var should = require("should");
-var helper = require("node-red-test-helper");
+var helper = require("node-red-node-test-helper");
 var lowerNode = require("../lower-case.js");
 
 describe('lower-case Node', function () {
