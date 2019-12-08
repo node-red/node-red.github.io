@@ -38,7 +38,7 @@ Then you can point a browser to `http://localhost:1880`
 
 ### Autostarting
 
-For a discussion on autostarting apps within Termux - see <a href="https://github.com/termux/termux-app/issues/14">this thread</a> on the Termux Github project.
+The recommended way of starting applications running in Termux is using the [Termux:Boot application](https://github.com/termux/termux-boot) (available from [F-droid](https://f-droid.org/en/packages/com.termux.boot/) or [Play Store](https://play.google.com/store/apps/details?id=com.termux.boot)).
 
 We have found this other app useful for autostarting Termux on boot - <a href="https://play.google.com/store/apps/details?id=com.autostart&amp;hl=en_GB">Autostart - No Root</a>
 
