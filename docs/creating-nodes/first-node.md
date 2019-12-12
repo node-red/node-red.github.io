@@ -191,32 +191,40 @@ Using this framework, you can create test flows, and then assert that your node 
 
 ```javascript
 var should = require("should");
-var helper = require("node-red-test-helper");
+var helper = require("node-red-node-test-helper");
 var lowerNode = require("../lower-case.js");
 
-describe('lower-case Node', function () {
+helper.init(require.resolve("node-red"));
 
-  afterEach(function () {
-    helper.unload();
+describe("lower-case Node", function() {
+  beforeEach(function(done) {
+    helper.startServer(done);
   });
 
-  it('should be loaded', function (done) {
-    var flow = [{ id: "n1", type: "lower-case", name: "test name" }];
-    helper.load(lowerNode, flow, function () {
+  afterEach(function(done) {
+    helper.unload();
+    helper.stopServer(done);
+  });
+
+  it("should be loaded", function(done) {
+    var flow = [{ id: "n1", type: "lower-case", name: "lower-case" }];
+    helper.load(lowerNode, flow, function() {
       var n1 = helper.getNode("n1");
-      n1.should.have.property('name', 'test name');
+      n1.should.have.property("name", "lower-case");
       done();
     });
   });
 
-  it('should make payload lower case', function (done) {
-    var flow = [{ id: "n1", type: "lower-case", name: "test name",wires:[["n2"]] },
-    { id: "n2", type: "helper" }];
-    helper.load(lowerNode, flow, function () {
+  it("should make payload lower case", function(done) {
+    var flow = [
+      { id: "n1", type: "lower-case", name: "lower-case", wires: [["n2"]] },
+      { id: "n2", type: "helper" },
+    ];
+    helper.load(lowerNode, flow, function() {
       var n2 = helper.getNode("n2");
       var n1 = helper.getNode("n1");
-      n2.on("input", function (msg) {
-        msg.should.have.property('payload', 'uppercase');
+      n2.on("input", function(msg) {
+        msg.should.have.property("payload", "uppercase");
         done();
       });
       n1.receive({ payload: "UpperCase" });
