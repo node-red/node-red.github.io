@@ -15,6 +15,9 @@ slug:
 [<span>POST</span>/auth/token](post/auth/token)             | Exchange credentials for access token
 [<span>POST</span>/auth/revoke](post/auth/revoke)           | Revoke an access token
 [<span>GET</span>/settings](get/settings)                   | Get the runtime settings
+[<span>GET</span>/projects](get/projects)                   | Get the list of projects
+[<span>POST</span>/projects](post/projects)                 | Create a project
+[<span>DELETE</span>/projects/:id](delete/projects)          | Delete an individual project
 [<span>GET</span>/flows](get/flows)                         | Get the active flow configuration
 [<span>POST</span>/flows](post/flows)                       | Set the active flow configuration
 [<span>POST</span>/flow](post/flow)                         | Add a flow to the active configuration
