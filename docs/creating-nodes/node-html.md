@@ -13,11 +13,11 @@ contains three distinct part, each wrapped in its own `<script>` tag:
    what icon to use. It is within a regular javascript script tag
 
 2. the edit template that defines the content of the edit dialog for the node.
-   It is defined in a script of type `text/x-red` with `data-template-name` set
+   It is defined in a script of type `text/html` with `data-template-name` set
    to the [type of the node](#node-type).
 
 3. the help text that gets displayed in the Info sidebar tab. It is defined in a
-   script of type `text/x-red` with `data-help-name` set to the
+   script of type `text/html` with `data-help-name` set to the
    [type of the node](#node-type).
 
 
@@ -80,7 +80,7 @@ editor. It is an object with the following properties:
 
 The edit template for a node describes the content of its edit dialog.
 
-    <script type="text/x-red" data-template-name="node-type">
+    <script type="text/html" data-template-name="node-type">
         <div class="form-row">
             <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
             <input type="text" id="node-input-name" placeholder="Name">
@@ -115,7 +115,7 @@ The content of the first `<p>` tag is used as the tooltip when hovering over
 nodes in the palette.
 
 ~~~~html
-<script type="text/x-red" data-help-name="node-type">
+<script type="text/html" data-help-name="node-type">
    <p>Some useful help text to introduce the node.</p>
    <h3>Outputs</h3>
        <dl class="message-properties">

@@ -34,7 +34,7 @@ key differences:
     });
 </script>
 
-<script type="text/x-red" data-template-name="remote-server">
+<script type="text/html" data-template-name="remote-server">
     <div class="form-row">
         <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
         <input type="text" id="node-config-input-host">
