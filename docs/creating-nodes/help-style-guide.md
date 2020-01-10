@@ -109,7 +109,7 @@ a consistent appearance between nodes.
 The above example was created with the following HTML.
 
 ~~~~~html
-<script type="text/x-red" data-help-name="node-type">
+<script type="text/html" data-help-name="node-type">
 <p>Connects to a MQTT broker and publishes messages.</p>
 
 <h3>Inputs</h3>

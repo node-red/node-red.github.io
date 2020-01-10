@@ -125,14 +125,14 @@ For more information about the runtime part of the node, see [here](node-js).
     });
 </script>
 
-<script type="text/x-red" data-template-name="lower-case">
+<script type="text/html" data-template-name="lower-case">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="lower-case">
+<script type="text/html" data-help-name="lower-case">
     <p>A simple node that converts the message payloads into all lower-case characters</p>
 </script>
 ```
