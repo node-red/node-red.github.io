@@ -86,7 +86,7 @@ available instances of the config node, along with a button to open the config
 node edit dialog.
 
 <div style="text-align: center">
-    <img title="node config select" src="images/node_config_dialog.png"/>
+    <img title="node config select" src="images/node_config_dialog.png" width="500px"/>
 </div>
 
 
