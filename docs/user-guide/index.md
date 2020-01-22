@@ -25,6 +25,7 @@ title: User Guide
 - [Working with context](/docs/user-guide/context)
 - [Working with messages](/docs/user-guide/messages)
 - [Using environment variables](/docs/user-guide/environment-variables)
+- [Handling errors](/docs/user-guide/handling-errors)
 - [Working with projects](/docs/user-guide/projects)
 - [Configuring Node-RED](/docs/user-guide/configuration)
 - [Command-line Admin](/docs/user-guide/node-red-admin)
