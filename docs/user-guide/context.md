@@ -5,6 +5,9 @@ title: Working with context
 slug: context
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jLI0DcXMQOs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ### What is context?
 
 Node-RED provides a way to store information that can be shared between different

@@ -9,6 +9,8 @@ slug: messages
 A Node-RED flow works by passing messages between nodes. The messages are simple
 JavaScript objects that can have any set of properties.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z-mwVUBhcL4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Messages usually have a `payload` property - this is the default property that
 most nodes will work with.
 
@@ -99,6 +101,8 @@ many properties, of which only some are needed.
 There are two main nodes for modifying a message, the Function node and the Change
 node.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zaBmfhxEOH8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The Function node allows you to run any JavaScript code against the message. This
 gives you complete flexibility in what you do with the message, but does require
 familiarity with JavaScript and is unnecessary for many simple cases. More
@@ -155,6 +159,8 @@ A message sequence is an ordered series of messages that are related in some way
 For example, the Split node can turn a single message whose `payload` is an Array,
 into a message sequence where each message has a `payload` corresponding to one
 of the array elements.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/c6qXLko0n48" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 #### Understanding `msg.parts`
 
