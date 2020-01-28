@@ -34,7 +34,7 @@ When a node logs an error, it will appear in the Debug sidebar.
   <p class="caption">Error message in the Debug sidebar</p>
 </div>
 
-This shows the error message, the data/time of the error, and the node that logged
+This shows the error message, the date/time of the error, and the node that logged
 the error. As with other Debug messages, hovering over it will highlight the node
 in the workspace. If it isn't in the current view, then clicking on the node's
 name in the top corner will reveal it in the workspace.
