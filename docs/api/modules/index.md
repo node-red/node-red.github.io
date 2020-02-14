@@ -5,6 +5,5 @@ title: Module APIs
 slug: modules
 ---
 
+ - [1.0](v/1.0)
  - [0.20.0](v/0.20.0)
- - [0.20.0-beta.4](v/0.20.0-beta.4)
- - [0.20.0-beta.2](v/0.20.0-beta.2)

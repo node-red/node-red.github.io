@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@node-red/runtime - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link href="https://nodered.org/css/simplegrid.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/style.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/front.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/docs.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/blog.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/api.css" rel="stylesheet" media="screen">
+    <style>
+        .nav-item { font-size: 0.9em; display: none }
+        td:first-child span {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9em;
+            background: none;
+            border: none;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="brand"><a href="/">Node-RED</a></div>
+            <ul class="navigation">
+                <li {% if page.url == "/" %}class="current"{% endif %}><a href="/">home</a></li>
+                <li {% if page.url contains '/about/' %}class="current"{% endif %}><a href="/about/">about</a></li>
+                <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="/blog/">blog</a></li>
+                <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
+                <li><a href="https://discourse.nodered.org/">forum</a></li>
+                <li><a href="https://flows.nodered.org/">flows</a></li>
+                <li><a href="https://github.com/node-red">github</a></li>
+            </ul>
+            <a href="#" class="menu"><i class="fa fa-reorder fa-2x"></i></a>
+        </div>
+    </div>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+
+<div class="docs">
+  <div class="grid">
+    <div class="col-3-12">
+<ul class="toc">
+    <li><a href="/docs/api/">← back</a></li>
+    <li class="active"><a href="index.html">Module APIs</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+</ul>
+</div>
+    <div class="col-9-12">
+      <div class="docs-content">
+    <!-- 
+        <h1 class="docs-title">@node-red/runtime</h1>
+     -->
+
+    
+
+
+
+
+<section>
+
+<header>
+        <h2>@node-red/runtime
+        </h2>
+        
+</header>
+
+<article>
+    <div class="container-overview"  style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+    
+        
+            <div class="description"><p>This module provides the core runtime component of Node-RED.
+It does <em>not</em> include the Node-RED editor. All interaction with
+this module is done using the api provided.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+
+<div class="widget" style="padding-bottom: 40px; border-bottom: 1px solid #eee;">
+    <div class="col-6-12">
+        
+        <h4>Functions</h4>
+        <table>
+            <tbody>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.init">init <span class="type-signature">( settings, server, adminApi )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.isStarted">isStarted <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.start">start <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.stop">stop <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.version">version <span class="type-signature">( opts )</span></a></td></tr>
+                    
+            </tbody>
+         </table>
+         
+     </div>
+     <div class="col-6-12">
+                
+                <h4>Members</h4>
+                <table>
+                    <tbody>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.comms">comms</a> <span class="type-signature"> : { <a href="@node-red_runtime_comms.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_comms\n    */","meta":{"range":[10681,10705],"filename":"index.js","lineno":304,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001580","name":"comms","type":"MemberExpression","value":"externalAPI.comms"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_comms"],"name":"comms","longname":"@node-red/runtime.comms","kind":"member","scope":"static","___id":"T000002R000167","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".comms","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_comms.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.context">context</a> <span class="type-signature"> : { <a href="@node-red_runtime_context.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_context\n    */","meta":{"range":[11403,11431],"filename":"index.js","lineno":334,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001604","name":"context","type":"MemberExpression","value":"externalAPI.context"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_context"],"name":"context","longname":"@node-red/runtime.context","kind":"member","scope":"static","___id":"T000002R000173","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".context","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_context.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.flows">flows</a> <span class="type-signature"> : { <a href="@node-red_runtime_flows.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_flows\n    */","meta":{"range":[10797,10821],"filename":"index.js","lineno":309,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001584","name":"flows","type":"MemberExpression","value":"externalAPI.flows"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_flows"],"name":"flows","longname":"@node-red/runtime.flows","kind":"member","scope":"static","___id":"T000002R000168","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".flows","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_flows.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.library">library</a> <span class="type-signature"> : { <a href="@node-red_runtime_library.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_library\n    */","meta":{"range":[10915,10943],"filename":"index.js","lineno":314,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001588","name":"library","type":"MemberExpression","value":"externalAPI.library"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_library"],"name":"library","longname":"@node-red/runtime.library","kind":"member","scope":"static","___id":"T000002R000169","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".library","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_library.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.nodes">nodes</a> <span class="type-signature"> : { <a href="@node-red_runtime_nodes.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_nodes\n    */","meta":{"range":[11035,11059],"filename":"index.js","lineno":319,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001592","name":"nodes","type":"MemberExpression","value":"externalAPI.nodes"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_nodes"],"name":"nodes","longname":"@node-red/runtime.nodes","kind":"member","scope":"static","___id":"T000002R000170","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".nodes","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_nodes.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.projects">projects</a> <span class="type-signature"> : { <a href="@node-red_runtime_projects.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_projects\n    */","meta":{"range":[11279,11309],"filename":"index.js","lineno":329,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001600","name":"projects","type":"MemberExpression","value":"externalAPI.projects"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_projects"],"name":"projects","longname":"@node-red/runtime.projects","kind":"member","scope":"static","___id":"T000002R000172","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".projects","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_projects.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime.html#.settings">settings</a> <span class="type-signature"> : { <a href="@node-red_runtime_settings.html">...</a> }</span><script>console.log({"comment":"/**\n    * @memberof @node-red/runtime\n    * @mixes @node-red/runtime_settings\n    */","meta":{"range":[11154,11184],"filename":"index.js","lineno":324,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/runtime/lib","code":{"id":"astnode100001596","name":"settings","type":"MemberExpression","value":"externalAPI.settings"},"shortpath":"@node-red/runtime/lib/index.js"},"memberof":"@node-red/runtime","mixes":["@node-red/runtime_settings"],"name":"settings","longname":"@node-red/runtime.settings","kind":"member","scope":"static","___id":"T000002R000171","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".settings","ancestors":["<a href=\"@node-red_runtime.html\">@node-red/runtime</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_runtime_settings.html\">...</a> }</span>"})</script></td></tr>
+                    
+            </tbody>
+         </table>
+         
+    </div>
+    <br style="clear:both" />
+</div>
+
+    
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".comms"><a href="@node-red_runtime_comms.html">comms</a></h4>
+
+
+
+
+
+
+        <p>This is the comms subsystem of the runtime.</p>
+     <ul> 
+            <li><a href="@node-red_runtime_comms.html#.addConnection">addConnection( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_comms.html#.removeConnection">removeConnection( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_comms.html#.subscribe">subscribe( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_comms.html#.unsubscribe">unsubscribe( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_comms.html">@node-red/runtime_comms</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".context"><a href="@node-red_runtime_context.html">context</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_context.html#.delete">delete( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_context.html#.getValue">getValue( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_context.html">@node-red/runtime_context</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".flows"><a href="@node-red_runtime_flows.html">flows</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_flows.html#.addFlow">addFlow( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.deleteFlow">deleteFlow( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.getFlow">getFlow( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.getFlows">getFlows( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.getNodeCredentials">getNodeCredentials( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.setFlows">setFlows( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_flows.html#.updateFlow">updateFlow( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_flows.html">@node-red/runtime_flows</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".library"><a href="@node-red_runtime_library.html">library</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_library.html#.getEntry">getEntry( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_library.html#.saveEntry">saveEntry( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_library.html">@node-red/runtime_library</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".nodes"><a href="@node-red_runtime_nodes.html">nodes</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_nodes.html#.addModule">addModule( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getIcon">getIcon( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getIconList">getIconList( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getModuleCatalog">getModuleCatalog( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getModuleCatalogs">getModuleCatalogs( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getModuleInfo">getModuleInfo( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getNodeConfig">getNodeConfig( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getNodeConfigs">getNodeConfigs( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getNodeInfo">getNodeInfo( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.getNodeList">getNodeList( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.removeModule">removeModule( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.setModuleState">setModuleState( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_nodes.html#.setNodeSetState">setNodeSetState( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_nodes.html">@node-red/runtime_nodes</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".projects"><a href="@node-red_runtime_projects.html">projects</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_projects.html#.abortMerge">abortMerge( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.addRemote">addRemote( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.commit">commit( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.createProject">createProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.deleteBranch">deleteBranch( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.deleteProject">deleteProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getActiveProject">getActiveProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getBranches">getBranches( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getBranchStatus">getBranchStatus( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getCommit">getCommit( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getCommits">getCommits( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getFile">getFile( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getFileDiff">getFileDiff( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getFiles">getFiles( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getProject">getProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getRemotes">getRemotes( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.getStatus">getStatus( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.initialiseProject">initialiseProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.listProjects">listProjects( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.pull">pull( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.push">push( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.removeRemote">removeRemote( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.resolveMerge">resolveMerge( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.revertFile">revertFile( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.setActiveProject">setActiveProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.setBranch">setBranch( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.stageFile">stageFile( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.unstageFile">unstageFile( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.updateProject">updateProject( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_projects.html#.updateRemote">updateRemote( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_projects.html">@node-red/runtime_projects</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".settings"><a href="@node-red_runtime_settings.html">settings</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_runtime_settings.html#.generateUserKey">generateUserKey( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.getRuntimeSettings">getRuntimeSettings( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.getUserKey">getUserKey( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.getUserKeys">getUserKeys( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.getUserSettings">getUserSettings( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.removeUserKey">removeUserKey( opts )</a></li>
+        
+            <li><a href="@node-red_runtime_settings.html#.updateUserSettings">updateUserSettings( opts )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_runtime_settings.html">@node-red/runtime_settings</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+    
+
+    
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".init">init<span class="signature">(settings, server, adminApi)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Initialise the runtime module.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the runtime settings object</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>server</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>HTTPServer</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the http server instance for the server to use</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>adminApi</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>AdminAPI</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>an instance of @node-red/editor-api. <B>TODO</B>: This needs to be
+better abstracted.</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".isStarted">isStarted<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;Boolean>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Returns whether the runtime is started</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;Boolean></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>whether the runtime is started</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".start">start<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Start the runtime.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>resolves when the runtime is started. This does not mean the
+flows will be running as they are started asynchronously.</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".stop">stop<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Stops the runtime.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>resolves when the runtime is stopped.</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".version">version<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Returns version number of the runtime</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;String></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the runtime version number</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="links">
+    <div class="grid">
+        <div class="col-1-3">
+            <p><a href="https://nodered.org">Node-RED</a> is a visual wiring tool for the Internet of Things.</p>
+            <p>A project of the <a href="https://js.foundation/">JS Foundation</a>.</p>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://github.com/node-red">GitHub</a></li>
+                <li><a href="https://www.npmjs.com/package/node-red">npm</a></li>
+                <li><a href="/docs">Documentation</a></li>
+                <li><a href="/docs/api">APIs</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://flows.nodered.org">Flow Library</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/about/conduct">Code of Conduct</a></li>
+                <li><a href="/about/community">Community</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://twitter.com/nodered">Twitter</a></li>
+                <li><a href="https://discourse.nodered.org">Forum</a></li>
+                <li><a href="/slack">Slack</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+    prettyPrint();
+</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

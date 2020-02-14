@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>@node-red/runtime_flows - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link href="https://nodered.org/css/simplegrid.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/style.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/front.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/docs.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/blog.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/api.css" rel="stylesheet" media="screen">
+    <style>
+        .nav-item { font-size: 0.9em; display: none }
+        td:first-child span {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9em;
+            background: none;
+            border: none;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="brand"><a href="/">Node-RED</a></div>
+            <ul class="navigation">
+                <li {% if page.url == "/" %}class="current"{% endif %}><a href="/">home</a></li>
+                <li {% if page.url contains '/about/' %}class="current"{% endif %}><a href="/about/">about</a></li>
+                <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="/blog/">blog</a></li>
+                <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
+                <li><a href="https://discourse.nodered.org/">forum</a></li>
+                <li><a href="https://flows.nodered.org/">flows</a></li>
+                <li><a href="https://github.com/node-red">github</a></li>
+            </ul>
+            <a href="#" class="menu"><i class="fa fa-reorder fa-2x"></i></a>
+        </div>
+    </div>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+
+<div class="docs">
+  <div class="grid">
+    <div class="col-3-12">
+<ul class="toc">
+    <li><a href="/docs/api/">← back</a></li>
+    <li class="active"><a href="index.html">Module APIs</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+</ul>
+</div>
+    <div class="col-9-12">
+      <div class="docs-content">
+    <!-- 
+        <h1 class="docs-title">@node-red/runtime_flows</h1>
+     -->
+
+    
+
+
+
+
+<section>
+
+<header>
+        <h2>@node-red/runtime.flows
+        </h2>
+        
+</header>
+
+<article>
+    <div class="container-overview"  style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+
+<div class="widget" style="padding-bottom: 40px; border-bottom: 1px solid #eee;">
+    <div class="col-6-12">
+        
+        <h4>Functions</h4>
+        <table>
+            <tbody>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.addFlow">addFlow <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.deleteFlow">deleteFlow <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.getFlow">getFlow <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.getFlows">getFlows <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.getNodeCredentials">getNodeCredentials <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.setFlows">setFlows <span class="type-signature">( opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_runtime_flows.html#.updateFlow">updateFlow <span class="type-signature">( opts )</span></a></td></tr>
+                    
+            </tbody>
+         </table>
+         
+     </div>
+     <div class="col-6-12">
+                
+    </div>
+    <br style="clear:both" />
+</div>
+
+    
+
+    
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".addFlow">addFlow<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Adds a flow configuration</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the flow to add</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;String></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the id of the added flow</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".deleteFlow">deleteFlow<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Deletes a flow</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the id of the flow to delete</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>resolves if successful</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".getFlow">getFlow<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#Flow">Flow</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets an individual flow configuration</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the id of the flow to retrieve</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;<a href="global.html#Flow">Flow</a>></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the active flow configuration</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".getFlows">getFlows<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#Flows">Flows</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets the current flow configuration</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;<a href="global.html#Flows">Flows</a>></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the active flow configuration</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".getNodeCredentials">getNodeCredentials<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets the safe credentials for a node</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node type to return the credential information for</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node id</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;Object></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the safe credentials</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".setFlows">setFlows<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="global.html#Flows">Flows</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Sets the current flow configuration</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;<a href="global.html#Flows">Flows</a>></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the active flow configuration</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".updateFlow">updateFlow<span class="signature">(opts)</span><span class="type-signature"> &rarr; {Promise.&lt;String>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Updates an existing flow configuration</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+                    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code><a href="global.html#User">User</a></code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the user calling the api</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the id of the flow to update</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>flow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the flow configuration</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the request to log (optional)</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Promise.&lt;String></code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <ul>
+<li>the id of the updated flow</li>
+</ul>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="links">
+    <div class="grid">
+        <div class="col-1-3">
+            <p><a href="https://nodered.org">Node-RED</a> is a visual wiring tool for the Internet of Things.</p>
+            <p>A project of the <a href="https://js.foundation/">JS Foundation</a>.</p>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://github.com/node-red">GitHub</a></li>
+                <li><a href="https://www.npmjs.com/package/node-red">npm</a></li>
+                <li><a href="/docs">Documentation</a></li>
+                <li><a href="/docs/api">APIs</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://flows.nodered.org">Flow Library</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/about/conduct">Code of Conduct</a></li>
+                <li><a href="/about/community">Community</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://twitter.com/nodered">Twitter</a></li>
+                <li><a href="https://discourse.nodered.org">Forum</a></li>
+                <li><a href="/slack">Slack</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+    prettyPrint();
+</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

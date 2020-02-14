@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <link href="https://nodered.org/css/simplegrid.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/style.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/front.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/docs.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/blog.css" rel="stylesheet" media="screen">
+    <link href="https://nodered.org/css/api.css" rel="stylesheet" media="screen">
+    <style>
+        .nav-item { font-size: 0.9em; display: none }
+        td:first-child span {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9em;
+            background: none;
+            border: none;
+            width: auto;
+            text-align: left;
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-content">
+            <div class="brand"><a href="/">Node-RED</a></div>
+            <ul class="navigation">
+                <li {% if page.url == "/" %}class="current"{% endif %}><a href="/">home</a></li>
+                <li {% if page.url contains '/about/' %}class="current"{% endif %}><a href="/about/">about</a></li>
+                <li {% if page.url contains '/blog/' %}class="current"{% endif %}><a href="/blog/">blog</a></li>
+                <li {% if page.url contains '/docs/' %}class="current"{% endif %}><a href="/docs/">documentation</a></li>
+                <li><a href="https://discourse.nodered.org/">forum</a></li>
+                <li><a href="https://flows.nodered.org/">flows</a></li>
+                <li><a href="https://github.com/node-red">github</a></li>
+            </ul>
+            <a href="#" class="menu"><i class="fa fa-reorder fa-2x"></i></a>
+        </div>
+    </div>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+
+<div class="docs">
+  <div class="grid">
+    <div class="col-3-12">
+<ul class="toc">
+    <li><a href="/docs/api/">← back</a></li>
+    <li class="active"><a href="index.html">Module APIs</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+</ul>
+</div>
+    <div class="col-9-12">
+      <div class="docs-content">
+    <!--  -->
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h2>Node-RED Modules</h2>
+<p>Node-RED provides a set of node modules that implement different parts of the
+application.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="node-red.html">node-red</a></td>
+<td>the main module that pulls together all of the internal modules and provides the executable version of Node-RED</td>
+</tr>
+<tr>
+<td><a href="@node-red_editor-api.html">@node-red/editor-api</a></td>
+<td>an Express application that serves the Node-RED editor and provides the Admin HTTP API</td>
+</tr>
+<tr>
+<td><a href="@node-red_runtime.html">@node-red/runtime</a></td>
+<td>the core runtime of Node-RED</td>
+</tr>
+<tr>
+<td><a href="@node-red_util.html">@node-red/util</a></td>
+<td>common utilities for the Node-RED runtime and editor modules</td>
+</tr>
+<tr>
+<td>@node-red/registry</td>
+<td>the internal node registry</td>
+</tr>
+<tr>
+<td>@node-red/nodes</td>
+<td>the default set of core nodes</td>
+</tr>
+<tr>
+<td>@node-red/editor-client</td>
+<td>the client-side resources of the Node-RED editor application</td>
+</tr>
+</tbody>
+</table></article>
+    </section>
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="links">
+    <div class="grid">
+        <div class="col-1-3">
+            <p><a href="https://nodered.org">Node-RED</a> is a visual wiring tool for the Internet of Things.</p>
+            <p>A project of the <a href="https://js.foundation/">JS Foundation</a>.</p>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://github.com/node-red">GitHub</a></li>
+                <li><a href="https://www.npmjs.com/package/node-red">npm</a></li>
+                <li><a href="/docs">Documentation</a></li>
+                <li><a href="/docs/api">APIs</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="https://flows.nodered.org">Flow Library</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/about/conduct">Code of Conduct</a></li>
+                <li><a href="/about/community">Community</a></li>
+            </ul>
+        </div>
+        <div class="col-1-6">
+            <ul>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="https://twitter.com/nodered">Twitter</a></li>
+                <li><a href="https://discourse.nodered.org">Forum</a></li>
+                <li><a href="/slack">Slack</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+    prettyPrint();
+</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
