@@ -416,7 +416,7 @@ on permissions.
 If you are seeing *permission denied* errors opening files or accessing host devices, try running the container as the root user.
 
 ```
-docker run -it -p 1880:1880 --name mynodered -u root nodered/node-red
+docker run -it -p 1880:1880 --name mynodered -u node-red:dialout nodered/node-red
 ```
 
 References:
