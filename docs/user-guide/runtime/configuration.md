@@ -124,7 +124,7 @@ paletteCategories
   the list, the category will get added to the end of the palette. If not set,
   the following default order is used:
 
-      ['subflows', 'input', 'output', 'function', 'social', 'storage', 'analysis', 'advanced'],
+      ['subflows', 'common', 'function', 'network', 'sequence', 'parser', 'storage'],
 
    _Note_: Until the user creates a subflow the subflow category will be empty and will
    not be visible in the palette.

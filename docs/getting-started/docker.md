@@ -169,7 +169,8 @@ is now as simple as
 ```
 $ docker pull nodered/node-red
 $ docker stop mynodered
-$ docker start mynodered
+$ docker rm mynodered
+$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
 ```
 
 ### Docker Stack / Docker Compose
@@ -211,6 +212,71 @@ The above compose file:
  - Maps the container port 1880 to the the host port 1880
  - creates a node-red-net network and attaches the container to this network
  - persists the `/data` dir inside the container to the `node-red-data` volume in Docker
+
+
+### Dockerfile which copies in local resources
+
+It can sometimes be useful to populate a Node-RED Docker image with files from a local directory (for example, if you want a whole project to be kept in a git repo). To do this, you'll want your local directory to look like this:
+
+```
+Dockerfile
+README.md
+flows.json       # the normal place Node-RED store your flows
+flows_cred.json  # credemtials your flows may need
+package.json     # the non-standard modules your flows use
+settings.js      # the normal settings file
+```
+
+The following Dockerfile builds on the base Node-RED Docker image, but additionally moves your own files into place into that image:
+
+```
+FROM nodered/node-red
+
+# Copy package.json to the WORKDIR so npm builds all
+# of your added modules for Node-RED
+COPY package.json .
+RUN npm install --only=production
+
+# Copy _your_ Node-RED project files into place
+COPY settings.js /data/settings.js
+COPY flows_cred.json /data/flows_cred.json
+COPY flows.json /data/flows.json
+
+# Start the container normally
+CMD ["npm", "start"]
+```
+
+#### Dockerfile order and build speed
+
+While not necessary, it's a good idea to do the `COPY package... npm install...` steps early because, although the `flows.json` changes frequently as you work in Node-RED, your `package.json` will only change when you change what modules are part of your project. And since the `npm install` step that needs to happen when `package.json` changes can sometimes be time consuming, it's better to do the time-consuming, generally-unchanging steps earlier in a Dockerfile so those build images can be reused, making subsequent overall builds much faster.
+
+#### Credentials, secrets, and environment variables
+
+Of course you never want to hard-code credentials anywhere, so if you need to use credentials with your Node-RED project, the above Dockerfile will let you have this in your `settings.js`...
+
+```
+module.exports = {
+  credentialSecret: process.env.NODE_RED_CREDENTIAL_SECRET // add exactly this
+}
+```
+
+...and then when you run in Docker, you add an environment variable to your `run` command...
+
+`docker run -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here"`
+
+#### Building and running
+
+You _build_ this Dockerfile normally:
+
+```sh
+docker build -t your-image-name:your-tag .
+```
+
+To _run_ locally for development where changes are written immediately and only the local directory that youre working from, `cd` into the project's directory and then run:
+
+```bash
+docker run --rm -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here" -p 1880:1880 -v `pwd`:/data --name a-container-name your-image-name
+```
 
 ### Startup
 
@@ -351,7 +417,7 @@ on permissions.
 If you are seeing *permission denied* errors opening files or accessing host devices, try running the container as the root user.
 
 ```
-docker run -it -p 1880:1880 --name mynodered -u root nodered/node-red
+docker run -it -p 1880:1880 --name mynodered -u node-red:dialout nodered/node-red
 ```
 
 References:
