@@ -32,7 +32,7 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 <img src="/images/logos/ubuntu.svg" height="30">
 </div>
 This script will work on any Debian-based operating system, including Ubuntu
-and Diet-Pi. You may need to run <code>sudo apt-get install build-essential</code>
+and Diet-Pi. You may need to run <code>sudo apt install build-essential git</code>
 first to ensure npm is able to build any binary modules it needs to install.
 </div>
 
