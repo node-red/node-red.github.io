@@ -13,7 +13,7 @@ stored.
 By default, Node-RED uses a [memory-based implementation](store/memory) of this API. It also provides
 a [file-based implementation](store/localfilesystem).
 
-To create a custom Context Store, a module should create that implements the [Store Module API](#store-module-api).
+To create a custom Context Store, a module should be created that implements the [Store Module API](#store-module-api).
 
 ### Configuration
 
