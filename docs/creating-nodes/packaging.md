@@ -78,8 +78,7 @@ for others to be able to use it.</div>
 
 ### Naming
 
-Node modules should use `node-red-contrib-` as a prefix to their name to make it
-clear they are not maintained by the Node-RED project. Alternatively, any name
+If you wish to use **node-red** in the name of your node please use `node-red-contrib-` as a prefix to their name to make it clear they are not maintained by the Node-RED project. Alternatively, any name
 that doesn't use `node-red` as a prefix can be used.
 
 ### README.md
