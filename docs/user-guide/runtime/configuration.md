@@ -4,6 +4,7 @@ toc: toc-user-guide.html
 title: Configuration
 slug: configuration
 redirect_from:
+  - /docs/configuration
   - /docs/user-guide/configuration
 ---
 The following properties can be used to configure Node-RED.
