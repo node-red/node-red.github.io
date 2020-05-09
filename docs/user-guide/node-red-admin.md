@@ -15,7 +15,7 @@ instance.
 Install this globally to make the `node-red-admin` command available on
 your path:
 
-    npm install -g node-red-admin
+    npm install -g --unsafe-perm node-red-admin
 
 <div class="doc-callout">
 <em>Note</em> : <code>sudo</code> is required if running as a non-root user on Linux/OS X. If

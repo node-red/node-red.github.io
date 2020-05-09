@@ -49,7 +49,7 @@ Once logged in you need to install node.js and Node-RED
 
        curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
        sudo apt-get install -y nodejs build-essential
-       sudo npm install -g node-red
+       sudo npm install -g --unsafe-perm node-red
 
 
 At this point you can test your instance by running `node-red`. *Note*: you may
@@ -61,7 +61,7 @@ Once started, you can access the editor at `http://<your-instance-ip>:1880/`.
 To get Node-RED to start automatically whenever your instance is restarted, you
 can use pm2:
 
-       sudo npm install -g pm2
+       sudo npm install -g --unsafe-perm pm2
        pm2 start `which node-red` -- -v
        pm2 save
        pm2 startup

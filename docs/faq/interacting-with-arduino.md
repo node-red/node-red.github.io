@@ -44,7 +44,7 @@ You then need to install the Node-RED Arduino nodes into the palette.
 <div class="doc-callout">Please check that `npm -v` is at least version 2.x
 - if not - update it using
 
-        sudo npm i -g npm@2.x
+        sudo npm i -g npm@latest
         hash -r
 </div>
 
