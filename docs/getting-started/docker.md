@@ -422,9 +422,9 @@ docker run -it -p 1880:1880 --name mynodered -u node-red:dialout nodered/node-re
 
 References:
 
-https://github.com/node-red/node-red/issues/15
+https://github.com/node-red/node-red-docker/issues/15
 
-https://github.com/node-red/node-red/issues/8
+https://github.com/node-red/node-red-docker/issues/8
 
 #### Accessing Host Devices
 
