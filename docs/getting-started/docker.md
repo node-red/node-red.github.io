@@ -35,8 +35,8 @@ Running that command should give a terminal window with a running instance of No
         Welcome to Node-RED
         ===================
 
-        03 Oct 12:57:10 - [info] Node-RED version: v1.0.2
-        03 Oct 12:57:10 - [info] Node.js  version: v10.16.3
+        03 Oct 12:57:10 - [info] Node-RED version: v1.0.6
+        03 Oct 12:57:10 - [info] Node.js  version: v10.18.0
         03 Oct 12:57:10 - [info] Linux 4.9.184-linuxkit x64 LE
         03 Oct 12:57:11 - [info] Loading palette nodes
         03 Oct 12:57:16 - [info] Settings file  : /data/settings.js
