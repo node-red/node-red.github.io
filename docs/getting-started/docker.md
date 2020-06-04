@@ -221,11 +221,13 @@ It can sometimes be useful to populate a Node-RED Docker image with files from a
 ```
 Dockerfile
 README.md
+package.json     # add any extra nodes your flow needs into your own package.json.
 flows.json       # the normal place Node-RED store your flows
 flows_cred.json  # credemtials your flows may need
-package.json     # the non-standard modules your flows use
-settings.js      # the normal settings file
+settings.js      # your settings file
 ```
+
+**NOTE**: This method is NOT suitable if you want to mount the /data volume externally. If you need to use an external volume for persistence then copy your settings and flows files to that volume instead.
 
 The following Dockerfile builds on the base Node-RED Docker image, but additionally moves your own files into place into that image:
 
@@ -233,17 +235,21 @@ The following Dockerfile builds on the base Node-RED Docker image, but additiona
 FROM nodered/node-red
 
 # Copy package.json to the WORKDIR so npm builds all
-# of your added modules for Node-RED
+# of your added nodes modules for Node-RED
 COPY package.json .
-RUN npm install --only=production
+RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
 # Copy _your_ Node-RED project files into place
+# NOTE: This will only work if you DO NOT later mount /data as an external volume.
+#       If you need to use an external volume for persistence then
+#       copy your settings and flows files to that volume instead.
 COPY settings.js /data/settings.js
 COPY flows_cred.json /data/flows_cred.json
 COPY flows.json /data/flows.json
 
-# Start the container normally
-CMD ["npm", "start"]
+# You should add extra nodes via your package.json file but you can also add them here:
+#WORKDIR /usr/src/node-red
+#RUN npm install node-red-node-smooth
 ```
 
 #### Dockerfile order and build speed
