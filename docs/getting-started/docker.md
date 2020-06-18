@@ -13,7 +13,7 @@ This guide assumes you have some basic familiarity with Docker and the
 As of Node-RED 1.0 the repository on [Docker Hub](https://hub.docker.com/r/nodered/node-red/)
 was renamed to `nodered/node-red`.
 
-Previous 0.20.x versions are still available at https://hub.docker.com/r/nodered/node-red-docker.
+Previous 0.20.x versions are still available at [https://hub.docker.com/r/nodered/node-red-docker](https://hub.docker.com/r/nodered/node-red-docker).
 
 ### Quick Start
 
@@ -428,9 +428,9 @@ docker run -it -p 1880:1880 --name mynodered -u node-red:dialout nodered/node-re
 
 References:
 
-https://github.com/node-red/node-red-docker/issues/15
+[https://github.com/node-red/node-red-docker/issues/15](https://github.com/node-red/node-red-docker/issues/15)
 
-https://github.com/node-red/node-red-docker/issues/8
+[https://github.com/node-red/node-red-docker/issues/8](https://github.com/node-red/node-red-docker/issues/8)
 
 #### Accessing Host Devices
 
@@ -440,7 +440,7 @@ If you want to access a device from the host inside the container, e.g. serial p
 docker run -it -p 1880:1880 --name mynodered --device=/dev/ttyACM0 nodered/node-red
 ```
 References:
-https://github.com/node-red/node-red/issues/15
+[https://github.com/node-red/node-red/issues/15](https://github.com/node-red/node-red/issues/15)
 
 #### Setting Timezone
 
@@ -450,4 +450,4 @@ docker run -it -p 1880:1880 --name mynodered -e TZ=Europe/London nodered/node-re
 ```
 
 References:
-https://groups.google.com/forum/#!topic/node-red/ieo5IVFAo2o
+[https://groups.google.com/forum/#!topic/node-red/ieo5IVFAo2o](https://groups.google.com/forum/#!topic/node-red/ieo5IVFAo2o)
