@@ -58,22 +58,22 @@ The icon can be either:
 </style>
 
 <ul class="nr-icon-list">
-<li><img src="images/alert.svg"/> alert.png</li>
-<li><img src="images/arrow-in.svg"/> arrow-in.png</li>
-<li><img src="images/bridge-dash.svg"/> bridge-dash.png</li>
-<li><img src="images/bridge.svg"/> bridge.png</li>
-<li><img src="images/db.svg"/> db.png</li>
-<li><img src="images/debug.svg"/> debug.png</li>
-<li><img src="images/envelope.svg"/> envelope.png</li>
-<li><img src="images/feed.svg"/> feed.png</li>
-<li><img src="images/file.svg"/> file.png</li>
-<li><img src="images/function.svg"/> function.png</li>
-<li><img src="images/hash.svg"/> hash.png</li>
-<li><img src="images/inject.svg"/> inject.png</li>
-<li><img src="images/light.svg"/> light.png</li>
-<li><img src="images/serial.svg"/> serial.png</li>
-<li><img src="images/template.svg"/> template.png</li>
-<li><img src="images/white-globe.svg"/> white-globe.png</li>
+<li><img src="images/alert.svg"/> alert.svg</li>
+<li><img src="images/arrow-in.svg"/> arrow-in.svg</li>
+<li><img src="images/bridge-dash.svg"/> bridge-dash.svg</li>
+<li><img src="images/bridge.svg"/> bridge.svg</li>
+<li><img src="images/db.svg"/> db.svg</li>
+<li><img src="images/debug.svg"/> debug.svg</li>
+<li><img src="images/envelope.svg"/> envelope.svg</li>
+<li><img src="images/feed.svg"/> feed.svg</li>
+<li><img src="images/file.svg"/> file.svg</li>
+<li><img src="images/function.svg"/> function.svg</li>
+<li><img src="images/hash.svg"/> hash.svg</li>
+<li><img src="images/inject.svg"/> inject.svg</li>
+<li><img src="images/light.svg"/> light.svg</li>
+<li><img src="images/serial.svg"/> serial.svg</li>
+<li><img src="images/template.svg"/> template.svg</li>
+<li><img src="images/white-globe.svg"/> white-globe.svg</li>
 </ul>
 
 **Note**: In Node-RED 1.0, all of these icons have been replaced with SVG alternatives
@@ -86,7 +86,7 @@ A node can provide its own icon in a directory called `icons` alongside its `.js
 and `.html` files. These directories get added to the search path when the editor
 looks for a given icon filename. Because of this, the icon filename must be unique.
 
-The icon should be white on a transparent background, 40 x 60 in size.
+The icon should be white on a transparent background, with a 2:3 aspect ratio, with a minimum of 40 x 60 in size.
 
 #### Font Awesome icon
 

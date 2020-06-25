@@ -179,12 +179,13 @@ this.on('close', function(done) {
 
 If the registered listener accepts two arguments, the first will be a boolean
 flag that indicates whether the node is being closed because it has been removed
-entirely, or that it is just being restarted.
+entirely, or that it is just being restarted. It will also be set to *true* if the
+node has been disabled.
 
 {% highlight javascript %}
 this.on('close', function(removed, done) {
     if (removed) {
-        // This node has been deleted
+        // This node has been disabled/deleted
     } else {
         // This node is being restarted
     }
@@ -201,8 +202,6 @@ to be called. This would cause the runtime to hang if a node failed to call it.
 
 In 0.17 and later, the runtime will timeout the node if it takes longer than 15
 seconds. An error will be logged and the runtime will continue to operate.
-
-
 
 
 ### Logging events

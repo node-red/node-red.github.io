@@ -59,9 +59,11 @@ The entries in the `defaults` object must be objects and can have the following 
 
 ### Reserved property names
 
-There are some reserved names for properties that must not be used. These are:
+There are some reserved names for properties that **must not be used**. These are:
 
-> `type`, `x`, `y`, `z`, `wires`, `outputs`
+ - Any single character - `x`, `y`, `z`, `d`, `g`, `l` are already used. Others are
+   reserved for future use.
+ - `id`, `type`, `wires`, `inputs`, `outputs`
 
 
 If a node wants to allow the number of outputs it provides to be configurable

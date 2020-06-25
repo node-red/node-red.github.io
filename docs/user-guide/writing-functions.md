@@ -156,19 +156,43 @@ doSomeAsyncWork(msg, function(result) {
 return;
 {% endhighlight %}
 
+### Running code on start
 
+*Since Node-RED 1.1.0*
+
+With the 1.1.0 release, the Function node provides a `Setup` tab where you can
+provide code that will run whenever the node is started. This can be used to
+setup any state the Function node requires.
+
+For example, it can initialise values in local context that the main Function
+will use:
+```
+if (context.get("counter") === undefined) {
+    context.set("counter", 0)
+}
+```
+
+The Setup function can return a Promise if it needs to complete asynchronous work
+before the main Function can start processing messages. Any messages that arrive
+before the Setup function has completed will be queued up and handled when its ready.
 
 ### Tidying up
 
 If you do use asynchronous callback code in your functions then you may need to
 tidy up any outstanding requests, or close any connections,  whenever the flow gets
-re-deployed. You can do this by adding a `close` event handler.
+re-deployed. You can do this in two different ways.
+
+Either by adding a `close` event handler:
 
 {% highlight javascript %}
 node.on('close', function() {
     // tidy up any async code here - shutdown connections and so on.
 });
 {% endhighlight %}
+
+
+Or, *since Node-RED 1.1.0*, you can add code to the `Close` tab in the node's edit
+dialog.
 
 ### Logging events
 
