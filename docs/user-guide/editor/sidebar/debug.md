@@ -57,3 +57,32 @@ The sidebar can be cleared at any time by clicking the <i style="font-size: 0.8e
 
 The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-desktop"></i> button
 in the sidebar footer can be used to open a separate browser window containing the Debug sidebar.
+
+
+
+
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:activate-selected-debug-nodes</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:activate-all-debug-nodes</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:activate-all-flow-debug-nodes</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:deactivate-selected-debug-nodes</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:deactivate-all-debug-nodes</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:deactivate-all-flow-debug-nodes</code></td></tr>
+</table>

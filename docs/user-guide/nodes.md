@@ -36,6 +36,8 @@ The `payload` can be set to a variety of different types:
  - a String, number, boolean, Buffer or Object
  - a Timestamp in milliseconds since January 1st, 1970
 
+*Since Node-RED 1.1.0*, the Inject node can now set any property on the message.
+
 ***
 
 <img alt="Debug node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_debug.png" width="169px">

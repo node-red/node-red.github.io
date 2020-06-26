@@ -91,6 +91,17 @@ The edit dialog contains three tabs:
   <img style="width: calc(30% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-node-appearance.png" alt="Node edit dialog - appearance">
   <p class="caption">Node edit dialog - properties, description and appearance tabs</p>
 </div>
+<div style="float: right; width: 400px;">
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:show-selected-node-labels</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:hide-selected-node-labels</code></td></tr>
+</table>
+</div>
 
 
 The Appearance tab provides options to:
@@ -102,24 +113,21 @@ The Appearance tab provides options to:
 
 #### Enabling or disabling a node
 
-An node can be enabled or disabled using the toggle button at the bottom of the
-dialog. If a node is disabled it will not be created when the flow is deployed. If
-a disabled node sits in the middle of a flow, no messages will pass through it.
-
+<div style="float: right; width: 400px;">
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><i>none</i></td></tr>
- <tr><td>Menu option</td><td><i>none</i></td></tr>
  <tr><td>Action</td><td><code>core:enable-selected-nodes</code></td></tr>
 </table>
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><i>none</i></td></tr>
- <tr><td>Menu option</td><td><i>none</i></td></tr>
  <tr><td>Action</td><td><code>core:disable-selected-nodes</code></td></tr>
 </table>
+</div>
 
+An node can be enabled or disabled using the toggle button at the bottom of the
+dialog. If a node is disabled it will not be created when the flow is deployed. If
+a disabled node sits in the middle of a flow, no messages will pass through it.
 
 #### Configuration nodes
 

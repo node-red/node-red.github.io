@@ -31,8 +31,14 @@ The full set of options are [documented here](https://nodejs.org/api/tls.html#tl
 
 As a minimum, the options should include:
 
- - `key` - Private keys in PEM format, provided as a `String` or `Buffer`
- - `cert` - Cert chains in PEM format, provided as a `String` or `Buffer`
+ - `key` - Private key in PEM format, provided as a `String` or `Buffer`
+ - `cert` - Cert chain in PEM format, provided as a `String` or `Buffer`
+
+
+
+<div class="doc-callout">
+For a guide on how to generate certificates, you can follow <a href="https://it.knightnet.org.uk/kb/nr-qa/https-valid-certificates/">this guide</a>.
+</div>
 
 The default Node-RED settings file includes a commented out `https` section that
 can be used to load the certificates from local files.
@@ -64,6 +70,21 @@ https: function() {
 }
 ```
 
+#### Refreshing HTTPS certificates
+
+*Since Node-RED 1.1.0*
+
+It is possible to configure Node-RED to periodically refresh its HTTPS certificates
+without having to restart Node-RED. To do this:
+
+1. You *must* be using Node.js 11 or later
+2. The `https` setting *must* be a Function that can be called to get the updated certificates
+3. Set the `httpsRefreshInterval` to how often (in hours) Node-RED should call the `https` function
+   to get updated details.
+
+The `https` function should determine if the current certificates will expiry within the next
+`httpsRefreshInterval` period, and if so, generate a new set of certificates. If no update
+is required, the function can return `undefined` or `null`.
 
 
 ### Editor & Admin API security
@@ -394,3 +415,28 @@ was expected to be an MD5 hash. This is cryptographically insecure, so has been
 superseded with bcrypt, as used by <code>adminAuth</code>. For backwards compatibility, MD5
 hashes are still supported - but they are not recommended.
 </div>
+
+### Custom Middleware
+
+It is possible to provide custom HTTP middleware that will be added in front of
+all `HTTP In` nodes and, since Node-RED 1.1.0, in front of all admin/editor routes.
+
+For the `HTTP In` nodes, the middleware is provided as the `httpNodeMiddleware` setting.
+
+For the admin/editor routes, the middleware is provided as the `httpAdminMiddleware` setting.
+
+For example, the following middleware could be used to set the `X-Frame-Options` http header
+on all admin/editor requests. This can be used to control how the editor is embedded on
+other pages.
+
+```
+httpAdminMiddleware: function(req, res, next) {
+    // Set the X-Frame-Options header to limit where the editor
+    // can be embedded
+    res.set('X-Frame-Options', 'sameorigin');
+    next();
+},
+```
+
+Other possible uses would be to add additional layers of security or request verification
+to the routes.
