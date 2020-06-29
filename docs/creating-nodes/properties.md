@@ -14,36 +14,39 @@ node had a single property called `name`. In this section, we'll add a new
 property called `prefix` to the node:
 
 1. Add a new entry to the `defaults` object:
-
-        defaults: {
-            name: {value:""},
-            prefix: {value:""}
-        },
+    ```javascript
+    defaults: {
+        name: {value:""},
+        prefix: {value:""}
+    },
+    ```
 
    The entry includes the default `value` to be used when a new node of this type
    is dragged onto the workspace.
 
 2. Add an entry to the edit template for the node
-
-        <div class="form-row">
-            <label for="node-input-prefix"><i class="icon-tag"></i> Prefix</label>
-            <input type="text" id="node-input-prefix">
-        </div>
+    ```html
+    <div class="form-row">
+        <label for="node-input-prefix"><i class="icon-tag"></i> Prefix</label>
+        <input type="text" id="node-input-prefix">
+    </div>
+    ```
 
     The template should contain an `<input>` element with an `id` set to
     `node-input-<propertyname>`.
 
 3. Use the property in the node
-
-        function LowerCaseNode(config) {
-            RED.nodes.createNode(this,config);
-            this.prefix = config.prefix;
-            var node = this;
-            this.on('input', function(msg) {
-                msg.payload = node.prefix + msg.payload.toLowerCase();
-                node.send(msg);
-            });
-        }
+    ```javascript
+    function LowerCaseNode(config) {
+        RED.nodes.createNode(this,config);
+        this.prefix = config.prefix;
+        var node = this;
+        this.on('input', function(msg) {
+            msg.payload = node.prefix + msg.payload.toLowerCase();
+            node.send(msg);
+        });
+    }
+    ```
 
 ### Property definitions
 
@@ -122,13 +125,11 @@ When the edit dialog is opened, the editor populates the dialog with the edit
 template for the node.
 
 For each of the properties in the `defaults` array, it looks for an `<input>`
-element with an `id` set to `node-input-<propertyname>`. This input is then
+element with an `id` set to `node-input-<propertyname>`, or `node-config-input-<propertyname>` in the case of Configuration nodes. This input is then
 automatically populated with the current value of the property. When the edit
-dialog is okayed, the property takes whatever value is in the input.
+dialog is closed, the property takes whatever value is in the input.
 
-The `<input>` type can be either `text` for string/number properties, or
-`checkbox` for boolean properties. Alternatively, a `<select>` element can be
-used if there is a restricted set of choices.
+More information about the edit dialog is available [here](edit-dialog).
 
 #### Custom edit behaviour
 
