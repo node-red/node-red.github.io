@@ -106,7 +106,7 @@ $2b$08$sjxLvq8MmycyWJpxPLyweuw/WlYt1MX56eG5Q5nlyxJs2fASGm2jm
 The other commands let you list what nodes are installed, enable/disable them,
 install new ones or remove old ones. You can also search the flow library.
 
-[more...](/docs/getting-started/local#command-line-usage)
+[more...](/docs/user-guide/node-red-admin)
 
 ### Overriding individual settings
 
