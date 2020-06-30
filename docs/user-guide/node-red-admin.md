@@ -13,13 +13,15 @@ instance.
 Since Node-RED 1.1.0, `node-red-admin` is now built into the `node-red` command -
 you do not need to install it separately.
 
-To run it, you use `node-red admin` instead of `node-red-admin`.
+To use the version included with `node-red`, use the command `node-red admin`.
+
+If you install it separately, you would use the command `node-red-admin`.
 
 
 ### Installation
 
-Install this globally to make the `node-red-admin` command available on
-your path:
+If you want to install `node-red-admin` separately, you can install it as a global
+module with:
 
     npm install -g --unsafe-perm node-red-admin
 
