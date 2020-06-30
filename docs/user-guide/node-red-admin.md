@@ -10,6 +10,12 @@ redirect_from:
 The [node-red-admin](http://npmjs.org/package/node-red-admin) command-line tool allows you to remotely administer a Node-RED
 instance.
 
+Since Node-RED 1.1.0, `node-red-admin` is now built into the `node-red` command -
+you do not need to install it separately.
+
+To run it, you use `node-red admin` instead of `node-red-admin`.
+
+
 ### Installation
 
 Install this globally to make the `node-red-admin` command available on
@@ -46,11 +52,13 @@ the target and access token information.
 
 The tool provides the following commands:
 
- - `list` - List all of the installed nodes
- - `info` - Display more information about the module or node set
- - `enable` - Enable the specified module or node set
+ - `target`  - Set or view the target URL and port like http://localhost:1880
+ - `login`   - Log user in to the target of the Node-RED admin API
+ - `list`    - List all of the installed nodes
+ - `info`    - Display more information about the module or node
+ - `enable`  - Enable the specified module or node set
  - `disable` - Disable the specified module or node set
- - `search` - Search NPM for Node-RED modules relating to the search-term given
- - `install` - Install a module from NPM
- - `remove` - Remove an NPM module
+ - `search`  - Search for Node-RED modules to install
+ - `install` - Install the module from NPM to Node-RED
+ - `remove`  - Remove the NPM module from Node-RED
  - `hash-pw` - Create a password hash that can be used with the `adminAuth` and `httpNodeAuth` settings

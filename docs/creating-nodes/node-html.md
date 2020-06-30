@@ -80,29 +80,17 @@ editor. It is an object with the following properties:
 
 The edit template for a node describes the content of its edit dialog.
 
-    <script type="text/html" data-template-name="node-type">
-        <div class="form-row">
-            <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-            <input type="text" id="node-input-name" placeholder="Name">
-        </div>
-        <div class="form-tips"><b>Tip:</b> This is here to help.</div>
-    </script>
+```html
+<script type="text/html" data-template-name="node-type">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-tips"><b>Tip:</b> This is here to help.</div>
+</script>
+```
 
-
-There are some simple conventions to follow:
-
- - a `<div>` with class `form-row` should be used to layout each row of the
-   dialog.
- - a typical row will have a `<label>` that contains an icon and the name of the
-   property followed by an `<input>`. The icon is created using an `<i>` element
-   with a class taken from those available from [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/).
- - if more interactivity is required, `oneditprepare` can be used to attach
-   any event handlers on the dialog elements.
-
-
-More information on how the edit template is used is available
-[here](properties#property-edit-dialog).
-
+More information about the edit dialog is available [here](edit-dialog).
 
 ### Help text
 

@@ -133,10 +133,10 @@ Node-RED can be started using the command `node-red`. This command can take
 various arguments:
 
 ```
-node-red [-v] [-?] [--port PORT] [--safe] [--settings settings.js]
-         [--title TITLE] [--userDir DIR] [flows.json|projectName]
+node-red [-v] [-?] [--settings settings.js] [--userDir DIR]
+         [--port PORT] [--title TITLE] [--safe] [flows.json|projectName]
+         [-D X=Y|@file]
 ```
-
 
 Option                  | Description     |
 ------------------------|-----------------|
@@ -146,14 +146,40 @@ Option                  | Description     |
 `--title TITLE`         | Set process window title |
 `-u`, `--userDir DIR`   | Sets the user directory to use. Default: `~/.node-red` |
 `-v`                    | Enables verbose output |
+`-D X=Y|@file`          | [Override individual settings](#override-individual-settings) |
 `-?`, `--help`          | Shows command-line usage help and exits |
 `flows.json|projectName`| If the Projects feature is not enabled, this sets the flow file you want to work with. If the Projects feature is enabled, this identifies which project should be started. |
-
 
 Node-RED uses `flows_<hostname>.json` as the default flows file. If the computer
 you are running on may change its hostname, then you should ensure you provide a
 static file name; either as a command-line argument or using the `flowsFile` option
 in your [settings file](/docs/user-guide/runtime/settings-file).
+
+#### Override individual settings
+
+*Since Node-RED 1.1.0*
+
+You can override individual settings on the command-line using the `-D` (or `--define`)
+option.
+
+For example, to change the logging level you can use:
+```
+-D logging.console.level=trace
+```
+
+You can also provide the custom settings as a file:
+```
+-D @./custom-settings.txt
+```
+
+The file should contain a list of the settings to override:
+```
+logging.console.level=trace
+logging.console.audit=true
+```
+
+
+
 
 ### Passing arguments to the underlying Node.js process
 

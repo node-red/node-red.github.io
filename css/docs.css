@@ -254,7 +254,9 @@ div.figure p.caption {
     font-style: italic;
     color: #999;
 }
-
+div.figure pre {
+    margin-bottom: 0px
+}
 table.action-ref {
     width: auto;
     min-width: 310px;
@@ -362,7 +364,7 @@ td {
     padding: 6px 5px;
     border-bottom: 1px solid #F4DEDE;
 }
-td:first-child span {
+td:first-child span.method {
     font-family: "Ubuntu Mono";
     font-size: 0.9em;
     background: #F4DEDE;
