@@ -5,22 +5,21 @@ title: Supported Node versions
 slug: node versions
 ---
 
-Node-RED currently recommends **Node 10.x LTS** or **Node 12.x LTS**.
+Node-RED currently recommends **Node 12.x LTS**.
 
-Version | Support Level | Notes
---------|---------------|------
- < 7.x  | *Unsupported* |
- **8.x**  | **Supported** | going End of Life December 31st 2019
- 9.x  | *Unsupported* |
- **10.x**  | **Recommended** |
-  11.x  | *Unsupported* |
-  **12.x**  | **Recommended** |  
-  13.x  | *Unsupported* |
-  **14.x**  | **Supported** |  
-
+Version    | Support Level   | Notes
+-----------|-----------------|------
+ < 8.x     | *Unsupported*   |
+ **8.x**   | *Supported*     | No longer maintained
+ **10.x**  | *Supported*     | Reaches end-of-life April 2021
+ **12.x**  | **Recommended** |  
+ **14.x**  | Supported       |  
 
 We try to stay up to date with Node.js releases. Our goal is to support
 the [Maintenance and Active LTS releases](https://nodejs.org/en/about/releases/).
+
+We do not generally recommend using the odd numbered Node.js versions - we do not
+routinely test against them.
 
 With such a large community of 3rd party nodes available to install, we cannot
 provide any guarantees on what they support. We rely on the community to keep
