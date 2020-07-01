@@ -23,7 +23,7 @@ Our approach to scheduling releases has been fairly relaxed. We haven't set
 target dates too far in advance and at some point we would decide we have 'enough'
 new content to warrant publishing a new release.
 
-Prior to the 1.0 release, we would also, on occassion, make a change that shouldn't
+Prior to the 1.0 release, we would also, on occasion, make a change that shouldn't
 be made in a minor-version number release. For example, dropping support for older
 versions of Node. You can just about get away with that when you are a 0.x versioned
 project, but now we are a 1.x versioned project, we need to take more care.
@@ -49,39 +49,47 @@ releases in the future.
 ![](/blog/content/images/2020/06/release-plan.png)
 
 At the bottom, the chart shows the [published dates](https://nodejs.org/en/about/releases/)
-for the current Node.js releases.
+for the current Node.js releases. If you are using Node-RED in any sort of production
+environment, you need to be aware of these dates.
 
 The top shows the proposed release schedule for Node-RED.
 
 In summary, we aim to do a minor version release (for example, 1.1 &rarr; 1.2)
-every three months.
+every three months. Maintenance releases (for example 1.1.0 &rarr; 1.1.1) will continue
+to happen as and when they are needed.
 
 At the end of April 2021, when Node 10.x reaches its end-of-life, we will publish
 Node-RED 2.x that will *drop* support for both Node 8.x and Node 10.x.
 
-The 1.x stream will then enter maintenance mode for the rest of the year. It will
-only receive bug fixes, but with room for new features to be back-ported from 2.x
+The 1.x stream will then enter maintenance mode. It will only receive bug fixes
+and security updates, but with room for new features to be back-ported from 2.x
 if there is a very good reason to do so.
 
-The 2.x stream will contine in active development with a minor release every three months
-until Apil 2022 when Node 12.x reaches its end-of-life, we publish Node-RED 3.x and
-the cycle continues.
+The 2.x stream will continue in active development with a minor release every
+three months or so until April 2022 when Node 12.x reaches its end-of-life. We
+then publish Node-RED 3.x and the cycle continues. The 1.x stream will reach its
+end-of-life after the 3.x release.
 
 This proposal means:
 
  - We have a regular cycle of releases - getting new features into the hands of users.
- - We have a plan that enables us to make potentially breaking changes once a year.
  - We have a schedule to help us prioritise and plan backlog items.
+ - We can provide longer-term stable releases with a well-known end of life.
+ - We have a plan that enables us to make potentially breaking changes once a year.
 
+It is important to remember this plan is not risk-free. It assumes that the project
+has enough contributors to help deliver it. This becomes particularly important when
+we have multiple streams to maintain.
 
-It is important to remember this plan is not risk-free. It assumes, in good
-faith, that the project has enough contributors to help deliver it. We're hopeful
-that having a published schedule of releases will help encourage people to contribute,
-whether in code, documentation, testing or just general feedback.
+We're hopeful that having a published schedule of releases will help encourage
+people to contribute, whether in code, documentation, testing or just general feedback.
 
-We will see how it goes over the next few months. If something isn't working and
-we have to rethink this plan, then we will.
+We will see how it goes over the next few months - we have until April before we
+will have multiple active streams. If something isn't working and we have to
+rethink this plan, then we will.
 
 But for now, we make a start on getting 1.2 ready for the end of September.
+
+
 
 
