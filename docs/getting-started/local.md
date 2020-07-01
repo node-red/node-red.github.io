@@ -53,7 +53,7 @@ This command will install Node-RED as a global module along with its dependencie
 You can confirm it has succeeded if the end of the command output looks similar to:
 
 ```
-+ node-red@1.0.0
++ node-red@1.1.0
 added 332 packages from 341 contributors in 18.494s
 found 0 vulnerabilities
 ```
@@ -99,20 +99,20 @@ $ node-red
 Welcome to Node-RED
 ===================
 
-11 Oct 23:43:39 - [info] Node-RED version: v1.0.2
-11 Oct 23:43:39 - [info] Node.js  version: v10.16.3
-11 Oct 23:43:39 - [info] Darwin 18.7.0 x64 LE
-11 Oct 23:43:39 - [info] Loading palette nodes
-11 Oct 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
-11 Oct 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
-11 Oct 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
-11 Oct 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
-11 Oct 23:43:44 - [info] User directory : /Users/nol/.node-red
-11 Oct 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
-11 Oct 23:43:44 - [info] Creating new flows file : flows_noltop.json
-11 Oct 23:43:44 - [info] Starting flows
-11 Oct 23:43:44 - [info] Started flows
-11 Oct 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
+30 Jun 23:43:39 - [info] Node-RED version: v1.1.0
+30 Jun 23:43:39 - [info] Node.js  version: v10.21.0
+30 Jun 23:43:39 - [info] Darwin 18.7.0 x64 LE
+30 Jun 23:43:39 - [info] Loading palette nodes
+30 Jun 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
+30 Jun 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
+30 Jun 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
+30 Jun 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
+30 Jun 23:43:44 - [info] User directory : /Users/nol/.node-red
+30 Jun 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
+30 Jun 23:43:44 - [info] Creating new flows file : flows_noltop.json
+30 Jun 23:43:44 - [info] Starting flows
+30 Jun 23:43:44 - [info] Started flows
+30 Jun 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
 ```
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
