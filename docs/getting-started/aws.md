@@ -59,7 +59,7 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
         "node": "10.x"
     },
     "dependencies": {
-        "node-red": "0.20.x",
+        "node-red": "1.1.x",
         "aws-sdk": "2.4.x",
         "node-red-contrib-storage-s3": "0.0.x",
         "when": "3.7.x"
@@ -135,7 +135,7 @@ Follow the AWS guide for [connecting to your instance](http://docs.aws.amazon.co
 
 Once logged in you need to install node.js and Node-RED
 
-       curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+       curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
        sudo apt-get install -y nodejs build-essential
        sudo npm install -g --unsafe-perm node-red
 
