@@ -82,7 +82,7 @@ without having to restart Node-RED. To do this:
 3. Set the `httpsRefreshInterval` to how often (in hours) Node-RED should call the `https` function
    to get updated details.
 
-The `https` function should determine if the current certificates will expiry within the next
+The `https` function should determine if the current certificates will expire within the next
 `httpsRefreshInterval` period, and if so, generate a new set of certificates. If no update
 is required, the function can return `undefined` or `null`.
 
