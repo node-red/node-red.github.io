@@ -13,7 +13,7 @@ redirect_from:
 If you are using Raspbian, then you must have Raspbian Jessie as a minimum version.
 Raspbian Buster is the currently supported version.
 
-### Installing Node-RED
+### Installing and Upgrading Node-RED
 
 We provide a script to install Node.js, npm and Node-RED onto a Raspberry
 Pi. The script can also be used to upgrade an existing install when a new
@@ -31,8 +31,8 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 <img src="/images/logos/debian.svg" height="30">
 <img src="/images/logos/ubuntu.svg" height="30">
 </div>
-This script will work on any Debian-based operating system, including Ubuntu
-and Diet-Pi. You may need to run <code>sudo apt install build-essential git</code>
+This script will work on any <b>Debian-based</b> operating system, including <b>Ubuntu</b>
+and <b>Diet-Pi</b>. You may need to run <code>sudo apt install build-essential git</code>
 first to ensure npm is able to build any binary modules it needs to install.
 </div>
 
