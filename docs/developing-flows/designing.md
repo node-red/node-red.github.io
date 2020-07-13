@@ -1,18 +1,20 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
-title: Designing flow
+layout: docs-developing-flows
+toc: toc-developing-flows.html
+title: Designing flows
 ---
 
+***This content is under review and may not form part of the final flow developer guide***
+
 ### Development steps  
- 
+
 If a project needs complicated logic, it is better to design flow before starting development. After that, you create flows based on the flow design. In this subsection, we show an overview of whole recommended steps of design and development.  
- 
+
 * Design  
    - Flow structure  
    - Message  
 * Implementation  
- 
+
 ### Designing flow structure  
 
 {% comment %}
@@ -39,7 +41,7 @@ If you are developing with multiple developers, it is better to design flows for
 
 #### Subflow
 
-If the same processing needs to be repeated, creating the same nodes sequence several times will not only reduce readability, but will also require changing all applicable nodes, even when they need to be modified. 
+If the same processing needs to be repeated, creating the same nodes sequence several times will not only reduce readability, but will also require changing all applicable nodes, even when they need to be modified.
 You can solve these problems by turning nodes into subflow, and changing icons.
 
 <div style="text-align: center">
@@ -49,8 +51,8 @@ You can solve these problems by turning nodes into subflow, and changing icons.
 For example, if the process of sending e-mail is written as a sub-flow, it can be reused to create a flow in which other processes send e-mail.
 
 ### Designing messages  
- 
-There are risks that multiple nodes have dependencies by messages passing through nodes. For other developers to reuse flows, it is important to design messages so that dependencies get to be relaxed. 
+
+There are risks that multiple nodes have dependencies by messages passing through nodes. For other developers to reuse flows, it is important to design messages so that dependencies get to be relaxed.
 
 {% comment %}
 This chapter proposes a guide about designing message.  
@@ -84,7 +86,7 @@ You better to design the messages before implementing a flow.
 
 {% comment %}
 *`msg` is a JavaScript object that contains a key-value structure like JSON. While a `msg` transits across multiple nodes, the nodes use some keys and values of the `msg`. If two or more nodes of them use the same key for different their own purposes, preparing `msg` for input of the nodes is so difficult.*  
- 
+
 *Therefore, strategy of key-value structure are needed and this subsection describes it as followings,*   
 {% endcomment %}
 
@@ -128,9 +130,9 @@ This verification process also expresses the boundaries of dependencies between 
 {% endcomment %}
 
 #### Keeping properties  
- 
+
 In the case of using `Function` node, you can prepare output messages by creating new `msg` objects. However, the output messages may not have some properties that the input message has. This means that properties that should be kept in your flow has lost. Since this can be a cause of serious bugs, preparing output messages based on an input message is better, instead of creating new `msg`.  
- 
+
 #### Add tag into `msg` to distinguish a node that sent the `msg`  
 
 {% comment %}
@@ -146,7 +148,7 @@ Specifically, you assign a tag that identifies the execution path as a message p
 </div>
 
 #### Using persistent storage outside of Node-RED  
- 
+
 If you handle the large amount of data, it is **not** recommended to set the data into `msg` since `msg` can exhaust available memory.
 
 {% comment %}
@@ -173,7 +175,7 @@ You can also make the debugging process easier by adding error handling processi
 
 
 #### Processing messages in order of their arrival  
- 
+
 Since Node-RED (JavaScript) processes asynchronously, a node cannot assume that it executes process for arrival `msgs` by the order of arrival.    
 
 You should design the flow so that processing does not depend on the order in which messages arrive.
@@ -182,8 +184,8 @@ That is, your flow should produce the correct result even if messages arrive in 
 If you want to design the flow depending on messages in order, you should use `Sort` node. You can check how to use `Sort` node at **Sequential guarantee** of [Non-functional requirements](non-functional).
 
 {% comment %}
-If you want to assume processes by the order of arrival, try this code. 
- 
+If you want to assume processes by the order of arrival, try this code.
+
 ```javascript  
 // Accumulation of messages  
 var msgs = context.get('messages') || [];  
@@ -192,6 +194,6 @@ if(msgs.length === ...) {
   ... // Process messages  
 }  
 context.set('messages', msgs);  
- 
+
 ```  
 {% endcomment %}

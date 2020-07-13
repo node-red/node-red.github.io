@@ -1,8 +1,10 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
+layout: docs-developing-flows
+toc: toc-developing-flows.html
 title: Responding to non-functional requirements
 ---
+
+***This content is under review and may not form part of the final flow developer guide***
 
 {% comment %}
 *Node-RED does not strongly focus on applications with non-functional requirements.*    
@@ -30,7 +32,7 @@ Place processing that requires a long time on another server, and place the `HTT
 
 The second way is to use the `mqtt` node. However, due to the function of the `mqtt` node, it is necessary to install the `MQTT broker` node. You can install it by searching `node-red-contrib-mqtt-broker` at Manage pallete menu.
 
-You should enter the port number and the required details in the `MQTT broker` node. And each `mqtt in` node is connected to `mqtt out` node that has same `topic` and `port`. It means you need to type the `topic` and `port` not only localhost but also other server, but you can freely control which nodes will send and receive messages. 
+You should enter the port number and the required details in the `MQTT broker` node. And each `mqtt in` node is connected to `mqtt out` node that has same `topic` and `port`. It means you need to type the `topic` and `port` not only localhost but also other server, but you can freely control which nodes will send and receive messages.
 
 <div style="text-align: center">
     <img title="Respondig to non-functional requirements" src="./images/method2.png"/>
@@ -49,23 +51,23 @@ In some cases, it may be necessary to have an orderly relationship with multiple
 Node-RED has inherited asynchronous nature of Node.js with which Node-RED is developed.
 Therefore, in Node-RED, the processing of each node is asynchronously executed after the node receives a message.
 
-This means that when two or more messages arrive at a flow, the processing of the flow does not always finish in the order of arrival of the messages. By this feature, flow can handle more messages at the same time because it does not have to wait for the processing of any other message to end. 
+This means that when two or more messages arrive at a flow, the processing of the flow does not always finish in the order of arrival of the messages. By this feature, flow can handle more messages at the same time because it does not have to wait for the processing of any other message to end.
 
 #### `Sort` node
 
 To ensure the order of processes, a `Sort` node can be used.
 You can choose sorting target of `Sort` node as `msg` or `message sequence`.
-By setting `msg.payload`, the contents of the message are sorted alphabetically. 
+By setting `msg.payload`, the contents of the message are sorted alphabetically.
 If you set the `message sequence`, you can use `Sort` node as feature that guarantee the order of messages arrival.
 
 `Sort` node expects that `msg.parts` property is contained in its `msg` that is input.
-`msg.parts` is added when `msg` is divided into multiple parts by `Split` node. 
+`msg.parts` is added when `msg` is divided into multiple parts by `Split` node.
 Instead of `Split` node, you can add `msg.parts` to `msg` with other node such as `Change` node and `Function` node. In this case, you have to set following properties to each message that you want to sort.
 
 |Property          |  |Description                               
 |:-----------------|:-|:-----------------------------------------
 |`msg.parts.id`    |  | An identifier for the group of messages  
-|`msg.parts.index` |  | The position of messages after be sorted 
+|`msg.parts.index` |  | The position of messages after be sorted
 |`msg.parts.count` |  | The total number of messages to be sorted
 
 <div style="text-align: center">
@@ -92,18 +94,18 @@ In addition, nodes that can manipulate the order exist as follows:
 
 {% comment %}  
 This content was included in this wiki. However, we have determined that it is better to add this section to the other document existing. We will discuss it next time.   
- 
+
 ## Managing state  
- 
+
 You need to manage the execution status of the program for following cases:  
- 
+
 * Calculation processing targeting multiple messages  
 * Sharing information among multiple nodes  
 * Process depending on Node-RED External state  
 * Recovery processing at error occurrence  
- 
+
 This section describes the policy of state management about following points.  
- 
+
 * Type of state  
 * Maintaining flow state  
 * Maintaining node state  

@@ -1,40 +1,83 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
+layout: docs-developing-flows
+toc: toc-developing-flows.html
 title: Introduction
 ---
 
-With Node-RED, you can create an application quickly.
-In particular, creating small IoT applications is very easy even if you use Node-RED in an adhoc manner.
-However, if you create relatively large applications or create applications with your team, like an enterprise development, you may want practices and tips to create more reusable and readable flows.
-Therefore, this Developing Flows guidelines are intended for providing such knowledge.
+Node-RED allows you to quickly start developing applications by dragging in nodes and
+wiring them together to create flows. This can be a great way to get started, but
+as flows grow over time, it can lead to applications that are harder to maintain.
 
-This guideline assume that you already know basic usage of Node-RED.
-If you are a starter and you want to know just how to use Node-RED, please read [User Guide](https://nodered.org/docs/user-guide/) and [Cookbook](https://cookbook.nodered.org/) first.
+This guide provides some recommendations and best practices for how to create
+Node-RED flows that will be resuable, easier to maintain and more robust.
 
-### [Designing](designing)
+This guide assume that you are already familiar with the basic usage of Node-RED.
+If you are looking for more information about using Node-RED, the [User Guide](https://nodered.org/docs/user-guide/)
+and [Cookbook](https://cookbook.nodered.org/) are good resources to help you get
+started.
+
+
+
+### [Flow structure](flow-structure)
+
+This section looks at how you can organise your flows, strategies for splitting them
+into smaller, reusable components and how to customise them for different platforms.
+
+[more...](flow-structure)
+
+
+### [Message design](message-design)
+
+**Not written yet**
+
+ - payload as the main content
+ - properties at top level, vs everything in payload
+ - Take care of node side-effects (msg.topic for example)
+ - Use properties to identify the origin of a message
+ - Preserve message properties
+ - Cloning messages
+
+[more...](message-design)
+
+### [Error handling](error-handling)
+
+**Not written yet**
+
+ - How to handle errors in flows
+   - what can or cannot be caught be a Catch node
+ - Where Status node can be used
+ - Layout of Catch/Status nodes in relation to what they target
+ - Avoiding loops
+
+[more...](error-handling)
+
+### [Documenting flows](documenting-flows)
+
+All good code should have good documentation to match. This section looks at what
+tools and techniques Node-RED provides to help you document them.
+
+[more...](documenting-flows)
+
+---
+
+***The following is the original proposed content for the guide. It is still here for reference whilst it is being reworked into the above sections***
+
+##### [Designing](designing)
 
 Descriptions about designing strategy before developing flows.
 
-### [Implementation](implementation)
+##### [Implementation](implementation)
 
 Explanations about phases of the flow implementation.
 
-### [Readability](readability)
+##### [Readability](readability)
 
 Guideline for improving readability to create a reusable flows
 
-### [Project](multiple-developers)
+##### [Project](multiple-developers)
 
 Project management methods for developing flows among multiple people
 
-### [Non-functional requirements](non-functional)
+##### [Non-functional requirements](non-functional)
 
 Techniques to meet non-functional requirements.
-
-
-{% comment %}
-*Before adding guideline to the Node-RED official page through a pull request, we would like to discuss contents and where to place it with somebody who are interested in this guideline. This wiki page is for discussing them.*  
-
-*At first, we’d like to show a contents list and where to place it on Node-RED official page. After that, we will write the actual contents and discuss it with Node-RED community because we would reduce unnecessary work.*  
-{% endcomment %}

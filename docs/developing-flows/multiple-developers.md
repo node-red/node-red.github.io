@@ -1,8 +1,10 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
+layout: docs-developing-flows
+toc: toc-developing-flows.html
 title: A project with multiple developers
 ---
+
+***This content is under review and may not form part of the final flow developer guide***
 
 {% comment %}
 When multiple developers join the development, you may need development standards and environments that can facilitate collaborative development. This chapter describes about them.  
@@ -12,9 +14,9 @@ When multiple developers join the development, you may need development standard
 
 {% comment %}
 *The project feature of Node-RED can be linked with Git and you can manage the version of flows. It is recommended to use Git remote repository such as GitLab or GitBucket for sharing flows and projects among members. This chapter describes the development environment using Git.*  
- 
+
 *In detail, we plan to describe followings.*  
- 
+
 * *Configuration of development environment*  
 * *Procedure of developing*  
 * *Steps of release*  
@@ -100,16 +102,16 @@ The following figure shows how the development environment is used to release a 
 </div>
 
 Developer C runs the command `git pull` in a terminal to pull the Release Branch and the Develop Branch, and then runs the command `git merge` to merge the contents of the Develop Branch into the Release Branch.
-These prodecure means when Developer C pull the Develop Branch, Developer C's local repository is updated works of Developer A and Developer B. 
-When Developer C merge branches on local repository, works of the other developers are reflected to Release Branch on local repository of Developer C. 
+These prodecure means when Developer C pull the Develop Branch, Developer C's local repository is updated works of Developer A and Developer B.
+When Developer C merge branches on local repository, works of the other developers are reflected to Release Branch on local repository of Developer C.
 Pushing means reflecting Developer C's Release Branch to remote repository of GitHub.
-Unless Developer A and Developer B have both directly run `git push` to the Release Branch, there will be no conflicts at this point. 
+Unless Developer A and Developer B have both directly run `git push` to the Release Branch, there will be no conflicts at this point.
 
 ### Management of flow with git  
 
 It is recommended that you use Git for version management and for sharing flows between developers.
 This is because Git is integrated into Node-RED via the Projects feature.
-Flow management is recommended that it is always be performed by using the Projects feature of Node-RED. 
+Flow management is recommended that it is always be performed by using the Projects feature of Node-RED.
 Unless it is necessary to use, developers should avoid using Git commands in a console.
 This is because developed flows are saved as single-line JSON files, and merging these files in the console requires one of the conflicting flows to be deleted in its entirety.
 

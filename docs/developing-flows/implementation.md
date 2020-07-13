@@ -1,14 +1,17 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
+layout: docs-developing-flows
+toc: toc-developing-flows.html
 title: Implementation of flow
 ---
 
+***This content is under review and may not form part of the final flow developer guide***
+
+
 ### Cooperation between flows  
- 
+
 One application may be constructed by integration of small flows that provide small functions. Since each small flow may be created by a different team, deciding how to integrate the small flows is important for smooth collaborative development.    
- 
-`Http in/response/request` nodes are useful for the integration. (See below figure)You can create flows that work like services by using an HTTP request receiving node as the first node in the flow, and a response sending node as the last. The resulting flow has greater reusability and by linking with an integrity monitoring system, any abnormal processing in the flow can be detected. 
+
+`Http in/response/request` nodes are useful for the integration. (See below figure)You can create flows that work like services by using an HTTP request receiving node as the first node in the flow, and a response sending node as the last. The resulting flow has greater reusability and by linking with an integrity monitoring system, any abnormal processing in the flow can be detected.
 
 <div style="text-align: center">
     <img title="Implementaton" src="./images/flow-as-service.png"/>
@@ -19,7 +22,7 @@ However, if you do not want to expose endpoints of small flows, you can make sub
 Another approach is to use `Link` nodes as the interface between flows on different tabs.
 `Link` nodes and `HTTP` nodes each have their advantages and disadvantages. Use the node type that is appropriate for your situation.
 
-|             | Advantages                                                            | Disadvantages 
+|             | Advantages                                                            | Disadvantages
 |:------------|:----------------------------------------------------------------------|:--------------
 |**`Link`**|You can click the Link node to see the connections between flows.      | If there are pairs of Link nodes within the tab, it is difficult to tell which serve as the tab interface and which are there to simplify the flow.
 |**`HTTP`**|You can connect with systems other than Node-RED, such as test systems.| Processing is unnecessarily exposed to outside entities.
@@ -63,10 +66,10 @@ The figure below is a bad example without reusability. If different logic to ope
     <img title="Implementaton" src="./images/subflow-without-reusability.png"/>
 </div>
 
-This example is more reusable than the above. 
+This example is more reusable than the above.
 This flow is constructed with a subflow to operate the same kind of smart light and the nodes to enter the identifier of the mart light in the input message.
 However, although there are actually several smart light, it is difficult for others to understand the process because the Node-RED workspace seem to have only one smart light.
-In addition, the flow will be longer than necessary, because the nodes that define the lights to operate need to be inserted. 
+In addition, the flow will be longer than necessary, because the nodes that define the lights to operate need to be inserted.
 
 <div style="text-align: center">
     <img title="Implementaton" src="./images/subflow-without-environment-variable.png"/>
@@ -80,9 +83,9 @@ Therefore, smart light and nodes respond one-on-one, increasing the readability 
 </div>
 
 ### Flows that can have adverse effects  
- 
+
 With Node-RED, even non-programmers can easily enjoy coding. However, Node-RED (as of 0.19.5) does not place strict restrictions on creating flows and does not provide debugging tools such as a lint. Thus, you can easily create dangerous flows that can cause bugs. In particular, it is also possible to lead to resource exhaust of Node-RED engine.      
- 
+
 This chapter shows certain cautions and principles preventing from creating such dangerous flows.    
 
 ### Loop design
@@ -110,7 +113,7 @@ The value is true at the point when the message enters the loop. When the user c
 </div>
 
 ### Error Handling  
- 
+
 To create reliable flows, error handling is essential. This chapter explains its implementation method and arrangement of error handling flow to easily distinct between nominal flow and anomaly flow.  
 
 Error handling refers to measures put in place to deal with error conditions that occur in software.

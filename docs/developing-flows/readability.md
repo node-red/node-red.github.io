@@ -1,8 +1,11 @@
 ---
-layout: docs
-toc: developing-flows-toc.html
+layout: docs-developing-flows
+toc: toc-developing-flows.html
 title: Improving readability
 ---
+
+***This content is under review and may not form part of the final flow developer guide***
+
 ### Align nodes  
 
 {% comment %}
@@ -52,9 +55,9 @@ As in the following figure, when a long flow contains groups of processes, arran
 <div style="text-align: center">
     <img title="Improving readability" src="./images/node-vertical-arrangement.png"/>
 </div>
- 
+
 ### Naming rule  
- 
+
 Name of nodes, tabs and subflow is important for readability and reusability of flows. This chapter presents some effective naming rules of them.  
 
 #### Node naming conventions
@@ -102,9 +105,9 @@ It is recommended that you use the format "Noun" for flow names.
 Flow names can also consist of compound nouns.
 However, depending on the display size, names longer than 15 characters might be cut off in the browser window.
 It is recommended that you use flow names of 15 or fewer characters.
- 
+
 ### Using proper nodes  
- 
+
 {% comment %}
 *Each node can be used flexibly. For example, a function node can cover the same function of Change node, Switch node and so on. However, using a proper specialized node for your objective contributes improving understandability of your flows. This chapter introduces the roles and usage of core nodes such as **Change, Switch, Template, Link, HTTP**.*  
 
@@ -196,14 +199,14 @@ Use `Exec` nodes as little as possible, and keep these concerns in mind when doi
 |- Processing can be executed that depends on the execution platform (server).<br />- You can run any type of program you wish.|- You cannot tell what the flow is doing just by looking at it.<br />- Use of rm and communication commands presents risks in terms of security and the integrity of the environment.|
 
 ### Changing icon  
- 
-When the same kind nodes are in the flow (e.g. a case that managing a large number of devices with `MQTT` nodes), it is difficult to distinguish nodes. But, it can be solved by designating different icons for each node. 
+
+When the same kind nodes are in the flow (e.g. a case that managing a large number of devices with `MQTT` nodes), it is difficult to distinguish nodes. But, it can be solved by designating different icons for each node.
 
 {% comment %}
 This chapter introduces the procedure for changing the icon and some Use Cases.  
 {% endcomment %}
 
-Something to keep in mind is that overusing the icon changing function can in fact make it more difficult to identify nodes on sight. 
+Something to keep in mind is that overusing the icon changing function can in fact make it more difficult to identify nodes on sight.
 You need to take care to maintain a balance.
 
 <div style="text-align: center">
@@ -272,9 +275,9 @@ This might include, for example, any changes it makes to `global` and `flow` con
 
 ### Refactoring  
 
-{% comment %} 
+{% comment %}
 *It is better to check and refactor the developed flows before presenting it to other developers. This section shows refactoring points such as followings,*  
- 
+
 1. *Coding Style*  
 2. *Flow implementation*  
 3. *Readability and reusability*  
