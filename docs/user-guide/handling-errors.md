@@ -5,6 +5,18 @@ title: Handling errors
 slug: handling-errors
 ---
 
+Whilst it is easy to create flows that do the right thing when everything works,
+it is also important to think about what could go wrong.
+
+For example, if the flow interacts with an external database or API, what happens
+if it stops responding to requests? Or what if the MQTT nodes lose their connection
+to a broker?
+
+Error handling in any application is essential to ensure these sorts of events
+are handled properly. What it means to handle the error will depend on the
+requirements of the application. You may want to try an action that failed, or
+trigger a separate alert, or maybe the error is an entirely expected event that
+is just another part of the application logic.
 
 Node-RED provides two ways for a node to report an error. It can either just
 write a message to the log or it can notify the runtime of the error and cause
@@ -22,7 +34,8 @@ There is a third sort of error that can cause the Node-RED runtime to shutdown. 
 in nodes.
 
 This guide describes each of these error types in more detail and shows what can
-be done to handle them.
+be done to handle them. It also looks at how the Status events of a node can be
+used to create flows that [handle unexpected events](#handling-status-changes).
 
 
 ### Logging errors
@@ -102,6 +115,13 @@ This allows you to create error handling flows that target specific nodes and al
 have an error handler that will catch "everything else".
 
 
+#### Errors in subflows
+
+If an error is logged from inside a subflow, the runtime will first check for any
+Catch nodes inside the subflow. If there are none there, the error will propagate
+up to the flow containing the subflow instance.
+
+
 ### Uncatchable errors
 
 These are the errors a node writes to the log without notifying the runtime properly.
@@ -136,3 +156,29 @@ caused the error and raise an issue against it. This is not always easy due to t
 The stack trace provided in the Node-RED log will provide some clues as to the
 nature of the asynchronous task that hit the error, which in turn may help you
 to identify the node at fault.
+
+### Handling Status Changes
+
+Not all errors conditions will appear as error events that can be caught be a
+Catch node. For example, the MQTT nodes losing their connection will not trigger
+an error, but they will trigger a change of their status.
+
+Just as the Catch node can be used to handle error events, the Status node can
+be used to handle changes in a node's status.
+
+The message sent by the Status node includes the `status` property that gives
+information about the status and the node that triggered the event.
+
+```json
+{
+    "status": {
+        "fill": "red",
+        "shape": "ring",
+        "text": "node-red:common.status.disconnected",
+        "source": {
+            "id": "27bbb5b1.d3eb3a",
+            "type": "mqtt out"
+        }
+    }
+}
+```

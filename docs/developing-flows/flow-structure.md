@@ -98,3 +98,18 @@ The same approach can be used when the flows might run on different operating sy
 
 The Inject and Change nodes are able to access environment variables using either the "env" option in their TypedInput. The Function node can use the `env.get()` function.
 
+### Error handling
+
+Node-RED provides the Catch and Status nodes as ways of building flows that can respond to errors. For more information about how they can be used, refer to the [user guide](/docs/user-guide/handling-errors).
+
+As there is no direct visual association between a Catch node and the nodes it targets, you should consider how to position them in order to keep the flows readable.
+
+Placing them close to the parts of the flow they correspond to can help, but you should take care not cause your flows to be come overcrowded.
+
+Although approach is to group all of the error handling flows below the main flow - making the 'good' path clearly distinct from the error paths.
+
+Giving your Catch nodes a clear name is also very important to help easily identify the scenarios they are intended to handle.
+
+Which ever approach you choose, try to be consistent across your different flows.
+
+

@@ -39,18 +39,6 @@ into smaller, reusable components and how to customise them for different platfo
 
 [more...](message-design)
 
-### [Error handling](error-handling)
-
-**Not written yet**
-
- - How to handle errors in flows
-   - what can or cannot be caught be a Catch node
- - Where Status node can be used
- - Layout of Catch/Status nodes in relation to what they target
- - Avoiding loops
-
-[more...](error-handling)
-
 ### [Documenting flows](documenting-flows)
 
 All good code should have good documentation to match. This section looks at what
