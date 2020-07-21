@@ -46,7 +46,7 @@ Subflows let you create a new node in the palette whose internal implementation 
 </div>
 
 
-There are some important differences between the two approaches. Link nodes cannot be used in the middle of a flow, where messages are passed over the link and then return when the other flow completes. They can only be used to start or end a flow. They can also be connect to more than one other link node. This lets you pass messages out to multiple other flows, or have multiple flows pass messages into a single flow.
+There are some important differences between the two approaches. Link nodes cannot be used in the middle of a flow, where messages are passed over the link and then return when the other flow completes. They can only be used to start or end a flow. They can also be connected to more than one other link node. This lets you pass messages out to multiple other flows, or have multiple flows pass messages into a single flow. They can be used within a single tab to help flows wrap across the workspace without having lots of wires crossing from right to left.
 
 Subflows appear as regular nodes so can be used at any point in a flow. However each instance of the subflow is independent of the others. Any flow context inside the subflow will be scoped to the individual instances. If the subflow creates a connection to a remote system, each instance will create its own connection.
 
@@ -79,7 +79,7 @@ This pattern can be applied to any node configuration field that lets you enter 
 
 Another consideration is how to manage any state information in your flows. For example, keeping a count of how many messages pass through a flow, or the current state of an external sensor.
 
-Node-RED provides the Context system for managing state within the runtime. The context can be scoped to the same tab, subflow or made globally available.
+Node-RED provides the Context system for managing state within the runtime. The context can be scoped to the same tab, subflow or made available globally.
 
 If a piece of state information is only needed by nodes on a particular tab, you should use flow-scoped rather than global. You should also choose context variable names with care - make sure they are descriptive and easy to identify.
 
