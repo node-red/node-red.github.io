@@ -108,7 +108,7 @@ The background colour of each group can also be used to highlight different type
 
 All of the techniques discussed so far relate to the visual appearance of the flows. In order to add more in depth documentation, something more is needed.
 
-Every node, group and tab can have longer-form documentation added under Description tab in their edit dialog. This help can be formatted using Markdown and including lists, tables and links.
+Every node, group and tab can have longer-form documentation added under Description tab in their edit dialog. This help can be formatted using Markdown and including lists, tables and links. This documentation is then displayed in the Info sidebar when the item is selected.
 
 This longer format of documentation is useful where more explanation is needed of a flow's purpose, or some more complex logic needs to be described.
 
