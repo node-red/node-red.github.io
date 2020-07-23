@@ -28,14 +28,8 @@ into smaller, reusable components and how to customise them for different platfo
 
 ### [Message design](message-design)
 
-**Not written yet**
-
- - payload as the main content
- - properties at top level, vs everything in payload
- - Take care of node side-effects (msg.topic for example)
- - Use properties to identify the origin of a message
- - Preserve message properties
- - Cloning messages
+This section looks at how the design of messages can help create nodes and flows
+that work well together and are easier to maintain.
 
 [more...](message-design)
 
