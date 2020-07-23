@@ -12,7 +12,7 @@ This guide takes you through the steps to get Node-RED running in an AWS environ
 There are two approaches:
 
 1. [Running on the AWS Elastic Beanstalk Service (EB)](#running-on-aws-ebs)
-2. [Running on Elastic Beanstalk with High Availability](#running-on-elastic-beanstalk-with-high-availabilty)
+2. [Running on Elastic Beanstalk with High Availability](#running-on-elastic-beanstalk-with-high-availability)
 3. [Running under an Ubuntu image on AWS EC2](#running-on-aws-ec2-with-ubuntu)
 
 ### Running on AWS EBS
@@ -89,17 +89,17 @@ Node-RED is now accessible directly from the web url of the application. However
 
 2. Select the EC2 instance which is running the node-red application. copy its IP address
 
-3. Enter the IP address in the browser with a port of 8081. This will provide direct access to the node-red adminstration console.
+3. Enter the IP address in the browser with a port of 8081. This will provide direct access to the node-red administration console.
 
 Note: the public IP address also provides access to the node-red application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
 
 Your Node-RED instance is now running on EBS. Any flows you create will be saved to AWS S3 so you can tear down the environment and the flows will be accessible whenever you redeploy.
 
-### Running on Elastic Beanstalk with High Availabilty
+### Running on Elastic Beanstalk with High availability
 
 This deployment option gives you a multiple node Node-RED setup, with a shared filesystem using Amazon Elastic File System (EFS). Because it runs multiple nodes behind a load balancer, you will have high availabiliity - if a node dies, Elastic Beanstalk will replace it automgically.
 
-![solution diagram](/images/node-red-ha-on-aws.png "Node-RED on Elastic Beanstalk with High Availabilty")
+![solution diagram](/images/node-red-ha-on-aws.png "Node-RED on Elastic Beanstalk with High availability")
 
 To get started, clone the repository here [https://github.com/guysqr/node-red-ha-on-aws](https://github.com/guysqr/node-red-ha-on-aws) and follow the simple instructions. The infrastructure is created for you by a CloudFormation template, so you don't need to know much about AWS to set it up.
 

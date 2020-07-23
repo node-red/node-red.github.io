@@ -133,6 +133,6 @@ The [Creating Nodes guide](/docs/creating-nodes/context) describes how to use co
 
 ### Deleting context from the file store
 
-Context can be permenantly deleted by using a Change node set to delete.
+Context can be permanently deleted by using a Change node set to delete.
 
 <div style="text-align: center"><img src="/docs/user-guide/images/context_delete.png" width="488px"></div>

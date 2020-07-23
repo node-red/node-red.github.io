@@ -20,7 +20,7 @@ title: 'Sidebar: Information'
 The Information sidebar shows information about the flows. This includes an outline
 view of all flows and nodes, as well as details of the current selection.
 
-The outline view can be searched using the same syntax as the [main seach dialog](../workspace/search).
+The outline view can be searched using the same syntax as the [main search dialog](../workspace/search).
 
 Hovering over an entry in the outline reveals a set of options.
 

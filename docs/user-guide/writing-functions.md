@@ -174,7 +174,7 @@ if (context.get("counter") === undefined) {
 
 The Setup function can return a Promise if it needs to complete asynchronous work
 before the main Function can start processing messages. Any messages that arrive
-before the Setup function has completed will be queued up and handled when its ready.
+before the Setup function has completed will be queued up, and handled when it is ready.
 
 ### Tidying up
 

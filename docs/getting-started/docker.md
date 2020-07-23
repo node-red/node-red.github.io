@@ -223,7 +223,7 @@ Dockerfile
 README.md
 package.json     # add any extra nodes your flow needs into your own package.json.
 flows.json       # the normal place Node-RED store your flows
-flows_cred.json  # credemtials your flows may need
+flows_cred.json  # credentials your flows may need
 settings.js      # your settings file
 ```
 
@@ -278,7 +278,7 @@ You _build_ this Dockerfile normally:
 docker build -t your-image-name:your-tag .
 ```
 
-To _run_ locally for development where changes are written immediately and only the local directory that youre working from, `cd` into the project's directory and then run:
+To _run_ locally for development where changes are written immediately and only the local directory that you are working from, `cd` into the project's directory and then run:
 
 ```bash
 docker run --rm -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here" -p 1880:1880 -v `pwd`:/data --name a-container-name your-image-name
@@ -323,7 +323,7 @@ docker run -d -p 1880:1880 --name mynodered nodered/node-red
 Once it is running headless you can use the following command to get access back into the container.
 ```
 $ docker exec -it mynodered /bin/bash
-bash-4.4$ 
+bash-4.4$
 ```
 
 Will give a command line inside the container - where you can then run the npm install
