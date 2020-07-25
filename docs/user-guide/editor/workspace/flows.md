@@ -49,6 +49,8 @@ Flows can be reordered in the workspace by dragging their tabs around in the tab
 <div style="width:350px" class="figure align-right">
   <img src="../images/editor-edit-flow.png" alt="Flow properties editor">
   <p class="caption">Flow properties editor</p>
+  <img src="../images/editor-sidebar-info.png" alt="Information Sidebar">
+  <p class="caption">Information Sidebar</p>
 </div>
 
 To edit a flow's properties, double-click on its tab in the top bar. This will
@@ -69,6 +71,9 @@ can use Markdown syntax for formatting and will appear in the [Information sideb
 The flow can be enabled or disabled using the toggle button at the bottom of the
 dialog. If a flow is disabled, none of the nodes it contains will be created when
 the flow is deployed.
+
+*Since Node-RED 1.1.0*
+The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-circle-thin"></i> button in the [Information sidebar](../sidebar/info) can also be used to enable or disable the node/flow.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
