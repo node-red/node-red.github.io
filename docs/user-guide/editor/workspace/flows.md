@@ -73,6 +73,7 @@ dialog. If a flow is disabled, none of the nodes it contains will be created whe
 the flow is deployed.
 
 *Since Node-RED 1.1.0*
+
 The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-circle-thin"></i> button in the [Information sidebar](../sidebar/info) can also be used to enable or disable the node/flow.
 
 <table class="action-ref inline">
