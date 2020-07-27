@@ -75,7 +75,7 @@ This is where adding port labels can help document the intended logic.
 
 For example, the Switch node provides default labels for its outputs that are shown when the mouse hovers over them. They can help quickly identify the purpose of each branch in the flow.
 
-Whilst the default labels may be sufficient in the context of the flow itself, it is also possible to custom labels to provide more detailed information.
+Whilst the default labels may be sufficient in the context of the flow itself, it is also possible to customise labels to provide more detailed information.
 
 <div style="width: 600px" class="figure">
   <img src="images/placeholder.png" alt="Link nodes">
