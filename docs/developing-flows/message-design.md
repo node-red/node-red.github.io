@@ -8,7 +8,7 @@ slug: message design
 The messages that pass through a flow are plain JavaScript objects that can have
 properties set on them.
 
-They usually have a payload property - this is the default property that most nodes
+They usually have a `payload` property - this is the default property that most nodes
 will work with.
 
 For more information about messages in Node-RED you should read the [Working with messages](/docs/user-guide/messages)
@@ -82,5 +82,4 @@ There is not a single right answer to how to structure the message, but it shoul
 
 As with programming in general, the choice of good property names is also important. They should be self-describing to help with later debugging and understanding of the flow. For example, `msg.temperature` is much more understandable than `msg.t`.
 
-
-##
+They should also avoid commonly used properties such as `reset` and `parts` that have special meaning with some nodes.

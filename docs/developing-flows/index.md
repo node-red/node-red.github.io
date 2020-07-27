@@ -39,27 +39,3 @@ All good code should have good documentation to match. This section looks at wha
 tools and techniques Node-RED provides to help you document them.
 
 [more...](documenting-flows)
-
----
-
-***The following is the original proposed content for the guide. It is still here for reference whilst it is being reworked into the above sections***
-
-##### [Designing](designing)
-
-Descriptions about designing strategy before developing flows.
-
-##### [Implementation](implementation)
-
-Explanations about phases of the flow implementation.
-
-##### [Readability](readability)
-
-Guideline for improving readability to create a reusable flows
-
-##### [Project](multiple-developers)
-
-Project management methods for developing flows among multiple people
-
-##### [Non-functional requirements](non-functional)
-
-Techniques to meet non-functional requirements.
