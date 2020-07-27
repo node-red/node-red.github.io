@@ -36,11 +36,11 @@ key differences:
 
 <script type="text/html" data-template-name="remote-server">
     <div class="form-row">
-        <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+        <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Host</label>
         <input type="text" id="node-config-input-host">
     </div>
     <div class="form-row">
-        <label for="node-config-input-port"><i class="icon-bookmark"></i> Port</label>
+        <label for="node-config-input-port"><i class="fa fa-bookmark"></i> Port</label>
         <input type="text" id="node-config-input-port">
     </div>
 </script>

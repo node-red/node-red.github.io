@@ -127,7 +127,7 @@ For more information about the runtime part of the node, see [here](node-js).
 
 <script type="text/html" data-template-name="lower-case">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>

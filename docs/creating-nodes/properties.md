@@ -27,7 +27,7 @@ property called `prefix` to the node:
 2. Add an entry to the edit template for the node
     ```html
     <div class="form-row">
-        <label for="node-input-prefix"><i class="icon-tag"></i> Prefix</label>
+        <label for="node-input-prefix"><i class="fa fa-tag"></i> Prefix</label>
         <input type="text" id="node-input-prefix">
     </div>
     ```
