@@ -31,22 +31,22 @@ The goal is to make it easy to follow the flow without having to jump around the
 The approach that gives the greatest legibility is to keep each unit of processing on a single horizontal line wherever possible. The editor's default behaviour of snapping nodes to a grid on the tab helps keep them aligned.
 
 <div class="figure">
-    <img src="./images/node-arrangement-sample.png" alt="Placeholder caption"/>
-    <p class="caption">Placeholder caption</p>
+    <img src="./images/node-arrangement.png" alt="Aligning flows in horizontal rows"/>
+    <p class="caption">Aligning flows in horizontal rows</p>
 </div>
 
 If there is a node that has more than one output port, aligning the branched flow vertically makes it easy to compare and contrast the flows.
 
 <div style="width: 600px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Cut above image in half - move Power Usage Calculation Service half here</p>
+  <img src="images/node-arrangement-sample-align.png" alt="Aligning branched flows">
+  <p class="caption">Aligning branched flows</p>
 </div>
 
 When a flow gets too long, arranging some nodes vertically can be used to good effect. In the following figure, some of the nodes are arranged vertically to imply a relationship between them. It is easier to understand the nature of the overall flow if it is visually obvious what smaller sections it is comprised of and how they relate to each other.
 
 <div class="figure">
-    <img src="./images/node-vertical-arrangement.png" alt="Placeholder caption"/>
-    <p class="caption">Placeholder caption</p>
+    <img src="./images/node-vertical-arrangement.png" alt="Vertically aligning logical segements of a long flow"/>
+    <p class="caption">Vertically aligning logical segements of a long flow</p>
 </div>
 
 In some cases, these smaller sections may be candidates for moving to subflows that will reduce the visual complexity of the flow. That is particular true if that smaller section could be reused elsewhere in the flows.
@@ -77,9 +77,9 @@ For example, the Switch node provides default labels for its outputs that are sh
 
 Whilst the default labels may be sufficient in the context of the flow itself, it is also possible to customise labels to provide more detailed information.
 
-<div style="width: 600px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Port labels</p>
+<div  class="figure">
+  <img src="images/node-output-labels.png" alt="Custom output labels on the Switch node's Appearance tab">
+  <p class="caption">Custom output labels on the Switch node's Appearance tab</p>
 </div>
 
 ### Inline Comments
@@ -88,9 +88,9 @@ The Comment node can be used to add inline comments to the flow - both the node'
 
 By indenting the flows on the page, you can indicate an implied grouping of the different components.
 
-<div style="width: 600px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Indenting with Comments</p>
+<div class="figure">
+  <img src="images/comment-nodes.png" alt="Documenting flows with the Comment node">
+  <p class="caption">Documenting flows with the Comment node</p>
 </div>
 
 ### Grouping nodes
@@ -99,16 +99,16 @@ A more explicit arrangement of the flows can be achieved by grouping related nod
 
 The background colour of each group can also be used to highlight different types of group.
 
-<div style="width: 600px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Grouping nodes</p>
+<div class="figure">
+  <img src="images/grouping-nodes.png" alt="Grouping nodes">
+  <p class="caption"> Grouping nodes</p>
 </div>
 
 ### Adding longer documentation
 
 All of the techniques discussed so far relate to the visual appearance of the flows. In order to add more in depth documentation, something more is needed.
 
-Every node, group and tab can have longer-form documentation added under Description tab in their edit dialog. This help can be formatted using Markdown and including lists, tables and links. This documentation is then displayed in the Info sidebar when the item is selected.
+Every node, group and tab can have longer-form documentation added under the [Description tab in their edit dialog](/docs/user-guide/editor/workspace/nodes#editing-node-properties). This help can be formatted using Markdown and including lists, tables and links. This documentation is then displayed in the [Information sidebar](/docs/user-guide/editor/sidebar/info) when the item is selected.
 
 This longer format of documentation is useful where more explanation is needed of a flow's purpose, or some more complex logic needs to be described.
 

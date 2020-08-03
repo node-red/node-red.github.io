@@ -30,20 +30,22 @@ As you build your flows, you may find some common parts that you want to reuse i
 
 Node-RED provides two different ways of creating reusable flows - Links nodes and Subflows.
 
-Link nodes let you create a flow that can jump between tabs in the editor - they add a virtual wire from the end of one flow to the start of another.
-
-
-<div style="width: 300px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Link nodes</p>
+<div style="width: 300px" class="figure align-right">
+  <img src="images/link-nodes.png" alt="Link nodes">
+  <p class="caption">Link nodes</p>
 </div>
 
-Subflows let you create a new node in the palette whose internal implementation is described as a flow. You can then add new instances of the subflow wherever you would a normal node.
+**Link nodes** let you create a flow that can jump between tabs in the editor - they add a virtual wire from the end of one flow to the start of another.
 
-<div style="width: 300px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: Link nodes</p>
+<div style="clear:both"></div>
+
+<div style="width: 300px" class="figure align-right">
+  <img src="images/subflow.png" alt="Subflows">
+  <p class="caption">Subflows</p>
 </div>
+
+**Subflows** let you create a new node in the palette whose internal implementation is described as a flow. You can then add new instances of the subflow wherever you would a normal node.
+
 
 
 There are some important differences between the two approaches. Link nodes cannot be used in the middle of a flow, where messages are passed over the link and then return when the other flow completes. They can only be used to start or end a flow. They can also be connected to more than one other link node. This lets you pass messages out to multiple other flows, or have multiple flows pass messages into a single flow. They can be used within a single tab to help flows wrap across the workspace without having lots of wires crossing from right to left.
@@ -54,24 +56,35 @@ Subflows appear as regular nodes so can be used at any point in a flow. However 
 
 When creating subflows, you may want to be able to customise their behaviour in some way. For example, changing what MQTT topic it publishes to.
 
-
-One pattern for doing that is by setting the custom topic on the messages passed to the subflow. But that results in adding a Change node in front of every subflow instance in order to set the desired value.
-
-<div style="width: 300px" class="figure align-right">
-  <img src="images/placeholder.png" alt="MQTT topic set by environment variables">
-  <p class="caption">Placeholder for image: MQTT topic set by environment variables</p>
-
-  <img src="images/placeholder.png" alt="Adding subflow property">
-  <p class="caption">Placeholder for image: Adding subflow property</p>
-
-  <img src="images/placeholder.png" alt="Customising subflow instance property">
-  <p class="caption">Placeholder for image: Customising subflow instance property</p>
-
-</div>
+One pattern for doing that is by setting `msg.topic` on every message passed to the subflow. But that requires adding a Change node ange node in front of every subflow instance in order to set the desired value.
 
 An easier way for doing this is by using Subflow properties. These are properties that can be set on the subflow instance and appear as environment variables inside the subflow.
 
-In the MQTT example, you could configure the node to publish to ${MY_TOPIC} and then add MY_TOPIC as a subflow property. When a user edits an individual instance they can then provide a custom value for MY_TOPIC.
+In the MQTT example, you could first configure the node to publish to `${MY_TOPIC}`.
+
+<div class="figure">
+  <img src="images/mqtt-envvar.png" alt="MQTT topic set by environment variables">
+  <p class="caption">MQTT topic set by environment variables</p>
+</div>
+
+<div style="width: 400px" class="figure align-right">
+  <img src="images/subflow-envvar.png" alt="Adding a subflow property">
+  <p class="caption">Adding a subflow property</p>
+</div>
+
+Then add `MY_TOPIC` as a subflow property.
+
+<div style="clear:both"></div>
+
+When a user edits an individual instance they can then provide a custom value for `MY_TOPIC` for that instance.
+
+
+<div class="figure">
+  <img src="images/subflow-instance-envvar.png" alt="Customising a subflow instance property">
+  <p class="caption">Customising a subflow instance property</p>
+
+</div>
+
 
 This pattern can be applied to any node configuration field that lets you enter the value directly. It doesn’t currently work for fields that are exposed as checkboxes or other custom UI elements.
 
@@ -111,5 +124,4 @@ Another approach is to group all of the error handling flows below the main flow
 Giving your Catch nodes a clear name is also very important to help easily identify the scenarios they are intended to handle.
 
 Which ever approach you choose, try to be consistent across your different flows.
-
 

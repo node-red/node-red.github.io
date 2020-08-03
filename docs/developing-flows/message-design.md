@@ -17,7 +17,7 @@ section of the user guide.
 This section looks at some of the choices you need to make when deciding how to
 stucture the messages in your flows.
 
-### Working with the payload
+### Working with `msg.payload`
 
 When creating flows, the choice of properties used on a message will largely
 be determined by what the nodes in the flow require.
@@ -26,16 +26,16 @@ Most nodes will expect to work with `msg.payload` and that will guide most of th
 
 For example, consider a flow that receives an id in the payload of an MQTT message. It then uses that id to query a database to find a matching record.
 
-<div style="width: 300px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: example mqtt to database query flow</p>
+<div class="figure">
+  <img src="images/mqtt-query.png" alt="MQTT to database query">
+  <p class="caption">MQTT to database query</p>
 </div>
 
 The database node will put its result in the payload of the message it sends - overwritting the original id value. If the flow needs to be able to reference that id value later on, it can use a Change node to copy the value to another property that will not get overwritten.
 
-<div style="width: 300px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: example change node to save msg.id</p>
+<div class="figure">
+  <img src="images/mqtt-query-save-id.png" alt="Using a Change node to copy the payload to msg.id">
+  <p class="caption">Using a Change node to copy the payload to <code>msg.id</code></p>
 </div>
 
 
@@ -46,12 +46,12 @@ For example, in most cases, a Function node should send on the same message obje
 
 ### Using `msg.topic`
 
-A number of nodes also treat `msg.topic` as having special meaning. It might be used to identify the source of the message, or to identify different 'streams' of messages on the same flows. It also gets displayed in the Debug sidebar with every message.
-
-<div style="width: 300px" class="figure">
-  <img src="images/placeholder.png" alt="Link nodes">
-  <p class="caption">Placeholder for image: topic in debug sidebar message</p>
+<div style="width: 343px" class="figure align-right">
+  <img src="images/debug-topic.png" alt="msg.topic shown in debug sidebar message">
+  <p class="caption"><code>msg.topic</code> shown in debug sidebar message</p>
 </div>
+
+A number of nodes also treat `msg.topic` as having special meaning. It might be used to identify the source of the message, or to identify different 'streams' of messages on the same flows. It also gets displayed in the Debug sidebar with every message.
 
 For example, the MQTT In node will set `msg.topic` to topic the message was received on. The Delay node can then be configured to rate limit messages according to their topic.
 
