@@ -1,7 +1,7 @@
 ---
 layout: docs-developing-flows
 toc: toc-developing-flows.html
-title: Introduction
+title: Developing Flows
 ---
 
 Node-RED allows you to quickly start developing applications by dragging in nodes and
