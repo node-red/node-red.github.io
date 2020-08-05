@@ -1,0 +1,19 @@
+<ul class="toc">
+    <li class="toc-expander"><div>V</div></li>
+    <li class="tocheader">
+        <ul>
+            <li class="toctitle active"><a href="/docs/developing-flows/">Developing Flows</a></li>
+            <li {% if page.url == "/docs/developing-flows/flow-structure" %}class="active"{% endif %}><a href="/docs/developing-flows/flow-structure">Flow structure</a></li>
+            <li {% if page.url == "/docs/developing-flows/message-design" %}class="active"{% endif %}><a href="/docs/developing-flows/message-design">Message design</a></li>
+            <li {% if page.url == "/docs/developing-flows/documenting-flows" %}class="active"{% endif %}><a href="/docs/developing-flows/documenting-flows">Documenting Flows</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 50px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>
