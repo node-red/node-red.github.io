@@ -23,7 +23,7 @@ title: Frequently Asked Questions
 #### Raspberry Pi
 
  - [How do I interact with Raspberry Pi GPIO?](interacting-with-pi-gpio)
- - [How can I customising the Raspberry Pi service?](customising-systemd-on-pi)
+ - [How can I customise the Raspberry Pi service?](customising-systemd-on-pi)
 
 
 #### Hardware

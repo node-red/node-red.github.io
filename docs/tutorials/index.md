@@ -32,4 +32,15 @@ to get the most from it.
   </a>
 </div>
 
+<div class="post-preview">
+  <a href="https://www.youtube.com/channel/UCQaB8NXBEPod7Ab8PPCLLAA">
+    <div class="post-header">
+      <h2>YouTube channel</h2>
+    </div>
+    <div class="post-content">
+    Our YouTube channel contains a series of short videos covering all the basics, as well as what is new in each release. Total viewing time less than an hour.
+    </div>
+  </a>
+</div>
+
 </div>
