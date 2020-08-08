@@ -208,7 +208,7 @@ functionGlobalContext
  <pre>context.global.foo = "bar";
  var osModule = context.global.osModule;</pre>
  This method is still supported, but deprecated in favour of the <code>global.get</code>/<code>global.set</code>
- functions. This is in anticipation of being able to persist the context data in a future release.
+ functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
  </div>
 
 debugMaxLength

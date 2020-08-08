@@ -34,16 +34,11 @@ from within your user data directory (by default, `$HOME/.node-red`):
 
 You will then need to restart Node-RED for it to pick-up the new nodes.
 
-Recent versions of `npm` will automatically add the module to the dependencies
-section of the `package.json` file in your user directory.
+### The package.json file
 
-### Installing individual node files
+When first started, or a new project created, Node-RED will create an initial `package.json` file in your user directory, or project directory. This allows you to manage your additional dependencies, and release versions of your project, using standard npm practices. The initial version is 0.0.1 but should be edited according to your project release requirements.
 
-During development it is also possible to install nodes by copying their `.js` and `.html`
-files into a `nodes` directory within your user data directory. If these nodes have any npm
-dependencies, they must be also be installed within the user data directory.
-This is only really recommended for development purposes.
-
+`npm` will automatically add additional installed modules to the dependencies section of the `package.json` file in your user directory.
 
 ### Upgrading nodes
 
@@ -61,7 +56,7 @@ That will highlight any modules that have updates available. To install the late
 version of any module, run the command:
 
 ```
-npm install <name-of-module>
+npm install <name-of-module>@latest
 ```
 
 Whichever approach you take, you will need to restart Node-RED to load the updates.
