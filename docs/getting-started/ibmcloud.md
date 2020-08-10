@@ -65,7 +65,7 @@ To trigger an upgrade following a new release being made available:
 
         cf restage [APPLICATION_NAME]
 
-3. If you are upgrade to Node-RED 0.20 or later, you **must** ensure your application is running on Node.js 10 or later. To do that, edit you application `package.json` file - see below for how to edit the file. Update the `engines` property to `10.x` if it is not currently set to that.
+3. If you are upgrading to Node-RED 0.20 or later, you **must** ensure your application is running on Node.js 10 or later. To do that, edit your application `package.json` file - see below for how to edit the file. Update the `engines` property to `10.x` if it is not currently set to that.
 
 In order to edit the file, you must enable the Continuous Delivery integration
 option via your application's IBM Cloud dashboard page. That will create a git repository
@@ -87,7 +87,7 @@ root path, delete the `httpStatic` and `httpAdminRoot` entries in the `bluemix-s
 
 The [Deploy To IBM Cloud enabled repository](https://github.com/node-red/node-red-bluemix-starter)
 lets you create your own customised Node-RED application that can then
-be deployed to IBM Cloud with a couple clicks.
+be deployed to IBM Cloud with a couple of clicks.
 
 You can try it out now by clicking here:
 
