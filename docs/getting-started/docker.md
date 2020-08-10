@@ -98,7 +98,7 @@ For example: suppose you are running on a Raspberry PI 3B, which has `arm32v7` a
 docker run -it -p 1880:1880 --name mynodered nodered/node-red:latest
 ```
 
-The same command can be used for running on an amd64 system, since Docker discovers it is running on a amd64 host and pulls the image with the matching tag (`1.1.0-10-amd64`).
+The same command can be used for running on an amd64 system, since Docker discovers it is running on an amd64 host and pulls the image with the matching tag (`1.1.0-10-amd64`).
 
 This has the advantage that you don't need to know/specify which architecture you are running on and makes docker run commands and docker compose files more flexible and exchangeable across systems.
 
@@ -209,7 +209,7 @@ The above compose file:
  - creates a node-red service
  - pulls the latest node-red image
  - sets the timezone to Europe/Amsterdam
- - Maps the container port 1880 to the the host port 1880
+ - Maps the container port 1880 to the host port 1880
  - creates a node-red-net network and attaches the container to this network
  - persists the `/data` dir inside the container to the `node-red-data` volume in Docker
 
@@ -286,7 +286,7 @@ docker run --rm -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here" -p 1880:18
 
 ### Startup
 
-Environment variables can be passed in to the container configure the runtime of Node-RED.
+Environment variables can be passed into the container configure the runtime of Node-RED.
 
 The flows configuration file is set using an environment parameter (**FLOWS**),
 which defaults to *'flows.json'*. This can be changed at runtime using the
@@ -343,7 +343,7 @@ Running
 ```
 docker run -d -p 1880 nodered/node-red
 ```
-will create a local running instance of a machine. Note: we did not specify a name.
+will create a locally running instance of a machine. Note: we did not specify a name.
 
 This container will have an id number and be running on a random port... to find out which port, run `docker ps`
 ```
@@ -369,7 +369,7 @@ Then run nodered docker - but this time with a link parameter (name:alias)
 
     docker run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red
 
-the magic here being the `--link` that inserts a entry into the node-red instance
+the magic here being the `--link` that inserts an entry into the node-red instance
 hosts file called *broker* that links to the external mybroker instance....  but we do
 expose the 1880 port so we can use an external browser to do the node-red editing.
 
