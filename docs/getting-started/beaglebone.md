@@ -55,7 +55,7 @@ and likewise to stop it auto-running on boot
 
 ### Upgrading
 
-The latest Debian images already have Node-RED and Node.js installed - the easiest way to upgrade is to use the built in upgrade tool:
+The latest Debian images already have Node-RED and Node.js installed - the easiest way to upgrade is to use the built-in upgrade tool:
 
     sudo apt update
     sudo apt upgrade nodejs bb-node-red-installer
@@ -75,7 +75,7 @@ The Beaglebone is configured by default to run Node-RED as root. Therefore the c
 `settings.js` file for example.
 
 Beaglebone also has a systemd service, `/lib/systemd/system/node-red.socket`, that automatically starts Node-RED
-when is sees an attempt to connect. By default this is port 1880 - but if you want change that you need to change it
+when it sees an attempt to connect. By default this is port 1880 - but if you want to change that you need to change it
 here as well as in the `settings.js` file.
 
 ### Beaglebone specific nodes
