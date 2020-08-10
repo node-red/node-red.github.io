@@ -37,7 +37,7 @@ aws_secret_access_key = access key
 
 2. cd to that directory
 
-3. run `eb init` to create a new elastic beanstalk project. select preferred region and use node.js as the plaform
+3. run `eb init` to create a new elastic beanstalk project. Select the preferred region and use node.js as the platform.
 You will be asked if you wish to use ssh. If you do, please ensure you have ssh installed on your computer if you wish to generate a new key pair.
 
 4. Login to the AWS Console on your browser, select Identity and Access Management (IAM) and add the AmazonS3FullAccess policy to the aws-elasticbeanstalk-ec2-role. Note: this gives full access from EBS to S3 and you may wish to tailor this policy to meet your own security needs
@@ -79,13 +79,13 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
      storageModule: require('node-red-contrib-storage-s3'),
 ```
 
-4. At the command prompt make sure you are in the your application's top-level directory and run the command `eb create`; you may wish to specify a more unique application name. This will take a long time to run but eventually will return successfully.
+4. At the command prompt make sure you are in your application's top-level directory and run the command `eb create`; you may wish to specify a more unique application name. This will take a long time to run but eventually will return successfully.
 
 #### Configuring Node-RED access
 
 Node-RED is now accessible directly from the web url of the application. However this is insecure and does not work very well for logging. Instead we will configure direct access to the administration port of node-red on the ec2 instance it is using.
 
-1. In the AWS Console, select EC2, then select security groups. You will see a set of security groups. Select one with a name of your environment and a description of "Security Group for ElasticBeanstalk Environment". Once selected, click on "Actions" and then "Edit inbound settings". A dialog box with rules with appear. Add a new rule. Set type to "all traffic" and source to "my ip". Save the rule.  
+1. In the AWS Console, select EC2, then select security groups. You will see a set of security groups. Select one with the name of your environment and a description of "Security Group for ElasticBeanstalk Environment". Once selected, click on "Actions" and then "Edit inbound settings". A dialog box with rules with appear. Add a new rule. Set type to "all traffic" and source to "my ip". Save the rule.  
 
 2. Select the EC2 instance which is running the node-red application. copy its IP address
 
@@ -97,7 +97,7 @@ Your Node-RED instance is now running on EBS. Any flows you create will be saved
 
 ### Running on Elastic Beanstalk with High availability
 
-This deployment option gives you a multiple node Node-RED setup, with a shared filesystem using Amazon Elastic File System (EFS). Because it runs multiple nodes behind a load balancer, you will have high availabiliity - if a node dies, Elastic Beanstalk will replace it automgically.
+This deployment option gives you a multiple node Node-RED setup, with a shared filesystem using Amazon Elastic File System (EFS). Because it runs multiple nodes behind a load balancer, you will have high availability - if a node dies, Elastic Beanstalk will replace it automatically.
 
 ![solution diagram](/images/node-red-ha-on-aws.png "Node-RED on Elastic Beanstalk with High availability")
 
