@@ -53,7 +53,7 @@ information.
 }
 {% endhighlight %}
 
-The API is secured by access token.
+The API is secured by an access token.
 
 
 ### Step 1 - Obtain an access token

@@ -39,7 +39,7 @@ Field     | Description
 
 Code                    | Description
 ------------------------|-----------------------
-`unexpected_error`      | An unexpected error occured
+`unexpected_error`      | An unexpected error occurred
 `invalid_request`       | The request contains invalid parameters
 `settings_unavailable`  | The storage system does not support changing settings
 `module_already_loaded` | The requested module is already loaded
