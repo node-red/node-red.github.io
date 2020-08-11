@@ -9,7 +9,7 @@ redirect_from:
 
 ### Overview
 
-This tutorial introduces the Node-RED editor and creates a flow the demonstrates
+This tutorial introduces the Node-RED editor and creates a flow that demonstrates
 the Inject, Debug and Function nodes.
 
 
