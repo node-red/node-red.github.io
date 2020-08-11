@@ -10,7 +10,7 @@ slug:
 
 __Since 0.20.0__
 
-An list for displaying tree-structured data. This was added in 0.20.0 and has quite a minimal functionality.
+A list for displaying tree-structured data. This was added in 0.20.0 and has quite a minimal functionality.
 
 <div class="widget">
     <div class="col-4-12">
@@ -124,7 +124,7 @@ $(".input").treeList('empty');
 Ensures an item is visible in the list. The argument `itemId` must correspond
 with the `id` property of an item in the list.
 
-*Note:* This currently only works for the top most items in the list. It cannot
+*Note:* This currently only works for the topmost items in the list. It cannot
 be used to reveal items below the top level of the tree.
 
 ```javascript

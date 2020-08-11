@@ -59,7 +59,7 @@ $(".input").searchBox('change');
 
 #### <a href="#methods-count" name="methods-count">count( value )</a>
 
-Sets a the value of the count label on the search box. This can be used to
+Sets the value of the count label on the search box. This can be used to
 provide feedback to the user as to how many 'things' the search currently
 matches. The `value` is a string.
 
