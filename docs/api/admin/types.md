@@ -38,7 +38,7 @@ Field     | Description
 ----------|-----------------------
 `id`      | The unique id of the node
 `type`    | The type of the node
-`x`,`y`   | The x/y co-ordinates of the node when the flow is drawn
+`x`,`y`   | The x/y coordinates of the node when the flow is drawn
 `z`       | The flow, or subflow, the node is a member of
 `wires`   | The wires the node's outputs are connected to
 *         | Other fields as defined by the particular `type`
@@ -132,7 +132,7 @@ A Single Flow configuration represents what gets presented in the editor as a ta
 Field      | Description
 -----------|-----------------------
 `id`       | The unique id of the flow
-`label`    | A label for the the flow
+`label`    | A label for the flow
 `nodes`    | An array of the Nodes in the flow
 `configs`  | An array of the Configs in the flow
 `subflows` | An array of the Subflows in the flow - only used when representing the `global` flow configuration
