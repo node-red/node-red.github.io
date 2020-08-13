@@ -71,7 +71,7 @@ There are some reserved names for properties that **must not be used**. These ar
 
 If a node wants to allow the number of outputs it provides to be configurable
 then `outputs` may be included in the `defaults` array. The Function node is
-an example for how this works.
+an example of how this works.
 
 ### Property validation
 
@@ -89,7 +89,7 @@ This allows the validation to depend on other property values.
 While editing a node the `this` object reflects the current configuration of the
 node and **not** the current form element value. The validator function should
 try to access the property configuration element and take the `this` object as
-fallback to achieve the right user experience.
+a fallback to achieve the right user experience.
 
 There is a group of common validation functions provided.
 
@@ -131,19 +131,19 @@ dialog is closed, the property takes whatever value is in the input.
 
 More information about the edit dialog is available [here](edit-dialog).
 
-#### Custom edit behaviour
+#### Custom edit behavior
 
-The default behaviour works in many cases, but sometimes it is necessary to
-define some node-specific behaviour. For example, if a property cannot be
+The default behavior works in many cases, but sometimes it is necessary to
+define some node-specific behavior. For example, if a property cannot be
 properly edited as a simple `<input>` or `<select>`, or if the edit dialog
-content itself needs to have certain behaviours based on what options are
+content itself needs to have certain behaviors based on what options are
 selected.
 
-A node definition can include two functions to customise the edit behaviour.
+A node definition can include two functions to customize the edit behavior.
 
  - `oneditprepare` is called immediately before the dialog is displayed.
  - `oneditsave` is called when the edit dialog is okayed.
- - `oneditcancel` is called when the edit dialog is cancelled.
+ - `oneditcancel` is called when the edit dialog is canceled.
  - `oneditdelete` is called when the delete button in a configuration node's edit
    dialog is pressed.
  - `oneditresize` is called when the edit dialog is resized.

@@ -5,7 +5,7 @@ title: JavaScript file
 slug: .js
 ---
 
-The node `.js` file defines the runtime behaviour of the node.
+The node `.js` file defines the runtime behavior of the node.
 
  - [Node constructor](#node-constructor)
  - [Receiving messages](#receiving-messages)
@@ -27,7 +27,7 @@ when nodes of the corresponding type are deployed in a flow.
 
 The function is passed an object containing the properties set in the flow editor.
 
-The first thing it must do is call the `RED.nodes.createNode` function to initialise
+The first thing it must do is call the `RED.nodes.createNode` function to initialize
 the features shared by all nodes. After that, the node-specific code lives.
 
 {% highlight javascript %}
@@ -45,11 +45,11 @@ RED.nodes.registerType("sample",SampleNode);
 Nodes register a listener on the `input` event to receive messages from the
 up-stream nodes in a flow.
 
-With Node-RED 1.0, a new style of listener was introduced to allow the node
+With Node-RED 1.0, a new style of the listener was introduced to allow the node
 to notify the runtime when it has finished handling a message. This added
 two new parameters to the listener function. Some care is needed to ensure
 the node can still be installed in Node-RED 0.x which does not use this new
-style of listener.
+style of the listener.
 
 {% highlight javascript %}
 this.on('input', function(msg, send, done) {
@@ -206,7 +206,7 @@ seconds. An error will be logged and the runtime will continue to operate.
 
 ### Logging events
 
-If a node needs to log something to the console, it can use one of the follow functions:
+If a node needs to log something to the console, it can use one of the following functions:
 
 {% highlight javascript %}
 this.log("Something happened");
