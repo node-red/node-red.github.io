@@ -51,7 +51,7 @@ a label and input for a different property
 - A typical row will have a `<label>` that contains an icon and the name of the
   property followed by an `<input>`. The icon is created using an `<i>` element
   with a class taken from those available from [Font Awesome 4.7](https://fontawesome.com/v4.7.0/icons/).
-- The form element containing the property must have and id of `node-input-<propertyname>`. In the case of Configuration nodes, the id must be `node-config-input-<property-name>`.
+- The form element containing the property must have an id of `node-input-<propertyname>`. In the case of Configuration nodes, the id must be `node-config-input-<property-name>`.
 - The `<input>` type can be either `text` for string/number properties, or
 `checkbox` for boolean properties. Alternatively, a `<select>` element can be
 used if there is a restricted set of choices.
@@ -121,7 +121,7 @@ the <code>oneditprepare</code> function to handle the events.</p>
 
 For simple text entry, the standard `<input>` element can be used.
 
-For some cases, Node-RED provides the `TypedInput` widget as an alternative.
+In some cases, Node-RED provides the `TypedInput` widget as an alternative.
 It allows the user a way to specify the type of the property as well as its value.
 
 For example, if a property could be a String, number or boolean. Or if the property

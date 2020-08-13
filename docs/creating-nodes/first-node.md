@@ -43,7 +43,7 @@ This will ask a series of questions to help create the initial content for the
 file, using sensible defaults where it can. When prompted, give it the name
 `node-red-contrib-example-lower-case`.
 
-Once generated, you must added a `node-red` section:
+Once generated, you must add a `node-red` section:
 
 ```json
 {
@@ -89,7 +89,7 @@ The node itself is defined by a function, `LowerCaseNode` that gets called whene
 a new instance of the node is created. It is passed an object containing the
 node-specific properties set in the flow editor.
 
-The function calls the `RED.nodes.createNode` function to initialise the features
+The function calls the `RED.nodes.createNode` function to initialize the features
 shared by all nodes. After that, the node-specific code lives.
 
 In this instance, the node registers a listener to the `input` event which gets
