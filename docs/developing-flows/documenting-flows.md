@@ -45,8 +45,8 @@ If there is a node that has more than one output port, aligning the branched flo
 When a flow gets too long, arranging some nodes vertically can be used to good effect. In the following figure, some of the nodes are arranged vertically to imply a relationship between them. It is easier to understand the nature of the overall flow if it is visually obvious what smaller sections it is comprised of and how they relate to each other.
 
 <div class="figure">
-    <img src="./images/node-vertical-arrangement.png" alt="Vertically aligning logical segements of a long flow"/>
-    <p class="caption">Vertically aligning logical segements of a long flow</p>
+    <img src="./images/node-vertical-arrangement.png" alt="Vertically aligning logical segments of a long flow"/>
+    <p class="caption">Vertically aligning logical segments of a long flow</p>
 </div>
 
 In some cases, these smaller sections may be candidates for moving to subflows that will reduce the visual complexity of the flow. That is particular true if that smaller section could be reused elsewhere in the flows.
@@ -65,7 +65,7 @@ Along with the label, nodes can also have a custom icon. For example, if you hav
 
 Choosing good names for things applies just as much to the tabs and subflows used.
 
-It also very important for Link nodes. Without a name set, you have to use the Link node's internal ID when creating links between different tabs. That makes it hard to identify the right target node and mistakes can happen. If you consider the Link nodes as providing APIs between the different tabs, then a good choice of naming scheme will be needed. The names should clearly identify the start and end point of each flow.
+It is also very important for Link nodes. Without a name set, you have to use the Link node's internal ID when creating links between different tabs. That makes it hard to identify the right target node and mistakes can happen. If you consider the Link nodes as providing APIs between the different tabs, then a good choice of naming scheme will be needed. The names should clearly identify the start and end point of each flow.
 
 ### Adding port labels
 
