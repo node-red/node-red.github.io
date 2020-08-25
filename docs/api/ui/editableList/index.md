@@ -258,7 +258,7 @@ A function that is called after an item in the list is moved.
 
  - `items` - an Array of the jQuery DOM elements for each row, in order.
 
-Each row element stores the original data for the item under property called `data`.
+Each row element stores the original data for the item under the property called `data`.
 
 ```javascript
 $("ol.list").editableList({
@@ -357,7 +357,7 @@ $("ol.input").editableList('height', '200px');
 
 Gets an Array of all list items. Each item is the jQuery DOM element for the item.
 
-Each element stores the original data for the item under property called `data`.
+Each element stores the original data for the item under the property called `data`.
 
 ```javascript
 var items = $("ol.list").editableList('items');
@@ -381,7 +381,7 @@ the number of visible items.
 See <code><a href="#options-filter">filter</a></code> for details of the filter
 function.
 
-If `filter` is not provided, the list is filtered using the current active filter
+If `filter` is not provided, the list is filtered using the currently active filter
 function.
 
 If `filter` is `null`, the filter is removed.
