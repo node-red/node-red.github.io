@@ -77,7 +77,7 @@ The icon can be either:
 </ul>
 
 **Note**: In Node-RED 1.0, all of these icons have been replaced with SVG alternatives
-for a better appearance. For ensure backwards compatibility, the editor will automatically
+for a better appearance. To ensure backward compatibility, the editor will automatically
 swap any request for the png version for the SVG version if it is available.
 
 #### Custom icon
@@ -175,7 +175,7 @@ There are four label properties of a node; `label`, `paletteLabel`, `outputLabel
 #### Node label
 
 The `label` of a node in the workspace can either be a static piece of text, or
-it can be set dynamically on a per-node basis according to the nodes properties.
+it can be set dynamically on a per-node basis according to the properties of the node.
 
 The value of the property can be either a string or a function.
 
@@ -297,7 +297,7 @@ A key principle is the editor is not a dashboard for controlling your flows. So
 in general, nodes should not have buttons on them. The Inject and Debug nodes are
 special cases as the buttons play a role in the development of flows.
 
-The `button` property in its definition is used to describe the behaviour of the
+The `button` property in its definition is used to describe the behavior of the
 button. It must provide, as a minimum, an `onclick` function that will be called
 when the button is clicked.
 
