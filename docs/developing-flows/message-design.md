@@ -15,7 +15,7 @@ For more information about messages in Node-RED you should read the [Working wit
 section of the user guide.
 
 This section looks at some of the choices you need to make when deciding how to
-stucture the messages in your flows.
+structure the messages in your flows.
 
 ### Working with `msg.payload`
 
@@ -31,7 +31,7 @@ For example, consider a flow that receives an id in the payload of an MQTT messa
   <p class="caption">MQTT to database query</p>
 </div>
 
-The database node will put its result in the payload of the message it sends - overwritting the original id value. If the flow needs to be able to reference that id value later on, it can use a Change node to copy the value to another property that will not get overwritten.
+The database node will put its result in the payload of the message it sends - overwriting the original id value. If the flow needs to be able to reference that id value later on, it can use a Change node to copy the value to another property that will not get overwritten.
 
 <div class="figure">
   <img src="images/mqtt-query-save-id.png" alt="Using a Change node to copy the payload to msg.id">

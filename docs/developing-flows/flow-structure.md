@@ -56,7 +56,7 @@ Subflows appear as regular nodes so can be used at any point in a flow. However 
 
 When creating subflows, you may want to be able to customise their behaviour in some way. For example, changing what MQTT topic it publishes to.
 
-One pattern for doing that is by setting `msg.topic` on every message passed to the subflow. But that requires adding a Change node ange node in front of every subflow instance in order to set the desired value.
+One pattern for doing that is by setting `msg.topic` on every message passed to the subflow. But that requires adding a Change node in front of every subflow instance in order to set the desired value.
 
 An easier way for doing this is by using Subflow properties. These are properties that can be set on the subflow instance and appear as environment variables inside the subflow.
 
