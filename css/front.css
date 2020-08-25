@@ -42,13 +42,19 @@ a {
 a:hover {
     color:#B77777;
 }
-
+.openjs-logo {
+    max-width: 200px;
+}
 .links .grid {
     font-size: 16px;
     color: #aaa;
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: Arial;
+}
+.links .openjs {
+    font-size: 13px;
+    line-height: 1.4em;
 }
 .links p {
     margin: 0 0 10px 0;
@@ -60,6 +66,7 @@ a:hover {
 .links ul {
     margin:0;
     padding:0;
+    padding-left: 15px;
 }
 .links .content {
     height: auto;

@@ -66,6 +66,10 @@ body {
 	width: 25%;
 }
 
+.col-3-4, .col-4-12 {
+	width: 75%;
+}
+
 .col-1-5 {
 	width: 20%;
 }
