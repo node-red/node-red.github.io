@@ -81,7 +81,7 @@ oneditprepare: function() {
 ### Advanced credential use
 
 Whilst the credential system outlined above is sufficient for most cases, in some
-circumstances it is necessary to store more values in credentials then just those
+circumstances it is necessary to store more values in credentials than just those
 that get provided by the user.
 
 For example, for a node to support an OAuth workflow, it must retain server-assigned
