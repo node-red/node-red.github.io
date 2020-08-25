@@ -5,7 +5,7 @@ title: HTML File
 slug: .html
 ---
 
-The node `.html` file defines the how the node appears with the editor. It
+The node `.html` file defines how the node appears with the editor. It
 contains three distinct part, each wrapped in its own `<script>` tag:
 
 1. the main node definition that is registered with the editor. This defines
@@ -45,7 +45,7 @@ match the value used by the call to `RED.nodes.registerType` in the correspondin
 
 The type is also used as the label for the node in the palette. If the type ends
 with " in" or " out" this is stripped off label. For example, the "mqtt in" and
-"mqtt out" nodes are both labelled as "mqtt", with the display of the input and
+"mqtt out" nodes are both labeled as "mqtt", with the display of the input and
 output ports providing the "in" or "out" context.
 
 #### Node definition
@@ -70,7 +70,7 @@ editor. It is an object with the following properties:
 - `button`: (object) adds a [button](appearance#buttons) to the edge of the node.
 - `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties#custom-edit-behaviour).
-- `oneditcancel`: (function) called when the edit dialog is cancelled. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditcancel`: (function) called when the edit dialog is canceled. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties#custom-edit-behaviour).
 - `onpaletteadd`: (function) called when the node type is added to the palette.

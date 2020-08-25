@@ -181,7 +181,7 @@ Each `<dt>` contains the property name and an optional `<span class="property-ty
 that contains the expected type of the property. If the property is optional,
 the `<dt>` should have a class attribute of `optional`.
 
-Each `<dd>` contains the brief description of the property.
+Each `<dd>` contains a brief description of the property.
 
 
 ~~~~~html
