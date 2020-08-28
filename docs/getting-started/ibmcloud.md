@@ -85,13 +85,13 @@ root path, delete the `httpStatic` and `httpAdminRoot` entries in the `bluemix-s
 
 ### Deploy To IBM Cloud
 
-The [Deploy To IBM Cloud enabled repository](https://github.com/node-red/node-red-bluemix-starter)
+The [Deploy To IBM Cloud enabled repository](https://github.com/IBM/node-red-app)
 lets you create your own customised Node-RED application that can then
 be deployed to IBM Cloud with a couple of clicks.
 
 You can try it out now by clicking here:
 
-[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibmets/node-red-bluemix-starter.git)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/node-red-app.git)
 
 When you click the button, you are taken to IBM Cloud where you get a pick a name
 for your application at which point the platform takes over, grabs the code from
