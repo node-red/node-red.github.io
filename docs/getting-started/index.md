@@ -117,3 +117,15 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
     </div>
   </a>
 </div>
+
+<div class="post-preview">
+  <a href="gcloud">
+    <div class="post-header">
+      <img src="/images/platform-cloud.png">
+      <h2>Google Cloud</h2>
+    </div>
+    <div class="post-content">
+      Running on an Google Cloud Compute Engine
+    </div>
+  </a>
+</div>
