@@ -130,7 +130,7 @@ in the function. Before Node-RED 1.0, the Function node would not clone the
 
 The Function can request the runtime to *not clone* the first message passed to
 `node.send` by passing in `false` as a second argument to the function. It would
-do this is the message contains something that is not otherwise cloneable, or for
+do this if the message contains something that is not otherwise cloneable, or for
 performance reasons to minimise the overhead of sending messages:
 
 {% highlight javascript %}
@@ -307,7 +307,7 @@ flow.set("count", 123, function(err) { ... })
 flow.set(["count", "colour", [123, "red"], function(err) { ... })
 {% endhighlight %}
 
-The first argument passes to the callback, `err`, is only set if an error
+The first argument passed to the callback, `err`, is only set if an error
 occurred when accessing context.
 
 The asynchronous version of the count example becomes:
