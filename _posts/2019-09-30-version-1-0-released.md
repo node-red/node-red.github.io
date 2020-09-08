@@ -29,7 +29,7 @@ but there's plenty to get you started.
 
 ---
 
- - [Asynchonous message passing](#asynchronous-message-passing)
+ - [Asynchronous message passing](#asynchronous-message-passing)
  - [Node Send API](#node-send-api)
  - [Cloning messages](#cloning-messages)
  - [Reorganised palette](#reorganised-palette)
