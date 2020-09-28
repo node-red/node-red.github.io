@@ -196,7 +196,7 @@ services:
     networks:
       - node-red-net
     volumes:
-      - node-red-data
+      - node-red-data:/data
 
 volumes:
   node-red-data:
