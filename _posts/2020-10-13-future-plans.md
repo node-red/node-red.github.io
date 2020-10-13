@@ -2,7 +2,7 @@
 layout: blog
 title: What's next with Node-RED?
 author: nick
-description:
+description: Having covered the release schedule in a previous post, we now look at the technical content in the roadmap for Node-RED.
 ---
 
 Last week I presented at [Node-RED Con Tokyo](https://nodered.jp/noderedcon2020/index-en.html)
