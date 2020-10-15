@@ -13,39 +13,37 @@ This guide assumes you have some basic familiarity with Docker and the
 As of Node-RED 1.0 the repository on [Docker Hub](https://hub.docker.com/r/nodered/node-red/)
 was renamed to `nodered/node-red`.
 
-Previous 0.20.x versions are still available at https://hub.docker.com/r/nodered/node-red-docker.
-
 ### Quick Start
 
 To run in Docker in its simplest form just run:
 
-    docker run -it -p 1880:1880 --name mynodered nodered/node-red
+        docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 
 Let's dissect that command:
 
-    docker run              - run this container... initially building locally if necessary
-    -it                     - attach a terminal session so we can see what is going on
-    -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
-    --name mynodered        - give this machine a friendly local name
-    nodered/node-red        - the image to base it on
-
+        docker run              - run this container, initially building locally if necessary
+        -it                     - attach a terminal session so we can see what is going on
+        -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
+        -v node_red_data:/data  - mount the host node_red_data directory to the container /data directory so any changes made to flows are persisted
+        --name mynodered        - give this machine a friendly local name
+        nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
 
 Running that command should give a terminal window with a running instance of Node-RED.
 
         Welcome to Node-RED
         ===================
 
-        30 Jun 12:57:10 - [info] Node-RED version: v1.1.0
-        30 Jun 12:57:10 - [info] Node.js  version: v10.21.0
-        30 Jun 12:57:10 - [info] Linux 4.9.184-linuxkit x64 LE
-        30 Jun 12:57:11 - [info] Loading palette nodes
-        30 Jun 12:57:16 - [info] Settings file  : /data/settings.js
-        30 Jun 12:57:16 - [info] Context store  : 'default' [module=memory]
-        30 Jun 12:57:16 - [info] User directory : /data
-        30 Jun 12:57:16 - [warn] Projects disabled : editorTheme.projects.enabled=false
-        30 Jun 12:57:16 - [info] Flows file     : /data/flows.json
-        30 Jun 12:57:16 - [info] Creating new flow file
-        30 Jun 12:57:17 - [warn]
+        10 Oct 12:57:10 - [info] Node-RED version: v1.2.0
+        10 Oct 12:57:10 - [info] Node.js  version: v10.22.1
+        10 Oct 12:57:10 - [info] Linux 4.19.76-linuxkit x64 LE
+        10 Oct 12:57:11 - [info] Loading palette nodes
+        10 Oct 12:57:16 - [info] Settings file  : /data/settings.js
+        10 Oct 12:57:16 - [info] Context store  : 'default' [module=memory]
+        10 Oct 12:57:16 - [info] User directory : /data
+        10 Oct 12:57:16 - [warn] Projects disabled : editorTheme.projects.enabled=false
+        10 Oct 12:57:16 - [info] Flows file     : /data/flows.json
+        10 Oct 12:57:16 - [info] Creating new flow file
+        10 Oct 12:57:17 - [warn]
 
         ---------------------------------------------------------------------
         Your flow credentials file is encrypted using a system-generated key.
@@ -59,9 +57,9 @@ Running that command should give a terminal window with a running instance of No
         file using your chosen key the next time you deploy a change.
         ---------------------------------------------------------------------
 
-        30 Jun 12:57:17 - [info] Starting flows
-        30 Jun 12:57:17 - [info] Started flows
-        30 Jun 12:57:17 - [info] Server now running at http://127.0.0.1:1880/
+        10 Oct 12:57:17 - [info] Starting flows
+        10 Oct 12:57:17 - [info] Started flows
+        10 Oct 12:57:17 - [info] Server now running at http://127.0.0.1:1880/
 
         [...]
 
@@ -93,18 +91,18 @@ Using Alpine Linux reduces the built image size, but removes standard dependenci
 
 See the [Github project README](https://github.com/node-red/node-red-docker/blob/master/README.md) for detailed Image, Tag and Manifest information.
 
-For example: suppose you are running on a Raspberry PI 3B, which has `arm32v7` as architecture. Then just run the following command to pull the image (tagged by `1.1.0-10-arm32v7`), and run the container.
+For example: suppose you are running on a Raspberry PI 3B, which has `arm32v7` as architecture. Then just run the following command to pull the image (tagged by `1.2.0-10-arm32v7`), and run the container.
 ```
-docker run -it -p 1880:1880 --name mynodered nodered/node-red:latest
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red:latest
 ```
 
-The same command can be used for running on an amd64 system, since Docker discovers it is running on an amd64 host and pulls the image with the matching tag (`1.1.0-10-amd64`).
+The same command can be used for running on an amd64 system, since Docker discovers it is running on an amd64 host and pulls the image with the matching tag (`1.2.0-10-amd64`).
 
 This has the advantage that you don't need to know/specify which architecture you are running on and makes docker run commands and docker compose files more flexible and exchangeable across systems.
 
 **Note**: Currently there is a bug in Docker's architecture detection that fails for `arm32v6` - eg Raspberry Pi Zero or 1. For these devices you currently need to specify the full image tag, for example:
 ```
-docker run -it -p 1880:1880 --name mynodered nodered/node-red:1.1.0-10-arm32v6
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red:1.2.0-10-arm32v6
 ```
 
 ### Managing User Data
@@ -286,13 +284,13 @@ docker run --rm -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here" -p 1880:18
 
 ### Startup
 
-Environment variables can be passed into the container configure the runtime of Node-RED.
+Environment variables can be passed into the container to configure the runtime of Node-RED.
 
 The flows configuration file is set using an environment parameter (**FLOWS**),
 which defaults to *'flows.json'*. This can be changed at runtime using the
 following command-line flag.
 ```
-docker run -it -p 1880:1880 -e FLOWS=my_flows.json nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data -e FLOWS=my_flows.json nodered/node-red
 ```
 
 **Note**: If you set `-e FLOWS=""` then the flow file can be set via the *flowFile*
@@ -307,7 +305,7 @@ Node.js runtime arguments can be passed to the container using an environment
 parameter (**NODE_OPTIONS**). For example, to fix the heap size used by
 the Node.js garbage collector you would use the following command.
 ```
-docker run -it -p 1880:1880 -e NODE_OPTIONS="--max_old_space_size=128" nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data -e NODE_OPTIONS="--max_old_space_size=128" nodered/node-red
 ```
 
 ### Running headless
@@ -315,7 +313,7 @@ docker run -it -p 1880:1880 -e NODE_OPTIONS="--max_old_space_size=128" nodered/n
 To run headless, (i.e. in the background), just replace the `-it` in most previous commands
 with `-d`, for example:
 ```
-docker run -d -p 1880:1880 --name mynodered nodered/node-red
+docker run -d -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Container Shell
@@ -367,7 +365,7 @@ For example I have a simple MQTT broker container available as
 
 Then run nodered docker - but this time with a link parameter (name:alias)
 
-    docker run -it -p 1880:1880 --name mynodered --link mybroker:broker nodered/node-red
+    docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered --link mybroker:broker nodered/node-red
 
 the magic here being the `--link` that inserts an entry into the node-red instance
 hosts file called *broker* that links to the external mybroker instance....  but we do
@@ -406,7 +404,7 @@ Disadvantages of the native GPIO support are:
 
 To access the host serial port you may need to add the container to the `dialout` group. This can be enabled by adding `--group-add dialout` to the start command. For example
 ```
-docker run -it -p 1880:1880 --group-add dialout --name mynodered nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data --group-add dialout --name mynodered nodered/node-red
 ```
 
 ---
@@ -423,7 +421,7 @@ on permissions.
 If you are seeing *permission denied* errors opening files or accessing host devices, try running the container as the root user.
 
 ```
-docker run -it -p 1880:1880 --name mynodered -u node-red:dialout nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered -u node-red:dialout nodered/node-red
 ```
 
 References:
@@ -437,7 +435,7 @@ https://github.com/node-red/node-red-docker/issues/8
 If you want to access a device from the host inside the container, e.g. serial port, use the following command-line flag to pass access through.
 
 ```
-docker run -it -p 1880:1880 --name mynodered --device=/dev/ttyACM0 nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered --device=/dev/ttyACM0 nodered/node-red
 ```
 References:
 https://github.com/node-red/node-red/issues/15
@@ -446,7 +444,7 @@ https://github.com/node-red/node-red/issues/15
 
 If you want to modify the default timezone, use the TZ environment variable with the [relevant timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 ```
-docker run -it -p 1880:1880 --name mynodered -e TZ=Europe/London nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered -e TZ=Europe/London nodered/node-red
 ```
 
 References:
