@@ -68,7 +68,7 @@ The processing of test code typically follows this sequence:
 6. Run test flow in helper
 7. Evaluate processing results
 
-The following explains how to create test code based on the [example](https://github.com/node-red/node-red-node-test-helper#Example-unit-test) in the helper.
+The following explains how to create test code based on the lowercase [example](https://github.com/node-red/node-red-node-test-helper#Example-unit-test) in the helper.
 The test code is written using Mocha.
 Specific details about Mocha are not given here, but you can learn about writing test code in Mocha by visiting the preceding URL and other resources.
 
