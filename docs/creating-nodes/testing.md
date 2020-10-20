@@ -63,10 +63,10 @@ The processing of test code typically follows this sequence:
 1. Load libraries
 2. Initialize helper
 3. Start helper
-4. Load test flow into helper
-5. Run test flow in helper
-6. Evaluate processing results
-7. Exit helper
+4. Exit helper
+5. Load test flow into helper
+6. Run test flow in helper
+7. Evaluate processing results
 
 The following explains how to create test code based on the [example](https://github.com/node-red/node-red-node-test-helper#Example-unit-test) in the helper.
 The test code is written using Mocha.
@@ -88,7 +88,7 @@ describe('myNode', function () {
       helper.startServer(done);
   });
 
-  // 7. Exit helper
+  // 4. Exit helper
   afterEach(function (done) {
       helper.unload();
       helper.stopServer(done);
@@ -100,16 +100,16 @@ describe('myNode', function () {
     var flow = [{ id: "f1", type:"tab"},
                 { id: "n1", z:"f1", type: "lower-case", wires:[["n2"]] },
                 { id: "n2", z:"f1", type: "helper" }];
-    // 4. Load test flow into helper
+    // 5. Load test flow into helper
     helper.load(lowerNode, flow, function () {
       var lowerCase = helper.getNode("n1");
       var helperNode = helper.getNode("n2");
-      // 6. Evaluate processing results
+      // 7. Evaluate processing results
       helperNode.on("input", function (msg) {
         msg.should.have.property('payload', 'uppercase');
         done();
       });
-      // 5. Run test flow in helper
+      // 6. Run test flow in helper
       lowerCase.receive({ payload: "UpperCase" });
     });
   });
@@ -135,13 +135,13 @@ Add libraries like sinon.js as needed.
 The helper does not in itself have the ability to run nodes and does so by referencing code in the Node-RED platform.
 Give helper access to the code of the Node-RED platform by passing the Node-RED path to `helper.init()`.
 
-#### 3. Start helper and 7. Exit helper
+#### 3. Start helper and 4. Exit helper
 
 If you start helper and then run multiple test cases, the results of a test case might remain in helper and contaminate the results of other test cases.
 For this reason, you must exit and restart helper after each test case.
 You can make sure this takes place by calling the startup and shutdown of helper in `beforeEach` and `afterEach` functions.
 
-#### 4. Load test flow into helper
+#### 5. Load test flow into helper
 
 Define the test flow to run as the test case, and load it into the helper.
 If your custom node has an output terminal and you want to evaluate its output results, we recommend that you create a flow using a __helper node__.
@@ -168,9 +168,9 @@ load(testNode, testFlows, testCredentials, cb)
 | 3 | `testCredentials` | No | Credentials to pass to helper |
 | 4 | `cb` | Yes | Callback function executed after loading the flow |
 
-#### 5. Run test flow in helper
+#### 6. Run test flow in helper
 
-Note: As in the preceding example, write the test code so that this step is executed after "6. Evaluate processing results".
+Note: As in the preceding example, write the test code so that this step is executed after "7. Evaluate processing results".
 
 Most nodes execute processing in response to a certain action, such as receiving a message from the preceding node.
 This means that you need to write processing into the test case that triggers the execution of the node.
@@ -191,7 +191,7 @@ Because each node is executed in a different way, we have provided samples of co
   A websocket node can add a WebSocket server and send data received from a client to the succeeding node (or send data to the client).
   The node is executed by using a `ws` module to create a WebSocket client and sending data to it.
 
-#### 6. Evaluate processing results
+#### 7. Evaluate processing results
 
 Use `should.js` to write an expression that evaluates the processing results of the node.
 If you want to evaluate the messages output by the node being tested, you can do so in an `input` listener in the helper node, as shown in the example.
