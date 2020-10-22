@@ -99,3 +99,53 @@ to specify a different flow file:
 ```
 grunt dev --flowFile=my-flow-file.json
 ```
+
+
+### Debug run Node-RED in VS Code
+
+It is possible to set-up VS Code to both build and start debugging by simply pressing F5. Once you have cloned the project and open it in VS code, you will need to add an entry in `launch.json` and `tasks.json`...
+
+#### Modify launch.json ...
+```
+  {
+     "version": "0.2.0",
+     "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Debug node-red",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": { "NODE_ENV": "development" },
+            "preLaunchTask": "npm: build-dev",
+            "program": "${workspaceFolder}/packages/node_modules/node-red/red.js"
+        }
+     ]
+  }
+```
+*NOTE: to open launch.json, ctrl+shift+p, type `debug open launch`*
+
+
+#### Add an entry in tasks.json
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+         {
+			"type": "npm",
+			"script": "build-dev",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build-dev",
+			"detail": "build-dev"
+         }
+    ]
+}
+```
+*NOTE: if you don't have a tasks file, create one with ctrl+shift+p, type `configure task`*
+*NOTE: if you already have a tasks file, open it with ctrl+p, type `tasks.json`*
+
+#### Debug Run
+Now you can run the project by pressing F5.
+*NOTE: If you have more than one config, select `Debug node-red`.*
