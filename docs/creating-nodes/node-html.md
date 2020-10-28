@@ -43,11 +43,6 @@ The node type is used throughout the editor to identify the node. It must
 match the value used by the call to `RED.nodes.registerType` in the corresponding
 `.js` file.
 
-The type is also used as the label for the node in the palette. If the type ends
-with " in" or " out" this is stripped off label. For example, the "mqtt in" and
-"mqtt out" nodes are both labeled as "mqtt", with the display of the input and
-output ports providing the "in" or "out" context.
-
 #### Node definition
 
 The node definition contains all of the information about the node needed by the
