@@ -259,9 +259,10 @@ By way of example, this section explains how to create a stub for a custom syste
   If the node you are testing contains code that references settings in settings.js, you might be unable to test it using test code.
 
 * OS dependence  
-  Node-RED runs on the node.js platform and is generally OS-independent provided that node.js is available.
-  However, when executing functions that use OS resources such as file access or command execution, the behavior might differ depending on the operating system.
+  Node-RED runs on the Node.js platform and is generally OS-independent provided that Node.js is available.
+  However, when executing functions that use OS resources such as file access or command execution, the behavior might differ depending on the operating system, especially when testing things like timeouts.
   Testing should ideally be conducted in the most commonly used OS environments, namely Linux, Windows, and macOS.
+  To test the node on the various environment, online workflow services like Travis CI are useful.
 
 ## Test items specific to node development
 
