@@ -21,8 +21,8 @@ Read the documentation of each library and learn how to use it.
 | --- | --- | ---| --- |
 | 1 | Mocha | Test framework | [https://mochajs.org](https://mochajs.org/) |
 | 2 | Should.js | Assertion | [https://shouldjs.github.io](https://shouldjs.github.io/) |
-| 3 | Sinon.js | Test double | [http://sinonjs.org](http://sinonjs.org/) |
-| 4 | Nock | Test double | [https://github.com/nock/nock](https://github.com/nock/nock) |
+| 3 | Sinon.js | Test double (general testing) | [http://sinonjs.org](http://sinonjs.org/) |
+| 4 | Nock | Test double (for creating mock HTTP server) | [https://github.com/nock/nock](https://github.com/nock/nock) |
 | 5 | Istanbul | Coverage | [https://github.com/gotwarlost/istanbul](https://github.com/gotwarlost/istanbul) |
 
 ### Creating test code
