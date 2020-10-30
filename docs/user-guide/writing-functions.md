@@ -449,7 +449,7 @@ The following objects are available within the Function node.
  * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused  
 
 #### `env`
- * `get(..)` : get an environment variable
+ * `env.get(..)` : get an environment variable
 
 
 #### Other modules and functions
