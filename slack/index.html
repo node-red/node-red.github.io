@@ -63,7 +63,7 @@ layout: barebones
     $('#go').click(function() {
         $('.slackerr').text();
         $('#go').attr('disabled',true);
-        $.post('https://red.knolleary.net/slack-inviter',{email:$('#e').val()},function(data,status) {
+        $.post('https://gnh34zyze1.execute-api.eu-west-2.amazonaws.com/default/nodeREDSlackInviter',{email:$('#e').val()},function(data,status) {
             $('#go').attr('disabled',false);
             if (!data.ok) {
                 if (data.error === 'invalid_email') {
