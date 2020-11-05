@@ -63,22 +63,28 @@ layout: barebones
     $('#go').click(function() {
         $('.slackerr').text();
         $('#go').attr('disabled',true);
-        $.post('https://gnh34zyze1.execute-api.eu-west-2.amazonaws.com/default/nodeREDSlackInviter',{email:$('#e').val()},function(data,status) {
-            $('#go').attr('disabled',false);
-            if (!data.ok) {
-                if (data.error === 'invalid_email') {
-                    $('.slackerr').text('Not a valid email address');
-                } else if (data.error === 'already_invited') {
-                    $('.slackerr').text('Email address already invited');
-                } else if (data.error === 'already_in_team') {
-                    $('.slackerr').text('Email address already in the team');
+        $.ajax({
+            type: "POST",
+            url: 'https://gnh34zyze1.execute-api.eu-west-2.amazonaws.com/default/nodeREDSlackInviter',
+            data: JSON.stringify({email:$('#e').val()}),
+            contentType : 'application/json',
+            success: function(data,status) {
+                $('#go').attr('disabled',false);
+                if (!data.ok) {
+                    if (data.error === 'invalid_email') {
+                        $('.slackerr').text('Not a valid email address');
+                    } else if (data.error === 'already_invited') {
+                        $('.slackerr').text('Email address already invited');
+                    } else if (data.error === 'already_in_team') {
+                        $('.slackerr').text('Email address already in the team');
+                    } else {
+                        $('.slackerr').text('Something unexpected happened: '+data.error);
+                    }
+                    console.log(data);
                 } else {
-                    $('.slackerr').text('Something unexpected happened: '+data.error);
+                    $('#e').val('')
+                    $('.slackmsg').show();
                 }
-                console.log(data);
-            } else {
-                $('#e').val('')
-                $('.slackmsg').show();
             }
         });
     })
