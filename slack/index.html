@@ -66,8 +66,7 @@ layout: barebones
         $.ajax({
             type: "POST",
             url: 'https://gnh34zyze1.execute-api.eu-west-2.amazonaws.com/default/nodeREDSlackInviter',
-            data: JSON.stringify({email:$('#e').val()}),
-            contentType : 'application/json',
+            data: {email:$('#e').val()},
             success: function(data,status) {
                 $('#go').attr('disabled',false);
                 if (!data.ok) {
