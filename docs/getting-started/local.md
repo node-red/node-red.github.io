@@ -47,14 +47,9 @@ To install Node-RED you can use the `npm` command that comes with node.js:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-</div>
 
-This command will install Node-RED as a global module along with its dependencies.
+That command will install Node-RED as a global module along with its dependencies.
 
 You can confirm it has succeeded if the end of the command output looks similar to:
 
@@ -222,13 +217,7 @@ latest version with the following command:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-</div>
-
 
 
 
