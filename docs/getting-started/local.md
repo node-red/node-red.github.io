@@ -10,10 +10,6 @@ redirect_from:
 
 ---
 
-### Prerequisites
-
-To install Node-RED locally you will need a [supported version of Node.js](/docs/faq/node-versions).
-
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px;"><img src="/images/logos/raspberrypi.svg" height="30">
 <img src="/images/logos/debian.svg" height="30">
@@ -32,6 +28,17 @@ If you are on an RPM-based operating system, including
 RedHat, Fedora and CentOS, you can use the RPM install script available <a href="https://github.com/node-red/linux-installers">here</a>.
 </div>
 
+<div class="doc-callout">
+<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+<img src="/images/logos/windows.svg" height="30">
+</div>
+If you are using Windows, detailed instructions for installing Node-RED can be found <a href="/docs/getting-started/windows">here</a>.
+</div>
+
+### Prerequisites
+
+To install Node-RED locally you will need a [supported version of Node.js](/docs/faq/node-versions).
+
 ### Installing with npm
 
 To install Node-RED you can use the `npm` command that comes with node.js:
@@ -40,15 +47,9 @@ To install Node-RED you can use the `npm` command that comes with node.js:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-More information about installing Node-RED on Windows can be found <a href="/docs/getting-started/windows">here</a>.
-</div>
 
-This command will install Node-RED as a global module along with its dependencies.
+That command will install Node-RED as a global module along with its dependencies.
 
 You can confirm it has succeeded if the end of the command output looks similar to:
 
@@ -216,13 +217,7 @@ latest version with the following command:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-</div>
-
 
 
 
