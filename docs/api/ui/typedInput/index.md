@@ -23,6 +23,10 @@ chosen, including options for string, number and boolean types.
     <div class="col-4-12">
         <h3>Methods</h3>
         <table>
+            <tr><td><a href="#methods-disable">disable</a></td></tr>
+            <tr><td><a href="#methods-disabled-get">disabled</a></td></tr>           
+            <tr><td><a href="#methods-hide">hide</a></td></tr>
+            <tr><td><a href="#methods-show">show</a></td></tr>
             <tr><td><a href="#methods-type">type</a></td></tr>
             <tr><td><a href="#methods-types">types</a></td></tr>
             <tr><td><a href="#methods-validate">validate</a></td></tr>
@@ -80,8 +84,11 @@ identifier | description
 `json` | a valid JSON string
 `bin` | a Node.js Buffer
 `re` | a Regular Expression
+`jsonata` | a Jsonata Expression
 `date` | the current timestamp
 `env` | an environment variable
+`node` | a `node.` property expression
+`cred` | a secure credential
 
 ```javascript
 $(".input").typedInput({
@@ -107,6 +114,44 @@ $(".input").typedInput({
 ### Methods
 
 <a name="methods-type"></a>
+
+#### <a href="#methods-disable" name="methods-disable">disable()</a>
+
+*Since Node-RED 1.2.7*
+
+Disable the typedInput when it is currently enabled.
+
+```javascript
+$(".input").typedInput('disable');
+```
+
+#### <a href="#methods-disabled-get" name="methods-disabled-get">disabled()</a>
+
+*Since Node-RED 1.2.7*
+
+<span class="method-return">Returns: Boolean</span>
+
+Gets whether the typedInput is currently disabled or not.
+
+```javascript
+$(".input").typedInput('disabled');
+```
+
+#### <a href="#methods-hide" name="methods-hide">hide()</a>
+
+Hide the typedInput when it is currently visible.
+
+```javascript
+$(".input").typedInput('hide');
+```
+
+#### <a href="#methods-show" name="methods-show">show()</a>
+
+Show the typedInput when it is currently hidden.
+
+```javascript
+$(".input").typedInput('show');
+```
 
 #### <a href="#methods-type-get" name="methods-type-get">type()</a>
 
