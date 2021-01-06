@@ -117,6 +117,8 @@ $(".input").typedInput({
 
 #### <a href="#methods-disable" name="methods-disable">disable()</a>
 
+*Since Node-RED 1.2.7*
+
 Disable the typedInput when it is currently enabled.
 
 ```javascript
@@ -124,6 +126,8 @@ $(".input").typedInput('disable');
 ```
 
 #### <a href="#methods-disabled-get" name="methods-disabled-get">disabled()</a>
+
+*Since Node-RED 1.2.7*
 
 <span class="method-return">Returns: Boolean</span>
 
