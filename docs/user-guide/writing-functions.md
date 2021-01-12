@@ -46,6 +46,14 @@ for example the HTTP In/Response flow requires the <code>msg.req</code> and
 nodes <em>should</em> return the message object they were passed having made any
 changes to its properties.</div>
 
+Use node.warn() to show warnings in the sidebar to help you debug. For example:
+
+{% highlight javascript %}
+node.warn("my var xyz = " + xyz);
+{% endhighlight %}
+
+See logging section below for more details.
+
 ### Multiple Outputs
 
 The function edit dialog allows the number of outputs to be changed. If there
@@ -121,7 +129,7 @@ doSomeAsyncWork(msg, function(result) {
 return;
 {% endhighlight %}
 
-**Since Node-RED 1.0**
+*Since Node-RED 1.0*
 
 The Function node will clone every message object you pass to `node.send` to
 ensure there is no unintended modification of message objects that get reused
@@ -139,7 +147,7 @@ node.send(msg,false);
 
 #### Finishing with a message
 
-**Since Node-RED 1.0**
+*Since Node-RED 1.0*
 
 If a Function node does asynchronous work with a message, the runtime will not
 automatically know when it has finished handling the message.
@@ -190,7 +198,6 @@ node.on('close', function() {
 });
 {% endhighlight %}
 
-
 Or, *since Node-RED 1.1.0*, you can add code to the `Close` tab in the node's edit
 dialog.
 
@@ -204,7 +211,11 @@ node.warn("Something happened you should know about");
 node.error("Oh no, something bad happened");
 {% endhighlight %}
 
-The `warn` and `error` messages also get sent to the flow editor debug tab.
+Where the console output appears will depend on how your opearting sustem and how you start Node-RED.
+If you start using a command line - that is the console where logging will appear. If you run as a
+system service then it may appear in the system log. If you run under an app like PM2 it will have it's own way for showing logs. On a Pi the install script adds a `node-red-log` command that will display the log.
+
+The `warn` and `error` messages also get sent to the debug tab on the right side of the flow editor.
 
 For finer grained logging, `node.trace()` and `node.debug()` are also available.
 If there is no logger configured to capture those levels, they will not be seen.
@@ -446,7 +457,7 @@ The following objects are available within the Function node.
  * `global.keys(..)` : return a list of all global-scoped context property keys
 
 #### `RED`
- * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused  
+ * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused
 
 #### `env`
  * `env.get(..)` : get an environment variable
