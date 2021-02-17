@@ -10,7 +10,7 @@ redirect_from:
 
 ### Prerequisites
 
-If you are using Raspbian, then you must have Raspbian Jessie as a minimum version.
+If you are using Raspbian, then you must have Raspbian Stretch as a minimum version.
 Raspbian Buster is the currently supported version.
 
 ### Installing and Upgrading Node-RED
