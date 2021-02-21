@@ -18,6 +18,7 @@ own right. Used by the core `Switch` and `Change` nodes.
         <table>
             <tr><td><a href="#options-addButton">addButton</a></td></tr>
             <tr><td><a href="#options-addItem">addItem</a></td></tr>
+            <tr><td><a href="#options-buttons">buttons</a></td></tr>
             <tr><td><a href="#options-connectWith">connectWith</a></td></tr>
             <tr><td><a href="#options-header">header</a></td></tr>
             <tr><td><a href="#options-height">height</a></td></tr>
@@ -94,6 +95,36 @@ $("ol.list").editableList({
     addItem: function(row, index, data) {
         $(row).html("Item "+index);
     }
+});
+```
+
+#### <a href="#options-buttons" name="options-buttons">buttons( array )</a>
+
+<span class="method-return">Type: Array</span>
+
+An array of button objects, that need to be added at the bottom of the editableList.
+Each button object can have the following properties:
+
+ - `label` - the (optional) button label
+ - `icon` - the (optional) button icon
+ - `title` - the (optional) button tooltip text
+ - `click` - the callback function that will be executed when the button is clicked
+
+Note that the 'add button' is added implicit to this array, when the `addButton` is activated.
+
+```javascript
+$("ol.list").editableList({
+    addItem: function(row, index, data) {
+        $(row).html("Item "+index);
+    }
+    buttons: [{
+        label: "with icon",
+        icon: "fa fa-star",
+        title: "my custom button",
+        click: function(evt) { 
+            alert("button clicked");
+        }
+   }]
 });
 ```
 
