@@ -13,6 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  **/
+
+/*
+ __________________________________________
+/ This is the copy of typedInput.js in the \
+\ documentation repository                 /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+ */
+
+
 (function($) {
     var contextParse = function(v) {
         var parts = RED.utils.parseContextKey(v);
