@@ -69,6 +69,76 @@ The `rev` property, if provided, should reflect the revision of flows that was r
 }
 {% endhighlight %}
 
+#### Setting node credentials
+
+There are two ways to provide credentials with this request. The individual node
+objects in the `flows` array can contain a `credentials` property containing the
+credentials for that node.
+
+Alternatively, the top level object can include a `credentials` property that has
+credentials for individual nodes, or a complete encrypted set.
+
+**Inline node credentials :**
+
+{% highlight json %}
+{
+    "rev": "abc-123",
+    "flows": [
+      {
+        "type": "tab",
+        "id": "396c2376.c693dc",
+        "label": "Sheet 1",
+        "credentials": {
+            "user": "my-username",
+            "pass": "my-password"
+        }
+      }
+    ]
+}
+{% endhighlight %}
+
+**Separate node credentials :**
+
+
+{% highlight json %}
+{
+    "rev": "abc-123",
+    "flows": [
+      {
+        "type": "tab",
+        "id": "396c2376.c693dc",
+        "label": "Sheet 1"
+      }
+    ],
+    "credentials": {
+        "396c2376.c693dc": {
+            "user": "my-username",
+            "pass": "my-password"
+        }
+    }
+}
+{% endhighlight %}
+
+**Encrypted node credentials:**
+
+{% highlight json %}
+{
+    "rev": "abc-123",
+    "flows": [
+      {
+        "type": "tab",
+        "id": "396c2376.c693dc",
+        "label": "Sheet 1"
+      }
+    ],
+    "credentials": {
+        "$": "beea417990012379ca6d4116bd1fda5bOWbwy7UnQvccxAEH1V1pSEETTfSNerYGvP4Aai6RT/DNpnjCCP/fdzildzlJhFjYcRKdO1Q="
+    }
+}
+{% endhighlight %}}
+
+
+
 ### Response
 
 Status Code | Reason              | Response

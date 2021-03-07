@@ -221,13 +221,15 @@ $(".input").typedInput('width', '200px');
 
 ### Events
 
-#### <a href="#events-change" name="events-change">change( type, value )</a>
+#### <a href="#events-change" name="events-change">change( event, type, value )</a>
 
 Triggered when either the type or value of the input is changed.
 
 ```javascript
 $(".input").on('change', function(type, value) {} );
 ```
+
+*Note:* The `value` property was added in Node-RED 1.3
 
 ### Types
 
