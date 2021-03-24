@@ -211,7 +211,7 @@ node.warn("Something happened you should know about");
 node.error("Oh no, something bad happened");
 {% endhighlight %}
 
-Where the console output appears will depend on how your opearting sustem and how you start Node-RED.
+Where the console output appears will depend on how your operating system and how you start Node-RED.
 If you start using a command line - that is the console where logging will appear. If you run as a
 system service then it may appear in the system log. If you run under an app like PM2 it will have it's own way for showing logs. On a Pi the install script adds a `node-red-log` command that will display the log.
 
