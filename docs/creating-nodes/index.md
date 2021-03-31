@@ -6,7 +6,9 @@ title: Creating Nodes
 
 The main way Node-RED can be extended is to add new nodes into its palette.
 
-The following sections exist and are largely complete:
+Nodes can be published as npm modules to the [public npm repository](https://www.npmjs.com/)
+and added to the [Node-RED Flow Library](https://flows.nodered.org) to make them
+available to the community.
 
  - [Creating your first node](first-node)
  - [JavaScript File](node-js)
@@ -23,11 +25,10 @@ The following sections exist and are largely complete:
  - [Adding examples](examples)
  - [Internationalisation](i18n)
 
+*Since Node-RED 1.3*
 
-To do:
-
-1. library
-2. custom http endpoints
+ - [Loading extra resources in the editor](resources)
+ - [Packaging a Subflow as a module](subflow-modules)
 
 
 ### General guidance

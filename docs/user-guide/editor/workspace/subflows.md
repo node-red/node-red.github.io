@@ -97,15 +97,17 @@ properties dialog, the name and description of the subflow can be set.
 
 <ul>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - per-instance properties that are exposed as environment variables within the subflow.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cube"></i> : Module Properties - metadata about the subflow. <i>Since Node-RED 1.3</i></li>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-file-text"></i> : Description - per-node documentation formatted using Markdown. This is displayed in the <a href="../sidebar/info">Information sidebar</a> when the node is selected.</li>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-object-group"></i> : Appearance - options to customise the appearance of the node.</li>
 </ul>
 
 <div class="figure">
-  <img style="width: calc(30% - 10px); display: inline-block;" src="../images/editor-edit-subflow-properties.png" alt="Subflow edit dialog - properties">
-  <img style="width: calc(30% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-subflow-description.png" alt="Subflow edit dialog - description">
-  <img style="width: calc(30% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-subflow-appearance.png" alt="Subflow edit dialog - appearance">
-  <p class="caption">Subflow edit dialog - properties, description and appearance tabs</p>
+  <img style="width: calc(50% - 10px); display: inline-block;" src="../images/editor-edit-subflow-properties.png" alt="Subflow edit dialog - properties">
+  <img style="width: calc(50% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-subflow-module-properties.png" alt="Subflow edit dialog - module properties">
+  <img style="width: calc(50% - 10px);  display: inline-block;"  src="../images/editor-edit-subflow-description.png" alt="Subflow edit dialog - description">
+  <img style="width: calc(50% - 10px); margin-left: 10px; display: inline-block;"  src="../images/editor-edit-subflow-appearance.png" alt="Subflow edit dialog - appearance">
+  <p class="caption">Subflow edit dialog - properties, module properties, description and appearance tabs</p>
 </div>
 
 ##### Properties
@@ -130,9 +132,11 @@ of how they will appear.
 
 <br style="clear: both;" />
 
+##### Module Properties
 
-
-
+The Module Properties tab can be used to set additional meta-data about the Subflow,
+including version, license and module name. These can be used when
+[packaging the Subflow as an npm module](/docs/creating-nodes/subflow-modules).
 
 ##### Appearance
 

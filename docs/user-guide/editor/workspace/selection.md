@@ -17,8 +17,31 @@ help text for its type.
 If the `Ctrl` or `Command` key is held when clicking on the node, the node will
 be added to the current selection (or removed if it was already selected).
 
-If the `Shift` key is held when clicking on the node, it will select that node
-and all other nodes it is connected to.
+
+<div style="float: right; width: 400px; margin-left: 10px;">
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:select-connected-nodes</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s c</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:select-upstream-nodes</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s u</code></td></tr>
+</table>
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Action</td><td><code>core:select-downstream-nodes</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s d</code></td></tr>
+</table>
+</div>
+
+If the `Shift` key is held when clicking on the middle of the node, it will select that node
+and all other nodes it is connected to. Clicking on the left-hand side of the node, it will select
+that node and all nodes that come before it in the flow - "upstream" nodes. Clicking on the right-hand
+side of the node, it will select that node and all nodes that come after it in the flow - "downstream" nodes.
+
+
 
 A wire is selected when it is clicked on. Unlike nodes, it is only possible to
 select one wire at a time.
@@ -47,6 +70,8 @@ press `Ctrl/Command-a`.
  <tr><td>Action</td><td><code>core:select-all-nodes</code></td></tr>
  <tr><td>Key shortcut</td><td><code>Ctrl/⌘-a</code></td></tr>
 </table>
+
+
 
 ### Selecting flows
 

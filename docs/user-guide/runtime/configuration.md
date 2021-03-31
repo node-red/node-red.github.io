@@ -59,6 +59,15 @@ httpAdminAuth
 
   *Standalone only*.
 
+httpAdminMiddleware
+: an HTTP middleware function, or array of functions, that is added to all admin routes.
+  The format of the middleware function is documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
+
+      httpAdminMiddleware: function(req,res,next) {
+          // Perform any processing on the request.
+          // Be sure to call next() if the request should be passed on
+      }
+
 httpNodeRoot
 : the root url for nodes that provide HTTP endpoints. If set to `false`, all node-based HTTP endpoints are disabled. Default: `/`
 
@@ -92,8 +101,9 @@ httpNodeCors
   as defined [here](https://github.com/troygoode/node-cors#configuration-options)
 
 httpNodeMiddleware
-: an HTTP middleware function that is added to all HTTP In nodes. This allows whatever custom processing,
-  such as authentication, is needed for the nodes. The format of the middleware function is
+: an HTTP middleware function, or array of functions, that is added to all HTTP In nodes.
+  This allows whatever custom processing, such as authentication, is needed for
+  the nodes. The format of the middleware function is
   documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
 
       httpNodeMiddleware: function(req,res,next) {
@@ -113,6 +123,30 @@ logging
  - **trace** - record very detailed logging + debug + info + warn + error + fatal errors
 
 The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".        
+
+externalModules
+: Configure how the runtime will handle external npm modules. This covers:
+     - whether the editor will allow new node modules to be installed
+     - whether nodes, such as the Function node are allowed to have their own dynamically configured dependencies.
+
+  The allow/denyList options can be used to limit what modules the runtime
+  will install/load. It can use `*` as a wildcard that matches anything.
+
+      externalModules: {
+         autoInstall: false,
+         autoInstallRetry: 30,
+         palette: {
+            allowInstall: true,
+            allowUpload: true,
+            allowList: [],
+            denyList: []
+         },
+         modules: {
+            allowInstall: true,
+            allowList: [],
+            denyList: []
+         }
+      }
 
 ### Editor Configuration
 
@@ -168,7 +202,7 @@ The theme of the editor can be changed by using the following settings object. A
             redirect: "http://example.com"
         },
         palette: {
-            editable: true, // Enable/disable the Palette Manager
+            editable: true, // *Deprecated* - use externalModules.palette.allowInstall instead
             catalogues: [   // Alternative palette manager catalogues
                 'https://catalogue.nodered.org/catalogue.json'
             ],
