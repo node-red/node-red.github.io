@@ -80,6 +80,29 @@ var newMsg = { payload: msg.payload.length };
 return [msg, newMsg];
 {% endhighlight %}
 
+#### Handling arbituary number of outputs
+
+*Since Node-RED 1.3*
+
+`node.outputCount` contains the number of outputs configured for the function node.
+
+This makes it possible to write generic functions that can handle variable number of outputs set from the edit dialog.
+
+For example if you wish to spread incoming messages randomly between outputs, you could:
+
+{% highlight javascript %}
+// Create an array same length as there are outputs
+const messages = new Array(node.outputCount)
+// Choose random output number to send the message to
+const chosenOutputIndex = Math.floor(Math.random() * node.outputCount);
+// Send the message only to chosen output
+messages[chosenOutputIndex] = msg;
+// Return the array containing chosen output
+return messages;
+{% endhighlight %}
+
+You can now configure number of outputs solely via edit dialog without making changes to the function itself.
+
 ### Multiple Messages
 
 A function can return multiple messages on an output by returning an array of
@@ -129,7 +152,6 @@ doSomeAsyncWork(msg, function(result) {
 return;
 {% endhighlight %}
 
-*Since Node-RED 1.0*
 
 The Function node will clone every message object you pass to `node.send` to
 ensure there is no unintended modification of message objects that get reused
@@ -453,6 +475,7 @@ The following objects are available within the Function node.
 #### `node`
  * `node.id` : the id of the Function node - *added in 0.19*
  * `node.name` : the name of the Function node - *added in 0.19*
+ * `node.outputCount` : number of outputs set for Function node - *added in 1.3*
  * `node.log(..)` : [log a message](#logging-events)
  * `node.warn(..)` : [log a warning message](#logging-events)
  * `node.error(..)` : [log an error message](#logging-events)
