@@ -250,6 +250,14 @@ COPY flows.json /data/flows.json
 #RUN npm install node-red-node-smooth
 ```
 
+**Note**: the `package.json` file must contain a start option within the script section. For example the default container is like this:
+
+```
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        ...
+```
+
 #### Dockerfile order and build speed
 
 While not necessary, it's a good idea to do the `COPY package... npm install...` steps early because, although the `flows.json` changes frequently as you work in Node-RED, your `package.json` will only change when you change what modules are part of your project. And since the `npm install` step that needs to happen when `package.json` changes can sometimes be time consuming, it's better to do the time-consuming, generally-unchanging steps earlier in a Dockerfile so those build images can be reused, making subsequent overall builds much faster.
