@@ -1,0 +1,531 @@
+---
+layout: barebones
+slug:
+  - url: /docs/api/modules
+    label: modules
+  - 1.3.2
+---
+{% assign parent_url = '/docs/api' %}
+{% assign parent_slug = 'api' %}
+<link href="./api-docs.css" rel="stylesheet" media="screen">
+<div class="docs">
+    {% include breadcrumbs.html %}
+  <div class="grid">
+    <div class="col-3-12">
+    <ul class="toc">
+        <li class="active"><a href="/docs/api/modules">Module APIs</a><li><li class="active"><a href="index.html">Version: 1.3.2</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.hooks">hooks</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_registry.html">@node-red/registry</a></li><li class="nav-item"><a href="@node-red_registry.html#.addModule">addModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.cleanModuleList">cleanModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.disableNode">disableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.enableNode">enableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.get">get(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleInfo">getModuleInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleList">getModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleResource">getModuleResource(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfig">getNodeConfig(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfigs">getNodeConfigs(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlowPath">getNodeExampleFlowPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlows">getNodeExampleFlows(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIconPath">getNodeIconPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIcons">getNodeIcons(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeInfo">getNodeInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeList">getNodeList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installerEnabled">installerEnabled(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installModule">installModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.load">load(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.registerType">registerType(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.removeModule">removeModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.uninstallModule">uninstallModule(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.plugins">plugins</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.events">events</a></li><li class="nav-item"><a href="@node-red_util.html#.exec">exec</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+    </ul>
+</div>
+    <div class="col-9-12">
+        <div class="docs-content">
+
+
+
+
+
+<section>
+
+<header>
+        <h2>@node-red/util.i18n
+        </h2>
+        
+</header>
+
+<article>
+    <div class="container-overview"  style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+    
+        
+            <div class="description"><p>Internationalization utilities</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+
+<div class="widget" style="padding-bottom: 40px; border-bottom: 1px solid #eee;">
+    <div class="col-6-12">
+        
+        <h4>Functions</h4>
+        <table>
+            <tbody>
+                    
+                        <tr><td><a href="@node-red_util_i18n.html#._">_ <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_i18n.html#.availableLanguages">availableLanguages <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_i18n.html#.catalog">catalog <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_i18n.html#.registerMessageCatalog">registerMessageCatalog <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_i18n.html#.registerMessageCatalogs">registerMessageCatalogs <span class="type-signature">(  )</span></a></td></tr>
+                    
+            </tbody>
+         </table>
+         
+     </div>
+     <div class="col-6-12">
+                
+    </div>
+    <br style="clear:both" />
+</div>
+
+    
+
+    
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id="._">_<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Perform a message catalog lookup.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".availableLanguages">availableLanguages<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets a list of languages a given catalog is available in.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".catalog">catalog<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets a message catalog.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".registerMessageCatalog">registerMessageCatalog<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Register a message catalog with i18n.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".registerMessageCatalogs">registerMessageCatalogs<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Register multiple message catalogs with i18n.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+</script>

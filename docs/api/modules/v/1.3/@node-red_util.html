@@ -1,0 +1,692 @@
+---
+layout: barebones
+slug:
+  - url: /docs/api/modules
+    label: modules
+  - 1.3.2
+---
+{% assign parent_url = '/docs/api' %}
+{% assign parent_slug = 'api' %}
+<link href="./api-docs.css" rel="stylesheet" media="screen">
+<div class="docs">
+    {% include breadcrumbs.html %}
+  <div class="grid">
+    <div class="col-3-12">
+    <ul class="toc">
+        <li class="active"><a href="/docs/api/modules">Module APIs</a><li><li class="active"><a href="index.html">Version: 1.3.2</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.hooks">hooks</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_registry.html">@node-red/registry</a></li><li class="nav-item"><a href="@node-red_registry.html#.addModule">addModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.cleanModuleList">cleanModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.disableNode">disableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.enableNode">enableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.get">get(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleInfo">getModuleInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleList">getModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleResource">getModuleResource(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfig">getNodeConfig(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfigs">getNodeConfigs(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlowPath">getNodeExampleFlowPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlows">getNodeExampleFlows(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIconPath">getNodeIconPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIcons">getNodeIcons(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeInfo">getNodeInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeList">getNodeList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installerEnabled">installerEnabled(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installModule">installModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.load">load(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.registerType">registerType(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.removeModule">removeModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.uninstallModule">uninstallModule(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.plugins">plugins</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.events">events</a></li><li class="nav-item"><a href="@node-red_util.html#.exec">exec</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+    </ul>
+</div>
+    <div class="col-9-12">
+        <div class="docs-content">
+
+
+
+
+
+<section>
+
+<header>
+        <h2>@node-red/util
+        </h2>
+        
+</header>
+
+<article>
+    <div class="container-overview"  style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+    
+        
+            <div class="description"><p>This module provides common utilities for the Node-RED runtime and editor</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+
+<div class="widget" style="padding-bottom: 40px; border-bottom: 1px solid #eee;">
+    <div class="col-6-12">
+        
+        <h4>Functions</h4>
+        <table>
+            <tbody>
+                    
+                        <tr><td><a href="@node-red_util.html#.init">init <span class="type-signature">( settings )</span></a></td></tr>
+                    
+            </tbody>
+         </table>
+         
+     </div>
+     <div class="col-6-12">
+                
+                <h4>Members</h4>
+                <table>
+                    <tbody>
+                    
+                        <tr><td><a href="@node-red_util.html#.events">events</a> <span class="type-signature"> : { ... }</span><script>console.log({"comment":"/**\n    * Runtime events\n    * @mixes @node-red/util_event\n    * @memberof @node-red/util\n    */","meta":{"range":[1657,1671],"filename":"index.js","lineno":65,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/util","code":{"id":"astnode100009527","name":"events","type":"Identifier","value":"events"},"shortpath":"@node-red/util/index.js"},"description":"<p>Runtime events</p>","mixes":["@node-red/util_event"],"memberof":"@node-red/util","name":"events","longname":"@node-red/util.events","kind":"member","scope":"static","___id":"T000002R000960","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".events","ancestors":["<a href=\"@node-red_util.html\">@node-red/util</a>."],"signature":"<span class=\"type-signature\"> : { ... }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_util.html#.exec">exec</a> <span class="type-signature"> : { <a href="@node-red_util_exec.html">...</a> }</span><script>console.log({"comment":"/**\n    * Run system commands with event-log integration\n    * @mixes @node-red/util_exec\n    * @memberof @node-red/util\n    */","meta":{"range":[1810,1820],"filename":"index.js","lineno":72,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/util","code":{"id":"astnode100009529","name":"exec","type":"Identifier","value":"exec"},"shortpath":"@node-red/util/index.js"},"description":"<p>Run system commands with event-log integration</p>","mixes":["@node-red/util_exec"],"memberof":"@node-red/util","name":"exec","longname":"@node-red/util.exec","kind":"member","scope":"static","___id":"T000002R000961","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".exec","ancestors":["<a href=\"@node-red_util.html\">@node-red/util</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_util_exec.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_util.html#.i18n">i18n</a> <span class="type-signature"> : { <a href="@node-red_util_i18n.html">...</a> }</span><script>console.log({"comment":"/**\n    * Internationalization utilities\n    * @mixes @node-red/util_i18n\n    * @memberof @node-red/util\n    */","meta":{"range":[1419,1429],"filename":"index.js","lineno":51,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/util","code":{"id":"astnode100009523","name":"i18n","type":"Identifier","value":"i18n"},"shortpath":"@node-red/util/index.js"},"description":"<p>Internationalization utilities</p>","mixes":["@node-red/util_i18n"],"memberof":"@node-red/util","name":"i18n","longname":"@node-red/util.i18n","kind":"member","scope":"static","___id":"T000002R000958","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".i18n","ancestors":["<a href=\"@node-red_util.html\">@node-red/util</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_util_i18n.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_util.html#.log">log</a> <span class="type-signature"> : { <a href="@node-red_util_log.html">...</a> }</span><script>console.log({"comment":"/**\n    * Logging utilities\n    * @mixes @node-red/util_log\n    * @memberof @node-red/util\n    */","meta":{"range":[1288,1296],"filename":"index.js","lineno":44,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/util","code":{"id":"astnode100009521","name":"log","type":"Identifier","value":"log"},"shortpath":"@node-red/util/index.js"},"description":"<p>Logging utilities</p>","mixes":["@node-red/util_log"],"memberof":"@node-red/util","name":"log","longname":"@node-red/util.log","kind":"member","scope":"static","___id":"T000002R000957","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".log","ancestors":["<a href=\"@node-red_util.html\">@node-red/util</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_util_log.html\">...</a> }</span>"})</script></td></tr>
+                    
+                        <tr><td><a href="@node-red_util.html#.util">util</a> <span class="type-signature"> : { <a href="@node-red_util_util.html">...</a> }</span><script>console.log({"comment":"/**\n    * General utilities\n    * @mixes @node-red/util_util\n    * @memberof @node-red/util\n    */","meta":{"range":[1539,1549],"filename":"index.js","lineno":58,"columnno":4,"path":"/Users/nol/code/node-red/node-red/packages/node_modules/@node-red/util","code":{"id":"astnode100009525","name":"util","type":"Identifier","value":"util"},"shortpath":"@node-red/util/index.js"},"description":"<p>General utilities</p>","mixes":["@node-red/util_util"],"memberof":"@node-red/util","name":"util","longname":"@node-red/util.util","kind":"member","scope":"static","___id":"T000002R000959","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".util","ancestors":["<a href=\"@node-red_util.html\">@node-red/util</a>."],"signature":"<span class=\"type-signature\"> : { <a href=\"@node-red_util_util.html\">...</a> }</span>"})</script></td></tr>
+                    
+            </tbody>
+         </table>
+         
+    </div>
+    <br style="clear:both" />
+</div>
+
+    
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".events">events</h4>
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li>@node-red/util_event</li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".exec"><a href="@node-red_util_exec.html">exec</a></h4>
+
+
+
+
+
+
+        <p>Run system commands with event-log integration</p>
+     <ul> 
+            <li><a href="@node-red_util_exec.html#.run">run( command, args, options, emit )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_util_exec.html">@node-red/util_exec</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".i18n"><a href="@node-red_util_i18n.html">i18n</a></h4>
+
+
+
+
+
+
+        <p>Internationalization utilities</p>
+     <ul> 
+            <li><a href="@node-red_util_i18n.html#._">_(  )</a></li>
+        
+            <li><a href="@node-red_util_i18n.html#.availableLanguages">availableLanguages(  )</a></li>
+        
+            <li><a href="@node-red_util_i18n.html#.catalog">catalog(  )</a></li>
+        
+            <li><a href="@node-red_util_i18n.html#.registerMessageCatalog">registerMessageCatalog(  )</a></li>
+        
+            <li><a href="@node-red_util_i18n.html#.registerMessageCatalogs">registerMessageCatalogs(  )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_util_i18n.html">@node-red/util_i18n</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".log"><a href="@node-red_util_log.html">log</a></h4>
+
+
+
+
+
+
+        <p>Logging utilities</p>
+     <ul> 
+            <li><a href="@node-red_util_log.html#._">_(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.addHandler">addHandler(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.audit">audit(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.debug">debug(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.error">error(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.info">info(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.log">log(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.metric">metric(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.removeHandler">removeHandler(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.trace">trace(  )</a></li>
+        
+            <li><a href="@node-red_util_log.html#.warn">warn(  )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_util_log.html">@node-red/util_log</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+            
+<div class="section-members" style=" border-bottom: 1px solid #eee;">
+
+<h4 class="name" id=".util"><a href="@node-red_util_util.html">util</a></h4>
+
+
+
+
+
+
+        
+     <ul> 
+            <li><a href="@node-red_util_util.html#.cloneMessage">cloneMessage( msg )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.compareObjects">compareObjects( obj1, obj2 )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.encodeObject">encodeObject( msg, opts )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.ensureBuffer">ensureBuffer( o )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.ensureString">ensureString( o )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.evaluateEnvProperty">evaluateEnvProperty( value, node )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.evaluateJSONataExpression">evaluateJSONataExpression( expr, msg, callback )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.evaluateNodeProperty">evaluateNodeProperty( value, type, node, msg, callback )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.generateId">generateId(  )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.getMessageProperty">getMessageProperty( msg, expr )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.getObjectProperty">getObjectProperty( msg, expr )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.normaliseNodeTypeName">normaliseNodeTypeName( name )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.normalisePropertyExpression">normalisePropertyExpression( str )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.parseContextStore">parseContextStore( key )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.prepareJSONataExpression">prepareJSONataExpression( value, node )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.setMessageProperty">setMessageProperty( msg, prop, value, createMissing )</a></li>
+        
+            <li><a href="@node-red_util_util.html#.setObjectProperty">setObjectProperty( msg, prop, value, createMissing )</a></li>
+        
+        </ul>
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!-- 
+        <dt class="mixes">See:</dt>
+
+        <dd class="mixes"><ul>
+        
+            <li><a href="@node-red_util_util.html">@node-red/util_util</a></li>
+        
+        </ul></dd>
+     -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+<!--  -->
+
+
+
+
+</div>
+
+        
+    
+
+    
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".init">init<span class="signature">(settings)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Initialise the module with the runtime settings</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+</script>
