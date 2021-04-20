@@ -187,7 +187,7 @@ adminAuth: {
     users: [
        { username: "knolleary",permissions: ["*"]}
     ]
-};
+}
 ```
 
 The `strategy` property takes the following options:
