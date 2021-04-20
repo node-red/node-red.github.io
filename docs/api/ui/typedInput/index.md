@@ -25,6 +25,7 @@ chosen, including options for string, number and boolean types.
         <table>
             <tr><td><a href="#methods-disable">disable</a></td></tr>
             <tr><td><a href="#methods-disabled-get">disabled</a></td></tr>           
+            <tr><td><a href="#methods-enable">enable</a></td></tr>
             <tr><td><a href="#methods-hide">hide</a></td></tr>
             <tr><td><a href="#methods-show">show</a></td></tr>
             <tr><td><a href="#methods-type">type</a></td></tr>
@@ -115,11 +116,13 @@ $(".input").typedInput({
 
 <a name="methods-type"></a>
 
-#### <a href="#methods-disable" name="methods-disable">disable()</a>
+#### <a href="#methods-disable" name="methods-disable">disable( state )</a>
 
 *Since Node-RED 1.2.7*
 
 Disable the typedInput when it is currently enabled.
+
+The optional `state` parameter can be used to toggle the disabled/enabled state of the typedInput. If `state` is true, the element will be disabled, otherwise it will be enabled.
 
 ```javascript
 $(".input").typedInput('disable');
@@ -136,6 +139,18 @@ Gets whether the typedInput is currently disabled or not.
 ```javascript
 $(".input").typedInput('disabled');
 ```
+
+#### <a href="#methods-enable" name="methods-disable">enable()</a>
+
+*Since Node-RED 1.3.3*
+
+Enable the typedInput when it is currently disabled.
+
+```javascript
+$(".input").typedInput('enable');
+```
+
+
 
 #### <a href="#methods-hide" name="methods-hide">hide()</a>
 
@@ -226,7 +241,7 @@ $(".input").typedInput('width', '200px');
 Triggered when either the type or value of the input is changed.
 
 ```javascript
-$(".input").on('change', function(type, value) {} );
+$(".input").on('change', function(event, type, value) {} );
 ```
 
 *Note:* The `value` property was added in Node-RED 1.3
