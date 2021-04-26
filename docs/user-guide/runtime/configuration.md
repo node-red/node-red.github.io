@@ -245,6 +245,9 @@ functionGlobalContext
  functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
  </div>
 
+functionExternalModules
+: if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `false`.
+
 debugMaxLength
 : Debug Nodes - the maximum length, in characters, of any message sent to the
   debug sidebar tab. Default: 1000
