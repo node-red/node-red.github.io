@@ -11,9 +11,10 @@ Version    | Support Level   | Notes
 -----------|-----------------|------
  < 8.x     | *Unsupported*   |
  **8.x**   | *Supported*     | No longer maintained
- **10.x**  | *Supported*     | Reaches end-of-life April 2021
+ **10.x**  | *Supported*     | No longer maintained
  **12.x**  | **Recommended** |  
  **14.x**  | Supported       |  
+ **16.x**  | Supported       |  
 
 We try to stay up to date with Node.js releases. Our goal is to support
 the [Maintenance and Active LTS releases](https://nodejs.org/en/about/releases/).
