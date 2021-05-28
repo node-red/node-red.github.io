@@ -140,11 +140,11 @@ to store persistent or shared data outside the container.
 To create a new named data volume to persist our user data and run a new
 container using this volume.
 ```
-$ docker volume create --name node_red_user_data
+$ docker volume create --name node_red_data
 $ docker volume ls
 DRIVER              VOLUME NAME
-local               node_red_user_data
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+local               node_red_data
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 If you need to backup the data from the mounted volume you can access it while the container is running.
@@ -157,7 +157,7 @@ container and start a new instance without losing our user data.
 ```
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Updating
