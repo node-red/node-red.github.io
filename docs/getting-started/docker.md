@@ -24,7 +24,7 @@ Let's dissect that command:
         docker run              - run this container, initially building locally if necessary
         -it                     - attach a terminal session so we can see what is going on
         -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
-        -v node_red_data:/data  - mount the host node_red_data directory to the container /data directory so any changes made to flows are persisted
+        -v node_red_data:/data  - mount a docker named volume called `node_red_data` to the container /data directory so any changes made to flows are persisted
         --name mynodered        - give this machine a friendly local name
         nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
 
