@@ -168,7 +168,7 @@ is now as simple as
 $ docker pull nodered/node-red
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Docker Stack / Docker Compose
