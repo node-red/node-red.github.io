@@ -65,7 +65,7 @@ Add wires connecting:
   - The HTTP Request node output to the CSV node input.
   - The CSV node output to the Debug node input.
 
-### 7. Add a Switch node
+### 6. Add a Switch node
 
 Add a Switch node to the workspace. Edit its properties and configure it to check
 the property `msg.payload.mag` with a test of `>=` change it to test on a `number` and the value `7`. Click
@@ -73,16 +73,16 @@ Done to close.
 
 Add a second wire from the CSV node to this Switch node.
 
-### 8. Add a Change node
+### 7. Add a Change node
 
 Add a Change node, wired to the output of the Switch node. Configure it to
 set `msg.payload` to the string `PANIC!`.
 
-### 9. Add a Debug node
+### 8. Add a Debug node
 
 Wire a new Debug node to the output of the Change node
 
-### 10. Deploy
+### 9. Deploy
 
 Deploy the flow to the runtime by clicking the Deploy button.
 
