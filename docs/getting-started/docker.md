@@ -24,7 +24,7 @@ Let's dissect that command:
         docker run              - run this container, initially building locally if necessary
         -it                     - attach a terminal session so we can see what is going on
         -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
-        -v node_red_data:/data  - mount the host node_red_data directory to the container /data directory so any changes made to flows are persisted
+        -v node_red_data:/data  - mount a docker named volume called `node_red_data` to the container /data directory so any changes made to flows are persisted
         --name mynodered        - give this machine a friendly local name
         nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
 
@@ -140,11 +140,11 @@ to store persistent or shared data outside the container.
 To create a new named data volume to persist our user data and run a new
 container using this volume.
 ```
-$ docker volume create --name node_red_user_data
+$ docker volume create --name node_red_data
 $ docker volume ls
 DRIVER              VOLUME NAME
-local               node_red_user_data
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+local               node_red_data
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 If you need to backup the data from the mounted volume you can access it while the container is running.
@@ -157,7 +157,7 @@ container and start a new instance without losing our user data.
 ```
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Updating
@@ -168,7 +168,7 @@ is now as simple as
 $ docker pull nodered/node-red
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Docker Stack / Docker Compose
