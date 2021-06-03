@@ -1,0 +1,25 @@
+<ul class="toc">
+    <li class="toc-expander"><div>V</div></li>
+    <li class="tocheader">
+        <ul>
+            <li class="toctitle active"><a href="/docs/dashboard/">Dashboard user guide</a></li>
+            <li {% if page.url == "/docs/dashboard/introduction" %}class="active"{% endif %}><a href="/docs/dashboard/introduction">Introduction</a></li>
+            <li {% if page.url == "/docs/dashboard/installation" %}class="active"{% endif %}><a href="/docs/dashboard/installation">Installation of dashboard</a></li>
+            <li {% if page.url == "/docs/dashboard/configuration" %}class="active"{% endif %}><a href="/docs/dashboard/configuration">Dashboard configuration</a></li>
+            <li {% if page.url == "/docs/dashboard/usage" %}class="active"{% endif %}><a href="/docs/dashboard/usage">Dashboard usage</a></li>
+            <li {% if page.url == "/docs/dashboard/firststep" %}class="active"{% endif %}><a href="/docs/dashboard/firststep">The first step of dashboard</a></li>
+            <li {% if page.url == "/docs/dashboard/widget" %}class="active"{% endif %}><a href="/docs/dashboard/widget">Widget</a></li>
+            <li {% if page.url == "/docs/dashboard/layout" %}class="active"{% endif %}><a href="/docs/dashboard/layout">Layout</a></li>
+            <li {% if page.url == "/docs/dashboard/nodes" %}class="active"{% endif %}><a href="/docs/dashboard/nodes">node-red-dashboard nodes</a></li>
+            <li {% if page.url == "/docs/dashboard/extranodes" %}class="active"{% endif %}><a href="/docs/dashboard/extranodes">Dashboard extra nodes</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+            $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 50px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+        })
+    })
+</script>
