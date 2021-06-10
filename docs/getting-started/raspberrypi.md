@@ -10,8 +10,7 @@ redirect_from:
 
 ### Prerequisites
 
-If you are using Raspbian, then you must have Raspbian Stretch as a minimum version.
-Raspbian Buster is the currently supported version.
+If you are using Raspbian, Buster is the currently supported version.
 
 ### Installing and Upgrading Node-RED
 
@@ -20,11 +19,13 @@ Pi. The script can also be used to upgrade an existing install when a new
 release is available.
 
 Running the following command will download and run the script. If you want
-to review the contents of the script first, you can view it [here](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
+to review the contents of the script first, you can view it [on Github](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
 
 ```
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
+
+There are extra parameters you can pass to the script. Add `--help` to the above command to see them.
 
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px; margin-bottom: 30px;">
@@ -32,16 +33,15 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 <img src="/images/logos/ubuntu.svg" height="30">
 </div>
 This script will work on any <b>Debian-based</b> operating system, including <b>Ubuntu</b>
-and <b>Diet-Pi</b>. You may need to run <code>sudo apt install build-essential git</code>
-first to ensure npm is able to build any binary modules it needs to install.
+and <b>Diet-Pi</b>. You may need to run <code>sudo apt install build-essential git curl</code>
+first to ensure npm is able to fetch and build any binary modules it needs to install.
 </div>
-
 
 This script will:
 
  - remove the pre-packaged version of Node-RED and Node.js if they are present
  - install the current Node.js LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md). If it detects Node.js is already installed
- from NodeSource, it will ensure it is at least Node 8, but otherwise leave it alone
+ from NodeSource, it will ensure it is at least Node 12, but otherwise leave it alone
  - install the latest version of Node-RED using npm
  - optionally install a collection of useful Pi-specific nodes
  - setup Node-RED to run as a service and provide a set of commands to work with
@@ -56,7 +56,7 @@ list of 'Recommended Software'. This allows it to be installed using
 <code>apt-get install nodered</code> and includes the Raspbian-packaged version
 of Node.js, but <em>does not</em> include <code>npm</code>.
 <p>While using these packages is convenient at first, we <b>strongly recommend</b>
-using our install script above instead.</p>
+using the install script above instead.</p>
 </div>
 
 ### Running locally
