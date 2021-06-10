@@ -19,9 +19,10 @@ Fork the repository so you can make changes, commit them to your own repository 
 
     git clone https://github.com/{your-github}/node-red.github.io
 
-Then run jekyll:
+First time you run jeykll you need to do bundle install 1st for the dependencies, 
     
     cd node-red.github.io
+    bundle install 
     jekyll serve -w
 
 Once the site is built and running you can preview it at [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/).
