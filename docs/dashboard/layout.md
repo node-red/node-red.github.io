@@ -2,7 +2,6 @@
 layout: docs-dashboard
 toc: toc-dashboard.html
 title: Layouting Dashboard
-
 ---
 
 <!-- This document contains original Japanese description in comments -->
@@ -13,7 +12,7 @@ title: Layouting Dashboard
 
 <!--　Node-RED Dashboardは`Widget`、`Group`、および、`Tab`から構成されます。WidgetはButton、ChartなどGUI部品です。TabはWebブラウザ上に表示するダッシュボード画面全体を表します。Tabは複数定義でき、サイドメニューからの選択、もしくは、ui_controlノードで切り替えて一つのタブを表示できます。Groupは複数のWidgetを配置する領域を定義するために使用します。GroupおよびTabはConfigノードです。-->
 
-  The Node-RED Dashboard consists of `Widget`,` Group`, and `Tab`.  Widget is a GUI element such as button or chart.  Tab represents the entire dashboard screen displayed on the Web browser.  Multiple Tabs can be defined, and one tab can be displayed by selecting from the side menu or switching with the `ui_control node`.  Group is used to define the area where multiple widgets will be placed.  Group and Tab are defined as configuration nodes.
+  The Node-RED Dashboard consists of `Widget`,`Group`, and `Tab`.  Widget is a GUI element such as button or chart.  Tab represents the entire dashboard screen displayed on the Web browser.  Multiple Tabs can be defined, and one tab can be displayed by selecting from the side menu or switched with the `ui_control node`.  Group is used to define the area where multiple widgets will be placed.  Group and Tab are defined as configuration nodes.
 
 ### Layouting Dashboard Elements
 
@@ -23,11 +22,11 @@ title: Layouting Dashboard
 
 <!--　ダッシュボードは一定の大きさのグリッドを基本要素とし、Widgetは高さと幅、Groupは幅をグリッド数を単位として定義します。グリッドの単位要素の大きさはdashboardサイドバーのSiteタブで設定できます。-->
 
-  The dashboard layout is defined using a grid with fixed size element.  The widget has the height and width, and the group has the width in units of the number of grids. The size in pixels of the grid's unit element can be set by '*1x1 Widget Size*' of the `Site` tab of the dashboard sidebar.
+  The dashboard layout is defined using a grid with fixed size element.  The widget has the height and width, and the group has the width in units of the number of grid elements. The size in pixels of the grid's unit element can be set by '*1x1 Widget Size*' of the `Site` tab of the dashboard sidebar.
 
 <!-- SIteタブでは、Widget間の間隔およびおよびグループ間の間隔と余白も設定できます。 -->
 
-On the `SIte` tab, spacing between widgets and the spacing and paddings between groups can also be specified.
+On the `Site` tab, spacing between widgets and the spacing and paddings between groups can also be specified.
 
 <br style="clear:both"/>
 
@@ -55,9 +54,9 @@ While layouting the dashboard screen, placements of screen elements are determin
 
 　Layoutタブ上のUI部品の順序と所属関係はdrag&dropで変更可能です。-->
 
-  To place the widgets on the belonging group and the groups on the belonging tab,  free space that can placed the element is searched from top to bottom and from left to right, and first first found area is used to place them.  If the browser that is displaying the dashboard is resized, the placement of the goups within the displayed tab will be adjusted automatically.
+  To place the widgets on the belonging group and the groups on the belonging tab,  free space that can place the element is searched from top to bottom and from left to right, and the first found area is used to place it.  If the browser that is displaying the dashboard is resized, the placement of the goups within the displayed tab will be adjusted automatically.
 
-  The order and belonging relation of UI elements on the `Layout` tab can be changed by drag & drop.
+  The order and belonging relation of UI elements on the `Layout` tab can be changed by drag & drop of an element.
 
 <br style="clear:both"/>
 
@@ -67,7 +66,7 @@ While layouting the dashboard screen, placements of screen elements are determin
 
 <!-- Widgetに対応するUIノードの*Properties*の*Group*項目にwidgetを配置するgroupを設定します。*Size*項目はwidgetのサイズの設定です。-->
 
-  The group to place the widget can be set by the *Group* item of *Properties* of the UI node corresponding to the widget.  The *Size* item is used for setting the widget size.
+  The group to place a widget can be set by the *Group* item of *Properties* of the UI node corresponding to the widget.  The *Size* item is used for setting the widget size.
 
 ![Widget-Properties.png](images/layout/Widget-Properties.png)
 
@@ -93,11 +92,11 @@ While layouting the dashboard screen, placements of screen elements are determin
 
 <!--　Widgetおよびtabのサイズは、*Size*項目により設定します。Size項目を選択すると、サイズ洗濯のためのポップアップインターフェイスが表示されます。サイズをグリッド領域で指定します。-->
 
-  The size of widget and tab is set by the *Size* item.  Selecting the `Size` item will display a popup interface for specifying UI element size.  The size of the UI elemt can be specified by the grid area.
+  The size of widget and tab is set by the *Size* item.  Selecting the *Size* item will display a popup interface for specifying UI element size.  The size of the UI elemt can be specified by the grid area of this popup UI.
 
 <!--　autoボタンを押すと、widgetのサイズを自動設定します。その動作はノードによりますが、一般的に、auto設定ではwidgetの幅は所属するgroupの幅と同じ、widget毎に高さは適切な大きさが選択されます。-->
 
-  Pressing the `auto` button indicate to set the widget size automatically.  Its behaviour depends on UI widgets.  Typically, the width of the widget is set to the same as the width of the belonging group, and the height is set to appropriate value.
+  Pressing the `auto` button indicate to set the widget size automatically.  Its behaviour depends on implementation of each UI widgets.  Typically, the width of the widget is set to the same  width of the belonging group, and the height is set to appropriate value.
 
 <br style="clear:both"/>
 
@@ -145,7 +144,7 @@ The `Spacer` node can be used for fine-tuning the placement of widgets in a grou
 
 　Layout Editorでレイアウトを行うと、必要な位置にSpacerノードを自動的に挿入します。-->
 
-  The placement of widgets in a group can be changed by drag & dropping widgets.  The lock mark on the upper right of the widget indicates whether the widget size is *auto* or not.  If the key is unlocked, the widget size can be changed by dragging the arrow at the bottom right.
+  The placement of widgets in a group can be changed by drag & dropping a widget.  The lock mark on the upper right of the widget indicates whether the widget size is *auto* or not.  If the key is unlocked, the widget size can be changed by dragging the arrow at the bottom right.
 
   After finishing layout with the `Layout Editor`, `Spacer` nodes are automatically inserted at appropriate positions.
 
@@ -157,7 +156,7 @@ The `Spacer` node can be used for fine-tuning the placement of widgets in a grou
 
 <!--　Layoutタブでは+linkボタンによりWebページへのリンクをサイドメニューに設定することができます。指定したリンクは、サイドメニューもしくはui_controlノードにより選択肢し、ブラウザの別ページや、iframeでdashboardに埋め込むことができます。-->
 
-A link to a web page instead of tab can be added to side menu using `+Link` button of the `Layout` tab.  The specified link can be selected from the side menu of dashboard or the `ui_control` node and can redirect to the page or embed  it in the dashboard using iframe.
+A link to a web page instead of tab can be added to side menu using `+Link` button of the `Layout` tab.  The specified link can be selected from the side menu of dashboard or the `ui_control` node and can redirect to the page or can embed  it in the dashboard using iframe.
 
 ### Configuring Group Title
 
@@ -165,7 +164,7 @@ A link to a web page instead of tab can be added to side menu using `+Link` butt
 
 <!--　Dashboard上でgroupの上部にはグループ名がデフォルトで表示されます。グループ設定パネルの'Display group name'チェックボックスを選択しないと表示しないように変更可能です。-->
 
-  The group name is displayed at the top of the group on the dashboard by default.  It can be disabled by unselecting the'Display group name'check box of the group settings panel.
+  The group name is displayed at the top of the group on the dashboard by default.  It can be disabled by unselecting the'*Display group name*' check box of the group settings panel.
 
 ### Configuring Title Bar & Side Menu
 
@@ -181,4 +180,4 @@ Title and icons of each tab and whether to display the tab on the side menu can 
 
 <!-- タブのアイコンとしてMaterial Design icon(e.g. 'check', 'close'), Font Awesome icon(e.g. 'fa-fire'), Weather Icon(e.g. 'wi-wu-sunny'), Google Material Icon(e.g. 'mi-videogame_asset')を指定できます。-->
 
- [Material Design icon](https://klarsys.github.io/angular-material-icons/) *(e.g. 'check', 'close')*, a [Font Awesome icon](https://fontawesome.com/v4.7.0/icons/) *(e.g. 'fa-fire')*, a [Weather icon](https://github.com/Paul-Reed/weather-icons-lite/blob/master/css_mappings.md) *(e.g. 'wi-wu-sunny')*, or a [Google material icon]([Google Fonts](https://fonts.google.com/icons)) *(e.g. 'mi-videogame_asset')* can be used as an icon for a tab.
+ [Material Design icon](https://klarsys.github.io/angular-material-icons/) *(e.g. 'check', 'close')*, a [Font Awesome icon](https://fontawesome.com/v4.7.0/icons/) *(e.g. 'fa-fire')*, a [Weather icon](https://github.com/Paul-Reed/weather-icons-lite/blob/master/css_mappings.md) *(e.g. 'wi-wu-sunny')*, or a [Google material icon](https://fonts.google.com/icons) *(e.g. 'mi-videogame_asset')* can be used as an icon for a tab.
