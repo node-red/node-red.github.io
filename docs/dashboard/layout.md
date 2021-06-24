@@ -1,7 +1,7 @@
 ---
 layout: docs-dashboard
 toc: toc-dashboard.html
-title: Layouting Dashboard
+title: Laying out Dashboard
 ---
 
 <!-- This document contains original Japanese description in comments -->
@@ -10,11 +10,11 @@ title: Layouting Dashboard
 
 <!-- ### Dashboard画面の基本部品 -->
 
-<!--　Node-RED Dashboardは`Widget`、`Group`、および、`Tab`から構成されます。WidgetはButton、ChartなどGUI部品です。TabはWebブラウザ上に表示するダッシュボード画面全体を表します。Tabは複数定義でき、サイドメニューからの選択、もしくは、ui_controlノードで切り替えて一つのタブを表示できます。Groupは複数のWidgetを配置する領域を定義するために使用します。GroupおよびTabはConfigノードです。-->
+<!--　Node-RED Dashboardは`Widget`、`Group`、および、`Tab`から構成されます。WidgetはButton、ChartなどGUI部品です。Groupは複数のWidgetを配置する領域を定義するために使用します。TabはWebブラウザ上に表示するダッシュボード画面全体を表します。Tabは複数定義でき、サイドメニューからの選択、もしくは、ui_controlノードで切り替えて一つのタブを表示できます。GroupおよびTabはConfigノードです。-->
 
-  The Node-RED Dashboard consists of `Widget`,`Group`, and `Tab`.  Widget is a GUI element such as button or chart.  Tab represents the entire dashboard screen displayed on the Web browser.  Multiple Tabs can be defined, and one tab can be displayed by selecting from the side menu or switched with the `ui_control node`.  Group is used to define the area where multiple widgets will be placed.  Group and Tab are defined as configuration nodes.
+  The Node-RED Dashboard consists of `Widget`,`Group`, and `Tab`.  Widget is a GUI element such as button or chart.  Group is used to define the area where multiple widgets will be placed. Tab may contain multiple groups and represents the entire dashboard screen displayed on the Web browser.  Multiple Tabs can be defined, and one tab can be displayed by selecting from the side menu or switched with the `ui_control` node.   Group and Tab are defined as configuration nodes. 
 
-### Layouting Dashboard Elements
+### Laying out Dashboard Elements
 
 <!-- ### 画面要素のレイアウト -->
 
@@ -26,7 +26,7 @@ title: Layouting Dashboard
 
 <!-- SIteタブでは、Widget間の間隔およびおよびグループ間の間隔と余白も設定できます。 -->
 
-On the `Site` tab, spacing between widgets and the spacing and paddings between groups can also be specified.
+On the `Site` tab, the spacing between widgets and the spacing and paddings between groups can also be specified.
 
 <br style="clear:both"/>
 
@@ -42,11 +42,11 @@ On the `Site` tab, spacing between widgets and the spacing and paddings between 
 
 2. 各グループについて、上から下、左から右にTabに配置する。-->
 
-While layouting the dashboard screen, placements of screen elements are determined as follows:
+While laying out the dashboard screen, the placements of screen element is determined as follows:
 
-1. place widgets in each group from top to bottom and left to right,
+1. place widgets in each group from left to right then top to bottom,
 
-2. place groups in each tab from top to bottom and left to right.
+2. place groups in each tab from left to right then top to bottom.
 
 <!--　GroupへのWidgetの配置、および、TabへのGroupの配置は、上から下、左から右に配置可能な空き領域を探し、最初に見つかった領域に配置します。Dashboardの表示を行うブラウザのサイズを変更すると、TabへのGroupの配置が自動的に調整されます。
 
@@ -54,7 +54,7 @@ While layouting the dashboard screen, placements of screen elements are determin
 
 　Layoutタブ上のUI部品の順序と所属関係はdrag&dropで変更可能です。-->
 
-  To place the widgets on the belonging group and the groups on the belonging tab,  free space that can place the element is searched from top to bottom and from left to right, and the first found area is used to place it.  If the browser that is displaying the dashboard is resized, the placement of the goups within the displayed tab will be adjusted automatically.
+  To place the widgets on the belonging group and the groups on the belonging tab,  free space that can place the element is searched from left to right then top to bottom, and the first found area is used to place it.  If the browser that is displaying the dashboard is resized, the placement of the groups within the displayed tab will be adjusted automatically.
 
   The order and belonging relation of UI elements on the `Layout` tab can be changed by drag & drop of an element.
 
@@ -92,17 +92,17 @@ While layouting the dashboard screen, placements of screen elements are determin
 
 <!--　Widgetおよびtabのサイズは、*Size*項目により設定します。Size項目を選択すると、サイズ洗濯のためのポップアップインターフェイスが表示されます。サイズをグリッド領域で指定します。-->
 
-  The size of widget and tab is set by the *Size* item.  Selecting the *Size* item will display a popup interface for specifying UI element size.  The size of the UI elemt can be specified by the grid area of this popup UI.
+  The size of widget and tab is set by the *Size* item.  Selecting the *Size* item will display a popup interface for specifying UI element size.  The size of the UI element can be specified by the grid area of this popup UI.
 
 <!--　autoボタンを押すと、widgetのサイズを自動設定します。その動作はノードによりますが、一般的に、auto設定ではwidgetの幅は所属するgroupの幅と同じ、widget毎に高さは適切な大きさが選択されます。-->
 
-  Pressing the `auto` button indicate to set the widget size automatically.  Its behaviour depends on implementation of each UI widgets.  Typically, the width of the widget is set to the same  width of the belonging group, and the height is set to appropriate value.
+  Pressing the `auto` button indicate to set the widget size automatically.  Its behavior depends on implementation of each UI widgets.  Typically, the width of the widget is set to the same  width of the belonging group, and the height is set to appropriate value.
 
 <br style="clear:both"/>
 
 <!--　ポップアップ上部の*W x H*をクリックすると、以下の数値入力ポップアップに変化します。大きな固定数値のサイズを指定する場合はこちらが便利です。-->
 
-  Clicking *W xH* at the top of the UI will display the following interface for changing the widget size using digits input.  This UI is useful to specify the size for large widget.
+  Clicking *6 x 4* , the size of widget, at the top left of the UI will display the following interface for changing the widget size using digits input.  This UI is useful to specify the size for large widget.
 
 <img title="" src="images/layout/ElementSizerNum.png" alt="ElementSizerNum.png" data-align="inline">
 
@@ -128,7 +128,7 @@ The `Spacer` node can be used for fine-tuning the placement of widgets in a grou
 
 <!--　複雑なダッシュボード画面を構成する場合、Layout Editorを用いることで、GUIによってWidgetの配置を行うことができます。Layout EditorはLayoutタブのTab上のマウス    オーバで表示される*layout*ボタンを押すことで起動します。-->
 
-  While layouting a complicated dashboard screen, GUI-based `Layout Editor` can be used.  The layout editor can be opened by pressing the `layout` button displayed while mouse over on a tab on the `Layout` tab.
+  While laying out a complicated dashboard screen, GUI-based `Layout Editor` can be used.  The layout editor can be opened by pressing the `layout` button displayed while mouse over on a tab on the `Layout` tab.
 
 <br style="clear:both"/>
 
@@ -144,7 +144,7 @@ The `Spacer` node can be used for fine-tuning the placement of widgets in a grou
 
 　Layout Editorでレイアウトを行うと、必要な位置にSpacerノードを自動的に挿入します。-->
 
-  The placement of widgets in a group can be changed by drag & dropping a widget.  The lock mark on the upper right of the widget indicates whether the widget size is *auto* or not.  If the key is unlocked, the widget size can be changed by dragging the arrow at the bottom right.
+  The placement of widgets in a group can be changed by drag & dropping a widget.  The lock mark on the upper right of the widget indicates whether the widget size is *auto* or not.  If the key is locked, the widget size can be changed by dragging the arrow at the bottom right.
 
   After finishing layout with the `Layout Editor`, `Spacer` nodes are automatically inserted at appropriate positions.
 
@@ -176,7 +176,7 @@ At the top of the dashboard screen, a title bar that displays side menus etc. is
 
 <!-- 各タブの設定から、タブの名称とアイコン、メニューへのタブの表示するか否かを設定できます。-->
 
-Title and icons of each tab and whether to display the tab on the side menu can be set from the settings paneg of each tab.
+The title and icon of each tab and whether to display the tab on the side menu can be set from the settings panel of each tab.
 
 <!-- タブのアイコンとしてMaterial Design icon(e.g. 'check', 'close'), Font Awesome icon(e.g. 'fa-fire'), Weather Icon(e.g. 'wi-wu-sunny'), Google Material Icon(e.g. 'mi-videogame_asset')を指定できます。-->
 
