@@ -71,7 +71,7 @@ In general, keep conversations in the public spaces. If you direct message a que
 If you find yourself being direct messaged for assistance without your consent, then please let us know.
 
 
-#### 5: Do not spam
+#### 6: Do not spam
 
 Please don't post commercial messages to the forum or slack unless there is a clear and obvious connection with the Node-RED project.
 
@@ -80,7 +80,7 @@ If you want to promote an event, there is the `#events` category in the forum - 
 If you're to hire someone to work with Node-RED, there is a `#jobs` channel in slack.
 
 
-#### 6: Use threads in Slack
+#### 7: Use threads in Slack
 
 If there are multiple conversations going on in Slack, use threads to reply to previous messages. This helps to keep the conversations organised and coherent.
 
