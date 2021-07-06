@@ -23,9 +23,9 @@ community and project are not paid to do so. They are here out of choice to help
 
 #### 1: Pick the right place to post
 
-For general 'How do I?' type questions, the forum is usually the best place to start. It has the largest active audience with a very broad range of experience.
+For general 'How do I?' type questions, the [forum](https://discourse.nodered.org) is usually the best place to start. It has the largest active audience with a very broad range of experience.
 
-For more details technical questions about the code or internals, the Slack team may be a better place to start. Just be aware the core developers are mostly in European timezones so you may not get an instant response.
+For more detailed technical questions about the code or internals, the [Slack workspace](slack) may be a better place to start. Just be aware the core developers are mostly in European timezones so you may not get an instant response.
 
 Here are some of the useful Slack channels to help get you started:
 
@@ -39,9 +39,9 @@ Here are some of the useful Slack channels to help get you started:
 
 Stack Overflow has its own set of guidelines for [what makes a good question](https://stackoverflow.com/help/how-to-ask).
 
-We sometimes get questions asked in YouTube video comments, or on Twitter. Those are monitored by a very small group of people so don't always get a response as quickly as you may want.
+We sometimes get questions asked in YouTube video comments or on Twitter. Those are monitored by a very small group of people so don't always get a response as quickly as you may want.
 
-Do not raise a GitHub Issue unless you have an issue to report - and be sure to fill-in the issue template you're given.
+Do not raise a GitHub Issue unless you have an issue to report - and be sure to fill-in the template you're given.
 
 #### 2: Do not double post
 
