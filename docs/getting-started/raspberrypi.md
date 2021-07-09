@@ -39,13 +39,12 @@ first to ensure npm is able to fetch and build any binary modules it needs to in
 
 This script will:
 
- - remove the pre-packaged version of Node-RED and Node.js if they are present
- - install the current Node.js LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md). If it detects Node.js is already installed
- from NodeSource, it will ensure it is at least Node 12, but otherwise leave it alone
- - install the latest version of Node-RED using npm
- - optionally install a collection of useful Pi-specific nodes
+ - remove the existing version of Node-RED if present.
+ - if it detects Node.js is already installed, it will ensure it is at least v12. If less than v12 it will stop and let the user decide whether to stay with Node-RED version 1 - or upgrade Nodejs to a more recent LTS version. If nothing is found it will install the current Node.js LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md) package.
+ - install the latest version of Node-RED using npm.
+ - optionally install a collection of useful Pi-specific nodes.
  - setup Node-RED to run as a service and provide a set of commands to work with
- the service
+ the service.
 
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px;margin-bottom: 40px;">
