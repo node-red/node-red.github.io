@@ -34,6 +34,10 @@ A default Node-RED configuration will expose those resource files as:
  - `http://localhost:1880/resources/node-red-node-example/image.png`
  - `http://localhost:1880/resources/node-red-node-example/library.js`
 
+ **Note**: If using scoped module names then the scope needs to be included in the path:
+
+  - `http://localhost:1880/resources/@scope/node-red-contrib-your-package/somefile`
+
 
 ### Loading resources in the editor
 
