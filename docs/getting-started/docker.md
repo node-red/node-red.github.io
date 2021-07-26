@@ -87,7 +87,7 @@ and stop it again when required:
 ### Image Variations
 
 The Node-RED images are based on [official Node JS Alpine Linux](https://hub.docker.com/_/node/) images to keep them as small as possible.
-Using Alpine Linux reduces the built image size, but removes standard dependencies that are required for native module compilation. If you want to add dependencies with native dependencies, extend the Node-RED image with the missing packages on running containers or build new images see [docker-custom](https://github.com/node-red/node-red-docker/tree/master/docker-custom).
+Using Alpine Linux reduces the built image size, but removes standard dependencies that are required for native module compilation. If you want to add dependencies with native dependencies, extend the Node-RED image with the missing packages on running containers or build new images see [docker-custom](docker-custom) which expands on the [README.md](https://github.com/node-red/node-red-docker/tree/master/docker-custom) in the Node-RED Docker project.
 
 See the [Github project README](https://github.com/node-red/node-red-docker/blob/master/README.md) for detailed Image, Tag and Manifest information.
 
