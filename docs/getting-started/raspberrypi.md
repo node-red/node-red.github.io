@@ -10,7 +10,7 @@ redirect_from:
 
 ### Prerequisites
 
-If you are using Raspbian, Buster is the currently supported version.
+If you are using Raspberry Pi OS, Buster is the currently supported version.
 
 ### Installing and Upgrading Node-RED
 
@@ -50,9 +50,9 @@ This script will:
 <div style="float: left; margin-right: 10px;margin-bottom: 40px;">
 <img src="/images/logos/raspberrypi.svg" height="30">
 </div>
-Node-RED has also been packaged for the Raspbian repositories and appears in their
+Node-RED has also been packaged for the Raspberry Pi OS repositories and appears in their
 list of 'Recommended Software'. This allows it to be installed using
-<code>apt-get install nodered</code> and includes the Raspbian-packaged version
+<code>apt-get install nodered</code> and includes the Raspberry Pi OS-packaged version
 of Node.js, but <em>does not</em> include <code>npm</code>.
 <p>While using these packages is convenient at first, we <b>strongly recommend</b>
 using the install script above instead.</p>
@@ -89,7 +89,7 @@ The following commands are provided to work with the service:
  - `node-red-restart` - this stops and restarts the Node-RED service
  - `node-red-log` - this displays the log output of the service
 
-You can also start the Node-RED service on the Raspbian Desktop by selecting
+You can also start the Node-RED service on the Raspberry Pi OS Desktop by selecting
 the `Menu -> Programming -> Node-RED` menu option.
 
 ### Autostart on boot
