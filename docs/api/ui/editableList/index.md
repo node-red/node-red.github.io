@@ -4,7 +4,7 @@ toc: toc-api-ui.html
 title: EditableList Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'editablelist'
 ---
 
@@ -121,7 +121,7 @@ $("ol.list").editableList({
         label: "with icon",
         icon: "fa fa-star",
         title: "my custom button",
-        click: function(evt) { 
+        click: function(evt) {
             alert("button clicked");
         }
    }]

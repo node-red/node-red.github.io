@@ -1,9 +1,18 @@
 ---
 layout: docs-api
 toc: toc-api-ui.html
-title: Editor UI Widgets
-slug: "ui widgets"
+title: Editor APIs
+slug: "ui"
 ---
+
+The editor provides a number of APIs for nodes and plugins to use to help them integrate with the editor.
+
+ - [`RED.actions`](actions) - register custom actions
+ - [`RED.events`](events) - listen for events within the editor
+ - [`RED.notify`](notification) - show notifications in the editor
+ - [`RED.sidebar`](sidebar) - add sidebar tabs
+
+### Widgets
 
 A set of jQuery widgets are available that can be used within a node's edit template.
 
