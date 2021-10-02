@@ -4,7 +4,7 @@ toc: toc-api-ui.html
 title: TypedInput Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'typedinput'
 ---
 
@@ -259,8 +259,9 @@ Property | Type    | Required | Description
 ---------|---------|----------|-------------
 `value`  | string  | yes      | The identifier for the type
 `label`  | string  |          | A label to display in the type menu
-`icon`   | string  |          | An icon to display in the type menu
+`icon`   | string  |          | An icon to display in the type menu. This can be either an image url, or a FontAwesome 4 icon, for example `"fa fa-list"`.
 `options`| array   |          | If the type has a fixed set of values, this is an array of string options for the value. For example, `["true","false"]` for the boolean type.
+`multiple`|boolean |          | If `options` is set, this can enable multiple selection of them.
 `hasValue`|boolean |          | Set to `false` if there is no value associated with the type.
 `validate`|function|          | A function to validate the value for the type.
 
@@ -298,6 +299,18 @@ Timestamp type:
 }
 ```
 
+Select from a list of options:
+```javascript
+{
+    value: "fruit",
+    multiple: true,
+    options: [
+        { value: "apple", label: "Apple"},
+        { value: "banana", label: "Banana"},
+        { value: "cherry", label: "Cherry"},
+    ]
+}
+```
 
 <style>
 

@@ -14,6 +14,18 @@
  * limitations under the License.
  **/
 
+ /*
+  __________________________________________
+ / This is the copy of popover.js in the \
+ \ documentation repository                 /
+  ---------------------------------------
+         \   ^__^
+          \  (oo)\_______
+             (__)\       )\/\
+                 ||----w |
+                 ||     ||
+  */
+
 RED.popover = (function() {
     var deltaSizes = {
         "default": {
@@ -392,7 +404,7 @@ RED.popover = (function() {
                     top -= (top+panelHeight)-$(window).height() + 5;
                 }
                 if (top < 0) {
-                    panelHeight.height(panelHeight+top)
+                    panel.height(panelHeight+top)
                     top = 0;
                 }
                 if (align === "right") {
@@ -419,7 +431,7 @@ RED.popover = (function() {
                 });
 
                 $(document).on("mousedown.red-ui-popover-panel-close", function(event) {
-                    if(!$(event.target).closest(panel).length && !$(event.target).closest(".red-ui-editor-dialog").length) {
+                    if (!$(event.target).closest(panel).length && !$(event.target).closest(".red-ui-editor-dialog").length) {
                         if (closeCallback) {
                             closeCallback();
                         }

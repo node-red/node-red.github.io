@@ -4,7 +4,7 @@ toc: toc-api-ui.html
 title: SearchBox Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'searchbox'
 ---
 

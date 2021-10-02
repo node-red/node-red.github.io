@@ -6,7 +6,7 @@ node-red.github.io
 ### Contributing / Fixes
 
 For simple typos and single line fixes please just raise an issue pointing out
-our mistakes. For larger changes, please raise them on the [mailing list](https://groups.google.com/forum/#!forum/node-red), or [Slack team](http://nodered.org/slack/) #docs channel, and if necessary provide content for review on the [wiki](https://github.com/node-red/node-red.github.io/wiki).
+our mistakes. For larger changes, please discuss them on the [forum](https://discourse.nodered.org) or [Slack team](http://nodered.org/slack/) #docs channel.
 
 If you need to raise a pull request please read our
 [contribution guidelines](https://github.com/node-red/node-red/blob/master/CONTRIBUTING.md)
@@ -19,10 +19,10 @@ Fork the repository so you can make changes, commit them to your own repository 
 
     git clone https://github.com/{your-github}/node-red.github.io
 
-First time you run jeykll you need to do bundle install 1st for the dependencies, 
-    
+First time you run jeykll you need to do bundle install 1st for the dependencies,
+
     cd node-red.github.io
-    bundle install 
+    bundle install
     jekyll serve -w
 
 Once the site is built and running you can preview it at [`http://127.0.0.1:4000/`](http://127.0.0.1:4000/).
