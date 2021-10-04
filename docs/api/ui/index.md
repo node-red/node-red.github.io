@@ -9,7 +9,7 @@ The editor provides a number of APIs for nodes and plugins to use to help them i
 
  - [`RED.actions`](actions) - register custom actions
  - [`RED.events`](events) - listen for events within the editor
- - [`RED.notify`](notification) - show notifications in the editor
+ - [`RED.notify`](notifications) - show notifications in the editor
  - [`RED.sidebar`](sidebar) - add sidebar tabs
 
 ### Widgets
