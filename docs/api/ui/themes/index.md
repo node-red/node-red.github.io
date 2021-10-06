@@ -135,7 +135,7 @@ Monaco comes with a number of built-in themes available. The full list is [here]
 The name of the theme can be provided in the plugin settings:
 
 ```javascript
-RED.plugins.registerPlugin("midnight-red", {
+RED.plugins.registerPlugin("my-custom-theme", {
    type: "node-red-theme",
    css: "style.css",
    monacoOptions: {
@@ -154,7 +154,7 @@ Rather than specifying a built-in theme by name, the `monacoOptions.theme` setti
 be used to provide a custom Monaco theme object:
 
 ```javascript
-RED.plugins.registerPlugin("midnight-red", {
+RED.plugins.registerPlugin("my-custom-theme", {
     monacoOptions: {
       theme: {
         "base": "vs-dark",
@@ -198,14 +198,14 @@ Rather than hardcode the theme settings, you can store the Monaco theme JSON in 
 separate file and use `require` to import it:
 
 ```javascript
-RED.plugins.registerPlugin("midnight-red", {
+RED.plugins.registerPlugin("my-custom-theme", {
     monacoOptions: {
-      theme: require("midnight-red-monaco-theme.json"),
+      theme: require("my-custom-theme-monaco-theme.json"),
     }
 })
 ```
 
-`midnight-red-monaco-theme.json` file example:
+`my-custom-theme-monaco-theme.json` file example:
 ```json
 {
   "base": "vs-dark",
