@@ -4,15 +4,15 @@ toc: toc-creating-nodes.html
 title: Node edit dialog
 slug: edit dialog
 ---
-<script src="js/jquery-ui.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
 <script>
     var RED = {};
     RED.settings = {};
     RED.editor = { editJSON: function(){}}
 </script>
-<script src="js/utils.js"></script>
-<script src="js/typedInput.js"></script>
-<script src="js/popover.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/typedInput.js"></script>
+<script src="/js/popover.js"></script>
 <link rel="stylesheet" href="/css/editor-style.min.css">
 
 The edit dialog for a node is the main way a user can configure the node to

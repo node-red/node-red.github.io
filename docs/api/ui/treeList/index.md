@@ -13,28 +13,34 @@ __Since 0.20.0__
 A list for displaying tree-structured data. This was added in 0.20.0 and has quite a minimal functionality.
 
 <div class="widget">
-    <div class="col-4-12">
-        <h3>Options</h3>
-        <table>
-            <tr><td><a href="#options-data">data</a></td></tr>
-        </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Options</h3>
+            <table>
+                <tr><td><a href="#options-data">data</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Methods</h3>
+            <table>
+                <tr><td><a href="#methods-data">data</a></td></tr>
+                <tr><td><a href="#methods-empty">empty</a></td></tr>
+                <tr><td><a href="#methods-show">show</a></td></tr>
+            </table>
+        </div>
     </div>
-    <div class="col-4-12">
-        <h3>Methods</h3>
-        <table>
-            <tr><td><a href="#methods-data">data</a></td></tr>
-            <tr><td><a href="#methods-empty">empty</a></td></tr>
-            <tr><td><a href="#methods-show">show</a></td></tr>
-        </table>
-    </div>
-    <div class="col-4-12">
-        <h3>Events</h3>
-        <table>
-            <tr><td><a href="#events-treelistselect">treelistselect</a></td></tr>
-            <tr><td><a href="#events-treelistmouseout">treelistmouseout</a></td></tr>
-            <tr><td><a href="#events-treelistmouseover">treelistmouseover</a></td></tr>
-        </table>
-        <h3>Types</h3>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Events</h3>
+            <table>
+                <tr><td><a href="#events-treelistselect">treelistselect</a></td></tr>
+                <tr><td><a href="#events-treelistmouseout">treelistmouseout</a></td></tr>
+                <tr><td><a href="#events-treelistmouseover">treelistmouseover</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Types</h3>
+        </div>
     </div>
 </div>
 

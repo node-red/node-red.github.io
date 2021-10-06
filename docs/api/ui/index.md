@@ -23,3 +23,13 @@ A set of jQuery widgets are available that can be used within a node's edit temp
     forms in their own right. Used by the core `Switch` and `Change` nodes.
   - [`SearchBox`](searchBox) - an enhanced `<input>` for common usage around Search UX.
   - [`TreeList`](treeList) - a list to display tree-structured data.
+
+### Theme Plugins
+
+*Since 2.0*
+
+The appearance of the editor can be customised using themes. Themes are packaged
+and installed as Node-RED plugins, and then selected via the `editorTheme.theme`
+property in the settings file.
+
+ - [Creating Theme Plugins](themes)

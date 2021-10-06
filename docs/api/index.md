@@ -22,6 +22,11 @@ data.
 
 This API provides a pluggable way to store context data outside of the runtime.
 
+#### [Library Store API](library)
+
+This API provides a pluggable way to add additional libraries to the Node-RED
+Import/Export dialog.
+
 #### [Editor APIs](ui)
 
 The APIs available in the editor for nodes and plugins to use. This includes a set

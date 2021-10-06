@@ -11,39 +11,52 @@ slug:
 A replacement for a regular `<input>` that allows the type of the value to be
 chosen, including options for string, number and boolean types.
 
+- [Options](#options)
+- [Methods](#method)
+- [Events](#events)
+- [Types](#types)
+- [Examples](#examples)
+
+
 <div class="widget">
-    <div class="col-4-12">
-        <h3>Options</h3>
-        <table>
-            <tr><td><a href="#options-default">default</a></td></tr>
-            <tr><td><a href="#options-types">types</a></td></tr>
-            <tr><td><a href="#options-typeField">typeField</a></td></tr>
-        </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Options</h3>
+            <table>
+                <tr><td><a href="#options-default">default</a></td></tr>
+                <tr><td><a href="#options-types">types</a></td></tr>
+                <tr><td><a href="#options-typeField">typeField</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Methods</h3>
+            <table>
+                <tr><td><a href="#methods-disable">disable</a></td></tr>
+                <tr><td><a href="#methods-disabled-get">disabled</a></td></tr>           
+                <tr><td><a href="#methods-enable">enable</a></td></tr>
+                <tr><td><a href="#methods-hide">hide</a></td></tr>
+                <tr><td><a href="#methods-show">show</a></td></tr>
+                <tr><td><a href="#methods-type">type</a></td></tr>
+                <tr><td><a href="#methods-types">types</a></td></tr>
+                <tr><td><a href="#methods-validate">validate</a></td></tr>
+                <tr><td><a href="#methods-value">value</a></td></tr>
+                <tr><td><a href="#methods-width">width</a></td></tr>
+            </table>
+        </div>
     </div>
-    <div class="col-4-12">
-        <h3>Methods</h3>
-        <table>
-            <tr><td><a href="#methods-disable">disable</a></td></tr>
-            <tr><td><a href="#methods-disabled-get">disabled</a></td></tr>           
-            <tr><td><a href="#methods-enable">enable</a></td></tr>
-            <tr><td><a href="#methods-hide">hide</a></td></tr>
-            <tr><td><a href="#methods-show">show</a></td></tr>
-            <tr><td><a href="#methods-type">type</a></td></tr>
-            <tr><td><a href="#methods-types">types</a></td></tr>
-            <tr><td><a href="#methods-validate">validate</a></td></tr>
-            <tr><td><a href="#methods-value">value</a></td></tr>
-            <tr><td><a href="#methods-width">width</a></td></tr>
-        </table>
-    </div>
-    <div class="col-4-12">
-    <h3>Events</h3>
-    <table>
-    <tr><td><a href="#events-change">change</a></td></tr>
-    </table>
-    <h3>Types</h3>
-    <table>
-    <tr><td><a href="#types-typedefinition">TypeDefinition</a></td></tr>
-    </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Events</h3>
+            <table>
+                <tr><td><a href="#events-change">change</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Types</h3>
+            <table>
+            <tr><td><a href="#types-typedefinition">TypeDefinition</a></td></tr>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -227,8 +240,7 @@ $(".input").typedInput('value','payload');
 
 #### <a href="#methods-width" name="methods-width">width( width )</a>
 
-Sets the width of the typedInput. This must be used in place of the standard
-`jQuery.width()` function as it ensures the component resizes properly.
+Sets the width of the typedInput.
 
 ```javascript
 $(".input").typedInput('width', '200px');
@@ -264,44 +276,86 @@ Property | Type    | Required | Description
 `multiple`|boolean |          | If `options` is set, this can enable multiple selection of them.
 `hasValue`|boolean |          | Set to `false` if there is no value associated with the type.
 `validate`|function|          | A function to validate the value for the type.
+`valueLabel` | function |     | A function that generates the label for a given value. The function takes two arguments: `container` - the DOM element the label should be constructed in, and `value`.
+`autoComplete` | function |   | *Since 2.1.0.* If set, enable autoComplete on the input, using this function to get completion suggestions. See [autoComplete](../autoComplete) for details. This option cannot be used with `options`, `hasValue=false` or `valueLabel`
 
-##### Examples
 
-Number type:
+### Examples
 
-```javascript
-{
-    value:"num",
-    label:"number",
-    icon:"red/images/typedInput/09.png",
-    validate:/^[+-]?[0-9]*\.?[0-9]*([eE][-+]?[0-9]+)?$/
-}
+#### Built-in String, Number, Boolean types
+
+```html
+<input type="text" id="node-input-example1">
 ```
 
-Boolean type:
-
 ```javascript
-{
-    value:"bool",
-    label:"boolean",
-    icon:"red/images/typedInput/bool.png",
-    options:["true","false"]
-}
+$("#node-input-example1").typedInput({
+    type:'str',
+    types:['str','num','bool']
+})
 ```
 
-Timestamp type:
+<div class="red-ui-editor"><input type="text" id="node-input-example1"></div>
 
-```javascript
-{
-    value:"date",
-    label:"timestamp",
-    hasValue:false
-}
+#### Message Properties
+
+```html
+<input type="text" id="node-input-example2">
 ```
 
-Select from a list of options:
 ```javascript
-{
+$("#node-input-example2").typedInput({
+    type:'msg',
+    types:['msg']
+})
+```
+
+<div class="red-ui-editor"><input type="text" id="node-input-example2"></div>
+
+#### Flow/Global Context Properties
+
+```html
+<input type="text" id="node-input-example3">
+```
+
+```javascript
+$("#node-input-example3").typedInput({
+    type:'flow',
+    types:['flow','global']
+})
+```
+
+<div class="red-ui-editor"><input type="text" id="node-input-example3"></div>
+
+
+#### Select from a list of options
+
+```html
+<input type="text" id="node-input-example4">
+```
+
+```javascript
+$("#node-input-example4").typedInput({type:"fruit", types:[{
+    value: "fruit",
+    options: [
+        { value: "apple", label: "Apple"},
+        { value: "banana", label: "Banana"},
+        { value: "cherry", label: "Cherry"},
+    ]
+}]})
+```
+
+<div class="red-ui-editor"><input type="text" id="node-input-example4"></div>
+
+
+#### Select multiple items from a list of options
+
+```html
+<input type="text" id="node-input-example5">
+```
+
+```javascript
+$("#node-input-example5").typedInput({type:"fruit", types:[{
     value: "fruit",
     multiple: true,
     options: [
@@ -309,11 +363,31 @@ Select from a list of options:
         { value: "banana", label: "Banana"},
         { value: "cherry", label: "Cherry"},
     ]
-}
+}]})
 ```
 
-<style>
+<div class="red-ui-editor"><input type="text" id="node-input-example5"></div>
 
+
+
+
+<script src="/js/jquery-ui.min.js"></script>
+<script>
+    var RED = {};
+    RED.settings = {};
+    RED.editor = { editJSON: function(){}}
+</script>
+<script src="/js/utils.js"></script>
+<script src="/js/typedInput.js"></script>
+<script src="/js/popover.js"></script>
+<link rel="stylesheet" href="/css/editor-style.min.css">
+<style>
+.red-ui-editor {
+    border: 1px solid #564848;
+    background: white;
+    border-radius: 2px;
+    padding: 40px 20px;
+}
 .widget h3 {
     margin-left: 0;
     padding-bottom: 5px;
@@ -331,3 +405,28 @@ Select from a list of options:
     border-left: 2px solid #B68181;
 }
 </style>
+
+<script>
+$(function() {
+    $("#node-input-example1").typedInput({type:'str',types:['str','num','bool']})
+    $("#node-input-example2").typedInput({type:'msg',types:['msg']})
+    $("#node-input-example3").typedInput({type:'flow',types:['flow','global']})
+    $("#node-input-example4").typedInput({type:"fruit", types:[{
+        value: "fruit",
+        options: [
+            { value: "apple", label: "Apple"},
+            { value: "banana", label: "Banana"},
+            { value: "cherry", label: "Cherry"},
+        ]
+    }]})
+    $("#node-input-example5").typedInput({type:"fruit", types:[{
+        value: "fruit",
+        multiple: true,
+        options: [
+            { value: "apple", label: "Apple"},
+            { value: "banana", label: "Banana"},
+            { value: "cherry", label: "Cherry"},
+        ]
+        }]})
+});
+</script>

@@ -1065,6 +1065,9 @@
          },
          disabled: function() {
              return this.uiSelect.attr("disabled") === "disabled";
+         },
+         focus: function() {
+             this.input.focus();
          }
      });
  })(jQuery);
