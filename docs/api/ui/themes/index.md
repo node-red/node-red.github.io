@@ -126,21 +126,20 @@ Node-RED
 ### Theming the Monaco editor
 
 As well as providing custom CSS and scripts, a theme plugin can also provide custom
-Monaco editor options, include what theme it should use.
+Monaco editor options including what theme it should use.
 
 #### Setting the Monaco theme by name
 
-Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme).
+Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme). Additional settings for Monaco options can be found [here](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html).
 
 The name of the theme can be provided in the plugin settings:
 
 ```javascript
-RED.plugins.registerPlugin("midnight-red2", {
+RED.plugins.registerPlugin("midnight-red", {
    type: "node-red-theme",
    css: "style.css",
    monacoOptions: {
      theme: "vs-dark", // Monaco theme name
-     fontLigatures: true,
      fontSize: 14,
      fontLigatures: true,
      fontFamily: "Cascadia Code, Fira Code, Consolas, 'Courier New', monospace",
@@ -151,10 +150,12 @@ RED.plugins.registerPlugin("midnight-red2", {
 
 #### Setting a custom Monaco theme
 
-Rather than identify a theme by name. the `monacoOptions.theme` setting can be
-used to provide a custom Monaco theme object:
+Rather than specifying a built-in theme by name, the `monacoOptions.theme` setting can 
+be used to provide a custom Monaco theme object:
 
 ```javascript
+RED.plugins.registerPlugin("midnight-red", {
+    monacoOptions: {
       theme: {
         "base": "vs-dark",
         "inherit": true,
@@ -187,7 +188,56 @@ used to provide a custom Monaco theme object:
         ]
       }
     }
-  })
+})
+```
+
+
+#### Setting a custom Monaco theme from a JSON file
+
+Rather than hardcode the theme settings, you can store the Monaco theme JSON in a 
+separate file and use `require` to import it:
+
+```javascript
+RED.plugins.registerPlugin("midnight-red", {
+    monacoOptions: {
+      theme: require("midnight-red-monaco-theme.json"),
+    }
+})
+```
+
+`midnight-red-monaco-theme.json` file example:
+```json
+{
+  "base": "vs-dark",
+  "inherit": true,
+  "colors": {
+    "editor.foreground": "#CCC",
+    "editor.background": "#434954",
+    "editor.selectionBackground": "#80000080",
+    "editor.lineHighlightBackground": "#80000040",
+    "editorCursor.foreground": "#7070FF",
+    "editorWhitespace.foreground": "#BFBFBF"
+  },      
+  "rules": [
+      {
+          "background": "434954",
+      },
+      {
+          "foreground": "aeaeae",
+          "fontStyle": "italic",
+          "token": "comment"
+      },
+      {
+          "foreground": "d8fa3c",
+          "token": "string"
+      },
+      {
+          "foreground": "d8fa3c",
+          "fontStyle": "bold",
+          "token": "constant"
+      },
+  ]
+}
 ```
 
 The specific details of how to create a Monaco theme is beyond the scope of our documentation.
