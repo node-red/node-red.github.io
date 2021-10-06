@@ -1,0 +1,24 @@
+<ul class="toc">
+    <li class="toc-expander">V</li>
+    <li class="tocheader">
+        <ul>
+            <li class="{% if page.url == "/docs/api/hooks/" %} active{% endif %}"><a href="/docs/api/hooks/">Runtime Hooks API</a>
+            <li><a style="text-decoration: none !important; font-weight: bold">Hooks</a></li>
+            <li {% if page.url contains "/docs/api/hooks/messaging" %}class="active"{% endif %}><a href="/docs/api/hooks/messaging">Messaging</a>
+            <li {% if page.url contains "/docs/api/hooks/install" %}class="active"{% endif %}><a href="/docs/api/hooks/install">Node Install</a>
+        </ul>
+    </li>
+</ul>
+<script>
+    $(function() {
+        var pageToc = $("<ul></ul>").appendTo(".toc li.active:not(.toctitle)");
+        $(".docs-content h3,.docs-content h4").each(function() {
+
+            if ($(this)[0].nodeName === 'H3') {
+                $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.95em; padding-left: 45px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+            } else {
+                $('<li id="toc-item-'+$(this).attr('id')+'"><a style="font-size: 0.9em; padding-left: 55px;" href="#'+$(this).attr('id')+'">'+$(this).text()+'</a></li>').appendTo(pageToc)
+            }
+        })
+    })
+</script>

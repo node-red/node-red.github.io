@@ -13,6 +13,11 @@ to embed Node-RED into existing Node.js applications.
 This HTTP-based API can be used to remotely administer the runtime. It is used
 by the Node-RED Editor and command-line admin tool.
 
+#### [Hooks API](hooks)
+
+The Hooks API provides a way to insert custom code into certain key points of
+the runtime operation.
+
 #### [Storage API](storage)
 
 This API provides a pluggable way to configure where the Node-RED runtime stores
