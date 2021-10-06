@@ -4,31 +4,33 @@ toc: toc-api-ui.html
 title: SearchBox Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'searchbox'
 ---
 
 An enhanced `<input>` element that provides common features for a search input.
 
 <div class="widget">
-    <div class="col-4-12">
-        <h3>Options</h3>
-        <table>
-            <tr><td><a href="#options-delay">delay</a></td></tr>
-            <tr><td><a href="#options-minimumLength">minimumLength</a></td></tr>
-        </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Options</h3>
+            <table>
+                <tr><td><a href="#options-delay">delay</a></td></tr>
+                <tr><td><a href="#options-minimumLength">minimumLength</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Methods</h3>
+            <table>
+                <tr><td><a href="#methods-change">change</a></td></tr>
+                <tr><td><a href="#methods-count">count</a></td></tr>
+                <tr><td><a href="#methods-value">value</a></td></tr>
+            </table>
+        </div>
     </div>
-    <div class="col-4-12">
-        <h3>Methods</h3>
-        <table>
-            <tr><td><a href="#methods-change">change</a></td></tr>
-            <tr><td><a href="#methods-count">count</a></td></tr>
-            <tr><td><a href="#methods-value">value</a></td></tr>
-        </table>
-    </div>
-    <div class="col-4-12">
-        <h3>Events</h3>
-        <h3>Types</h3>
+    <div style="clear:both">
+        <div class="col-1-2"><h3>Events</h3></div>
+        <div class="col-1-2"><h3>Types</h3></div>
     </div>
 </div>
 

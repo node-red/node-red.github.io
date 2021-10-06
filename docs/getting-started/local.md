@@ -10,10 +10,6 @@ redirect_from:
 
 ---
 
-### Prerequisites
-
-To install Node-RED locally you will need a [supported version of Node.js](/docs/faq/node-versions).
-
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px;"><img src="/images/logos/raspberrypi.svg" height="30">
 <img src="/images/logos/debian.svg" height="30">
@@ -32,6 +28,17 @@ If you are on an RPM-based operating system, including
 RedHat, Fedora and CentOS, you can use the RPM install script available <a href="https://github.com/node-red/linux-installers">here</a>.
 </div>
 
+<div class="doc-callout">
+<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
+<img src="/images/logos/windows.svg" height="30">
+</div>
+If you are using Windows, detailed instructions for installing Node-RED can be found <a href="/docs/getting-started/windows">here</a>.
+</div>
+
+### Prerequisites
+
+To install Node-RED locally you will need a [supported version of Node.js](/docs/faq/node-versions).
+
 ### Installing with npm
 
 To install Node-RED you can use the `npm` command that comes with node.js:
@@ -40,15 +47,9 @@ To install Node-RED you can use the `npm` command that comes with node.js:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-More information about installing Node-RED on Windows can be found <a href="/docs/getting-started/windows">here</a>.
-</div>
 
-This command will install Node-RED as a global module along with its dependencies.
+That command will install Node-RED as a global module along with its dependencies.
 
 You can confirm it has succeeded if the end of the command output looks similar to:
 
@@ -75,8 +76,7 @@ Node-RED with:
 sudo snap install node-red
 ```
 
-When installed as a Snap package, it will run in a secure container that does
-not have access to some extra facilities that may be needed for you to use, such as:
+When installed as a Snap package, it will run in a secure container that **does not have access** to some extra facilities that may be needed for you to use, such as:
 
  - access to main system storage. Can only read/write to local home directories.
  - `gcc` - needed to compile any binary components of nodes you want to install
@@ -84,8 +84,7 @@ not have access to some extra facilities that may be needed for you to use, such
  - direct access to gpio hardware
  - access to any external commands your flows want to use with the Exec node (for example).
 
-You can run it in "classic" mode which reduces the container security but then
-does provide wider access.
+If you need access to system hardware or to add nodes that require compilation then we recommend using a full install of Node-RED and not using the snap.
 
 ### Running
 
@@ -99,9 +98,9 @@ $ node-red
 Welcome to Node-RED
 ===================
 
-30 Jun 23:43:39 - [info] Node-RED version: v1.1.0
-30 Jun 23:43:39 - [info] Node.js  version: v10.21.0
-30 Jun 23:43:39 - [info] Darwin 18.7.0 x64 LE
+30 Jun 23:43:39 - [info] Node-RED version: v1.3.5
+30 Jun 23:43:39 - [info] Node.js  version: v14.7.2
+30 Jun 23:43:39 - [info] Darwin 19.6.0 x64 LE
 30 Jun 23:43:39 - [info] Loading palette nodes
 30 Jun 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
 30 Jun 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
@@ -216,13 +215,7 @@ latest version with the following command:
 sudo npm install -g --unsafe-perm node-red
 ```
 
-<div class="doc-callout">
-<div style="float: left; margin-right: 10px; margin-bottom: 10px;">
-<img src="/images/logos/windows.svg" height="30">
-</div>
 If you are using Windows, do not start the command with <code>sudo</code>.
-</div>
-
 
 
 

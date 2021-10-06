@@ -38,6 +38,8 @@ new or modifying existing key/value pairs like the <code>editorTheme</code> belo
    },
 ```
 
+It is also possible to enable the projects feature by setting the `NODE_RED_ENABLE_PROJECTS` environment variable to `true`.
+
 The feature relies on having the `git` and `ssh-keygen` command line tools available.
 Node-RED will check for them on start-up and let you know if they are missing.
 
@@ -219,6 +221,9 @@ you must provide it here.
 
 *Note:* for `http` urls, do not include your username and/or password in the url
 itself. You can should provide those separately when prompted.
+
+For `ssh` urls from GitHub they will need to be changed from 
+`git@github.com:username/project` to `ssh://git@github.com/username/project`
 
 *Node-RED does not currently make use of any credential helper you git client may be
 configured with. This is an area we look for feedback on from the community.*

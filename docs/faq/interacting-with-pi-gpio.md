@@ -13,7 +13,7 @@ This module is preinstalled with Node-RED when using
 our install script. It provides a simple way to monitor and control the GPIO pins.
 
 <div class="doc-callout">
-Raspbian comes preconfigured for this node to work. If you are running a different
+Raspberry Pi OS comes preconfigured for this node to work. If you are running a different
 distribution, such as Ubuntu, some additional install steps may be needed. The
 node's README <a href="https://github.com/node-red/node-red-nodes/tree/master/hardware/PiGpio#install">has the details</a>.
 </div>

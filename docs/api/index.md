@@ -20,8 +20,14 @@ data.
 
 #### [Context Store API](context)
 
-**New in 0.19** : This API provides a pluggable way to store context data outside of the runtime.
+This API provides a pluggable way to store context data outside of the runtime.
 
-#### [Editor UI Widgets](ui)
+#### [Library Store API](library)
 
-A set of jQuery widgets that can be used within a node's edit template. _Since 0.14_
+This API provides a pluggable way to add additional libraries to the Node-RED
+Import/Export dialog.
+
+#### [Editor APIs](ui)
+
+The APIs available in the editor for nodes and plugins to use. This includes a set
+set of standard UI widgets that can be used within a node's edit template.

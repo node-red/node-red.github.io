@@ -24,7 +24,7 @@ Let's dissect that command:
         docker run              - run this container, initially building locally if necessary
         -it                     - attach a terminal session so we can see what is going on
         -p 1880:1880            - connect local port 1880 to the exposed internal port 1880
-        -v node_red_data:/data  - mount the host node_red_data directory to the container /data directory so any changes made to flows are persisted
+        -v node_red_data:/data  - mount a docker named volume called `node_red_data` to the container /data directory so any changes made to flows are persisted
         --name mynodered        - give this machine a friendly local name
         nodered/node-red        - the image to base it on - currently Node-RED v1.2.0
 
@@ -87,7 +87,7 @@ and stop it again when required:
 ### Image Variations
 
 The Node-RED images are based on [official Node JS Alpine Linux](https://hub.docker.com/_/node/) images to keep them as small as possible.
-Using Alpine Linux reduces the built image size, but removes standard dependencies that are required for native module compilation. If you want to add dependencies with native dependencies, extend the Node-RED image with the missing packages on running containers or build new images see [docker-custom](https://github.com/node-red/node-red-docker/tree/master/docker-custom).
+Using Alpine Linux reduces the built image size, but removes standard dependencies that are required for native module compilation. If you want to add dependencies with native dependencies, extend the Node-RED image with the missing packages on running containers or build new images see [docker-custom](docker-custom) which expands on the [README.md](https://github.com/node-red/node-red-docker/tree/master/docker-custom) in the Node-RED Docker project.
 
 See the [Github project README](https://github.com/node-red/node-red-docker/blob/master/README.md) for detailed Image, Tag and Manifest information.
 
@@ -140,11 +140,11 @@ to store persistent or shared data outside the container.
 To create a new named data volume to persist our user data and run a new
 container using this volume.
 ```
-$ docker volume create --name node_red_user_data
+$ docker volume create --name node_red_data
 $ docker volume ls
 DRIVER              VOLUME NAME
-local               node_red_user_data
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+local               node_red_data
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 If you need to backup the data from the mounted volume you can access it while the container is running.
@@ -157,7 +157,7 @@ container and start a new instance without losing our user data.
 ```
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Updating
@@ -168,7 +168,7 @@ is now as simple as
 $ docker pull nodered/node-red
 $ docker stop mynodered
 $ docker rm mynodered
-$ docker run -it -p 1880:1880 -v node_red_user_data:/data --name mynodered nodered/node-red
+$ docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 ```
 
 ### Docker Stack / Docker Compose
@@ -248,6 +248,14 @@ COPY flows.json /data/flows.json
 # You should add extra nodes via your package.json file but you can also add them here:
 #WORKDIR /usr/src/node-red
 #RUN npm install node-red-node-smooth
+```
+
+**Note**: the `package.json` file must contain a start option within the script section. For example the default container is like this:
+
+```
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS",
+        ...
 ```
 
 #### Dockerfile order and build speed
@@ -363,7 +371,7 @@ Before using a bridge, it needs to be created.  The command below will create a 
 
 Then all containers that need to communicate need to be added to the same bridge using the **--network** command line option
 
-    docker run -itd --network iot --name mybroker eclipse-mosquitto
+    docker run -itd --network iot --name mybroker eclipse-mosquitto mosquitto -c /mosquitto-no-auth.conf
 
 (no need to expose the port 1883 globally unless you want to... as we do magic below)
 
@@ -448,7 +456,14 @@ https://github.com/node-red/node-red/issues/15
 
 If you want to modify the default timezone, use the TZ environment variable with the [relevant timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 ```
-docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered -e TZ=Europe/London nodered/node-red
+docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered -e TZ=America/New_York nodered/node-red
+```
+
+or within a docker-compose file
+```
+  node-red:
+    environment:
+      - TZ=America/New_York
 ```
 
 References:

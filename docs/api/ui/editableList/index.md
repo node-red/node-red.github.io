@@ -4,7 +4,7 @@ toc: toc-api-ui.html
 title: EditableList Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'editablelist'
 ---
 
@@ -13,44 +13,47 @@ A replacement for a `<ol>` element where the items can be complex elements in th
 own right. Used by the core `Switch` and `Change` nodes.
 
 <div class="widget">
-    <div class="col-4-12">
-        <h3>Options</h3>
-        <table>
-            <tr><td><a href="#options-addButton">addButton</a></td></tr>
-            <tr><td><a href="#options-addItem">addItem</a></td></tr>
-            <tr><td><a href="#options-connectWith">connectWith</a></td></tr>
-            <tr><td><a href="#options-header">header</a></td></tr>
-            <tr><td><a href="#options-height">height</a></td></tr>
-            <tr><td><a href="#options-filter">filter</a></td></tr>
-            <tr><td><a href="#options-resize">resize</a></td></tr>
-            <tr><td><a href="#options-resizeItem">resizeItem</a></td></tr>
-            <tr><td><a href="#options-scrollOnAdd">scrollOnAdd</a></td></tr>
-            <tr><td><a href="#options-sort">sort</a></td></tr>
-            <tr><td><a href="#options-sortable">sortable</a></td></tr>
-            <tr><td><a href="#options-sortItems">sortItems</a></td></tr>
-            <tr><td><a href="#options-removable">removable</a></td></tr>
-            <tr><td><a href="#options-removeItem">removeItem</a></td></tr>
-        </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Options</h3>
+            <table>
+                <tr><td><a href="#options-addButton">addButton</a></td></tr>
+                <tr><td><a href="#options-addItem">addItem</a></td></tr>
+                <tr><td><a href="#options-buttons">buttons</a></td></tr>
+                <tr><td><a href="#options-connectWith">connectWith</a></td></tr>
+                <tr><td><a href="#options-header">header</a></td></tr>
+                <tr><td><a href="#options-height">height</a></td></tr>
+                <tr><td><a href="#options-filter">filter</a></td></tr>
+                <tr><td><a href="#options-resize">resize</a></td></tr>
+                <tr><td><a href="#options-resizeItem">resizeItem</a></td></tr>
+                <tr><td><a href="#options-scrollOnAdd">scrollOnAdd</a></td></tr>
+                <tr><td><a href="#options-sort">sort</a></td></tr>
+                <tr><td><a href="#options-sortable">sortable</a></td></tr>
+                <tr><td><a href="#options-sortItems">sortItems</a></td></tr>
+                <tr><td><a href="#options-removable">removable</a></td></tr>
+                <tr><td><a href="#options-removeItem">removeItem</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Methods</h3>
+            <table>
+                <tr><td><a href="#methods-addItem">addItem</a></td></tr>
+                <tr><td><a href="#methods-addItems">addItems</a></td></tr>
+                <tr><td><a href="#methods-removeItem">removeItem</a></td></tr>
+                <tr><td><a href="#methods-width">width</a></td></tr>
+                <tr><td><a href="#methods-height">height</a></td></tr>
+                <tr><td><a href="#methods-items">items</a></td></tr>
+                <tr><td><a href="#methods-empty">empty</a></td></tr>
+                <tr><td><a href="#methods-filter">filter</a></td></tr>
+                <tr><td><a href="#methods-show">show</a></td></tr>
+                <tr><td><a href="#methods-sort">sort</a></td></tr>
+                <tr><td><a href="#methods-length">length</a></td></tr>
+            </table>
+        </div>
     </div>
-    <div class="col-4-12">
-        <h3>Methods</h3>
-        <table>
-            <tr><td><a href="#methods-addItem">addItem</a></td></tr>
-            <tr><td><a href="#methods-addItems">addItems</a></td></tr>
-            <tr><td><a href="#methods-removeItem">removeItem</a></td></tr>
-            <tr><td><a href="#methods-width">width</a></td></tr>
-            <tr><td><a href="#methods-height">height</a></td></tr>
-            <tr><td><a href="#methods-items">items</a></td></tr>
-            <tr><td><a href="#methods-empty">empty</a></td></tr>
-            <tr><td><a href="#methods-filter">filter</a></td></tr>
-            <tr><td><a href="#methods-show">show</a></td></tr>
-            <tr><td><a href="#methods-sort">sort</a></td></tr>
-            <tr><td><a href="#methods-length">length</a></td></tr>
-        </table>
-    </div>
-    <div class="col-4-12">
-        <h3>Events</h3>
-        <h3>Types</h3>
+    <div style="clear:both">
+        <div class="col-1-2"><h3>Events</h3></div>
+        <div class="col-1-2"><h3>Types</h3></div>
     </div>
 </div>
 
@@ -94,6 +97,36 @@ $("ol.list").editableList({
     addItem: function(row, index, data) {
         $(row).html("Item "+index);
     }
+});
+```
+
+#### <a href="#options-buttons" name="options-buttons">buttons( array )</a>
+
+<span class="method-return">Type: Array</span>
+
+An array of button objects, that need to be added at the bottom of the editableList.
+Each button object can have the following properties:
+
+ - `label` - the (optional) button label
+ - `icon` - the (optional) button icon
+ - `title` - the (optional) button tooltip text
+ - `click` - the callback function that will be executed when the button is clicked
+
+Note that the 'add button' is added implicit to this array, when the `addButton` is activated.
+
+```javascript
+$("ol.list").editableList({
+    addItem: function(row, index, data) {
+        $(row).html("Item "+index);
+    }
+    buttons: [{
+        label: "with icon",
+        icon: "fa fa-star",
+        title: "my custom button",
+        click: function(evt) {
+            alert("button clicked");
+        }
+   }]
 });
 ```
 

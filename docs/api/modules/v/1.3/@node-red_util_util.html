@@ -1,0 +1,3244 @@
+---
+layout: barebones
+slug:
+  - url: /docs/api/modules
+    label: modules
+  - 1.3.2
+---
+{% assign parent_url = '/docs/api' %}
+{% assign parent_slug = 'api' %}
+<link href="./api-docs.css" rel="stylesheet" media="screen">
+<div class="docs">
+    {% include breadcrumbs.html %}
+  <div class="grid">
+    <div class="col-3-12">
+    <ul class="toc">
+        <li class="active"><a href="/docs/api/modules">Module APIs</a><li><li class="active"><a href="index.html">Version: 1.3.2</a><li><li class="tocheader"><ul><li class="toctitle"><a href="node-red.html">node-red</a></li><li class="nav-item"><a href="node-red.html#.auth">auth</a></li><li class="nav-item"><a href="node-red.html#.events">events</a></li><li class="nav-item"><a href="node-red.html#.hooks">hooks</a></li><li class="nav-item"><a href="node-red.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="node-red.html#.httpNode">httpNode</a></li><li class="nav-item"><a href="node-red.html#.log">log</a></li><li class="nav-item"><a href="node-red.html#.nodes">nodes</a></li><li class="nav-item"><a href="node-red.html#.runtime">runtime</a></li><li class="nav-item"><a href="node-red.html#.server">server</a></li><li class="nav-item"><a href="node-red.html#.settings">settings</a></li><li class="nav-item"><a href="node-red.html#.util">util</a></li><li class="nav-item"><a href="node-red.html#.init">init(...)</a></li><li class="nav-item"><a href="node-red.html#.start">start(...)</a></li><li class="nav-item"><a href="node-red.html#.stop">stop(...)</a></li><li class="nav-item"><a href="node-red.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_editor-api.html">@node-red/editor-api</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.auth">auth</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.httpAdmin">httpAdmin</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_editor-api.html#.stop">stop(...)</a></li><li class="toctitle"><a href="@node-red_registry.html">@node-red/registry</a></li><li class="nav-item"><a href="@node-red_registry.html#.addModule">addModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.cleanModuleList">cleanModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.disableNode">disableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.enableNode">enableNode(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.get">get(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleInfo">getModuleInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleList">getModuleList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getModuleResource">getModuleResource(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfig">getNodeConfig(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeConfigs">getNodeConfigs(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlowPath">getNodeExampleFlowPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeExampleFlows">getNodeExampleFlows(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIconPath">getNodeIconPath(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeIcons">getNodeIcons(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeInfo">getNodeInfo(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.getNodeList">getNodeList(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installerEnabled">installerEnabled(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.installModule">installModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.load">load(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.registerType">registerType(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.removeModule">removeModule(...)</a></li><li class="nav-item"><a href="@node-red_registry.html#.uninstallModule">uninstallModule(...)</a></li><li class="toctitle"><a href="@node-red_runtime.html">@node-red/runtime</a></li><li class="nav-item"><a href="@node-red_runtime.html#.comms">comms</a></li><li class="nav-item"><a href="@node-red_runtime.html#.context">context</a></li><li class="nav-item"><a href="@node-red_runtime.html#.flows">flows</a></li><li class="nav-item"><a href="@node-red_runtime.html#.library">library</a></li><li class="nav-item"><a href="@node-red_runtime.html#.nodes">nodes</a></li><li class="nav-item"><a href="@node-red_runtime.html#.plugins">plugins</a></li><li class="nav-item"><a href="@node-red_runtime.html#.projects">projects</a></li><li class="nav-item"><a href="@node-red_runtime.html#.settings">settings</a></li><li class="nav-item"><a href="@node-red_runtime.html#.init">init(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.isStarted">isStarted(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.start">start(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.stop">stop(...)</a></li><li class="nav-item"><a href="@node-red_runtime.html#.version">version(...)</a></li><li class="toctitle"><a href="@node-red_util.html">@node-red/util</a></li><li class="nav-item"><a href="@node-red_util.html#.events">events</a></li><li class="nav-item"><a href="@node-red_util.html#.exec">exec</a></li><li class="nav-item"><a href="@node-red_util.html#.i18n">i18n</a></li><li class="nav-item"><a href="@node-red_util.html#.log">log</a></li><li class="nav-item"><a href="@node-red_util.html#.util">util</a></li><li class="nav-item"><a href="@node-red_util.html#.init">init(...)</a></li></ul></li><li class=""><a href="global.html">Globals</a></li>
+    </ul>
+</div>
+    <div class="col-9-12">
+        <div class="docs-content">
+
+
+
+
+
+<section>
+
+<header>
+        <h2>@node-red/util.util
+        </h2>
+        
+</header>
+
+<article>
+    <div class="container-overview"  style="padding-bottom: 40px; border-bottom: 1px solid #ccc;">
+    
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+
+<div class="widget" style="padding-bottom: 40px; border-bottom: 1px solid #eee;">
+    <div class="col-6-12">
+        
+        <h4>Functions</h4>
+        <table>
+            <tbody>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.cloneMessage">cloneMessage <span class="type-signature">( msg )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.compareObjects">compareObjects <span class="type-signature">( obj1, obj2 )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.encodeObject">encodeObject <span class="type-signature">( msg, opts )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.ensureBuffer">ensureBuffer <span class="type-signature">( o )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.ensureString">ensureString <span class="type-signature">( o )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.evaluateEnvProperty">evaluateEnvProperty <span class="type-signature">( value, node )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.evaluateJSONataExpression">evaluateJSONataExpression <span class="type-signature">( expr, msg, callback )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.evaluateNodeProperty">evaluateNodeProperty <span class="type-signature">( value, type, node, msg, callback )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.generateId">generateId <span class="type-signature">(  )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.getMessageProperty">getMessageProperty <span class="type-signature">( msg, expr )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.getObjectProperty">getObjectProperty <span class="type-signature">( msg, expr )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.normaliseNodeTypeName">normaliseNodeTypeName <span class="type-signature">( name )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.normalisePropertyExpression">normalisePropertyExpression <span class="type-signature">( str )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.parseContextStore">parseContextStore <span class="type-signature">( key )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.prepareJSONataExpression">prepareJSONataExpression <span class="type-signature">( value, node )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.setMessageProperty">setMessageProperty <span class="type-signature">( msg, prop, value, createMissing )</span></a></td></tr>
+                    
+                        <tr><td><a href="@node-red_util_util.html#.setObjectProperty">setObjectProperty <span class="type-signature">( msg, prop, value, createMissing )</span></a></td></tr>
+                    
+            </tbody>
+         </table>
+         
+     </div>
+     <div class="col-6-12">
+                
+    </div>
+    <br style="clear:both" />
+</div>
+
+    
+
+    
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".cloneMessage">cloneMessage<span class="signature">(msg)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Safely clones a message object. This handles msg.req/msg.res objects that must
+not be cloned.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the message object to clone</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the cloned message</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".compareObjects">compareObjects<span class="signature">(obj1, obj2)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Compares two objects, handling various JavaScript types.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj1</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>obj2</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>boolean</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>whether the two objects are the same</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".encodeObject">encodeObject<span class="signature">(msg, opts)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Encode an object to JSON without losing information about non-JSON types
+such as Buffer and Function.</p>
+<p><em>This function is closely tied to its reverse within the editor</em></p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the encoded object</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".ensureBuffer">ensureBuffer<span class="signature">(o)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Converts the provided argument to a Buffer, using type-dependent
+methods.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>o</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property to convert to a Buffer</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the Buffer version</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".ensureString">ensureString<span class="signature">(o)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Converts the provided argument to a String, using type-dependent
+methods.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>o</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property to convert to a String</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the stringified version</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".evaluateEnvProperty">evaluateEnvProperty<span class="signature">(value, node)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Checks if a String contains any Environment Variable specifiers and returns
+it with their values substituted in place.</p>
+<p>For example, if the env var <code>WHO</code> is set to <code>Joe</code>, the string <code>Hello ${WHO}!</code>
+will return <code>Hello Joe!</code>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the string to parse</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>node</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Node</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node evaluating the property</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The parsed string</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".evaluateJSONataExpression">evaluateJSONataExpression<span class="signature">(expr, msg, callback)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Evaluates a JSONata expression.
+The expression must have been prepared with @node-red/util-util.prepareJSONataExpression
+before passing to this function.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>expr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the prepared JSONata expression</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the message object to evaluate against</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>function</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>(optional) called when the expression is evaluated</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>any</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>If no callback was provided, the result of the expression</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".evaluateNodeProperty">evaluateNodeProperty<span class="signature">(value, type, node, msg, callback)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Evaluates a property value according to its type.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the raw value</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the type of the value</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>node</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Node</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node evaluating the property</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the message object to evaluate against</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>function</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>(optional) called when the property is evaluated</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>any</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The evaluted property, if no <code>callback</code> is provided</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".generateId">generateId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Generates a psuedo-unique-random id.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>a random-ish id</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".getMessageProperty">getMessageProperty<span class="signature">(msg, expr)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets a property of a message object.</p>
+<p>Unlike @node-red/util-util.getObjectProperty, this function will strip <code>msg.</code> from the
+front of the property expression if present.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the message object</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>expr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property expression</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc">
+    
+        <p>Will throw an error if the <em>parent</em> of the property does not exist</p>
+    
+    </div>
+
+
+    
+</div>
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>any</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the message property, or undefined if it does not exist</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".getObjectProperty">getObjectProperty<span class="signature">(msg, expr)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Gets a property of an object.</p>
+<p>Given the object:</p>
+<pre><code>{
+  &quot;pet&quot;: {
+      &quot;type&quot;: &quot;cat&quot;
+  }
+}
+</code></pre>
+<ul>
+<li><code>pet.type</code> will return <code>&quot;cat&quot;</code>.</li>
+<li><code>pet.name</code> will return <code>undefined</code></li>
+<li><code>car</code> will return <code>undefined</code></li>
+<li><code>car.type</code> will throw an Error (as <code>car</code> does not exist)</li>
+</ul>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the object</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>expr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property expression</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-throws">
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc">
+    
+        <p>Will throw an error if the <em>parent</em> of the property does not exist</p>
+    
+    </div>
+
+
+    
+</div>
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>any</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the object property, or undefined if it does not exist</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".normaliseNodeTypeName">normaliseNodeTypeName<span class="signature">(name)</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Normalise a node type name to camel case.</p>
+<p>For example: <code>a-random node type</code> will normalise to <code>aRandomNodeType</code></p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node type</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>String</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The normalised name</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".normalisePropertyExpression">normalisePropertyExpression<span class="signature">(str)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Parses a property expression, such as <code>msg.foo.bar[3]</code> to validate it
+and convert it to a canonical version expressed as an Array of property
+names.</p>
+<p>For example, <code>a[&quot;b&quot;].c</code> returns <code>['a','b','c']</code></p>
+<p>If <code>msg</code> is provided, any internal cross-references will be evaluated against that
+object. Otherwise, it will return a nested set of properties</p>
+<p>For example, without msg set, 'a[msg.foo]' returns <code>['a', [ 'msg', 'foo'] ]</code>
+But if msg is set to '{&quot;foo&quot;: &quot;bar&quot;}', 'a[msg.foo]' returns <code>['a', 'bar' ]</code></p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property expression</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Array</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>the normalised expression</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".parseContextStore">parseContextStore<span class="signature">(key)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Parses a context property string, as generated by the TypedInput, to extract
+the store name if present.</p>
+<p>For example, <code>#:(file)::foo</code> results in <code> { store: &quot;file&quot;, key: &quot;foo&quot; }</code>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the context property string to parse</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The parsed property</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".prepareJSONataExpression">prepareJSONataExpression<span class="signature">(value, node)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Prepares a JSONata expression for evaluation.
+This attaches Node-RED specific functions to the expression.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the JSONata expression</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>node</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Node</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the node evaluating the property</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section-returns">
+<h5>Returns:</h5>
+
+        
+
+<dl class="param-type">
+    <dt>
+        Type:
+    </dt>
+    <dd>
+        
+<span class="param-type"><code>Object</code></span>
+
+
+    </dd>
+</dl>
+
+
+<div class="param-desc">
+    <p>The JSONata expression that can be evaluated</p>
+</div>
+
+    
+</div>
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".setMessageProperty">setMessageProperty<span class="signature">(msg, prop, value, createMissing)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Sets a property of a message object.</p>
+<p>Unlike @node-red/util-util.setObjectProperty, this function will strip <code>msg.</code> from the
+front of the property expression if present.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the message object</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property expression</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the value to set</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>createMissing</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>boolean</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>whether to create missing parent properties</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+            
+<div class="section-method">
+
+    
+
+    <h4 class="name" id=".setObjectProperty">setObjectProperty<span class="signature">(msg, prop, value, createMissing)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Sets a property of an object.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <!--  -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>Object</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the object</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>String</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the property expression</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>any</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>the value to set</p>
+                
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>createMissing</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><code>boolean</code></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <p>whether to create missing parent properties</p>
+                
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+        </div>
+    </div>
+  </div>
+</div>
+<script>
+    var file = window.location.pathname.split("/").pop();
+    $(".toctitle > a[href='"+file+"']").parent().addClass('active');
+    $(".nav-item > a[href^='"+file+"']").parent().show();
+</script>

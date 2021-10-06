@@ -46,6 +46,14 @@ for example the HTTP In/Response flow requires the <code>msg.req</code> and
 nodes <em>should</em> return the message object they were passed having made any
 changes to its properties.</div>
 
+Use node.warn() to show warnings in the sidebar to help you debug. For example:
+
+{% highlight javascript %}
+node.warn("my var xyz = " + xyz);
+{% endhighlight %}
+
+See logging section below for more details.
+
 ### Multiple Outputs
 
 The function edit dialog allows the number of outputs to be changed. If there
@@ -71,6 +79,29 @@ a message containing the payload length is passed to the second output:
 var newMsg = { payload: msg.payload.length };
 return [msg, newMsg];
 {% endhighlight %}
+
+#### Handling arbituary number of outputs
+
+*Since Node-RED 1.3*
+
+`node.outputCount` contains the number of outputs configured for the function node.
+
+This makes it possible to write generic functions that can handle variable number of outputs set from the edit dialog.
+
+For example if you wish to spread incoming messages randomly between outputs, you could:
+
+{% highlight javascript %}
+// Create an array same length as there are outputs
+const messages = new Array(node.outputCount)
+// Choose random output number to send the message to
+const chosenOutputIndex = Math.floor(Math.random() * node.outputCount);
+// Send the message only to chosen output
+messages[chosenOutputIndex] = msg;
+// Return the array containing chosen output
+return messages;
+{% endhighlight %}
+
+You can now configure number of outputs solely via edit dialog without making changes to the function itself.
 
 ### Multiple Messages
 
@@ -121,7 +152,6 @@ doSomeAsyncWork(msg, function(result) {
 return;
 {% endhighlight %}
 
-**Since Node-RED 1.0**
 
 The Function node will clone every message object you pass to `node.send` to
 ensure there is no unintended modification of message objects that get reused
@@ -139,7 +169,7 @@ node.send(msg,false);
 
 #### Finishing with a message
 
-**Since Node-RED 1.0**
+*Since Node-RED 1.0*
 
 If a Function node does asynchronous work with a message, the runtime will not
 automatically know when it has finished handling the message.
@@ -160,7 +190,7 @@ return;
 
 *Since Node-RED 1.1.0*
 
-With the 1.1.0 release, the Function node provides a `Setup` tab where you can
+With the 1.1.0 release, the Function node provides an `On Start` tab (labeled `Setup` before 1.3.0) where you can
 provide code that will run whenever the node is started. This can be used to
 setup any state the Function node requires.
 
@@ -172,9 +202,9 @@ if (context.get("counter") === undefined) {
 }
 ```
 
-The Setup function can return a Promise if it needs to complete asynchronous work
+The On Start function can return a Promise if it needs to complete asynchronous work
 before the main Function can start processing messages. Any messages that arrive
-before the Setup function has completed will be queued up, and handled when it is ready.
+before the On Start function has completed will be queued up, and handled when it is ready.
 
 ### Tidying up
 
@@ -190,8 +220,7 @@ node.on('close', function() {
 });
 {% endhighlight %}
 
-
-Or, *since Node-RED 1.1.0*, you can add code to the `Close` tab in the node's edit
+Or, *since Node-RED 1.1.0*, you can add code to the `On Stop` tab (previously labelled `Close`) in the node's edit
 dialog.
 
 ### Logging events
@@ -204,7 +233,11 @@ node.warn("Something happened you should know about");
 node.error("Oh no, something bad happened");
 {% endhighlight %}
 
-The `warn` and `error` messages also get sent to the flow editor debug tab.
+Where the console output appears will depend on how your operating system and how you start Node-RED.
+If you start using a command line - that is the console where logging will appear. If you run as a
+system service then it may appear in the system log. If you run under an app like PM2 it will have it's own way for showing logs. On a Pi the install script adds a `node-red-log` command that will display the log.
+
+The `warn` and `error` messages also get sent to the debug tab on the right side of the flow editor.
 
 For finer grained logging, `node.trace()` and `node.debug()` are also available.
 If there is no logger configured to capture those levels, they will not be seen.
@@ -387,6 +420,8 @@ Any status updates can then also be caught by the Status node.
 
 ### Loading additional modules
 
+### Using the `functionGlobalContext` option
+
 Additional node modules cannot be loaded directly within a Function node. They must
 be loaded in your *settings.js* file and added to the `functionGlobalContext`
 property.
@@ -409,6 +444,28 @@ the settings file. For most users that will be the default user directory - `~/.
     cd ~/.node-red
     npm install name_of_3rd_party_module
 
+### Using the `functionExternalModules` option
+
+*Since Node-RED 1.3.0*
+
+By setting `functionExternalModules` to `true` in you *settings.js* file, the Function
+node's edit dialog will provide a list where you can add additional modules
+that should be available to the node. You also specify the variable that will
+be used to refer to the module in the node's code.
+
+<img style="margin-left: 20px;" src="/docs/user-guide/images/function_external_modules.png" width="500px">
+
+The modules are automatically installed under `~/.node-red/externalModules/` when the node is deployed.
+
+
+
+
+
+
+
+
+
+
 ***
 
 ### API Reference
@@ -418,6 +475,7 @@ The following objects are available within the Function node.
 #### `node`
  * `node.id` : the id of the Function node - *added in 0.19*
  * `node.name` : the name of the Function node - *added in 0.19*
+ * `node.outputCount` : number of outputs set for Function node - *added in 1.3*
  * `node.log(..)` : [log a message](#logging-events)
  * `node.warn(..)` : [log a warning message](#logging-events)
  * `node.error(..)` : [log an error message](#logging-events)
@@ -446,10 +504,10 @@ The following objects are available within the Function node.
  * `global.keys(..)` : return a list of all global-scoped context property keys
 
 #### `RED`
- * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused  
+ * `RED.util.cloneMessage(..)` : safely clones a message object so it can be reused
 
 #### `env`
- * `get(..)` : get an environment variable
+ * `env.get(..)` : get an environment variable
 
 
 #### Other modules and functions

@@ -17,7 +17,7 @@ This script installs Node-RED as a [systemd](https://wiki.debian.org/systemd) se
 For more information, read the [Running on Raspberry Pi](/docs/getting-started/raspberrypi#autostart-on-boot)
 guide.
 
-If you are not using Raspbian, you may need to edit the service file to suit
+If you are not using Raspberry Pi OS, you may need to edit the service file to suit
 your local user id and environment. Details for how to do that are available
 [here](/docs/faq/customising-systemd-on-pi).
 

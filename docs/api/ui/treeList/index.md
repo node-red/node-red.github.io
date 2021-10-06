@@ -4,7 +4,7 @@ toc: toc-api-ui.html
 title: TreeList Widget
 slug:
   - url: "/docs/api/ui"
-    label: "ui widgets"
+    label: "ui"
   - 'treelist'
 ---
 
@@ -13,28 +13,34 @@ __Since 0.20.0__
 A list for displaying tree-structured data. This was added in 0.20.0 and has quite a minimal functionality.
 
 <div class="widget">
-    <div class="col-4-12">
-        <h3>Options</h3>
-        <table>
-            <tr><td><a href="#options-data">data</a></td></tr>
-        </table>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Options</h3>
+            <table>
+                <tr><td><a href="#options-data">data</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Methods</h3>
+            <table>
+                <tr><td><a href="#methods-data">data</a></td></tr>
+                <tr><td><a href="#methods-empty">empty</a></td></tr>
+                <tr><td><a href="#methods-show">show</a></td></tr>
+            </table>
+        </div>
     </div>
-    <div class="col-4-12">
-        <h3>Methods</h3>
-        <table>
-            <tr><td><a href="#methods-data">data</a></td></tr>
-            <tr><td><a href="#methods-empty">empty</a></td></tr>
-            <tr><td><a href="#methods-show">show</a></td></tr>
-        </table>
-    </div>
-    <div class="col-4-12">
-        <h3>Events</h3>
-        <table>
-            <tr><td><a href="#events-treelistselect">treelistselect</a></td></tr>
-            <tr><td><a href="#events-treelistmouseout">treelistmouseout</a></td></tr>
-            <tr><td><a href="#events-treelistmouseover">treelistmouseover</a></td></tr>
-        </table>
-        <h3>Types</h3>
+    <div style="clear:both">
+        <div class="col-1-2">
+            <h3>Events</h3>
+            <table>
+                <tr><td><a href="#events-treelistselect">treelistselect</a></td></tr>
+                <tr><td><a href="#events-treelistmouseout">treelistmouseout</a></td></tr>
+                <tr><td><a href="#events-treelistmouseover">treelistmouseover</a></td></tr>
+            </table>
+        </div>
+        <div class="col-1-2">
+            <h3>Types</h3>
+        </div>
     </div>
 </div>
 
@@ -72,10 +78,13 @@ Property   | Description
 `id`       | (optional) A unique identifier for the item
 `class`    | (optional) A css class to apply to the item
 `icon`     | (optional) A css class to apply as the icon, for example `"fa fa-rocket"`.
-`selected` | (optional) if set, display a checkbox next to the item. Its state is set to the boolean value of this property
+`checkbox` | (optional) If set, displays a checkbox next to the item.
+`radio`    | (optional) *since 2.1* If set, and `checkbox` not set, displays a radio box next to the item. The value should be a string used to group the radio buttons.
+`selected` | (optional) Sets the initial selected state of the item.
 `children` | (optional) Identifies the child items of this one. Can be provided as an array if the children are immediately known, or as a function to get the children asynchronously. See below for details.
 `expanded` | (optional) If the item has children, set whether to display the children
-
+`deferBuild` | (optional) Delay building any UI elements for the item's children until it is expanded for the first time. This can have a significant performance benefit for large data sets.
+`element` | (optional) Custom DOM element to be used in place of the node's label. This is ignored if `label` is set.
 
 If the `children` property is provided as a function, that function should accept
 a single argument of a callback function. That callback function should be called
@@ -89,6 +98,28 @@ children: function(done) {
     })
 }
 ```
+
+After the item has been added to the treeList, it is augmented with some additional properties
+and functions:
+
+Property      | Description
+--------------|--------------------------
+`item.parent` | The parent item in the tree
+`item.depth`  | The depth in the tree, with `0` being the root of the tree
+`item.treeList.container` | The DOM element containing the item
+`item.treeList.label`     | The DOM element containing the label
+
+Function         | Description
+-----------------|---------------------------
+`item.treeList.remove(detach)` | Remove the item from the tree. Set `detach` to `true` to preserve any event handlers on the item - required if the item is going to be readded elsewhere.
+`item.treeList.makeLeaf(detachChildElements)` | Turns an element with children into a leaf node, removing the UI decoration. Set `detachChildElements` to `true` to preseve any child element event handlers.
+`item.treeList.makeParent(children)` | Make the item a parent item, adding the child items
+`item.treeList.insertChildAt(item, pos, select)` | Adds a new item at the desired position, optionally selecting it after doing so
+`item.treeList.addChild(item, select)` | Appends a child item, optionally selecting it after doing so
+`item.treeList.expand(done)` | Expand the item to show child items, with optional `done` callback that is called when complete
+`item.treeList.collapse()` | Collapse the item to hide its children
+`item.treeList.sortChildren(sortFunction)` | Sort the item's children using the provided sort function. The sort function should match the compareFunction used with [`Array.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+`item.treeList.replaceElement(element)` | Replace the item's custom DOM element
 
 ### Methods
 

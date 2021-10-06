@@ -1,0 +1,16 @@
+
+.nav-item { font-size: 0.9em; display: none }
+td:first-child span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    background: none;
+    border: none;
+    width: auto;
+    text-align: left;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.type-signature {
+    color: #999;
+}

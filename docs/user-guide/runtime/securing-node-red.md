@@ -43,7 +43,7 @@ For a guide on how to generate certificates, you can follow <a href="https://it.
 The default Node-RED settings file includes a commented out `https` section that
 can be used to load the certificates from local files.
 
-```
+```javascript
 https: {
     key: require("fs").readFileSync('privkey.pem'),
     cert: require("fs").readFileSync('cert.pem')
@@ -56,7 +56,7 @@ If the `https` property is a function, it can be used to return the options obje
 The function can optionally return a Promise that will resolve to the options object,
 allowing it to complete asynchronously.
 
-```
+```javascript
 https: function() {
     return new Promise((resolve, reject) => {
         var key, cert;
@@ -187,7 +187,7 @@ adminAuth: {
     users: [
        { username: "knolleary",permissions: ["*"]}
     ]
-};
+}
 ```
 
 The `strategy` property takes the following options:
@@ -348,7 +348,7 @@ recognises as one of its own. It is passed the token provided in the request and
 return a Promise that resolves with either the authenticated user, or `null` if the
 token is not valid.
 
-```
+```javascript
 adminAuth: {
     ...
     tokens: function(token) {
@@ -377,7 +377,7 @@ passed to the function, containing both type and value.
 To use a different HTTP header, the `tokenHeader` setting can be used to identify
 which header to use:
 
-```
+```javascript
 adminAuth: {
     ...
     tokens: function(token) {
@@ -421,7 +421,27 @@ hashes are still supported - but they are not recommended.
 It is possible to provide custom HTTP middleware that will be added in front of
 all `HTTP In` nodes and, since Node-RED 1.1.0, in front of all admin/editor routes.
 
+##### Custom Middleware for http-in nodes
+
 For the `HTTP In` nodes, the middleware is provided as the `httpNodeMiddleware` setting.
+
+The following setting is an example to limit the HTTP access rate in http-in nodes.
+
+```javascript
+// Run `npm install express-rate-limit` on `~/.node-red/` directory in advance
+var rateLimit = require("express-rate-limit");
+module.exports = {
+    httpNodeMiddleware: rateLimit({
+        windowMs: 1000, // 1000 millisecounds is set as the window time.
+        max: 10 // limit access rate to 10 requests/secound
+    })
+}
+```
+
+Using this configuration, the Node-RED process can avoid memory exhaustions even if the flows which start with the http-in node take time to process.
+When reaching the limitation, the endpoints will return the default message, "Too many requests, please try again later.".
+
+##### Custom Middleware for Admin API
 
 For the admin/editor routes, the middleware is provided as the `httpAdminMiddleware` setting.
 
@@ -429,7 +449,7 @@ For example, the following middleware could be used to set the `X-Frame-Options`
 on all admin/editor requests. This can be used to control how the editor is embedded on
 other pages.
 
-```
+```javascript
 httpAdminMiddleware: function(req, res, next) {
     // Set the X-Frame-Options header to limit where the editor
     // can be embedded

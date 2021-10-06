@@ -248,7 +248,7 @@ For example, if the node type `sample-node` wanted to expose a setting called
 `colour`, the setting name should be `sampleNodeColour`.
 
 Within the runtime, the node can then reference the setting as
-`RED.setting.sampleNodeColour`.
+`RED.settings.sampleNodeColour`.
 
 
 #### Exposing settings to the editor

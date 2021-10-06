@@ -124,14 +124,14 @@ in the top bar.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Shift-j</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-[</code></td></tr>
  <tr><td>Menu option</td><td><i>none</i></td></tr>
  <tr><td>Action</td><td><code>core:show-previous-tab</code></td></tr>
 </table>
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><code>Ctrl/⌘-Shift-k</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-]</code></td></tr>
  <tr><td>Menu option</td><td><i>none</i></td></tr>
  <tr><td>Action</td><td><code>core:show-next-tab</code></td></tr>
 </table>

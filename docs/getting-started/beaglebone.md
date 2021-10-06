@@ -10,8 +10,8 @@ redirect_from:
 
 ### Installing
 
-If you want the latest Node-RED 1.x then you need to use the Alpha Testing - Debian (10) Buster image from
- <a href="https://beagleboard.org/latest-images" target="bbb">beagleboard.org</a> - and then do a full upgrade to latest. 
+If you want the latest Node-RED 1.x then you need to use the Debian (10) Buster image from
+ <a href="https://beagleboard.org/latest-images" target="bbb">beagleboard.org</a> - and then do a full upgrade to latest.
 
     sudo apt update && sudo apt full-upgrade
 
@@ -86,9 +86,3 @@ The easiest way to install them is direct from npm.
 To install manually run the following command:
 
     sudo npm install -g --unsafe-perm beaglebone-io johnny-five node-red-contrib-gpio
-
-*Note*: There is also a set of BBB specific nodes that can be used. However they are built on a no longer supported
-library (octalbonescript), and so are not recommended for future use, but are noted for having some extra capabilities
-beyond the generic gpio nodes.
-
-    sudo npm install -g --unsafe-perm node-red-node-beaglebone
