@@ -24,8 +24,8 @@ If you want to extend the provided Docker containers then then you will need to 
 
         FROM nodered/node-red:latest
         USER root
-        apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
-        pip install tensorflow
+        RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
+        RUN pip install tensorflow
         USER node-red
 
 ### Debian based containers
