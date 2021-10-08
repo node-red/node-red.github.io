@@ -60,6 +60,6 @@
 .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
 
 .highlight .gh { } /* Generic Heading & Diff Header */
-.highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
+.highlight .gu { color: #efe4ac; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #dc8f8f; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
