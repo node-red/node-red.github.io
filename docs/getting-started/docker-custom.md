@@ -16,7 +16,7 @@ The project makes available a number of different versions of the Docker contain
 
 Specifically the `-minimal` containers do not have the native build tools required to build some nodes components triggered by installing them.
 
-Both of these sets of images are based on the NodeJS Alpine containers. Alpine is a Linux distribution tha aims to provide the smallest possible install footprint, it is used as the base for many language runtime containers (e.g. NodeJS & Python). As part of a number of optomisations to reduce the size it uses the [musl](https://www.musl-libc.org/intro.html) libc instead of the usual glibc implementation.
+Both of these sets of images are based on the NodeJS Alpine containers. Alpine is a Linux distribution that aims to provide the smallest possible install footprint, it is used as the base for many language runtime containers (e.g. NodeJS & Python). As part of a number of optomisations to reduce the size it uses the [musl](https://www.musl-libc.org/intro.html) libc instead of the usual glibc implementation.
 
 Musl works fine with most applications but on some occations it can cause problems e.g. with some of the [SAP](https://github.com/SAP/node-rfc/issues/148) nodes and with some low level video codec.
 
@@ -24,8 +24,8 @@ If you want to extend the provided Docker containers then then you will need to 
 
         FROM nodered/node-red:latest
         USER root
-        apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
-        pip install tensorflow
+        RUN apk add py3-pip py3-numpy py3-pandas py3-scikit-learn
+        RUN pip install tensorflow
         USER node-red
 
 ### Debian based containers
