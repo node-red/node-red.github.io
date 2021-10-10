@@ -21,6 +21,11 @@ title: API Reference
     This API provides a pluggable way to configure where the Node-RED runtime stores
     data.
 
+ - [Logging](/docs/user-guide/runtime/logging)
+
+    A custom logger can be used to send log events to alternative locations, such as
+    a database.
+
  - [Context Store](context)
 
     This API provides a pluggable way to store context data outside of the runtime.
