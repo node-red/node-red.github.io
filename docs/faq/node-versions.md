@@ -13,7 +13,7 @@ Version    | Support Level   | Notes
  **8.x**   | *Supported*     | Node-RED 1.x or earlier only
  **10.x**  | *Supported*     | Node-RED 1.x or earlier only
  **12.x**  | *Supported*.    |  
- **14.x**  | **Supported**   |  
+ **14.x**  | **Recommended**   |  
  **16.x**  | Supported       |  
 
 We try to stay up to date with Node.js releases. Our goal is to support
