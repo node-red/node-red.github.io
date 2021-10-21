@@ -200,7 +200,7 @@ separate file and use `require` to import it:
 ```javascript
 RED.plugins.registerPlugin("my-custom-theme", {
     monacoOptions: {
-      theme: require("my-custom-theme-monaco-theme.json"),
+      theme: require("./my-custom-theme-monaco-theme.json"),
     }
 })
 ```
