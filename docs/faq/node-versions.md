@@ -10,10 +10,10 @@ Node-RED currently recommends **Node 14.x LTS**.
 Version    | Support Level   | Notes
 -----------|-----------------|------
  < 8.x     | *Unsupported*   |
- **8.x**   | *Supported*     | No longer maintained
- **10.x**  | *Supported*     | No longer maintained
+ **8.x**   | *Supported*     | Node-RED 1.x or earlier only
+ **10.x**  | *Supported*     | Node-RED 1.x or earlier only
  **12.x**  | *Supported*.    |  
- **14.x**  | **Supported**       |  
+ **14.x**  | **Supported**   |  
  **16.x**  | Supported       |  
 
 We try to stay up to date with Node.js releases. Our goal is to support
