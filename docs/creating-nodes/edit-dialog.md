@@ -11,6 +11,7 @@ slug: edit dialog
     RED.editor = { editJSON: function(){}}
 </script>
 <script src="/js/utils.js"></script>
+<script src="/js/autoComplete.js"></script>
 <script src="/js/typedInput.js"></script>
 <script src="/js/popover.js"></script>
 <link rel="stylesheet" href="/css/editor-style.min.css">

@@ -12,6 +12,10 @@ __Since 0.20.0__
 
 A list for displaying tree-structured data. This was added in 0.20.0 and has quite a minimal functionality.
 
+- [Options](#options)
+- [Methods](#methods)
+- [Events](#events)
+
 <div class="widget">
     <div style="clear:both">
         <div class="col-1-2">

@@ -67,10 +67,41 @@ press `Ctrl/Command-a`.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Action</td><td><code>core:select-all-nodes</code></td></tr>
  <tr><td>Key shortcut</td><td><code>Ctrl/⌘-a</code></td></tr>
+ <tr><td>Menu option</td><td><code>Edit -&gt; Select all</code></td></tr>
+ <tr><td>Action</td><td><code>core:select-all-nodes</code></td></tr>
 </table>
 
+
+### Selecting connected nodes
+
+To select all nodes connected to a particular node, click on the middle of the node
+whilst holding the `Shift` key.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s c</code></td></tr>
+ <tr><td>Menu option</td><td><code>Edit -&gt; Select all</code></td></tr>
+ <tr><td>Action</td><td><code>core:select-connected-nodes</code></td></tr>
+</table>
+
+
+### Selecting Upstream or Downstream nodes
+
+To select a node and all of its upstream or downstream nodes, click the left or right side
+of the node whilst holding the `Shift` key.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s u</code></td></tr>
+ <tr><td>Action</td><td><code>core:select-upstream-nodes</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-s d</code></td></tr>
+ <tr><td>Action</td><td><code>core:select-downstream-nodes</code></td></tr>
+</table>
 
 
 ### Selecting flows

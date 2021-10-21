@@ -43,6 +43,7 @@ The edit dialog contains two tabs:
 
 <ul>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - the groups properties to edit.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list"></i> : Environment Variables - properties that are exposed as environment variables within the group. <i>Since Node-RED 2.1</i></li>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-file-text"></i> : Description - per-node documentation formatted using Markdown. This is displayed in the <a href="../sidebar/info">Information sidebar</a> when the group is selected.</li>
 </ul>
 
@@ -124,4 +125,3 @@ option in the menu.
  <tr><td>Menu option</td><td><code>Groups -&gt; Remove from group</code></td></tr>
  <tr><td>Action</td><td><code>core:remove-selection-from-group</code></td></tr>
 </table>
-

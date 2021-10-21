@@ -74,7 +74,9 @@ $(function() {
                 currentItem.removeClass("active");
             }
             currentItem = targetItem;
-            currentItem.addClass("active");
+            if (currentItem) {
+                currentItem.addClass("active");
+            }
         }
     }
     $(window).resize(resizeWindow);

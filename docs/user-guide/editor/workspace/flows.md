@@ -56,15 +56,19 @@ Flows can be reordered in the workspace by dragging their tabs around in the tab
 To edit a flow's properties, double-click on its tab in the top bar. This will
 open the Flow Properties dialog.
 
+<ul>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - set the flow's name and description. The description
+    can use Markdown syntax for formatting and will appear in the <a href="../sidebar/info">Information sidebar</a>.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list"></i> : Environment Variables - properties that are exposed as environment variables within the flow. <i>Since Node-RED 2.1</i></li>
+</ul>
+
+
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
  <tr><td>Key shortcut</td><td><i>none</i></td></tr>
  <tr><td>Menu option</td><td><code>Flows -&gt; Rename</code></td></tr>
  <tr><td>Action</td><td><code>core:edit-flow</code></td></tr>
 </table>
-
-Within the dialog, the flow's name and description can be set. The description
-can use Markdown syntax for formatting and will appear in the [Information sidebar](../sidebar/info).
 
 #### Enabling or disabling a flow
 
@@ -90,8 +94,51 @@ The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-al
  <tr><td>Action</td><td><code>core:disable-flow</code></td></tr>
 </table>
 
-
 <br style="clear: both;" />
+
+#### Hiding or showing a flow
+
+*Since Node-RED 2.1.0*
+
+A flow can be hidden by clicking on the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-times"></i> on the tab.
+
+When hidden, the [Information sidebar](../sidebar/info) will show an <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-eye-slash"></i> icon next to it. Clicking that icon will show the flow again.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-w</code></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Hide flow</code></td></tr>
+ <tr><td>Action</td><td><code>core:hide-flow</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><code>Alt-Shift-w</code></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Show last hidden flow</code></td></tr>
+ <tr><td>Action</td><td><code>core:show-last-hidden-flow</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Hide other flows</code></td></tr>
+ <tr><td>Action</td><td><code>core:hide-other-flows</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Hide all flows</code></td></tr>
+ <tr><td>Action</td><td><code>core:hide-all-flows</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Show all flows</code></td></tr>
+ <tr><td>Action</td><td><code>core:show-all-flows</code></td></tr>
+</table>
+
 
 #### Deleting a flow
 
@@ -111,9 +158,8 @@ To delete a flow, click the 'Delete' button in the Flow Properties dialog.
 
 #### Switching between flows
 
-
-To open a list of the available flows, click the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list-ul"></i> button
-in the top bar.
+To open a list of the available flows, click the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-caret-down"></i> menu button
+in the top bar. Then select the List Flows option.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
