@@ -10,6 +10,9 @@ slug:
 
 An enhanced `<input>` element that provides common features for a search input.
 
+- [Options](#options)
+- [Methods](#methods)
+
 <div class="widget">
     <div style="clear:both">
         <div class="col-1-2">

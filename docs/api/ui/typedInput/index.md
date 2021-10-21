@@ -12,7 +12,7 @@ A replacement for a regular `<input>` that allows the type of the value to be
 chosen, including options for string, number and boolean types.
 
 - [Options](#options)
-- [Methods](#method)
+- [Methods](#methods)
 - [Events](#events)
 - [Types](#types)
 - [Examples](#examples)
@@ -378,6 +378,7 @@ $("#node-input-example5").typedInput({type:"fruit", types:[{
     RED.editor = { editJSON: function(){}}
 </script>
 <script src="/js/utils.js"></script>
+<script src="/js/autoComplete.js"></script>
 <script src="/js/typedInput.js"></script>
 <script src="/js/popover.js"></script>
 <link rel="stylesheet" href="/css/editor-style.min.css">

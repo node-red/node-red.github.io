@@ -4,7 +4,7 @@ title: About
 ---
 
 Node-RED is a flow-based programming tool, originally developed by [IBM's Emerging Technology Services](https://emerging-technology.co.uk)
-team and now a part of the [JS Foundation](https://js.foundation).
+team and now a part of the [OpenJS Foundation](https://openjsf.org/).
 
 ### Flow-based Programming
 
@@ -43,6 +43,9 @@ It was open-sourced in September 2013 and has been developed in the open ever
 since, culminating in it being one of the founding projects of the JS Foundation
 in October 2016.
 
+In 2019, the Node.js Foundation merged with the JS Foundation to form the
+[OpenJS Foundation](https://openjsf.org/).
+
 <div class="doc-callout">
 <b>Why is it called Node-RED?</b> The name was a light-hearted play on words
 sounding like 'Code Red'. It stuck and was a great improvement on whatever it was
@@ -65,3 +68,13 @@ For some more of the history and highlights:
 <div style="text-align: center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Bbg1017amZs" frameborder="0" allowfullscreen></iframe>
 </div>
+
+
+### Citing Node-RED
+
+If you need to cite the project in a paper, please use the following information:
+
+-----|----
+**Name** | `Node-RED`
+**Author** | `OpenJS Foundation & Contributors`
+**URL** |  If you are citing the project in general, use the project website URL - `https://nodered.org`. <br/>If you are citing a particular version, use either the website, or find the [release page on GitHub](https://github.com/node-red/node-red/releases) for the version you are citing.

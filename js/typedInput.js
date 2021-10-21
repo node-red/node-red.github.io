@@ -49,8 +49,88 @@
          }
          return icon;
      }
+
+     var autoComplete = function(options) {
+         return function(val) {
+             var matches = [];
+             options.forEach(opt => {
+                 let v = opt.value;
+                 var i = v.toLowerCase().indexOf(val.toLowerCase());
+                 if (i > -1) {
+                     var pre = v.substring(0,i);
+                     var matchedVal = v.substring(i,i+val.length);
+                     var post = v.substring(i+val.length)
+
+                     var el = $('<div/>',{style:"white-space:nowrap; overflow: hidden; flex-grow:1"});
+                     $('<span/>').text(pre).appendTo(el);
+                     $('<span/>',{style:"font-weight: bold"}).text(matchedVal).appendTo(el);
+                     $('<span/>').text(post).appendTo(el);
+
+                     var element = $('<div>',{style: "display: flex"});
+                     el.appendTo(element);
+                     if (opt.source) {
+                         $('<div>').css({
+                             "font-size": "0.8em"
+                         }).text(opt.source.join(",")).appendTo(element);
+                     }
+
+                     matches.push({
+                         value: v,
+                         label: element,
+                         i:i
+                     })
+                 }
+             })
+             matches.sort(function(A,B){return A.i-B.i})
+             return matches;
+         }
+     }
+
+     // This is a hand-generated list of completions for the core nodes (based on the node help html).
+     var msgCompletions = [
+         { value: "payload" },
+         { value: "req", source: ["http in"]},
+         { value: "req.body", source: ["http in"]},
+         { value: "req.headers", source: ["http in"]},
+         { value: "req.query", source: ["http in"]},
+         { value: "req.params", source: ["http in"]},
+         { value: "req.cookies", source: ["http in"]},
+         { value: "req.files", source: ["http in"]},
+         { value: "complete", source: ["join"] },
+         { value: "contentType", source: ["mqtt"] },
+         { value: "cookies", source: ["http in","http request"] },
+         { value: "correlationData", source: ["mqtt"] },
+         { value: "delay", source: ["delay","trigger"] },
+         { value: "encoding", source: ["file"] },
+         { value: "error", source: ["catch"] },
+         { value: "filename", source: ["file","file in"] },
+         { value: "flush", source: ["delay"] },
+         { value: "followRedirects", source: ["http request"] },
+         { value: "headers", source: ["http in"," http request"] },
+         { value: "kill", source: ["exec"] },
+         { value: "messageExpiryInterval", source: ["mqtt"] },
+         { value: "method", source: ["http-request"] },
+         { value: "options", source: ["xml"] },
+         { value: "parts", source: ["split","join"] },
+         { value: "pid", source: ["exec"] },
+         { value: "qos", source: ["mqtt"] },
+         { value: "rate", source: ["delay"] },
+         { value: "rejectUnauthorized", source: ["http request"] },
+         { value: "requestTimeout", source: ["http request"] },
+         { value: "reset", source: ["delay","trigger","join","rbe"] },
+         { value: "responseTopic", source: ["mqtt"] },
+         { value: "restartTimeout", source: ["join"] },
+         { value: "retain", source: ["mqtt"] },
+         { value: "select", source: ["html"] },
+         { value: "statusCode", source: ["http in"] },
+         { value: "template", source: ["template"] },
+         { value: "toFront", source: ["delay"] },
+         { value: "topic", source: ["inject","mqtt","rbe"] },
+         { value: "url", source: ["http request"] },
+         { value: "userProperties", source: ["mqtt"] }
+     ]
      var allOptions = {
-         msg: {value:"msg",label:"msg.",validate:RED.utils.validatePropertyExpression},
+         msg: {value:"msg",label:"msg.",validate:RED.utils.validatePropertyExpression, autoComplete: autoComplete(msgCompletions)},
          flow: {value:"flow",label:"flow.",hasValue:true,
              options:[],
              validate:RED.utils.validatePropertyExpression,
@@ -261,6 +341,47 @@
              }
          }
      };
+
+     // For a type with options, check value is a valid selection
+     // If !opt.multiple, returns the valid option object
+     // if opt.multiple, returns an array of valid option objects
+     // If not valid, returns null;
+
+     function isOptionValueValid(opt, currentVal) {
+         if (!opt.multiple) {
+             for (var i=0;i<opt.options.length;i++) {
+                 op = opt.options[i];
+                 if (typeof op === "string" && op === currentVal) {
+                     return {value:currentVal}
+                 } else if (op.value === currentVal) {
+                     return op;
+                 }
+             }
+         } else {
+             // Check to see if value is a valid csv of
+             // options.
+             var currentValues = {};
+             var selected = [];
+             currentVal.split(",").forEach(function(v) {
+                 if (v) {
+                     currentValues[v] = true;
+                 }
+             });
+             for (var i=0;i<opt.options.length;i++) {
+                 op = opt.options[i];
+                 var val = typeof op === "string" ? op : op.value;
+                 if (currentValues.hasOwnProperty(val)) {
+                     delete currentValues[val];
+                     selected.push(typeof op === "string" ? {value:op} : op.value)
+                 }
+             }
+             if (!$.isEmptyObject(currentValues)) {
+                 return null;
+             }
+             return selected
+         }
+     }
+
      var nlsd = false;
 
      $.widget( "nodered.typedInput", {
@@ -324,6 +445,8 @@
              });
 
              this.defaultInputType = this.input.attr('type');
+             // Used to remember selections per-type to restore them when switching between types
+             this.oldValues = {};
 
              this.uiSelect.addClass("red-ui-typedInput-container");
 
@@ -376,6 +499,9 @@
                  that.element.trigger('paste',evt);
              });
              this.input.on('keydown', function(evt) {
+                 if (that.typeMap[that.propertyType].autoComplete) {
+                     return
+                 }
                  if (evt.keyCode >= 37 && evt.keyCode <= 40) {
                      evt.stopPropagation();
                  }
@@ -424,9 +550,6 @@
 
              this.optionExpandButton = $('<button tabindex="0" class="red-ui-typedInput-option-expand" style="display:inline-block"></button>').appendTo(this.uiSelect);
              this.optionExpandButtonIcon = $('<i class="red-ui-typedInput-icon fa fa-ellipsis-h"></i>').appendTo(this.optionExpandButton);
-
-             // Used to remember selections per-type to restore them when switching between types
-             this.oldValues = {};
 
              this.type(this.options.default||this.typeList[0].value);
          }catch(err) {
@@ -772,24 +895,49 @@
                  return this.propertyType;
              } else {
                  var that = this;
+                 var previousValue = null;
                  var opt = this.typeMap[type];
                  if (opt && this.propertyType !== type) {
                      // If previousType is !null, then this is a change of the type, rather than the initialisation
                      var previousType = this.typeMap[this.propertyType];
                      var typeChanged = !!previousType;
+                     previousValue = this.input.val();
 
                      if (typeChanged) {
-                         if (previousType.options) {
-                             this.oldValues[previousType.value] = this.input.val();
+                         if (previousType.options && opt.hasValue !== true) {
+                             this.oldValues[previousType.value] = previousValue;
                          } else if (previousType.hasValue === false) {
-                             this.oldValues[previousType.value] = this.input.val();
+                             this.oldValues[previousType.value] = previousValue;
                          } else {
-                             this.oldValues["_"] = this.input.val();
+                             this.oldValues["_"] = previousValue;
                          }
-                         if (opt.options || opt.hasValue === false) {
-                             this.input.val(this.oldValues.hasOwnProperty(opt.value)?this.oldValues[opt.value]:(opt.default||[]).join(","))
+                         if ((opt.options && opt.hasValue !== true) || opt.hasValue === false) {
+                             if (this.oldValues.hasOwnProperty(opt.value)) {
+                                 this.input.val(this.oldValues[opt.value]);
+                             } else {
+                                 // No old value for the option type.
+                                 // It is possible code has called 'value' then 'type'
+                                 // to set the selected option. This is what the Inject/Switch/Change
+                                 // nodes did before 2.1.
+                                 // So we need to be careful to not reset the value if it is a valid option.
+                                 var validOptions = isOptionValueValid(opt,previousValue);
+                                 if (previousValue && validOptions) {
+                                     this.input.val(previousValue);
+                                 } else {
+                                     if (typeof opt.default === "string") {
+                                         this.input.val(opt.default);
+                                     } else if (Array.isArray(opt.default)) {
+                                         this.input.val(opt.default.join(","))
+                                     } else {
+                                         this.input.val("");
+                                     }
+                                 }
+                             }
                          } else {
                              this.input.val(this.oldValues.hasOwnProperty("_")?this.oldValues["_"]:(opt.default||""))
+                         }
+                         if (previousType.autoComplete) {
+                             this.input.autoComplete("destroy");
                          }
                      }
                      this.propertyType = type;
@@ -861,22 +1009,12 @@
 
                              var op;
                              if (!opt.hasValue) {
-                                 var validValue = false;
-                                 var currentVal = this.input.val();
+                                 // Check the value is valid for the available options
+                                 var validValues = isOptionValueValid(opt,this.input.val());
                                  if (!opt.multiple) {
-                                     for (var i=0;i<opt.options.length;i++) {
-                                         op = opt.options[i];
-                                         if (typeof op === "string" && op === currentVal) {
-                                             that._updateOptionSelectLabel({value:currentVal});
-                                             validValue = true;
-                                             break;
-                                         } else if (op.value === currentVal) {
-                                             that._updateOptionSelectLabel(op);
-                                             validValue = true;
-                                             break;
-                                         }
-                                     }
-                                     if (!validValue) {
+                                     if (validValues) {
+                                         that._updateOptionSelectLabel(validValues)
+                                     } else {
                                          op = opt.options[0];
                                          if (typeof op === "string") {
                                              this.value(op);
@@ -887,26 +1025,13 @@
                                          }
                                      }
                                  } else {
-                                     // Check to see if value is a valid csv of
-                                     // options.
-                                     var currentValues = {};
-                                     var selected = [];
-                                     currentVal.split(",").forEach(function(v) {
-                                         if (v) {
-                                             selected.push(v);
-                                             currentValues[v] = true;
-                                         }
-                                     });
-                                     for (var i=0;i<opt.options.length;i++) {
-                                         op = opt.options[i];
-                                         delete currentValues[op.value||op];
+                                     if (!validValues) {
+                                         validValues = (opt.default || []).map(function(v) {
+                                             return typeof v === "string"?v:v.value
+                                         });
+                                         this.value(validValues.join(","));
                                      }
-                                     if (!$.isEmptyObject(currentValues)) {
-                                         selected = opt.default || [];
-                                         // Invalid, set to default/empty
-                                         this.value(selected.join(","));
-                                     }
-                                     that._updateOptionSelectLabel(selected);
+                                     that._updateOptionSelectLabel(validValues);
                                  }
                              } else {
                                  var selectedOption = this.optionValue||opt.options[0];
@@ -981,6 +1106,11 @@
                          } else {
                              this.valueLabelContainer.hide();
                              this.elementDiv.show();
+                             if (opt.autoComplete) {
+                                 this.input.autoComplete({
+                                     search: opt.autoComplete
+                                 })
+                             }
                          }
                          if (this.optionExpandButton) {
                              if (opt.expand) {

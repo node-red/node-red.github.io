@@ -12,6 +12,9 @@ slug:
 A replacement for a `<ol>` element where the items can be complex elements in their
 own right. Used by the core `Switch` and `Change` nodes.
 
+- [Options](#options)
+- [Methods](#methods)
+
 <div class="widget">
     <div style="clear:both">
         <div class="col-1-2">
