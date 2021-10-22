@@ -82,6 +82,17 @@ for others to be able to use it.</div>
 }
 {% endhighlight %}
 
+You can also specify supoorted Node-RED versions. e.g. this indicates newer than v2.0.0
+
+{% highlight json %}
+"node-red"     : {
+    "version": ">=2.0.0",
+    "nodes": {
+        "sample": "sample/sample.js"
+    }
+}
+{% endhighlight %}
+
 
 ### README.md
 
