@@ -194,6 +194,7 @@ The theme of the editor can be changed by using the following settings object. A
                 url: "http://example.com"
             }
         },
+        tours: false, // disable the Welcome Tour for new users
         userMenu: false, // Hide the user-menu even if adminAuth is enabled
         login: {
             image: "/absolute/path/to/login/page/big/image" // a 256x256 image
