@@ -38,6 +38,14 @@
         </div>
     </div>
 </div>
+<script>
+ $(function() {
+    $(".menu").on("click", function(e) {
+        var s = $(".navigation").slideToggle('hide');
+        e.preventDefault();
+    });
+  });
+</script>
 <script defer data-domain="nodered.org" src="https://plausible.io/js/plausible.js"></script>
 </body>
 </html>
