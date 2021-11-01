@@ -69,6 +69,7 @@ ul.fixed-toc {
 }
 
 ul.toc {
+    position:relative;
     overflow: hidden;
     list-style-type: none;
     margin: 40px 0 20px 0;
@@ -209,10 +210,10 @@ ul.toc li.toc-expander {
     width: 35px;
     right: 0;
     top: 3px;
-    height: 37px;
+    height: 30px;
     background: #B68181;
     text-align: center;
-    line-height: 37px;
+    line-height: 30px;
     border-left: 1px solid #fff;
     color: #eee;
     z-index: 10;
@@ -318,7 +319,10 @@ ul.multi-column-toc {
     ul.toc li.toc-expander {
         display: inline;
     }
-    ul.toc.open li.toc-expander div {
+    ul.toc li.toc-expander i {
+
+    }
+    ul.toc.open li.toc-expander i {
         transform: rotate(180deg);
     }
 
