@@ -7,7 +7,9 @@ redirect_from:
   - /docs/platforms/balena
 ---
 
-This guide is going to install Node-RED on an edge device using [balena.io](https://balena.io) in 1 click. Running Node-RED on balena, means that you are using containers and Node-RED can run alognside with other services such as MQTT, databases, LoRa Network Servers and more. balena is a platform for managing fleets of connected devices. 
+This guide is going to install Node-RED on an edge device using [balena.io](https://balena.io) in 1 click. 
+
+Running Node-RED on balena, means that you are using containers and Node-RED can run alognside with other services such as MQTT, databases, LoRa Network Servers and more. balena is a platform for managing fleets of connected devices. balena.io fleets run balenaOS (open source Linux operating system), which executes containers (using balenaEngine based on Docker Moby).
 
 
 ### Hardware required
@@ -40,9 +42,17 @@ You can deploy this project to a new balenaCloud fleet in one click using the bu
 
 Clicking the deploy button will create an application with all the necessary code to deploy your Node-RED project.
 
-<img src="images/balena-creating-fleet.png" />
+<img src="/images/balena-creating-fleet.png" />
 
-<img src="images/balena-device-nodeRED.png" />
+Create the fleet and you will see the code being release on balenaCloud.
+
+Click `Add device` and download the balenaOS image with the WiFi credentials that you will need (in case that you use WiFi). 
+
+Flash the SD card with [balenaEtcher](https://www.balena.io/etcher/) and power up the device with the SD card.
+
+The device will appear on balenaCloud and the `Node-RED` service will be deployed on the device, such as in the image below.
+
+<img src="/images/balena-device-nodeRED.png" />
 
 Once the `Node-RED` service has been deployed on your device, copy your local IP (if you are using the same network) or just click on `Public Device URL` and access to the Node-RED UI.
 
@@ -125,9 +135,12 @@ Now using the balena CLI, push the code to your fleet using `balena push <the-na
 
 Once the project has been built on the balena builders, you should see your device downloading the new images containers and starting them.
 
-<img src="images/balena-nodeRED-mqtt.png" />
+<img src="/images/balena-nodeRED-mqtt.png" />
 
 In this repository you can find an example of [nodeRED and MQTT mosquitto](https://github.com/mpous/balena-nodered-mqtt) on balena.
 
 
+### Troubleshooting
+
+If there is any issue not reported here, feel free to report it at the [balena forums](https://forums.balena.io).
 
