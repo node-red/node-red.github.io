@@ -82,7 +82,7 @@ for others to be able to use it.</div>
 }
 {% endhighlight %}
 
-You can specify what versions of Node-RED your nodes support with a `version` entry. For example, the following means the node requires Node-RED 2.0 or later.
+You should specify what versions of Node-RED your nodes support with a `version` entry. For example, the following means the node requires Node-RED 2.0 or later.
 
 {% highlight json %}
 "node-red"     : {
