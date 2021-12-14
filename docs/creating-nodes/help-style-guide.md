@@ -12,8 +12,8 @@ The following style guide describes how the help should be structured to ensure
 a consistent appearance between nodes.
 
 *Since 2.1.0* : The help text can be provided as markdown rather than HTML. In this
-case the `type` attribute of the `<script>` tag must be `text/markdown`.
-*Caution* When creating markdown help text be careful with indentation, markdown is whitespace sensitve so all lines should have no leading whitespace inside the `<script>` tags.
+case the `type` attribute of the `<script>` tag must be `text/markdown`.<br>
+When creating markdown help text be careful with indentation, markdown is whitespace sensitve so all lines should have no leading whitespace inside the `<script>` tags.
 
 <hr/>
 
