@@ -10,8 +10,11 @@ them easy to install along with any dependencies they may have.
 
 ### Naming
 
-If you wish to use **node-red** in the name of your node please use `node-red-contrib-` as a prefix to their name to make it clear they are not maintained by the Node-RED project. Alternatively, any name
-that doesn't use `node-red` as a prefix can be used.
+Packages first published after the 1st Feb 2022 should use a [scoped name](https://docs.npmjs.com/cli/v8/using-npm/scope), within the scope of your own namespace there are no other restrictions on what you can name your package, you may use either `@myScope/node-red-sample` or `@myScope/sample` Please remember to use `node-red` not `nodered`.
+
+If you are forking an existing pacakge you should keep the same name but release under your own scope, (if its an unscoped package then use the contrib name under your own scope) Remember, forking should be a last resort if the orignal maintainer is not responsive to your contributions.
+
+Older packages used an unscoped namespace and the `node-red-contrib-*` format, these do not need to be changed.
 
 ### Directory structure
 
@@ -21,10 +24,10 @@ Here is a typical directory structure for a node package:
 ├── LICENSE
 ├── README.md
 ├── package.json
-└── sample
-    ├── examples
+├── examples
     │   ├── example-1.json
     │   └── example-2.json
+└── sample
     ├── icons
     │   └── my-icon.svg
     ├── sample.html
@@ -34,6 +37,7 @@ Here is a typical directory structure for a node package:
 There are no strict requirements over the directory structure used within the
 package. If a package contains multiple nodes, they could all exist in the same
 directory, or they could each be placed in their own sub-directory.
+The examples folder must be in the root of the package.
 
 ### Testing a node module locally
 
@@ -68,7 +72,7 @@ for others to be able to use it.</div>
 
 {% highlight json %}
 {
-    "name"         : "node-red-contrib-samplenode",
+    "name"         : "@myScope/node-red-sample",
     "version"      : "0.0.1",
     "description"  : "A sample node for node-red",
     "dependencies": {
