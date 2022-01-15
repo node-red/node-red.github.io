@@ -213,6 +213,14 @@ The theme of the editor can be changed by using the following settings object. A
         },
         projects: {
             enabled: false // Enable the projects feature
+        },
+        theme: "", // Select a color theme for the editor. See https://github.com/node-red-contrib-themes/theme-collection for a collection of themes to choose from
+        codeEditor: {
+            lib: "ace", // Select the text editor component used by the editor. Defaults to "ace", but can be set to "ace" or "monaco"
+            options: {
+                // The following only apply if the editor is set to "monaco"
+                theme: "vs", // Select a color theme for the text editor component. Must match the file name of a theme in packages/node_modules/@node-red/editor-client/src/vendor/monaco/dist/theme
+            }
         }
     },
 
