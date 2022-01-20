@@ -185,7 +185,7 @@ $("#node-input-example3").autoComplete({
 
                 var el = $('<div/>',{style:"white-space:nowrap"});
                 $('<span/>').text(pre).appendTo(el);
-                $('<span/>',{style:"font-weight: bold, color:red"}).text(matchedVal).appendTo(el);
+                $('<span/>',{style:"font-weight: bold; color:red"}).text(matchedVal).appendTo(el);
                 $('<span/>').text(post).appendTo(el);
 
                 matches.push({
