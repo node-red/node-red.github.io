@@ -16,6 +16,7 @@ The [Change Log](https://github.com/node-red/node-red/blob/3a69af9034a6f3a59f35c
 
 - [Highlights](#highlights)
   - [Search History](#search-history)
+  - [Remembering zoom/position](#remembering-zoom-position)
   - [Aligning nodes](#aligning-nodes)
   - [Detaching nodes](#detaching-nodes)
   - [Selecting multiple wires](#selecting-multiple-wires)
@@ -36,6 +37,14 @@ to repeatedly search for the same thing.
 
 ![](/blog/content/images/2022/01/search-history.png)
 
+### Remembering zoom/position
+
+Under the View section of the main settings dialog, there are a pair of options
+to get the editor to remember the zoom level of the workspace, as well as the
+scroll position of individual tabs.
+
+This is helpful if you prefer to have the workspace zoomed in - you don't have
+to reset it every time you reload the editor.
 
 ### Aligning nodes
 
