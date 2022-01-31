@@ -10,8 +10,15 @@ them easy to install along with any dependencies they may have.
 
 ### Naming
 
-If you wish to use **node-red** in the name of your node please use `node-red-contrib-` as a prefix to their name to make it clear they are not maintained by the Node-RED project. Alternatively, any name
-that doesn't use `node-red` as a prefix can be used.
+**We [updated our naming requirements](/blog/2022/01/31/introducing-scorecard) on 31st January 2022. The following applies to newly creating modules after that date.**
+
+Packages should use a [scoped name](https://docs.npmjs.com/cli/v8/using-npm/scope) - such as `@myScope/node-red-sample`. That can be under a user scope or an organisation scope.
+
+Nodes published under a scoped name have no further requirements on their name.
+They could use `@myScope/node-red-sample` or just `@myScope/sample` - although
+having `node-red` in the name does help to associate the module with the project.
+
+If you are forking an existing package to provide a fix, you can keep the same name but released under your own scope. But please keep in mind, forking should always be a last resort if the original maintainer is not responsive to your contributions.
 
 ### Directory structure
 
@@ -21,10 +28,10 @@ Here is a typical directory structure for a node package:
 ├── LICENSE
 ├── README.md
 ├── package.json
-└── sample
-    ├── examples
+├── examples
     │   ├── example-1.json
     │   └── example-2.json
+└── sample
     ├── icons
     │   └── my-icon.svg
     ├── sample.html
@@ -34,6 +41,7 @@ Here is a typical directory structure for a node package:
 There are no strict requirements over the directory structure used within the
 package. If a package contains multiple nodes, they could all exist in the same
 directory, or they could each be placed in their own sub-directory.
+The examples folder must be in the root of the package.
 
 ### Testing a node module locally
 
@@ -68,7 +76,7 @@ for others to be able to use it.</div>
 
 {% highlight json %}
 {
-    "name"         : "node-red-contrib-samplenode",
+    "name"         : "@myScope/node-red-sample",
     "version"      : "0.0.1",
     "description"  : "A sample node for node-red",
     "dependencies": {
