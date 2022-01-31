@@ -10,11 +10,15 @@ them easy to install along with any dependencies they may have.
 
 ### Naming
 
-Packages first published after the 1st Feb 2022 should use a [scoped name](https://docs.npmjs.com/cli/v8/using-npm/scope), within the scope of your own namespace there are no other restrictions on what you can name your package, you may use either `@myScope/node-red-sample` or `@myScope/sample` Please remember to use `node-red` not `nodered`.
+**We [updated our naming requirements](/blog/2022/01/31/introducing-scorecard) on 31st January 2022. The following applies to newly creating modules after that date.**
 
-If you are forking an existing pacakge you should keep the same name but release under your own scope, (if its an unscoped package then use the contrib name under your own scope) Remember, forking should be a last resort if the orignal maintainer is not responsive to your contributions.
+Packages should use a [scoped name](https://docs.npmjs.com/cli/v8/using-npm/scope) - such as `@myScope/node-red-sample`. That can be under a user scope or an organisation scope.
 
-Older packages used an unscoped namespace and the `node-red-contrib-*` format, these do not need to be changed.
+Nodes published under a scoped name have no further requirements on their name.
+They could use `@myScope/node-red-sample` or just `@myScope/sample` - although
+having `node-red` in the name does help to associate the module with the project.
+
+If you are forking an existing package to provide a fix, you can keep the same name but released under your own scope. But please keep in mind, forking should always be a last resort if the original maintainer is not responsive to your contributions.
 
 ### Directory structure
 
