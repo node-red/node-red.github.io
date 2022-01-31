@@ -36,7 +36,7 @@ on the i link on the right hand side.
 ### Changing our recommended naming convention
 
 As part of the work to improve the overall quality of the Flow Libary, we're making
-a change to our naming guidelines for node modules.
+a change to our [naming guidelines for node modules](/docs/creating-nodes/packaging#naming).
 
 Previously, we asked that if a module's name started with `node-red-`, that it
 use `node-red-contrib-` to distinguish it from modules maintained by the core project.

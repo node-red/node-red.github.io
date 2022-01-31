@@ -10,7 +10,7 @@ them easy to install along with any dependencies they may have.
 
 ### Naming
 
-**We [updated our naming requirements](/blog/2022/01/31/introducing-scorecard) on 31st January 2022. The following applies to newly creating modules after that date.**
+**We [updated our naming requirements](/blog/2022/01/31/introducing-scorecard) on 31st January 2022. The following applies to modules first published after that date.**
 
 Packages should use a [scoped name](https://docs.npmjs.com/cli/v8/using-npm/scope) - such as `@myScope/node-red-sample`. That can be under a user scope or an organisation scope.
 
