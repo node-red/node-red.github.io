@@ -7,7 +7,7 @@ description: Checking the quality of nodes in the ecosystem
 
 Last year we asked the community what frustrations they were experiencing as both
 users and creators of 3rd party nodes. One of the common themes was that it was
-hard to judge the quality of a node just from looking at its page on the [Flow Library](flows.nodered.org).
+hard to judge the quality of a node just from looking at its page on the [Flow Library](https://flows.nodered.org).
 
 Based on that feedback, we're now introducing Node Scorecards.
 
