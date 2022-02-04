@@ -1,0 +1,473 @@
+3 Jul 11:46:45 - [info] Stopping flows
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : c6bda073.eab95
+3 Jul 11:46:45 - [trace] [flow:c6bda073.eab95] stop flow
+3 Jul 11:46:45 - [trace] Stopping node http request:4d8b457.78b78bc
+3 Jul 11:46:45 - [trace] Stopping node inject:6b1db7e3.efde18
+3 Jul 11:46:45 - [trace] Stopping node http request:c7c95c65.b17aa
+3 Jul 11:46:45 - [trace] Stopping node http request:959a4477.f0e458
+3 Jul 11:46:45 - [trace] Stopping node inject:7731bb78.401924
+3 Jul 11:46:45 - [trace] Stopping node http request:1158087f.21d838
+3 Jul 11:46:45 - [trace] Stopping node http request:c5fc29c9.5e9938
+3 Jul 11:46:45 - [trace] Stopping node inject:a707de11.83eca
+3 Jul 11:46:45 - [trace] Stopping node json:2dc63d35.51e7f2
+3 Jul 11:46:45 - [trace] Stopping node change:6efda69d.d03fb8
+3 Jul 11:46:45 - [trace] Stopping node switch:58b9166c.0b9a58
+3 Jul 11:46:45 - [trace] Stopping node http request:343cc06.de9ab4
+3 Jul 11:46:45 - [trace] Stopping node http request:45bd993f.ff9598
+3 Jul 11:46:45 - [trace] Stopping node http request:769042f1.361bcc
+3 Jul 11:46:45 - [trace] Stopping node http request:ed2b53a1.93dec
+3 Jul 11:46:45 - [trace] Stopping node http request:b1ad17e8.92f608
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : a362399f.8ad5
+3 Jul 11:46:45 - [trace] [flow:a362399f.8ad5] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:311127b8.b7392
+3 Jul 11:46:45 - [trace] Stopping node switch:7107236d.3b4fcc
+3 Jul 11:46:45 - [trace] Stopping node switch:99a031ba.19fc1
+3 Jul 11:46:45 - [trace] Stopping node http request:7138442.70700bc
+3 Jul 11:46:45 - [trace] Stopping node delay:bddfeb56.02f338
+3 Jul 11:46:45 - [trace] Stopping node http request:eb8737d.fff2ac8
+3 Jul 11:46:45 - [trace] Stopping node delay:cda3322e.e9fc5
+3 Jul 11:46:45 - [trace] Stopping node http request:9fbfd1bf.46e84
+3 Jul 11:46:45 - [trace] Stopping node delay:d9dc10b0.3797f
+3 Jul 11:46:45 - [trace] Stopping node http request:bbaf4613.dd9b48
+3 Jul 11:46:45 - [trace] Stopping node mqtt out:fd38545d.48e338
+3 Jul 11:46:45 - [trace] Stopping node function:eb6591e9.8e68c
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 3d965977.334816
+3 Jul 11:46:45 - [trace] [flow:3d965977.334816] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:905acf0d.19753
+3 Jul 11:46:45 - [trace] Stopping node debug:93e2bd23.6e788
+3 Jul 11:46:45 - [trace] Stopping node switch:ba94a401.86dc78
+3 Jul 11:46:45 - [trace] Stopping node debug:cf2d9457.460828
+3 Jul 11:46:45 - [trace] Stopping node debug:a9bece7b.cef7b
+3 Jul 11:46:45 - [trace] Stopping node debug:1037edac.adcffa
+3 Jul 11:46:45 - [trace] Stopping node debug:b1a1c50f.cf6a6
+3 Jul 11:46:45 - [trace] Stopping node change:43a97207.f97f8c
+3 Jul 11:46:45 - [trace] Stopping node switch:96b8adb8.c3575
+3 Jul 11:46:45 - [trace] Stopping node switch:c02a91ce.ab4948
+3 Jul 11:46:45 - [trace] Stopping node trigger:b8fc75ca.add948
+3 Jul 11:46:45 - [trace] Stopping node change:15653af.de6c2c5
+3 Jul 11:46:45 - [trace] Stopping node inject:149a711e.8c4047
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : b6f92919.0cebb8
+3 Jul 11:46:45 - [trace] [flow:b6f92919.0cebb8] stop flow
+3 Jul 11:46:45 - [trace] Stopping node debug:5ab4a9f6.99ff7
+3 Jul 11:46:45 - [trace] Stopping node debug:9810061.3a4d6f8
+3 Jul 11:46:45 - [trace] Stopping node http request:601a2ce4.94ede4
+3 Jul 11:46:45 - [trace] Stopping node json:153b6a8.06dd196
+3 Jul 11:46:45 - [trace] Stopping node change:63c0b8a1.59b848
+3 Jul 11:46:45 - [trace] Stopping node inject:e70d5de1.6b55
+3 Jul 11:46:45 - [trace] Stopping node debug:f1772f13.a44b9
+3 Jul 11:46:45 - [trace] Stopping node debug:c9607e89.26a8c
+3 Jul 11:46:45 - [trace] Stopping node change:6c0b37b4.84b4b8
+3 Jul 11:46:45 - [trace] Stopping node debug:b80e7e26.94615
+3 Jul 11:46:45 - [trace] Stopping node switch:a884758c.6cce58
+3 Jul 11:46:45 - [trace] Stopping node change:a27527bb.617d08
+3 Jul 11:46:45 - [trace] Stopping node change:f574aca2.3b59d
+3 Jul 11:46:45 - [trace] Stopping node debug:a23349bf.1f98e8
+3 Jul 11:46:45 - [trace] Stopping node debug:a121d1e7.2c0c5
+3 Jul 11:46:45 - [trace] Stopping node http request:47732c89.7bf7b4
+3 Jul 11:46:45 - [trace] Stopping node json:e467dc04.863cc
+3 Jul 11:46:45 - [trace] Stopping node change:912cb264.defa
+3 Jul 11:46:45 - [trace] Stopping node inject:983dbbdb.55a0b8
+3 Jul 11:46:45 - [trace] Stopping node debug:e75420f.ba28ee
+3 Jul 11:46:45 - [trace] Stopping node debug:a19cc670.074c68
+3 Jul 11:46:45 - [trace] Stopping node change:6b7d9f89.bd1ac
+3 Jul 11:46:45 - [trace] Stopping node debug:b87ed4e5.8751f8
+3 Jul 11:46:45 - [trace] Stopping node switch:a133ece4.c0685
+3 Jul 11:46:45 - [trace] Stopping node change:46d20cbf.f79e54
+3 Jul 11:46:45 - [trace] Stopping node change:bef20ab2.684008
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 92b6c01.24b2dc
+3 Jul 11:46:45 - [trace] [flow:92b6c01.24b2dc] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:a9674f77.6eafe
+3 Jul 11:46:45 - [trace] Stopping node switch:88eb9dd3.145588
+3 Jul 11:46:45 - [trace] Stopping node debug:2369d4b4.bbe9c4
+3 Jul 11:46:45 - [trace] Stopping node debug:728a9e7a.add708
+3 Jul 11:46:45 - [trace] Stopping node debug:183fab72.e0f9c5
+3 Jul 11:46:45 - [trace] Stopping node switch:e87dd13f.a7ffa8
+3 Jul 11:46:45 - [trace] Stopping node switch:806e684.36cb818
+3 Jul 11:46:45 - [trace] Stopping node trigger:8065596a.e2fa3
+3 Jul 11:46:45 - [trace] Stopping node inject:343ffaf9.d6bbf6
+3 Jul 11:46:45 - [trace] Stopping node function:a0ef6323.fbce8
+3 Jul 11:46:45 - [trace] Stopping node mqtt out:ff77e3a1.882a28
+3 Jul 11:46:45 - [trace] Stopping node function:21a16da0.5bf9d2
+3 Jul 11:46:45 - [trace] Stopping node function:7edbafbd.d6a1f8
+3 Jul 11:46:45 - [trace] Stopping node function:efd8e7d8.1319b
+3 Jul 11:46:45 - [trace] Stopping node function:97f9bb14.682c
+3 Jul 11:46:45 - [trace] Stopping node function:bb377679.5e616
+3 Jul 11:46:45 - [trace] Stopping node function:1cc8ba2b.b3b0e6
+3 Jul 11:46:45 - [trace] Stopping node function:ebb53b3.445e148
+3 Jul 11:46:45 - [trace] Stopping node function:1fb6a93d.a93697
+3 Jul 11:46:45 - [trace] Stopping node function:c48cbfd6.d01f78
+3 Jul 11:46:45 - [trace] Stopping node http request:5de856d0.cac548
+3 Jul 11:46:45 - [trace] Stopping node json:3ce146e7.4597ea
+3 Jul 11:46:45 - [trace] Stopping node debug:c1552c08.2db19
+3 Jul 11:46:45 - [trace] Stopping node inject:9a818929.792b68
+3 Jul 11:46:45 - [trace] Stopping node switch:385af0f8.97864
+3 Jul 11:46:45 - [trace] Stopping node debug:eabb08b7.39e4c8
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : e46d200f.d871a
+3 Jul 11:46:45 - [trace] [flow:e46d200f.d871a] stop flow
+3 Jul 11:46:45 - [trace] Stopping node switch:5b2dad57.ece124
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:48a6ec53.e707bc
+3 Jul 11:46:45 - [trace] Stopping node switch:a18cf121.1aac18
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 10725a58.07227e
+3 Jul 11:46:45 - [trace] [flow:10725a58.07227e] stop flow
+3 Jul 11:46:45 - [trace] Stopping node inject:5a907311.e99fe4
+3 Jul 11:46:45 - [trace] Stopping node join:72b07f25.b95e9
+3 Jul 11:46:45 - [trace] Stopping node debug:f23a0331.5a2fd8
+3 Jul 11:46:45 - [trace] Stopping node debug:c6570a53.5b3c68
+3 Jul 11:46:45 - [trace] Stopping node switch:c55a7640.6179e
+3 Jul 11:46:45 - [trace] Stopping node mqtt out:6891583d.7005e8
+3 Jul 11:46:45 - [trace] Stopping node function:88fdf1ee.11e7c
+3 Jul 11:46:45 - [trace] Stopping node function:fec54733.c342d
+3 Jul 11:46:45 - [trace] Stopping node function:7f215d57.43d504
+3 Jul 11:46:45 - [trace] Stopping node function:e635e855.afe9f8
+3 Jul 11:46:45 - [trace] Stopping node function:f30c0870.5f7bd
+3 Jul 11:46:45 - [trace] Stopping node function:30b1499.28a3ab6
+3 Jul 11:46:45 - [trace] Stopping node function:d8f1f9e9.b21f5
+3 Jul 11:46:45 - [trace] Stopping node function:eb0af6f1.90d48
+3 Jul 11:46:45 - [trace] Stopping node function:27c2c235.d50f0e
+3 Jul 11:46:45 - [trace] Stopping node function:d5cd6c31.4f0e8
+3 Jul 11:46:45 - [trace] Stopping node function:636ca4b6.82312c
+3 Jul 11:46:45 - [trace] Stopping node function:98619d0c.08034
+3 Jul 11:46:45 - [trace] Stopping node inject:e67f3d58.f05898
+3 Jul 11:46:45 - [trace] Stopping node inject:cf6fb6d3.9b4918
+3 Jul 11:46:45 - [trace] Stopping node function:c253be35.37f98
+3 Jul 11:46:45 - [trace] Stopping node function:d0bedbbd.af403
+3 Jul 11:46:45 - [trace] Stopping node function:326f25e2.066fa2
+3 Jul 11:46:45 - [trace] Stopping node function:3815e24.67b219e
+3 Jul 11:46:45 - [trace] Stopping node function:e24a8fb7.7de628
+3 Jul 11:46:45 - [trace] Stopping node function:cd7659fa.aebe68
+3 Jul 11:46:45 - [trace] Stopping node function:6673cd8f.ac409c
+3 Jul 11:46:45 - [trace] Stopping node function:e91dde.6cada22
+3 Jul 11:46:45 - [trace] Stopping node function:d3031951.104ab
+3 Jul 11:46:45 - [trace] Stopping node function:c6123318.7ea85
+3 Jul 11:46:45 - [trace] Stopping node function:cc381173.701be8
+3 Jul 11:46:45 - [trace] Stopping node function:94b66706.cbec38
+3 Jul 11:46:45 - [trace] Stopping node debug:f8d25d73.d1f1c8
+3 Jul 11:46:45 - [trace] Stopping node time-range-switch:9f0874d0.2f08b8
+3 Jul 11:46:45 - [trace] Stopping node function:584e8a1b.fabc64
+3 Jul 11:46:45 - [trace] Stopping node function:45cc4bad.a43cb4
+3 Jul 11:46:45 - [trace] Stopping node function:1dc99e01.78d922
+3 Jul 11:46:45 - [trace] Stopping node function:a2acb5f5.afebf8
+3 Jul 11:46:45 - [trace] Stopping node function:b0b3241f.fbedb8
+3 Jul 11:46:45 - [trace] Stopping node function:2d41222.9441bde
+3 Jul 11:46:45 - [trace] Stopping node function:38a3a0c1.e8156
+3 Jul 11:46:45 - [trace] Stopping node debug:affa8c91.19e71
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 9346af7a.4f2098
+3 Jul 11:46:45 - [trace] [flow:9346af7a.4f2098] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:122f0f18.63b6b1
+3 Jul 11:46:45 - [trace] Stopping node switch:22691784.ba889
+3 Jul 11:46:45 - [trace] Stopping node switch:42c93108.a97008
+3 Jul 11:46:45 - [trace] Stopping node change:b5acc8db.fefb8
+3 Jul 11:46:45 - [trace] Stopping node switch:21d9c907.247dee
+3 Jul 11:46:45 - [trace] Stopping node switch:cd11cc6f.2cb1f8
+3 Jul 11:46:45 - [trace] Stopping node switch:e917be12.a291e
+3 Jul 11:46:45 - [trace] Stopping node switch:24978c81.0ef6ac
+3 Jul 11:46:45 - [trace] Stopping node join:65ff6df.ff81c94
+3 Jul 11:46:45 - [trace] Stopping node change:76b1bf24.0eab28
+3 Jul 11:46:45 - [trace] Stopping node switch:e8a9a700.b8e8a8
+3 Jul 11:46:45 - [trace] Stopping node debug:eecd9ae.7750b68
+3 Jul 11:46:45 - [trace] Stopping node debug:40571883.87c1f8
+3 Jul 11:46:45 - [trace] Stopping node change:6e4481e4.b78918
+3 Jul 11:46:45 - [trace] Stopping node change:55571b46.66d38c
+3 Jul 11:46:45 - [trace] Stopping node join:971bda92.db8648
+3 Jul 11:46:45 - [trace] Stopping node switch:80d726e.b86b6d8
+3 Jul 11:46:45 - [trace] Stopping node change:3a48de17.0f9dc2
+3 Jul 11:46:45 - [trace] Stopping node change:5e163faa.7e9818
+3 Jul 11:46:45 - [trace] Stopping node debug:a1b409f4.95ab6
+3 Jul 11:46:45 - [trace] Stopping node debug:f978bdd0.b66a4
+3 Jul 11:46:45 - [trace] Stopping node debug:7bdc507b.712fc8
+3 Jul 11:46:45 - [trace] Stopping node debug:d2408a11.ca165
+3 Jul 11:46:45 - [trace] Stopping node inject:368f237.29bc8dc
+3 Jul 11:46:45 - [trace] Stopping node inject:2bf76090.02521
+3 Jul 11:46:45 - [trace] Stopping node inject:d7910e51.c1c1f
+3 Jul 11:46:45 - [trace] Stopping node change:3d73ab0c.7358bc
+3 Jul 11:46:45 - [trace] Stopping node change:90a8b487.2267d
+3 Jul 11:46:45 - [trace] Stopping node change:5ce7e6b4.7c18d8
+3 Jul 11:46:45 - [trace] Stopping node change:5fb53a71.306e64
+3 Jul 11:46:45 - [trace] Stopping node inject:65bb403b.68fbc
+3 Jul 11:46:45 - [trace] Stopping node inject:d8324404.1d11f8
+3 Jul 11:46:45 - [trace] Stopping node inject:946115cc.45dab
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 849aa7a9.ff862
+3 Jul 11:46:45 - [trace] [flow:849aa7a9.ff862] stop flow
+3 Jul 11:46:45 - [trace] Stopping node http request:dea77fd.b480f8
+3 Jul 11:46:45 - [trace] Stopping node inject:d1bb48a3.b58e7
+3 Jul 11:46:45 - [trace] Stopping node switch:d58ee39c.145418
+3 Jul 11:46:45 - [trace] Stopping node http request:1136b4fa.d28db3
+3 Jul 11:46:45 - [trace] Stopping node change:17d323ee.64839c
+3 Jul 11:46:45 - [trace] Stopping node change:ea7a0db0.53adf
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : b6d47519.230338
+3 Jul 11:46:45 - [trace] [flow:b6d47519.230338] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:955c515b.d2526
+3 Jul 11:46:45 - [trace] Stopping node switch:1dda7437.4b2a9c
+3 Jul 11:46:45 - [trace] Stopping node switch:17b53830.b2dd1
+3 Jul 11:46:45 - [trace] Stopping node debug:57833fd6.c06ac
+3 Jul 11:46:45 - [trace] Stopping node mqtt out:e1a75970.f83b18
+3 Jul 11:46:45 - [trace] Stopping node function:7ab96f40.b0875
+3 Jul 11:46:45 - [trace] Stopping node debug:463013ba.d304a4
+3 Jul 11:46:45 - [trace] Stopping node debug:2f54d446.6fd7cc
+3 Jul 11:46:45 - [trace] Stopping node function:11511988.42f3ae
+3 Jul 11:46:45 - [trace] Stopping node function:d3aa4aa7.24ac48
+3 Jul 11:46:45 - [trace] Stopping node function:bfd39211.150688
+3 Jul 11:46:45 - [trace] Stopping node function:cc3bc3e9.8272b8
+3 Jul 11:46:45 - [trace] Stopping node function:7a4ea61f.f76bd
+3 Jul 11:46:45 - [trace] Stopping node http request:7d565f64.93e8a
+3 Jul 11:46:45 - [trace] Stopping node http request:c2973368.aeae1
+3 Jul 11:46:45 - [trace] Stopping node http request:77d7d371.069d5c
+3 Jul 11:46:45 - [trace] Stopping node http request:aa36e385.b56f8
+3 Jul 11:46:45 - [trace] Stopping node http request:7f07fa50.970e34
+3 Jul 11:46:45 - [trace] Stopping node http request:8d891e0a.ec5bf
+3 Jul 11:46:45 - [trace] Stopping node http request:7ee3a7ac.c57088
+3 Jul 11:46:45 - [trace] Stopping node json:7665c115.b9822
+3 Jul 11:46:45 - [trace] Stopping node change:650d3adb.b1a334
+3 Jul 11:46:45 - [trace] Stopping node debug:77c60c34.e50644
+3 Jul 11:46:45 - [trace] Stopping node debug:a55e45b5.54c228
+3 Jul 11:46:45 - [trace] Stopping node http request:7e6d2bf4.ca4a04
+3 Jul 11:46:45 - [trace] Stopping node debug:d3d463c1.8f51d
+3 Jul 11:46:45 - [trace] Stopping node comment:f8a8eb59.434698
+3 Jul 11:46:45 - [trace] Stopping node debug:903154c2.f557a8
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 47c480a5.340fd
+3 Jul 11:46:45 - [trace] [flow:47c480a5.340fd] stop flow
+3 Jul 11:46:45 - [trace] Stopping node json:e18b35fe.b1cb18
+3 Jul 11:46:45 - [trace] Stopping node change:2902e85c.fea898
+3 Jul 11:46:45 - [trace] Stopping node change:48952100.f09cb
+3 Jul 11:46:45 - [trace] Stopping node switch:efd1ae76.52573
+3 Jul 11:46:45 - [trace] Stopping node http request:8c42b0ff.93ed6
+3 Jul 11:46:45 - [trace] Stopping node http request:9e832dfa.8182
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : 48b698b1.782868
+3 Jul 11:46:45 - [trace] [flow:48b698b1.782868] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt in:842be063.c698c
+3 Jul 11:46:45 - [trace] Stopping node change:93299777.ee2f48
+3 Jul 11:46:45 - [trace] Stopping node switch:56385519.b1378c
+3 Jul 11:46:45 - [trace] Stopping node http request:55ab2644.aa9108
+3 Jul 11:46:45 - [trace] Stopping node http request:257fa79.49c3958
+3 Jul 11:46:45 - [trace] Stopping node function:36732106.f9b61e
+3 Jul 11:46:45 - [trace] Stopping node http request:1d3190f7.854dff
+3 Jul 11:46:45 - [trace] Stopping node http request:f7bba58.5ccd558
+3 Jul 11:46:45 - [trace] Stopping node debug:9218f5b5.c84f68
+3 Jul 11:46:45 - [trace] Stopping node debug:d48a0655.33d468
+3 Jul 11:46:45 - [debug] red/nodes/flows.stop : stopping flow : global
+3 Jul 11:46:45 - [trace] [flow:global] stop flow
+3 Jul 11:46:45 - [trace] Stopping node mqtt-broker:3093d240.b2a7b6
+3 Jul 11:46:45 - [trace] Stopped node http request:4d8b457.78b78bc (28ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:6b1db7e3.efde18 (27ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:c7c95c65.b17aa (27ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:959a4477.f0e458 (27ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:7731bb78.401924 (27ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:1158087f.21d838 (27ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:c5fc29c9.5e9938 (27ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:a707de11.83eca (27ms)
+3 Jul 11:46:45 - [trace] Stopped node json:2dc63d35.51e7f2 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node change:6efda69d.d03fb8 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:58b9166c.0b9a58 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:343cc06.de9ab4 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:45bd993f.ff9598 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:769042f1.361bcc (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:ed2b53a1.93dec (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:b1ad17e8.92f608 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:7107236d.3b4fcc (25ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:99a031ba.19fc1 (26ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:7138442.70700bc (25ms)
+3 Jul 11:46:45 - [trace] Stopped node delay:bddfeb56.02f338 (25ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:eb8737d.fff2ac8 (25ms)
+3 Jul 11:46:45 - [trace] Stopped node delay:cda3322e.e9fc5 (25ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:9fbfd1bf.46e84 (25ms)
+3 Jul 11:46:45 - [trace] Stopped node delay:d9dc10b0.3797f (25ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:bbaf4613.dd9b48 (24ms)
+3 Jul 11:46:45 - [trace] Stopped node function:eb6591e9.8e68c (24ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:93e2bd23.6e788 (24ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:ba94a401.86dc78 (23ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:cf2d9457.460828 (23ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a9bece7b.cef7b (24ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:1037edac.adcffa (24ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:b1a1c50f.cf6a6 (23ms)
+3 Jul 11:46:45 - [trace] Stopped node change:43a97207.f97f8c (23ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:96b8adb8.c3575 (23ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:c02a91ce.ab4948 (23ms)
+3 Jul 11:46:45 - [trace] Stopped node trigger:b8fc75ca.add948 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node change:15653af.de6c2c5 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:149a711e.8c4047 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:5ab4a9f6.99ff7 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:9810061.3a4d6f8 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:601a2ce4.94ede4 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node json:153b6a8.06dd196 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node change:63c0b8a1.59b848 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:e70d5de1.6b55 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:f1772f13.a44b9 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:c9607e89.26a8c (22ms)
+3 Jul 11:46:45 - [trace] Stopped node change:6c0b37b4.84b4b8 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:b80e7e26.94615 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:a884758c.6cce58 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node change:a27527bb.617d08 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node change:f574aca2.3b59d (22ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a23349bf.1f98e8 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a121d1e7.2c0c5 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:47732c89.7bf7b4 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node json:e467dc04.863cc (21ms)
+3 Jul 11:46:45 - [trace] Stopped node change:912cb264.defa (21ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:983dbbdb.55a0b8 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:e75420f.ba28ee (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a19cc670.074c68 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node change:6b7d9f89.bd1ac (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:b87ed4e5.8751f8 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:a133ece4.c0685 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node change:46d20cbf.f79e54 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node change:bef20ab2.684008 (22ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:88eb9dd3.145588 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:2369d4b4.bbe9c4 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:728a9e7a.add708 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:183fab72.e0f9c5 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:e87dd13f.a7ffa8 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:806e684.36cb818 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node trigger:8065596a.e2fa3 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:343ffaf9.d6bbf6 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node function:a0ef6323.fbce8 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node function:21a16da0.5bf9d2 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node function:7edbafbd.d6a1f8 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:efd8e7d8.1319b (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:97f9bb14.682c (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:bb377679.5e616 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:1cc8ba2b.b3b0e6 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:ebb53b3.445e148 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node function:1fb6a93d.a93697 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node function:c48cbfd6.d01f78 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:5de856d0.cac548 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node json:3ce146e7.4597ea (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:c1552c08.2db19 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:9a818929.792b68 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:385af0f8.97864 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:eabb08b7.39e4c8 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:5b2dad57.ece124 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:a18cf121.1aac18 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:5a907311.e99fe4 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node join:72b07f25.b95e9 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:f23a0331.5a2fd8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:c6570a53.5b3c68 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:c55a7640.6179e (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:88fdf1ee.11e7c (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:fec54733.c342d (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:7f215d57.43d504 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:e635e855.afe9f8 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:f30c0870.5f7bd (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:30b1499.28a3ab6 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:d8f1f9e9.b21f5 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:eb0af6f1.90d48 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:27c2c235.d50f0e (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:d5cd6c31.4f0e8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:636ca4b6.82312c (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:98619d0c.08034 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:e67f3d58.f05898 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:cf6fb6d3.9b4918 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:c253be35.37f98 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:d0bedbbd.af403 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:326f25e2.066fa2 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:3815e24.67b219e (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:e24a8fb7.7de628 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:cd7659fa.aebe68 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:6673cd8f.ac409c (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:e91dde.6cada22 (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:d3031951.104ab (20ms)
+3 Jul 11:46:45 - [trace] Stopped node function:c6123318.7ea85 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:cc381173.701be8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:94b66706.cbec38 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:f8d25d73.d1f1c8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node time-range-switch:9f0874d0.2f08b8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:584e8a1b.fabc64 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:45cc4bad.a43cb4 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:1dc99e01.78d922 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:a2acb5f5.afebf8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:b0b3241f.fbedb8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:2d41222.9441bde (19ms)
+3 Jul 11:46:45 - [trace] Stopped node function:38a3a0c1.e8156 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:affa8c91.19e71 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:22691784.ba889 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:42c93108.a97008 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node change:b5acc8db.fefb8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:21d9c907.247dee (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:cd11cc6f.2cb1f8 (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:e917be12.a291e (19ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:24978c81.0ef6ac (18ms)
+3 Jul 11:46:45 - [trace] Stopped node join:65ff6df.ff81c94 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:76b1bf24.0eab28 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:e8a9a700.b8e8a8 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:eecd9ae.7750b68 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:40571883.87c1f8 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:6e4481e4.b78918 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:55571b46.66d38c (18ms)
+3 Jul 11:46:45 - [trace] Stopped node join:971bda92.db8648 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:80d726e.b86b6d8 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:3a48de17.0f9dc2 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:5e163faa.7e9818 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a1b409f4.95ab6 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:f978bdd0.b66a4 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:7bdc507b.712fc8 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:d2408a11.ca165 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:368f237.29bc8dc (18ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:2bf76090.02521 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:d7910e51.c1c1f (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:3d73ab0c.7358bc (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:90a8b487.2267d (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:5ce7e6b4.7c18d8 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node change:5fb53a71.306e64 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:65bb403b.68fbc (17ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:d8324404.1d11f8 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:946115cc.45dab (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:dea77fd.b480f8 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node inject:d1bb48a3.b58e7 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:d58ee39c.145418 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:1136b4fa.d28db3 (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:17d323ee.64839c (18ms)
+3 Jul 11:46:45 - [trace] Stopped node change:ea7a0db0.53adf (18ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:1dda7437.4b2a9c (16ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:17b53830.b2dd1 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:57833fd6.c06ac (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:7ab96f40.b0875 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:463013ba.d304a4 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:2f54d446.6fd7cc (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:11511988.42f3ae (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:d3aa4aa7.24ac48 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:bfd39211.150688 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:cc3bc3e9.8272b8 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:7a4ea61f.f76bd (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:7d565f64.93e8a (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:c2973368.aeae1 (15ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:77d7d371.069d5c (15ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:aa36e385.b56f8 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:7f07fa50.970e34 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:8d891e0a.ec5bf (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:7ee3a7ac.c57088 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node json:7665c115.b9822 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node change:650d3adb.b1a334 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:77c60c34.e50644 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:a55e45b5.54c228 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:7e6d2bf4.ca4a04 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:d3d463c1.8f51d (17ms)
+3 Jul 11:46:45 - [trace] Stopped node comment:f8a8eb59.434698 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:903154c2.f557a8 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node json:e18b35fe.b1cb18 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node change:2902e85c.fea898 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node change:48952100.f09cb (16ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:efd1ae76.52573 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:8c42b0ff.93ed6 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:9e832dfa.8182 (17ms)
+3 Jul 11:46:45 - [trace] Stopped node change:93299777.ee2f48 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node switch:56385519.b1378c (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:55ab2644.aa9108 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:257fa79.49c3958 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node function:36732106.f9b61e (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:1d3190f7.854dff (16ms)
+3 Jul 11:46:45 - [trace] Stopped node http request:f7bba58.5ccd558 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:9218f5b5.c84f68 (16ms)
+3 Jul 11:46:45 - [trace] Stopped node debug:d48a0655.33d468 (15ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:311127b8.b7392 (38ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt out:fd38545d.48e338 (36ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:905acf0d.19753 (36ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:a9674f77.6eafe (30ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt out:ff77e3a1.882a28 (30ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:48a6ec53.e707bc (29ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt out:6891583d.7005e8 (28ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:122f0f18.63b6b1 (25ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:955c515b.d2526 (21ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt out:e1a75970.f83b18 (20ms)
+3 Jul 11:46:45 - [info] [mqtt-broker:Mosquitto MQTT] Disconnected from broker: mqtt://192.168.29.13:1883
+3 Jul 11:46:45 - [trace] Stopped node mqtt-broker:3093d240.b2a7b6 (30ms)
+3 Jul 11:46:45 - [trace] Stopped node mqtt in:842be063.c698c (32ms)
+3 Jul 11:46:45 - [info] Stopped flows
