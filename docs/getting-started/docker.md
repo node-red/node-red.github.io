@@ -234,8 +234,8 @@ FROM nodered/node-red
 
 # Copy package.json to the WORKDIR so npm builds all
 # of your added nodes modules for Node-RED
-COPY package.json .
-RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
+COPY package.json /data/package.json
+RUN cd /data && npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
 # Copy _your_ Node-RED project files into place
 # NOTE: This will only work if you DO NOT later mount /data as an external volume.
@@ -289,6 +289,8 @@ To _run_ locally for development where changes are written immediately and only 
 ```bash
 docker run --rm -e "NODE_RED_CREDENTIAL_SECRET=your_secret_goes_here" -p 1880:1880 -v `pwd`:/data --name a-container-name your-image-name
 ```
+
+**NOTE:** If using the above command, ensure that your local directory does **not** contain a `node_modules` directory as that local directory will supersede the one that Docker built for you, possibly causing problems.
 
 ### Startup
 
