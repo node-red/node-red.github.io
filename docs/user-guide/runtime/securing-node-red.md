@@ -64,7 +64,7 @@ https: function() {
         // ...
         resolve({
             key: key
-            cert: ccert
+            cert: cert
         })
     });
 }
