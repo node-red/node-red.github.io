@@ -17,7 +17,7 @@ re-program the Arduino from the IDE.
 
 ### Arduino Cloud
 
-[Arduino Cloud](https://cloud.arduino.cc) allows to interact with IoT devices by using APIs. 
+[Arduino Cloud](https://cloud.arduino.cc) allows to interact with Arduino boards registered as Internet-Of-Things devices. 
 Nodes are available to be installed in the palette to easily poll data from IoT devices, or receive real-time notifications (see https://flows.nodered.org/node/@arduino/node-red-contrib-arduino-iot-cloud for details and installation).
 
 
