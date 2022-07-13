@@ -41,8 +41,9 @@ Here are the key points you need to know when migrating to Node-RED 3.x.
 
  - Node.js 14.x or later required
  - Internet Explorer no longer supported
- - Choose if you want to enable the [Stopping Flows](#) feature
- - Choose if you want to *disable* the [Runtime Diagnostics](#) feature
+ - Choose if you want to enable the [Stopping Flows](#editing-stopped-flows) feature
+ - Choose if you want to *disable* the [Runtime Diagnostics](#diagnostic-report) feature
+ - Choose if you want to switch to the [Monaco editor](#monaco-text-editor) (if you haven't already).
 
 ## Editor Features
 
