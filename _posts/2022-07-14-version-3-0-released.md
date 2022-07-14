@@ -77,7 +77,7 @@ its ports - just as you do with nodes.
 Junctions do not appear as regular nodes in the palette or flow outline, but can be
 added through the quick-add dialog (Ctrl-click in the workspace) or the new Context Menu.
 
-![](/blog/content/images/2022/07/junction-quick-add.png)
+![](/blog/content/images/2022/07/jucntion-quick-add.png)
 
 You can also insert a Junction into an existing wire by slicing through it with the
 mouse by holding <kbd>alt-shift</kbd> when dragging across the wire. Note that some OS might
