@@ -10,7 +10,7 @@ The [Change Log]() has the full list of changes in this release, but here are th
 
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eTEbqZcumz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R9bV2MytHr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
  - [Migrating from Node-RED 2.x](#migrating-from-node-red-2x)
@@ -53,7 +53,7 @@ We have (finally) added a right-click context menu in the workspace. This gives
 you quick access to a lot of built-in actions in the editor and should help users
 discover more of the features available.
 
-![context-menu|607x500, 50%](upload://ahr3u6whLJuID0ss5KwePrLuwcr.png)
+![](/blog/content/images/2022/07/context.png)
 
 Picking what options should be in the menu hasn't been a simple task. There are
 a lot of things that could have been included - so we had to get the right balance
@@ -72,8 +72,12 @@ When you hover over a Junction, it expands to show input and output ports. You c
 move the junction by dragging its body, or add a wire by click/dragging on one of
 its ports - just as you do with nodes.
 
+![](/blog/content/images/2022/07/junctions.gif)
+
 Junctions do not appear as regular nodes in the palette or flow outline, but can be
 added through the quick-add dialog (Ctrl-click in the workspace) or the new Context Menu.
+
+![](/blog/content/images/2022/07/junction-quick-add.png)
 
 You can also insert a Junction into an existing wire by slicing through it with the
 mouse by holding <kbd>alt-shift</kbd> when dragging across the wire. Note that some OS might
@@ -90,14 +94,14 @@ easier to identify exactly which node generated the message.
 
 Clicking on any item in the list will reveal it in the workspace.
 
-![debug-path-tooltip|598x274, 50%](upload://1IJSO7heZ9hnNqjD3Fcd6546NF8.png)
+![](/blog/content/images/2022/07/debug-tooltip.png)
 
 ### Continuous Search
 
 When searching for things in the editor, a new toolbar in the workspace provides
 options to quickly jump between the search results.
 
-![continuous-search|416x176, 50%](upload://7vvruWEZmJWtfnDgAhn5DtikKHf.png)
+![](/blog/content/images/2022/07/search.png)
 
 We've added a pair of new actions to help navigate the results:
 
@@ -107,14 +111,14 @@ We've added a pair of new actions to help navigate the results:
 We've also added some more predefined searches, including the ability to restrict
 the search to the current flow.
 
-![search-options]()
+![](/blog/content/images/2022/07/search-options.png)
 
 ### Default node names
 
 The `Debug`, `Function` and `Link` nodes are now given unique default names when
 they are added to the workspace.
 
-![jkLU8QXabF|254x147](upload://8PawhSXjITrBs1SQwQWO8NZ8G96.gif)
+![](/blog/content/images/2022/07/node-names.gif)
 
 This capability could be added to any node, including contrib nodes, via their
 `onadd` function. We chose just this initial set as they were the ones that would
@@ -151,7 +155,7 @@ We introduced the Welcome Tour back in 2.1.0 and it has been updated for each
 release. With this release, we've added a way to access the tours of the previous
 releases in the Help sidebar:
 
- ![image|641x500, 50%](upload://6GMUsps3wKbIrTu7dtYwADoTV61.png)
+![](/blog/content/images/2022/07/tours.png)
 
 ## Runtime Features
 
@@ -175,7 +179,7 @@ runtimeState: {
 
 With that set, you get a new option in the Deploy menu:
 
-![image|423x500, 50%](upload://oBjmzIfhHHT9Sb3BcK85dowefgv.png)
+![](/blog/content/images/2022/07/deploy-stop.png)
 
 Clicking that option will stop the flows running, but you can continue editing
 them and deploy changes. Whilst stopped, the Inject/Debug node buttons will be
@@ -183,7 +187,7 @@ disabled.
 
 When the flows are stopped, the menu shows a start option instead:
 
-![image|690x239, 50%](upload://glg1LTUOjHllLR4EOOfXPmRJojX.png)
+![](/blog/content/images/2022/07/deploy-start.png)
 
 ### Diagnostic Report
 
