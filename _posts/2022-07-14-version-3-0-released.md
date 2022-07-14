@@ -241,7 +241,7 @@ it should call.
 The Template node can now access environment variables using the syntax:
 
 ```
-My favourite colour is {{env.COLOUR}}.
+{% raw %}My favourite colour is {{env.COLOUR}}.{% endraw %}
 ```
 
 ### Debug node message count
