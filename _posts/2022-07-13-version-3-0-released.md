@@ -76,7 +76,7 @@ Junctions do not appear as regular nodes in the palette or flow outline, but can
 added through the quick-add dialog (Ctrl-click in the workspace) or the new Context Menu.
 
 You can also insert a Junction into an existing wire by slicing through it with the
-mouse by holding `Alt-Shift` when dragging across the wire. Note that some OS might
+mouse by holding <kbd>alt-shift</kbd> when dragging across the wire. Note that some OS might
 use that same combination to move the active window, so this won't work there. We
 don't yet have a way to allow the mouse actions to be customised, so users affected
 by that would have to use the other methods to add Junctions.
@@ -101,8 +101,8 @@ options to quickly jump between the search results.
 
 We've added a pair of new actions to help navigate the results:
 
- - `core:search-previous` - shortcut: `shift-f`
- - `core:search-next` - shortcut: `f`
+ - `core:search-next` - shortcut: <kbd>f</kbd>
+ - `core:search-previous` - shortcut: <kbd>shift-f</kbd>
 
 We've also added some more predefined searches, including the ability to restrict
 the search to the current flow.
