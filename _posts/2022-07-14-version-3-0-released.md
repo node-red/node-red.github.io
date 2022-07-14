@@ -6,7 +6,7 @@ author: nick
 
 Node-RED 3.0 is now available to [install](https://npmjs.org/package/node-red). If upgrading, please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).
 
-The [Change Log]() has the full list of changes in this release, but here are the highlights.
+The [Change Log](https://github.com/node-red/node-red/blob/1b94cc3ac027bfc38a300867a0b0fd635bf273b8/CHANGELOG.md) has the full list of changes in this release, but here are the highlights.
 
 ---
 
