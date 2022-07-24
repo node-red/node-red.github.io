@@ -21,6 +21,11 @@ properties are ignored and are left to the embedding application to implement.
 flowFile
 : the file used to store the flows. Default: `flows_<hostname>.json`
 
+flowFilePretty
+:  By default, the flow JSON will be formatted over multiple lines making
+     it easier to compare changes when using version control.
+     To disable pretty-printing of the JSON set the following property to false. Default: `flowFilePretty: true`
+
 userDir
 : the directory to store all user data, such as flow and credential files and all
   library data. Default: `$HOME/.node-red`
@@ -33,14 +38,21 @@ nodesDir
 
 uiHost
 : the interface to listen for connections on. Default: `0.0.0.0` -
-  *all IPv4 interfaces*.
-
+  By default, the Node-RED UI accepts connections on all IPv4 interfaces.
+  To listen on all IPv6 addresses, set uiHost to "::",
+  The following property can be used to listen on a specific interface. For
+  example, the following would only allow connections from the local machine.
+  
   *Standalone only*.
 
 uiPort
 : the port used to serve the editor UI. Default: `1880`.
 
   *Standalone only*.
+
+  apiMaxLength
+  : The maximum size of HTTP request that will be accepted by the runtime api.
+     Default: `apiMaxLength: '5mb',`
 
 httpAdminRoot
 : the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
@@ -122,7 +134,19 @@ logging
  - **debug** - record information which is more verbose than info + info + warn + error + fatal errors
  - **trace** - record very detailed logging + debug + info + warn + error + fatal errors
 
-The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".        
+The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".
+
+diagnosticsOptions
+: Configure diagnostics options.
+
+    diagnosticsOptions: {
+        /** @type {boolean} enable or disable diagnostics. Must be set to `false` to disable */
+        enabled: true,
+        /** @type {"basic"|"admin"} diagnostic level can be "basic" (default) or "admin" (more sensitive details are included) */
+        level: "basic",
+    },
+
+When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
 
 externalModules
 : Configure how the runtime will handle external npm modules. This covers:
@@ -133,20 +157,26 @@ externalModules
   will install/load. It can use `*` as a wildcard that matches anything.
 
       externalModules: {
-         autoInstall: false,
-         autoInstallRetry: 30,
-         palette: {
-            allowInstall: true,
-            allowUpload: true,
-            allowList: [],
-            denyList: []
-         },
-         modules: {
-            allowInstall: true,
-            allowList: [],
-            denyList: []
-         }
-      }
+         // autoInstall: false,   /** Whether the runtime will attempt to automatically install missing modules */
+         // autoInstallRetry: 30, /** Interval, in seconds, between reinstall attempts */
+         // palette: {              /** Configuration for the Palette Manager */
+         //     allowInstall: true, /** Enable the Palette Manager in the editor */
+         //     allowUpdate: true,  /** Allow modules to be updated in the Palette Manager */
+         //     allowUpload: true,  /** Allow module tgz files to be uploaded and installed */
+         //     allowList: ['*'],
+         //     denyList: [],
+         //     allowUpdateList: ['*'],
+         //     denyUpdateList: []
+         // },
+         // modules: {              /** Configuration for node-specified modules */
+         //     allowInstall: true,
+         //     allowList: [],
+         //     denyList: []
+         // }
+      },
+
+functionExternalModules
+: Allow the Function node to load additional npm modules directly. Default: `true`
 
 ### Editor Configuration
 
