@@ -170,7 +170,8 @@ logging: {
 The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".
 
 lang
-: the following option is to run node-red in your preferred language. Available languages include: en-US (default), ja, de, zh-CN, zh-TW, ru, ko Some languages are more complete than others. Example: `lang: "de",`
+: the following option is to run node-red in your preferred language.<br/> 
+Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. Some languages are more complete than others.
 
 diagnosticsOptions
 : Configure diagnostics options.
@@ -325,8 +326,7 @@ to any already defined **httpNodeRoot**
 Any node type can define its own settings to be provided in the file.
 
 functionGlobalContext
-: Function Nodes - a collection of objects to attach to the global function
-  context. For example,
+: Function Nodes - a collection of objects to attach to the global function context. For example,
 
       functionGlobalContext: { osModule:require('os') }
 
