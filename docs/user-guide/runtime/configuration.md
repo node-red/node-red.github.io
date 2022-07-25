@@ -41,18 +41,17 @@ uiHost
   By default, the Node-RED UI accepts connections on all IPv4 interfaces.
   To listen on all IPv6 addresses, set uiHost to "::",
   The following property can be used to listen on a specific interface. For
-  example, the following would only allow connections from the local machine.
+  example, the following would only allow connections from the local machine `uiHost: "127.0.0.1",`
   
   *Standalone only*.
 
 uiPort
-: the port used to serve the editor UI. Default: `1880`.
+: the port used to serve the editor UI. Default: `process.env.PORT || 1880`.
 
   *Standalone only*.
 
-  apiMaxLength
-  : The maximum size of HTTP request that will be accepted by the runtime api.
-     Default: `apiMaxLength: '5mb',`
+apiMaxLength
+: The maximum size of HTTP request that will be accepted by the runtime api. Default: `apiMaxLength: '5mb',`
 
 httpAdminRoot
 : the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
@@ -90,10 +89,36 @@ httpRoot
 : this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
 
 https
-: enables https, with the specified options object, as defined
-  [here](http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
+: The following property can be used to enable HTTPS.
+  See [here](http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener) for details of its contents.
+  This property can be either an object, containing both a (private) key
+     * and a (public) certificate, or a function that returns such an object.
+
+```
+  /** Option 1: static object */
+  //https: {
+  //  key: require("fs").readFileSync('privkey.pem'),
+  //  cert: require("fs").readFileSync('cert.pem')
+  //},
+
+  /** Option 2: function that returns the HTTP configuration object */
+  // https: function() {
+  //     // This function should return the options object, or a Promise
+  //     // that resolves to the options object
+  //     return {
+  //         key: require("fs").readFileSync('privkey.pem'),
+  //         cert: require("fs").readFileSync('cert.pem')
+  //     }
+  // },
+```
 
   *Standalone only*.
+
+httpsRefreshInterval
+: If the `https` setting is a function, the following setting can be used to set how often, in hours, the function will be called. That can be used to refresh any certificates. `httpsRefreshInterval : 12,`
+
+requireHttps
+: The following property can be used to cause insecure HTTP connections to be redirected to HTTPS. `requireHttps: true,`
 
 disableEditor
 : if set to `true`, prevents the editor UI from being served by the runtime. The admin api endpoints remain active. Default: `false`.
@@ -133,8 +158,19 @@ logging
  - **info** - record information about the general running of the application + warn + error + fatal errors
  - **debug** - record information which is more verbose than info + info + warn + error + fatal errors
  - **trace** - record very detailed logging + debug + info + warn + error + fatal errors
-
+```
+logging: {
+    console: {
+          level: "info",
+          metrics: false, /** Whether or not to include metric events in the log output */
+          audit: false /** Whether or not to include audit events in the log output */
+    }
+},
+```
 The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".
+
+lang
+: the following option is to run node-red in your preferred language. Available languages include: en-US (default), ja, de, zh-CN, zh-TW, ru, ko Some languages are more complete than others. Example: `lang: "de",`
 
 diagnosticsOptions
 : Configure diagnostics options.
@@ -148,13 +184,27 @@ diagnosticsOptions
 
 When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
 
+runtimeState
+: enable or disable flows/state
+
+    runtimeState: {
+        /** enable or disable flows/state endpoint. Must be set to `false` to disable */
+        enabled: false,
+        /** show or hide runtime stop/start options in the node-red editor. Must be set to `false` to hide */
+        ui: false,
+    },
+
+exportGlobalContextKeys
+: `global.keys()` returns a list of all properties set in global context. This allows them to be displayed in the Context Sidebar within the editor. In some circumstances it is not desirable to expose them to the editor. The following property can be used to hide any property set in `functionGlobalContext` from being list by `global.keys()`.
+By default, the property is set to false to avoid accidental exposure of their values. Setting this to true will cause the keys to be listed.
+
+
 externalModules
-: Configure how the runtime will handle external npm modules. This covers:
-     - whether the editor will allow new node modules to be installed
+: Configure how the runtime will handle external npm modules. This covers:<br/>
+     - whether the editor will allow new node modules to be installed<br/>
      - whether nodes, such as the Function node are allowed to have their own dynamically configured dependencies.
 
-  The allow/denyList options can be used to limit what modules the runtime
-  will install/load. It can use `*` as a wildcard that matches anything.
+The allow/denyList options can be used to limit what modules the runtime will install/load. It can use `*` as a wildcard that matches anything.
 
       externalModules: {
          // autoInstall: false,   /** Whether the runtime will attempt to automatically install missing modules */
@@ -193,6 +243,13 @@ paletteCategories
 
    _Note_: Until the user creates a subflow the subflow category will be empty and will
    not be visible in the palette.
+
+debugUseColors
+: Colourise the console output of the debug node. Default: `true`
+
+debugMaxLength
+: Debug Nodes - the maximum length, in characters, of any message sent to the
+  debug sidebar tab. Default: `1000`
 
 ### Editor Themes
 
@@ -261,6 +318,7 @@ ui
 to any already defined **httpNodeRoot**
 
     ui : { path: "mydashboard" },
+   
 
 ### Node Configuration
 
@@ -283,26 +341,62 @@ functionGlobalContext
  This method is still supported, but deprecated in favour of the <code>global.get</code>/<code>global.set</code>
  functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
  </div>
+<br/>
+
+nodeMessageBufferMaxLength
+: The maximum number of messages nodes will buffer internally as part of their operation. This applies across a range of nodes that operate on message sequences. defaults to no limit. A value of 0 also means no limit is applied.
 
 functionExternalModules
 : if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `false`.
 
-debugMaxLength
-: Debug Nodes - the maximum length, in characters, of any message sent to the
-  debug sidebar tab. Default: 1000
-
 mqttReconnectTime
 : MQTT Nodes - if the connection is lost, how long to wait, in milliseconds,
-  before attempting to reconnect. Default: 5000
+  before attempting to reconnect. Default: `5000`
 
 serialReconnectTime
 : Serial Nodes - how long to wait, in milliseconds, before attempting to reopen
-  a serial port. Default: 5000
+  a serial port. Default: `5000`
 
 socketReconnectTime
 : TCP Nodes - how long to wait, in milliseconds, before attempting to reconnect.
-  Default: 10000
+  Default: `10000`
 
 socketTimeout
 : TCP Nodes - how long to wait, in milliseconds, before timing out a socket.
-  Default: 120000
+  Default: `120000`
+
+tcpMsgQueueSize
+: Maximum number of messages to wait in queue while attempting to connect to TCP socket. Defaults to 1000
+
+inboundWebSocketTimeout
+: Timeout in milliseconds for inbound WebSocket connections that do not match any configured node. Defaults to `5000`
+
+tlsConfigDisableLocalFiles
+: To disable the option for using local files for storing keys and certificates in the TLS configuration node, set this to `true`
+
+execMaxBufferSize
+: Maximum buffer size for the exec node. Defaults to 10Mb. `execMaxBufferSize: 10000000`
+
+httpRequestTimeout
+: Timeout in milliseconds for HTTP request connections. Defaults to 120s. Setting in ms `120000`
+
+webSocketNodeVerifyClient
+: The following property can be used to verify websocket connection attempts. This allows, for example, the HTTP request headers to be checked to ensure they include valid authentication information.
+```
+//webSocketNodeVerifyClient: function(info) {
+    //    /** 'info' has three properties:
+    //    *   - origin : the value in the Origin header
+    //    *   - req : the HTTP request
+    //    *   - secure : true if req.connection.authorized or req.connection.encrypted is set
+    //    *
+    //    * The function should return true if the connection should be accepted, false otherwise.
+    //    *
+    //    * Alternatively, if this function is defined to accept a second argument, callback,
+    //    * it can be used to verify the client asynchronously.
+    //    * The callback takes three arguments:
+    //    *   - result : boolean, whether to accept the connection or not
+    //    *   - code : if result is false, the HTTP error status to return
+    //    *   - reason: if result is false, the HTTP reason string to return
+    //    */
+    //},
+```
