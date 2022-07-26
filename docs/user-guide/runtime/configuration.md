@@ -345,27 +345,15 @@ editorTheme: {
 ```
 
 ### Node Settings
-
-debugUseColors
-: Colourise the console output of the debug node. Default: `true`
-
-debugMaxLength
-: Debug Nodes - the maximum length, in characters, of any message sent to the
-  debug sidebar tab. Default: `1000`
-
-
-### Dashboard
-
-ui
-: The home path for the Node-RED-Dashboard add-on nodes can specified. This is relative
-to any already defined **httpNodeRoot**. Example: `ui: { path: "mydashboard" },`
-   
-
-### Node Configuration
-
 Any node type can define its own settings to be provided in the file.
 
-functionGlobalContext
+**fileWorkingDirectory**
+: The working directory to handle relative file paths from within the File nodes defaults to the working directory of the Node-RED process.
+
+**functionExternalModules**
+: if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `true`.
+
+**functionGlobalContext**
 : Function Nodes - a collection of objects to attach to the global function context. For example:
 
 `functionGlobalContext: { osModule:require('os') }`
@@ -378,44 +366,59 @@ can be accessed in a function node as:
  way to use global context was to access it as a sub-property of context: <code>context.global.foo = "bar"; var osModule = context.global.osModule;</code>This method is still supported, but deprecated in favour of the <code>global.get</code>/ <code>global.set</code> functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
 </div>
 
-nodeMessageBufferMaxLength
+
+**nodeMessageBufferMaxLength**
 : The maximum number of messages nodes will buffer internally as part of their operation. This applies across a range of nodes that operate on message sequences. defaults to no limit. A value of `0` also means no limit is applied.
 
-functionExternalModules
-: if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `false`.
+**ui**
+: The home path for the Node-RED-Dashboard add-on nodes can specified. This is relative
+to any already defined **httpNodeRoot**. <br />Example: `ui: { path: "mydashboard" },`
+Other optional properties include : 
+```
+readOnly:{boolean},
+middleware:{function or array}, (req,res,next) - http middleware
+ioMiddleware:{function or array}, (socket,next) - socket.io middleware
+```
 
-mqttReconnectTime
+**debugUseColors**
+: Colourise the console output of the debug node. Default: `true`
+
+**debugMaxLength**
+: Debug Nodes - the maximum length, in characters, of any message sent to the
+  debug sidebar tab. Default: `1000`
+
+**execMaxBufferSize**
+: Maximum buffer size for the exec node. Defaults to 10Mb. `execMaxBufferSize: 10000000`
+
+**httpRequestTimeout**
+: Timeout in milliseconds for HTTP request connections. Defaults to 120s. Setting in ms `120000`
+
+**mqttReconnectTime**
 : MQTT Nodes - if the connection is lost, how long to wait, in milliseconds,
   before attempting to reconnect. Default: `5000`
 
-serialReconnectTime
+**serialReconnectTime**
 : Serial Nodes - how long to wait, in milliseconds, before attempting to reopen
   a serial port. <br />Default: `5000`
 
-socketReconnectTime
+**socketReconnectTime**
 : TCP Nodes - how long to wait, in milliseconds, before attempting to reconnect.
   Default: `10000`
 
-socketTimeout
+**socketTimeout**
 : TCP Nodes - how long to wait, in milliseconds, before timing out a socket.
   Default: `120000`
 
-tcpMsgQueueSize
+**tcpMsgQueueSize**
 : Maximum number of messages to wait in queue while attempting to connect to TCP socket. Defaults to `1000`
 
-inboundWebSocketTimeout
+**inboundWebSocketTimeout**
 : Timeout in milliseconds for inbound WebSocket connections that do not match any configured node. Defaults to `5000`
 
-tlsConfigDisableLocalFiles
+**tlsConfigDisableLocalFiles**
 : To disable the option for using local files for storing keys and certificates in the TLS configuration node, set this to `true`
 
-execMaxBufferSize
-: Maximum buffer size for the exec node. Defaults to 10Mb. `execMaxBufferSize: 10000000`
-
-httpRequestTimeout
-: Timeout in milliseconds for HTTP request connections. Defaults to 120s. Setting in ms `120000`
-
-webSocketNodeVerifyClient
+**webSocketNodeVerifyClient**
 : The following property can be used to verify websocket connection attempts. This allows, for example, the HTTP request headers to be checked to ensure they include valid authentication information.
 ```
 //webSocketNodeVerifyClient: function(info) {
