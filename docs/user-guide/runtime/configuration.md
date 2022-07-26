@@ -26,6 +26,9 @@ flowFilePretty
      it easier to compare changes when using version control.
      To disable pretty-printing of the JSON set the following property to false. Default: `flowFilePretty: true`
 
+credentialSecret
+: By default, credentials are encrypted in storage using a generated key. To specify your own secret, set the following property. If you want to disable encryption of credentials, set this property to false. Note: once you set this property, do not change it - doing so will prevent node-red from being able to decrypt your existing credentials and they will be lost.
+
 userDir
 : the directory to store all user data, such as flow and credential files and all
   library data. Default: `$HOME/.node-red`
@@ -51,7 +54,7 @@ uiPort
   *Standalone only*.
 
 apiMaxLength
-: The maximum size of HTTP request that will be accepted by the runtime api. Default: `apiMaxLength: '5mb',`
+: The maximum size of HTTP request that will be accepted by the runtime api.<br/>Default: `apiMaxLength: '5mb',`
 
 httpAdminRoot
 : the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
@@ -175,25 +178,26 @@ Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. So
 
 diagnosticsOptions
 : Configure diagnostics options.
-
+```
     diagnosticsOptions: {
         /** @type {boolean} enable or disable diagnostics. Must be set to `false` to disable */
         enabled: true,
         /** @type {"basic"|"admin"} diagnostic level can be "basic" (default) or "admin" (more sensitive details are included) */
         level: "basic",
     },
-
+```
 When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
 
 runtimeState
 : enable or disable flows/state
-
+```
     runtimeState: {
         /** enable or disable flows/state endpoint. Must be set to `false` to disable */
         enabled: false,
         /** show or hide runtime stop/start options in the node-red editor. Must be set to `false` to hide */
         ui: false,
     },
+```
 
 exportGlobalContextKeys
 : `global.keys()` returns a list of all properties set in global context. This allows them to be displayed in the Context Sidebar within the editor. In some circumstances it is not desirable to expose them to the editor. The following property can be used to hide any property set in `functionGlobalContext` from being list by `global.keys()`.
@@ -316,9 +320,7 @@ The theme of the editor can be changed by using the following settings object. A
 
 ui
 : The home path for the Node-RED-Dashboard add-on nodes can specified. This is relative
-to any already defined **httpNodeRoot**
-
-    ui : { path: "mydashboard" },
+to any already defined **httpNodeRoot**. Example: `ui: { path: "mydashboard" },`
    
 
 ### Node Configuration
@@ -326,25 +328,20 @@ to any already defined **httpNodeRoot**
 Any node type can define its own settings to be provided in the file.
 
 functionGlobalContext
-: Function Nodes - a collection of objects to attach to the global function context. For example,
+: Function Nodes - a collection of objects to attach to the global function context. For example:
 
-      functionGlobalContext: { osModule:require('os') }
+`functionGlobalContext: { osModule:require('os') }`
 
-  can be accessed in a function node as:
+can be accessed in a function node as:
 
-      var myos = global.get('osModule');
+`var myos = global.get('osModule');`
 
- <div class="doc-callout"><em>Note</em> : Prior to Node-RED v0.13, the documented
- way to use global context was to access it as a sub-property of <code>context</code>:
- <pre>context.global.foo = "bar";
- var osModule = context.global.osModule;</pre>
- This method is still supported, but deprecated in favour of the <code>global.get</code>/<code>global.set</code>
- functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
- </div>
-<br/>
+<div class="doc-callout"><em>Note</em> : Prior to Node-RED v0.13, the documented
+ way to use global context was to access it as a sub-property of context: <code>context.global.foo = "bar"; var osModule = context.global.osModule;</code>This method is still supported, but deprecated in favour of the <code>global.get</code>/ <code>global.set</code> functions. Any data stored using this method will not be persisted across restarts and will not be visible in the sidebar context viewer.
+</div>
 
 nodeMessageBufferMaxLength
-: The maximum number of messages nodes will buffer internally as part of their operation. This applies across a range of nodes that operate on message sequences. defaults to no limit. A value of 0 also means no limit is applied.
+: The maximum number of messages nodes will buffer internally as part of their operation. This applies across a range of nodes that operate on message sequences. defaults to no limit. A value of `0` also means no limit is applied.
 
 functionExternalModules
 : if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `false`.
@@ -355,7 +352,7 @@ mqttReconnectTime
 
 serialReconnectTime
 : Serial Nodes - how long to wait, in milliseconds, before attempting to reopen
-  a serial port. Default: `5000`
+  a serial port. <br />Default: `5000`
 
 socketReconnectTime
 : TCP Nodes - how long to wait, in milliseconds, before attempting to reconnect.
@@ -366,7 +363,7 @@ socketTimeout
   Default: `120000`
 
 tcpMsgQueueSize
-: Maximum number of messages to wait in queue while attempting to connect to TCP socket. Defaults to 1000
+: Maximum number of messages to wait in queue while attempting to connect to TCP socket. Defaults to `1000`
 
 inboundWebSocketTimeout
 : Timeout in milliseconds for inbound WebSocket connections that do not match any configured node. Defaults to `5000`
