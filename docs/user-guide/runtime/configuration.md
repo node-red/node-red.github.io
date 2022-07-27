@@ -17,20 +17,20 @@ are passed in the call to `RED.init()`. However, when run in this mode, certain
 properties are ignored and are left to the embedding application to implement.
 
 The settings are split into the following sections:
-- Flow File and User Directory Settings
+- Flow File and User Directory
 - Security
-- Server Settings
-- Runtime Settings
-- Editor Settings
-- Node Settings
+- Server 
+- Runtime
+- Editor
+- Node
  
-### Flow File and User Directory Settings
+### Flow File and User Directory
 
 **flowFile**
 : the file used to store the flows. Default: `flows.json`
 
 **credentialSecret**
-: By default, credentials are encrypted in storage using a generated key. To specify your own secret, set the following property. If you want to disable encryption of credentials, set this property to false. Note: once you set this property, do not change it - doing so will prevent node-red from being able to decrypt your existing credentials and they will be lost.
+: By default, credentials are encrypted in storage using a generated key. To specify your own secret, set the following property. If you want to disable encryption of credentials, set this property to false. Note: once you set this property, do not change it - doing so will prevent node-red from being able to decrypt your existing credentials and they will be lost. Example: `credentialSecret: "a-secret-key",`
 
 **flowFilePretty**
 :  By default, the flow JSON will be formatted over multiple lines making
@@ -91,7 +91,7 @@ The settings are split into the following sections:
 **httpStaticAuth**
 : enabled HTTP Basic Authentication on the static content. See `adminAuth` for format.
 
-### Server Settings
+### Server
 
 **uiPort**
 : the port used to serve the editor UI. Default: `process.env.PORT || 1880`.
@@ -191,7 +191,7 @@ httpRoot
 : this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
 
 
-### Runtime Settings
+### Runtime
 
 **lang**
 : the following option is to run node-red in your preferred language.<br/> 
@@ -275,10 +275,7 @@ The allow/denyList options can be used to limit what modules the runtime will in
       },
 ```
 
-**functionExternalModules**
-: Allow the Function node to load additional npm modules directly. Default: `true`
-
-### Editor Settings
+### Editor
 
 **disableEditor**
 : if set to `true`, prevents the editor UI from being served by the runtime. The admin api endpoints remain active. Default: `false`.
@@ -344,7 +341,7 @@ editorTheme: {
 
 ```
 
-### Node Settings
+### Node
 Any node type can define its own settings to be provided in the file.
 
 **fileWorkingDirectory**
