@@ -17,7 +17,8 @@ This guide shows how the service can be customised for some common scenarios.
 
 The service comes configured for the `pi` user. To change which user it runs as,
 edit the service definition `/lib/systemd/system/nodered.service` and change the
-`User`, `Group` and `WorkingDirectory` lines as appropriate:
+`User`, `Group` and `WorkingDirectory` lines as appropriate. You can also set the 
+amount of memory space to use in MB.
 
 ```yaml
 [Service]
@@ -26,8 +27,8 @@ Type=simple
 User=<your_user>
 Group=<your_user>
 WorkingDirectory=/home/<your_user>
-Nice=5
-Environment="PI_NODE_OPTIONS=--max_old_space_size=256"
+
+Environment="NODE_OPTIONS=--max_old_space_size=256"
 ...
 ```
 
@@ -52,7 +53,7 @@ another `Environment=...` line. For example:
 ```yaml
 ...
 Nice=5
-Environment="NODE_OPTIONS=--max-old-space-size=128"
+Environment="NODE_OPTIONS=--max-old-space-size=256"
 Environment="HTTP_PROXY=my-proxy-server-address"
 ...
 ```
