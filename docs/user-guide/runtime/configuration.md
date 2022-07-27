@@ -150,7 +150,7 @@ The settings are split into the following sections:
     //},
 ```
 **httpStatic**
-: When httpAdminRoot is used to move the UI to a different root path, the following property can be used to identify a directory of static content that should be served at http://localhost:1880/. When httpStaticRoot is set differently to httpAdminRoot, there is no need to move httpAdminRoot
+: When httpAdminRoot is used to move the UI to a different root path, the following property can be used to identify a directory of static content that should be served at `http://localhost:1880/` When httpStaticRoot is set differently to httpAdminRoot, there is no need to move httpAdminRoot
 
 ```
    //httpStatic: '/home/nol/node-red-static/', //single static source
