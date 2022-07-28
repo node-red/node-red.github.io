@@ -7,7 +7,8 @@ redirect_from:
   - /docs/configuration
   - /docs/user-guide/configuration
 ---
-The following properties can be used to configure Node-RED.
+The following properties can be used to configure Node-RED.\
+*Please note that some of the options may not apply for older versions of Node-red.*
 
 When running as a normal application, it loads its configuration from a settings
 file. For more information about the settings file and where it is, read [this guide](settings-file).
@@ -59,22 +60,22 @@ The settings are split into the following sections:
   This property can be either an object, containing both a (private) key
      * and a (public) certificate, or a function that returns such an object.
 
-```
+```javascript
   /** Option 1: static object */
-  //https: {
-  //  key: require("fs").readFileSync('privkey.pem'),
-  //  cert: require("fs").readFileSync('cert.pem')
-  //},
+  https: {
+    key: require("fs").readFileSync('privkey.pem'),
+    cert: require("fs").readFileSync('cert.pem')
+  },
 
   /** Option 2: function that returns the HTTP configuration object */
-  // https: function() {
-  //     // This function should return the options object, or a Promise
-  //     // that resolves to the options object
-  //     return {
-  //         key: require("fs").readFileSync('privkey.pem'),
-  //         cert: require("fs").readFileSync('cert.pem')
-  //     }
-  // },
+  https: function() {
+      // This function should return the options object, or a Promise
+      // that resolves to the options object
+      return {
+          key: require("fs").readFileSync('privkey.pem'),
+          cert: require("fs").readFileSync('cert.pem')
+      }
+  },
 ```
 
   *Standalone only*.
@@ -120,13 +121,13 @@ The settings are split into the following sections:
 : an HTTP middleware function, or array of functions, that is added to all admin routes.
   The format of the middleware function is documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
 
-```
-    // httpAdminMiddleware: function(req,res,next) {
-    //    // Set the X-Frame-Options header to limit where the editor
-    //    // can be embedded
-    //    //res.set('X-Frame-Options', 'sameorigin');
-    //    next();
-    // },
+```javascript
+    httpAdminMiddleware: function(req,res,next) {
+       // Set the X-Frame-Options header to limit where the editor
+       // can be embedded
+       res.set('X-Frame-Options', 'sameorigin');
+       next();
+    },
 ```
 **httpNodeRoot**
 : Some nodes, such as HTTP In, can be used to listen for incoming http requests. By default, these are served relative to '/'. The following property can be used to specifiy a different root path. If set to `false`, this is disabled. Default: `/`
@@ -138,27 +139,26 @@ The settings are split into the following sections:
 **httpNodeMiddleware**
 : an HTTP middleware function, or array of functions, that is added to all HTTP In nodes.
   This allows whatever custom processing, such as authentication, is needed for
-  the nodes. The format of the middleware function is
-  documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
+  the nodes. The format of the middleware function is documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
 
-```
-//httpNodeMiddleware: function(req,res,next) {
-    //    // Handle/reject the request, or pass it on to the http in node by calling next();
-    //    // Optionally skip our rawBodyParser by setting this to true;
-    //    //req.skipRawBodyParser = true;
-    //    next();
-    //},
+```javascript
+httpNodeMiddleware: function(req,res,next) {
+       // Handle/reject the request, or pass it on to the http in node by calling next();
+       // Optionally skip our rawBodyParser by setting this to true;
+       req.skipRawBodyParser = true;
+       next();
+    },
 ```
 **httpStatic**
 : When httpAdminRoot is used to move the UI to a different root path, the following property can be used to identify a directory of static content that should be served at `http://localhost:1880/` When httpStaticRoot is set differently to httpAdminRoot, there is no need to move httpAdminRoot
 
-```
-   //httpStatic: '/home/nol/node-red-static/', //single static source
+```javascript
+    httpStatic: '/home/nol/node-red-static/', //single static source
     /* OR multiple static sources can be created using an array of objects... */
-    //httpStatic: [
-    //    {path: '/home/nol/pics/',    root: "/img/"}, 
-    //    {path: '/home/nol/reports/', root: "/doc/"}, 
-    //],
+    httpStatic: [
+        {path: '/home/nol/pics/',    root: "/img/"}, 
+        {path: '/home/nol/reports/', root: "/doc/"}, 
+    ],
 
     /**  
      * All static routes will be appended to httpStaticRoot
@@ -168,26 +168,28 @@ The settings are split into the following sections:
      *      and httpStaticRoot = "/static/"
      *      then "/home/nol/pics/" will be served at "/static/img/"
      */
-    //httpStaticRoot: '/static/',
+    httpStaticRoot: '/static/',
 ```
 
   *Standalone only*.
 
-httpAdminAuth
+**httpAdminAuth**
 : *Deprecated*: see `adminAuth`.
 
   enables HTTP Basic Authentication on the editor UI:
 
-      httpAdminAuth: {user:"nol", pass:"5f4dcc3b5aa765d61d8327deb882cf99"}
+```javascript
+    httpAdminAuth: {user:"nol", pass:"5f4dcc3b5aa765d61d8327deb882cf99"}
+```
 
-  The `pass` property is the md5 hash of the actual password. The following
-  command can be used to generate the hash:
+The `pass` property is the md5 hash of the actual password. The following
+ command can be used to generate the hash:
 
-      node -e "console.log(require('crypto').createHash('md5').update('YOUR PASSWORD HERE','utf8').digest('hex'))"
+    node -e "console.log(require('crypto').createHash('md5').update('YOUR PASSWORD HERE','utf8').digest('hex'))"
 
   *Standalone only*.
 
-httpRoot
+**httpRoot**
 : this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
 
 
@@ -199,7 +201,8 @@ Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. So
 
 **diagnostics**
 : Configure diagnostics options.
-```
+
+```javascript
     diagnostics: {
         /** @type {boolean} enable or disable diagnostics. Must be set to `false` to disable */
         enabled: true,
@@ -211,7 +214,8 @@ When `enabled` is `true` (or unset), diagnostics data will be available at http:
 
 **runtimeState**
 : enable or disable flows/state
-```
+
+```javascript
     runtimeState: {
         /** enable or disable flows/state endpoint. Must be set to `false` to disable */
         enabled: false,
@@ -229,7 +233,8 @@ When `enabled` is `true` (or unset), diagnostics data will be available at http:
  - **info** - record information about the general running of the application + warn + error + fatal errors
  - **debug** - record information which is more verbose than info + info + warn + error + fatal errors
  - **trace** - record very detailed logging + debug + info + warn + error + fatal errors
-```
+
+```javascript
 logging: {
     console: {
           level: "info",
@@ -238,6 +243,7 @@ logging: {
     }
 },
 ```
+
 The default level is `info`. For embedded devices with limited flash storage you may wish to set this to `fatal` to minimise writes to "disk".
 
 **contextStorage**
@@ -254,24 +260,25 @@ By default, the property is set to false to avoid accidental exposure of their v
      - whether nodes, such as the Function node are allowed to have their own dynamically configured dependencies.
 
 The allow/denyList options can be used to limit what modules the runtime will install/load. It can use `*` as a wildcard that matches anything.
-```
+
+```javascript
       externalModules: {
-         // autoInstall: false,   /** Whether the runtime will attempt to automatically install missing modules */
-         // autoInstallRetry: 30, /** Interval, in seconds, between reinstall attempts */
-         // palette: {              /** Configuration for the Palette Manager */
-         //     allowInstall: true, /** Enable the Palette Manager in the editor */
-         //     allowUpdate: true,  /** Allow modules to be updated in the Palette Manager */
-         //     allowUpload: true,  /** Allow module tgz files to be uploaded and installed */
-         //     allowList: ['*'],
-         //     denyList: [],
-         //     allowUpdateList: ['*'],
-         //     denyUpdateList: []
-         // },
-         // modules: {              /** Configuration for node-specified modules */
-         //     allowInstall: true,
-         //     allowList: [],
-         //     denyList: []
-         // }
+         autoInstall: false,   /** Whether the runtime will attempt to automatically install missing modules */
+         autoInstallRetry: 30, /** Interval, in seconds, between reinstall attempts */
+         palette: {              /** Configuration for the Palette Manager */
+             allowInstall: true, /** Enable the Palette Manager in the editor */
+             allowUpdate: true,  /** Allow modules to be updated in the Palette Manager */
+             allowUpload: true,  /** Allow module tgz files to be uploaded and installed */
+             allowList: ['*'],
+             denyList: [],
+             allowUpdateList: ['*'],
+             denyUpdateList: []
+         },
+         modules: {              /** Configuration for node-specified modules */
+             allowInstall: true,
+             allowList: [],
+             denyList: []
+         }
       },
 ```
 
@@ -283,7 +290,7 @@ The allow/denyList options can be used to limit what modules the runtime will in
 **editorTheme**
 : The following property can be used to set a custom theme for the editor. See [here](https://github.com/node-red-contrib-themes/theme-collection) for a collection of themes to choose from.
 
-```
+```javascript
 editorTheme: {
 
         //theme: "",
@@ -417,7 +424,8 @@ ioMiddleware:{function or array}, (socket,next) - socket.io middleware
 
 **webSocketNodeVerifyClient**
 : The following property can be used to verify websocket connection attempts. This allows, for example, the HTTP request headers to be checked to ensure they include valid authentication information.
-```
+
+```javascript
 //webSocketNodeVerifyClient: function(info) {
     //    /** 'info' has three properties:
     //    *   - origin : the value in the Origin header
