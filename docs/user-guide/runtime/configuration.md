@@ -219,16 +219,15 @@ When `ui` is `true` (or unset), diagnostics data will accessible in the Node-RED
 
 **runtimeState**
 *Since Node-RED 3.0.0.*
-: enable or disable flows/state
+: enable or disable the ability to Start and Stop the runtime
 
 ```javascript
     runtimeState: {
-        /** enable or disable flows/state endpoint. Must be set to `false` to disable */
+        /** enable or disable this feature. */
         enabled: false,
-        /** show or hide runtime stop/start options in the node-red editor. Must be set to `false` to hide */
+        /** show or hide runtime stop/start options in the node-red editor. */
         ui: false,
     },
-```
 
 **logging**
 : currently only console logging is supported. Various levels of logging can be specified. Options are:
