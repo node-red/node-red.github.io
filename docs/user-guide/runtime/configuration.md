@@ -208,10 +208,10 @@ Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. So
 
 ```javascript
     diagnostics: {
-        /** @type {boolean} enable or disable diagnostics. Must be set to `false` to disable */
+        /** enable or disable diagnostics endpoint. Must be set to `false` to disable */
         enabled: true,
-        /** @type {"basic"|"admin"} diagnostic level can be "basic" (default) or "admin" (more sensitive details are included) */
-        level: "basic",
+        /** enable or disable diagnostics display in the node-red editor. Must be set to `false` to disable */
+        ui: true,
     },
 ```
 When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
