@@ -28,7 +28,7 @@ The settings are split into the following sections:
 ### Flow File and User Directory
 
 **flowFile**
-: the file used to store the flows. Default: `flows.json`
+: the file used to store the flows. If not set, defaults to `flows_<hostname>.json`<br /> Default: `flowFile: 'flows.json',`
 
 **credentialSecret**
 : By default, credentials are encrypted in storage using a generated key. To specify your own secret, set the following property. If you want to disable encryption of credentials, set this property to false. Note: once you set this property, do not change it - doing so will prevent node-red from being able to decrypt your existing credentials and they will be lost. Example: `credentialSecret: "a-secret-key",`
@@ -43,6 +43,7 @@ The settings are split into the following sections:
 : By default, all user data is stored in a directory called `.node-red` under the user's home directory. To use a different location, the following property can be used `userDir: '/home/nol/.node-red/',` Default: `$HOME/.node-red`
 
 **nodesDir**
+*Since Node-RED 3.0.0.*
 : a directory to search for additional installed nodes. Node-RED searches the `nodes`
   directory under the *userDir* directory. This property allows an additional directory
   to be searched, so that nodes can be installed outside of the Node-RED install
@@ -81,6 +82,7 @@ The settings are split into the following sections:
   *Standalone only*.
 
 **httpsRefreshInterval**
+*Since Node-RED 2.0.0.*
 : If the `https` setting is a function, the following setting can be used to set how often, in hours, the function will be called. That can be used to refresh any certificates. `httpsRefreshInterval : 12,`
 
 **requireHttps**
@@ -118,6 +120,7 @@ The settings are split into the following sections:
 : the root url for the editor UI. If set to `false`, all admin endpoints are disabled. This includes both API endpoints and the editor UI. To disable just the editor UI, see the `disableEditor` property below. Default: `/`
 
 **httpAdminMiddleware**
+*Since Node-RED 2.0.0.*
 : an HTTP middleware function, or array of functions, that is added to all admin routes.
   The format of the middleware function is documented [here](http://expressjs.com/guide/using-middleware.html#middleware.application).
 
@@ -190,16 +193,17 @@ The `pass` property is the md5 hash of the actual password. The following
   *Standalone only*.
 
 **httpRoot**
-: this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
-
+: *Deprecated*: see `httpAdminRoot` and `httpNodeRoot`.
 
 ### Runtime
 
 **lang**
+*Since Node-RED 2.0.0.*
 : the following option is to run node-red in your preferred language.<br/> 
 Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. Some languages are more complete than others.
 
 **diagnostics**
+*Since Node-RED 3.0.0.*
 : Configure diagnostics options.
 
 ```javascript
@@ -213,6 +217,7 @@ Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. So
 When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
 
 **runtimeState**
+*Since Node-RED 3.0.0.*
 : enable or disable flows/state
 
 ```javascript
@@ -250,11 +255,13 @@ The default level is `info`. For embedded devices with limited flash storage you
 : The following property can be used to enable context storage. The configuration provided here will enable file-based context that flushes to disk every 30 seconds. Refer to the documentation for further options [here](https://nodered.org/docs/api/context/)
 
 **exportGlobalContextKeys**
+*Since Node-RED 2.0.0.*
 : `global.keys()` returns a list of all properties set in global context. This allows them to be displayed in the Context Sidebar within the editor. In some circumstances it is not desirable to expose them to the editor. The following property can be used to hide any property set in `functionGlobalContext` from being list by `global.keys()`.
 By default, the property is set to false to avoid accidental exposure of their values. Setting this to true will cause the keys to be listed.
 
 
 **externalModules**
+*Since Node-RED 2.0.0.*
 : Configure how the runtime will handle external npm modules. This covers:<br/>
      - whether the editor will allow new node modules to be installed<br/>
      - whether nodes, such as the Function node are allowed to have their own dynamically configured dependencies.
@@ -351,10 +358,12 @@ editorTheme: {
 ### Node
 Any node type can define its own settings to be provided in the file.
 
-**fileWorkingDirectory**
+**fileWorkingDirectory** 
+*Since Node-RED 2.0.0.*
 : The working directory to handle relative file paths from within the File nodes defaults to the working directory of the Node-RED process.
 
 **functionExternalModules**
+*Since Node-RED 1.3.0.*
 : if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `true`.
 
 **functionGlobalContext**
@@ -392,6 +401,7 @@ ioMiddleware:{function or array}, (socket,next) - socket.io middleware
   debug sidebar tab. Default: `1000`
 
 **execMaxBufferSize**
+*Since Node-RED 2.0.0.*
 : Maximum buffer size for the exec node. Defaults to 10Mb. `execMaxBufferSize: 10000000`
 
 **httpRequestTimeout**
