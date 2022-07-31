@@ -228,6 +228,7 @@ When `ui` is `true` (or unset), diagnostics data will accessible in the Node-RED
         /** show or hide runtime stop/start options in the node-red editor. */
         ui: false,
     },
+```
 
 **logging**
 : currently only console logging is supported. Various levels of logging can be specified. Options are:
