@@ -214,7 +214,8 @@ Available languages include: `en-US (default), ja, de, zh-CN, zh-TW, ru, ko`. So
         ui: true,
     },
 ```
-When `enabled` is `true` (or unset), diagnostics data will be available at http://localhost:1880/diagnostics . When `level` is "basic" (or unset), the diagnostics will not include sensitive data. Set level to "admin" for detailed diagnostics.  
+When `enabled` is `true` (or unset), diagnostics data will be available at `http://localhost:1880/diagnostics`.  
+When `ui` is `true` (or unset), diagnostics data will accessible in the Node-RED Action List as "Show System Info" 
 
 **runtimeState**
 *Since Node-RED 3.0.0.*
