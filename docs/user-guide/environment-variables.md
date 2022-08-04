@@ -60,8 +60,9 @@ function:
 let foo = env.get("FOO");
 ```
 ### Template node
-Beginning with [version 3.0](https://nodered.org/blog/2022/07/14/version-3-0-released#environment-variables-in-the-template-node
-), the `template` node can access environment variables using the syntax:
+*Since [Node-RED 3.0](https://nodered.org/blog/2022/07/14/version-3-0-released#environment-variables-in-the-template-node)*
+
+The `template` node  can access environment variables using the syntax:
 ```
 My favourite colour is {{env.COLOUR}}
 ```
@@ -79,10 +80,12 @@ instances of the Subflow can then be customised for those particular types.
 
 ### Flow/Group level environment variables
 
-Since [version 2.1](https://nodered.org/blog/2021/10/21/version-2-1-released#flowgroup-level-environment-variables), environment variables can be set at the flow or group level. This is done in the appropriate tab in the edit dialog for the flow or group.
+*Since [Node-RED 2.1](https://nodered.org/blog/2021/10/21/version-2-1-released#flowgroup-level-environment-variables)*
 
-### Raspberry Pi OS considerations
-Users who have installed Node-RED on a Raspberry Pi using the provided [script](https://nodered.org/docs/getting-started/raspberrypi) and who run it as a service on booting or by using the `node-red-start` command should be aware that their flows will not have access to environment variables that are defined only in the calling process. In this case, environment variables can be defined in the settings file by statements of the form 
+Environment variables can be set at the flow or group level. This is done in the appropriate tab in the edit dialog for the flow or group.
+
+### Running as a service
+When Node-RED is running as a service having been installed using the provided [script](https://nodered.org/docs/getting-started/raspberrypi), it will not have access to environment variables that are defined only in the calling process. In this instance, environment variables can be defined in the settings file by adding:
 ````
 process.env.FOO= 'World';
 ````
