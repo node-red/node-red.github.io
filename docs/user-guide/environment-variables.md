@@ -59,7 +59,12 @@ function:
 ```javascript
 let foo = env.get("FOO");
 ```
-
+### Template node
+Beginning with [version 3.0](https://nodered.org/blog/2022/07/14/version-3-0-released#environment-variables-in-the-template-node
+), the `template` node can access environment variables using the syntax:
+```
+My favourite colour is {{env.COLOUR}}
+```
 
 ### Subflow Instance properties
 
@@ -71,3 +76,21 @@ For example, given a REST API that provides access to different types of record,
 a subflow could be created to access the API and handle the response, using an
 environment variable to identify which type of record should be accessed. Individual
 instances of the Subflow can then be customised for those particular types.
+
+### Flow/Group level environment variables
+
+Since [version 2.1](https://nodered.org/blog/2021/10/21/version-2-1-released#flowgroup-level-environment-variables), environment variables can be set at the flow or group level. This is done in the appropriate tab in the edit dialog for the flow or group.
+
+### Raspberry Pi OS considerations
+Users who have installed Node-RED on a Raspberry Pi using the provided [script](https://nodered.org/docs/getting-started/raspberrypi) and who run it as a service on booting or by using the `node-red-start` command should be aware that their flows will not have access to environment variables that are defined only in the calling process. In this case, environment variables can be defined in the settings file by statements of the form 
+````
+process.env.FOO= 'World';
+````
+placed outside the `module.exports` section. Alternatively, variables can be defined as part of the `systemd` service by placing statements of the form
+```
+ENV_VAR='foobar'
+````
+in a file named `environment` in the Node-RED user directory, `~/.node-red`.
+
+
+
