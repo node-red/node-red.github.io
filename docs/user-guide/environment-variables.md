@@ -89,3 +89,29 @@ For example, given a REST API that provides access to different types of record,
 a subflow could be created to access the API and handle the response, using an
 environment variable to identify which type of record should be accessed. Individual
 instances of the Subflow can then be customised for those particular types.
+
+### Flow/Group level environment variable 
+
+Since 2.21, environment variables can be set for Flow or Group on their settings panel.
+
+### Predefined environment variable
+
+Since 2.22, following predefined environment variables has been added that provides access to information about the node, group and flow.
+
+- `NR_NODE_ID` - the ID of the node
+- `NR_NODE_NAME` - the Name of the node
+- `NR_NODE_NAME` - the Path of the node
+
+   The node's path represents a node's hierarchy in a flow.  It is `/`
+   delimited IDs of the flow, enclosing subflows, and the node.
+- `NR_GROUP_ID` - the ID of the containing group
+- `NR_GROUP_NAME` - the Name of the containing group
+- `NR_FLOW_ID` - the ID of the flow the node is on
+- `NR_FLOW_NAME` - the Name of the flow the node is on
+
+### Accessing nested environment variable
+
+Environment variable definition is searched from the bottom to the top
+of the node's definition hierarchy. `$ parent.` prefix can be added to
+environment variable name (e.g. `$parent.NR_GROUP_NAME`) to move the
+start position of this search up one level in the hierarchy.
