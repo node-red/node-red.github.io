@@ -36,10 +36,10 @@ The `payload` can be set to a variety of different types:
  - a String, number, boolean, Buffer or Object
  - a Timestamp in milliseconds since January 1st, 1970
 
-The `interval` can maximum be set to every 596 hours (equivalent of about 24 days).
+The `interval` can be set up to a maximum of 596 hours (approximately 24 days).
 If you are looking at intervals greater than one day - consider using a scheduler node that can cope with power outages and restarts.
 
-The `interval between tmes` and `at a specific time` options use the standard cron system. This means that 20 minutes will be at the next hour, 20 minutes past and 40 minutes past - not in 20 minutes time. If you want every 20 minutes from now - use the `interval` option.
+The `interval between times` and `at a specific time` options use the standard cron system. This means that 20 minutes will be at the next hour, 20 minutes past and 40 minutes past - not in 20 minutes time. If you want every 20 minutes from now - use the `interval` option.
 
 *Since Node-RED 1.1.0*, the Inject node can now set any property on the message.
 ***
