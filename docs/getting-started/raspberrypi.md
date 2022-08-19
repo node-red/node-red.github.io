@@ -54,8 +54,7 @@ Node-RED has also been packaged for the Raspberry Pi OS repositories and appears
 list of 'Recommended Software'. This allows it to be installed using
 <code>apt-get install nodered</code> and includes the Raspberry Pi OS-packaged version
 of Node.js, but <em>does not</em> include <code>npm</code>.
-<p>While using these packages is convenient at first, we <b>strongly recommend</b>
-using the install script above instead.</p>
+<p><b>Note</b>: at this time the default node.js included with RaspiOS Bullseye is still v12. This means that the latest Node-RED version that can be installed is the 2.x branch. While using these packages is convenient at first, we <b>strongly recommend</b> using the install script above instead.</p>
 </div>
 
 ### Running locally
