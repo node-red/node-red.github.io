@@ -66,7 +66,7 @@ let foo = env.get("FOO");
 
 The `template` node  can access environment variables using the syntax:
 ```
-My favourite colour is {{env.COLOUR}}
+{% raw %}My favourite colour is {{env.COLOUR}}.{% endraw %}
 ```
 
 ### Subflow Instance properties
