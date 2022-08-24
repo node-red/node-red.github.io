@@ -54,7 +54,7 @@ server.
 
 Click the Deploy button.
 
-With the Debug sidebar tab selected, click the Inject button. You should see
+With the Debug sidebar tab selected (click the bug icon at the top right), click the Inject button. You should see
 numbers appear in the sidebar. By default, the Inject node uses the number of
 milliseconds since January 1st, 1970 as its payload.
 
