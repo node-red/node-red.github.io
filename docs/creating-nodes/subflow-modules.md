@@ -23,13 +23,13 @@ At this stage, creating Subflow module is a manual process that requires hand-ed
 Any subflow can be packaged as a module. Before you do so, you need to think about how it will be used. The following checklist is a useful reminder of the things to consider:
 
  - Configuration - what will the user need to configure in the subflow. You can define subflow properties and what UI is provided to set those properties via the [Subflow Properties edit dialog](/docs/user-guide/editor/workspace/subflows#editing-subflow-properties).
- - Error handling - does your subflow handle it errors properly? Some errors might make sense to handle inside the subflow, some may need to be passed out of the subflow to allow the end user to handle them.
+ - Error handling - does your subflow handle its errors properly? Some errors might make sense to handle inside the subflow, some may need to be passed out of the subflow to allow the end user to handle them.
  - Status - you can add a custom status output to your Subflow that can be handled by the 'Status' node.
  - Appearance - make sure to give your subflow an icon, colour and category that makes sense for the function it provides.
 
 ### Adding subflow metadata
 
-The Subflow can hold additional metadata that can be used to define the module it will packaged in.
+The Subflow can hold additional metadata that can be used to define the module it will be packaged in.
 
 On the [Subflow Module Properties edit dialog](/docs/user-guide/editor/workspace/subflows#editing-subflow-metadata) you can set the following properties:
 
