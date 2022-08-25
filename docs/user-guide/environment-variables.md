@@ -129,7 +129,7 @@ The following environment variables can be used to access this information for a
 
 - `NR_NODE_ID` - the ID of the node
 - `NR_NODE_NAME` - the Name of the node
-- `NR_NODE_NAME` - the Path of the node. This represents a node's position in a flow.  It is `/` delimited IDs of the flow, enclosing subflows, and the node.
+- `NR_NODE_PATH` - the Path of the node. This represents a node's position in a flow.  It is `/` delimited IDs of the flow, enclosing subflows, and the node.
 - `NR_GROUP_ID` - the ID of the containing group
 - `NR_GROUP_NAME` - the Name of the containing group
 - `NR_FLOW_ID` - the ID of the flow the node is on
