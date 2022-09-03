@@ -54,11 +54,13 @@ server.
 
 Click the Deploy button.
 
-With the Debug sidebar tab selected, click the Inject button. You should see
+### 6. Inject 
+
+With the Debug sidebar tab selected, click the Inject button (the small square button next to your inject node). You should see
 numbers appear in the sidebar. By default, the Inject node uses the number of
 milliseconds since January 1st, 1970 as its payload.
 
-### 6. Add a Function node
+### 7. Add a Function node
 
 The Function node allows you to pass each message though a JavaScript function.
 
