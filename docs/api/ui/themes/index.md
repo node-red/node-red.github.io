@@ -130,7 +130,7 @@ Monaco editor options including what theme it should use.
 
 #### Setting the Monaco theme by name
 
-Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme). Additional settings for Monaco options can be found [here](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html).
+Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme). Additional settings for Monaco options can be found [here](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneEditorConstructionOptions.html).
 
 The name of the theme can be provided in the plugin settings:
 
