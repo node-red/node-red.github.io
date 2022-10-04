@@ -161,7 +161,7 @@ in the function. Before Node-RED 1.0, the Function node would not clone the
 The Function can request the runtime to *not clone* the first message passed to
 `node.send` by passing in `false` as a second argument to the function. It would
 do this if the message contains something that is not otherwise cloneable, or for
-performance reasons to minimize the overhead of sending messages:
+performance reasons to minimise the overhead of sending messages:
 
 {% highlight javascript %}
 node.send(msg,false);
