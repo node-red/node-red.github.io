@@ -80,7 +80,7 @@ var newMsg = { payload: msg.payload.length };
 return [msg, newMsg];
 {% endhighlight %}
 
-#### Handling arbituary number of outputs
+#### Handling arbitrary number of outputs
 
 *Since Node-RED 1.3*
 

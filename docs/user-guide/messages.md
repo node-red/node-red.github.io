@@ -151,7 +151,7 @@ store the result in a new message property `msg.payload.temperature_c`.
 {:style="display: inline-block;"}
 <br style="clear: both;" />
 *Note that JSONata expressions look a lot like JavaScript, but have some key differences.
-Refer to the [jsonata.org](http://jsonata.org) site for more inforation.*
+Refer to the [jsonata.org](http://jsonata.org) site for more information.*
 
 ### Message sequences
 
