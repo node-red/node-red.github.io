@@ -1,6 +1,6 @@
 ---
 layout: docs-getting-started
-title: Adding Prerequistes to Docker
+title: Adding Prerequisites to Docker
 toc: toc-user-guide.html
 slug: docker-custom
 redirect_from:
@@ -11,16 +11,16 @@ redirect_from:
 
 The project makes available a number of different versions of the Docker container on [Docker hub](https://hub.docker.com/r/nodered/node-red/) which fall into 2 categories:
 
- - Different underlying NodeJS versions. As new NodeJS LTS versions are released coresponding versions of the container are added.
- - Images tagged with the `-minimal` suffix. These containers are designed to contian the absolute libraries required to run Node-RED and it's core nodes.
+ - Different underlying NodeJS versions. As new NodeJS LTS versions are released corresponding versions of the container are added.
+ - Images tagged with the `-minimal` suffix. These containers are designed to contain the absolute libraries required to run Node-RED and it's core nodes.
 
 Specifically the `-minimal` containers do not have the native build tools required to build some nodes components triggered by installing them.
 
-Both of these sets of images are based on the NodeJS Alpine containers. Alpine is a Linux distribution that aims to provide the smallest possible install footprint, it is used as the base for many language runtime containers (e.g. NodeJS & Python). As part of a number of optomisations to reduce the size it uses the [musl](https://www.musl-libc.org/intro.html) libc instead of the usual glibc implementation.
+Both of these sets of images are based on the NodeJS Alpine containers. Alpine is a Linux distribution that aims to provide the smallest possible install footprint, it is used as the base for many language runtime containers (e.g. NodeJS & Python). As part of a number of optimizations to reduce the size it uses the [musl](https://www.musl-libc.org/intro.html) libc instead of the usual glibc implementation.
 
-Musl works fine with most applications but on some occations it can cause problems e.g. with some of the [SAP](https://github.com/SAP/node-rfc/issues/148) nodes and with some low level video codec.
+Musl works fine with most applications but on some occasions it can cause problems e.g. with some of the [SAP](https://github.com/SAP/node-rfc/issues/148) nodes and with some low level video codec.
 
-If you want to extend the provided Docker containers then then you will need to use Apline's package management tool `apk` to install additional libraries or applications.
+If you want to extend the provided Docker containers then then you will need to use Alpine's package management tool `apk` to install additional libraries or applications.
 
         FROM nodered/node-red:latest
         USER root
@@ -30,7 +30,7 @@ If you want to extend the provided Docker containers then then you will need to 
 
 ### Debian based containers
 
-As well as the Alpine based containers the Node-RED Docker git project also includes a script to build a version of the Node-RED Docker containers based on the Debian Linux Distribution. This is useful as Debian is a more mainstream Linux distribution and many nodes include instructions on how to install prerequistes.
+As well as the Alpine based containers the Node-RED Docker git project also includes a script to build a version of the Node-RED Docker containers based on the Debian Linux Distribution. This is useful as Debian is a more mainstream Linux distribution and many nodes include instructions on how to install prerequisites.
 
 You can build the containers locally by running the following commands:
 
@@ -43,7 +43,7 @@ This will a container called `testing:node-red-build` which can be run as follow
 
       $ docker run -d -p 1880:1880 -v node_red_data:/data --name myNRtest testing:node-red-build
 
-This container can be extended to add the required prerequistes for your projects. For example to add the required libraries for the [node-red-contrib-machine-learning](https://flows.nodered.org/node/node-red-contrib-machine-learning) node the following Dockerfile will extend the previously built container.
+This container can be extended to add the required prerequisites for your projects. For example to add the required libraries for the [node-red-contrib-machine-learning](https://flows.nodered.org/node/node-red-contrib-machine-learning) node the following Dockerfile will extend the previously built container.
 
       FROM testing:node-red-build
       USER root
