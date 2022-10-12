@@ -432,8 +432,8 @@ The following setting is an example to limit the HTTP access rate in http-in nod
 var rateLimit = require("express-rate-limit");
 module.exports = {
     httpNodeMiddleware: rateLimit({
-        windowMs: 1000, // 1000 millisecounds is set as the window time.
-        max: 10 // limit access rate to 10 requests/secound
+        windowMs: 1000, // 1000 milliseconds is set as the window time.
+        max: 10 // limit access rate to 10 requests/second
     })
 }
 ```

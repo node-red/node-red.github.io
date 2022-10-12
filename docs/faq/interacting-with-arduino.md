@@ -131,7 +131,7 @@ and then you may access all the [richness](https://github.com/rwaldron/johnny-fi
 of Johnny-Five from within functions...
 
     var five = context.global.jfive;    // create a shorter alias
-    var led = new five.Led(13);         // instatiate the led
+    var led = new five.Led(13);         // instantiate the led
     led.blink(500);                     // blink it every 500 ms
 
 *Note:* this is a simple, but poor example as the led pin is created each time the
