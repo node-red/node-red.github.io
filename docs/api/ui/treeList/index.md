@@ -116,7 +116,7 @@ Property      | Description
 Function         | Description
 -----------------|---------------------------
 `item.treeList.remove(detach)` | Remove the item from the tree. Set `detach` to `true` to preserve any event handlers on the item - required if the item is going to be readded elsewhere.
-`item.treeList.makeLeaf(detachChildElements)` | Turns an element with children into a leaf node, removing the UI decoration. Set `detachChildElements` to `true` to preseve any child element event handlers.
+`item.treeList.makeLeaf(detachChildElements)` | Turns an element with children into a leaf node, removing the UI decoration. Set `detachChildElements` to `true` to preserve any child element event handlers.
 `item.treeList.makeParent(children)` | Make the item a parent item, adding the child items
 `item.treeList.insertChildAt(item, pos, select)` | Adds a new item at the desired position, optionally selecting it after doing so
 `item.treeList.addChild(item, select)` | Appends a child item, optionally selecting it after doing so

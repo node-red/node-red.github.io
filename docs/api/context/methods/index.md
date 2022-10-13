@@ -20,7 +20,7 @@ function must have the following functions:
 [ContextStore.close()](#contextstoreclose)                     | Close the storage
 [ContextStore.get(scope, key, callback)](#contextstoregetscope-key-callback) | Get values from the store
 [ContextStore.set(scope, key, value, callback)](#contextstoresetscope-key-value-callback) | Set values in the store
-[ContextStore.keys(scope, calback)](#contextstorekeysscope-callback) | Get a list of all keys in the store
+[ContextStore.keys(scope, callback)](#contextstorekeysscope-callback) | Get a list of all keys in the store
 [ContextStore.delete(scope)](#contextstoredeletescope)               | Delete all keys for a given scope
 [ContextStore.clean(activeNodes)](#contextstorecleanactivenodes)     | Clean the context store
 
