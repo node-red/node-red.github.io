@@ -53,7 +53,7 @@ button is pressed with the `Shift` key held, all of the wires will move.
 
 #### Selecting multiple wires
 
-You can also select multiple wires by holding <kbd>ctrl</kbd> while clicking on them.
+You can also select multiple wires by holding `Ctrl/Command` while clicking on them.
 
 When you select multiple nodes, we also highlight any wires between them. This can make it easier to follow a flow once you have selected it.
 
@@ -67,12 +67,12 @@ When you select multiple nodes, we also highlight any wires between them. This c
 
 1. Select one or more wires 
     1. To select a single wire, left click 1 wire.
-    1. To select multiple wires, left click 1 wire then while holding <kbd>ctrl/⌘</kbd>, click on the other wires.
-1. Press the <kbd>delete</kbd> key
+    1. To select multiple wires, left click 1 wire then while holding `Ctrl/Command`, click on the other wires.
+1. Press the `Delete` key
 
 
 #### Slicing wires
-You can also remove wires by slicing through them. You do this by holding the ctrl (or cmd) key, then dragging the mouse with the right-hand button pressed:
+You can also remove wires by slicing through them. You do this by pressing and holding the `Alt/Option` key, then dragging with the left-mouse button pressed:
 
 <div class="figure">
   <img src="../images/slicing-wires.gif" alt="">
