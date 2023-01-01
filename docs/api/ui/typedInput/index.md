@@ -16,7 +16,7 @@ chosen, including options for string, number and boolean types.
 - [Events](#events)
 - [Types](#types)
 - [Examples](#examples)
-
+- [Runtime handling of typed values](#runtime-handling-of-typed-values)
 
 <div class="widget">
     <div style="clear:both">
@@ -124,6 +124,34 @@ $(".input").typedInput({
     typeField: ".my-type-field"
 });
 ```
+
+When used in a Node-RED node, this value can be stored as a node property by adding
+an entry for it in the node's `defaults` object. This ensures the type is saved
+along with the value in the node configuration.
+
+```html
+<div class="form-row">
+    <label>Example:</label>
+    <input type="text" id="node-input-myField">
+    <input type="hidden" id="node-input-myFieldType">
+</div>
+```
+```javascript
+RED.nodes.registerType('example', {
+    defaults: {
+        myField: { value: "" },
+        myFieldType: { value: "str" }
+    },
+    ...
+    oneditprepare: function () {
+        $("#node-input-myField").typedInput({
+            typeField: "#node-input-myFieldType"
+        });
+    }
+})
+```
+
+
 
 ### Methods
 
@@ -369,6 +397,52 @@ $("#node-input-example5").typedInput({type:"fruit", types:[{
 <div class="red-ui-editor"><input type="text" id="node-input-example5"></div>
 
 
+### Runtime handling of typed values
+
+Due to the way the `typedInput` enhances a regular HTML `<input>`, its value is
+stored as a string. For example, booleans are stored as `"true"` and `"false"`.
+
+When stored as node properties, it is necessary for the runtime part of the node
+to parse the string to get the typed value.
+
+A utility function is provided to handle the built-in types provided by the TypedInput.
+
+```javascript
+RED.util.evaluateNodeProperty(value, type, node, msg, callback)
+```
+
+Property | Type    | Required | Description
+---------|---------|----------|-------------
+`value`  | string  | yes      | The property to evaluate
+`type`   | string  | yes      | The type of the property
+`node`   | Node    | yes, for certain types | The node evaluating the property
+`msg`    | Message Object | yes, for certain types | A message object to evaluate against
+`callback` | Callback | yes, for `flow`/`global` types | A callback to receive the result
+
+For most types, the function can be used synchronously without providing a callback.
+
+```javascript
+const result = RED.util.evaluateNodeProperty(value, type, node)
+```
+
+For `msg` type, the message object should also be provided:
+
+```javascript
+const result = RED.util.evaluateNodeProperty(value, type, node, msg)
+```
+
+To handle `flow` and `global` context types, the node needs to be provided as well as
+a callback function due to the asynchronous nature of context access:
+
+```javascript
+RED.util.evaluateNodeProperty(value, type, node, msg, (err, result) => {
+    if (err) {
+        // Something went wrong accessing context
+    } else {
+        // Do something with 'result'
+    }
+})
+```
 
 
 <script src="/js/jquery-ui.min.js"></script>
