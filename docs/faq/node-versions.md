@@ -5,16 +5,15 @@ title: Supported Node versions
 slug: node versions
 ---
 
-Node-RED currently recommends **Node 14.x LTS**.
+Node-RED currently recommends **Node 16.x LTS**.
 
 Version    | Support Level   | Notes
 -----------|-----------------|------
- < 8.x     | *Unsupported*   |
- **8.x**   | *Supported*     | Node-RED 1.x or earlier only
- **10.x**  | *Supported*     | Node-RED 1.x or earlier only
- **12.x**  | *Supported*.    |  
- **14.x**  | **Recommended**   |  
- **16.x**  | Supported       |  
+ < 10.x    | *Unsupported*   | Node-RED 1.x or earlier only
+ **12.x**  | *Supported*     | Node-RED 2.x or earlier only
+ **14.x**  | Supported       |  
+ **16.x**  | **Recommended** |  
+ **18.x**  | Supported       |  
 
 We try to stay up to date with Node.js releases. Our goal is to support
 the [Maintenance and Active LTS releases](https://nodejs.org/en/about/releases/).

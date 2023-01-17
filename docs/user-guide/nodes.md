@@ -42,6 +42,7 @@ If you are looking at intervals greater than one day - consider using a schedule
 The `interval between times` and `at a specific time` options use the standard cron system. This means that 20 minutes will be at the next hour, 20 minutes past and 40 minutes past - not in 20 minutes time. If you want every 20 minutes from now - use the `interval` option.
 
 *Since Node-RED 1.1.0*, the Inject node can now set any property on the message.
+
 ***
 
 <img alt="Debug node" style="float: right; margin-top: 20px;" src="/docs/user-guide/images/node_debug.png" width="169px">

@@ -197,7 +197,7 @@ The `strategy` property takes the following options:
  - `label`/`icon` - used on the login page. `icon` can be any FontAwesome icon name.
  - `options` - an options object passed to the passport strategy when it is created.
    Refer to the strategy's own documentation for what it requires. See below for a
-   node on the `callbackURL`.
+   note on the `callbackURL` and `callbackMethod`.
  - `verify` - the verify function used by the strategy. It must call `done` with
    a user profile as the second argument if the user is valid. This is expected
    to have a `username` property that is used to check against the list of valid
@@ -209,6 +209,8 @@ redirect to following an auth attempt. It must be the URL of your Node-RED edito
 with `/auth/strategy/callback` added to the path. For example, if you access the
 editor at `http://localhost:1880`, you would use `http://localhost:1880/auth/strategy/callback`.
 
+By default, the `callbackURL` will listen for `GET` requests. To use `POST` requests
+instead, set `callbackMethod` to `POST`.
 
 #### Setting a default user
 
