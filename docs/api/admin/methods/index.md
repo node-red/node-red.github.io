@@ -15,6 +15,7 @@ slug:
 [<span class="method">POST</span>/auth/token](post/auth/token)             | Exchange credentials for access token
 [<span class="method">POST</span>/auth/revoke](post/auth/revoke)           | Revoke an access token
 [<span class="method">GET</span>/settings](get/settings)                   | Get the runtime settings
+[<span class="method">GET</span>/diagnostics](get/diagnostics)                   | Get the runtime diagnostics
 [<span class="method">GET</span>/flows](get/flows)                         | Get the active flow configuration
 [<span class="method">POST</span>/flows](post/flows)                       | Set the active flow configuration
 [<span class="method">POST</span>/flow](post/flow)                         | Add a flow to the active configuration
