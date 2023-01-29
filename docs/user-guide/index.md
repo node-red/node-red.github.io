@@ -41,7 +41,7 @@ places you can do so:
 
  - Join the [Node-RED Forum](https://discourse.nodered.org)
  - Join us on [Slack](http://nodered.org/slack/)
- - Subscribe to the [blog](http://blog.nodered.org)
+ - Subscribe to the [blog](https://nodered.org/blog/)
  - Follow [@nodered](http://twitter.com/nodered) on Twitter
 
 We also have the old [Google Group mailing list](https://groups.google.com/forum/#!forum/node-red) - that is being retired in favour of the [forum](https://discourse.nodered.org), but there's still a lot of useful content on there that is worth searching.
