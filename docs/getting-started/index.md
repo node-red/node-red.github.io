@@ -82,6 +82,18 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
 </div>
 
 <div class="post-preview">
+  <a href="flowforge">
+    <div class="post-header">
+      <img src="/images/platform-cloud.png">
+      <h2>FlowForge</h2>
+    </div>
+    <div class="post-content">
+      Running a multi tenant Node-RED solution
+    </div>
+  </a>
+</div>
+
+<div class="post-preview">
   <a href="ibmcloud">
     <div class="post-header">
       <img src="/images/platform-cloud.png">
@@ -118,14 +130,4 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
   </a>
 </div>
 
-<div class="post-preview">
-  <a href="flowforge">
-    <div class="post-header">
-      <img src="/images/platform-cloud.png">
-      <h2>FlowForge Community Edition</h2>
-    </div>
-    <div class="post-content">
-      Running a multi tenant Node-RED solution
-    </div>
-  </a>
-</div>
+
