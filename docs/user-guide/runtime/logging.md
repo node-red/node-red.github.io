@@ -50,6 +50,7 @@ Level of logging to be recorded. Options are:
 
 Other than `off`, each level includes messages at higher levels - for example, `warn` level
 will include `error` and `fatal` level messages.
+You can find the API reference for how to log to these different logging levels in the [Writing Functions Section](/docs/user-guide/writing-functions#node)
 
 #### `metrics`
 
