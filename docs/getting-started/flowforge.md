@@ -1,16 +1,22 @@
 ---
 layout: docs-getting-started
-title: FlowForge Community Edition
+title: FlowForge
 slug: flowforge
 toc: toc-user-guide.html
 redirect_from:
   - /docs/platforms/flowforge
 ---
 
-FlowForge offers a platform to collaborate on Node-RED projects and can be
-installed in a public cloud as well as on ones personal server or local machine.
+FlowForge allows organizations to reliably deliver Node-RED applications in a continuous, collaborative and secure manner. The key features of FlowForge are:
+* Collaborative development
+* Manage remote deployments
+* Steamline application delivery
+* Flexible deployment models
+* Professional support for Node-RED and FlowForge deployments
 
-There's multiple ways to run FlowForge; locally, docker-based, or in Kubernetes.
-When evaluating if FlowForge is for you, we recommend starting with a
-[local install](https://flowforge.com/docs/install/local/).
+
+A [free trial](https://app.flowforge.com/account/create) is available for FlowForge Cloud. 
+
+You can also run FlowForge locally, docker-based, or in Kubernetes. Check out our
+[installation instructions.](https://flowforge.com/docs/install/).
 
