@@ -136,15 +136,21 @@ blockquote {
 }
 
 @media handheld, only screen and (max-width: 850px) {
+    .post-preview {
+        width:  calc(100% / 2 - 30px);
+        height: 200px;
+    }
     .blog-posts .post-preview {
         width:  calc(100% / 2 - 50px);
-        height: 200px;
     }
 }
 
 @media handheld, only screen and (max-width: 767px) {
+    .post-preview {
+        width:  calc(100% - 30px);
+        height: 200px;
+    }
     .blog-posts .post-preview {
         width: calc(100% - 40px);
-        height: 200px;
     }
 }
