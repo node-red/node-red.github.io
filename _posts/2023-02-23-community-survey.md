@@ -9,8 +9,10 @@ Back in 2019 we published the results of the 2019 Node-RED community survey. The
 painted an interesting picture of the Node-RED community. We think it is time to refresh
 these results so we are running the survey again.
 
-The 2023 survey is similar to the 2019, we wanted to get a better picture of who our uses are, what they do with Node-RED
-and to make sure we keep the project pointed in the right direction.
+The 2023 survey is similar to the 2019. We've made a few tweaks, removed some
+questions and added some new ones. The goal is to get a better picture of who
+our uses are, what they do with Node-RED and to make sure we keep the project
+pointed in the right direction.
 
 The survey will be open until March 31. Of course we would like to get as many respondents
 as possible. In 2019, we have over 800 individuals respond so hopefully we can meet this number
