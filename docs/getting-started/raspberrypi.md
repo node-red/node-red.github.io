@@ -10,7 +10,7 @@ redirect_from:
 
 ### Prerequisites
 
-If you are using Raspberry Pi OS, Buster is the currently supported version.
+If you are using Raspberry Pi OS, Bullseye is the currently supported version.
 
 ### Installing and Upgrading Node-RED
 
