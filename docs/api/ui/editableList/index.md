@@ -51,6 +51,7 @@ own right. Used by the core `Switch` and `Change` nodes.
                 <tr><td><a href="#methods-show">show</a></td></tr>
                 <tr><td><a href="#methods-sort">sort</a></td></tr>
                 <tr><td><a href="#methods-length">length</a></td></tr>
+                <tr><td><a href="#methods-cancel">cancel</a></td></tr>
             </table>
         </div>
     </div>
@@ -468,6 +469,16 @@ Gets the number of list items.
 
 ```javascript
 var length = $("ol.list").editableList('length');
+```
+
+#### <a href="#methods-show" name="methods-cancel">cancel()</a>
+
+*Since 3.1.0*
+
+Cancels an item sort operation on the list.
+
+```javascript
+$("ol.list").editableList('cancel');
 ```
 
 <style>
