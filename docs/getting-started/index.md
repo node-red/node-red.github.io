@@ -94,19 +94,6 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
 </div>
 
 <div class="post-preview">
-  <a href="ibmcloud">
-    <div class="post-header">
-      <img src="/images/platform-cloud.png">
-      <h2>IBM Cloud</h2>
-    </div>
-    <div class="post-content">
-      Deploying Node-RED from the IBM Cloud catalog in a couple of clicks
-    </div>
-  </a>
-</div>
-
-
-<div class="post-preview">
   <a href="aws">
     <div class="post-header">
       <img src="/images/platform-cloud.png">
