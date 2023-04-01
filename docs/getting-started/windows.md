@@ -7,7 +7,7 @@ redirect_from:
   - /docs/platforms/windows
 ---
 
-This page gives specific instructions on setting up Node-RED in a Microsoft Windows environment. The instructions are specific to Windows 10 but should also work for Windows 7 and Windows Server from 2008R2. It is not advisable to use versions prior to Windows 7 or Windows Server 2008R2 due to lack of current support.
+This page gives specific instructions on setting up Node-RED in a Microsoft Windows environment. The instructions are specific to Windows 10. They may also work for Windows 7 and Windows Server from 2008R2, but it is advisable not to use them due to lack of current support.
 
 <div class="doc-callout">
 <em>Note</em> : Some of the following instructions mention the "command prompt". Where this is used, it refers to either the Windows cmd or PowerShell terminal shells. It is <a href="https://support.microsoft.com/en-us/help/4027690/windows-powershell-is-replacing-command-prompt">recommended to use PowerShell</a> on all newer versions of Windows as this gives you access to commands and folder names that are closer to those of Linux/Mac.
@@ -17,7 +17,7 @@ This page gives specific instructions on setting up Node-RED in a Microsoft Wind
 
 #### 1. Install Node.js
 
-Download the latest 14.x LTS version of Node.js from the official [Node.js home page](https://nodejs.org/en/). It will offer you the best version for your system.
+Download the latest LTS version of Node.js from the official [Node.js home page](https://nodejs.org/en/). It will offer you the best version for your system.
 
 Run the downloaded MSI file.  Installing Node.js requires local administrator rights; if you are not a local
 administrator, you will be prompted for an administrator password on install.  Accept the defaults when installing.  After installation completes, close any open command prompts and re-open to ensure new environment variables
@@ -31,8 +31,8 @@ Using cmd: `node --version && npm --version`
 
 You should receive back output that looks similar to:
 
-    v14.17.2.0
-    6.14.13
+    v18.15.0
+    9.5.0
 
 #### 2. Install Node-RED
 
