@@ -60,7 +60,7 @@ solutions and developing external products for their company.
 
 When used in a professional setting, Node-RED is typically used by software
 developers or manufacturing engineers. It is interesting to note that the role
-of Team Leader / Project Manger is also well represented, likely due to the
+of Team Leader / Project Manager is also well represented, likely due to the
 low-code nature of Node-RED.
 
 Node-RED teams tend to be relatively small with the majority of respondents
