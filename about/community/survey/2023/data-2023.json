@@ -146,7 +146,7 @@
             { "name": "Personal Computer / Laptop", "previous":48.7, "value": 47.6 },
             { "series":1,"name": "Data Center / Local server", "previous":	0, "value": 35.5},
             { "series":1,"name": "Industrial PC / PLC", "previous":6.0, "value": 12.7 } ,
-            { "series":1,"name": "Mobile Device / Tabet", "previous":7.6, "value": 6.0 },
+            { "series":1,"name": "Mobile Device / Tablet", "previous":7.6, "value": 6.0 },
             { "series":2,"name": "Cloud - AWS", "previous":8.3, "value": 7.2 },
             { "series":2,"name": "Cloud - MS Azure", "previous":4.4, "value": 5.8 },
             { "series":2,"name": "Cloud - Other", "previous":4.2, "value": 5.0 },
