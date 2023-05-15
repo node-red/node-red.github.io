@@ -98,11 +98,6 @@ which provides a feed of nodes published to the [flow library](https://flows.nod
 The project used the Google Groups based [mailing list](https://groups.google.com/forum/#!forum/node-red), but
 that is now a read-only archive..
 
-### Community Survey
-
-We ran our first community-wide survey in March/April 2019. The results are
-available [here](/about/community/survey/2019).
-
 ### User Groups
 
 - [Node-RED User Group Japan](https://nodered.jp/)
