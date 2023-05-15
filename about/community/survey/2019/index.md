@@ -2,9 +2,9 @@
 layout: about-survey
 title: 2019 Node-RED Community Survey
 slug:
-  - url: /about/community
-    label: community
-  - 2019 survey
+  - url: /about/community/survey
+    label: survey
+  - 2019
 redirect_from:
   - /2019survey
 ---
