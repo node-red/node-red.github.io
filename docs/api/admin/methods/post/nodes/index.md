@@ -43,7 +43,7 @@ The following `curl` example will install `node-red-contrib-foo`.
 
 {% highlight shell %}
 curl -X POST http://localhost:1880/nodes -H "Content-Type: multipart/form-data" -F "tarball=@node-red-contrib-foo-1.0.3.tgz;type=application/x-compressed-tar;filename=node-red-contrib-foo-1.0.3.tgz"
-{% endhightlight  %}
+{% endhighlight  %}
 
 ### Response
 
