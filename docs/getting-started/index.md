@@ -82,7 +82,7 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
 </div>
 
 <div class="post-preview">
-  <a href="flowforge">
+  <a href="flowfuse">
     <div class="post-header">
       <img src="/images/platform-cloud.png">
       <h2>FlowFuse</h2>
