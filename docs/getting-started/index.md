@@ -85,10 +85,10 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
   <a href="flowforge">
     <div class="post-header">
       <img src="/images/platform-cloud.png">
-      <h2>FlowForge</h2>
+      <h2>FlowFuse</h2>
     </div>
     <div class="post-content">
-      Running a multi tenant Node-RED solution
+      Running a multi-tenant Node-RED solution
     </div>
   </a>
 </div>
