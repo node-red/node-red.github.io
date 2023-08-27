@@ -116,9 +116,9 @@ For more information about the runtime part of the node, see [here](node-js).
         defaults: {
             name: {value:""}
         },
-        inputs:1,
-        outputs:1,
-        icon: "file.png",
+        inputs: 1,
+        outputs: 1,
+        icon: "file.svg",
         label: function() {
             return this.name||"lower-case";
         }
