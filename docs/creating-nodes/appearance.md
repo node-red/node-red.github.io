@@ -27,7 +27,7 @@ a node instance, as well as for the node's entry in the palette. In this latter 
 
 {% highlight javascript %}
 ...
-icon: "file.png",
+icon: "file.svg",
 ...
 {% endhighlight %}
 
