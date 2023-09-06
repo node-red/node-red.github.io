@@ -459,12 +459,13 @@ The modules are automatically installed under `~/.node-red/externalModules/` whe
 
 
 
+### Handling a Timeout
 
+*Since Node-RED 3.1.0*
 
-
-
-
-
+It is possible to set a timeout for the function node on the Setup tab. This value,
+in seconds, is how long the runtime will allow the Function node to run for before
+raising an error. If set to 0, the default, no timeout is applied.
 
 ***
 

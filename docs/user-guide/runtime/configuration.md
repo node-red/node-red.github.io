@@ -91,7 +91,23 @@ httpStatic
   served from the top level url, `/`. When this property is used, `httpAdminRoot` must
   also be used to make editor UI available at a path other than `/`.
 
+  This property can also be set as an Array to support multiple static directories, each
+  with its own set of options. The options include the path to the local directory to serve
+  content from, the root url to serve them from and an optional custom middleware function.
+  
+  For example:
+
+      httpStatic: [
+        {
+            path: '/opt/static/',
+            root: '/private/',
+            middleware: myCustomHttpMiddleware
+        }
+      ]
+
   *Standalone only*.
+
+
 
 httpStaticAuth
 : enabled HTTP Basic Authentication on the static content. See `httpAdminAuth` for format.
@@ -256,6 +272,10 @@ functionGlobalContext
 
 functionExternalModules
 : if set to `true`, the Function node's Setup tab will allow adding additional modules that will become available to the function. See [Writing Functions](../writing-functions#using-the-functionexternalmodules-option) for more information. Default: `false`.
+
+functionTimeout
+: Function Nodes - the default timeout, in seconds, to apply to newly configured Function nodes.
+  Default: 0 - meaning no timeout.
 
 debugMaxLength
 : Debug Nodes - the maximum length, in characters, of any message sent to the
