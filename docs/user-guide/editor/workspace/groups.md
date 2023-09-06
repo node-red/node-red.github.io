@@ -83,8 +83,24 @@ To apply that style to another group, select the group and press `Ctrl/⌘-Shift
 
 ### Adding nodes to a group
 
-Nodes can be added to an existing group by dragging them into the group. This only
-works for adding one node at a time.
+Nodes can be added to an existing group by dragging them into the group. Before Node-RED 3.1, this
+could only be done one node at a time. Since Node-RED 3.1, a whole selection of nodes/groups can be
+dragged into a group in one go.
+
+### Removing from a group
+
+To remove a node from a group, select the node then select the 'Groups -> Remove from group'
+option in the menu.
+
+Since Node-RED 3.1 you can press and hold the `Alt` key when dragging a selection and it will be
+removed from the parent group.
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>Groups -&gt; Remove from group</code></td></tr>
+ <tr><td>Action</td><td><code>core:remove-selection-from-group</code></td></tr>
+</table>
 
 ### Merging nodes/groups
 
@@ -114,14 +130,4 @@ option in the menu.
 
 
 
-### Removing from a group
 
-To remove a node from a group, select the node then select the 'Groups -> Remove from group'
-option in the menu.
-
-<table class="action-ref inline">
- <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><i>none</i></td></tr>
- <tr><td>Menu option</td><td><code>Groups -&gt; Remove from group</code></td></tr>
- <tr><td>Action</td><td><code>core:remove-selection-from-group</code></td></tr>
-</table>

@@ -76,8 +76,6 @@ The flow can be enabled or disabled using the toggle button at the bottom of the
 dialog. If a flow is disabled, none of the nodes it contains will be created when
 the flow is deployed.
 
-*Since Node-RED 1.1.0*
-
 The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-circle-thin"></i> button in the [Information sidebar](../sidebar/info) can also be used to enable or disable the node/flow.
 
 <table class="action-ref inline">
@@ -98,9 +96,8 @@ The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-al
 
 #### Hiding or showing a flow
 
-*Since Node-RED 2.1.0*
-
-A flow can be hidden by clicking on the <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-times"></i> on the tab.
+A flow can be hidden by right-clicking on it and selecting 'hide flow' in the context menu. The option
+can also be found in the tab bar drop-down menu.
 
 When hidden, the [Information sidebar](../sidebar/info) will show an <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-eye-slash"></i> icon next to it. Clicking that icon will show the flow again.
 
@@ -139,6 +136,29 @@ When hidden, the [Information sidebar](../sidebar/info) will show an <i style="b
  <tr><td>Action</td><td><code>core:show-all-flows</code></td></tr>
 </table>
 
+#### Locking a flow
+
+Flows can be locked to prevent any changes being made to them.
+
+To lock/unlock a flow, you can:
+
+ - Right-click on its tab and select the 'lock flow' option
+ - Toggle the lock button in the bottom corner of the Flow Properties dialog
+ - Click the padlock icon in the Information Sidebar when hovering over the flow
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Lock Flow</code></td></tr>
+ <tr><td>Action</td><td><code>core:lock-flow</code></td></tr>
+</table>
+
+<table class="action-ref inline">
+ <tr><th colspan="2">Reference</th></tr>
+ <tr><td>Key shortcut</td><td><i>none</i></td></tr>
+ <tr><td>Menu option</td><td><code>[Tab Menu] Unlock Flow</code></td></tr>
+ <tr><td>Action</td><td><code>core:unlock-flow</code></td></tr>
+</table>
 
 #### Deleting a flow
 
