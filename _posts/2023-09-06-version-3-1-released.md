@@ -18,7 +18,7 @@ in the near future to keep up to date with Node.js versions reaching their end-o
 We'll also get back to more regular maintenance releases to keep things moving.
 
 With all that said, and without our usual accompanying video, lets dig into what
-3.1 has to offer. As ever, the [Change Log]() has the full list of changes in
+3.1 has to offer. As ever, the [Change Log](https://github.com/node-red/node-red/releases/tag/3.1.0) has the full list of changes in
 this release.
 
 
