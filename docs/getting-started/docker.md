@@ -105,6 +105,8 @@ This has the advantage that you don't need to know/specify which architecture yo
 docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red:1.2.0-10-arm32v6
 ```
 
+As of Node-RED v3.1.0 we also provide a Debian based image for those nodes with native components that do not work well on Alpine.
+
 ### Managing User Data
 
 Once you have Node-RED running with Docker, we need to
@@ -234,8 +236,10 @@ FROM nodered/node-red
 
 # Copy package.json to the WORKDIR so npm builds all
 # of your added nodes modules for Node-RED
-COPY package.json .
+WORKDIR /data
+COPY package.json /data
 RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
+WORKDIR /usr/src/node-red
 
 # Copy _your_ Node-RED project files into place
 # NOTE: This will only work if you DO NOT later mount /data as an external volume.
@@ -244,10 +248,6 @@ RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 COPY settings.js /data/settings.js
 COPY flows_cred.json /data/flows_cred.json
 COPY flows.json /data/flows.json
-
-# You should add extra nodes via your package.json file but you can also add them here:
-#WORKDIR /usr/src/node-red
-#RUN npm install node-red-node-smooth
 ```
 
 **Note**: the `package.json` file must contain a start option within the script section. For example the default container is like this:
