@@ -221,8 +221,12 @@ describe('lower-case Node', function () {
     var flow = [{ id: 'n1', type: 'lower-case', name: 'test name' }];
     helper.load(lowerNode, flow, function () {
       var n1 = helper.getNode('n1');
-      n1.should.have.property('name', 'test name');
-      done();
+      try {
+        n1.should.have.property('name', 'test name');
+        done();
+      } catch (err) {
+        done(err);
+      }
     });
   });
 
