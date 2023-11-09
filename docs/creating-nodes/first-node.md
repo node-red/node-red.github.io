@@ -9,16 +9,17 @@ Nodes get created when a flow is deployed, they may send and receive some messag
 whilst the flow is running and they get deleted when the next flow is deployed.
 
 They consist of a pair of files:
- -  a JavaScript file that defines what the node does,
- -  an html file that defines the node's properties, edit dialog and help text.
+
+- a JavaScript file that defines what the node does,
+- an html file that defines the node's properties, edit dialog and help text.
 
 A `package.json` file is used to package it all together as an npm module.
 
- - [Creating a simple node](#creating-a-simple-node)
-   - [package.json](#package-json)
-   - [lower-case.js](#lower-casejs)
-   - [lower-case.html](#lower-casehtml)
- - [Testing your node in Node-RED](#testing-your-node-in-node-red)
+- [Creating a simple node](#creating-a-simple-node)
+  - [package.json](#package-json)
+  - [lower-case.js](#lower-casejs)
+  - [lower-case.html](#lower-casehtml)
+- [Testing your node in Node-RED](#testing-your-node-in-node-red)
 
 ### Creating a simple node
 
@@ -30,9 +31,9 @@ the time of writing this is 10.x.
 
 Create a directory where you will develop your code. Within that directory, create the following files:
 
- - `package.json`
- - `lower-case.js`
- - `lower-case.html`
+- `package.json`
+- `lower-case.js`
+- `lower-case.html`
 
 <h4 id="package-json"><i class="fa fa-file-o"></i> package.json</h4>
 
@@ -63,22 +64,22 @@ For more information about how to package your node, including requirements on
 naming and other properties that should be set before publishing your node, refer
 to the [packaging guide](packaging).
 
-**Note**: Please do ***not*** publish this example node to npm!
+**Note**: Please do **_not_** publish this example node to npm!
 
 <h4 id="lower-casejs"><i class="fa fa-file-o"></i> lower-case.js</h4>
 
 ```javascript
-module.exports = function(RED) {
-    function LowerCaseNode(config) {
-        RED.nodes.createNode(this,config);
-        var node = this;
-        node.on('input', function(msg) {
-            msg.payload = msg.payload.toLowerCase();
-            node.send(msg);
-        });
-    }
-    RED.nodes.registerType("lower-case",LowerCaseNode);
-}
+module.exports = function (RED) {
+  function LowerCaseNode(config) {
+    RED.nodes.createNode(this, config);
+    var node = this;
+    node.on('input', function (msg) {
+      msg.payload = msg.payload.toLowerCase();
+      node.send(msg);
+    });
+  }
+  RED.nodes.registerType('lower-case', LowerCaseNode);
+};
 ```
 
 The node is wrapped as a Node.js module. The module exports a function that gets called
@@ -107,41 +108,43 @@ For more information about the runtime part of the node, see [here](node-js).
 
 <h4 id="lower-casehtml"><i class="fa fa-file-o"></i> lower-case.html</h4>
 
-
 ```html
 <script type="text/javascript">
-    RED.nodes.registerType('lower-case',{
-        category: 'function',
-        color: '#a6bbcf',
-        defaults: {
-            name: {value:""}
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "file.svg",
-        label: function() {
-            return this.name||"lower-case";
-        }
-    });
+  RED.nodes.registerType('lower-case', {
+    category: 'function',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: '' }
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'file.svg',
+    label: function () {
+      return this.name || 'lower-case';
+    }
+  });
 </script>
 
 <script type="text/html" data-template-name="lower-case">
-    <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
 </script>
 
 <script type="text/html" data-help-name="lower-case">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+  <p>
+    A simple node that converts the message payloads into all lower-case
+    characters
+  </p>
 </script>
 ```
 
 A node's HTML file provides the following things:
 
- - the main node definition that is registered with the editor
- - the edit template
- - the help text
+- the main node definition that is registered with the editor
+- the edit template
+- the help text
 
 In this example, the node has a single editable property, `name`. Whilst not
 required, there is a widely used convention to this property to help distinguish
@@ -171,7 +174,7 @@ On Windows you would do:
     cd C:\Users\my_name\.node_red
     npm install C:\Users\my_name\Documents\GitHub\node-red-contrib-example-lower-case
 
-This creates a symbolic link to your node module project directory in  `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED.  On Windows, again, using npm 5.x or greater:
+This creates a symbolic link to your node module project directory in `~/.node-red/node_modules` so that Node-RED will discover the node when it starts. Any changes to the node's file can be picked up by simply restarting Node-RED. On Windows, again, using npm 5.x or greater:
 
 <div class="doc-callout">
 <em>Note</em> :  <code>npm</code> will automatically add an entry for your module in the
@@ -182,43 +185,60 @@ command.
 
 ### Unit Testing
 
-To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-node-test-helper) can be used.  The test-helper is a framework
+To support unit testing, an npm module called [`node-red-node-test-helper`](https://www.npmjs.com/package/node-red-node-test-helper) can be used. The test-helper is a framework
 built on the Node-RED runtime to make it easier to test nodes.
 
-Using this framework, you can create test flows, and then assert that your node properties and output is working as expected.  For example, to add a unit test to the lower-case node you can add a `test` folder to your node module package containing a file called `_spec.js`
+To prepare the tests you need to add the test dependencies to your `package.json` file:
+
+```bash
+npm install --savedev node-red node-red-node-test-helper
+```
+
+The test helper relies on NodeRED, so it needs to be added as development dependency.
+
+Using this framework, you can create test flows, and then assert that your node properties and output is working as expected. For example, to add a unit test to the lower-case node you can add a `test` folder to your node module package containing a file called `_spec.js`
 
 <h4 id="lower-casespecjs"><i class="fa fa-file-o"></i> test/lower-case_spec.js</h4>
 
 ```javascript
-var helper = require("node-red-node-test-helper");
-var lowerNode = require("../lower-case.js");
+const helper = require('node-red-node-test-helper');
+const lowerNode = require('../lower-case.js');
+
+// Initialize access to NodeRED
+helper.init(require.resolve('node-red'));
 
 describe('lower-case Node', function () {
+  beforeEach(function (done) {
+    helper.startServer(done);
+  });
 
-  afterEach(function () {
+  afterEach(function (done) {
     helper.unload();
+    helper.stopServer(done);
   });
 
   it('should be loaded', function (done) {
-    var flow = [{ id: "n1", type: "lower-case", name: "test name" }];
+    var flow = [{ id: 'n1', type: 'lower-case', name: 'test name' }];
     helper.load(lowerNode, flow, function () {
-      var n1 = helper.getNode("n1");
+      var n1 = helper.getNode('n1');
       n1.should.have.property('name', 'test name');
       done();
     });
   });
 
   it('should make payload lower case', function (done) {
-    var flow = [{ id: "n1", type: "lower-case", name: "test name",wires:[["n2"]] },
-    { id: "n2", type: "helper" }];
+    var flow = [
+      { id: 'n1', type: 'lower-case', name: 'test name', wires: [['n2']] },
+      { id: 'n2', type: 'helper' }
+    ];
     helper.load(lowerNode, flow, function () {
-      var n2 = helper.getNode("n2");
-      var n1 = helper.getNode("n1");
-      n2.on("input", function (msg) {
+      var n2 = helper.getNode('n2');
+      var n1 = helper.getNode('n1');
+      n2.on('input', function (msg) {
         msg.should.have.property('payload', 'uppercase');
         done();
       });
-      n1.receive({ payload: "UpperCase" });
+      n1.receive({ payload: 'UpperCase' });
     });
   });
 });
@@ -226,6 +246,6 @@ describe('lower-case Node', function () {
 
 These tests check to see that the node is loaded into the runtime correctly, and that it correctly changes the payload to lower case as expected.
 
-Both tests load the node into the runtime using `helper.load` supplying the node under test and a test flow  The first checks that the node in the runtime has the correct name property.  The second test uses a helper node to check that the output from the node is, in fact, lower case.
+Both tests load the node into the runtime using `helper.load` supplying the node under test and a test flow The first checks that the node in the runtime has the correct name property. The second test uses a helper node to check that the output from the node is, in fact, lower case.
 
-The helper module contains other examples of tests taken from the Node-RED core nodes.  For more information on the helper module, see the associated README.
+The helper module contains other examples of tests taken from the Node-RED core nodes. For more information on the helper module, see the associated README.
