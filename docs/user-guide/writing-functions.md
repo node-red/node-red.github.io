@@ -337,7 +337,7 @@ flow.get(["count", "colour"], function(err, count, colour) { ... })
 flow.set("count", 123, function(err) { ... })
 
 // Set multiple values
-flow.set(["count", "colour", [123, "red"], function(err) { ... })
+flow.set(["count", "colour"], [123, "red"], function(err) { ... })
 {% endhighlight %}
 
 The first argument passed to the callback, `err`, is only set if an error
