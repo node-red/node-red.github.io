@@ -12,9 +12,13 @@ The appearance of the editor can be customised using themes. Themes are packaged
 and installed as Node-RED plugins, and then selected via the `editorTheme.theme`
 property in the settings file.
 
- - [Creating theme CSS](#creating-theme-css)
- - [Packaging as a Theme Plugin](#packaging-as-a-theme-plugin)
- - [Theming the Monaco editor](#theming-the-monaco-editor)
+- [Creating theme CSS](#creating-theme-css)
+- [Packaging as a Theme Plugin](#packaging-as-a-theme-plugin)
+  - [Testing the theme](#testing-the-theme)
+- [Theming the Monaco editor](#theming-the-monaco-editor)
+  - [Setting the Monaco theme by name](#setting-the-monaco-theme-by-name)
+  - [Setting a custom Monaco theme](#setting-a-custom-monaco-theme)
+  - [Setting a custom Monaco theme from a JSON file](#setting-a-custom-monaco-theme-from-a-json-file)
 
 ### Creating theme CSS
 
@@ -130,7 +134,7 @@ Monaco editor options including what theme it should use.
 
 #### Setting the Monaco theme by name
 
-Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme). Additional settings for Monaco options can be found [here](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IStandaloneEditorConstructionOptions.html).
+Monaco comes with a number of built-in themes available. The full list is [here](https://github.com/node-red/node-red/tree/master/packages/node_modules/%40node-red/editor-client/src/vendor/monaco/dist/theme). Additional settings for Monaco options can be found [here](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IStandaloneEditorConstructionOptions.html).
 
 The name of the theme can be provided in the plugin settings:
 
