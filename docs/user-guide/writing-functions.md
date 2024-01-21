@@ -448,7 +448,7 @@ the settings file. For most users that will be the default user directory - `~/.
 
 *Since Node-RED 1.3.0*
 
-By setting `functionExternalModules` to `true` in you *settings.js* file, the Function
+By setting `functionExternalModules` to `true` in your *settings.js* file, the Function
 node's edit dialog will provide a list where you can add additional modules
 that should be available to the node. You also specify the variable that will
 be used to refer to the module in the node's code.
