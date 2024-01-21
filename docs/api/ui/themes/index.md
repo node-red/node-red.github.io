@@ -14,11 +14,7 @@ property in the settings file.
 
 - [Creating theme CSS](#creating-theme-css)
 - [Packaging as a Theme Plugin](#packaging-as-a-theme-plugin)
-  - [Testing the theme](#testing-the-theme)
 - [Theming the Monaco editor](#theming-the-monaco-editor)
-  - [Setting the Monaco theme by name](#setting-the-monaco-theme-by-name)
-  - [Setting a custom Monaco theme](#setting-a-custom-monaco-theme)
-  - [Setting a custom Monaco theme from a JSON file](#setting-a-custom-monaco-theme-from-a-json-file)
 
 ### Creating theme CSS
 
