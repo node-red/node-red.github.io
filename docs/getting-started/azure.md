@@ -60,7 +60,10 @@ previous stage.
 
 Once logged in you need to install node.js and Node-RED
 
-       curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+       curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+       source ~/.bashrc
+       nvm install --lts
+       nvm install 14.17.6
        sudo apt-get install -y nodejs build-essential
        sudo npm install -g --unsafe-perm node-red
 
