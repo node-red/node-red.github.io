@@ -237,8 +237,9 @@ fi
 ```
 After executing the file, you can make the application accessible by using the `public IP` or `Fully Qualified Domain Name (FQDN)` of the Azure Container Instance.
 
-![Alt text](node-red.png)
+![node-red](https://github.com/manjularajamani/node-red.github.io/assets/100277950/f146edad-21f6-4879-a46c-6d400c41ef6a)
+
 
 Additionally, you can verify whether the file share is properly mounted using Azure Container Instances (ACI)
 
-![Alt text](aci.png)
+![aci](https://github.com/manjularajamani/node-red.github.io/assets/100277950/4060dca2-c1c7-4bb1-96ee-3dd371547aea)
