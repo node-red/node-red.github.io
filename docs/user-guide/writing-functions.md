@@ -455,7 +455,7 @@ be used to refer to the module in the node's code.
 
 <img style="margin-left: 20px;" src="/docs/user-guide/images/function_external_modules.png" width="500px">
 
-The modules are automatically installed under `~/.node-red/externalModules/` when the node is deployed.
+The modules are automatically installed under `~/.node-red/node_modules/` when the node is deployed.
 
 
 
