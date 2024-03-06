@@ -88,6 +88,8 @@ flows nodes, there can be at most one input and as many outputs as needed.
 
 The toolbar provides an option to add a 'status' output to a subflow. This can
 be used to update the Status of subflow instance nodes.
+The node uses the input of `msg.payload` which can either be a simple string or a
+<a href="/docs/creating-nodes/status#status-object">Status Object</a>
 
 
 #### Editing subflow properties
