@@ -103,7 +103,7 @@ can use pm2:
 
 ```
 ## Change these parameters as needed
-   RESOURCE_GROUP=myResourceGroup
+   RESOURCE_GROUP=MyResourceGroup
    STORAGE_ACCOUNT_NAME=storageaccount$RANDOM
    LOCATION=eastus
    FILE_SHARE_NAME=node-red-share
@@ -118,9 +118,13 @@ can use pm2:
       --sku Standard_LRS
 
 ## Create the file share
-   az storage share create \
-      --name $FILE_SHARE_NAME \
-      --account-name $STORAGE_ACCOUNT_NAME
+   az storage share-rm create \
+    --resource-group $RESOURCE_GROUP \
+    --storage-account $STORAGE_ACCOUNT_NAME \
+    --name $FILE_SHARE_NAME \
+    --quota 1024 \
+    --enabled-protocols SMB \
+    --output table
 ```
 
 #### Get storage credentials
@@ -139,9 +143,9 @@ echo $FILE_SHARE_NAME
 - **Storage account key** - This value can be found using the following command
 
 ```
-STORAGE_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --account-name $STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
+STORAGE_ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --account-name $STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
 
-echo $STORAGE_KEY
+echo $STORAGE_ACCOUNT_KEY
 ```
 
 #### Deploy Node-Red on container instance and mount volume - CLI
@@ -155,7 +159,7 @@ az container create \
         --dns-name-label unique-acidemo-label \
         --ports 1880 \
         --azure-file-volume-account-name $STORAGE_ACCOUNT_NAME \
-        --azure-file-volume-account-key $STORAGE_KEY \
+        --azure-file-volume-account-key $STORAGE_ACCOUNT_KEY \
         --azure-file-volume-share-name $FILE_SHARE_NAME \
         --azure-file-volume-mount-path /aci/logs/
 
@@ -169,25 +173,31 @@ Here is the bash script for Node-RED
 ```
 #!/usr/bin/env bash
 
-RESOURCE_GROUP=myResourceGroup
+RESOURCE_GROUP=MyResourceGroup
 STORAGE_ACCOUNT_NAME=storageaccount$RANDOM
 LOCATION=eastus
 FILE_SHARE_NAME=node-red-share
-IMAGE=myregistry.azurecr.io/node-red:latest
+IMAGE=testingregistrydevops.azurecr.io/node-red:latest
 ACI_NAME=node-red
 
+# Function to handle errors
+handle_error() {
+    echo "Error: $1" >&2
+    exit 1
+}
+
 # Azure Login
-az login
+az login || handle_error "Failed to login to Azure"
 
 # ACR Login
-az acr login --name myregistry.azurecr.io
+az acr login --name testingregistrydevops.azurecr.io || handle_error "Failed to login to ACR"
 
 # Check if Resource Group exists
 if az group show --name $RESOURCE_GROUP &>/dev/null; then
     echo "Resource group '$RESOURCE_GROUP' already exists."
 else
     # Creating Resource Group
-    az group create --name $RESOURCE_GROUP --location $LOCATION
+    az group create --name $RESOURCE_GROUP --location $LOCATION || handle_error "Failed to create resource group"
     echo "Resource group '$RESOURCE_GROUP' created."
 fi
 
@@ -200,21 +210,27 @@ else
         --resource-group $RESOURCE_GROUP \
         --name $STORAGE_ACCOUNT_NAME \
         --location $LOCATION \
-        --sku Standard_LRS
+        --sku Standard_LRS || handle_error "Failed to create storage account"
     echo "Storage account '$STORAGE_ACCOUNT_NAME' created."
 fi
 
 # Creating File Share
-az storage share create \
+echo "Creating file share '$FILE_SHARE_NAME'..."
+if az storage share-rm create \
+    --resource-group $RESOURCE_GROUP \
+    --storage-account $STORAGE_ACCOUNT_NAME \
     --name $FILE_SHARE_NAME \
-    --account-name $STORAGE_ACCOUNT_NAME
+    --quota 1024 \
+    --enabled-protocols SMB \
+    --output table &>/dev/null; then
+    echo "File share '$FILE_SHARE_NAME' created successfully."
+else
+    handle_error "Failed to create file share '$FILE_SHARE_NAME'"
+fi
 
-echo "File share '$FILE_SHARE_NAME' created."
-
-echo $STORAGE_ACCOUNT_NAME
-
-STORAGE_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --account-name $STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
-echo $STORAGE_KEY
+# Fetch Storage Account Key
+STORAGE_ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP --account-name $STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
+echo $STORAGE_ACCOUNT_KEY
 
 # Creating Azure Container Instance for Node-Red
 if az container show --resource-group $RESOURCE_GROUP --name $ACI_NAME &>/dev/null; then
@@ -228,9 +244,9 @@ else
         --dns-name-label unique-acidemo-label \
         --ports 1880 \
         --azure-file-volume-account-name $STORAGE_ACCOUNT_NAME \
-        --azure-file-volume-account-key $STORAGE_KEY \
+        --azure-file-volume-account-key $STORAGE_ACCOUNT_KEY \
         --azure-file-volume-share-name $FILE_SHARE_NAME \
-        --azure-file-volume-mount-path /aci/logs/
+        --azure-file-volume-mount-path /aci/logs/ || handle_error "Failed to create container instance"
 
     echo "Azure Container Instance '$ACI_NAME' created."
 fi
@@ -242,4 +258,4 @@ After executing the file, you can make the application accessible by using the `
 
 Additionally, you can verify whether the file share is properly mounted using Azure Container Instances (ACI)
 
-![aci](https://github.com/manjularajamani/node-red.github.io/assets/100277950/4060dca2-c1c7-4bb1-96ee-3dd371547aea)
+![alt text](<aci .png>)
