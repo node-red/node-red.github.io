@@ -258,4 +258,4 @@ After executing the file, you can make the application accessible by using the `
 
 Additionally, you can verify whether the file share is properly mounted using Azure Container Instances (ACI)
 
-![alt text](<aci .png>)
+![aci ](https://github.com/manjularajamani/node-red.github.io/assets/100277950/29ace90a-e509-415d-9fca-621a3db9e437)
