@@ -115,7 +115,7 @@ The team of "PLUS for Node-RED" wants to support you in your needs for Node-RED 
 Low-Code and No-Code engineering templates, examples and proven connectivity protocol solutions via Node-RED, FlowFuse and other Node-RED based platforms!
 
 For the fastest start with Node-RED in industrial environments, the "PLUS for Node-RED" team wants to provide you with OT/IT hybrid experts. 
-You can contact us the best via the [FlowFuse team](https://flowfuse.com/contact-us/) or via our ([P4NR Website](https://p4nr.com/)).
+You can contact us the best via the [FlowFuse contact](https://flowfuse.com/contact-us/) or via our [P4NR Website](https://p4nr.com/).
 Even if a problem is a bit more difficult we will gladly help.
 
 Access the OT/IT hybrid experts experience of more than eight years of contributing to Node-RED contribution packages 
