@@ -12,9 +12,10 @@ The appearance of the editor can be customised using themes. Themes are packaged
 and installed as Node-RED plugins, and then selected via the `editorTheme.theme`
 property in the settings file.
 
- - [Creating theme CSS](#creating-theme-css)
- - [Packaging as a Theme Plugin](#packaging-as-a-theme-plugin)
- - [Theming the Monaco editor](#theming-the-monaco-editor)
+- [Creating theme CSS](#creating-theme-css)
+- [Packaging as a Theme Plugin](#packaging-as-a-theme-plugin)
+- [Theming the Monaco editor](#theming-the-monaco-editor)
+- [Theming the Mermaid diagrams](#theming-the-mermaid-diagrams)
 
 ### Creating theme CSS
 
@@ -241,3 +242,21 @@ RED.plugins.registerPlugin("my-custom-theme", {
 ```
 
 The specific details of how to create a Monaco theme is beyond the scope of our documentation.
+
+### Theming the Mermaid diagrams
+
+A theme plugin can also set the theme for the Mermaid diagramming and charting tool.
+
+Mermaid comes with a number of built-in themes available. The full list is [here](https://mermaid.js.org/config/theming.html#available-themes).
+
+The name of the theme can be provided in the plugin settings:
+
+```javascript
+RED.plugins.registerPlugin("my-custom-theme", {
+   type: "node-red-theme",
+   css: "style.css",
+   mermaid: {
+     theme: "dark" //Mermaid theme name
+   }
+ })
+ ```
