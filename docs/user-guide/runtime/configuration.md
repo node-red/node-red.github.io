@@ -237,6 +237,9 @@ The theme of the editor can be changed by using the following settings object. A
                 // The following only apply if the editor is set to "monaco"
                 theme: "vs", // Select a color theme for the text editor component. Must match the file name of a theme in packages/node_modules/@node-red/editor-client/src/vendor/monaco/dist/theme
             }
+        },
+        mermaid: {
+            theme: "default" // Select a color theme for the Mermaid diagramming and charting tool. Must match the name of a theme in https://mermaid.js.org/config/theming.html#available-themes
         }
     },
 
