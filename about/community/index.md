@@ -101,3 +101,26 @@ that is now a read-only archive..
 ### User Groups
 
 - [Node-RED User Group Japan](https://nodered.jp/)
+
+### PLUS for Node-RED - A Node-RED B2B Community
+
+"PLUS for Node-RED" ([P4NR B2B Community](https://p4nr.com/)) is your point of contact 
+for the Node-RED B2B Community. (German and English) 
+
+To enable the use of Node-RED in the industry, it needs stable connectivity protocols, 
+ready for the industry. "PLUS for Node-RED" wants to provide a better and vendor independent Open-Source development, 
+long-term maintenance, detailed tutorials, documentation and other B2B services for Node-RED.
+
+The team of "PLUS for Node-RED" wants to support you in your needs for Node-RED contribution packages and assist your technicians with powerful 
+Low-Code and No-Code engineering templates, examples and proven connectivity protocol solutions via Node-RED, FlowFuse and other Node-RED based platforms!
+
+For the fastest start with Node-RED in industrial environments, the "PLUS for Node-RED" team wants to provide you with OT/IT hybrid experts. 
+You can contact us the best via the [FlowFuse contact](https://flowfuse.com/contact-us/) or via our [P4NR Website](https://p4nr.com/).
+Even if a problem is a bit more difficult we will gladly help.
+
+Access the OT/IT hybrid experts experience of more than eight years of contributing to Node-RED contribution packages 
+and underlying Open-Source libraries for industrial protocols and look at P4NR explained ratings of popular 3rd party
+contribution packages.
+
+Be involved in the decision of which contribution packages and tools will bring you another step forward with P4NR
+as PR's on existing packages or in the NPM namespace of [@plus4nodered contribution packages](https://plus4nodered.com/)!
