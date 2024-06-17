@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 Using the [Termux](https://termux.com) app makes it easy to run
-Node-RED on Android devices. Get it directly from thier [github](https://github.com/termux/termux-app#github) or via [F-Droid](https://f-droid.org/) here [Termux on F-Droid](https://f-droid.org/en/packages/com.termux/).
+Node-RED on Android devices. Get it directly from their [github](https://github.com/termux/termux-app#github) or via [F-Droid](https://f-droid.org/) here [Termux on F-Droid](https://f-droid.org/en/packages/com.termux/).
 
 Note that the Play Store version is not maintained.
 
