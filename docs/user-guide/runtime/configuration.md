@@ -68,6 +68,11 @@ httpAdminMiddleware
           // Be sure to call next() if the request should be passed on
       }
 
+httpAdminCookieOptions
+: when Admin Autentication is enabled, this can be used to customise the options used
+  when setting the session cookie used as part of the OAuth authentication flow.
+  The available options are documented [here](https://www.npmjs.com/package/cookie#options-1).
+
 httpNodeRoot
 : the root url for nodes that provide HTTP endpoints. If set to `false`, all node-based HTTP endpoints are disabled. Default: `/`
 
@@ -93,7 +98,8 @@ httpStatic
 
   This property can also be set as an Array to support multiple static directories, each
   with its own set of options. The options include the path to the local directory to serve
-  content from, the root url to serve them from and an optional custom middleware function.
+  content from, the root url to serve them from, an optional custom middleware function and an
+  optional CORS configuration.
   
   For example:
 
@@ -101,16 +107,20 @@ httpStatic
         {
             path: '/opt/static/',
             root: '/private/',
-            middleware: myCustomHttpMiddleware
+            middleware: myCustomHttpMiddleware,
+            cors: {
+
+            }
         }
       ]
 
   *Standalone only*.
 
-
-
 httpStaticAuth
 : enabled HTTP Basic Authentication on the static content. See `httpAdminAuth` for format.
+
+httpStaticCors
+: enables cross-origin resource sharing for the httpStatic endpoints as defined [here](https://github.com/troygoode/node-cors#configuration-options)
 
 httpNodeCors
 : enables cross-origin resource sharing for the nodes that provide HTTP endpoints,
