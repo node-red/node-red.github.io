@@ -10,7 +10,7 @@ We've highlighted some of the main highlights of the release below. There have a
 a large number of community contributions ranging from bug fixes, features, documentation and translations.
 We wouldn't be able to do what we do without these contributions - a big thank you to everyone involved.
 
-The [Change Log](https://github.com/node-red/node-red/releases/tag/4.0.0 has the full list of changes in
+The [Change Log](https://github.com/node-red/node-red/releases/tag/4.0.0) has the full list of changes in
 this release.
 
 ---
