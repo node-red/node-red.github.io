@@ -118,6 +118,7 @@ In some circumstances it is desirable to already have an `<input>` element to st
 the type value of the typedInput. This option allows such an existing element to be
 provided. As the type of the typedInput is changed, the value of the provided input
 will also change.
+The type field should also be added as a property of the defaults object so that it is saved.
 
 ```javascript
 $(".input").typedInput({
