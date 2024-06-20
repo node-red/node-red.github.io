@@ -2,6 +2,7 @@
 layout: blog
 title: Version 4.0 released
 author: nick
+image: /blog/content/images/2024/06/nr4-social.png
 ---
 
 Node-RED 4.0 is now available to [install](https://npmjs.org/package/node-red). If upgrading, please read the [upgrade instructions](http://nodered.org/docs/getting-started/upgrading.html).

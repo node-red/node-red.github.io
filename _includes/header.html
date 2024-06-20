@@ -20,11 +20,16 @@
 	{% if page.layout == 'blog' %}<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nodered" />
 	<meta name="twitter:title" content="{{ page.title | xml_escape }}" />
+	{% if page.image %}
+	<meta name="twitter:image" content="{{ site.github.url }}{{ page.image }}" />
+	<meta property="og:image" content="{{ site.github.url }}{{ page.image }}" />
+	{% else %}
 	<meta name="twitter:image" content="https://nodered.org/node-red-icon.png" />
+	<meta property="og:image" content="https://nodered.org/node-red-icon.png" />
+    {% endif %}
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="{{ site.github.url }}{{ page.url }}" />
 	<meta property="og:title" content="{{ page.title | xml_escape }}" />
-	<meta property="og:image" content="https://nodered.org/node-red-icon.png" />
 	{% if page.description %}
     <meta name="twitter:description" content="{{ page.description }}">
 	<meta property="og:description" content="{{ page.description }}" />
