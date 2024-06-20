@@ -10,7 +10,7 @@ We've highlighted some of the main highlights of the release below. There have a
 a large number of community contributions ranging from bug fixes, features, documentation and translations.
 We wouldn't be able to do what we do without these contributions - a big thank you to everyone involved.
 
-The [Change Log](https://github.com/node-red/node-red/blob/4.0.0/CHANGELOG.md) has the full list of changes in
+The [Change Log](https://github.com/node-red/node-red/releases/tag/4.0.0 has the full list of changes in
 this release.
 
 ---
@@ -198,7 +198,7 @@ Details are in the [original issue](https://github.com/node-red/node-red/issues/
 
 ## Full Changelog
 
-The full set of changes in this release can be found in the [changelog](https://github.com/node-red/node-red/blob/4.0.0/CHANGELOG.md)
+The full set of changes in this release can be found in the [changelog](https://github.com/node-red/node-red/releases/tag/4.0.0)
 
 Thank you to everyone who contributed to this release - we wouldn't be able to do it without you!
 
