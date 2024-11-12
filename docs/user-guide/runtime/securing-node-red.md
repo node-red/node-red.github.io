@@ -203,6 +203,8 @@ The `strategy` property takes the following options:
    to have a `username` property that is used to check against the list of valid
    users. Passport attempts to standardize the user profile object, so most strategies
    provide this property.
+- `autoLogin` - boolean, when `true` will automatically redirect to the authentication
+   provider rather than asking the user to click a button.
 
 The `callbackURL` used by a strategy is where the authentication provider will
 redirect to following an auth attempt. It must be the URL of your Node-RED editor
