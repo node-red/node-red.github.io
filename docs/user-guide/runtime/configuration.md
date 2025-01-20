@@ -84,7 +84,7 @@ httpRoot
 
 https
 : enables https, with the specified options object, as defined
-  [here](http://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
+  [here](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
 
   *Standalone only*.
 
