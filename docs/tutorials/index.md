@@ -43,4 +43,15 @@ to get the most from it.
   </a>
 </div>
 
+<div class="post-preview">
+  <a href="https://node-red-academy.learnworlds.com/">
+    <div class="post-header">
+      <h2>Node-RED Academy</h2>
+    </div>
+    <div class="post-content">
+    A series of courses designed to level-up your Node-RED knowledge. Start with the fundamentals and build to up to more advanced topics.
+    </div>
+  </a>
+</div>
+
 </div>
