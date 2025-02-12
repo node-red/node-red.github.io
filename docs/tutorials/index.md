@@ -49,7 +49,7 @@ to get the most from it.
       <h2>Node-RED Academy</h2>
     </div>
     <div class="post-content">
-    A series of courses designed to level-up your Node-RED knowledge. Start with the fundamentals and build to up to more advanced topics.
+    A series of courses designed to level-up your Node-RED knowledge. Start with the fundamentals and build up to more advanced topics.
     </div>
   </a>
 </div>
