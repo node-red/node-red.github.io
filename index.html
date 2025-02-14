@@ -1,15 +1,17 @@
 ---
 layout: barebones
+title: Low-code programming for event-driven applications
 ---
 <div class="title">
     <div class="grid">
-        <div class="col-1-1">
-            <div class="content">
-                <h1>Node-RED</h1>
-                <h2>Low-code programming for event-driven applications</h2>
-                <p>Latest version: <a href="https://www.npmjs.com/package/node-red"><span class="node-red-latest-version">v4.0.8</span> (npm)</a></p>
-                <!-- <img src="images/node-red-title-flow.png" /> -->
-            </div>
+        <div class="col-1-2">
+            <h1>Low-code programming for event-driven applications</h1>
+            <h2>The easiest way to collect, transform and visualize real-time data.</h2>
+            <p>Latest version: <a href="https://www.npmjs.com/package/node-red"><span class="node-red-latest-version">v4.0.8</span> (npm)</a></p>
+            <p><a class="box-link" href="#get-started">Get Started</a></p>
+        </div>
+        <div class="col-1-2 title-hero">
+            <iframe  style="margin: 50px 0; border-radius: 10px; overflow: hidden; box-shadow: 10px 10px 30px #0005;" width="445" height="250" src="https://www.youtube.com/embed/ksGeUD26Mw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </div>
@@ -17,59 +19,24 @@ layout: barebones
 <div class="intro">
     <div class="grid">
         <div class="col-1-2">
-            <div class="content blurb" style="margin-top: 30px;">
-                <p>Node-RED is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.</p>
-                <p>It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.</p>
-                <p style="text-align:center">
-                    <a class="box-link" href="#features">Features</a>
-                    <a class="box-link" href="#get-started">Get Started</a>
-                    <a class="box-link" href="#community">Community</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-1-2">
-            <div class="content feature" style="margin-top: 0px;">
-                <iframe  style="box-shadow: 10px 10px 30px #999;" width="445" height="250" src="https://www.youtube.com/embed/ksGeUD26Mw0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="features" id="features">
-    <div class="grid">
-        <div class="col-1-2">
             <div class="content feature"><img src="images/nr-image-1.png" /></div>
         </div>
         <div class="col-1-2">
             <div class="content blurb">
-                <h3>Browser-based flow editing</h3>
-                <p>Node-RED provides a browser-based flow editor that makes it easy to wire together flows using the wide range of nodes in the palette. Flows can be then deployed to the runtime in a single-click.</p>
-                <p>JavaScript functions can be created within the editor using a rich text editor.</p>
-                <p>A built-in library allows you to save useful functions, templates or flows for re-use.</p>
+                <p>Node-RED's goal is to enable anyone to build applications that collect, transform and visualize their data; building flows that can automate their world. Its low-code nature makes it accessible to users of any background, whether for home automation, industrial control systems or anything in between.</p>
             </div>
         </div>
     </div>
+</div>
+<div class="features">
     <div class="grid">
         <div class="col-1-2">
             <div class="content blurb">
-                <h3>Built on Node.js</h3>
-                <p>The light-weight runtime is built on Node.js, taking full advantage of its event-driven, non-blocking model. This makes it ideal to run at the edge of the network on low-cost hardware such as the Raspberry Pi as well as in the cloud.</p>
-                <p>With over 225,000 modules in Node's package repository, it is easy to extend the range of palette nodes to add new capabilities.</p>
+                <p>From home hobbyists to large scale industrial operations, Node-RED has found a place in a wide range of applications, supported by an active community that has built over <a href="https://flows.nodered.org" _target="blank">5,000 Nodes and Flows</a> to help you get started quickly.</p>
             </div>
         </div>
         <div class="col-1-2">
             <div class="content feature"><img src="images/nr-image-2.png" /></div>
-        </div>
-    </div>
-    <div class="grid">
-        <div class="col-1-2">
-            <div class="content feature"><img src="images/nr-image-3.png" /></div>
-        </div>
-        <div class="col-1-2">
-            <div class="content blurb">
-                <h3>Social Development</h3>
-                <p>The flows created in Node-RED are stored using JSON which can be easily imported and exported for sharing with others.</p>
-                <p>An online flow library allows you to share your best flows with the world.</p>
-            </div>
         </div>
     </div>
 </div>
@@ -114,60 +81,43 @@ layout: barebones
         </div>
     </div>
 </div>
+<div id="contributors-list">
+    <div class="grid">
+        <div class="content">
+        {% for group in site.data.contributors %}
+        <h3>{{ group.name }}</h3>
+        {% if group.header %}<span class="contributor-group-description">{{group.header}}</span>{% endif %}
+        <ul class="contributors">
+        {% for member in group.people %}
+        <li class="contributor-card">
+            <img src="https://avatars.githubusercontent.com/u/{{ member.githubId}}?v=4&s=192" class="contributor-icon"/>
+            <span class="contributor-info">
+                <span class="contributor-name">{{ member.name }}</span>
+                <span>
+                    {% if member.links.home %}<a href="{{ member.links.home }}" target="_blank"><i class="fa fa-globe"></i></a>{% endif %}
+                    {% if member.links.github %}<a href="{{ member.links.github }}" target="_blank"><i class="fa fa-github"></i></a>{% endif %}
+                </span>
+            </span>
+        </li>
+        {% endfor %}
+        </ul>
+        {% if group.footer %}<span class="contributor-group-description">{{group.footer}}</span>{% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</div>
 
 <div class="users" id="users">
     <div class="grid">
         <div class="content">
             <h3>Who's using Node-RED?</h3>
+            {% for category in site.data.users %}
             <ul id="user-list">
-                <li><a href="https://www.echounify.com/"><img src="users/echo-unify-systems.png"/></a></li>
-                <li><a href="https://www.overview.ai/"><img src="users/overviewai.jpg"/></a></li>
-                <li><a href="https://www.ubos.tech/"><img src="users/ubos.jpg"/></a></li>
-                <li><a href="https://www.bitpool.com/"><img src="users/bitpool.png"/></a></li>
-                <li><a href="https://p4nr.com/"><img src="users/p4nr.png"/></a></li>
-                <li><a href="https://yoctoconnect.com/"><img src="users/connect.png"/></a></li>
-                <li><a href="https://www.umh.app/"><img src="users/united-manufacturing-hub.png"/></a></li>
-                <li><a href="https://www.simocowirelesssolutions.com/products/velocity/"/><img src="users/simoco.jpg"/></a></li>
-                <li><a href="https://www.cosmonautasoftware.com/en-us/cosmo-psim-software-platform"/><img src="users/cosmo.png"/></a></li>
-                <li><a href="https://www.42flows.tech"/><img src="users/42flows.jpeg"/></a></li>
-                <li><a href="https://www.broadsens.com/wireless-gateway/"><img src="users/broadsens.png"/></a></li>
-                <li><a href="http://chatbots.studio/"><img src="users/chatbots-studio.png"/></a></li>
-                <li><a href="https://www.plathome.co.jp/product/fw4/"><img src="users/plathome.png"/></a></li>
-                <li><a href="https://www.a4bee.com/"><img src="users/a4bee.png"/></a></li>
-                <li><a href="https://litmus.io/"><img src="users/litmus.png"/></a></li>
-                <li><a href="https://kontron-ais.com/en/"><img src="users/kontron.png"/></a></li>
-                <li><a href="https://tulip.co/"><img src="users/tulip.png"/></a></li>
-                <li><a href="https://iniationware.com/"><img src="users/iniationware.jpg"/></a></li>
-                <li><a href="https://www.cgignite.com"><img src="users/cgignite.png"/></a></li>
-                <li><a href="https://www.prescientdevices.com/"><img src="users/pdi-logo.png"/></a></li>
-                <li><a href="https://handy.ai/"><img src="users/handyai.svg"/></a></li>
-                <li><a href="https://simplehw.eu/"><img src="users/simplehw.png"/></a></li>
-                <li><a href="https://openiap.io/"><img src="users/openiap.png"/></a></li>
-                <li><a href="https://smartlight.co.jp/node-red-lighting-iot/"><img src="users/smartlight.png"/></a></li>
-                <li><a href="https://www.hitachi.co.jp/products/it/oss/"><img src="users/hitachi.png"/></a></li>
-                <li><a href="https://www.dialog-semiconductor.com/"><img src="users/dialog.png"/></a></li>
-                <li><a href="https://zenzium.com"><img src="users/zenzium.jpg"/></a></li>
-                <li><a href="https://www.vigilent.com"><img src="users/vigilent.png"/></a></li>
-                <li><a href="https://entelligently.com"><img src="users/entelligently.png"/></a></li>
-                <li><a href="https://st-one.io/"><img src="users/st-one.png"/></a></li>
-                <li><a href="https://www.aiomeet.com/"><img src="users/aiomeet.png"/></a></li>
-                <li><a href="https://www.thingtrack.com/"><img src="users/thingtrack.png"/></a></li>
-                <li><a href="https://www.enebular.com/"><img src="users/enebular.svg"/></a></li>
-                <li><a href="https://www.victronenergy.com/live/venus-os:large"><img src="users/victron.png"/></a></li>
-                <li><a href="https://www.yellaumbrella.tv/"><img src="users/yellaUmbrella.svg"/></a></li>
-                <li><a href="https://www.veritone.com/"><img src="users/veritone.png"/></a></li>
-                <li><a href="https://www.flowake.com/"><img src="users/flowake.png"/></a></li>
-                <li><a href="https://sensetecnic.com/"><img src="users/sensetecnic.png"/></a></li>
-                <li><a href="https://agilite.io/"><img src="users/agilit-e.png"/></a></li>
-                <li><a href="http://dingo-iot.io/"><img src="users/go-iot.png"/></a></li>
-                <li><a href="https://www.spiritai.com/"><img src="users/spiritai.png"/></a></li>
-                <li><a href="https://www.multitech.com/"><img src="users/multitech.png"/></a></li>
-                <li><a href="https://www.opto22.com/"><img src="users/opto22.png"/></a></li>
-                <li><a href="https://www.iaconnects.co.uk/"><img src="users/iaconnects.png"/></a></li>
-                <li><a href="https://www.flowfuse.com/"><img src="users/flowfuse.svg"/></a></li>
-                <li><a href="https://www.qbee.io/"><img src="users/qbee.png.webp"/></a></li>
-                <li><a href="https://www.charge-unix.fr/"><img src="users/charge_unix.png"/></a></li>
+                {% for user in category.users %}
+                <li><a href="{{ user.url }}" target="_blank"><img src="users/{{ user.logo }}"/></a></li>
+                {% endfor %}
             </ul>
+            {% endfor %}
             <p style="text-align:center;"><a href="/about/community/">Want to feature here? Let us know!</a></p>
             <p style="text-align:center; font-size: 0.6em; max-width: 420px; line-height: 1.2em; margin: auto; ">All logos used with permission. These links do not constitute an endorsement or approval by the Node-RED project of any of the products, services or opinions of the companies listed.</p>
         </div>
