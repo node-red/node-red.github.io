@@ -1,0 +1,97 @@
+# Logo should be added under '/users/'
+- name: All
+  users:
+  - url: https://www.echounify.com/
+    logo: echo-unify-systems.png
+  - url: https://www.overview.ai/
+    logo: overviewai.jpg
+  - url: https://www.ubos.tech/
+    logo: ubos.jpg
+  - url: https://www.bitpool.com/
+    logo: bitpool.png
+  - url: https://p4nr.com/
+    logo: p4nr.png
+  - url: https://yoctoconnect.com/
+    logo: connect.png
+  - url: https://www.umh.app/
+    logo: united-manufacturing-hub.png
+  - url: https://www.simocowirelesssolutions.com/products/velocity/
+    logo: simoco.jpg
+  - url: https://www.cosmonautasoftware.com/en-us/cosmo-psim-software-platform
+    logo: cosmo.png
+  - url: https://www.42flows.tech
+    logo: 42flows.jpeg
+  - url: https://www.broadsens.com/wireless-gateway/
+    logo: broadsens.png
+  - url: http://chatbots.studio/
+    logo: chatbots-studio.png
+  - url: https://www.plathome.co.jp/product/fw4/
+    logo: plathome.png
+  - url: https://www.a4bee.com/
+    logo: a4bee.png
+  - url: https://litmus.io/
+    logo: litmus.png
+  - url: https://kontron-ais.com/en/
+    logo: kontron.png
+  - url: https://tulip.co/
+    logo: tulip.png
+  - url: https://iniationware.com/
+    logo: iniationware.jpg
+  - url: https://www.cgignite.com
+    logo: cgignite.png
+  - url: https://www.prescientdevices.com/
+    logo: pdi-logo.png
+  - url: https://handy.ai/
+    logo: handyai.svg
+  - url: https://simplehw.eu/
+    logo: simplehw.png
+  - url: https://openiap.io/
+    logo: openiap.png
+  - url: https://smartlight.co.jp/node-red-lighting-iot/
+    logo: smartlight.png
+  - url: https://www.hitachi.co.jp/products/it/oss/
+    logo: hitachi.png
+  - url: https://www.dialog-semiconductor.com/
+    logo: dialog.png
+  - url: https://zenzium.com
+    logo: zenzium.jpg
+  - url: https://www.vigilent.com
+    logo: vigilent.png
+  - url: https://entelligently.com
+    logo: entelligently.png
+  - url: https://st-one.io/
+    logo: st-one.png
+  - url: https://www.aiomeet.com/
+    logo: aiomeet.png
+  - url: https://www.thingtrack.com/
+    logo: thingtrack.png
+  - url: https://www.enebular.com/
+    logo: enebular.svg
+  - url: https://www.victronenergy.com/live/venus-os:large
+    logo: victron.png
+  - url: https://www.yellaumbrella.tv/
+    logo: yellaUmbrella.svg
+  - url: https://www.veritone.com/
+    logo: veritone.png
+  - url: https://www.flowake.com/
+    logo: flowake.png
+  - url: https://sensetecnic.com/
+    logo: sensetecnic.png
+  - url: https://agilite.io/
+    logo: agilit-e.png
+  - url: http://dingo-iot.io/
+    logo: go-iot.png
+  - url: https://www.spiritai.com/
+    logo: spiritai.png
+  - url: https://www.multitech.com/
+    logo: multitech.png
+  - url: https://www.opto22.com/
+    logo: opto22.png
+  - url: https://www.iaconnects.co.uk/
+    logo: iaconnects.png
+  - url: https://www.flowfuse.com/
+    logo: flowfuse.svg
+  - url: https://www.qbee.io/
+    logo: qbee.png.webp
+  - url: https://www.charge-unix.fr/
+    logo: charge_unix.png
