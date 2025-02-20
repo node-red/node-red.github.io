@@ -152,10 +152,11 @@ RED.nodes.registerType('example', {
 ```
 
 
-
 ### Methods
 
 <a name="methods-type"></a>
+
+Note that methods can only be called after setting the typedInput options.
 
 #### <a href="#methods-disable" name="methods-disable">disable( state )</a>
 
@@ -190,8 +191,6 @@ Enable the typedInput when it is currently disabled.
 ```javascript
 $(".input").typedInput('enable');
 ```
-
-
 
 #### <a href="#methods-hide" name="methods-hide">hide()</a>
 
@@ -274,6 +273,7 @@ Sets the width of the typedInput.
 $(".input").typedInput('width', '200px');
 ```
 
+
 ### Events
 
 #### <a href="#events-change" name="events-change">change( event, type, value )</a>
@@ -285,6 +285,7 @@ $(".input").on('change', function(event, type, value) {} );
 ```
 
 *Note:* The `value` property was added in Node-RED 1.3
+
 
 ### Types
 
@@ -396,6 +397,41 @@ $("#node-input-example5").typedInput({type:"fruit", types:[{
 
 <div class="red-ui-editor"><input type="text" id="node-input-example5"></div>
 
+#### Update types from change event
+
+```html
+<input type="text" id="node-input-example6-1">
+<input type="text" id="node-input-example6-2">
+```
+
+```javascript
+$("#node-input-example6-1").typedInput({type:"mode", types:[{
+    value: "mode",
+    options: [
+        { value: "static", label: "Static"},
+        { value: "dynamic", label: "Dynamic"},
+    ]
+}]})
+
+$("#node-input-example6-2").typedInput({
+    type:'str',
+    types:['str','env']
+})
+
+$("#node-input-example6-1").on("change", function(event, type, value) {
+    if (value == "static") {
+        $("#node-input-example6-2").typedInput("types", ['str','env'])
+    } else {
+        $("#node-input-example6-2").typedInput("types", ['flow','global','msg'])
+    }
+})
+```
+
+<div class="red-ui-editor">
+    <input type="text" id="node-input-example6-1">
+    <input type="text" id="node-input-example6-2">
+</div>
+
 
 ### Runtime handling of typed values
 
@@ -502,6 +538,24 @@ $(function() {
             { value: "banana", label: "Banana"},
             { value: "cherry", label: "Cherry"},
         ]
-        }]})
+    }]})
+    $("#node-input-example6-1").typedInput({type:"mode", types:[{
+        value: "mode",
+        options: [
+            { value: "static", label: "Static"},
+            { value: "dynamic", label: "Dynamic"},
+        ]
+    }]})
+    $("#node-input-example6-2").typedInput({
+        type:'str',
+        types:['str','env']
+    })
+    $("#node-input-example6-1").on("change", function(event, type, value) {
+        if (value == "static") {
+            $("#node-input-example6-2").typedInput("types", ['str','env'])
+        } else {
+            $("#node-input-example6-2").typedInput("types", ['flow','global','msg'])
+        }
+    })
 });
 </script>
