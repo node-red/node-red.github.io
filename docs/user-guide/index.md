@@ -30,6 +30,10 @@ title: User Guide
 - [Configuring Node-RED](/docs/user-guide/configuration)
 - [Command-line Admin](/docs/user-guide/node-red-admin)
 
+### Usage Telemetry
+
+ - [Usage Telemetry](/docs/telemetry)
+
 ### Advanced
 
 - [Embedding into an existing app](/docs/user-guide/runtime/embedding)
@@ -44,4 +48,3 @@ places you can do so:
  - Subscribe to the [blog](https://nodered.org/blog/)
  - Follow us on:
     - Mastodon: [@nodered@social.nodered.org](https://social.nodered.org/@nodered)
-    - Twitter: [@nodered](http://twitter.com/nodered)
