@@ -78,8 +78,7 @@ However, if you want to opt out, there are a number of ways to do so.
 The first time you open the editor for Node-RED 4.1 or later, if you have not
 already opted in or out, you will be asked if you are willing to receive update notifications.
 
-You can change you made via the Editor Settings dialog at any time.
-
+You can change your preference via the Editor Settings dialog at any time.
 #### `settings.js` file
 
 You can also enable/disable telemetry via your settings file.
@@ -110,7 +109,7 @@ You can also disable telemetry using the `--no-telemetry` command-line flag, or 
 
 With the usage telemetry feature enabled, in response to sending the information, Node-RED
 is notified when there is a new version available. This will generate a notification
-in the editor tp help you know when its time to upgrade.
+in the editor to help you know when it's time to upgrade.
 
 This notification can be disabled via the `telemetry.updateNotification` setting in the
 settings file; it cannot be disabled from within the editor.
