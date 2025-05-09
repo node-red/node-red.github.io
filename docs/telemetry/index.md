@@ -6,7 +6,8 @@ slug: telemetry
 
 
 Starting with the 4.1.0 release, Node-RED gathers anonymous usage information once
-a day and shares it with the Node-RED team.
+a day and shares it with the Node-RED team. In return, Node-RED will notify the user
+when there is a new version available.
 
 This information is only shared with the Node-RED team once the user has opted
 into sharing their information. If the user declines to share their information,
@@ -14,12 +15,20 @@ nothing is sent back to the team.
 
 ### Why?
 
+As with all software, it is important to keep it up to date. With legislation
+such as the EU's [Cyber Resilience Act](https://digital-strategy.ec.europa.eu/en/library/cyber-resilience-act)
+on the horizon, we want to take a proactive approach to help users keep their Node-RED
+environments up to date and secure.
+
+The Usage Telemetry serves two purposes;
+
+1. It allows us to notify users within the application when there are updates available,
+2. It allows us to get a better understanding of Node-RED usage; what versions are being used, what operating systems are favoured.
+
 Historically, the only measures we've had around the size and scale of the Node-RED
 user-base have been secondary indicators, such as high-level statistics provided
-by npm and docker, or the general level of activity on the community forum.
-
-This does not give us much useful information to help understand Node-RED usage;
-such as what versions of Node.JS are being used, what operating systems are favoured.
+by npm and docker, or the general level of activity on the community forum. This does
+not give us much useful information to help understand Node-RED usage.
 
 
 ### What data is collected?
@@ -38,7 +47,7 @@ It does **not** contain:
 
 ### How is the data collected?
 
-If the user has opted to share information, a task will run 30 minutes after
+If the user has opted to receive update notifications, a task will run 30 minutes after
 Node-RED starts (or when they opt-in), and every 24 hours after that.
 
 The data is sent over HTTPS to an endpoint hosted by the Node-RED project.
@@ -59,13 +68,15 @@ this document will be updated to link to it and it will be publicised within the
 
 ### How do I opt out?
 
-We hope you'll share your information to help us maintain the project. However, 
-if you want to opt out, there are a number of ways to do so.
+We hope you'll appreciate the value of knowing when there are updates available, and that
+by opting in, you'll help us maintain the project.
+
+However, if you want to opt out, there are a number of ways to do so.
 
 #### Editor Settings
 
 The first time you open the editor for Node-RED 4.1 or later, if you have not
-already opted in or out, you will be asked if you are willing to share your information.
+already opted in or out, you will be asked if you are willing to receive update notifications.
 
 You can change you made via the Editor Settings dialog at any time.
 
@@ -73,7 +84,7 @@ You can change you made via the Editor Settings dialog at any time.
 
 You can also enable/disable telemetry via your settings file.
 
-If you have a preexisting settings file, you will need to add a `telemetry` section.
+If you have a pre-existing settings file, you will need to add a `telemetry` section.
 For new installs of Node-RED, the default settings file already has this section, but
 with the `enabled` option commented out. Remove the `//` at the start of the line
 and change the value to `false`:
@@ -82,8 +93,9 @@ and change the value to `false`:
     telemetry: {
         enabled: false,
         /**
-         * If telemetry is enabled, the editor will notify the user if a new version of Node-RED
-         * is available. Set the following property to false to disable this notification.
+         * If telemetry is enabled, the runtime will log a message when an update is available.
+         * The editor will also notify the user if a new version of Node-RED
+         * is available. Set the following property to false to disable this editor notification.
          */
         updateNotification: true
     },
@@ -102,4 +114,6 @@ in the editor tp help you know when its time to upgrade.
 
 This notification can be disabled via the `telemetry.updateNotification` setting in the
 settings file; it cannot be disabled from within the editor.
+
+The runtime will also log when an update is available; this cannot be disabled.
 
