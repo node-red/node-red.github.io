@@ -20,7 +20,7 @@ such as the EU's [Cyber Resilience Act](https://digital-strategy.ec.europa.eu/en
 on the horizon, we want to take a proactive approach to help users keep their Node-RED
 environments up to date and secure.
 
-The Usage Telemetry serves two purposes;
+The Usage Telemetry serves two purposes:
 
 1. It allows us to notify users within the application when there are updates available,
 2. It allows us to get a better understanding of Node-RED usage; what versions are being used, what operating systems are favoured.

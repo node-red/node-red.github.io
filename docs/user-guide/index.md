@@ -32,7 +32,7 @@ title: User Guide
 
 ### Usage Telemetry
 
- - [Usage Telemetry](/docs/telemetry)
+- [Usage Telemetry](/docs/telemetry)
 
 ### Advanced
 
