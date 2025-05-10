@@ -40,7 +40,7 @@ first to ensure npm is able to fetch and build any binary modules it needs to in
 This script will:
 
  - remove the existing version of Node-RED if present.
- - if it detects Node.js is already installed, it will ensure it is at least v14. If less than v14 it will stop and let the user decide whether to stay with Node-RED version 1 - or upgrade Nodejs to a more recent LTS version. If nothing is found it will install the Node.js 16 LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md) package.
+ - if it detects Node.js is already installed, it will ensure it is at least v18. If nothing is found it will install the Node.js 20 LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md) package.
  - install the latest version of Node-RED using npm.
  - optionally install a collection of useful Pi-specific nodes.
  - setup Node-RED to run as a service and provide a set of commands to work with
@@ -51,12 +51,7 @@ This script will:
 <img src="/images/logos/raspberrypi.svg" height="30">
 </div>
 
-Node-RED has also been packaged for the Raspberry Pi OS repositories and appears in their
-list of 'Recommended Software'. This allows it to be installed using
-<code>apt-get install nodered</code> and includes the Raspberry Pi OS-packaged version
-of Node.js, but <em>does not</em> include <code>npm</code>.
 
-<p><b>Note</b>: at this time the default node.js included with RaspiOS Bullseye is still v12. This means that the latest Node-RED version that can be installed is the 2.x branch. While using these packages is convenient at first, we <b>strongly recommend</b> using the install script above instead.</p>
 </div>
 
 ### Running locally
