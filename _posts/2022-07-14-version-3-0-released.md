@@ -271,6 +271,6 @@ very much on the feedback from the community.
 If you're interested in contributing to Node-RED, now is a good time to come over
 and chat with us in either the [forum](https://discourse.nodered.org) or [slack](https://nodered.org/slack).
 
-Node-Red 2.x is now in maintenance mode - we won't be added any new features to it,
+Node-RED 2.x is now in maintenance mode - we won't be added any new features to it,
 but we will do maintenance releases with fixes as needed. In fact, we'll have a
 long overdue 2.2.3 release in the next couple of weeks.

@@ -74,6 +74,6 @@ Install add-on access into Termux
 
  - [How to use Termux API](https://wiki.termux.com/wiki/Termux:API)
  - [node-red-contrib-termux-api](https://flows.nodered.org/node/node-red-contrib-termux-api)
- - [Another Node-Red on termux install guide](https://che-adrian.medium.com/install-node-red-on-an-android-device-using-the-termux-app-1e1679ae876)
+ - [Another Node-RED on termux install guide](https://che-adrian.medium.com/install-node-red-on-an-android-device-using-the-termux-app-1e1679ae876)
 
   
