@@ -277,7 +277,7 @@ users - but will play an important role when looking at running Node-RED at scal
 One very common question we get is around multi-tenancy - having multiple users
 share a single Node-RED instance without getting in each other’s way.
 
-Our long-stated recommendation has been that the node-red runtime is not suited
+Our long-stated recommendation has been that the Node-RED runtime is not suited
 for multi-tenancy. This is down to a number of reasons. Node.js is a single-threaded
 runtime - there is only one event loop that must be shared between all of the
 flows in the runtime. If one user creates a flow that uses a lot of resources,

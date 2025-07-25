@@ -101,7 +101,7 @@ downgrade, but it will no longer be updated.
 This is part of the pluggable message routing work that has been in our roadmap
 for a long time now. It is less relevant to end users at this point in time,
 but will underpin a lot of exciting features in the future, such as a proper
-flow debugger, distributed node-red runtimes and integrated flow testing.
+flow debugger, distributed Node-RED runtimes and integrated flow testing.
 
 [More details](https://github.com/node-red/node-red/pull/2665)
 

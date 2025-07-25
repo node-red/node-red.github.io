@@ -83,15 +83,15 @@ You will be asked if you wish to use ssh. If you do, please ensure you have ssh 
 
 #### Configuring Node-RED access
 
-Node-RED is now accessible directly from the web url of the application. However this is insecure and does not work very well for logging. Instead we will configure direct access to the administration port of node-red on the ec2 instance it is using.
+Node-RED is now accessible directly from the web url of the application. However this is insecure and does not work very well for logging. Instead we will configure direct access to the administration port of Node-RED on the ec2 instance it is using.
 
 1. In the AWS Console, select EC2, then select security groups. You will see a set of security groups. Select one with the name of your environment and a description of "Security Group for ElasticBeanstalk Environment". Once selected, click on "Actions" and then "Edit inbound settings". A dialog box with rules with appear. Add a new rule. Set type to "all traffic" and source to "my ip". Save the rule.
 
-2. Select the EC2 instance which is running the node-red application. copy its IP address
+2. Select the EC2 instance which is running the Node-RED application. copy its IP address
 
-3. Enter the IP address in the browser with a port of 8081. This will provide direct access to the node-red administration console.
+3. Enter the IP address in the browser with a port of 8081. This will provide direct access to the Node-RED administration console.
 
-Note: the public IP address also provides access to the node-red application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
+Note: the public IP address also provides access to the Node-RED application and it would be good practice to remove that access at the same time  i.e. the HTTP rule for port 80.
 
 Your Node-RED instance is now running on EBS. Any flows you create will be saved to AWS S3 so you can tear down the environment and the flows will be accessible whenever you redeploy.
 

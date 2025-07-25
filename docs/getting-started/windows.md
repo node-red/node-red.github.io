@@ -122,7 +122,7 @@ optional dependencies</b>. If you get fatal errors, first check that you install
 ### Running on Windows
 
 Once installed, the simple way to run Node-RED is to use the `node-red` command in a command prompt:
-If you have installed Node-RED as a global npm package, you can use the node-red command:
+If you have installed Node-RED as a global npm package, you can use the Node-RED command:
 
     C:>node-red
 

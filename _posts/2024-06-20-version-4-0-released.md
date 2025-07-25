@@ -165,7 +165,7 @@ Given we didn't hear a lot of complaints in the 3.1 release about this, either t
  - The following configuration options have been added to the default settings file:
    - `httpAdminCookieOptions` can be used to customise the options set on cookies as part of the authentication system.
    - `httpStaticCors` can be used to set custom cross-origin resource sharing rules for the content served up via the `httpStatic` option 
- - `node-red --version` now reports the node-red, node.js and os information without starting Node-RED.
+ - `node-red --version` now reports the Node-RED, node.js and os information without starting Node-RED.
  
 
 ## Node Updates

@@ -36,7 +36,7 @@ One footnote regarding subflows, as they are handled slightly differently. If an
 
 #### Securing the Editor
 
-In previous releases, the editor could be secured using HTTP Basic Authentication by hardcoding a username/password in the settings file. Whilst that worked for simple local installations of node-red, it was never really a good solution.
+In previous releases, the editor could be secured using HTTP Basic Authentication by hardcoding a username/password in the settings file. Whilst that worked for simple local installations of Node-RED, it was never really a good solution.
 
 This release brings a better framework for securing the editor.
 

@@ -153,7 +153,7 @@ will be the last one to support node 0.10 *and* 0.12.
 This means, for now, the Raspberry Pi preinstall will be fixed at 0.15.
 To make life easier, we already include a script on the preinstall image called
 `update-nodejs-and-nodered` that updates node.js to the latest LTS version using the
-NodeSource repositories and then reinstalls node-red on top. See [the documentation](http://nodered.org/docs/hardware/raspberrypi.html#upgrading-nodejs) for more information - including instructions for doing that upgrade manually if you so
+NodeSource repositories and then reinstalls Node-RED on top. See [the documentation](http://nodered.org/docs/hardware/raspberrypi.html#upgrading-nodejs) for more information - including instructions for doing that upgrade manually if you so
 choose.
 
 #### Serial node
