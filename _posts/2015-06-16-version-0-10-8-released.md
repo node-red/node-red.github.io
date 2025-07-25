@@ -18,9 +18,9 @@ Remember, at this time, we **do not** support Node.js v0.12 or io.js.
 
 ### Nodes (re)moved
 
-One of the main changes we've made is to move some of our core nodes out to their own individual packages. This enables us to ship fixes for these nodes independently of the main release. Some of these nodes have been added as dependencies of the node-red package so they will get automatically included when `npm install` is run. Some of the nodes are no longer included and have to be manually added back in.
+One of the main changes we've made is to move some of our core nodes out to their own individual packages. This enables us to ship fixes for these nodes independently of the main release. Some of these nodes have been added as dependencies of the Node-RED package so they will get automatically included when `npm install` is run. Some of the nodes are no longer included and have to be manually added back in.
 
-The following nodes have moved to their own npm package and have been added as dependencies of the node-red package so will still get included:
+The following nodes have moved to their own npm package and have been added as dependencies of the Node-RED package so will still get included:
 
  - Twitter, now provided by `node-red-node-twitter`
  - Feedparse, now provided by `node-red-node-feedparser`
@@ -28,14 +28,14 @@ The following nodes have moved to their own npm package and have been added as d
  - Serialport, now provided by `node-red-node-serialport`
 
 
-The following nodes have moved to their own npm package but have **not** been added as dependencies of the node-red package. This means, if you are using any of these nodes, you'll need to *manually install their new npm package to continue using them.*
+The following nodes have moved to their own npm package but have **not** been added as dependencies of the Node-RED package. This means, if you are using any of these nodes, you'll need to *manually install their new npm package to continue using them.*
 
  - IRC: `node-red-node-irc`
  - Arduino: `node-red-node-arduino`
  - Redis: `node-red-node-redis`
  - Mongo: `node-red-node-mongodb`
 
-Because we know not everyone reads these release notes, if node-red detects you are using any of these moved nodes, it will very clearly point you at the appropriate package to install.
+Because we know not everyone reads these release notes, if Node-RED detects you are using any of these moved nodes, it will very clearly point you at the appropriate package to install.
 
 
 ### Other changes

@@ -134,7 +134,7 @@ The response object contains the following fields:
 
 Field          | Description
 ---------------|------------
-`intl`         | The internationalization (i8n) language for the node-red instance
+`intl`         | The internationalization (i8n) language for the Node-RED instance
 `nodejs`       | NodeJS version for underlying architecture / platform
 `os`           | Operating System information and statistics for current memory usage
 `runtime`      | Current Node-RED runtime information

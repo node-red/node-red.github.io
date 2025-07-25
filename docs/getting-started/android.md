@@ -32,7 +32,7 @@ Note that installing openssh may make interacting with termux a little easier.  
 
 ### Notes
 
- - You can also npm install other node-red nodes such as `node-red-dashboard` in the standard way :
+ - You can also npm install other Node-RED nodes such as `node-red-dashboard` in the standard way :
 
        cd ~/.node-red
        npm i node-red-dashboard
@@ -48,7 +48,7 @@ The recommended way of starting applications running in Termux is using the [Ter
 
 We have found this other app useful for autostarting Termux on boot - <a href="https://play.google.com/store/apps/details?id=com.autostart&amp;hl=en_GB">Autostart - No Root</a> (Note: with termux:boot, use of other autoboot apps does not seem to be required).
 
-Note that the shebang in the node-red script is incompatible with termux:boot scripts.  The workaround is to start node-red using a termux:boot startup script like:
+Note that the shebang in the Node-RED script is incompatible with termux:boot scripts.  The workaround is to start Node-RED using a termux:boot startup script like:
 
 ```
 #!/data/data/com.termux/files/usr/bin/sh

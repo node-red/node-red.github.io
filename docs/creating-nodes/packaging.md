@@ -46,9 +46,9 @@ The examples folder must be in the root of the package.
 ### Testing a node module locally
 
 To test a node module locally, the [`npm install <folder>`](https://docs.npmjs.com/cli/install) command can be used. This allows you
-to develop the node in a local directory and have it linked into a local node-red install during development.
+to develop the node in a local directory and have it linked into a local Node-RED install during development.
 
-In your node-red user directory, typically `~/.node-red`, run:
+In your Node-RED user directory, typically `~/.node-red`, run:
 
     npm install <path to location of node module>
 
@@ -78,7 +78,7 @@ for others to be able to use it.</div>
 {
     "name"         : "@myScope/node-red-sample",
     "version"      : "0.0.1",
-    "description"  : "A sample node for node-red",
+    "description"  : "A sample node for Node-RED",
     "dependencies": {
     },
     "keywords": [ "node-red" ],

@@ -18,7 +18,7 @@ You may have spotted this release is `0.10.6`. You may be wondering what happene
 
 Previously, the very last commit I do before cutting a new release is to bump the version number in `package.json`. At that point, anyone who installed the release from npm would get that version. We would then continue development in git. If someone wanted to try out the latest code from git by cloning the repository, it would still have the same version number in its `package.json` as the previous release.
 
-This has caused some confusion for users when reporting issues as well as some technical headaches for automated builds that pull in node-red as a dependency.
+This has caused some confusion for users when reporting issues as well as some technical headaches for automated builds that pull in Node-RED as a dependency.
 
 By immediately bumping the version in git following a release (to make it odd), and also bumping it immediately before the next release (to make it even) helps to identify the different levels.
 

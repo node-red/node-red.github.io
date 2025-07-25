@@ -100,7 +100,7 @@ The following workflow is used in git for the main project repositories.
 As in traditional git workflows, multiple branches are used for different streams
 of activity. The following describes how we use it today.
 
- - `master` - this branch contains the latest shipped release of node-red, plus
+ - `master` - this branch contains the latest shipped release of Node-RED, plus
    any additional bug fixes that have been made since. At any time, this branch
    could get shipped as the next maintenance release. At the time of writing,
    this contains 0.16.2 and a few fixes that will be released as 0.16.3 at some point.

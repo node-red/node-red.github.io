@@ -119,7 +119,7 @@ Node-RED uses the `/data` directory inside the container to store user configura
 #### Using a Host Directory for Persistence (Bind Mount)
 
 To save your Node-RED user directory inside the container to a host directory outside the container, you can use the
-command below. To allow access to this host directory, the node-red user (default uid=1000) inside the container must
+command below. To allow access to this host directory, the Node-RED user (default uid=1000) inside the container must
 have the same uid as the owner of the host directory.
 ```
 docker run -it -p 1880:1880 -v /home/pi/.node-red:/data --name mynodered nodered/node-red
@@ -206,8 +206,8 @@ networks:
 ```
 
 The above compose file:
- - creates a node-red service
- - pulls the latest node-red image
+ - creates a Node-RED service
+ - pulls the latest Node-RED image
  - sets the timezone to Europe/Amsterdam
  - Maps the container port 1880 to the host port 1880
  - creates a node-red-net network and attaches the container to this network

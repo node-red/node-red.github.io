@@ -155,9 +155,9 @@ Once you have created a basic node module as described above, you can install it
 
 To test a node module locally the [`npm install <folder>`](https://docs.npmjs.com/cli/install)
 command can be used. This allows you to develop the node in a local directory and
-have it linked into a local node-red install during development.
+have it linked into a local Node-RED install during development.
 
-In your node-red user directory, typically `~/.node-red`, run:
+In your Node-RED user directory, typically `~/.node-red`, run:
 
     npm install <location of node module>
 

@@ -53,7 +53,7 @@ described <a href="https://github.com/Unitech/PM2/blob/development/ADVANCED_READ
 
 #### 2. Determine the exact location of the `node-red` command.
 
-If you have done a global install of node-red, then on Linux/OS X the `node-red`
+If you have done a global install of Node-RED, then on Linux/OS X the `node-red`
 command will probably be either: `/usr/bin/node-red` or `/usr/local/bin/node-red`.
 The command `which node-red` can be used to confirm the location.
 
@@ -65,7 +65,7 @@ relative to where you ran `npm install` from.
 The following command tells PM2 to run Node-RED, assuming `/usr/bin/node-red` as
 the location of the `node-red` command.
 
-The `--` argument must appear before any arguments you want to pass to node-red.
+The `--` argument must appear before any arguments you want to pass to Node-RED.
 
     pm2 start /usr/bin/node-red -- -v
 
