@@ -4,7 +4,9 @@ title: Release Plan
 slug: releases
 ---
 
-_Updated: 2024-01-03_
+_Update: 2025-07-29_ : this release plan is currently out of date. With the [4.1 release](/blog/2025/07/29/version-4-1-released) now available, we're currently looking to the future of the project and working out our roadmap. This page will be updated as part of this work.
+
+---
 
 This plan is a guide for how the project plans to schedule upcoming releases, taking
 into account the release schedule of the underlying Node.js runtime.
