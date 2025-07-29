@@ -22,7 +22,7 @@ Running the following command will download and run the script. If you want
 to review the contents of the script first, you can view it [on Github](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
 
 ```
-bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/download/update-nodejs-and-nodered-deb)
 ```
 
 There are extra parameters you can pass to the script. Add <code> --help</code> to the end of the above command to see them.
