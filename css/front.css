@@ -233,6 +233,36 @@ a:hover {
     background: #aa6767;
     color: #eee;
 }
+.community .conference-banner {
+    background: linear-gradient(135deg, #8B0000 0%, #aa6767 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0 10px 20px 10px;
+    box-sizing: border-box;
+  }
+  
+  .community .conference-banner a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .community .conference-banner a:hover {
+    opacity: 0.9;
+  }
+  
+  .community .conference-banner h4 {
+    margin: 10px 0 5px 0;
+    font-size: 1.3em;
+  }
+  
+  .community .conference-banner p {
+    margin: 5px 0 0 0;
+    font-size: 0.95em;
+  }
 .users {
     background: #fff;
     border-bottom: 2px solid #a22222;
