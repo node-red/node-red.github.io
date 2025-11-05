@@ -7,16 +7,11 @@ redirect_from:
   - /docs/hardware/raspberrypi
 ---
 
-
-### Prerequisites
-
-If you are using Raspberry Pi OS, Bullseye is the currently supported version.
-
 ### Installing and Upgrading Node-RED
 
 We provide a script to install Node.js, npm and Node-RED onto a Raspberry
-Pi. The script can also be used to upgrade an existing install when a new
-release is available.
+Pi, and other platforms running a Debian based OS. The script can also be 
+used to upgrade an existing install when a new release is available.
 
 Running the following command will download and run the script. If you want
 to review the contents of the script first, you can view it [on Github](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
@@ -60,7 +55,7 @@ As with [running Node-RED locally](/docs/getting-started/local), you can use
 the `node-red` command to run Node-RED in a terminal. It can then be stopped
 by pressing `Ctrl-C` or by closing the terminal window.
 
-Due to the limited memory of the Raspberry Pi, you will need to start Node-RED
+Due to the limited memory of the Raspberry Pi, you may need to start Node-RED
 with an additional argument to tell the underlying Node.js process to free up
 unused memory sooner than it would otherwise.
 
@@ -73,7 +68,7 @@ node-red-pi --max-old-space-size=256
 
 ### Running as a service
 
-The install script for the Pi also sets it up to run as a service. This means it
+The install script also sets it up to run as a service. This means it
 can run in the background and be enabled to automatically start on boot.
 
 The following commands are provided to work with the service:
@@ -82,7 +77,8 @@ The following commands are provided to work with the service:
  Pressing `Ctrl-C` or closing the window does *not* stop the service; it keeps
  running in the background
  - `node-red-stop` - this stops the Node-RED service
- - `node-red-restart` - this stops and restarts the Node-RED service
+ - `node-red-restart` - this restarts the Node-RED service
+ - `node-red-reload` - this stops then starts the Node-RED service
  - `node-red-log` - this displays the log output of the service
 
 You can also start the Node-RED service on the Raspberry Pi OS Desktop by selecting
@@ -90,8 +86,7 @@ the `Menu -> Programming -> Node-RED` menu option.
 
 ### Autostart on boot
 
-If you want Node-RED to run when the Pi is turned on, or re-booted, you can enable the service
-to autostart by running the command:
+If you want Node-RED to run when the device is turned on, or re-booted, you can enable the service to autostart by running the command:
 
 ```
 sudo systemctl enable nodered.service
@@ -108,7 +103,7 @@ Once Node-RED is running you can access the editor in a browser.
 
 If you are using the browser on the Pi desktop, you can open the address: <http://localhost:1880>.
 
-<div class="doc-callout">We recommend using a browser outside of the PI and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox-ESR and <i>not</i> Epiphany</div>.
+<div class="doc-callout">We recommend using a browser outside of the Pi and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox and <i>not</i> Epiphany</div>.
 
 When browsing from another machine you should use the hostname or IP-address of the Pi: `http://<hostname>:1880`. You
 can find the IP address by running `hostname -I` on the Pi.
