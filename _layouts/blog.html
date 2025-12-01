@@ -25,4 +25,14 @@
     </div>
   </div>
 </div>
+<script>
+$(function() {
+    $('.post-content img').css('cursor', 'zoom-in').on('click', function() {
+        var src = $(this).attr('src');
+        $('<div id="lightbox" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out">' +
+          '<img src="' + src + '" style="max-width:95%;max-height:95%">' +
+          '</div>').appendTo('body').on('click', function() { $(this).remove(); });
+    });
+});
+</script>
 {% include footer.html %}
