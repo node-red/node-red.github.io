@@ -23,6 +23,10 @@ Building on the results of the survey, as well as our own discussions, we've ide
 3. Functional Enchancements
 4. Project Infrastructure Updates
 
+<div class="doc-callout">
+    If you want to follow the development work more directly, follow the <a href="https://github.com/node-red/node-red/issues/5362">Node-RED 5.0 issue on GitHub</a>. From there you'll find links to issues for different parts of the plan - some already raised, some to follow.
+</div>
+
 ### Node-RED UX Modernization
 
 The Node-RED UI hasn't changed much over the years. Comparing a screenshot from the very early days of the project with today, you can see a clear visual connection between the two, with the overall structure of the editor largely unchanged.
@@ -46,10 +50,6 @@ The highlights will include:
  - More flexible sidebar arrangements; allowing the user to position them on either side of the editor, or split them vertically
  - Improved visual accessibility
  - A built-in dark theme (this one appears to generate particular excitement)
-
-<div class="doc-callout">
-    If you want to follow the development work more directly, follow the <a href="https://github.com/node-red/node-red/issues/5362">Node-RED 5.0 issue on GitHub</a>. From there you'll find links to issues for different parts of the plan - some already raised, some to follow.
-</div>
 
 ### Node Appearance Improvements
 
