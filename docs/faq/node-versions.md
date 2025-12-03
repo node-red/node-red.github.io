@@ -5,9 +5,9 @@ title: Supported Node versions
 slug: node versions
 ---
 
-_Updated: 2024-01-03_
+_Updated: 2025-12-01_
 
-Node-RED currently recommends **Node 20.x**.
+Node-RED currently recommends **Node 22.x**.
 
 We try to stay up to date with Node.js releases. Our goal is to support
 the [Maintenance and Active LTS releases](https://nodejs.org/en/about/releases/).
@@ -17,6 +17,7 @@ routinely test against them.
 
 Node-RED Version | Minimum Node.js Version
 ---|---
+5.x | 22
 4.x | 18
 3.x | 14
 2.x | 12
