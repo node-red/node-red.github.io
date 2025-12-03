@@ -4,26 +4,25 @@ title: Release Plan
 slug: releases
 ---
 
-_Update: 2025-07-29_ : this release plan is currently out of date. With the [4.1 release](/blog/2025/07/29/version-4-1-released) now available, we're currently looking to the future of the project and working out our roadmap. This page will be updated as part of this work.
+_Last Updated 2025-12-01_
 
----
 
 This plan is a guide for how the project plans to schedule upcoming releases, taking
 into account the release schedule of the underlying Node.js runtime.
 
 ![](release-plan.png)
 
-The project aims to make a new major release around April each year. This aligns
-with when versions of Node.js reach their end-of-life and enables us to drop support
-for them.
+The project aims to make a new major release once a year to align with the Node.js schedule.
+As they reach their end-of-life, a new major release will be made that updates the default
+Node.js version and drop support for older versions.
 
-The active Node-RED stream will get regular minor releases (for example 4.0 -> 4.1)
-containing new features as well as maintenance releases (for example 4.0.1 -> 4.0.2)
+The active Node-RED stream will get regular minor releases (for example 5.0 -> 5.1)
+containing new features as well as maintenance releases (for example 5.0.1 -> 5.0.2)
 as and when they are needed.
 
 When a new major version is released, the previous version enters maintenance mode
-for an extended period of time. During this time it will only receive bug fixes
-and security updates.
+for a period of time. During this time it will only receive bug fixes and security
+updates.
 
 This proposal means:
 
@@ -35,8 +34,9 @@ This proposal means:
 
 Release | Initial         | Maintenance Start    | End-of-life
 --------|-----------------|----------------------|-----------------
-4.x     | *2024-04-30* *  | *2025-04-30* *       | 2026-06-30
-3.x     | 2022-07-14      | *2024-04-30* *       | 2025-06-30
+5.x.    | *2026-01*       |                      |
+4.x     | 2024-04-30.     | *2026-01*            | 2026-06-30
+3.x     | 2022-07-14      | 2024-04-30.          | 2025-06-30
 2.x     | 2021-07-22      | 2022-07-14           | 2023-06-30
 1.x     | 2019-09-30      | 2021-04-30           | 2022-06-30
 
