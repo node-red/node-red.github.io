@@ -9,7 +9,7 @@ image: /blog/content/images/2025/12/state-of-node-red-2025.jpeg
 Earlier this year, we ran [a community survey](https://discourse.nodered.org/et/node-red-survey-shaping-the-future-of-node-reds-user-experience/98346) with a focus on how we could modernize the Node-RED user experience. We revealed some of the results at [Node-RED Con](https://www.youtube.com/watch?v=lwhHYPVgc2w&list=PLyNBB9VCLmo2yvFdVZOv41NUEzuw-CAZX), but now we wanted to share the full set of results with you.
 
 <div class="doc-callout">
-    If you want to go ahead and dive into the survey results completely unbiased, you can go ahead and view them on this page: <a href="https://nodered.org/community-survey">Node-RED Community Survey</a>.
+    If you want to go ahead and dive into the survey results completely unbiased, you can go ahead and view them on this page: <a href="https://nodered.org/community-survey">Node-RED Community Survey</a>. We invite you to share your thoughts in this <a href="https://discourse.nodered.org/t/modernization-survey-results-now-available/99830">blogpost</a>.
 </div>
 
 ## Focusing in on userbase segments
@@ -100,8 +100,6 @@ This open-ended question brings everything together and reinforces what we have 
 
 ## Including the community
 
-It is important to us that not only we can derive conclusions, and instead we would much rather see an active discussion pop-up from it to collectively discuss conclusions coming from a diverse set of perspectives. 
-
 We have worked hard at figuring out a comprehensive way to let you in on all the information gathered. We are curious about the interesting community takes and initiatives that might surface as a result from it. 
 
 For your information: 
@@ -110,18 +108,26 @@ For your information:
 - Any result is filterable, even survey questions with qualitative answers
 - There are quick filters in the left sidebar to change segments easily
 
+It is important to us that not only we can derive conclusions, and instead we would much rather see an active discussion pop-up from it to collectively discuss conclusions coming from a diverse set of perspectives. 
+
 <div class="doc-callout">
-    If you want to go ahead and dive into the survey results completely unbiased, you can go ahead and view them on this page: <a href="https://nodered.org/community-survey">Node-RED Community Survey</a>.
+    Dive into the survey results on this page: <a href="https://nodered.org/community-survey">Node-RED Community Survey</a>. We invite you to share your thoughts in this <a href="https://discourse.nodered.org/t/modernization-survey-results-now-available/99830">blogpost</a>.
 </div>
+
+### Gratitude and staying in contact
 
 We want to thank everyone that contributed to the survey. We think the amount of input we have received was simply astonishing and of great value.
 
-We also want to be able to continue this conversation and keep collaborating with the community to drive Node-RED forward. The community survey invited participants to share their contact information so we can reach out more directly in the future when we want to gather feedback from particular groups of the community.
+Alongside the [forum](https://discourse.nodered.org/) and [GitHub](https://github.com/node-red), the community survey invited participants to share their contact information so we can reach out more directly in the future when we want to gather feedback from particular groups of the community. This will be an invaluable resource for the continued development of the project. 
 
-Alongside the [forum](https://discourse.nodered.org/) and [GitHub](https://github.com/node-red), this will be an invaluable resource for the project. If you'd like to join this group, you can join the over-200 people who have already signed up [here](https://tally.so/r/7RXl0L).
+<div class="doc-callout">
+    If you'd like to join this group, you can join the over-200 people who have already signed up [here](https://tally.so/r/7RXl0L).
+</div>
+
+You can see here how the user segments signed up originally with the survey:
 
 <img src="/blog/content/images/2025/12/Contact-&-Follow-up-Preferences.jpeg" style="margin-left:-1.5%;">
 
-### Thanks
+---
 
 Thank you for your support and engagement. We are looking forward to improving Node-RED together.
