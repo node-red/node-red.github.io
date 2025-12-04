@@ -59,7 +59,7 @@ The design of the node has changed very little since the early days of the proje
 
 For example, some nodes have an implicit connection to other nodes; such as the Link Call, Status or Catch nodes. But this isn't visually represented in anyway. This makes navigating those implicit connections hard to do and breaks the developer workflow.
 
-Another area is how to better handle more custom nodes. At Node-RED Con we saw the work being [done at Fludily](https://youtu.be/7Hwt4LIAFn4?si=eIv4fo5bGaC-flnD&t=465) to create financial workflows in their custom Node-RED application. They have created a very rich visualisation capability within the editor workspace. Whilst that's a level of customisation quite specific to their needs, there is clearly some interesting lessons we can learn here.
+Another area is how to better handle more custom nodes. At Node-RED Con we saw the work being [done at Fluidly](https://youtu.be/7Hwt4LIAFn4?si=eIv4fo5bGaC-flnD&t=465) to create financial workflows in their custom Node-RED application. They have created a very rich visualisation capability within the editor workspace. Whilst that's a level of customisation quite specific to their needs, there is clearly some interesting lessons we can learn here.
 
 We already have community nodes, such as [Image Tools](https://flows.nodered.org/node/node-red-contrib-image-tools) that provide in-editor image previews. Currently that relies on "insider information" to inject the image into the workspace. If Node-RED were to change the internal workings of how flows are drawn, that would break the node. So we want to see how we can accommodate this type of customisation in a standard way - whilst keeping some design guidelines and control in place to ensure a good user experience.
 
