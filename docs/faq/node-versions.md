@@ -5,7 +5,7 @@ title: Supported Node versions
 slug: node versions
 ---
 
-_Updated: 2025-12-01_
+_Updated: December 2025_
 
 Node-RED currently recommends **Node 22.x**.
 

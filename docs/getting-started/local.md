@@ -54,8 +54,8 @@ That command will install Node-RED as a global module along with its dependencie
 You can confirm it has succeeded if the end of the command output looks similar to:
 
 ```
-+ node-red@1.1.0
-added 332 packages from 341 contributors in 18.494s
++ node-red@4.1.2
+added 227 packages in 13s
 found 0 vulnerabilities
 ```
 
@@ -97,21 +97,17 @@ $ node-red
 
 Welcome to Node-RED
 ===================
-
-30 Jun 23:43:39 - [info] Node-RED version: v1.3.5
-30 Jun 23:43:39 - [info] Node.js  version: v14.7.2
-30 Jun 23:43:39 - [info] Darwin 19.6.0 x64 LE
-30 Jun 23:43:39 - [info] Loading palette nodes
-30 Jun 23:43:44 - [warn] rpi-gpio : Raspberry Pi specific node set inactive
-30 Jun 23:43:44 - [info] Settings file  : /Users/nol/.node-red/settings.js
-30 Jun 23:43:44 - [info] HTTP Static    : /Users/nol/node-red/web
-30 Jun 23:43:44 - [info] Context store  : 'default' [module=localfilesystem]
-30 Jun 23:43:44 - [info] User directory : /Users/nol/.node-red
-30 Jun 23:43:44 - [warn] Projects disabled : set editorTheme.projects.enabled=true to enable
-30 Jun 23:43:44 - [info] Creating new flows file : flows_noltop.json
-30 Jun 23:43:44 - [info] Starting flows
-30 Jun 23:43:44 - [info] Started flows
-30 Jun 23:43:44 - [info] Server now running at http://127.0.0.1:1880/red/
+22 Dec 21:51:27 - [info] Node-RED version: v4.1.2
+22 Dec 21:51:27 - [info] Node.js  version: v20.19.6
+22 Dec 21:51:27 - [info] Linux 6.8.0-90-generic x64 LE
+22 Dec 21:51:27 - [info] Loading palette nodes
+22 Dec 21:51:30 - [info] Settings file  : /home/pi/.node-red/settings.js
+22 Dec 21:51:30 - [info] Context store  : 'default' [module=memory]
+22 Dec 21:51:30 - [info] User directory : /home/pi/.node-red
+22 Dec 21:51:30 - [warn] Projects disabled : editorTheme.projects.enabled=false
+22 Dec 21:51:30 - [info] Flows file     : /home/pi/.node-red/flows.json
+22 Dec 21:51:30 - [info] Server now running at http://127.0.0.1:1880/
+22 Dec 21:51:30 - [info] Starting flows
 ```
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
@@ -123,7 +119,7 @@ The log output provides you various pieces of information:
  - The location of your Settings file and User Directory
  - The name of the flows file it is using.
 
-Node-RED uses `flows_<hostname>.json` as the default flows file. You can change
+Node-RED uses `flows.json` as the default flows file. You can change
 this by providing the flow file name as argument to the `node-red` [command](/docs/getting-started/local#command-line-usage).
 
 ### Command-line Usage
@@ -149,14 +145,11 @@ Option                  | Description     |
 `-?`, `--help`          | Shows command-line usage help and exits |
 `flows.json|projectName`| If the Projects feature is not enabled, this sets the flow file you want to work with. If the Projects feature is enabled, this identifies which project should be started. |
 
-Node-RED uses `flows_<hostname>.json` as the default flows file. If the computer
-you are running on may change its hostname, then you should ensure you provide a
-static file name; either as a command-line argument or using the `flowsFile` option
+Node-RED uses `flows.json` as the default flows file. You can provide a
+different file name; either as a command-line argument or using the `flowsFile` option
 in your [settings file](/docs/user-guide/runtime/settings-file).
 
 #### Override individual settings
-
-*Since Node-RED 1.1.0*
 
 You can override individual settings on the command-line using the `-D` (or `--define`)
 option.
@@ -176,8 +169,6 @@ The file should contain a list of the settings to override:
 logging.console.level=trace
 logging.console.audit=true
 ```
-
-
 
 
 ### Passing arguments to the underlying Node.js process
@@ -216,7 +207,6 @@ sudo npm install -g --unsafe-perm node-red
 ```
 
 If you are using Windows, do not start the command with <code>sudo</code>.
-
 
 
 ### Next steps
