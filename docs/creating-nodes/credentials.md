@@ -85,5 +85,5 @@ circumstances it is necessary to store more values in credentials than just thos
 that get provided by the user.
 
 For example, for a node to support an OAuth workflow, it must retain server-assigned
-tokens that the user never sees. The Twitter node provides a good example of how
+tokens that the user never sees. The [Twitter node](https://github.com/node-red/node-red-nodes/tree/master/social/twitter) provides a good example of how
 this can be achieved.
