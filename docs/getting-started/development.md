@@ -50,7 +50,7 @@ Once you are on you your chosen branch, you should install all of the dependenci
 with the command:
 
 ```
-npm install
+npm ci
 ```
 
 ### Building Node-RED
