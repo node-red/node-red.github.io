@@ -79,9 +79,6 @@ httpNodeRoot
 httpNodeAuth
 : enables HTTP Basic Authentication. See `httpAdminAuth` for format.
 
-httpRoot
-: this sets the root url for both admin and node endpoints. It overrides the values set by `httpAdminRoot` and `httpNodeRoot`.
-
 https
 : enables https, with the specified options object, as defined
   [here](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
