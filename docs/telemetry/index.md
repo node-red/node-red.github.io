@@ -62,9 +62,9 @@ are kept for up to 90 days.
 The raw data is only accessible by the core Team Committers.
 
 The aggregated data will be made available on a public dashboard for public
-consumption. _Note_: At the time of writing, we have not yet released this feature,
-so we have very little data to start building the dashboard with. Once it is available,
-this document will be updated to link to it and it will be publicised within the community.
+consumption.
+
+The Dashboard can be found [here](https://telemetry.nodered.org/dashboard/telemetry)
 
 ### How do I opt out?
 
