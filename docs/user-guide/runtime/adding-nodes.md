@@ -60,10 +60,3 @@ npm install <name-of-module>@latest
 ```
 
 Whichever approach you take, you will need to restart Node-RED to load the updates.
-
-<div class="doc-callout"><em>Note</em> : the reason for using the
-<code>--unsafe-perm</code> option is that when node-gyp tries to recompile any
-native libraries it tries to do so as a "nobody" user and then fails to get
-access to certain directories. This causes the nodes in question (for example,
-serialport) not to be installed. Allowing it root access during install
-allows the nodes to be installed correctly during the upgrade.</div>

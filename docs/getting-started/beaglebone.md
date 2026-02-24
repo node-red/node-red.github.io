@@ -85,4 +85,4 @@ The easiest way to install them is direct from npm.
 
 To install manually run the following command:
 
-    sudo npm install -g --unsafe-perm beaglebone-io johnny-five node-red-contrib-gpio
+    sudo npm install -g beaglebone-io johnny-five node-red-contrib-gpio

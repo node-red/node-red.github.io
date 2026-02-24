@@ -44,7 +44,7 @@ To install Node-RED locally you will need a [supported version of Node.js](/docs
 To install Node-RED you can use the `npm` command that comes with node.js:
 
 ```
-sudo npm install -g --unsafe-perm node-red
+sudo npm install -g node-red
 ```
 
 If you are using Windows, do not start the command with <code>sudo</code>.
@@ -203,7 +203,7 @@ If you have installed Node-RED as a global npm package, you can upgrade to the
 latest version with the following command:
 
 ```
-sudo npm install -g --unsafe-perm node-red
+sudo npm install -g node-red
 ```
 
 If you are using Windows, do not start the command with <code>sudo</code>.

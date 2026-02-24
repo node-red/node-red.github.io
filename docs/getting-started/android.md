@@ -23,7 +23,7 @@ Install it, and run it. Then at the prompt type
     apt update
     apt upgrade
     apt install coreutils nano nodejs
-    npm i -g --unsafe-perm node-red
+    npm i -g node-red
     node-red
 
 Then you can point a browser to `http://localhost:1880`

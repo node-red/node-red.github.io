@@ -38,7 +38,7 @@ You should receive back output that looks similar to:
 
 Installing Node-RED as a global module adds the command `node-red` to your system path.  Execute the following at the command prompt:
 
-    npm install -g --unsafe-perm node-red
+    npm install -g node-red
 
 #### 3. Run Node-RED
 

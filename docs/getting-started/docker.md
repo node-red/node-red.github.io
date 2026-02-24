@@ -238,7 +238,7 @@ FROM nodered/node-red
 # of your added nodes modules for Node-RED
 WORKDIR /data
 COPY package.json /data
-RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
+RUN npm install --no-update-notifier --no-fund --only=production
 WORKDIR /usr/src/node-red
 
 # Copy _your_ Node-RED project files into place

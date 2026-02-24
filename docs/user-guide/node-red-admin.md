@@ -23,7 +23,7 @@ If you install it separately, you would use the command `node-red-admin`.
 If you want to install `node-red-admin` separately, you can install it as a global
 module with:
 
-    npm install -g --unsafe-perm node-red-admin
+    npm install -g node-red-admin
 
 <div class="doc-callout">
 <em>Note</em> : <code>sudo</code> is required if running as a non-root user on Linux/OS X. If
