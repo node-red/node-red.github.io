@@ -467,6 +467,8 @@ It is possible to set a timeout for the function node on the Setup tab. This val
 in seconds, is how long the runtime will allow the Function node to run for before
 raising an error. If set to 0, the default, no timeout is applied.
 
+NOTE: The timeout functionality only applies to synchronous code.
+
 ***
 
 ### API Reference
