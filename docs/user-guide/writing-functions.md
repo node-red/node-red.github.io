@@ -378,18 +378,19 @@ to use.
 
 {% highlight javascript %}
 // Get value - sync
-var myCount = flow.get("count", storeName);
+var myCount = flow.get("count", "storeName");
 
 // Get value - async
-flow.get("count", storeName, function(err, myCount) { ... });
+flow.get("count", "storeName", function(err, myCount) { ... });
 
 // Set value - sync
-flow.set("count", 123, storeName);
+flow.set("count", 123, "storeName");
 
 // Set value - async
-flow.set("count", 123, storeName, function(err) { ... })
+flow.set("count", 123, "storeName", function(err) { ... })
 {% endhighlight %}
 
+Note: In the examples above "storeName" can be a variable if required.
 
 #### Global context
 
