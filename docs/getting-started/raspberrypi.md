@@ -35,7 +35,7 @@ first to ensure npm is able to fetch and build any binary modules it needs to in
 This script will:
 
  - remove the existing version of Node-RED if present.
- - if it detects Node.js is already installed, it will ensure it is at least v18. If nothing is found it will install the Node.js 20 LTS release using the [NodeSource](https://github.com/nodesource/distributions/blob/master/README.md) package.
+ - if it detects Node.js is already installed, it will ensure it is at least v20. If nothing is found it will install the Node.js v22 LTS release using the [NodeSource](https://nodesource.com/products/distributions) package.
  - install the latest version of Node-RED using npm.
  - optionally install a collection of useful Pi-specific nodes.
  - setup Node-RED to run as a service and provide a set of commands to work with
@@ -44,8 +44,8 @@ This script will:
 <div class="doc-callout">
 <div style="float: left; margin-right: 10px;margin-bottom: 40px;">
 <img src="/images/logos/raspberrypi.svg" height="30">
+**Note**: As of Node v24 there are NO 32 bit builds available - so armv6 based Pi devices will no longer be supported.
 </div>
-
 
 </div>
 
@@ -75,7 +75,7 @@ The following commands are provided to work with the service:
 
  - `node-red-start` - this starts the Node-RED service and displays its log output.
  Pressing `Ctrl-C` or closing the window does *not* stop the service; it keeps
- running in the background
+ running in the background. Use `node-red-log` to re-attach and view the log.
  - `node-red-stop` - this stops the Node-RED service
  - `node-red-restart` - this restarts the Node-RED service
  - `node-red-reload` - this stops then starts the Node-RED service
@@ -103,7 +103,7 @@ Once Node-RED is running you can access the editor in a browser.
 
 If you are using the browser on the Pi desktop, you can open the address: <http://localhost:1880>.
 
-<div class="doc-callout">We recommend using a browser outside of the Pi and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox and <i>not</i> Epiphany</div>.
+<div class="doc-callout">We recommend using a browser outside of the Pi and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox.
 
 When browsing from another machine you should use the hostname or IP-address of the Pi: `http://<hostname>:1880`. You
 can find the IP address by running `hostname -I` on the Pi.

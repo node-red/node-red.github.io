@@ -54,7 +54,7 @@ That command will install Node-RED as a global module along with its dependencie
 You can confirm it has succeeded if the end of the command output looks similar to:
 
 ```
-+ node-red@4.1.2
++ node-red@4.1.7
 added 227 packages in 13s
 found 0 vulnerabilities
 ```
@@ -69,8 +69,7 @@ For more detailed information see our [docker](/docs/getting-started/docker) gui
 
 ### Installing with snap
 
-If your OS supports [Snap](https://snapcraft.io/docs/core/install) you can install
-Node-RED with:
+Generally not recommended, but if your OS supports [Snap](https://snapcraft.io/docs/core/install) you can install Node-RED with:
 
 ```
 sudo snap install node-red
@@ -84,7 +83,9 @@ When installed as a Snap package, it will run in a secure container that **does 
  - direct access to gpio hardware
  - access to any external commands your flows want to use with the Exec node (for example).
 
+<div class="doc-callout">
 If you need access to system hardware or to add nodes that require compilation then we recommend using a full install of Node-RED and not using the snap.
+</div>
 
 ### Running
 
@@ -97,17 +98,17 @@ $ node-red
 
 Welcome to Node-RED
 ===================
-22 Dec 21:51:27 - [info] Node-RED version: v4.1.2
-22 Dec 21:51:27 - [info] Node.js  version: v20.19.6
-22 Dec 21:51:27 - [info] Linux 6.8.0-90-generic x64 LE
-22 Dec 21:51:27 - [info] Loading palette nodes
-22 Dec 21:51:30 - [info] Settings file  : /home/pi/.node-red/settings.js
-22 Dec 21:51:30 - [info] Context store  : 'default' [module=memory]
-22 Dec 21:51:30 - [info] User directory : /home/pi/.node-red
-22 Dec 21:51:30 - [warn] Projects disabled : editorTheme.projects.enabled=false
-22 Dec 21:51:30 - [info] Flows file     : /home/pi/.node-red/flows.json
-22 Dec 21:51:30 - [info] Server now running at http://127.0.0.1:1880/
-22 Dec 21:51:30 - [info] Starting flows
+06 Mar 21:51:27 - [info] Node-RED version: v4.1.7
+06 Mar 21:51:27 - [info] Node.js  version: v22.22.1
+06 Mar 21:51:27 - [info] Linux 6.8.0-90-generic x64 LE
+06 Mar 21:51:27 - [info] Loading palette nodes
+06 Mar 21:51:30 - [info] Settings file  : /home/pi/.node-red/settings.js
+06 Mar 21:51:30 - [info] Context store  : 'default' [module=memory]
+06 Mar 21:51:30 - [info] User directory : /home/pi/.node-red
+06 Mar 21:51:30 - [warn] Projects disabled : editorTheme.projects.enabled=false
+06 Mar 21:51:30 - [info] Flows file     : /home/pi/.node-red/flows.json
+06 Mar 21:51:30 - [info] Server now running at http://127.0.0.1:1880/
+06 Mar 21:51:30 - [info] Starting flows
 ```
 
 You can then access the Node-RED editor by pointing your browser at <http://localhost:1880>.
