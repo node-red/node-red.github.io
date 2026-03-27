@@ -7,6 +7,8 @@ slug: settings
 
 You can configure Node-RED using a settings file.
 
+**Note**: After editing settings.js you need to restart Node-RED for any settings changes to take effect.
+
 ### Where is my settings file?
 
 When Node-RED starts, it looks for a file called `settings.js` in your Node-RED
