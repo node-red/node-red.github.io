@@ -306,3 +306,26 @@ socketReconnectTime
 socketTimeout
 : TCP Nodes - how long to wait, in milliseconds, before timing out a socket.
   Default: 120000
+
+### Node Defaults
+
+As of v4.1.9 it is possible to override a node's default properties - this is useful for setting up a default way of working for a team to save everyone having to change the default output of the debug node to be "complete message" for example - or indeed a single user.
+
+NOTE: This only changes the defaults - ie the user can still edit the settings in the editor UI - this doesn't lock anything - it just allows changing the defaults for a newly dragged on node to something the user may wish to use more often.
+
+To do this the user adds an entry like this to their settings.js file
+
+        nodeDefaults: {
+            debug: {
+                complete: true,
+                console:true,
+                active:false
+            },
+            inject: {
+                props: [{"p":"payload"}],
+                payload: "Hello World",
+                payloadType: "str"
+            }
+        }
+
+The easiest way to find the names of properties of a node is to select an existing node and use the information sidebar - expand the 'show more' link and view the table of node properties.
