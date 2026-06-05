@@ -10,8 +10,6 @@ toc: toc-editor-guide.html
 title: Arranging Nodes
 ---
 
-*Since Node-RED 2.1*
-
 The editor provides a number of actions to help arrange nodes in the workspace. They can be
 used to align and distribute nodes.
 

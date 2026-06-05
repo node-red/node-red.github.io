@@ -57,12 +57,6 @@ You can also select multiple wires by holding `Ctrl/Command` while clicking on t
 
 When you select multiple nodes, we also highlight any wires between them. This can make it easier to follow a flow once you have selected it.
 
-<div class="figure">
-  <img src="../images/select-multiple-wires.png" alt="">
-  <p class="caption">Selecting multiple wires</p>
-</div>
-
-
 #### Deleting wires
 
 1. Select one or more wires 
@@ -109,8 +103,8 @@ You can also detach a node from the flow without deleting it:
   <table class="action-ref double-column">
     <tr><th colspan="2">Reference</th></tr>
     <tr><td>Action</td><td><code>core:detach-selected-nodes</code></td></tr>
-    <tr><td>Key shortcut</td><td><code>*Not assigned</code></td></tr>
+    <tr><td>Key shortcut</td><td><code>Not assigned</code></td></tr>
   </table>
 </div>
 
-<i>\* There is no default shortcut for **Detach Node from wires**, but you can assign one yourself in the Keyboard pane of the Settings dialog.</i> 
+There is no default shortcut for **Detach Node from wires**, but you can assign one yourself in the [keyboard settings](./keyboard).

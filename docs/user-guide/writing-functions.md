@@ -35,7 +35,7 @@ the function can construct a completely new object before returning it. For
 example:
 
 {% highlight javascript %}
-var newMsg = { payload: msg.payload.length };
+const newMsg = { payload: msg.payload.length };
 return newMsg;
 {% endhighlight %}
 
@@ -49,7 +49,7 @@ changes to its properties.</div>
 Use node.warn() to show warnings in the sidebar to help you debug. For example:
 
 {% highlight javascript %}
-node.warn("my var xyz = " + xyz);
+node.warn("my value xyz = " + xyz);
 {% endhighlight %}
 
 See logging section below for more details.
@@ -76,13 +76,11 @@ The following example passes the original message as-is on the first output and
 a message containing the payload length is passed to the second output:
 
 {% highlight javascript %}
-var newMsg = { payload: msg.payload.length };
+const newMsg = { payload: msg.payload.length };
 return [msg, newMsg];
 {% endhighlight %}
 
 #### Handling arbitrary number of outputs
-
-*Since Node-RED 1.3*
 
 `node.outputCount` contains the number of outputs configured for the function node.
 
@@ -114,10 +112,10 @@ In the following example, `msg1`, `msg2`, `msg3` will be sent to the first outpu
 `msg4` will be sent to the second output.
 
 {% highlight javascript %}
-var msg1 = { payload:"first out of output 1" };
-var msg2 = { payload:"second out of output 1" };
-var msg3 = { payload:"third out of output 1" };
-var msg4 = { payload:"only message from output 2" };
+const msg1 = { payload:"first out of output 1" };
+const msg2 = { payload:"second out of output 1" };
+const msg3 = { payload:"third out of output 1" };
+const msg4 = { payload:"only message from output 2" };
 return [ [ msg1, msg2, msg3 ], msg4 ];
 {% endhighlight %}
 
@@ -125,9 +123,9 @@ The following example splits the received payload into individual words and
 returns a message for each of the words.
 
 {% highlight javascript %}
-var outputMsgs = [];
-var words = msg.payload.split(" ");
-for (var w in words) {
+const outputMsgs = [];
+const words = msg.payload.split(" ");
+for (const w in words) {
     outputMsgs.push({payload:words[w]});
 }
 return [ outputMsgs ];
@@ -169,8 +167,6 @@ node.send(msg,false);
 
 #### Finishing with a message
 
-*Since Node-RED 1.0*
-
 If a Function node does asynchronous work with a message, the runtime will not
 automatically know when it has finished handling the message.
 
@@ -188,19 +184,18 @@ return;
 
 ### Running code on start
 
-*Since Node-RED 1.1.0*
-
 With the 1.1.0 release, the Function node provides an `On Start` tab (labeled `Setup` before 1.3.0) where you can
 provide code that will run whenever the node is started. This can be used to
 setup any state the Function node requires.
 
 For example, it can initialise values in local context that the main Function
 will use:
-```
+
+{% highlight javascript %}
 if (context.get("counter") === undefined) {
     context.set("counter", 0)
 }
-```
+{% endhighlight %}
 
 The On Start function can return a Promise if it needs to complete asynchronous work
 before the main Function can start processing messages. Any messages that arrive
@@ -220,8 +215,7 @@ node.on('close', function() {
 });
 {% endhighlight %}
 
-Or, *since Node-RED 1.1.0*, you can add code to the `On Stop` tab (previously labelled `Close`) in the node's edit
-dialog.
+Or you can add code to the `On Stop` tab in the node's edit dialog.
 
 ### Logging events
 
@@ -278,7 +272,7 @@ asynchronous access and will throw an error if they are accessed synchronously.
 To get a value from context:
 
 {% highlight javascript %}
-var myCount = flow.get("count");
+let myCount = flow.get("count");
 {% endhighlight %}
 
 To set a value:
@@ -292,7 +286,7 @@ run:
 
 {% highlight javascript %}
 // initialise the counter to 0 if it doesn't exist already
-var count = context.get('count')||0;
+let count = context.get('count')||0;
 count += 1;
 // store the value back
 context.set('count',count);
@@ -303,18 +297,16 @@ return msg;
 
 #### Get/Set multiple values
 
-Since Node-RED 0.19, it is also possible to get or set multiple values in one go:
+It is also possible to get or set multiple values in one go:
 
 {% highlight javascript %}
-// Node-RED 0.19 or later
-var values = flow.get(["count", "colour", "temperature"]);
+let values = flow.get(["count", "colour", "temperature"]);
 // values[0] is the 'count' value
 // values[1] is the 'colour' value
 // values[2] is the 'temperature' value
 {% endhighlight %}
 
 {% highlight javascript %}
-// Node-RED 0.19 or later
 flow.set(["count", "colour", "temperature"], [123, "red", "12.5"]);
 {% endhighlight %}
 
@@ -378,7 +370,7 @@ to use.
 
 {% highlight javascript %}
 // Get value - sync
-var myCount = flow.get("count", "storeName");
+let myCount = flow.get("count", "storeName");
 
 // Get value - async
 flow.get("count", "storeName", function(err, myCount) { ... });
@@ -447,8 +439,6 @@ the settings file. For most users that will be the default user directory - `~/.
 
 ### Using the `functionExternalModules` option
 
-*Since Node-RED 1.3.0*
-
 By setting `functionExternalModules` to `true` in you *settings.js* file, the Function
 node's edit dialog will provide a list where you can add additional modules
 that should be available to the node. You also specify the variable that will
@@ -458,17 +448,60 @@ be used to refer to the module in the node's code.
 
 The modules are automatically installed under `~/.node-red/node_modules/` when the node is deployed.
 
-
-
 ### Handling a Timeout
-
-*Since Node-RED 3.1.0*
 
 It is possible to set a timeout for the function node on the Setup tab. This value,
 in seconds, is how long the runtime will allow the Function node to run for before
 raising an error. If set to 0, the default, no timeout is applied.
 
 NOTE: The timeout functionality only applies to synchronous code.
+
+### Calling Link Nodes
+
+*Since Node-RED 5*
+
+The Function node is able to make in-line calls to other flows and receive a response before continuing.
+
+This can be useful where want to have resuable utility flows without having to deal with the state management
+of doing it in a pure flow-based approach.
+
+For example, you want to be able to interact with a database from your Function node without having to resort
+to writing all of the code yourself; this is what Node-RED excels at. You can create a flow using one of the
+many database nodes available that the Function node can call directly.
+
+#### Link In/Return flows
+
+Utility flows are created using the `Link` nodes.
+
+<img style="margin-left: 20px;" src="/docs/user-guide/images/function-linkcall-flow.png" width="419px">
+
+The `link out` node is configured with the option `return to calling link node` option.
+
+#### Using `node.linkcall`
+
+A Function node can call a link node using the `node.linkcall` function:
+
+{% highlight javascript %}
+// Set a query for the sqlite node to use
+msg.topic = 'select * from orders';
+// Call the `database-query` link node and await a response
+const result = await node.linkcall('database-query', msg);
+
+// result.payload contains the result of the database query
+
+{% endhighlight %}
+
+#### `node.linkcall(target, message, options)`
+
+ - `target` is a string identifier for the `link in` node that should be called. It is either the `id` or `name` of the node.
+ - `msg` is the message object to pass the flow.
+ - `options` is an optional object with the following properties:
+    - `timeout` : set a timeout for the call, in milliseconds. Default: `5000` (5 seconds)
+    - `clone` : whether to clone the message before sending. Default: `true`.
+
+
+
+
 
 ***
 
@@ -477,9 +510,9 @@ NOTE: The timeout functionality only applies to synchronous code.
 The following objects are available within the Function node.
 
 #### `node`
- * `node.id` : the id of the Function node - *added in 0.19*
- * `node.name` : the name of the Function node - *added in 0.19*
- * `node.outputCount` : number of outputs set for Function node - *added in 1.3*
+ * `node.id` : the id of the Function node
+ * `node.name` : the name of the Function node
+ * `node.outputCount` : number of outputs set for Function node
  * `node.log(..)` : [log a message](#logging-events)
  * `node.warn(..)` : [log a warning message](#logging-events)
  * `node.error(..)` : [log an error message](#logging-events)
@@ -489,6 +522,7 @@ The following objects are available within the Function node.
  * `node.status(..)` : [update the node status](#adding-status)
  * `node.send(..)` : [send a message](#sending-messages-asynchronously)
  * `node.done(..)` : [finish with a message](#finishing-with-a-message)
+ * `node.linkcall(..)` : [call a `link in` node and await a response](#calling-link-nodes) - *added in 5.0*
 
 #### `context`
  * `context.get(..)` : get a node-scoped context property

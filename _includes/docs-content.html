@@ -13,6 +13,9 @@
         <div class="col-10-12">
 {% endif %}
             <div class="docs-content">
+{% if banner %}
+                <div class="docs-banner">{{ banner}}</div>
+{% endif %}
                 <h1 class="docs-title">{{ page.title }}</h1>
                 <div>{{ content }}</div>
             </div>

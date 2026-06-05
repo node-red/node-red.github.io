@@ -21,24 +21,14 @@ the palette.
 
 Categories can be expanded or collapsed by clicking its header.
 
-The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-angle-double-up"></i> and
-<i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-angle-double-down"></i>
+The <i style="font-size: 0.8em; border-radius: 4px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-angle-double-up"></i> and
+<i style="font-size: 0.8em; border-radius: 4px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-angle-double-down"></i>
 buttons at the bottom of the palette can be used to collapse or expand all categories.
 
 Above the palette is an input that can be used to filter the list of nodes.
 
-
-<div  style="width: 64px"  class="figure align-left">
-  <img src="../images/editor-palette-toggle.png" alt="Palette toggle">
-  <p class="caption">Palette toggle</p>
-</div>
-
-The entire palette can be hidden by clicking the palette toggle that is shown when
-the mouse is over the palette.
-
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
- <tr><td>Key shortcut</td><td><code>Ctrl/⌘-p</code></td></tr>
- <tr><td>Menu option</td><td><code>View -&gt; Show Palette</code></td></tr>
- <tr><td>Action</td><td><code>core:toggle-palette</code></td></tr>
+ <tr><td>Action</td><td><code>core:show-palette-tab</code></td></tr>
+ <tr><td>Key shortcut</td><td><code>Ctrl/⌘-g p</code></td></tr>
 </table>

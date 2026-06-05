@@ -129,6 +129,15 @@ ul.toc li.tocheader li.toctitle a {
     font-size: 15px;
     line-height: 18px;
 }
+
+.docs-banner {
+    border: 1px solid #B68181;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-top: 1em;
+    text-align: center;
+}
 .docs-content a {
     color: #aa4444;
 }

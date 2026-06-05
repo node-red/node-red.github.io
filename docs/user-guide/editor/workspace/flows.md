@@ -49,7 +49,7 @@ Flows can be reordered in the workspace by dragging their tabs around in the tab
 <div style="width:350px" class="figure align-right">
   <img src="../images/editor-edit-flow.png" alt="Flow properties editor">
   <p class="caption">Flow properties editor</p>
-  <img src="../images/editor-sidebar-info.png" alt="Information Sidebar">
+  <img src="../images/editor-sidebar-explorer.png" alt="Explorer Sidebar">
   <p class="caption">Information Sidebar</p>
 </div>
 
@@ -59,7 +59,7 @@ open the Flow Properties dialog.
 <ul>
     <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - set the flow's name and description. The description
     can use Markdown syntax for formatting and will appear in the <a href="../sidebar/info">Information sidebar</a>.</li>
-    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list"></i> : Environment Variables - properties that are exposed as environment variables within the flow. <i>Since Node-RED 2.1</i></li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-list"></i> : Environment Variables - properties that are exposed as environment variables within the flow.</li>
 </ul>
 
 
@@ -76,7 +76,7 @@ The flow can be enabled or disabled using the toggle button at the bottom of the
 dialog. If a flow is disabled, none of the nodes it contains will be created when
 the flow is deployed.
 
-The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-circle-thin"></i> button in the [Information sidebar](../sidebar/info) can also be used to enable or disable the node/flow.
+The <i style="font-size: 0.8em; border-radius: 4px; display:inline-block;text-align:center; width: 20px; color: #777; border: 1px solid #777; padding: 3px;" class="fa fa-circle-thin"></i> button in the [Explorer sidebar](../sidebar/explorer) can also be used to enable or disable the node/flow.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
@@ -99,7 +99,7 @@ The <i style="font-size: 0.8em; border-radius: 2px; display:inline-block;text-al
 A flow can be hidden by right-clicking on it and selecting 'hide flow' in the context menu. The option
 can also be found in the tab bar drop-down menu.
 
-When hidden, the [Information sidebar](../sidebar/info) will show an <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-eye-slash"></i> icon next to it. Clicking that icon will show the flow again.
+When hidden, the [Explorer sidebar](../sidebar/explorer) will show an <i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-eye-slash"></i> icon next to it. Clicking that icon will show the flow again.
 
 <table class="action-ref inline">
  <tr><th colspan="2">Reference</th></tr>
