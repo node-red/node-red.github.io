@@ -205,7 +205,7 @@ Node-RED 5.0 requires a *minimum of Node.js 22.9.0* to run - it will not run any
 
 However, keeping in mind the Node.js support scheduled, we recommend using **Node.js 24**, and this is what our Docker images are based on.
 
-As the Node.js project no longer create 32bit ARM (`arm/v7`) based images, we are no longer able to support running on older Rasperry Pis (3b or earlier) as they cannot run the required 64bit OS.
+As the Node.js project no longer create 32bit ARM (`arm/v7`) based images, we are no longer able to support running on older Raspberry Pis (3b or earlier) as they cannot run the required 64bit OS.
 
 ### Bundling npm
 
