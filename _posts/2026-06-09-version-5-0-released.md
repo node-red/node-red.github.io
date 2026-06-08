@@ -100,7 +100,7 @@ Improved accessibility has been a recurring theme throughout this work. We've st
 
 #### Updated selection appearance
 
-As part of the acessibility improvements, selected nodes now show as a blue halo around the node, rather than just changing the node's border. This makes it much easier to spot what's selected, and clashes far less with the colour of the node body.
+As part of the accessibility improvements, selected nodes now show as a blue halo around the node, rather than just changing the node's border. This makes it much easier to spot what's selected, and clashes far less with the colour of the node body.
 
 
 <div class="figure">
