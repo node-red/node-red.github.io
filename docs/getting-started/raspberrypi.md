@@ -46,7 +46,6 @@ This script will:
 <img src="/images/logos/raspberrypi.svg" height="30">
 **Note**: As of Node v24 there are NO 32 bit builds available - so armv6 based Pi devices will no longer be supported.
 </div>
-
 </div>
 
 ### Running locally
@@ -104,6 +103,7 @@ Once Node-RED is running you can access the editor in a browser.
 If you are using the browser on the Pi desktop, you can open the address: <http://localhost:1880>.
 
 <div class="doc-callout">We recommend using a browser outside of the Pi and pointing it at Node-RED running on the Pi. However you can use the built in browser and if so we recommend Chromium or Firefox.
+</div>
 
 When browsing from another machine you should use the hostname or IP-address of the Pi: `http://<hostname>:1880`. You
 can find the IP address by running `hostname -I` on the Pi.

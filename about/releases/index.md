@@ -4,11 +4,15 @@ title: Release Plan
 slug: releases
 ---
 
-_Last Updated 2025-12-01_
+_Last Updated 2026-06-09_
 
 
 This plan is a guide for how the project plans to schedule upcoming releases, taking
 into account the release schedule of the underlying Node.js runtime.
+
+As an Open Source project, we rely on our contributors to make things happen. This can both
+positively and negatively impact any well-intended schedule. Please take the information below
+as what we aspire to achieve.
 
 ![](release-plan.png)
 
@@ -34,9 +38,9 @@ This proposal means:
 
 Release | Initial         | Maintenance Start    | End-of-life
 --------|-----------------|----------------------|-----------------
-5.x.    | *2026-01*       |                      |
-4.x     | 2024-04-30.     | *2026-01*            | 2026-06-30
-3.x     | 2022-07-14      | 2024-04-30.          | 2025-06-30
+5.x.    | 2026-06-09      |                      |
+4.x     | 2024-04-30      | 2026-06-09           | 2026-12-31
+3.x     | 2022-07-14      | 2024-04-30           | 2025-06-30
 2.x     | 2021-07-22      | 2022-07-14           | 2023-06-30
 1.x     | 2019-09-30      | 2021-04-30           | 2022-06-30
 

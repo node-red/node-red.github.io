@@ -30,21 +30,38 @@ in the node edit dialog.
 
 Some nodes display a status message and icon below the node. This is used to indicate
 the runtime state of the node - for example, the MQTT nodes indicate if they are
-currently connected or not.
+currently connected or not. The Status node can be used to trigger flows when a node's status
+changes.
 
 <div style="width: 550px" class="figure">
-  <img src="../images/editor-node-details.png" alt="">
+  <img src="../images/editor-node-details.png" alt="Node elements">
   <p class="caption">Node elements</p>
 </div>
 
 If a node has any undeployed changes, it displays a blue circle above it. If there
-are errors with its configuration, it displays a red triangle.
+are errors with its configuration, it displays a red triangle. Hovering the mouse
+over the triangle will show a tooltip with details of the errors.
+
+<div style="width: 208px" class="figure">
+  <img src="../images/editor-node-errors.png" alt="Node error tooltip">
+  <p class="caption">Node error tooltip</p>
+</div>
+
+If a node has additional documentation, it will show a docs badge. Clicking on the badge will
+show a popup containing the documentation. This is also shown in the [Information Sidebar](../sidebar/info) when
+the node is selected. Clicking the pencil button in the popup will open the Description edit panel for the node.
+
+<div style="width: 416px" class="figure">
+  <img src="../images/editor-node-docs.png" alt="Node documentation">
+  <p class="caption">Node documentation</p>
+</div>
+
 
 Some nodes include a button on either its left or right edge. These allow some
 interaction with the node from within the editor. The Inject and Debug nodes
 are the only core nodes that have buttons.
 
-#### Quick-Add dialog
+### Quick-Add dialog
 
 The Quick-Add dialog provides an easy way to add a node to the workspace wherever
 the mouse is, without having to drag it over from the palette.
@@ -71,7 +88,7 @@ in the flow.
 If a wire is clicked on when triggering the dialog, the added node will be spliced
 into the wire.
 
-#### Editing node properties
+### Editing node properties
 
 A node's configuration can be edited by double clicking on the node, or pressing
 `Enter` when the workspace has focus. If multiple nodes are selected, the *first*
@@ -80,9 +97,9 @@ node in the selection will be edited.
 The edit dialog contains three tabs:
 
 <ul>
-    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - the edit form specific to the node type being edited.</li>
-    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-file-text"></i> : Description - per-node documentation formatted using Markdown. This is displayed in the <a href="../sidebar/info">Information sidebar</a> when the node is selected.</li>
-    <li style="margin-bottom: 10px"><i style="border-radius: 2px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-object-group"></i> : Appearance - options to customise the appearance of the node.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 4px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-cog"></i> : Properties - the edit form specific to the node type being edited.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 4px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-file-text"></i> : Description - per-node documentation formatted using Markdown. This is displayed in the <a href="../sidebar/info">Information sidebar</a> when the node is selected.</li>
+    <li style="margin-bottom: 10px"><i style="border-radius: 4px; display:inline-block;text-align:center; width: 30px; color: #777; border: 1px solid #777; padding: 6px;" class="fa fa-object-group"></i> : Appearance - options to customise the appearance of the node.</li>
 </ul>
 
 <div class="figure">
@@ -111,7 +128,7 @@ The Appearance tab provides options to:
  - provide custom port labels.
 
 
-#### Enabling or disabling a node
+### Enabling or disabling a node
 
 <div style="float: right; width: 400px;">
 <table class="action-ref inline">
@@ -129,7 +146,7 @@ An node can be enabled or disabled using the toggle button at the bottom of the
 dialog. If a node is disabled it will not be created when the flow is deployed. If
 a disabled node sits in the middle of a flow, no messages will pass through it.
 
-#### Configuration nodes
+### Configuration nodes
 
 A Configuration (config) Node is a special type of node that holds reusable configuration
 that can be shared by regular nodes in a flow.
