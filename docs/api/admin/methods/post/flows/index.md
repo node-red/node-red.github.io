@@ -56,6 +56,9 @@ The format of the request body will depend on the Node-RED API version being use
 
 The `rev` property, if provided, should reflect the revision of flows that was returned by `GET /flows`.
 
+The optional `credentials` property represents credentials for nodes.
+The `credentials` property points to an object with node id as a key and an object with key-value pair of credentials as a value.
+
 {% highlight json %}
 {
     "rev": "abc-123",
@@ -64,8 +67,18 @@ The `rev` property, if provided, should reflect the revision of flows that was r
         "type": "tab",
         "id": "396c2376.c693dc",
         "label": "Sheet 1"
+      },
+      {
+        "type": "node-with-secret",
+        "id": "ae7b28e7.99fd38",
+        "label": "Secret"
       }
-    ]
+    ],
+    "credentials": {
+        "ae7b28e7.99fd38": { 
+          "password": "secret value"
+        }
+    }
 }
 {% endhighlight %}
 
