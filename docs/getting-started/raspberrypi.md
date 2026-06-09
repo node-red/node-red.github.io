@@ -14,10 +14,10 @@ Pi, and other platforms running a Debian based OS. The script can also be
 used to upgrade an existing install when a new release is available.
 
 Running the following command will download and run the script. If you want
-to review the contents of the script first, you can view it [on Github](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered).
+to review the contents of the script first, you can view it [on Github](https://raw.githubusercontent.com/node-red/linux-installers/master/deb/install-update-nodered).
 
 ```
-bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/download/update-nodejs-and-nodered-deb)
+bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/download/install-update-nodered)
 ```
 
 There are extra parameters you can pass to the script. Add <code> --help</code> to the end of the above command to see them.
