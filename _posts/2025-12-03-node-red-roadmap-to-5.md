@@ -20,7 +20,7 @@ Building on the results of the survey, as well as our own discussions, we've ide
 
 1. Node-RED UX Modernization
 2. Node Appearance Improvements
-3. Functional Enchancements
+3. Functional Enhancements
 4. Project Infrastructure Updates
 
 <div class="doc-callout">
