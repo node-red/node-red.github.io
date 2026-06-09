@@ -9,7 +9,7 @@ For simple typos and single line fixes please just raise an issue pointing out
 our mistakes. For larger changes, please discuss them on the [forum](https://discourse.nodered.org) or [Slack team](http://nodered.org/slack/) #docs channel.
 
 If you need to raise a pull request please read our
-[contribution guidelines](https://github.com/node-red/node-red/blob/master/CONTRIBUTING.md)
+[contribution guidelines](https://github.com/node-red/node-red/blob/main/CONTRIBUTING.md)
 before doing so.
 
 ### Previewing the Site
