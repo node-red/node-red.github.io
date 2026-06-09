@@ -17,7 +17,7 @@ Alternatively, the `--settings` command-line argument can be used when starting
 Node-RED to point at a different file.
 
 If you have not yet run Node-RED and want to edit the settings file, you can copy
-the default settings file in manually from [here](https://github.com/node-red/node-red/blob/master/packages/node_modules/node-red/settings.js).
+the default settings file in manually from [here](https://github.com/node-red/node-red/blob/main/packages/node_modules/node-red/settings.js).
 
 If you are not sure which settings file Node-RED is using, you should check the log
 output when Node-RED starts up. It will log the full path to the file:

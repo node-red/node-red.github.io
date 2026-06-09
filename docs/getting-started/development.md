@@ -34,7 +34,7 @@ are inside that directory.
 
 You should then pick which branch you want to build.
 
- - `master` - the default branch. This is the maintenance branch which contains
+ - `main` - the default branch. This is the maintenance branch which contains
  the code of the current stable release, plus any bug fixes that have been applied
  ahead of the next maintenance release.
 
