@@ -89,6 +89,7 @@ Property   | Description
 `expanded` | (optional) If the item has children, set whether to display the children
 `deferBuild` | (optional) Delay building any UI elements for the item's children until it is expanded for the first time. This can have a significant performance benefit for large data sets.
 `element` | (optional) Custom DOM element to be used in place of the node's label. This is ignored if `label` is set.
+`expandOnClick` | (optional) *since 5.0* If the item has children, set whether to expand on first click. Setting to `false` will mean the first click selects the item, a second click will expand it. The default behaviour is to expand (`true`). 
 
 If the `children` property is provided as a function, that function should accept
 a single argument of a callback function. That callback function should be called
