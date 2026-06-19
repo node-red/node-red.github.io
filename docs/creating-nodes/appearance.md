@@ -180,6 +180,16 @@ it can be set dynamically on a per-node basis according to the properties of the
 The value of the property can be either a string or a function.
 
 If the value is a string, that is used as the label.
+Use one of the following formats when naming nodes.
+
+- Verb only (e.g. "update")
+- Noun only (e.g. "server status")
+- Verb + noun (e.g. "stop job")
+
+Keep the following in mind:
+
+- Words must begin with a lower-case letter.
+- Use one single-byte space between words.
 
 If the value is a function, it will get evaluated when the node is first loaded,
 or after it has been edited. The function is expected to return the value to use
