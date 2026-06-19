@@ -14,12 +14,12 @@ To add credentials to a node, the following steps are taken:
 1. Add a new `credentials` entry to the node's definition:
    ```javascript
     credentials: {
-       username: {type:"text"},
-       password: {type:"password"}
+       username: { type: "text", required: true },
+       password: { type: "password" }
     },
    ```
-   The entries take a single option - their `type` which can be either `text` or
-   `password`.
+   The entries take the same options as [node properties](./properties.md#property-definitions)
+   except `type` which can be either `text` or `password`.
 
 2. Add suitable entries to the edit template for the node
     ```html
@@ -38,10 +38,10 @@ To add credentials to a node, the following steps are taken:
 3. In the node's `.js` file, the call to `RED.nodes.registerType` must be updated
    to include the credentials:
    ```javascript
-    RED.nodes.registerType("my-node",MyNode,{
+    RED.nodes.registerType("my-node", MyNode, {
         credentials: {
-            username: {type:"text"},
-            password: {type:"password"}
+            username: { type: "text" },
+            password: { type: "password" }
         }
     });
     ```
