@@ -110,19 +110,24 @@ For more information about the runtime part of the node, see [here](node-js).
 
 ```html
 <script type="text/javascript">
-    RED.nodes.registerType('lower-case',{
-        category: 'function',
-        color: '#a6bbcf',
-        defaults: {
-            name: {value:""}
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "file.svg",
-        label: function() {
-            return this.name||"lower-case";
-        }
-    });
+    // Isolate the code in a function to avoid global variable leaks
+    (function () {
+        'use strict'
+
+        RED.nodes.registerType('lower-case',{
+            category: 'function',
+            color: '#a6bbcf',
+            defaults: {
+                name: {value:""}
+            },
+            inputs: 1,
+            outputs: 1,
+            icon: "file.svg",
+            label: function() {
+                return this.name||"lower-case";
+            }
+        });
+    }());
 </script>
 
 <script type="text/html" data-template-name="lower-case">

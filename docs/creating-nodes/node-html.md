@@ -31,9 +31,14 @@ This function takes two arguments; the type of the node and its definition:
 
 ~~~~html
 <script type="text/javascript">
-    RED.nodes.registerType('node-type',{
-        // node definition
-    });
+    // Isolate the code in a function to avoid global variable leaks
+    (function () {
+        'use strict'
+
+        RED.nodes.registerType('node-type',{
+            // node definition
+        });
+    }());
 </script>
 ~~~~
 
