@@ -50,15 +50,19 @@ property called `prefix` to the node:
 
 ### Property definitions
 
-The entries in the `defaults` object must be objects and can have the following attributes:
+The entries in the `defaults` object must be objects and can have the following
+attributes:
 
-- `value` : (any type) the default value the property takes
+- `value` : (any type) the default value the property takes. Do not use for
+  legacy properties.
+- `label` : (string) *optional* the label showed in the error message if the
+  property is invalid.
 - `required` : (boolean) *optional* whether the property is required. If set to
   true, the property will be invalid if its value is null or an empty string.
 - `validate` : (function) *optional* a function that can be used to validate the
-  value of the property.
+  value of the property. See [Property validation](#property-validation).
 - `type` : (string) *optional* if this property is a pointer to a
-  [configuration node](config-nodes),  this identifies the type of the node.
+  [configuration node](config-nodes), this identifies the type of the node.
 
 ### Reserved property names
 
@@ -66,8 +70,10 @@ There are some reserved names for properties that **must not be used**. These ar
 
  - Any single character - `x`, `y`, `z`, `d`, `g`, `l` are already used. Others are
    reserved for future use.
- - `id`, `type`, `wires`, `inputs`, `outputs`
-
+ - Any word with the prefix `_` - `_config`, `_def`...
+ - `id`, `type`, `name`, `changed`, `dirty`, `icon`, `info`, `inputs`, `outputs`,
+   `inputLabels`, `outputLabels`, `label`, `selected`, `users`, `valid`,
+   `validationErrors` and `wires`.
 
 If a node wants to allow the number of outputs it provides to be configurable
 then `outputs` may be included in the `defaults` array. The Function node is
@@ -83,7 +89,8 @@ non-blank.
 
 If more specific validation is required, the `validate` attribute can be used to
 provide a function that will check the value is valid. The function is passed the
-value and should return either true or false. It is called within the context of
+value and should return either true or false. If the value is not valid a string
+can also be returned to give a reason. It is called within the context of
 the node which means `this` can be used to access other properties of the node.
 This allows the validation to depend on other property values.
 While editing a node the `this` object reflects the current configuration of the
@@ -101,17 +108,18 @@ Both methods - `required` attribute and `validate` attribute - are reflected by
 the UI in the same way. The missing configuration marker on the node is triggered
 and the corresponding input is red surrounded when a value is not valid or missing.
 
-
 The following example shows how each of these validators can be applied.
 
 ```javascript
 defaults: {
-   minimumLength: { value:0, validate:RED.validators.number() },
-   lowerCaseOnly: {value:"", validate:RED.validators.regex(/[a-z]+/) },
-   custom: { value:"", validate:function(v) {
-      var minimumLength=$("#node-input-minimumLength").length?$("#node-input-minimumLength").val():this.minimumLength;
-      return v.length > minimumLength
-   } }
+  nameRequired: { value: "", required: true },
+  minimumLength: { value: 0, validate: RED.validators.number() },
+  lowerCaseOnly: { value: "", validate: RED.validators.regex(/[a-z]+/) },
+  custom: { value: "", validate: function (val, opt) {
+    const minimumLength = $("#node-input-minimumLength").val() ?? this.minimumLength;
+    if (val.length > parseInt(minimumLength, 10)) return true; // Valid
+    return opt ? "The word length is too small" : false; // Not valid
+  } },
 },
 ```
 
@@ -119,15 +127,20 @@ Note how the `custom` property is only valid if its length is greater than the
 current value of the `minimumLength` property or the value of the minimumLength
 form element.
 
+If the `validate` function takes only one argument, it **must** return a boolean.
+If it takes two and the second argument exists, it can return either a boolean
+or a string.
+
 ### Property edit dialog
 
 When the edit dialog is opened, the editor populates the dialog with the edit
 template for the node.
 
 For each of the properties in the `defaults` array, it looks for an `<input>`
-element with an `id` set to `node-input-<propertyname>`, or `node-config-input-<propertyname>` in the case of Configuration nodes. This input is then
-automatically populated with the current value of the property. When the edit
-dialog is closed, the property takes whatever value is in the input.
+element with an `id` set to `node-input-<propertyname>`, or
+`node-config-input-<propertyname>` in the case of Configuration nodes.
+This input is then automatically populated with the current value of the property.
+When the edit dialog is closed, the property takes whatever value is in the input.
 
 More information about the edit dialog is available [here](edit-dialog).
 
