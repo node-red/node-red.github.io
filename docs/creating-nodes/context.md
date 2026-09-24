@@ -12,7 +12,7 @@ For more information about context, read the [Working with Context guide](../use
 There are three scopes of context available to a node:
 
 - Node - only visible to the node that set the value
-- Flow - visible to all nodes on the same flow (or tab in the editor)
+- Flow - visible to all nodes on the same flow (or tab in the editor), visible to all nodes of an instance of a subflow
 - Global - visible to all nodes
 
 Unlike the Function node which provides predefined variables to
