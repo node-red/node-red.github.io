@@ -124,7 +124,7 @@ which store a value should be stored in.
 
 ### Using context in a Function node
 
-The [Writing Functions guide](../writing-functions#storing-data) describes
+The [Writing Functions guide](/docs/user-guide/writing-functions#storing-data) describes
 how to use context in the Function node.
 
 ### Using context in a custom node

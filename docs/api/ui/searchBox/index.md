@@ -45,7 +45,7 @@ An enhanced `<input>` element that provides common features for a search input.
 
 Sets the delay, in ms, after the last keystroke before a `change` event is fired.
 
-#### <a href="#options-data" name="options-minimumLength">minimumLength</a>
+#### <a href="#options-minimumLength" name="options-minimumLength">minimumLength</a>
 
 <span class="method-return">Type: number</span>
 

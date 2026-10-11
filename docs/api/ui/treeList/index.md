@@ -130,14 +130,14 @@ Function         | Description
 
 <a name="methods-data"></a>
 
-#### <a href="#methods-data-get" name="methods-data">data()</a>
+#### <a href="#methods-data-get" name="methods-data-get">data()</a>
 
 Returns the data the treeList is displaying.
 
 If any items had the `selected` property set on them, its value will reflect
 the current checkbox state.
 
-#### <a href="#methods-data-set" name="methods-data">data( items )</a>
+#### <a href="#methods-data-set" name="methods-data-set">data( items )</a>
 
 Sets the data to be displayed by the list.
 

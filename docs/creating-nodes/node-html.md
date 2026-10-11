@@ -60,19 +60,19 @@ editor. It is an object with the following properties:
 - `inputs`: (number) how many inputs the node has, either `0` or `1`.
 - `outputs`: (number) how many outputs the node has. Can be `0` or more.
 - `color`: (string) the [background colour](appearance#background-colour) to use.
-- `paletteLabel`: (string\|function) the [label](appearance#label) to use in the palette.
-- `label`: (string\|function) the [label](appearance#label) to use in the workspace.
+- `paletteLabel`: (string\|function) the [label](appearance#labels) to use in the palette.
+- `label`: (string\|function) the [label](appearance#labels) to use in the workspace.
 - `labelStyle`: (string\|function) the [style](appearance#label-style) to apply to the label.
 - `inputLabels`: (string\|function) optional [label](appearance#port-labels) to add on hover to the input port of a node.
 - `outputLabels`: (string\|function) optional [labels](appearance#port-labels) to add on hover to the output ports of a node.
 - `icon`: (string\|function) the [icon](appearance#icon) to use.
 - `align`: (string) the [alignment](appearance#alignment) of the icon and label.
 - `button`: (object) adds a [button](appearance#buttons) to the edge of the node.
-- `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behaviour).
-- `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties#custom-edit-behaviour).
-- `oneditcancel`: (function) called when the edit dialog is canceled. See [custom edit behaviour](properties#custom-edit-behaviour).
-- `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties#custom-edit-behaviour).
-- `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties#custom-edit-behaviour).
+- `oneditprepare`: (function) called when the edit dialog is being built. See [custom edit behaviour](properties#custom-edit-behavior).
+- `oneditsave`: (function) called when the edit dialog is okayed. See [custom edit behaviour](properties#custom-edit-behavior).
+- `oneditcancel`: (function) called when the edit dialog is canceled. See [custom edit behaviour](properties#custom-edit-behavior).
+- `oneditdelete`: (function) called when the delete button in a configuration node's edit dialog is pressed. See [custom edit behaviour](properties#custom-edit-behavior).
+- `oneditresize`: (function) called when the edit dialog is resized. See [custom edit behaviour](properties#custom-edit-behavior).
 - `onpaletteadd`: (function) called when the node type is added to the palette.
 - `onpaletteremove`: (function) called when the node type is removed from the palette.
 
