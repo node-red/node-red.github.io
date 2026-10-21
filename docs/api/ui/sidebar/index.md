@@ -30,7 +30,8 @@ Property | Description
 `id`     | The unique id for this tab.
 `label`  | The text to display on the sidebar tab. This should not be too long.
 `name`   | The name of the tab displayed in the sidebar menu.
-`iconClass` | The FontAwesome 4 class of the icon to use. For example, `"fa fa-database"`
+`icon`   | (optional) A URL to an SVG file to use as the tab icon. The SVG is used as a CSS mask-image, so it will be rendered using the current text color. Either `icon` or `iconClass` can be used, but not both.
+`iconClass` | (optional) The FontAwesome 4 class of the icon to use. For example, `"fa fa-database"`. Either `icon` or `iconClass` can be used, but not both.
 `content` | The DOM element containing the content of the sidebar.
 `toolbar` | (optional) A DOM element to display in the sidebar toolbar when this tab is active.
 `enableOnEdit` | (optional) If set to `true`, this tab will be accessible whilst the edit dialog is open. Default: `false`.
