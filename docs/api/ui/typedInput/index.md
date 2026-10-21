@@ -181,7 +181,7 @@ Gets whether the typedInput is currently disabled or not.
 $(".input").typedInput('disabled');
 ```
 
-#### <a href="#methods-enable" name="methods-disable">enable()</a>
+#### <a href="#methods-enable" name="methods-enable">enable()</a>
 
 *Since Node-RED 1.3.3*
 

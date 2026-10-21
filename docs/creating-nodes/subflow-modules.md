@@ -31,7 +31,7 @@ Any subflow can be packaged as a module. Before you do so, you need to think abo
 
 The Subflow can hold additional metadata that can be used to define the module it will be packaged in.
 
-On the [Subflow Module Properties edit dialog](/docs/user-guide/editor/workspace/subflows#editing-subflow-metadata) you can set the following properties:
+On the [Subflow Module Properties edit dialog](/docs/user-guide/editor/workspace/subflows#module-properties) you can set the following properties:
 
  - `Module` - the npm package name
  - `Node Type` - this will default to the `id` property of the subflow. It is helpful to provide a better type value. As with regular node types, it must be unique to avoid conflicts with other nodes.
