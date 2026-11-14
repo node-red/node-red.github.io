@@ -70,6 +70,18 @@ such as a Raspberry Pi or in the cloud and follow the guides below.
 </div>
 
 <div class="post-preview">
+  <a href="balena">
+    <div class="post-header">
+     <img src="/images/platform-balena.png">
+      <h2>balena</h2>
+    </div>
+    <div class="post-content">
+      Running Node-RED using balena
+    </div>
+  </a>
+</div>
+
+<div class="post-preview">
   <a href="android">
     <div class="post-header">
       <img src="/images/platform-android.png">
